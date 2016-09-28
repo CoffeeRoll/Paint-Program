@@ -28,6 +28,8 @@ namespace Paint_Program
             isVisible = true;
             LayerBitmap = new Bitmap(w, h, pf);
 
+            this.BackColor = cNotSelected;
+
             //Stretch inner Bitmap to fit
             pbLayerPreview.SizeMode = PictureBoxSizeMode.StretchImage;
         }

@@ -56,7 +56,7 @@
             // pLayerDisplay
             // 
             this.pLayerDisplay.AutoScroll = true;
-            this.pLayerDisplay.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pLayerDisplay.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.pLayerDisplay.Location = new System.Drawing.Point(0, 49);
             this.pLayerDisplay.Name = "pLayerDisplay";
             this.pLayerDisplay.Size = new System.Drawing.Size(360, 501);

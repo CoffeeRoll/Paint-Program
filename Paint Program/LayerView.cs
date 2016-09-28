@@ -17,14 +17,15 @@ namespace Paint_Program
         private List<LayerItem> Layers;
         private PixelFormat pf = PixelFormat.Format32bppArgb;
         private int width, height;
+        private int yLayerLocation;
 
         public LayerView(int w, int h)
         {
             InitializeComponent();
             width = w;
             height = h;
+            yLayerLocation = 0;
             Layers = new List<LayerItem>();
-            Layers.Add(new LayerItem(w, h, pf));
         }
 
         public void updateSelectedLayer()
@@ -55,28 +56,59 @@ namespace Paint_Program
 
         private void bAddLayer_Click(object sender, EventArgs e)
         {
-            Layers.Add(new LayerItem(width, height, pf));
+            LayerItem temp = new LayerItem(width, height, pf);
+            temp.Location = new Point(0, yLayerLocation);
+            yLayerLocation += temp.Height + 5;
+            Console.WriteLine("Y:" + yLayerLocation);
+            Layers.Add(temp);
             pLayerDisplay.Controls.Add(Layers[Layers.Count - 1]);
+
+            if (Layers.Count > 1)
+            {
+                bRemoveLayer.Enabled = true;
+            }
         }
 
         private void bRemoveLayer_Click(object sender, EventArgs e)
         {
             //Foreach loop to iterate through all layers
-            foreach(LayerItem layer in Layers) {
-                if(Layers.Count <= 1)
-                {
-                    break;
-                }
-                if (layer.isLayerSelected())
-                {
-                    //Removes selected layer from the List
-                    Layers.Remove(layer);
+            try {
+                for(int t = Layers.Count-1; t >=0; t--) {
+                    if (Layers.Count <= 1)
+                    {
+                        break;
+                    }
+                    if (Layers[t].isLayerSelected())
+                    {
+                        yLayerLocation = Layers[t].Location.Y;
+                        Console.WriteLine("Y: " + yLayerLocation);
 
-                    //removes the LayerItem from the Display
-                    pLayerDisplay.Controls.Remove(layer);
+                        //removes the LayerItem from the Display
+                        pLayerDisplay.Controls.Remove(Layers[t]);
+
+                        //Removes selected layer from the List
+                        Layers.Remove(Layers[t]);
+                        
+                    }
+                }
+            }catch(Exception err)
+            {
+                Console.WriteLine(err.InnerException);
+            }
+            foreach (LayerItem layer in Layers)
+            {
+                if (layer.Location.Y > yLayerLocation)
+                {
+                    Console.WriteLine("Moved " + layer.Location.Y + " " + yLayerLocation);
+
+                    layer.Location = new Point(0, yLayerLocation);
+
+                    yLayerLocation += layer.Height + 5;
+
+                    Console.WriteLine(layer.Location.Y);
+
                 }
             }
-
             pLayerDisplay.Update();
 
             //Disable the Remove Layer Button if only one ayer Exists

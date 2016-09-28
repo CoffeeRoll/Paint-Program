@@ -26,13 +26,23 @@ namespace Paint_Program
                     int w = NewProjForm.CanvasWidth;
                     int h = NewProjForm.CanvasHeight;
 
-                    Canvas c = new Canvas(w, h);
-                    this.Controls.Add(c);
+                    Canvas c = new Canvas(w, h, this.Width, this.Height);
                     c.Location = new Point(200, 5);
+                    c.setOnClick(c_Click);
+                    this.Controls.Add(c);
+                    c.initCanvas();
+                    
+
                     this.Update();
 
                 }
             }
         }
+
+        void c_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Hey you!");
+        }
+
     }
 }

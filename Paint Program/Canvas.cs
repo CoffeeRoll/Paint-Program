@@ -15,14 +15,27 @@ namespace Paint_Program
 
         private Panel p;
 
-        public Canvas(int w, int h)
+        private int canvasWidth, canvasHeight;
+
+        //Width and height of Parrent
+        private int maxWidth, maxHeight;
+
+        LayerView lv;
+
+        public Canvas(int w, int h, int pw, int ph)
         {
             InitializeComponent();
-            this.Width = w;
-            this.Height = h;
+
+            canvasWidth = w;
+            canvasHeight = h;
+            maxWidth = pw;
+            maxHeight = ph;
+
+            this.Width = canvasWidth;
+            this.Height = canvasHeight;
             p = new Panel();
-            p.Width = w;
-            p.Height = h;
+            p.Width = canvasWidth;
+            p.Height = canvasHeight;
             p.BackgroundImageLayout = ImageLayout.Tile;
             
             try {
@@ -35,5 +48,37 @@ namespace Paint_Program
             this.Controls.Add(p);
 
         }
+
+        public void initCanvas()
+        {            
+            lv = new LayerView(canvasWidth, canvasHeight);
+            lv.Location = new Point(maxWidth - lv.Width, maxHeight - lv.Height);
+            this.Parent.Controls.Add(lv);
+        }
+
+        public void setOnClick(System.EventHandler func)
+        {
+            this.Click += func;
+            p.Click += func;
+        }
+
+        public void updateCanvas()
+        {
+            Graphics g;
+            Bitmap b = this.getBitmap();
+            g = Graphics.FromImage(b);
+            g.DrawImage(lv.getRender(), 0, 0);
+        }
+
+        public void setBitmap(Bitmap bit)
+        {
+            p.BackgroundImage = bit;
+        }
+
+        public Bitmap getBitmap()
+        {
+            return (Bitmap)p.BackgroundImage;
+        }
+
     }
 }
