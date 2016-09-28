@@ -46,7 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Canvas.cs" />
+    <Compile Include="Canvas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Canvas.Designer.cs">
+      <DependentUpon>Canvas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,11 +59,41 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Layer.cs" />
+    <Compile Include="LayerItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LayerItem.Designer.cs">
+      <DependentUpon>LayerItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="LayerManager.cs" />
+    <Compile Include="LayerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LayerView.Designer.cs">
+      <DependentUpon>LayerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewProjectForm.Designer.cs">
+      <DependentUpon>NewProjectForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Canvas.resx">
+      <DependentUpon>Canvas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayerItem.resx">
+      <DependentUpon>LayerItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayerView.resx">
+      <DependentUpon>LayerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewProjectForm.resx">
+      <DependentUpon>NewProjectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

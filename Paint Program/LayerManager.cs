@@ -37,5 +37,15 @@ namespace Paint_Program
             return bit;
         }
 
+        public void addLayer(Layer l)
+        {
+            Layers.Add(l);
+        }
+
+        public void removeLayer(Layer l)
+        {
+            Layers.Remove(l);
+        }
+
     }
 }

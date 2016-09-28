@@ -16,5 +16,23 @@ namespace Paint_Program
         {
             InitializeComponent();
         }
+
+        private void tsmiFile_New_Click(object sender, EventArgs e)
+        {
+            using (NewProjectForm NewProjForm = new NewProjectForm())
+            {
+                if (NewProjForm.ShowDialog(this) == DialogResult.OK)
+                {
+                    int w = NewProjForm.CanvasWidth;
+                    int h = NewProjForm.CanvasHeight;
+
+                    Canvas c = new Canvas(w, h);
+                    this.Controls.Add(c);
+                    c.Location = new Point(200, 5);
+                    this.Update();
+
+                }
+            }
+        }
     }
 }

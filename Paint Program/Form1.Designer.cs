@@ -28,35 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.msMenu = new System.Windows.Forms.MenuStrip();
+            this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFile_New = new System.Windows.Forms.ToolStripMenuItem();
+            this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // msMenu
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Location = new System.Drawing.Point(105, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(714, 601);
-            this.panel1.TabIndex = 0;
+            this.msMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiFile});
+            this.msMenu.Location = new System.Drawing.Point(0, 0);
+            this.msMenu.Name = "msMenu";
+            this.msMenu.Size = new System.Drawing.Size(1178, 33);
+            this.msMenu.TabIndex = 1;
+            this.msMenu.Text = "menuStrip1";
+            // 
+            // tsmiFile
+            // 
+            this.tsmiFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiFile_New});
+            this.tsmiFile.Name = "tsmiFile";
+            this.tsmiFile.Size = new System.Drawing.Size(50, 29);
+            this.tsmiFile.Text = "File";
+            // 
+            // tsmiFile_New
+            // 
+            this.tsmiFile_New.Name = "tsmiFile_New";
+            this.tsmiFile_New.Size = new System.Drawing.Size(132, 30);
+            this.tsmiFile_New.Text = "New";
+            this.tsmiFile_New.Click += new System.EventHandler(this.tsmiFile_New_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(953, 625);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1178, 844);
+            this.Controls.Add(this.msMenu);
+            this.MainMenuStrip = this.msMenu;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.msMenu.ResumeLayout(false);
+            this.msMenu.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.MenuStrip msMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsmiFile;
+        private System.Windows.Forms.ToolStripMenuItem tsmiFile_New;
     }
 }
 
