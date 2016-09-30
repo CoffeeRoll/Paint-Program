@@ -38,6 +38,8 @@ namespace Paint_Program
 
             this.Width = canvasWidth;
             this.Height = canvasHeight;
+            
+
             p = new Panel();
             p.Width = canvasWidth;
             p.Height = canvasHeight;
@@ -58,6 +60,7 @@ namespace Paint_Program
         {            
             lv = new LayerView(canvasWidth, canvasHeight);
             lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
+            this.Location = new Point((maxWidth / 2) - (this.Width / 2), (maxHeight / 2) - (this.Height / 2));
             this.Parent.Controls.Add(lv);
             Parent.Resize += handleParentResize;
         }

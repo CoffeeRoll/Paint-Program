@@ -11,3 +11,5 @@ Paint Program/obj/Debug/Paint Program.pdb
 *.pdb
 Paint Program/obj/Debug/Paint Program.exe
 Paint Program/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+*.suo
+Paint Program/bin/Debug/Paint Program.exe
