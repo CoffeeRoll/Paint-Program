@@ -35,11 +35,13 @@
             // 
             // pbLayerPreview
             // 
+            this.pbLayerPreview.BackColor = System.Drawing.Color.White;
             this.pbLayerPreview.Location = new System.Drawing.Point(3, 3);
             this.pbLayerPreview.Name = "pbLayerPreview";
             this.pbLayerPreview.Size = new System.Drawing.Size(113, 94);
             this.pbLayerPreview.TabIndex = 0;
             this.pbLayerPreview.TabStop = false;
+            this.pbLayerPreview.Click += new System.EventHandler(this.pbLayerPreview_Click);
             // 
             // cbVisible
             // 
@@ -58,6 +60,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.cbVisible);
             this.Controls.Add(this.pbLayerPreview);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "LayerItem";
             this.Size = new System.Drawing.Size(350, 100);
             this.Click += new System.EventHandler(this.LayerForm_Click);

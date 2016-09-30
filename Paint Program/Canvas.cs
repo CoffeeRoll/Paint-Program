@@ -20,6 +20,8 @@ namespace Paint_Program
         //Width and height of Parrent
         private int maxWidth, maxHeight;
 
+        private int scrollWidth, scrollHeight;
+
         LayerView lv;
 
         public Canvas(int w, int h, int pw, int ph)
@@ -30,6 +32,9 @@ namespace Paint_Program
             canvasHeight = h;
             maxWidth = pw;
             maxHeight = ph;
+
+            scrollWidth = System.Windows.Forms.SystemInformation.VerticalScrollBarWidth;
+            scrollHeight = System.Windows.Forms.SystemInformation.HorizontalScrollBarHeight;
 
             this.Width = canvasWidth;
             this.Height = canvasHeight;
@@ -52,14 +57,41 @@ namespace Paint_Program
         public void initCanvas()
         {            
             lv = new LayerView(canvasWidth, canvasHeight);
-            lv.Location = new Point(maxWidth - lv.Width, maxHeight - lv.Height);
+            lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
             this.Parent.Controls.Add(lv);
+            Parent.Resize += handleParentResize;
+        }
+
+        private void handleParentResize(object sender, EventArgs e)
+        {
+            maxWidth = Parent.Width;
+            maxHeight = Parent.Height;
+            lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
+            this.Location = new Point((maxWidth / 2) - (this.Width / 2), (maxHeight / 2) - (this.Height / 2));
         }
 
         public void setOnClick(System.EventHandler func)
         {
-            this.Click += func;
+            //Sets Click response for the Panel only
             p.Click += func;
+        }
+
+        public void setOnMouseDown(System.Windows.Forms.MouseEventHandler func)
+        {
+            //Sets Click response for the Panel only
+            p.MouseDown += func;
+        }
+
+        public void setOnMouseUp(System.Windows.Forms.MouseEventHandler func)
+        {
+            //Sets Click response for the Panel only
+            p.MouseUp += func;
+        }
+
+        public void setOnMouseMove(System.Windows.Forms.MouseEventHandler func)
+        {
+            //Sets Click response for the Panel only
+            p.MouseMove += func;
         }
 
         public void updateCanvas()

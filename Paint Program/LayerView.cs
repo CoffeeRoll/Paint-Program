@@ -25,7 +25,11 @@ namespace Paint_Program
             width = w;
             height = h;
             yLayerLocation = 0;
+            LayerItem setup = new LayerItem(w, h, pf);
+            this.width = setup.Width;
+            this.height = 600;
             Layers = new List<LayerItem>();
+            addLayer();
         }
 
         public void updateSelectedLayer()
@@ -54,12 +58,46 @@ namespace Paint_Program
             return bit;
         }
 
+        public Bitmap getActiveLayerBitmap()
+        {
+            //Searches for the active layer
+            foreach(LayerItem layer in Layers)
+            {
+                if (layer.isLayerActive())
+                {
+                    return layer.getBitmap();
+                }
+            }
+
+            //No Active Layer
+            return null;
+        }
+
         private void bAddLayer_Click(object sender, EventArgs e)
         {
+            addLayer();
+        }
+
+        private void bRemoveLayer_Click(object sender, EventArgs e)
+        {
+            removeLayer();
+        }
+
+        private void addLayer()
+        {
+
+            foreach(LayerItem layer in Layers)
+            {
+                layer.setActive(false);
+            }
+
             LayerItem temp = new LayerItem(width, height, pf);
             temp.Location = new Point(0, yLayerLocation);
             yLayerLocation += temp.Height + 5;
-            Console.WriteLine("Y:" + yLayerLocation);
+            temp.setActive(true);
+            temp.setOnClick(handleLayerItemClick);
+            temp.setOnDoubleClick(handleLayerItemDoubleClick);
+            temp.setActive(true);
             Layers.Add(temp);
             pLayerDisplay.Controls.Add(Layers[Layers.Count - 1]);
 
@@ -67,52 +105,65 @@ namespace Paint_Program
             {
                 bRemoveLayer.Enabled = true;
             }
+
+            redrawLayerItems();
         }
 
-        private void bRemoveLayer_Click(object sender, EventArgs e)
+        private void removeLayer()
         {
             //Foreach loop to iterate through all layers
-            try {
-                for(int t = Layers.Count-1; t >=0; t--) {
+            try
+            {
+                for (int t = Layers.Count - 1; t >= 0; t--)
+                {
                     if (Layers.Count <= 1)
                     {
                         break;
                     }
                     if (Layers[t].isLayerSelected())
                     {
-                        yLayerLocation = Layers[t].Location.Y;
-                        Console.WriteLine("Y: " + yLayerLocation);
-
                         //removes the LayerItem from the Display
                         pLayerDisplay.Controls.Remove(Layers[t]);
 
                         //Removes selected layer from the List
                         Layers.Remove(Layers[t]);
-                        
                     }
                 }
-            }catch(Exception err)
+            }
+            catch (Exception err)
             {
                 Console.WriteLine(err.InnerException);
             }
-            foreach (LayerItem layer in Layers)
-            {
-                if (layer.Location.Y > yLayerLocation)
-                {
-                    Console.WriteLine("Moved " + layer.Location.Y + " " + yLayerLocation);
-
-                    layer.Location = new Point(0, yLayerLocation);
-
-                    yLayerLocation += layer.Height + 5;
-
-                    Console.WriteLine(layer.Location.Y);
-
-                }
-            }
-            pLayerDisplay.Update();
+            redrawLayerItems();
 
             //Disable the Remove Layer Button if only one ayer Exists
             bRemoveLayer.Enabled = (Layers.Count > 1);
+        }
+
+        private void redrawLayerItems()
+        {
+            //reset index
+            yLayerLocation = 0;
+
+            //Redraws in reverse so most recent layer is always on top of the list
+            for(int t = Layers.Count - 1; t >= 0; t--)
+            {
+                //adds AutoScrollPosition.Y to accomodate for vertical scrolling
+                Layers[t].Location = new Point(0, yLayerLocation + pLayerDisplay.AutoScrollPosition.Y);
+                yLayerLocation += Layers[t].Height + 5;
+            }
+        }
+
+        private void handleLayerItemClick(object obj, System.EventArgs args)
+        {
+            LayerItem layer = ((LayerItem)obj);
+            layer.setActive(!layer.isLayerActive());
+        }
+
+        private void handleLayerItemDoubleClick(object obj, System.EventArgs args)
+        {
+            LayerItem layer = ((LayerItem)obj);
+            layer.setSelected(!layer.isLayerSelected());
         }
     }
 }

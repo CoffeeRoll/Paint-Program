@@ -38,20 +38,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label1.Location = new System.Drawing.Point(60, 50);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label1.Location = new System.Drawing.Point(77, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 40);
+            this.label1.Size = new System.Drawing.Size(96, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Width:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label2.Location = new System.Drawing.Point(60, 136);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label2.Location = new System.Drawing.Point(67, 143);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 40);
+            this.label2.Size = new System.Drawing.Size(106, 32);
             this.label2.TabIndex = 1;
             this.label2.Text = "Height:";
             // 
