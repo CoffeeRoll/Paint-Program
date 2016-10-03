@@ -25,3 +25,15 @@ C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Properties.Resources.resources
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Display.resources
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\bin\Debug\Paint Program.exe
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\bin\Debug\Paint Program.pdb
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.csprojResolveAssemblyReference.cache
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Form1.resources
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.LayerItem.resources
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.LayerView.resources
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.NewProjectForm.resources
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Properties.Resources.resources
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.exe
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Canvas.resources
