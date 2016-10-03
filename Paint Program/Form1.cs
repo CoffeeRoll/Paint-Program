@@ -19,6 +19,7 @@ namespace Paint_Program
 
         private void tsmiFile_New_Click(object sender, EventArgs e)
         {
+
             using (NewProjectForm NewProjForm = new NewProjectForm())
             {
                 if (NewProjForm.ShowDialog(this) == DialogResult.OK)
@@ -36,6 +37,41 @@ namespace Paint_Program
 
                 }
             }
+        }
+
+        private void tsmiFile_Save_Image(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmiFile_Import_Image(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmiFile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmiFile_Export_Image(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmiEdit_Undo(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmiEdit_Redo(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmiView_Grid_Lines(object sender, EventArgs e)
+        {
+
         }
     }
 }

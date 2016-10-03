@@ -38,3 +38,16 @@ C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Pro
 C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
 C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.exe
 C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb
+K:\Paint-Program\Paint Program\bin\Debug\Paint Program.exe.config
+K:\Paint-Program\Paint Program\bin\Debug\Paint Program.exe
+K:\Paint-Program\Paint Program\bin\Debug\Paint Program.pdb
+K:\Paint-Program\Paint Program\obj\Debug\Paint Program.csprojResolveAssemblyReference.cache
+K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.Canvas.resources
+K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.Form1.resources
+K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.LayerItem.resources
+K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.LayerView.resources
+K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.NewProjectForm.resources
+K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.Properties.Resources.resources
+K:\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
+K:\Paint-Program\Paint Program\obj\Debug\Paint Program.exe
+K:\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb
