@@ -102,7 +102,7 @@ namespace Paint_Program
         private void initTools()
         {
 
-            Tools.Add(new PaintBrush());
+            Tools.Add(new PencilTool());
 
             foreach (ITool tool in Tools)
             {

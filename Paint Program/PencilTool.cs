@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Paint_Program
 {
-    class PaintBrush : ITool
+    class PencilTool : ITool
     {
         private Graphics graphics;
         private int width, height;
@@ -17,7 +17,7 @@ namespace Paint_Program
 
         private Point pOld, pNew;
 
-        public PaintBrush()
+        public PencilTool()
         {
 
         }
