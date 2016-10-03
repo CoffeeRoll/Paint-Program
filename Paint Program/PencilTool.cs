@@ -40,12 +40,12 @@ namespace Paint_Program
 
         public string getToolIconPath()
         {
-            return @"..\..\Images\brush.png";
+            return @"..\..\Images\pencil.png";
         }
 
         public string getToolTip()
         {
-            return "Paint brush tool";
+            return "Pencil Tool";
         }
 
         public void onMouseDown(object sender, MouseEventArgs e)
