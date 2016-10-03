@@ -26,8 +26,8 @@ namespace Paint_Program
             height = h;
             yLayerLocation = 0;
             LayerItem setup = new LayerItem(w, h, pf);
-            this.width = setup.Width;
-            this.height = 600;
+            this.Width = setup.Width;
+            this.Height = 450;
             Layers = new List<LayerItem>();
             addLayer();
         }
@@ -52,20 +52,25 @@ namespace Paint_Program
 
             for (int t = 0; t < Layers.Count; t++)
             {
-                g.DrawImage(Layers[t].getBitmap(), new Point(0, 0));
+                try {
+                    g.DrawImage(Layers[t].getBitmap(), 0, 0);
+                }catch(Exception e)
+                {
+                    Console.WriteLine("Exception in getRender " + e.InnerException);
+                }
             }
 
             return bit;
         }
 
-        public Bitmap getActiveLayerBitmap()
+        public Graphics getActiveLayerGraphics()
         {
             //Searches for the active layer
             foreach(LayerItem layer in Layers)
             {
                 if (layer.isLayerActive())
                 {
-                    return layer.getBitmap();
+                    return layer.getGraphics();
                 }
             }
 
@@ -149,21 +154,37 @@ namespace Paint_Program
             for(int t = Layers.Count - 1; t >= 0; t--)
             {
                 //adds AutoScrollPosition.Y to accomodate for vertical scrolling
-                Layers[t].Location = new Point(0, yLayerLocation + pLayerDisplay.AutoScrollPosition.Y);
+                Layers[t].Location = new Point(pLayerDisplay.AutoScrollPosition.X, yLayerLocation + pLayerDisplay.AutoScrollPosition.Y);
                 yLayerLocation += Layers[t].Height + 5;
             }
         }
 
         private void handleLayerItemClick(object obj, System.EventArgs args)
         {
-            LayerItem layer = ((LayerItem)obj);
-            layer.setActive(!layer.isLayerActive());
+            if (obj is LayerItem)
+            {
+                LayerItem layer = ((LayerItem)obj);
+                layer.setActive(!layer.isLayerActive());
+            }
+            else if (obj is PictureBox)
+            {
+                LayerItem layer = (LayerItem)((PictureBox)obj).Parent;
+                layer.setActive(!layer.isLayerActive());
+            }
         }
 
         private void handleLayerItemDoubleClick(object obj, System.EventArgs args)
         {
-            LayerItem layer = ((LayerItem)obj);
-            layer.setSelected(!layer.isLayerSelected());
+            if (obj is LayerItem)
+            {
+                LayerItem layer = ((LayerItem)obj);
+                layer.setSelected(!layer.isLayerSelected());
+            }
+            else if (obj is PictureBox)
+            {
+                LayerItem layer = (LayerItem)((PictureBox)obj).Parent;
+                layer.setSelected(!layer.isLayerSelected());
+            }
         }
     }
 }

@@ -43,6 +43,11 @@ namespace Paint_Program
             pbLayerPreview.Image = LayerBitmap;
         }
 
+        public Graphics getGraphics()
+        {
+            return Graphics.FromImage(LayerBitmap);
+        }
+
         public Bitmap getBitmap()
         {
             return LayerBitmap;

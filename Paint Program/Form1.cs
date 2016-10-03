@@ -28,7 +28,6 @@ namespace Paint_Program
 
                     Canvas c = new Canvas(w, h, this.Width, this.Height);
                     c.Location = new Point(200, 5);
-                    c.setOnClick(c_Click);
                     this.Controls.Add(c);
                     c.initCanvas();
                     
@@ -38,11 +37,5 @@ namespace Paint_Program
                 }
             }
         }
-
-        void c_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine("Hey you!");
-        }
-
     }
 }

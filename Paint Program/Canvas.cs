@@ -10,23 +10,48 @@ using System.Windows.Forms;
 
 namespace Paint_Program
 {
+
+    public class Display : Panel
+    {
+        public Display()
+        {
+            this.DoubleBuffered = true;
+        }
+    }
+
     public partial class Canvas : UserControl
     {
 
-        private Panel p;
+        private Display p;
+
+        private Graphics g;
 
         private int canvasWidth, canvasHeight;
 
         //Width and height of Parrent
         private int maxWidth, maxHeight;
 
+        //width and height of the vertical and horizontal scroll bars respectivly
         private int scrollWidth, scrollHeight;
 
+        //Index of the currently active tool
+        private int iActiveTool;
+
         LayerView lv;
+        ToolStrip ts;
+
+        private List<ITool> Tools;
+        private List<ToolStripButton> ToolButtons;
+
+        SharedSettings ss;
 
         public Canvas(int w, int h, int pw, int ph)
         {
             InitializeComponent();
+
+            ss = new SharedSettings();
+            Tools = new List<ITool>();
+            ToolButtons = new List<ToolStripButton>();
 
             canvasWidth = w;
             canvasHeight = h;
@@ -38,12 +63,16 @@ namespace Paint_Program
 
             this.Width = canvasWidth;
             this.Height = canvasHeight;
-            
 
-            p = new Panel();
+            p = new Display();
             p.Width = canvasWidth;
             p.Height = canvasHeight;
             p.BackgroundImageLayout = ImageLayout.Tile;
+            p.MouseDown += handleMouseDown;
+            p.MouseUp += handleMouseUp;
+            p.MouseMove += handleMouseMove;
+            p.Paint += EDisplayPaint;
+            
             
             try {
                 p.BackgroundImage = Bitmap.FromFile(@"..\..\Images\transparent_texture.jpg");
@@ -51,7 +80,9 @@ namespace Paint_Program
             {
                 p.BackColor = Color.White;
             }
-            
+
+            g = p.CreateGraphics();
+
             this.Controls.Add(p);
 
         }
@@ -62,7 +93,41 @@ namespace Paint_Program
             lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
             this.Location = new Point((maxWidth / 2) - (this.Width / 2), (maxHeight / 2) - (this.Height / 2));
             this.Parent.Controls.Add(lv);
-            Parent.Resize += handleParentResize;
+
+            ts = new ToolStrip();
+            ts.Dock = DockStyle.Left;
+            ts.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            ts.ShowItemToolTips = true;
+
+            this.Parent.Controls.Add(ts);
+            this.Parent.Resize += handleParentResize;
+
+            initTools();
+        }
+
+        private void initTools()
+        {
+
+            Tools.Add(new PaintBrush());
+
+            foreach (ITool tool in Tools)
+            {
+                ToolStripButton temp = new ToolStripButton(Image.FromFile(tool.getToolIconPath()));
+                temp.Click += handleToolStripItemClick;
+                ToolButtons.Add(temp);
+                ts.Items.Add(temp);
+            }
+
+            
+            
+            /**/
+        }
+
+        private void handleToolStripItemClick(object sender, EventArgs e)
+        {
+            iActiveTool = ToolButtons.IndexOf((ToolStripButton)sender);
+            Tools[iActiveTool].init(lv.getActiveLayerGraphics(), canvasWidth, canvasHeight, ss);
+            Console.WriteLine(Tools[iActiveTool].getToolTip());
         }
 
         private void handleParentResize(object sender, EventArgs e)
@@ -71,38 +136,39 @@ namespace Paint_Program
             maxHeight = Parent.Height;
             lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
             this.Location = new Point((maxWidth / 2) - (this.Width / 2), (maxHeight / 2) - (this.Height / 2));
+            
         }
 
-        public void setOnClick(System.EventHandler func)
+        public void handleMouseDown(object sender, MouseEventArgs e)
         {
-            //Sets Click response for the Panel only
-            p.Click += func;
+            if(iActiveTool >= 0)
+                Tools[iActiveTool].onMouseDown(sender, e);
         }
 
-        public void setOnMouseDown(System.Windows.Forms.MouseEventHandler func)
+        public void handleMouseUp(object sender, MouseEventArgs e)
         {
-            //Sets Click response for the Panel only
-            p.MouseDown += func;
+            if (iActiveTool >= 0)
+                Tools[iActiveTool].onMouseUp(sender, e);
         }
 
-        public void setOnMouseUp(System.Windows.Forms.MouseEventHandler func)
+        public void handleMouseMove(object sender, MouseEventArgs e)
         {
-            //Sets Click response for the Panel only
-            p.MouseUp += func;
+            if (iActiveTool >= 0)
+                Tools[iActiveTool].onMouseMove(sender, e);
+            updateCanvas(g);
         }
 
-        public void setOnMouseMove(System.Windows.Forms.MouseEventHandler func)
+        private void EDisplayPaint(object sender, PaintEventArgs e)
         {
-            //Sets Click response for the Panel only
-            p.MouseMove += func;
+            updateCanvas(e.Graphics);
         }
 
-        public void updateCanvas()
+        public void updateCanvas(Graphics k)
         {
-            Graphics g;
-            Bitmap b = this.getBitmap();
-            g = Graphics.FromImage(b);
-            g.DrawImage(lv.getRender(), 0, 0);
+            Bitmap bit = lv.getRender();
+            p.Invalidate();
+            k.DrawImage(bit, 0, 0);
+            
         }
 
         public void setBitmap(Bitmap bit)
