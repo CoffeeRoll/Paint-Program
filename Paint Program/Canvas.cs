@@ -11,13 +11,7 @@ using System.Windows.Forms;
 namespace Paint_Program
 {
 
-    public class Display : Panel
-    {
-        public Display()
-        {
-            this.DoubleBuffered = true;
-        }
-    }
+    
 
     public partial class Canvas : UserControl
     {
