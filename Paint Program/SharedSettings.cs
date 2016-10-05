@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Paint_Program
 {
-    class SharedSettings
+    public class SharedSettings
     {
         public static Color cPrimaryBrushColor{ get; set; }
 
