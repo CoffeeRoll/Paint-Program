@@ -62,6 +62,7 @@
     <Compile Include="Display.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ErasoirTool.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
