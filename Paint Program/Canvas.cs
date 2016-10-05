@@ -33,8 +33,10 @@ namespace Paint_Program
         //Index of the currently active tool
         private int iActiveTool;
 
+
         LayerView lv;
         ToolStrip ts;
+        BrushSettings bs;
 
         private List<ITool> Tools;
         private List<ToolStripButton> ToolButtons;
@@ -84,12 +86,15 @@ namespace Paint_Program
 
             this.Controls.Add(p);
 
+            
+
         }
 
         public void initCanvas()
         {            
             lv = new LayerView(canvasWidth, canvasHeight);
             lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
+
             this.Location = new Point((maxWidth / 2) - (this.Width / 2), (maxHeight / 2) - (this.Height / 2));
             this.Parent.Controls.Add(lv);
 
@@ -104,6 +109,11 @@ namespace Paint_Program
 
             this.Parent.Controls.Add(ts);
             this.Parent.Resize += handleParentResize;
+
+            bs = new BrushSettings(ss);
+            bs.Location = new Point(maxWidth - bs.Width, 0);
+            this.Parent.Controls.Add(bs);
+
 
             initTools();
         }
@@ -145,6 +155,8 @@ namespace Paint_Program
             lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
             this.Location = new Point((maxWidth / 2) - (this.Width / 2), (maxHeight / 2) - (this.Height / 2));
             ts.Height = maxHeight - 25;
+            bs.Location = new Point(maxWidth - bs.Width, 0);
+
 
         }
 
