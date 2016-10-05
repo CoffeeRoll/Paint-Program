@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Paint_Program
 {
-    class PaintBrush : ITool
+    class BrushTool : ITool
     {
         private Graphics graphics;
         private int width, height;
@@ -17,9 +18,28 @@ namespace Paint_Program
 
         private Point pOld, pNew;
 
-        public PaintBrush()
+        private Pen pPrime, pSec;
+
+        public BrushTool()
         {
 
+        }
+
+        private void updateBrush()
+        {
+            int R = settings.getPrimaryBrushColor().R;
+            int G = settings.getPrimaryBrushColor().G;
+            int B = settings.getPrimaryBrushColor().B;
+
+            pPrime = new Pen(Color.FromArgb(settings.getBrushHardness(), R, G, B), settings.getBrushSize());
+            pPrime.LineJoin = LineJoin.Round;
+
+            R = settings.getSecondaryBrushColor().R;
+            G = settings.getSecondaryBrushColor().G;
+            B = settings.getSecondaryBrushColor().B;
+
+            pSec = new Pen(Color.FromArgb(settings.getBrushHardness(), R, G, B), settings.getBrushSize());
+            pSec.LineJoin = LineJoin.Round;
         }
 
         public void init(Graphics g, int w, int h, SharedSettings s)
@@ -31,11 +51,10 @@ namespace Paint_Program
             bActive = false;
             bInit = true;
             bMouseDown = false;
-        }
 
-        public Bitmap getCanvas()
-        {
-            return new Bitmap(width, height, graphics);
+            graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+            updateBrush();
         }
 
         public string getToolIconPath()
@@ -45,7 +64,7 @@ namespace Paint_Program
 
         public string getToolTip()
         {
-            return "Paint brush tool";
+            return "Brush Tool";
         }
 
         public void onMouseDown(object sender, MouseEventArgs e)
@@ -64,13 +83,13 @@ namespace Paint_Program
                 if (e.Button == MouseButtons.Left)
                 {
                     pNew = e.Location;
-                    graphics.DrawLine(new Pen(settings.getPrimaryBrushColor()), pOld, pNew);
+                    graphics.DrawLine(pPrime, pOld, pNew);
                     pOld = pNew;
                 }
                 else
                 {
                     pNew = e.Location;
-                    graphics.DrawLine(new Pen(settings.getSecondaryBrushColor()), pOld, pNew);
+                    graphics.DrawLine(pSec, pOld, pNew);
                     pOld = pNew;
                 }
             }
@@ -88,6 +107,20 @@ namespace Paint_Program
         public bool isInitalized()
         {
             return bInit;
+        }
+
+        public Bitmap getToolLayer()
+        {
+            return null;
+        }
+
+        public bool requiresLayerData()
+        {
+            return false;
+        }
+
+        public void setLayerData(Bitmap bit)
+        {
         }
     }
 }

@@ -15,6 +15,8 @@ namespace Paint_Program
 
         public static float fBrushSize { get; set; }
 
+        public static int iBrushHardness { get; set; }
+
 
         public SharedSettings()
         {
@@ -22,7 +24,9 @@ namespace Paint_Program
 
             cSecondaryBrushColor = Color.White;
 
-            fBrushSize = 1.0F;
+            fBrushSize = 8.0F;
+
+            iBrushHardness = 100;
         }
 
 
@@ -41,6 +45,10 @@ namespace Paint_Program
             fBrushSize = f;
         }
 
+        public void setBrushHardness(int f)
+        {
+            iBrushHardness = f;
+        }
 
         public Color getPrimaryBrushColor()
         {
@@ -55,6 +63,11 @@ namespace Paint_Program
         public float getBrushSize()
         {
             return fBrushSize;
+        }
+
+        public int getBrushHardness()
+        {
+            return iBrushHardness;
         }
 
     }

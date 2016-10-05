@@ -1,4 +1,6 @@
-﻿namespace Paint_Program
+﻿using System;
+
+namespace Paint_Program
 {
     partial class Canvas
     {
