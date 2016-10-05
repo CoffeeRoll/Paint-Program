@@ -28,6 +28,8 @@ namespace Paint_Program
         //width and height of the vertical and horizontal scroll bars respectivly
         private int scrollWidth, scrollHeight;
 
+        private int tsWidth, menuHeight;
+
         //Index of the currently active tool
         private int iActiveTool;
 
@@ -51,6 +53,9 @@ namespace Paint_Program
             canvasHeight = h;
             maxWidth = pw;
             maxHeight = ph;
+
+            tsWidth = 50;
+            menuHeight = 25;
 
             scrollWidth = System.Windows.Forms.SystemInformation.VerticalScrollBarWidth;
             scrollHeight = System.Windows.Forms.SystemInformation.HorizontalScrollBarHeight;
@@ -89,7 +94,11 @@ namespace Paint_Program
             this.Parent.Controls.Add(lv);
 
             ts = new ToolStrip();
-            ts.Dock = DockStyle.Left;
+            ts.Dock = DockStyle.None;
+            ts.Location = new Point(0, menuHeight);
+            ts.AutoSize = false;
+            ts.Height = maxHeight - menuHeight;
+            ts.Width = tsWidth;
             ts.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             ts.ShowItemToolTips = true;
 
@@ -103,10 +112,14 @@ namespace Paint_Program
         {
 
             Tools.Add(new PencilTool());
+            Tools.Add(new BrushTool());
 
             foreach (ITool tool in Tools)
             {
                 ToolStripButton temp = new ToolStripButton(Image.FromFile(tool.getToolIconPath()));
+                temp.AutoSize = false;
+                temp.Width = tsWidth;
+                temp.Height = temp.Width;
                 temp.Click += handleToolStripItemClick;
                 ToolButtons.Add(temp);
                 ts.Items.Add(temp);
@@ -130,12 +143,17 @@ namespace Paint_Program
             maxHeight = Parent.Height;
             lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
             this.Location = new Point((maxWidth / 2) - (this.Width / 2), (maxHeight / 2) - (this.Height / 2));
-            
+            ts.Height = maxHeight - 25;
+
         }
 
         public void handleMouseDown(object sender, MouseEventArgs e)
         {
-            if(iActiveTool >= 0)
+            if (iActiveTool >= 0)
+            {
+                Tools[iActiveTool].init(lv.getActiveLayerGraphics(), canvasWidth, canvasHeight, ss);
+            }
+            if (iActiveTool >= 0)
                 Tools[iActiveTool].onMouseDown(sender, e);
         }
 
@@ -155,6 +173,8 @@ namespace Paint_Program
         private void EDisplayPaint(object sender, PaintEventArgs e)
         {
             updateCanvas(e.Graphics);
+
+            lv.updateActiveLayer();
         }
 
         public void updateCanvas(Graphics k)

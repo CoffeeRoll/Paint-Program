@@ -82,6 +82,7 @@
     <Compile Include="NewProjectForm.Designer.cs">
       <DependentUpon>NewProjectForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BrushTool.cs" />
     <Compile Include="PencilTool.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -28,20 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbLayerPreview = new System.Windows.Forms.PictureBox();
             this.cbVisible = new System.Windows.Forms.CheckBox();
+            this.pbLayerPreview = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbLayerPreview)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbLayerPreview
-            // 
-            this.pbLayerPreview.BackColor = System.Drawing.Color.White;
-            this.pbLayerPreview.Location = new System.Drawing.Point(3, 3);
-            this.pbLayerPreview.Name = "pbLayerPreview";
-            this.pbLayerPreview.Size = new System.Drawing.Size(113, 94);
-            this.pbLayerPreview.TabIndex = 0;
-            this.pbLayerPreview.TabStop = false;
-            this.pbLayerPreview.Click += new System.EventHandler(this.pbLayerPreview_Click);
             // 
             // cbVisible
             // 
@@ -54,12 +44,20 @@
             this.cbVisible.UseVisualStyleBackColor = true;
             this.cbVisible.CheckedChanged += new System.EventHandler(this.cbVisible_CheckedChanged);
             // 
+            // pbLayerPreview
+            // 
+            this.pbLayerPreview.Location = new System.Drawing.Point(3, 3);
+            this.pbLayerPreview.Name = "pbLayerPreview";
+            this.pbLayerPreview.Size = new System.Drawing.Size(126, 94);
+            this.pbLayerPreview.TabIndex = 2;
+            this.pbLayerPreview.TabStop = false;
+            // 
             // LayerItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.cbVisible);
             this.Controls.Add(this.pbLayerPreview);
+            this.Controls.Add(this.cbVisible);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "LayerItem";
             this.Size = new System.Drawing.Size(350, 100);
@@ -71,8 +69,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pbLayerPreview;
         private System.Windows.Forms.CheckBox cbVisible;
+        private System.Windows.Forms.PictureBox pbLayerPreview;
     }
 }

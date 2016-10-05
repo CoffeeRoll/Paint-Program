@@ -13,29 +13,29 @@ namespace Paint_Program
 {
     public partial class LayerItem : UserControl
     {
-        private bool isSelected;
         private bool isVisible;
         private bool isActive;
-
-        private Color cSelected = Color.FromArgb(105, 185, 255);
-        private Color cActive = Color.FromArgb(100, 150, 100);
-        private Color cNotSelected = Color.FromArgb(192, 192, 192);
+        
+        private Color cActive = Color.FromArgb(100, 155, 155);
+        private Color cNotActive = Color.FromArgb(192, 192, 192);
 
         private Bitmap LayerBitmap;
 
         public LayerItem(int w, int h, PixelFormat pf)
         {
             InitializeComponent();
-            isSelected = false;
             isVisible = true;
             LayerBitmap = new Bitmap(w, h, pf);
 
             cbVisible.Checked = true;
 
-            this.BackColor = cNotSelected;
+            this.BackColor = cNotActive;
 
-            //Stretch inner Bitmap to fit
+            //Stretch The Preview Image to fit
             pbLayerPreview.SizeMode = PictureBoxSizeMode.StretchImage;
+            
+            pbLayerPreview.BackColor = Color.White;
+            this.Update();
         }
 
         public void updatePreview()
@@ -65,21 +65,10 @@ namespace Paint_Program
 
         }
 
-        public void setSelected(bool f)
-        {
-            isSelected = f;
-            updateColor();
-        }
-
         public void setVisibility(bool f)
         {
             isVisible = f;
             cbVisible.Checked = isVisible;
-        }
-
-        public bool isLayerSelected()
-        {
-            return isSelected;
         }
 
         public bool isLayerVisible()
@@ -94,30 +83,26 @@ namespace Paint_Program
 
         private void updateColor()
         {
-            if (isSelected)
+            if (isActive)
             {
-                BackColor = cSelected;
-            }
-            else if (isActive)
-            {
-                BackColor = cActive;
+                this.BackColor = cActive;
             }
             else
             {
-                BackColor = cNotSelected;
+                this.BackColor = cNotActive;
             }
+        }
+
+        public void updateLayer()
+        {
+            
+            
         }
 
         public void setOnClick(System.EventHandler func)
         {
             this.Click += func;
             pbLayerPreview.Click += func;
-        }
-
-        public void setOnDoubleClick(System.EventHandler func)
-        {
-            this.DoubleClick += func;
-            pbLayerPreview.DoubleClick += func;
         }
 
         private void cbVisible_CheckedChanged(object sender, EventArgs e)
