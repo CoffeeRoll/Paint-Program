@@ -13,8 +13,10 @@ namespace Paint_Program
         /* Initalizes the Graphics object that the tool manipulates, as well as the width and height */
         void init(Graphics g, int w, int h, SharedSettings s);
 
-        /* Returns a bitmap of the canvas */
-        Bitmap getCanvas();
+        /* Returns a bitmap of the layer produced by the tool to show information not in the picture
+           such as when the pen tool needs nodes to maipulate the curve
+        */
+        Bitmap getToolLayer();
 
         /* Called when the mouse goes down */
         void onMouseDown(object sender, MouseEventArgs e);
@@ -32,6 +34,10 @@ namespace Paint_Program
 
         /* returns a bitmap that will be displayed in the ToolStrip */
         string getToolIconPath();
+
+        bool requiresLayerData();
+
+        void setLayerData(Bitmap bit);
 
     }
 }

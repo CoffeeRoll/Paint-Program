@@ -113,6 +113,7 @@ namespace Paint_Program
 
             Tools.Add(new PencilTool());
             Tools.Add(new BrushTool());
+            Tools.Add(new ColorSamplingTool());
 
             foreach (ITool tool in Tools)
             {
@@ -152,6 +153,10 @@ namespace Paint_Program
             if (iActiveTool >= 0)
             {
                 Tools[iActiveTool].init(lv.getActiveLayerGraphics(), canvasWidth, canvasHeight, ss);
+                if (Tools[iActiveTool].requiresLayerData())
+                {
+                    Tools[iActiveTool].setLayerData(lv.getActiveLayerBitmap());
+                }
             }
             if (iActiveTool >= 0)
                 Tools[iActiveTool].onMouseDown(sender, e);

@@ -52,6 +52,7 @@
     <Compile Include="Canvas.Designer.cs">
       <DependentUpon>Canvas.cs</DependentUpon>
     </Compile>
+    <Compile Include="ColorSamplingTool.cs" />
     <Compile Include="Display.cs">
       <SubType>Component</SubType>
     </Compile>

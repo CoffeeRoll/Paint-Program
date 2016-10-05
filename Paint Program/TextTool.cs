@@ -33,11 +33,6 @@ namespace Paint_Program
             bMouseDown = false;
         }
 
-        public Bitmap getCanvas()
-        {
-            return new Bitmap(width, height, graphics);
-        }
-
         public string getToolIconPath()
         {
             return @"..\..\Images\text.png";
@@ -89,6 +84,21 @@ namespace Paint_Program
                 bMouseDown = false;
 
             }
+        }
+
+        public Bitmap getToolLayer()
+        {
+            return null;
+        }
+
+        public bool requiresLayerData()
+        {
+            return false;
+        }
+
+        public void setLayerData(Bitmap bit)
+        {
+            
         }
     }
 }

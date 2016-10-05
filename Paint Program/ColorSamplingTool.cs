@@ -8,16 +8,17 @@ using System.Windows.Forms;
 
 namespace Paint_Program
 {
-    class PencilTool : ITool
+    class ColorSamplingTool : ITool
     {
+
         private Graphics graphics;
         private int width, height;
         private SharedSettings settings;
         private bool bActive, bMouseDown, bInit;
 
-        private Point pOld, pNew;
+        private Bitmap bLayer;
 
-        public PencilTool()
+        public ColorSamplingTool()
         {
 
         }
@@ -33,9 +34,15 @@ namespace Paint_Program
             bMouseDown = false;
         }
 
+        public Bitmap getCanvas()
+        {
+            //Not used
+            return null;
+        }
+
         public string getToolIconPath()
         {
-            return @"..\..\Images\pencil.png";
+            return @"..\..\Images\sampler.png";
         }
 
         public string getToolTip()
@@ -48,27 +55,23 @@ namespace Paint_Program
             if (graphics != null)
             {
                 bMouseDown = true;
-                pOld = e.Location;
+                Color c = bLayer.GetPixel(e.Location.X, e.Location.Y);
+
+                if (e.Button == MouseButtons.Left) {
+                    settings.setPrimaryBrushColor(c);
+                    Console.WriteLine("Main Color Set to " + c.ToString());
+                }
+                else if(e.Button == MouseButtons.Right)
+                {
+                    settings.setSecondaryBrushColor(c);
+                }
+
             }
         }
 
         public void onMouseMove(object sender, MouseEventArgs e)
         {
-            if (graphics != null && bMouseDown)
-            {
-                if (e.Button == MouseButtons.Left)
-                {
-                    pNew = e.Location;
-                    graphics.DrawLine(new Pen(settings.getPrimaryBrushColor()), pOld, pNew);
-                    pOld = pNew;
-                }
-                else
-                {
-                    pNew = e.Location;
-                    graphics.DrawLine(new Pen(settings.getSecondaryBrushColor()), pOld, pNew);
-                    pOld = pNew;
-                }
-            }
+
         }
 
         public void onMouseUp(object sender, MouseEventArgs e)
@@ -92,11 +95,12 @@ namespace Paint_Program
 
         public bool requiresLayerData()
         {
-            return false;
+            return true;
         }
 
         public void setLayerData(Bitmap bit)
         {
+            bLayer = bit;
         }
     }
 }

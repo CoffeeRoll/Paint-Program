@@ -57,11 +57,6 @@ namespace Paint_Program
             updateBrush();
         }
 
-        public Bitmap getCanvas()
-        {
-            return new Bitmap(width, height, graphics);
-        }
-
         public string getToolIconPath()
         {
             return @"..\..\Images\brush.png";
@@ -112,6 +107,20 @@ namespace Paint_Program
         public bool isInitalized()
         {
             return bInit;
+        }
+
+        public Bitmap getToolLayer()
+        {
+            return null;
+        }
+
+        public bool requiresLayerData()
+        {
+            return false;
+        }
+
+        public void setLayerData(Bitmap bit)
+        {
         }
     }
 }

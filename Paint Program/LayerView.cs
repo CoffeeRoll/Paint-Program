@@ -93,6 +93,21 @@ namespace Paint_Program
             return null;
         }
 
+        public Bitmap getActiveLayerBitmap()
+        {
+            //Searches for the active layer
+            foreach (LayerItem layer in Layers)
+            {
+                if (layer.isLayerActive())
+                {
+                    return layer.getBitmap();
+                }
+            }
+
+            //No Active Layer
+            return null;
+        }
+
         private void bAddLayer_Click(object sender, EventArgs e)
         {
             addLayer();
