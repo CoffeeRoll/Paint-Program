@@ -84,5 +84,20 @@ namespace Paint_Program
 
             }
         }
+
+        public Bitmap getToolLayer()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool requiresLayerData()
+        {
+            return false;
+        }
+
+        public void setLayerData(Bitmap bit)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

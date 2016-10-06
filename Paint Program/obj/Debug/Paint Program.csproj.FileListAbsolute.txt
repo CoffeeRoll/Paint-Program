@@ -38,3 +38,4 @@ C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Pro
 C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Canvas.resources
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.BrushSettings.resources
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.csprojResolveAssemblyReference.cache

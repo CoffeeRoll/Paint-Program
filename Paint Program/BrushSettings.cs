@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Paint_Program
 {
     public partial class BrushSettings : UserControl
     {
         SharedSettings settings;
+        BackgroundWorker bw;
 
         public BrushSettings(SharedSettings s)
         {
@@ -31,21 +33,40 @@ namespace Paint_Program
 
         private void pPrime_Click(object sender, EventArgs e)
         {
-
-            if(cdPicker.ShowDialog() == DialogResult.OK)
+            bw = new BackgroundWorker();
+            bw.DoWork += (send, args) =>
+            {
+                if (cdPicker.ShowDialog() == DialogResult.OK)
+                {
+                    settings.setPrimaryBrushColor(cdPicker.Color);
+                }
+                
+            };
+            bw.RunWorkerCompleted += (send, args) =>
             {
                 pPrime.BackColor = cdPicker.Color;
-                settings.setPrimaryBrushColor(cdPicker.Color);
-            }
+                pPrime.Refresh();
+            };
+            bw.RunWorkerAsync();
         }
 
         private void pSec_Click(object sender, EventArgs e)
         {
-            if (cdPicker.ShowDialog() == DialogResult.OK)
+            bw = new BackgroundWorker();
+            bw.DoWork += (send, args) =>
             {
-                pPrime.BackColor = cdPicker.Color;
-                settings.setPrimaryBrushColor(cdPicker.Color);
-            }
+                if (cdPicker.ShowDialog() == DialogResult.OK)
+                {
+                    settings.setSecondaryBrushColor(cdPicker.Color);
+                }
+
+            };
+            bw.RunWorkerCompleted += (send, args) =>
+            {
+                pSec.BackColor = cdPicker.Color;
+                pSec.Refresh();
+            };
+            bw.RunWorkerAsync();
         }
 
         private void tbSize_ValueChanged(object sender, EventArgs e)

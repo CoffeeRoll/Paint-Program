@@ -68,6 +68,8 @@ namespace Paint_Program
             p = new Display();
             p.Width = canvasWidth;
             p.Height = canvasHeight;
+            p.MaximumSize = new Size(canvasWidth, canvasHeight);
+            p.Size = new Size(canvasWidth, canvasHeight);
             p.BackgroundImageLayout = ImageLayout.Tile;
             p.MouseDown += handleMouseDown;
             p.MouseUp += handleMouseUp;
