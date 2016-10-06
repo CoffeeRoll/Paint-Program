@@ -49,6 +49,14 @@ namespace Paint_Program
             {
                 bMouseDown = true;
                 pOld = e.Location;
+                if (e.Button == MouseButtons.Left)
+                {
+                    graphics.FillRectangle(new SolidBrush(settings.getPrimaryBrushColor()), e.X, e.Y, 1, 1);
+                }
+                else if(e.Button == MouseButtons.Right)
+                {
+                    graphics.FillRectangle(new SolidBrush(settings.getSecondaryBrushColor()), e.X, e.Y, 1, 1);
+                }
             }
         }
 

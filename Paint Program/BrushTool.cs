@@ -52,7 +52,10 @@ namespace Paint_Program
             bInit = true;
             bMouseDown = false;
 
-            graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            if (g != null)
+            {
+                graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            }
 
             updateBrush();
         }

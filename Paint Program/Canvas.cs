@@ -153,18 +153,23 @@ namespace Paint_Program
 
         private void handleParentResize(object sender, EventArgs e)
         {
+            //Updates Parent Width and Height Values
             maxWidth = Parent.Width;
             maxHeight = Parent.Height;
+            
+            //Moves all the Controls to their new location
             lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
             this.Location = new Point((maxWidth / 2) - (this.Width / 2), (maxHeight / 2) - (this.Height / 2));
-            ts.Height = maxHeight - 25;
-            bs.Location = new Point(maxWidth - bs.Width, 0);
+            ts.Height = maxHeight - menuHeight;
+            bs.Location = new Point(maxWidth - bs.Width, menuHeight);
 
-
+            //Prevent controls from not redrawing
+            this.Parent.Refresh();
         }
 
         public void handleMouseDown(object sender, MouseEventArgs e)
         {
+            //If there is a selected Tool
             if (iActiveTool >= 0)
             {
                 Tools[iActiveTool].init(lv.getActiveLayerGraphics(), canvasWidth, canvasHeight, ss);

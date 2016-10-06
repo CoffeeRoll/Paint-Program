@@ -52,6 +52,7 @@ namespace Paint_Program
                 if (layer.isLayerActive())
                 {
                     layer.updatePreview();
+                    layer.Refresh();
                 }
             }
         }

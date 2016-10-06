@@ -36,7 +36,7 @@ namespace Paint_Program
                 tbWidth.Update();
             }
 
-            if (!Int32.TryParse(tbHeight.Text, out height) || (Int32.TryParse(tbWidth.Text, out height) && height <= 0))
+            if (!Int32.TryParse(tbHeight.Text, out height) || (Int32.TryParse(tbHeight.Text, out height) && height <= 0))
             {
                 //Failed, Invalid Height Value
                 tbHeight.BackColor = Color.Pink;
