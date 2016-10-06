@@ -126,6 +126,7 @@ namespace Paint_Program
             Tools.Add(new PencilTool());
             Tools.Add(new BrushTool());
             Tools.Add(new ColorSamplingTool());
+            Tools.Add(new ErasoirTool());
 
             foreach (ITool tool in Tools)
             {

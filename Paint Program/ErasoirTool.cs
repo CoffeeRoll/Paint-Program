@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Paint_Program
 {
     class ErasoirTool : ITool
@@ -24,7 +25,7 @@ namespace Paint_Program
 
         public string getToolIconPath()
         {
-            return @"..\..\Images\erasoir";
+            return @"..\..\Images\erasoir.png";
         }
 
         public string getToolTip()
