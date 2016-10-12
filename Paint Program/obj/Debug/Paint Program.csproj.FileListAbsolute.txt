@@ -39,7 +39,6 @@ C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Pro
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Canvas.resources
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.BrushSettings.resources
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.csprojResolveAssemblyReference.cache
-<<<<<<< HEAD
 K:\Paint-Program\Paint Program\bin\Debug\Paint Program.exe.config
 K:\Paint-Program\Paint Program\obj\Debug\Paint Program.exe
 K:\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb
@@ -54,6 +53,4 @@ K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.LayerView.resources
 K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.NewProjectForm.resources
 K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.Properties.Resources.resources
 K:\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
-=======
 C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.BrushSettings.resources
->>>>>>> origin/master
