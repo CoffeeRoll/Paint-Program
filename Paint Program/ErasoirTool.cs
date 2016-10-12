@@ -50,7 +50,7 @@ namespace Paint_Program
 
             if (graphics != null)
             {
-                graphics.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceOver;
+                graphics.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
             }
         }
 
