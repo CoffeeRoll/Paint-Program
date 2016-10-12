@@ -1,0 +1,5 @@
+C:\Users\CoffeeRoll\Desktop\WintabDN\WintabDN\bin\Debug\WintabDN.dll
+C:\Users\CoffeeRoll\Desktop\WintabDN\WintabDN\bin\Debug\WintabDN.pdb
+C:\Users\CoffeeRoll\Desktop\WintabDN\WintabDN\obj\Debug\WintabDN.csprojResolveAssemblyReference.cache
+C:\Users\CoffeeRoll\Desktop\WintabDN\WintabDN\obj\Debug\WintabDN.dll
+C:\Users\CoffeeRoll\Desktop\WintabDN\WintabDN\obj\Debug\WintabDN.pdb
