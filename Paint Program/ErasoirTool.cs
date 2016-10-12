@@ -48,7 +48,10 @@ namespace Paint_Program
             eraser = new Pen(Color.Transparent);
             eraser.Width = settings.getBrushSize();
 
-            g.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
+            if (graphics != null)
+            {
+                graphics.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceOver;
+            }
         }
 
         public bool isInitalized()
@@ -74,12 +77,6 @@ namespace Paint_Program
                     pNew = e.Location;
                     //graphics.FillRectangle(new SolidBrush(Color.Transparent), new Rectangle(pOld, new System.Drawing.Size(width, height)));
                     graphics.DrawLine(eraser, pOld, pNew);
-                    pOld = pNew;
-                }
-                else
-                {
-                    pNew = e.Location;
-                    graphics.DrawLine(new Pen(settings.getSecondaryBrushColor()), pOld, pNew);
                     pOld = pNew;
                 }
             }

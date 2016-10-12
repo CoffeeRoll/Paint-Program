@@ -206,6 +206,7 @@ namespace Paint_Program
         {
             Bitmap bit = lv.getRender();
             p.Invalidate();
+            System.GC.Collect();
             k.DrawImage(bit, 0, 0);
             
         }

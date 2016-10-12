@@ -31,6 +31,11 @@ namespace Paint_Program
             bActive = false;
             bInit = true;
             bMouseDown = false;
+
+            if (graphics != null)
+            {
+                graphics.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceOver;
+            }
         }
 
         public string getToolIconPath()
@@ -82,7 +87,6 @@ namespace Paint_Program
             if (graphics != null)
             {
                 bMouseDown = false;
-
             }
         }
 

@@ -52,12 +52,14 @@ namespace Paint_Program
             bInit = true;
             bMouseDown = false;
 
-            if (g != null)
+            if (graphics != null)
             {
                 graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                graphics.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceOver;
             }
 
             updateBrush();
+
         }
 
         public string getToolIconPath()
@@ -103,7 +105,6 @@ namespace Paint_Program
             if (graphics != null)
             {
                 bMouseDown = false;
-
             }
         }
 
