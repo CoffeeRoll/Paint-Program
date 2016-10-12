@@ -38,40 +38,45 @@ namespace Paint_Program
                 }
             }
         }
-
-        private void tsmiFile_Save_Image(object sender, EventArgs e)
+        
+        private void tsmiFile_Save_Click(object sender, EventArgs e)
         {
-
+            //Save Image Function
         }
 
-        private void tsmiFile_Import_Image(object sender, EventArgs e)
+        private void tsmiFile_Import_Click(object sender, EventArgs e)
         {
-
+            //Import Image
         }
 
-        private void tsmiFile_Click(object sender, EventArgs e)
+        private void tsmiFile_Export_Click(object sender, EventArgs e)
         {
-
+            //Export Image
         }
 
-        private void tsmiFile_Export_Image(object sender, EventArgs e)
+        private void tsmiEdit_Undo_Click(object sender, EventArgs e)
         {
-
+            //Undo Function
         }
 
-        private void tsmiEdit_Undo(object sender, EventArgs e)
+        private void tsmiEdit_Redo_Click(object sender, EventArgs e)
         {
-
+            //Redo Function
         }
 
-        private void tsmiEdit_Redo(object sender, EventArgs e)
+        private void tsmiEdit_ImageSize_Click(object sender, EventArgs e)
         {
-
+            //Resize Image Function
         }
 
-        private void tsmiView_Grid_Lines(object sender, EventArgs e)
+        private void tsmiView_GridLines_Click(object sender, EventArgs e)
         {
+            //Show/Hide Grid Lines
+        }
 
+        private void tsmiView_Tablet_Click(object sender, EventArgs e)
+        {
+            //Tablet Mode
         }
     }
 }
