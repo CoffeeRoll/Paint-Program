@@ -15,6 +15,7 @@ namespace Paint_Program
         private int width, height;
         private SharedSettings settings;
         private bool bActive, bMouseDown, bInit;
+        private Pen eraser;
 
         private Point pOld, pNew;
 
@@ -42,6 +43,12 @@ namespace Paint_Program
             bActive = false;
             bInit = true;
             bMouseDown = false;
+
+
+            eraser = new Pen(Color.Transparent);
+            eraser.Width = settings.getBrushSize();
+
+            g.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
         }
 
         public bool isInitalized()
@@ -65,7 +72,8 @@ namespace Paint_Program
                 if (e.Button == MouseButtons.Left)
                 {
                     pNew = e.Location;
-                    graphics.FillRectangle(new SolidBrush(Color.Transparent), new Rectangle(pOld, new System.Drawing.Size(width, height)));
+                    //graphics.FillRectangle(new SolidBrush(Color.Transparent), new Rectangle(pOld, new System.Drawing.Size(width, height)));
+                    graphics.DrawLine(eraser, pOld, pNew);
                     pOld = pNew;
                 }
                 else
