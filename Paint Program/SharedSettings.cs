@@ -29,6 +29,9 @@ namespace Paint_Program
             fBrushSize = 8.0F;
 
             iBrushHardness = 100;
+
+            //No Tablet Input
+            iTabletPressure = -1;
         }
 
 
