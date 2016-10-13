@@ -95,6 +95,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SharedSettings.cs" />
+    <Compile Include="TabletInfo.cs" />
     <Compile Include="TextTool.cs" />
     <EmbeddedResource Include="BrushSettings.resx">
       <DependentUpon>BrushSettings.cs</DependentUpon>
@@ -136,6 +137,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WintabDN\WintabDN.csproj">
+      <Project>{73eae30a-60b9-43a5-ad81-9b05873e405c}</Project>
+      <Name>WintabDN</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -54,3 +54,5 @@ K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.NewProjectForm.resources
 K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.Properties.Resources.resources
 K:\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
 C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.BrushSettings.resources
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\WintabDN.dll
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\WintabDN.pdb

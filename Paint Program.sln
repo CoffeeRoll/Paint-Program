@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paint Program", "Paint Program\Paint Program.csproj", "{1AE30087-CDDF-45CF-AA95-0E10B4A95C11}"
+	ProjectSection(ProjectDependencies) = postProject
+		{73EAE30A-60B9-43A5-AD81-9B05873E405C} = {73EAE30A-60B9-43A5-AD81-9B05873E405C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WintabDN", "WintabDN\WintabDN.csproj", "{73EAE30A-60B9-43A5-AD81-9B05873E405C}"
 EndProject

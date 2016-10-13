@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WintabDN;
 
 namespace Paint_Program
 {
@@ -33,10 +34,11 @@ namespace Paint_Program
         //Index of the currently active tool
         private int iActiveTool;
 
-
         LayerView lv;
         ToolStrip ts;
         BrushSettings bs;
+
+        TabletInfo ti;
 
         private List<ITool> Tools;
         private List<ToolStripButton> ToolButtons;
@@ -50,6 +52,9 @@ namespace Paint_Program
             ss = new SharedSettings();
             Tools = new List<ITool>();
             ToolButtons = new List<ToolStripButton>();
+
+            ti = new TabletInfo(HandleTabletData);
+            
 
             canvasWidth = w;
             canvasHeight = h;
@@ -89,6 +94,37 @@ namespace Paint_Program
             this.Controls.Add(p);
 
             
+
+        }
+
+        private void HandleTabletData(object sender, MessageReceivedEventArgs e)
+        {
+            CWintabData m_wtData = ti.getWintabData();
+            UInt32 m_maxPkts = ti.getMaxPackets();
+
+            if (m_wtData == null)
+            {
+                return;
+            }
+
+            try
+            {
+                if (m_maxPkts == 1)
+                {
+                    uint pktID = (uint)e.Message.WParam;
+                    WintabPacket pkt = m_wtData.GetDataPacket((uint)e.Message.LParam, pktID);
+
+                    if (pkt.pkContext != 0)
+                    {
+                        int pressure = (int)pkt.pkNormalPressure;
+                        ss.setTabletPressure(pressure);
+                        Console.WriteLine("Tablet Pressure: " + pressure);
+                    }
+                }
+            }catch(Exception err)
+            {
+                Console.WriteLine(err.InnerException);
+            }
 
         }
 
@@ -198,7 +234,6 @@ namespace Paint_Program
         private void EDisplayPaint(object sender, PaintEventArgs e)
         {
             updateCanvas(e.Graphics);
-
             lv.updateActiveLayer();
         }
 
@@ -206,19 +241,30 @@ namespace Paint_Program
         {
             Bitmap bit = lv.getRender();
             p.Invalidate();
-            System.GC.Collect();
+            System.GC.Collect(); //Prevent OutOfMemory Execptions
             k.DrawImage(bit, 0, 0);
             
         }
 
         public void setBitmap(Bitmap bit)
         {
-            p.BackgroundImage = bit;
+            //Sets the Background Image
+            p.BackgroundImage = bit; 
         }
 
         public Bitmap getBitmap()
         {
-            return (Bitmap)p.BackgroundImage;
+            //Return the image the user has been working on
+            return lv.getRender();
+        }
+
+        public static int MapValue(
+    int originalStart, int originalEnd, // original range
+    int newStart, int newEnd, // desired range
+    int value) // value to convert
+        {
+            double scale = (double)(newEnd - newStart) / (originalEnd - originalStart);
+            return (int)(newStart + ((value - originalStart) * scale));
         }
 
     }

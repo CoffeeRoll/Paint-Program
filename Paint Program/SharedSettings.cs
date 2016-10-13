@@ -17,6 +17,8 @@ namespace Paint_Program
 
         public static int iBrushHardness { get; set; }
 
+        public static int iTabletPressure { get; set; }
+
 
         public SharedSettings()
         {
@@ -50,6 +52,12 @@ namespace Paint_Program
             iBrushHardness = f;
         }
 
+        public void setTabletPressure(int p)
+        {
+            iTabletPressure = p;
+        }
+
+
         public Color getPrimaryBrushColor()
         {
             return cPrimaryBrushColor;
@@ -68,6 +76,11 @@ namespace Paint_Program
         public int getBrushHardness()
         {
             return iBrushHardness;
+        }
+
+        public int getTabletPressure()
+        {
+            return iTabletPressure;
         }
 
     }
