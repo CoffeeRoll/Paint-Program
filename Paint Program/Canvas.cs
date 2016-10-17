@@ -73,6 +73,8 @@ namespace Paint_Program
             p = new Display();
             p.Width = canvasWidth;
             p.Height = canvasHeight;
+            ss.setCanvasWidth(canvasWidth);
+            ss.setCanvasHeight(canvasHeight);
             p.MaximumSize = new Size(canvasWidth, canvasHeight);
             p.Size = new Size(canvasWidth, canvasHeight);
             p.BackgroundImageLayout = ImageLayout.Tile;
@@ -240,6 +242,7 @@ namespace Paint_Program
         public void updateCanvas(Graphics k)
         {
             Bitmap bit = lv.getRender();
+            ss.setBitmapCanvas(bit);
             p.Invalidate();
             System.GC.Collect(); //Prevent OutOfMemory Execptions
             k.DrawImage(bit, 0, 0);
@@ -265,6 +268,11 @@ namespace Paint_Program
         {
             double scale = (double)(newEnd - newStart) / (originalEnd - originalStart);
             return (int)(newStart + ((value - originalStart) * scale));
+        }
+
+        public SharedSettings getSharedSettings()
+        {
+            return ss;
         }
 
     }

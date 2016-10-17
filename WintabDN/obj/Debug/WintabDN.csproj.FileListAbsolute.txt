@@ -8,3 +8,8 @@ C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\WintabDN\bin\Debug\WintabDN.p
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\WintabDN\obj\Debug\WintabDN.csprojResolveAssemblyReference.cache
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\WintabDN\obj\Debug\WintabDN.dll
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\WintabDN\obj\Debug\WintabDN.pdb
+C:\Users\mgoldstein\Source\Repos\Paint-Program\WintabDN\bin\Debug\WintabDN.dll
+C:\Users\mgoldstein\Source\Repos\Paint-Program\WintabDN\bin\Debug\WintabDN.pdb
+C:\Users\mgoldstein\Source\Repos\Paint-Program\WintabDN\obj\Debug\WintabDN.csprojResolveAssemblyReference.cache
+C:\Users\mgoldstein\Source\Repos\Paint-Program\WintabDN\obj\Debug\WintabDN.dll
+C:\Users\mgoldstein\Source\Repos\Paint-Program\WintabDN\obj\Debug\WintabDN.pdb

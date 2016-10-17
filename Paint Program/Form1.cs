@@ -16,6 +16,7 @@ namespace Paint_Program
         {
             InitializeComponent();
         }
+        Canvas c;
 
         private void tsmiFile_New_Click(object sender, EventArgs e)
         {
@@ -27,7 +28,7 @@ namespace Paint_Program
                     int w = NewProjForm.CanvasWidth;
                     int h = NewProjForm.CanvasHeight;
 
-                    Canvas c = new Canvas(w, h, this.Width, this.Height);
+                    c = new Canvas(w, h, this.Width, this.Height);
                     c.Location = new Point(200, 5);
                     this.Controls.Add(c);
                     c.initCanvas();
@@ -42,6 +43,7 @@ namespace Paint_Program
         private void tsmiFile_Save_Click(object sender, EventArgs e)
         {
             //Save Image Function
+
         }
 
         private void tsmiFile_Import_Click(object sender, EventArgs e)
@@ -52,6 +54,8 @@ namespace Paint_Program
         private void tsmiFile_Export_Click(object sender, EventArgs e)
         {
             //Export Image
+            FileSave fs = new FileSave(c.getSharedSettings());
+
         }
 
         private void tsmiEdit_Undo_Click(object sender, EventArgs e)

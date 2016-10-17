@@ -19,6 +19,11 @@ namespace Paint_Program
 
         public static int iTabletPressure { get; set; }
 
+        public static int iCanvasWidth { get; set; }
+
+        public static int iCanvasHeight { get; set; }
+
+        public static Bitmap bitmapCanvas { get; set; }
 
         public SharedSettings()
         {
@@ -60,6 +65,20 @@ namespace Paint_Program
             iTabletPressure = p;
         }
 
+        public void setCanvasWidth(int w)
+        {
+            iCanvasWidth = w;
+        }
+
+        public void setCanvasHeight(int h)
+        {
+            iCanvasHeight = h;
+        }
+
+        public void setBitmapCanvas(Bitmap b)
+        {
+            bitmapCanvas = b;
+        }
 
         public Color getPrimaryBrushColor()
         {
@@ -86,5 +105,19 @@ namespace Paint_Program
             return iTabletPressure;
         }
 
+        public int getCanvasWidth()
+        {
+            return iCanvasWidth;
+        }
+
+        public int getCanvasHeight()
+        {
+            return iCanvasHeight;
+        }
+
+        public Bitmap getBitmapCanvas()
+        {
+            return bitmapCanvas;
+        }
     }
 }

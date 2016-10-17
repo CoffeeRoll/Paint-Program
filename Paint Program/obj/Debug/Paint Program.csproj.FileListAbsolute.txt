@@ -23,19 +23,6 @@ C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.NewProjectForm.resources
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Properties.Resources.resources
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
-C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\bin\Debug\Paint Program.exe.config
-C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\bin\Debug\Paint Program.exe
-C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\bin\Debug\Paint Program.pdb
-C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.csprojResolveAssemblyReference.cache
-C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Canvas.resources
-C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Form1.resources
-C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.LayerItem.resources
-C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.LayerView.resources
-C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.NewProjectForm.resources
-C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Properties.Resources.resources
-C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
-C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.exe
-C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Canvas.resources
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.BrushSettings.resources
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.csprojResolveAssemblyReference.cache
@@ -53,6 +40,21 @@ K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.LayerView.resources
 K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.NewProjectForm.resources
 K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.Properties.Resources.resources
 K:\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
-C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.BrushSettings.resources
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\WintabDN.dll
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\WintabDN.pdb
+C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.csprojResolveAssemblyReference.cache
+C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.BrushSettings.resources
+C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Canvas.resources
+C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Form1.resources
+C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.LayerItem.resources
+C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.LayerView.resources
+C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.NewProjectForm.resources
+C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Properties.Resources.resources
+C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
+C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\bin\Debug\Paint Program.exe.config
+C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\bin\Debug\Paint Program.exe
+C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\bin\Debug\Paint Program.pdb
+C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\bin\Debug\WintabDN.dll
+C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\bin\Debug\WintabDN.pdb
+C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.exe
+C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb
