@@ -56,3 +56,5 @@ K:\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.C
 C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.BrushSettings.resources
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\WintabDN.dll
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\WintabDN.pdb
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.exe
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb
