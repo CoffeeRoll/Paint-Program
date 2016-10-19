@@ -12,11 +12,11 @@ namespace Paint_Program
     class BrushTool : ITool
     {
         private Graphics graphics;
-        private int width, height;
+        private int width, height, numPoints;
         private SharedSettings settings;
         private bool bActive, bMouseDown, bInit;
 
-        private Point pOld, pNew;
+        private Point pOld, pMid, pNew;
 
         private Pen pPrime, pSec;
 
@@ -52,6 +52,9 @@ namespace Paint_Program
             bInit = true;
             bMouseDown = false;
 
+            pOld = pMid = pNew = new Point(-1,-1);
+            numPoints = 0;
+
             if (graphics != null)
             {
                 graphics.SmoothingMode = SmoothingMode.AntiAlias;
@@ -78,6 +81,7 @@ namespace Paint_Program
             {
                 bMouseDown = true;
                 pOld = e.Location;
+                numPoints = 1;
             }
         }
 
@@ -86,30 +90,57 @@ namespace Paint_Program
             if (graphics != null && bMouseDown)
             {
                 pNew = e.Location;
+                numPoints = 2;
                 int pressure = -1;
                 if(settings.getTabletPressure() >= 0)
                 {
                     pressure = SharedSettings.MapValue(0, settings.getMaxTabletPressure(), settings.getMinTabletWidth(), settings.getMaxTabletWidth(), settings.getTabletPressure());
                     Console.WriteLine(pressure);
                 }
-                if (e.Button == MouseButtons.Left)
+                if(numPoints == 2)
                 {
-                    if(pressure >= 0)
+                    if (e.Button == MouseButtons.Left)
                     {
-                        pPrime.Width = pressure;
+                        if (pressure >= 0)
+                        {
+                            pPrime.Width = pressure;
+                        }
+                        graphics.DrawLine(pPrime, pOld, pNew);
                     }
-                    graphics.DrawLine(pPrime, pOld, pNew);
+                    else if (e.Button == MouseButtons.Right)
+                    {
+                        if (pressure >= 0)
+                        {
+                            pSec.Width = pressure;
+                        }
+                        graphics.DrawLine(pSec, pOld, pNew);
+                    }
+                    pMid = pNew;
+                    numPoints = 3;
                 }
-                else if (e.Button == MouseButtons.Right)
+                else if (numPoints == 3)
                 {
-                    if (pressure >= 0)
+                    if (e.Button == MouseButtons.Left)
                     {
-                        pSec.Width = pressure;
+                        if (pressure >= 0)
+                        {
+                            pPrime.Width = pressure;
+                        }
+                        // graphics.DrawLine(pPrime, pOld, pNew);
+                        graphics.DrawCurve(pPrime, new Point[] { pOld, pNew });
                     }
-                    graphics.DrawLine(pSec, pOld, pNew);
+                    else if (e.Button == MouseButtons.Right)
+                    {
+                        if (pressure >= 0)
+                        {
+                            pSec.Width = pressure;
+                        }
+                        graphics.DrawLine(pSec, pOld, pNew);
+                    }
                 }
 
-                pOld = pNew;
+                pOld = pMid;
+                pMid = pNew;
             }
         }
 
@@ -119,6 +150,7 @@ namespace Paint_Program
             {
                 bMouseDown = false;
             }
+            numPoints = 0;
         }
 
         public bool isInitalized()

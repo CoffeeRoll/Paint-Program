@@ -18,10 +18,12 @@ namespace Paint_Program
         private PixelFormat pf = PixelFormat.Format32bppArgb;
         private int width, height;
         private int yLayerLocation;
+        private SharedSettings ss;
 
-        public LayerView(int w, int h)
+        public LayerView(int w, int h, SharedSettings s)
         {
             InitializeComponent();
+            ss = s;
             width = w;
             height = h;
             yLayerLocation = 0;
@@ -210,6 +212,7 @@ namespace Paint_Program
                         l.setActive(false);
                     }
                     layer.setActive(true);
+                    ss.setBitmapCurrentLayer(layer.getBitmap());
                 }
                 layer.Refresh();
             }
