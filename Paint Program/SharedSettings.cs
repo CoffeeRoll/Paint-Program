@@ -171,7 +171,7 @@ namespace Paint_Program
             return bitmapCanvas;
         }
 
-        public Bitmap getbitmapCurrentLayer(bool source)
+        public Bitmap getBitmapCurrentLayer(bool source)
         {
             if (source)
             {
