@@ -19,6 +19,12 @@ namespace Paint_Program
 
         public static int iTabletPressure { get; set; }
 
+        public static int iMaxTabletPressure { get; set; }
+
+        public static int iMaxTabletWidth { get; set; }
+
+        public static int iMinTabletWidth { get; set; }
+
         public static int iCanvasWidth { get; set; }
 
         public static int iCanvasHeight { get; set; }
@@ -31,12 +37,19 @@ namespace Paint_Program
 
             cSecondaryBrushColor = Color.White;
 
-            fBrushSize = 8.0F;
+            fBrushSize = 1.0F;
 
-            iBrushHardness = 100;
+            iBrushHardness = 255;
 
             //No Tablet Input
             iTabletPressure = -1;
+
+            iMaxTabletWidth = 25;
+
+            iMinTabletWidth = 1;
+
+            //standard max pressure
+            iMaxTabletPressure = 1023;
         }
 
 
@@ -65,6 +78,21 @@ namespace Paint_Program
             iTabletPressure = p;
         }
 
+        public void setMaxTabletPressure(int p)
+        {
+            iMaxTabletPressure = p;
+        }
+
+        public void setMaxTabletWidth(int w)
+        {
+            iMaxTabletWidth = w;
+        }
+
+        public void setMinTabletWidth(int w)
+        {
+            iMinTabletWidth = w;
+        }
+
         public void setCanvasWidth(int w)
         {
             iCanvasWidth = w;
@@ -79,6 +107,7 @@ namespace Paint_Program
         {
             bitmapCanvas = b;
         }
+
 
         public Color getPrimaryBrushColor()
         {
@@ -105,6 +134,21 @@ namespace Paint_Program
             return iTabletPressure;
         }
 
+        public int getMaxTabletPressure()
+        {
+            return iMaxTabletPressure;
+        }
+
+        public int getMaxTabletWidth()
+        {
+            return iMaxTabletWidth;
+        }
+
+        public int getMinTabletWidth()
+        {
+            return iMinTabletWidth;
+        }
+
         public int getCanvasWidth()
         {
             return iCanvasWidth;
@@ -118,6 +162,16 @@ namespace Paint_Program
         public Bitmap getBitmapCanvas()
         {
             return bitmapCanvas;
+        }
+
+
+        public static int MapValue(
+    int originalStart, int originalEnd, // original range
+    int newStart, int newEnd, // desired range
+    int value) // value to convert
+        {
+            double scale = (double)(newEnd - newStart) / (originalEnd - originalStart);
+            return (int)(newStart + ((value - originalStart) * scale));
         }
     }
 }

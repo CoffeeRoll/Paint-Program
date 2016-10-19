@@ -45,7 +45,7 @@ namespace Paint_Program
             bMouseDown = false;
 
 
-            eraser = new Pen(Color.FromArgb(s.getBrushHardness(), 0, 0, 0));
+            eraser = new Pen(Color.Transparent);
             eraser.Width = settings.getBrushSize();
 
             if (graphics != null)
@@ -81,7 +81,7 @@ namespace Paint_Program
                         graphics.DrawLine(eraser, pOld, pNew);
                     }else if(settings.getTabletPressure() >= 0)
                     {
-                        eraser.Color = Color.FromArgb(MapValue(0, 1023, 0, 255, settings.getTabletPressure()), 0, 0, 0);
+                        eraser.Width = SharedSettings.MapValue(0, settings.getMaxTabletPressure(), settings.getMinTabletWidth(), settings.getMaxTabletWidth(), settings.getTabletPressure());
                         graphics.DrawLine(eraser, pOld, pNew);
                     }
                     pOld = pNew;
@@ -112,14 +112,6 @@ namespace Paint_Program
         {
             throw new NotImplementedException();
         }
-
-        public static int MapValue(
-    int originalStart, int originalEnd, // original range
-    int newStart, int newEnd, // desired range
-    int value) // value to convert
-        {
-            double scale = (double)(newEnd - newStart) / (originalEnd - originalStart);
-            return (int)(newStart + ((value - originalStart) * scale));
-        }
+        
     }
 }

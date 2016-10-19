@@ -85,18 +85,31 @@ namespace Paint_Program
         {
             if (graphics != null && bMouseDown)
             {
+                pNew = e.Location;
+                int pressure = -1;
+                if(settings.getTabletPressure() >= 0)
+                {
+                    pressure = SharedSettings.MapValue(0, settings.getMaxTabletPressure(), settings.getMinTabletWidth(), settings.getMaxTabletWidth(), settings.getTabletPressure());
+                    Console.WriteLine(pressure);
+                }
                 if (e.Button == MouseButtons.Left)
                 {
-                    pNew = e.Location;
+                    if(pressure >= 0)
+                    {
+                        pPrime.Width = pressure;
+                    }
                     graphics.DrawLine(pPrime, pOld, pNew);
-                    pOld = pNew;
                 }
-                else
+                else if (e.Button == MouseButtons.Right)
                 {
-                    pNew = e.Location;
+                    if (pressure >= 0)
+                    {
+                        pSec.Width = pressure;
+                    }
                     graphics.DrawLine(pSec, pOld, pNew);
-                    pOld = pNew;
                 }
+
+                pOld = pNew;
             }
         }
 

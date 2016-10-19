@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WintabDN;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 
 namespace Paint_Program
 {
@@ -20,6 +22,8 @@ namespace Paint_Program
         private Display p;
 
         private Graphics g;
+
+        private Bitmap bg;
 
         private int canvasWidth, canvasHeight;
 
@@ -82,12 +86,23 @@ namespace Paint_Program
             p.MouseUp += handleMouseUp;
             p.MouseMove += handleMouseMove;
             p.Paint += EDisplayPaint;
-            
+
+            bg = new Bitmap(canvasWidth, canvasHeight, PixelFormat.Format24bppRgb);
             
             try {
-                p.BackgroundImage = Bitmap.FromFile(@"..\..\Images\transparent_texture.jpg");
-            }catch(Exception e)
+                // p.BackgroundImage = Bitmap.FromFile(@"..\..\Images\transparent_texture.jpg");
+                Bitmap bgTile = (Bitmap) Bitmap.FromFile(@"..\..\Images\transparent_texture.jpg");
+                using (TextureBrush brush = new TextureBrush(bgTile, WrapMode.Tile))
+                {
+                    using (Graphics g = Graphics.FromImage(bg))
+                    {
+                        g.FillRectangle(brush, 0, 0, bg.Width, bg.Height);
+                    }
+                }
+            }
+            catch(Exception e)
             {
+                Graphics.FromImage(bg).Clear(Color.White);
                 p.BackColor = Color.White;
             }
 
@@ -119,8 +134,9 @@ namespace Paint_Program
                     if (pkt.pkContext != 0)
                     {
                         int pressure = (int)pkt.pkNormalPressure;
+                        
                         ss.setTabletPressure(pressure);
-                        Console.WriteLine("Tablet Pressure: " + pressure);
+                        //Console.WriteLine("Tablet Pressure: " + pressure);
                     }
                 }
             }catch(Exception err)
@@ -242,10 +258,13 @@ namespace Paint_Program
         public void updateCanvas(Graphics k)
         {
             Bitmap bit = lv.getRender();
+            Bitmap bit2 = (Bitmap)bg.Clone();
+            Graphics.FromImage(bit2).DrawImage(bit, 0, 0);
             ss.setBitmapCanvas(bit);
             p.Invalidate();
             System.GC.Collect(); //Prevent OutOfMemory Execptions
-            k.DrawImage(bit, 0, 0);
+            
+            k.DrawImage(bit2, 0, 0);
             
         }
 
@@ -260,20 +279,5 @@ namespace Paint_Program
             //Return the image the user has been working on
             return lv.getRender();
         }
-
-        public static int MapValue(
-    int originalStart, int originalEnd, // original range
-    int newStart, int newEnd, // desired range
-    int value) // value to convert
-        {
-            double scale = (double)(newEnd - newStart) / (originalEnd - originalStart);
-            return (int)(newStart + ((value - originalStart) * scale));
-        }
-
-        public SharedSettings getSharedSettings()
-        {
-            return ss;
-        }
-
     }
 }
