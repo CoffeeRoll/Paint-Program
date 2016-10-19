@@ -33,6 +33,7 @@ namespace Paint_Program
 
             pPrime = new Pen(Color.FromArgb(settings.getBrushHardness(), R, G, B), settings.getBrushSize());
             pPrime.LineJoin = LineJoin.Round;
+            pPrime.MiterLimit = pPrime.Width;
 
             R = settings.getSecondaryBrushColor().R;
             G = settings.getSecondaryBrushColor().G;
@@ -95,7 +96,6 @@ namespace Paint_Program
                 if(settings.getTabletPressure() >= 0)
                 {
                     pressure = SharedSettings.MapValue(0, settings.getMaxTabletPressure(), settings.getMinTabletWidth(), settings.getMaxTabletWidth(), settings.getTabletPressure());
-                    Console.WriteLine(pressure);
                 }
                 if(numPoints == 2)
                 {
@@ -127,7 +127,7 @@ namespace Paint_Program
                             pPrime.Width = pressure;
                         }
                         // graphics.DrawLine(pPrime, pOld, pNew);
-                        graphics.DrawCurve(pPrime, new Point[] { pOld, pNew });
+                        graphics.DrawCurve(pPrime, new Point[] { pOld, pMid, pNew });
                     }
                     else if (e.Button == MouseButtons.Right)
                     {
