@@ -278,5 +278,10 @@ namespace Paint_Program
             //Return the image the user has been working on
             return lv.getRender();
         }
+
+        public SharedSettings getSharedSettings()
+        {
+            return ss;
+        }
     }
 }
