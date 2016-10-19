@@ -65,6 +65,9 @@ namespace Paint_Program
             maxWidth = pw;
             maxHeight = ph;
 
+            ss.setCanvasWidth(canvasWidth);
+            ss.setCanvasHeight(canvasHeight);
+
             tsWidth = 50;
             menuHeight = 25;
 
@@ -77,8 +80,6 @@ namespace Paint_Program
             p = new Display();
             p.Width = canvasWidth;
             p.Height = canvasHeight;
-            ss.setCanvasWidth(canvasWidth);
-            ss.setCanvasHeight(canvasHeight);
             p.MaximumSize = new Size(canvasWidth, canvasHeight);
             p.Size = new Size(canvasWidth, canvasHeight);
             p.BackgroundImageLayout = ImageLayout.Tile;
@@ -109,41 +110,6 @@ namespace Paint_Program
             g = p.CreateGraphics();
 
             this.Controls.Add(p);
-
-            
-
-        }
-
-        private void HandleTabletData(object sender, MessageReceivedEventArgs e)
-        {
-            CWintabData m_wtData = ti.getWintabData();
-            UInt32 m_maxPkts = ti.getMaxPackets();
-
-            if (m_wtData == null)
-            {
-                return;
-            }
-
-            try
-            {
-                if (m_maxPkts == 1)
-                {
-                    uint pktID = (uint)e.Message.WParam;
-                    WintabPacket pkt = m_wtData.GetDataPacket((uint)e.Message.LParam, pktID);
-
-                    if (pkt.pkContext != 0)
-                    {
-                        int pressure = (int)pkt.pkNormalPressure;
-                        
-                        ss.setTabletPressure(pressure);
-                        //Console.WriteLine("Tablet Pressure: " + pressure);
-                    }
-                }
-            }catch(Exception err)
-            {
-                Console.WriteLine(err.InnerException);
-            }
-
         }
 
         public void initCanvas()
@@ -196,6 +162,39 @@ namespace Paint_Program
             
             
             /**/
+        }
+
+        private void HandleTabletData(object sender, MessageReceivedEventArgs e)
+        {
+            CWintabData m_wtData = ti.getWintabData();
+            UInt32 m_maxPkts = ti.getMaxPackets();
+
+            if (m_wtData == null)
+            {
+                return;
+            }
+
+            try
+            {
+                if (m_maxPkts == 1)
+                {
+                    uint pktID = (uint)e.Message.WParam;
+                    WintabPacket pkt = m_wtData.GetDataPacket((uint)e.Message.LParam, pktID);
+
+                    if (pkt.pkContext != 0)
+                    {
+                        int pressure = (int)pkt.pkNormalPressure;
+
+                        ss.setTabletPressure(pressure);
+                        //Console.WriteLine("Tablet Pressure: " + pressure);
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.InnerException);
+            }
+
         }
 
         private void handleToolStripItemClick(object sender, EventArgs e)
