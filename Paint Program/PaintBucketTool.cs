@@ -55,7 +55,37 @@ namespace Paint_Program
                 pOld = e.Location;
                 if (e.Button == MouseButtons.Left)
                 {
-                    Bitmap b = settings.getBitmapCurrentLayer(true);
+                    Bitmap bmp = settings.getBitmapCurrentLayer(true);
+                    Stack<Point> pixels = new Stack<Point>();
+                    if (bmp == null)
+                    {
+                        return;
+                    }
+
+                    Color targetColor = bmp.GetPixel(pOld.X, pOld.Y);
+                    Color replacementColor = settings.getPrimaryBrushColor();
+                    pixels.Push(pOld);
+
+                    while (pixels.Count > 0)
+                    {
+                        Point a = pixels.Pop();
+                        if (a.X < bmp.Width && a.X > 0 &&
+                                a.Y < bmp.Height && a.Y > 0)//make sure we stay within bounds
+                        {
+
+                            if (bmp.GetPixel(a.X, a.Y) == targetColor)
+                            {
+                                bmp.SetPixel(a.X, a.Y, replacementColor);
+                                pixels.Push(new Point(a.X - 1, a.Y));
+                                pixels.Push(new Point(a.X + 1, a.Y));
+                                pixels.Push(new Point(a.X, a.Y - 1));
+                                pixels.Push(new Point(a.X, a.Y + 1));
+                            }
+                        }
+                    }
+                    pixels.Clear();
+                    return;
+
                 }
 
             }
