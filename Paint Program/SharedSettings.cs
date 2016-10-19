@@ -31,6 +31,8 @@ namespace Paint_Program
 
         public static Bitmap bitmapCanvas { get; set; }
 
+        public static Bitmap bitmapCurrentLayer { get; set; }
+
         public SharedSettings()
         {
             cPrimaryBrushColor = Color.Black;
@@ -108,6 +110,11 @@ namespace Paint_Program
             bitmapCanvas = b;
         }
 
+        public void setBitmapCurrentLayer(Bitmap b)
+        {
+            bitmapCurrentLayer = b;
+        }
+
 
         public Color getPrimaryBrushColor()
         {
@@ -162,6 +169,18 @@ namespace Paint_Program
         public Bitmap getBitmapCanvas()
         {
             return bitmapCanvas;
+        }
+
+        public Bitmap getbitmapCurrentLayer(bool source)
+        {
+            if (source)
+            {
+                return bitmapCurrentLayer;
+            }
+            else
+            {
+                return(Bitmap) bitmapCurrentLayer.Clone();
+            }
         }
 
 

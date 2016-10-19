@@ -114,7 +114,7 @@ namespace Paint_Program
 
         public void initCanvas()
         {            
-            lv = new LayerView(canvasWidth, canvasHeight);
+            lv = new LayerView(canvasWidth, canvasHeight, ss);
             lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
 
             this.Location = new Point((maxWidth / 2) - (this.Width / 2), (maxHeight / 2) - (this.Height / 2));

@@ -25,9 +25,17 @@ namespace Paint_Program
             {
                 if (NewProjForm.ShowDialog(this) == DialogResult.OK)
                 {
+
+                    for (int i = this.Controls.Count - 1; i >= 0; i--)
+                    {
+                        if (!(this.Controls[i] is MenuStrip))
+                        {
+                            this.Controls.Remove(this.Controls[i]);
+                        }
+                    }
+
                     int w = NewProjForm.CanvasWidth;
                     int h = NewProjForm.CanvasHeight;
-
                     c = new Canvas(w, h, this.Width, this.Height);
                     c.Location = new Point(200, 5);
                     this.Controls.Add(c);
