@@ -32,7 +32,7 @@
             this.bRemoveLayer = new System.Windows.Forms.Button();
             this.pLayerDisplay = new System.Windows.Forms.Panel();
             this.bMoveDown = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bMoveUp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bAddLayer
@@ -73,23 +73,25 @@
             this.bMoveDown.TabIndex = 3;
             this.bMoveDown.Text = "▽";
             this.bMoveDown.UseVisualStyleBackColor = true;
+            this.bMoveDown.Click += new System.EventHandler(this.bMoveDown_Click);
             // 
-            // button1
+            // bMoveUp
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(204, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 40);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "△";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bMoveUp.Enabled = false;
+            this.bMoveUp.Location = new System.Drawing.Point(204, 3);
+            this.bMoveUp.Name = "bMoveUp";
+            this.bMoveUp.Size = new System.Drawing.Size(40, 40);
+            this.bMoveUp.TabIndex = 4;
+            this.bMoveUp.Text = "△";
+            this.bMoveUp.UseVisualStyleBackColor = true;
+            this.bMoveUp.Click += new System.EventHandler(this.bMoveUp_Click);
             // 
             // LayerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Crimson;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bMoveUp);
             this.Controls.Add(this.bMoveDown);
             this.Controls.Add(this.pLayerDisplay);
             this.Controls.Add(this.bRemoveLayer);
@@ -106,6 +108,6 @@
         private System.Windows.Forms.Button bRemoveLayer;
         private System.Windows.Forms.Panel pLayerDisplay;
         private System.Windows.Forms.Button bMoveDown;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bMoveUp;
     }
 }

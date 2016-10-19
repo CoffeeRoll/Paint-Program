@@ -29,7 +29,6 @@ namespace Paint_Program
             yLayerLocation = 0;
             LayerItem setup = new LayerItem(w, h, pf);
             this.Width = setup.Width;
-            this.Height = 450;
             pLayerDisplay.Scroll += handleScroll;
             pLayerDisplay.MouseWheel += handleMouseWheel;
             Layers = new List<LayerItem>();
@@ -193,6 +192,16 @@ namespace Paint_Program
                 
             }
             this.Refresh();
+        }
+
+        private void bMoveDown_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bMoveUp_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void handleLayerItemClick(object obj, System.EventArgs args)
