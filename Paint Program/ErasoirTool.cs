@@ -45,7 +45,7 @@ namespace Paint_Program
             bMouseDown = false;
 
 
-            eraser = new Pen(Color.Transparent);
+            eraser = new Pen(Color.FromArgb(s.getBrushHardness(), 0, 0, 0));
             eraser.Width = settings.getBrushSize();
 
             if (graphics != null)
@@ -75,8 +75,15 @@ namespace Paint_Program
                 if (e.Button == MouseButtons.Left)
                 {
                     pNew = e.Location;
-                    //graphics.FillRectangle(new SolidBrush(Color.Transparent), new Rectangle(pOld, new System.Drawing.Size(width, height)));
-                    graphics.DrawLine(eraser, pOld, pNew);
+
+                    if (settings.getTabletPressure() == -1)
+                    {
+                        graphics.DrawLine(eraser, pOld, pNew);
+                    }else if(settings.getTabletPressure() >= 0)
+                    {
+                        eraser.Color = Color.FromArgb(MapValue(0, 1023, 0, 255, settings.getTabletPressure()), 0, 0, 0);
+                        graphics.DrawLine(eraser, pOld, pNew);
+                    }
                     pOld = pNew;
                 }
             }
@@ -104,6 +111,15 @@ namespace Paint_Program
         public void setLayerData(Bitmap bit)
         {
             throw new NotImplementedException();
+        }
+
+        public static int MapValue(
+    int originalStart, int originalEnd, // original range
+    int newStart, int newEnd, // desired range
+    int value) // value to convert
+        {
+            double scale = (double)(newEnd - newStart) / (originalEnd - originalStart);
+            return (int)(newStart + ((value - originalStart) * scale));
         }
     }
 }
