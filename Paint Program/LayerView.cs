@@ -110,6 +110,18 @@ namespace Paint_Program
             return null;
         }
 
+        private int getActiveLayerIndex()
+        {
+            for(int t = 0; t <= Layers.Count; t++)
+            {
+                if (Layers[t].isLayerActive())
+                {
+                    return t;
+                }
+            }
+            return -1;
+        }
+
         private void bAddLayer_Click(object sender, EventArgs e)
         {
             addLayer();
@@ -139,6 +151,8 @@ namespace Paint_Program
             if (Layers.Count > 1)
             {
                 bRemoveLayer.Enabled = true;
+                bMoveDown.Enabled = true;
+                bMoveUp.Enabled = true;
             }
 
             redrawLayerItems();
@@ -172,8 +186,10 @@ namespace Paint_Program
             }
             redrawLayerItems();
 
-            //Disable the Remove Layer Button if only one ayer Exists
+            //Disable the Relevant Buttons if only one layer Exists
             bRemoveLayer.Enabled = (Layers.Count > 1);
+            bMoveDown.Enabled = (Layers.Count > 1);
+            bMoveUp.Enabled = (Layers.Count > 1);
         }
 
         private void redrawLayerItems()
@@ -196,12 +212,28 @@ namespace Paint_Program
 
         private void bMoveDown_Click(object sender, EventArgs e)
         {
+            int i = getActiveLayerIndex();
 
+            if(i != -1 && i != 0)
+            {
+                LayerItem temp = Layers[i];
+                Layers[i] = Layers[i - 1];
+                Layers[i - 1] = temp;
+            }
+            redrawLayerItems();
         }
 
         private void bMoveUp_Click(object sender, EventArgs e)
         {
+            int i = getActiveLayerIndex();
 
+            if (i != -1 && i != Layers.Count -1)
+            {
+                LayerItem temp = Layers[i];
+                Layers[i] = Layers[i + 1];
+                Layers[i + 1] = temp;
+            }
+            redrawLayerItems();
         }
 
         private void handleLayerItemClick(object obj, System.EventArgs args)
