@@ -58,3 +58,5 @@ C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\bin\Debug\WintabDN.
 C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\bin\Debug\WintabDN.pdb
 C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.exe
 C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.exe
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb

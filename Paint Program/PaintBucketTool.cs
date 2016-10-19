@@ -55,32 +55,15 @@
 //                pOld = e.Location;
 //                if (e.Button == MouseButtons.Left)
 //                {
-//                    graphics.FillRectangle(new SolidBrush(settings.getPrimaryBrushColor()), e.X, e.Y, 1, 1);
+//                    Bitmap b = settings.getBitmapCurrentLayer(true);
 //                }
-//                else if (e.Button == MouseButtons.Right)
-//                {
-//                    graphics.FillRectangle(new SolidBrush(settings.getSecondaryBrushColor()), e.X, e.Y, 1, 1);
-//                }
+
 //            }
 //        }
 
 //        public void onMouseMove(object sender, MouseEventArgs e)
 //        {
-//            if (graphics != null && bMouseDown)
-//            {
-//                if (e.Button == MouseButtons.Left)
-//                {
-//                    pNew = e.Location;
-//                    graphics.DrawLine(new Pen(settings.getPrimaryBrushColor()), pOld, pNew);
-//                    pOld = pNew;
-//                }
-//                else
-//                {
-//                    pNew = e.Location;
-//                    graphics.DrawLine(new Pen(settings.getSecondaryBrushColor()), pOld, pNew);
-//                    pOld = pNew;
-//                }
-//            }
+
 //        }
 
 //        public void onMouseUp(object sender, MouseEventArgs e)
