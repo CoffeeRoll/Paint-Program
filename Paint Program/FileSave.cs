@@ -17,23 +17,28 @@ namespace Paint_Program
             Bitmap bm = ss.getBitmapCanvas();   // Get the image from the bitmap object
             BackgroundWorker bw = new BackgroundWorker();
 
-            bw.DoWork += (send, args) =>
+            try {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "Bitmap Image|*.bmp|GIF Image|*.gif|Icon Image|*.ico|JPeg Image|*.jpg|PNG Image|*.png|TIFF Image|*.tiff";
+                sfd.Title = "Save an Image File";
+                sfd.ShowDialog();
+
+                bw.DoWork += (send, args) =>
+                {
+                    doSave(bm, sfd, send, args);
+                };
+
+                bw.RunWorkerAsync();
+            }
+            catch (Exception e)
             {
-                doSave(bm);
-            };
-
-            bw.RunWorkerAsync();
-
+                Console.WriteLine(e.InnerException);
+            }
 
         }
 
-        private void doSave(Bitmap bm)
+        private void doSave(Bitmap bm, SaveFileDialog sfd, object sender, DoWorkEventArgs args)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Bitmap Image|*.bmp|GIF Image|*.gif|Icon Image|*.ico|JPeg Image|*.jpg|PNG Image|*.png|TIFF Image|*.tiff";
-            sfd.Title = "Save an Image File";
-            sfd.ShowDialog();
-
             if (sfd.FileName != "")
             {
                 try

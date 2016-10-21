@@ -73,3 +73,19 @@ C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Prog
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.NewProjectForm.resources
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Properties.Resources.resources
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
+C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Paint Program.exe.config
+C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.exe
+C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb
+C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Paint Program.exe
+C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Paint Program.pdb
+C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\WintabDN.dll
+C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\WintabDN.pdb
+C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.csprojResolveAssemblyReference.cache
+C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.BrushSettings.resources
+C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Canvas.resources
+C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Form1.resources
+C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.LayerItem.resources
+C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.LayerView.resources
+C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.NewProjectForm.resources
+C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Properties.Resources.resources
+C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
