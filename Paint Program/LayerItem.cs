@@ -16,12 +16,14 @@ namespace Paint_Program
         private bool isVisible;
         private bool isActive;
         
+        private String sLayerName;
+
         private Color cActive = Color.FromArgb(100, 155, 155);
         private Color cNotActive = Color.FromArgb(192, 192, 192);
 
         private Bitmap LayerBitmap;
 
-        public LayerItem(int w, int h, PixelFormat pf)
+        public LayerItem(int w, int h, PixelFormat pf, String name)
         {
             InitializeComponent();
             isVisible = true;
@@ -35,6 +37,10 @@ namespace Paint_Program
             pbLayerPreview.SizeMode = PictureBoxSizeMode.StretchImage;
             
             pbLayerPreview.BackColor = Color.White;
+
+            sLayerName = name;
+            tbLayerName.Text = sLayerName;
+
             this.Update();
         }
 
@@ -119,6 +125,26 @@ namespace Paint_Program
         private void LayerForm_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tbLayerName_Click(object sender, EventArgs e)
+        {
+            tbLayerName.BackColor = Color.White;
+        }
+
+        private void tbLayerName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                tbLayerName.BackColor = Color.LightGray;
+                sLayerName = tbLayerName.Text;
+            }
+        }
+
+        private void tbLayerName_TextChanged(object sender, EventArgs e)
+        {
+            tbLayerName.BackColor = Color.White;
+            sLayerName = tbLayerName.Text;
         }
     }
 }

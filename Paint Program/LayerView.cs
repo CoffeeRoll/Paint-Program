@@ -27,7 +27,7 @@ namespace Paint_Program
             width = w;
             height = h;
             yLayerLocation = 0;
-            LayerItem setup = new LayerItem(w, h, pf);
+            LayerItem setup = new LayerItem(w, h, pf, "DEBUG");
             this.Width = setup.Width;
             pLayerDisplay.Scroll += handleScroll;
             pLayerDisplay.MouseWheel += handleMouseWheel;
@@ -140,7 +140,7 @@ namespace Paint_Program
                 layer.setActive(false);
             }
 
-            LayerItem temp = new LayerItem(width, height, pf);
+            LayerItem temp = new LayerItem(width, height, pf, Layers.Count.ToString());
             temp.Location = new Point(0, yLayerLocation);
             yLayerLocation += temp.Height + 5;
             temp.setActive(true);
