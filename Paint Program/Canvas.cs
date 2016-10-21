@@ -57,7 +57,12 @@ namespace Paint_Program
             Tools = new List<ITool>();
             ToolButtons = new List<ToolStripButton>();
 
-            ti = new TabletInfo(HandleTabletData);
+            try {
+                ti = new TabletInfo(HandleTabletData);
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.InnerException);
+            }
             
 
             canvasWidth = w;
