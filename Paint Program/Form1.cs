@@ -50,7 +50,9 @@ namespace Paint_Program
 
         private void tsmiFile_Save_Click(object sender, EventArgs e)
         {
-            //Save Image Function
+            //Save Project Function
+
+            Bitmap layers[] = c.getLayers();
 
         }
 

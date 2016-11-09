@@ -133,6 +133,32 @@ namespace Paint_Program
             removeLayer();
         }
 
+        public void addImportImage(Bitmap b)
+        {
+            foreach (LayerItem layer in Layers)
+            {
+                layer.setActive(false);
+            }
+
+            LayerItem temp = new LayerItem(width, height, pf, Layers.Count.ToString());
+            temp.Location = new Point(0, yLayerLocation);
+            yLayerLocation += temp.Height + 5;
+            temp.setActive(true);
+            temp.setOnClick(handleLayerItemClick);
+            temp.setBitmap((Bitmap)b.Clone());
+            Layers.Add(temp);
+            pLayerDisplay.Controls.Add(Layers[Layers.Count - 1]);
+
+            if (Layers.Count > 1)
+            {
+                bRemoveLayer.Enabled = true;
+                bMoveDown.Enabled = true;
+                bMoveUp.Enabled = true;
+            }
+
+            redrawLayerItems();
+        }
+
         private void addLayer()
         {
 
