@@ -45,7 +45,8 @@ namespace Paint_Program
         TabletInfo ti;
 
         private List<ITool> Tools;
-        private List<ToolStripButton> ToolButtons;
+        public List<ToolStripButton> ToolButtons;
+        public bool ShowTools = true;
 
         SharedSettings ss;
 

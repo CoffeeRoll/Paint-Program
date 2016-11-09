@@ -43,6 +43,7 @@
             this.gridLinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabletModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
+            this.showToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,7 +135,8 @@
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gridLinesToolStripMenuItem,
-            this.tabletModeToolStripMenuItem});
+            this.tabletModeToolStripMenuItem,
+            this.showToolsToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
             this.viewToolStripMenuItem.Text = "View";
@@ -157,6 +159,16 @@
             // 
             this.updateTimer.Enabled = true;
             this.updateTimer.Interval = 500;
+            // 
+            // showToolsToolStripMenuItem
+            // 
+            this.showToolsToolStripMenuItem.Checked = true;
+            this.showToolsToolStripMenuItem.CheckOnClick = true;
+            this.showToolsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.showToolsToolStripMenuItem.Name = "showToolsToolStripMenuItem";
+            this.showToolsToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.showToolsToolStripMenuItem.Text = "Show Tools";
+            this.showToolsToolStripMenuItem.Click += new System.EventHandler(this.showToolsToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -190,6 +202,7 @@
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gridLinesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tabletModeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showToolsToolStripMenuItem;
     }
 }
 

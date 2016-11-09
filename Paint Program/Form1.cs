@@ -90,5 +90,16 @@ namespace Paint_Program
         {
             //Tablet Mode
         }
+
+        private void showToolsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (showToolsToolStripMenuItem.Checked)
+            {
+                foreach (Canvas.ToolButtons)
+                {
+
+                }
+            }
+        }
     }
 }
