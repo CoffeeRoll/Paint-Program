@@ -265,6 +265,10 @@ namespace Paint_Program
             Bitmap bit = lv.getRender();
             Bitmap bit2 = (Bitmap)bg.Clone();
             Graphics.FromImage(bit2).DrawImage(bit, 0, 0);
+            Bitmap iitmp = ss.getImportImage();
+            if (iitmp != null)
+                lv.addImportImage(iitmp);
+
             ss.setBitmapCanvas(bit);
             p.Invalidate();
             System.GC.Collect(); //Prevent OutOfMemory Execptions

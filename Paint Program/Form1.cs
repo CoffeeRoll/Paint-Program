@@ -40,23 +40,26 @@ namespace Paint_Program
                     c.Location = new Point(200, 5);
                     this.Controls.Add(c);
                     c.initCanvas();
-                    
+
 
                     this.Update();
 
                 }
             }
         }
-        
+
         private void tsmiFile_Save_Click(object sender, EventArgs e)
         {
-            //Save Image Function
+            //Save Project Function
+
+            //Bitmap layers[] = c.getLayers();
 
         }
 
         private void tsmiFile_Import_Click(object sender, EventArgs e)
         {
             //Import Image
+            ImageImport ii = new Paint_Program.ImageImport(c.getSharedSettings());
         }
 
         private void tsmiFile_Export_Click(object sender, EventArgs e)

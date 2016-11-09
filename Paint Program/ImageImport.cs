@@ -14,14 +14,14 @@ namespace Paint_Program
 
             try
             {
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "All File Types|*.*|Bitmap Image|*.bmp|GIF Image|*.gif|Icon Image|*.ico|JPeg Image|*.jpg|PNG Image|*.png|TIFF Image|*.tiff";
-                sfd.Title = "Open an Image File";
-                sfd.ShowDialog();
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Filter = "All File Types|*.*|Bitmap Image|*.bmp|GIF Image|*.gif|Icon Image|*.ico|JPeg Image|*.jpg|PNG Image|*.png|TIFF Image|*.tiff";
+                ofd.Title = "Open an Image File";
+                ofd.ShowDialog();
 
                 bw.DoWork += (send, args) =>
                 {
-                    doOpen(ss, sfd, send, args);
+                    doOpen(ss, ofd, send, args);
                 };
 
                 bw.RunWorkerAsync();
@@ -32,15 +32,15 @@ namespace Paint_Program
             }
         }
 
-        private void doOpen(SharedSettings ss, SaveFileDialog sfd, object sender, DoWorkEventArgs args)
+        private void doOpen(SharedSettings ss, OpenFileDialog ofd, object sender, DoWorkEventArgs args)
         {
-            if (sfd.FileName != "")
+            if (ofd.FileName != "")
             {
                 try
                 {
-                    var ms = new MemoryStream(File.ReadAllBytes(sfd.FileName));
+                    var ms = new MemoryStream(File.ReadAllBytes(ofd.FileName));
                     Bitmap bm = new Bitmap(Image.FromStream(ms));
-                    ss.setBitmapCanvas(bm);
+                    ss.setImportImage(bm);
                 }
                 catch (Exception e)
                 {

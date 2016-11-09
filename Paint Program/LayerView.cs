@@ -33,6 +33,7 @@ namespace Paint_Program
             pLayerDisplay.MouseWheel += handleMouseWheel;
             Layers = new List<LayerItem>();
             addLayer();
+            ss.setBitmapCurrentLayer(Layers[0].getBitmap());
         }
 
         private void handleMouseWheel(object sender, MouseEventArgs e)
@@ -130,6 +131,32 @@ namespace Paint_Program
         private void bRemoveLayer_Click(object sender, EventArgs e)
         {
             removeLayer();
+        }
+
+        public void addImportImage(Bitmap b)
+        {
+            foreach (LayerItem layer in Layers)
+            {
+                layer.setActive(false);
+            }
+
+            LayerItem temp = new LayerItem(width, height, pf, Layers.Count.ToString());
+            temp.Location = new Point(0, yLayerLocation);
+            yLayerLocation += temp.Height + 5;
+            temp.setActive(true);
+            temp.setOnClick(handleLayerItemClick);
+            temp.setBitmap((Bitmap)b.Clone());
+            Layers.Add(temp);
+            pLayerDisplay.Controls.Add(Layers[Layers.Count - 1]);
+
+            if (Layers.Count > 1)
+            {
+                bRemoveLayer.Enabled = true;
+                bMoveDown.Enabled = true;
+                bMoveUp.Enabled = true;
+            }
+
+            redrawLayerItems();
         }
 
         private void addLayer()
