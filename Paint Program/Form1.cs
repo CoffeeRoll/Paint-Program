@@ -52,7 +52,7 @@ namespace Paint_Program
         {
             //Save Project Function
 
-            Bitmap layers[] = c.getLayers();
+            //Bitmap layers[] = c.getLayers();
 
         }
 
