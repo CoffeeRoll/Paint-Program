@@ -33,6 +33,7 @@ namespace Paint_Program
             pLayerDisplay.MouseWheel += handleMouseWheel;
             Layers = new List<LayerItem>();
             addLayer();
+            ss.setBitmapCurrentLayer(Layers[0].getBitmap());
         }
 
         private void handleMouseWheel(object sender, MouseEventArgs e)
