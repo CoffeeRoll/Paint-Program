@@ -95,10 +95,11 @@ namespace Paint_Program
         {
             if (showToolsToolStripMenuItem.Checked)
             {
-                foreach (Canvas.ToolButtons)
-                {
-
-                }
+                c.ShowTools();
+            }
+            else
+            {
+                c.HideTools();
             }
         }
     }

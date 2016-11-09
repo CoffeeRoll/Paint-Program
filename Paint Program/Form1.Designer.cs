@@ -42,8 +42,8 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridLinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabletModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateTimer = new System.Windows.Forms.Timer(this.components);
             this.showToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateTimer = new System.Windows.Forms.Timer(this.components);
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -155,11 +155,6 @@
             this.tabletModeToolStripMenuItem.Text = "Tablet Mode";
             this.tabletModeToolStripMenuItem.Click += new System.EventHandler(this.tsmiView_Tablet_Click);
             // 
-            // updateTimer
-            // 
-            this.updateTimer.Enabled = true;
-            this.updateTimer.Interval = 500;
-            // 
             // showToolsToolStripMenuItem
             // 
             this.showToolsToolStripMenuItem.Checked = true;
@@ -170,6 +165,11 @@
             this.showToolsToolStripMenuItem.Text = "Show Tools";
             this.showToolsToolStripMenuItem.Click += new System.EventHandler(this.showToolsToolStripMenuItem_Click);
             // 
+            // updateTimer
+            // 
+            this.updateTimer.Enabled = true;
+            this.updateTimer.Interval = 500;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,7 +179,7 @@
             this.Controls.Add(this.msMenu);
             this.MainMenuStrip = this.msMenu;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Le Paint DONALD TRUMP 2016";
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
             this.ResumeLayout(false);

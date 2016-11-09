@@ -46,7 +46,7 @@ namespace Paint_Program
 
         private List<ITool> Tools;
         public List<ToolStripButton> ToolButtons;
-        public bool ShowTools = true;
+        private bool ToolsShown = true;
 
         SharedSettings ss;
 
@@ -166,8 +166,7 @@ namespace Paint_Program
                 ts.Items.Add(temp);
             }
 
-            
-            
+
             /**/
         }
 
@@ -284,6 +283,27 @@ namespace Paint_Program
         {
             //Return the image the user has been working on
             return lv.getRender();
+        }
+
+        public void ShowTools()
+        {
+            if (!ToolsShown)
+            {
+                ts.Visible = true;
+                
+            }
+            ToolsShown = true;
+            Parent.Refresh();
+        }
+
+        public void HideTools()
+        {
+            if (ToolsShown)
+            {
+                ts.Visible = false;
+            }
+
+            ToolsShown = false;
         }
 
         public SharedSettings getSharedSettings()
