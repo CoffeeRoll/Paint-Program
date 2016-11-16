@@ -73,7 +73,13 @@ namespace Paint_Program
         {
             //Save Project Function
 
-            ProjectSave ps = new ProjectSave(c.getSharedSettings());
+            try {
+                ProjectSave ps = new ProjectSave(c.getSharedSettings());
+            }catch(Exception err)
+            {
+                String s = "Error Saving Project! " + err.ToString();
+                MessageBox.Show(s);
+            }
 
         }
 
