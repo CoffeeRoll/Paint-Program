@@ -26,33 +26,54 @@ namespace Paint_Program
                 if (NewProjForm.ShowDialog(this) == DialogResult.OK)
                 {
 
-                    for (int i = this.Controls.Count - 1; i >= 0; i--)
-                    {
-                        if (!(this.Controls[i] is MenuStrip))
-                        {
-                            this.Controls.Remove(this.Controls[i]);
-                        }
-                    }
+                    clearControls();
 
                     int w = NewProjForm.CanvasWidth;
                     int h = NewProjForm.CanvasHeight;
-                    c = new Canvas(w, h, this.Width, this.Height);
-                    c.Location = new Point(200, 5);
-                    this.Controls.Add(c);
-                    c.initCanvas();
 
+                    Console.WriteLine(w + " + " + h);
 
-                    this.Update();
-
+                    makeNewProject(w, h);
                 }
             }
+        }
+
+        private void clearControls()
+        {
+            for (int i = this.Controls.Count - 1; i >= 0; i--)
+            {
+                if (!(this.Controls[i] is MenuStrip))
+                {
+                    this.Controls.Remove(this.Controls[i]);
+                }
+            }
+        }
+
+        private void makeNewProject(int w, int h)
+        {
+            c = new Canvas(w, h, this.Width, this.Height);
+            c.Location = new Point(200, 5);
+            this.Controls.Add(c);
+            c.initCanvas();
+
+
+            this.Update();
+        }
+
+        private void makeNewProject(SharedSettings s)
+        {
+            c = new Canvas(this.Width, this.Height, s);
+            c.Location = new Point(200, 5);
+            this.Controls.Add(c);
+            c.initCanvas();
+            this.Update();
         }
 
         private void tsmiFile_Save_Click(object sender, EventArgs e)
         {
             //Save Project Function
 
-            //Bitmap layers[] = c.getLayers();
+            ProjectSave ps = new ProjectSave(c.getSharedSettings());
 
         }
 
@@ -104,6 +125,21 @@ namespace Paint_Program
             {
                 c.HideTools();
             }
+        }
+
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clearControls();
+
+            SharedSettings s = new SharedSettings();
+            ProjectLoad pl = new ProjectLoad(s);
+
+            if(s.getLoadFromSettings() == false)
+            {
+                return;
+            }
+
+            makeNewProject(s);
         }
     }
 }

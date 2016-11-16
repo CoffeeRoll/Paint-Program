@@ -14,8 +14,6 @@ using System.Drawing.Imaging;
 namespace Paint_Program
 {
 
-    
-
     public partial class Canvas : UserControl
     {
 
@@ -50,38 +48,62 @@ namespace Paint_Program
 
         SharedSettings ss;
 
-        public Canvas(int w, int h, int pw, int ph)
+        public Canvas(int pw, int ph, SharedSettings settings)
         {
             InitializeComponent();
 
-            ss = new SharedSettings();
-            Tools = new List<ITool>();
-            ToolButtons = new List<ToolStripButton>();
+            ss = settings;
 
-            try {
-                ti = new TabletInfo(HandleTabletData);
-            }catch(Exception e)
-            {
-                Console.WriteLine(e.InnerException);
-            }
+            canvasWidth = settings.getCanvasWidth();
+            canvasHeight = settings.getCanvasHeight();
+            maxWidth = pw;
+            maxHeight = ph;
+
+            this.Width = canvasWidth;
+            this.Height = canvasHeight;
+
+        }
+
+        public Canvas(int w, int h, int pw, int ph)
+        {
+            InitializeComponent();
             
+            ss = new SharedSettings();
 
             canvasWidth = w;
             canvasHeight = h;
+
+            Console.WriteLine(canvasWidth + " + " + canvasHeight);
+
             maxWidth = pw;
             maxHeight = ph;
 
             ss.setCanvasWidth(canvasWidth);
             ss.setCanvasHeight(canvasHeight);
 
+            this.Width = canvasWidth;
+            this.Height = canvasHeight;
+        }
+
+        public void initCanvas()
+        {
+            Tools = new List<ITool>();
+            ToolButtons = new List<ToolStripButton>();
+
+            try
+            {
+                ti = new TabletInfo(HandleTabletData);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.InnerException);
+            }
+
             tsWidth = 50;
             menuHeight = 25;
 
             scrollWidth = System.Windows.Forms.SystemInformation.VerticalScrollBarWidth;
             scrollHeight = System.Windows.Forms.SystemInformation.HorizontalScrollBarHeight;
-
-            this.Width = canvasWidth;
-            this.Height = canvasHeight;
 
             p = new Display();
             p.Width = canvasWidth;
@@ -94,11 +116,14 @@ namespace Paint_Program
             p.MouseMove += handleMouseMove;
             p.Paint += EDisplayPaint;
 
+            Console.WriteLine(canvasWidth + " + " + canvasHeight);
+
             bg = new Bitmap(canvasWidth, canvasHeight, PixelFormat.Format24bppRgb);
-            
-            try {
+
+            try
+            {
                 // p.BackgroundImage = Bitmap.FromFile(@"..\..\Images\transparent_texture.jpg");
-                Bitmap bgTile = (Bitmap) Bitmap.FromFile(@"..\..\Images\transparent_texture.jpg");
+                Bitmap bgTile = (Bitmap)Bitmap.FromFile(@"..\..\Images\transparent_texture.jpg");
                 using (TextureBrush brush = new TextureBrush(bgTile, WrapMode.Tile))
                 {
                     using (Graphics g = Graphics.FromImage(bg))
@@ -107,7 +132,7 @@ namespace Paint_Program
                     }
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Graphics.FromImage(bg).Clear(Color.White);
                 p.BackColor = Color.White;
@@ -116,10 +141,7 @@ namespace Paint_Program
             g = p.CreateGraphics();
 
             this.Controls.Add(p);
-        }
 
-        public void initCanvas()
-        {            
             lv = new LayerView(canvasWidth, canvasHeight, ss);
             lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
 
@@ -245,6 +267,7 @@ namespace Paint_Program
         {
             if (iActiveTool >= 0)
                 Tools[iActiveTool].onMouseUp(sender, e);
+            lv.UpdateLayerInfoListener();
         }
 
         public void handleMouseMove(object sender, MouseEventArgs e)

@@ -99,10 +99,9 @@ namespace Paint_Program
             }
         }
 
-        public void updateLayer()
+        public String getLayerName()
         {
-            
-            
+            return sLayerName;
         }
 
         public void setOnClick(System.EventHandler func)

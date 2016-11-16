@@ -9,7 +9,7 @@ namespace Paint_Program
 {
     public class SharedSettings
     {
-        public static Color cPrimaryBrushColor{ get; set; }
+        public static Color cPrimaryBrushColor { get; set; }
 
         public static Color cSecondaryBrushColor { get; set; }
 
@@ -29,11 +29,17 @@ namespace Paint_Program
 
         public static int iCanvasHeight { get; set; }
 
+        public static bool bLoadFromSettings { get; set; }
+
         public static Bitmap bitmapCanvas { get; set; }
 
         public static Bitmap bitmapCurrentLayer { get; set; }
 
         public static Bitmap bitmapImportImage { get; set; }
+
+        public static Bitmap[] Layers { get; set; }
+
+        public static String[] LayerNames { get; set; }
 
         public SharedSettings()
         {
@@ -107,6 +113,11 @@ namespace Paint_Program
             iCanvasHeight = h;
         }
 
+        public void setLoadFromSettings(bool b)
+        {
+            bLoadFromSettings = b;
+        }
+
         public void setBitmapCanvas(Bitmap b)
         {
             bitmapCanvas = b;
@@ -120,6 +131,21 @@ namespace Paint_Program
         public void setBitmapCurrentLayer(Bitmap b)
         {
             bitmapCurrentLayer = b;
+        }
+
+        public void setLayerBitmaps(Bitmap[] bitArr)
+        {
+            Layers = new Bitmap[bitArr.Length];
+            for(int n = 0; n < bitArr.Length; n++)
+            {
+                Bitmap temp = (Bitmap)bitArr[n].Clone();
+                Layers[n] = temp;
+            }
+        }
+
+        public void setLayerNames(String[] names)
+        {
+            LayerNames = names;
         }
 
 
@@ -173,6 +199,11 @@ namespace Paint_Program
             return iCanvasHeight;
         }
 
+        public bool getLoadFromSettings()
+        {
+            return bLoadFromSettings;
+        }
+
         public Bitmap getBitmapCanvas()
         {
             return bitmapCanvas;
@@ -195,6 +226,16 @@ namespace Paint_Program
             {
                 return(Bitmap) bitmapCurrentLayer.Clone();
             }
+        }
+
+        public Bitmap[] getLayerBitmaps()
+        {
+            return Layers;
+        }
+
+        public String[] getLayerNames()
+        {
+            return LayerNames;
         }
 
 

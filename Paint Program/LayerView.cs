@@ -32,8 +32,24 @@ namespace Paint_Program
             pLayerDisplay.Scroll += handleScroll;
             pLayerDisplay.MouseWheel += handleMouseWheel;
             Layers = new List<LayerItem>();
-            addLayer();
-            ss.setBitmapCurrentLayer(Layers[0].getBitmap());
+
+            if (ss.getLoadFromSettings() && ss.getLayerBitmaps().Length > 0)
+            {
+
+                int layers = ss.getLayerBitmaps().Length;
+
+                for (int n = 0; n < layers; n++)
+                {
+                    addLayer(ss.getLayerBitmaps()[n], ss.getLayerNames()[n]);
+                }
+            }
+            else
+            {
+                addLayer();
+                ss.setBitmapCurrentLayer(Layers[0].getBitmap());
+            }
+            redrawLayerItems();
+            UpdateLayerInfo();
         }
 
         private void handleMouseWheel(object sender, MouseEventArgs e)
@@ -126,11 +142,18 @@ namespace Paint_Program
         private void bAddLayer_Click(object sender, EventArgs e)
         {
             addLayer();
+            UpdateLayerInfo();
         }
 
         private void bRemoveLayer_Click(object sender, EventArgs e)
         {
             removeLayer();
+            UpdateLayerInfo();
+        }
+
+        public void UpdateLayerInfoListener()
+        {
+            UpdateLayerInfo();
         }
 
         public void addImportImage(Bitmap b)
@@ -172,6 +195,7 @@ namespace Paint_Program
             yLayerLocation += temp.Height + 5;
             temp.setActive(true);
             temp.setOnClick(handleLayerItemClick);
+            
             Layers.Add(temp);
             pLayerDisplay.Controls.Add(Layers[Layers.Count - 1]);
 
@@ -183,6 +207,32 @@ namespace Paint_Program
             }
 
             redrawLayerItems();
+        }
+
+        private void addLayer(Bitmap b, String name)
+        {
+
+            foreach (LayerItem layer in Layers)
+            {
+                layer.setActive(false);
+            }
+
+            LayerItem temp = new LayerItem(width, height, pf, name);
+            temp.Location = new Point(0, yLayerLocation);
+            yLayerLocation += temp.Height + 5;
+            temp.setActive(true);
+            temp.setOnClick(handleLayerItemClick);
+            temp.setBitmap(b);
+
+            Layers.Add(temp);
+            pLayerDisplay.Controls.Add(Layers[Layers.Count - 1]);
+
+            if (Layers.Count > 1)
+            {
+                bRemoveLayer.Enabled = true;
+                bMoveDown.Enabled = true;
+                bMoveUp.Enabled = true;
+            }
         }
 
         private void removeLayer()
@@ -234,6 +284,7 @@ namespace Paint_Program
                 yLayerLocation += Layers[t].Height + 5;
                 
             }
+            UpdateLayerInfo();
             this.Refresh();
         }
 
@@ -304,5 +355,22 @@ namespace Paint_Program
             }
             redrawLayerItems();
         }
+
+        private void UpdateLayerInfo()
+        {
+            List<Bitmap> tempBit = new List<Bitmap>();
+            List<String> tempStr = new List<String>();
+
+            foreach (LayerItem l in Layers)
+            {
+                tempBit.Add(l.getBitmap());
+                tempStr.Add(l.getLayerName());
+            }
+
+            ss.setLayerBitmaps(tempBit.ToArray());
+            ss.setLayerNames(tempStr.ToArray());
+
+        }
+
     }
 }
