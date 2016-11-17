@@ -61,6 +61,7 @@
       <DependentUpon>Canvas.cs</DependentUpon>
     </Compile>
     <Compile Include="ColorSamplingTool.cs" />
+    <Compile Include="DebugTool.cs" />
     <Compile Include="Display.cs">
       <SubType>Component</SubType>
     </Compile>
