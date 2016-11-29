@@ -15,6 +15,7 @@ namespace Paint_Program
         public Form1()
         {
             InitializeComponent();
+            this.MinimumSize = new System.Drawing.Size(900, 677);
         }
         Canvas c;
 

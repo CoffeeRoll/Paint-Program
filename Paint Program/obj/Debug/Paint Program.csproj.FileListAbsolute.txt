@@ -89,3 +89,4 @@ C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Progr
 C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.NewProjectForm.resources
 C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Properties.Resources.resources
 C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.ZoomControl.resources

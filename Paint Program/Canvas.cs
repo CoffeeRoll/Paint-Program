@@ -39,6 +39,7 @@ namespace Paint_Program
         LayerView lv;
         ToolStrip ts;
         BrushSettings bs;
+        ZoomControl zc;
 
         TabletInfo ti;
 
@@ -164,6 +165,9 @@ namespace Paint_Program
             bs.Location = new Point(maxWidth - bs.Width, 0);
             this.Parent.Controls.Add(bs);
 
+            zc = new ZoomControl();
+            zc.Location = new Point(tsWidth, maxHeight - SystemInformation.CaptionHeight - menuHeight- zc.Height);
+            this.Parent.Controls.Add(zc);
 
             initTools();
         }
@@ -243,9 +247,12 @@ namespace Paint_Program
             this.Location = new Point((maxWidth / 2) - (this.Width / 2), (maxHeight / 2) - (this.Height / 2));
             ts.Height = maxHeight - menuHeight;
             bs.Location = new Point(maxWidth - bs.Width, menuHeight);
+            zc.Location = new Point(tsWidth, maxHeight -SystemInformation.CaptionHeight - menuHeight - zc.Height);
 
             //Prevent controls from not redrawing
             this.Parent.Refresh();
+
+            Console.WriteLine(Parent.Width);
         }
 
         public void handleMouseDown(object sender, MouseEventArgs e)
