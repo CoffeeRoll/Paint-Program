@@ -18,6 +18,7 @@ namespace Paint_Program
     {
 
         private Display p;
+        private Panel pScaled;
 
         private Graphics g;
 
@@ -106,43 +107,6 @@ namespace Paint_Program
             scrollWidth = System.Windows.Forms.SystemInformation.VerticalScrollBarWidth;
             scrollHeight = System.Windows.Forms.SystemInformation.HorizontalScrollBarHeight;
 
-            p = new Display();
-            p.Width = canvasWidth;
-            p.Height = canvasHeight;
-            p.MaximumSize = new Size(canvasWidth, canvasHeight);
-            p.Size = new Size(canvasWidth, canvasHeight);
-            p.BackgroundImageLayout = ImageLayout.Tile;
-            p.MouseDown += handleMouseDown;
-            p.MouseUp += handleMouseUp;
-            p.MouseMove += handleMouseMove;
-            p.Paint += EDisplayPaint;
-
-            Console.WriteLine(canvasWidth + " + " + canvasHeight);
-
-            bg = new Bitmap(canvasWidth, canvasHeight, PixelFormat.Format24bppRgb);
-
-            try
-            {
-                // p.BackgroundImage = Bitmap.FromFile(@"..\..\Images\transparent_texture.jpg");
-                Bitmap bgTile = (Bitmap)Bitmap.FromFile(@"..\..\Images\transparent_texture.jpg");
-                using (TextureBrush brush = new TextureBrush(bgTile, WrapMode.Tile))
-                {
-                    using (Graphics g = Graphics.FromImage(bg))
-                    {
-                        g.FillRectangle(brush, 0, 0, bg.Width, bg.Height);
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Graphics.FromImage(bg).Clear(Color.White);
-                p.BackColor = Color.White;
-            }
-
-            g = p.CreateGraphics();
-
-            this.Controls.Add(p);
-
             lv = new LayerView(canvasWidth, canvasHeight, ss);
             lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
 
@@ -168,6 +132,47 @@ namespace Paint_Program
             zc = new ZoomControl();
             zc.Location = new Point(tsWidth, maxHeight - SystemInformation.CaptionHeight - menuHeight- zc.Height);
             this.Parent.Controls.Add(zc);
+
+            p = new Display();
+            p.Size = new Size(canvasWidth, canvasHeight);
+            p.MouseDown += handleMouseDown;
+            p.MouseUp += handleMouseUp;
+            p.MouseMove += handleMouseMove;
+            p.Paint += EDisplayPaint;
+
+            pScaled = new Panel();
+            pScaled.Size = new Size( (lv.Location.X - this.Location.X) - ts.Width - 30 ,(zc.Location.Y - this.Location.Y) - 165 );
+            pScaled.Location = new Point(0,0);
+            pScaled.BackColor = Color.Black;
+            pScaled.AutoScroll = true;
+            this.Location = new Point(ts.Width + 15, SystemInformation.CaptionHeight + 15);
+            pScaled.Controls.Add(p);
+
+            Console.WriteLine(canvasWidth + " + " + canvasHeight);
+
+            bg = new Bitmap(canvasWidth, canvasHeight, PixelFormat.Format24bppRgb);
+
+            try
+            {
+                Bitmap bgTile = (Bitmap)Bitmap.FromFile(@"..\..\Images\transparent_texture.jpg");
+                using (TextureBrush brush = new TextureBrush(bgTile, WrapMode.Tile))
+                {
+                    using (Graphics g = Graphics.FromImage(bg))
+                    {
+                        g.FillRectangle(brush, 0, 0, bg.Width, bg.Height);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Graphics.FromImage(bg).Clear(Color.White);
+                p.BackColor = Color.White;
+            }
+
+            g = p.CreateGraphics();
+
+            this.Controls.Add(pScaled);
+            this.SendToBack();
 
             initTools();
         }
@@ -244,10 +249,11 @@ namespace Paint_Program
             
             //Moves all the Controls to their new location
             lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
-            this.Location = new Point((maxWidth / 2) - (this.Width / 2), (maxHeight / 2) - (this.Height / 2));
             ts.Height = maxHeight - menuHeight;
             bs.Location = new Point(maxWidth - bs.Width, menuHeight);
             zc.Location = new Point(tsWidth, maxHeight -SystemInformation.CaptionHeight - menuHeight - zc.Height);
+
+            pScaled.Size = new Size((lv.Location.X - this.Location.X) - 15 , (zc.Location.Y - this.Location.Y) - 15);
 
             //Prevent controls from not redrawing
             this.Parent.Refresh();
@@ -282,6 +288,8 @@ namespace Paint_Program
             if (iActiveTool >= 0)
                 Tools[iActiveTool].onMouseMove(sender, e);
             updateCanvas(g);
+            //Console.WriteLine("Mouse: " + e.X + " " + e.Y);
+            Parent.Refresh();
         }
 
         private void EDisplayPaint(object sender, PaintEventArgs e)
@@ -294,11 +302,16 @@ namespace Paint_Program
         {
             Bitmap bit = lv.getRender();
             Bitmap bit2 = (Bitmap)bg.Clone();
+
+           
+
             Graphics.FromImage(bit2).DrawImage(bit, 0, 0);
+
             Bitmap iitmp = ss.getImportImage();
             if (iitmp != null)
+            {
                 lv.addImportImage(iitmp);
-
+            }
             ss.setBitmapCanvas(bit);
             p.Invalidate();
             System.GC.Collect(); //Prevent OutOfMemory Execptions

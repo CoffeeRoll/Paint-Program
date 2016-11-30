@@ -11,6 +11,7 @@ namespace Paint_Program
     {
         public Display()
         {
+            this.AutoScroll = true;
             this.DoubleBuffered = true;
         }
     }
