@@ -189,6 +189,8 @@
             this.Controls.Add(this.msMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.msMenu;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(900, 677);
             this.Name = "Form1";
             this.Text = "Le Paint BETA 0.0.0.0.3";
             this.msMenu.ResumeLayout(false);

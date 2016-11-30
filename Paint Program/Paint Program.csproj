@@ -61,6 +61,7 @@
       <DependentUpon>Canvas.cs</DependentUpon>
     </Compile>
     <Compile Include="ColorSamplingTool.cs" />
+    <Compile Include="DebugTool.cs" />
     <Compile Include="Display.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -104,6 +105,12 @@
     <Compile Include="SharedSettings.cs" />
     <Compile Include="TabletInfo.cs" />
     <Compile Include="TextTool.cs" />
+    <Compile Include="ZoomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZoomControl.Designer.cs">
+      <DependentUpon>ZoomControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BrushSettings.resx">
       <DependentUpon>BrushSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +138,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ZoomControl.resx">
+      <DependentUpon>ZoomControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
