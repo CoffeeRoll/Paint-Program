@@ -148,6 +148,7 @@ namespace Paint_Program
         private void bRemoveLayer_Click(object sender, EventArgs e)
         {
             removeLayer();
+            Layers[Layers.Count - 1].setActive(true);
             UpdateLayerInfo();
         }
 
