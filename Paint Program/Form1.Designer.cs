@@ -58,7 +58,8 @@
             this.viewToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
-            this.msMenu.Size = new System.Drawing.Size(1178, 33);
+            this.msMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.msMenu.Size = new System.Drawing.Size(785, 24);
             this.msMenu.TabIndex = 1;
             this.msMenu.Text = "menuStrip1";
             // 
@@ -71,41 +72,41 @@
             this.importImageToolStripMenuItem,
             this.exportImageToolStripMenuItem});
             this.tsmiFile.Name = "tsmiFile";
-            this.tsmiFile.Size = new System.Drawing.Size(50, 29);
+            this.tsmiFile.Size = new System.Drawing.Size(37, 22);
             this.tsmiFile.Text = "File";
             // 
             // tsmiFile_New
             // 
             this.tsmiFile_New.Name = "tsmiFile_New";
-            this.tsmiFile_New.Size = new System.Drawing.Size(207, 30);
+            this.tsmiFile_New.Size = new System.Drawing.Size(146, 22);
             this.tsmiFile_New.Text = "New";
             this.tsmiFile_New.Click += new System.EventHandler(this.tsmiFile_New_Click);
             // 
             // saveImageToolStripMenuItem
             // 
             this.saveImageToolStripMenuItem.Name = "saveImageToolStripMenuItem";
-            this.saveImageToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
+            this.saveImageToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.saveImageToolStripMenuItem.Text = "Save";
             this.saveImageToolStripMenuItem.Click += new System.EventHandler(this.tsmiFile_Save_Click);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // importImageToolStripMenuItem
             // 
             this.importImageToolStripMenuItem.Name = "importImageToolStripMenuItem";
-            this.importImageToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
+            this.importImageToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.importImageToolStripMenuItem.Text = "Import Image";
             this.importImageToolStripMenuItem.Click += new System.EventHandler(this.tsmiFile_Import_Click);
             // 
             // exportImageToolStripMenuItem
             // 
             this.exportImageToolStripMenuItem.Name = "exportImageToolStripMenuItem";
-            this.exportImageToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
+            this.exportImageToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.exportImageToolStripMenuItem.Text = "Export Image";
             this.exportImageToolStripMenuItem.Click += new System.EventHandler(this.tsmiFile_Export_Click);
             // 
@@ -116,27 +117,27 @@
             this.redoToolStripMenuItem,
             this.aspectRatioToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 22);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(183, 30);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.undoToolStripMenuItem.Text = "Undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.tsmiEdit_Undo_Click);
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(183, 30);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.redoToolStripMenuItem.Text = "Redo";
             this.redoToolStripMenuItem.Click += new System.EventHandler(this.tsmiEdit_Redo_Click);
             // 
             // aspectRatioToolStripMenuItem
             // 
             this.aspectRatioToolStripMenuItem.Name = "aspectRatioToolStripMenuItem";
-            this.aspectRatioToolStripMenuItem.Size = new System.Drawing.Size(183, 30);
+            this.aspectRatioToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.aspectRatioToolStripMenuItem.Text = "Image Size";
             this.aspectRatioToolStripMenuItem.Click += new System.EventHandler(this.tsmiEdit_ImageSize_Click);
             // 
@@ -147,20 +148,20 @@
             this.tabletModeToolStripMenuItem,
             this.showToolsToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(61, 29);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // gridLinesToolStripMenuItem
             // 
             this.gridLinesToolStripMenuItem.Name = "gridLinesToolStripMenuItem";
-            this.gridLinesToolStripMenuItem.Size = new System.Drawing.Size(232, 30);
+            this.gridLinesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.gridLinesToolStripMenuItem.Text = "Toggle Grid Lines";
             this.gridLinesToolStripMenuItem.Click += new System.EventHandler(this.tsmiView_GridLines_Click);
             // 
             // tabletModeToolStripMenuItem
             // 
             this.tabletModeToolStripMenuItem.Name = "tabletModeToolStripMenuItem";
-            this.tabletModeToolStripMenuItem.Size = new System.Drawing.Size(232, 30);
+            this.tabletModeToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.tabletModeToolStripMenuItem.Text = "Tablet Mode";
             this.tabletModeToolStripMenuItem.Click += new System.EventHandler(this.tsmiView_Tablet_Click);
             // 
@@ -170,7 +171,7 @@
             this.showToolsToolStripMenuItem.CheckOnClick = true;
             this.showToolsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.showToolsToolStripMenuItem.Name = "showToolsToolStripMenuItem";
-            this.showToolsToolStripMenuItem.Size = new System.Drawing.Size(232, 30);
+            this.showToolsToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.showToolsToolStripMenuItem.Text = "Show Tools";
             this.showToolsToolStripMenuItem.Click += new System.EventHandler(this.showToolsToolStripMenuItem_Click);
             // 
@@ -181,16 +182,15 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(1178, 845);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(785, 549);
             this.Controls.Add(this.msMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.msMenu;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
-            this.Text = "Le Paint BETA";
+            this.Text = "Le Paint BETA 0.0.0.0.3";
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
             this.ResumeLayout(false);

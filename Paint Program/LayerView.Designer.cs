@@ -37,9 +37,10 @@
             // 
             // bAddLayer
             // 
-            this.bAddLayer.Location = new System.Drawing.Point(3, 3);
+            this.bAddLayer.Location = new System.Drawing.Point(2, 2);
+            this.bAddLayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bAddLayer.Name = "bAddLayer";
-            this.bAddLayer.Size = new System.Drawing.Size(40, 40);
+            this.bAddLayer.Size = new System.Drawing.Size(27, 26);
             this.bAddLayer.TabIndex = 0;
             this.bAddLayer.Text = "+";
             this.bAddLayer.UseVisualStyleBackColor = true;
@@ -47,9 +48,10 @@
             // 
             // bRemoveLayer
             // 
-            this.bRemoveLayer.Location = new System.Drawing.Point(49, 3);
+            this.bRemoveLayer.Location = new System.Drawing.Point(33, 2);
+            this.bRemoveLayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bRemoveLayer.Name = "bRemoveLayer";
-            this.bRemoveLayer.Size = new System.Drawing.Size(40, 40);
+            this.bRemoveLayer.Size = new System.Drawing.Size(27, 26);
             this.bRemoveLayer.TabIndex = 1;
             this.bRemoveLayer.Text = "-";
             this.bRemoveLayer.UseVisualStyleBackColor = true;
@@ -59,17 +61,19 @@
             // 
             this.pLayerDisplay.AutoScroll = true;
             this.pLayerDisplay.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pLayerDisplay.Location = new System.Drawing.Point(0, 49);
+            this.pLayerDisplay.Location = new System.Drawing.Point(0, 32);
+            this.pLayerDisplay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pLayerDisplay.Name = "pLayerDisplay";
-            this.pLayerDisplay.Size = new System.Drawing.Size(360, 501);
+            this.pLayerDisplay.Size = new System.Drawing.Size(240, 326);
             this.pLayerDisplay.TabIndex = 2;
             // 
             // bMoveDown
             // 
             this.bMoveDown.Enabled = false;
-            this.bMoveDown.Location = new System.Drawing.Point(158, 3);
+            this.bMoveDown.Location = new System.Drawing.Point(105, 2);
+            this.bMoveDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bMoveDown.Name = "bMoveDown";
-            this.bMoveDown.Size = new System.Drawing.Size(40, 40);
+            this.bMoveDown.Size = new System.Drawing.Size(27, 26);
             this.bMoveDown.TabIndex = 3;
             this.bMoveDown.Text = "▽";
             this.bMoveDown.UseVisualStyleBackColor = true;
@@ -78,9 +82,10 @@
             // bMoveUp
             // 
             this.bMoveUp.Enabled = false;
-            this.bMoveUp.Location = new System.Drawing.Point(204, 3);
+            this.bMoveUp.Location = new System.Drawing.Point(136, 2);
+            this.bMoveUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bMoveUp.Name = "bMoveUp";
-            this.bMoveUp.Size = new System.Drawing.Size(40, 40);
+            this.bMoveUp.Size = new System.Drawing.Size(27, 26);
             this.bMoveUp.TabIndex = 4;
             this.bMoveUp.Text = "△";
             this.bMoveUp.UseVisualStyleBackColor = true;
@@ -88,7 +93,7 @@
             // 
             // LayerView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Crimson;
             this.Controls.Add(this.bMoveUp);
@@ -96,8 +101,9 @@
             this.Controls.Add(this.pLayerDisplay);
             this.Controls.Add(this.bRemoveLayer);
             this.Controls.Add(this.bAddLayer);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "LayerView";
-            this.Size = new System.Drawing.Size(360, 550);
+            this.Size = new System.Drawing.Size(240, 357);
             this.ResumeLayout(false);
 
         }

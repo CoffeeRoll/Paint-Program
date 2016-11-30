@@ -86,7 +86,14 @@ namespace Paint_Program
         private void tsmiFile_Import_Click(object sender, EventArgs e)
         {
             //Import Image
-            ImageImport ii = new Paint_Program.ImageImport(c.getSharedSettings());
+            try
+            {
+                ImageImport ii = new Paint_Program.ImageImport(c.getSharedSettings());
+            }
+            catch(Exception err)
+            {
+                Console.WriteLine(err.ToString()); 
+            }
         }
 
         private void tsmiFile_Export_Click(object sender, EventArgs e)

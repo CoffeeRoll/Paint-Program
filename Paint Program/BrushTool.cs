@@ -18,7 +18,9 @@ namespace Paint_Program
 
         private Point pOld, pMid, pNew;
 
-        private Pen pPrime, pSec;
+        private Brush pPrime, pSec;
+
+        private RectangleF rect;
 
         public BrushTool()
         {
@@ -31,16 +33,17 @@ namespace Paint_Program
             int G = settings.getPrimaryBrushColor().G;
             int B = settings.getPrimaryBrushColor().B;
 
-            pPrime = new Pen(Color.FromArgb(settings.getBrushHardness(), R, G, B), settings.getBrushSize());
-            pPrime.LineJoin = LineJoin.Round;
-            pPrime.MiterLimit = pPrime.Width;
+            pPrime = new SolidBrush(Color.FromArgb(settings.getBrushHardness(), R, G, B));
+            //pPrime.LineJoin = LineJoin.Round;
+            //pPrime.MiterLimit = pPrime.Width;
 
             R = settings.getSecondaryBrushColor().R;
             G = settings.getSecondaryBrushColor().G;
             B = settings.getSecondaryBrushColor().B;
 
-            pSec = new Pen(Color.FromArgb(settings.getBrushHardness(), R, G, B), settings.getBrushSize());
-            pSec.LineJoin = LineJoin.Round;
+            pSec = new SolidBrush(Color.FromArgb(settings.getBrushHardness(), R, G, B));
+            
+            //pSec.LineJoin = LineJoin.Round;
         }
 
         public void init(Graphics g, int w, int h, SharedSettings s)
@@ -83,6 +86,10 @@ namespace Paint_Program
                 bMouseDown = true;
                 pOld = e.Location;
                 numPoints = 1;
+                rect.Width = settings.getBrushSize() / 2;
+                rect.Height = settings.getBrushSize() / 2;
+                rect.X = pOld.X / 2;
+                rect.Y = pOld.Y / 2;
             }
         }
 
@@ -91,6 +98,8 @@ namespace Paint_Program
             if (graphics != null && bMouseDown)
             {
                 pNew = e.Location;
+                rect.X = pNew.X;
+                rect.Y = pNew.Y;
                 numPoints = 2;
                 int pressure = -1;
                 if(settings.getTabletPressure() >= 0)
@@ -103,17 +112,19 @@ namespace Paint_Program
                     {
                         if (pressure >= 0)
                         {
-                            pPrime.Width = pressure;
+                            rect.Width = pressure / 2;
+                            rect.Height = pressure / 2;
                         }
-                        graphics.DrawLine(pPrime, pOld, pNew);
+                        graphics.FillEllipse(pPrime, rect);
                     }
                     else if (e.Button == MouseButtons.Right)
                     {
                         if (pressure >= 0)
                         {
-                            pSec.Width = pressure;
+                            rect.Width = pressure / 2;
+                            rect.Height = pressure / 2;
                         }
-                        graphics.DrawLine(pSec, pOld, pNew);
+                        graphics.FillEllipse(pSec, rect);
                     }
                     pMid = pNew;
                     numPoints = 3;
@@ -124,18 +135,20 @@ namespace Paint_Program
                     {
                         if (pressure >= 0)
                         {
-                            pPrime.Width = pressure;
+                            rect.Width = pressure / 2;
+                            rect.Height = pressure / 2;
                         }
                         // graphics.DrawLine(pPrime, pOld, pNew);
-                        graphics.DrawCurve(pPrime, new Point[] { pOld, pMid, pNew });
+                        graphics.FillEllipse(pPrime, rect);
                     }
                     else if (e.Button == MouseButtons.Right)
                     {
                         if (pressure >= 0)
                         {
-                            pSec.Width = pressure;
+                            rect.Width = pressure / 2;
+                            rect.Height = pressure / 2;
                         }
-                        graphics.DrawLine(pSec, pOld, pNew);
+                        graphics.FillEllipse(pSec, rect);
                     }
                 }
 
