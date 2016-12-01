@@ -312,14 +312,11 @@ namespace Paint_Program
         {
             Bitmap bit = lv.getRender();
             Bitmap bit2 = (Bitmap)bg.Clone();
-<<<<<<< HEAD
             //lv.GridDraw(Graphics.FromImage(Grid));
             if (ss.getGridToggle())
             {            
                 lv.GridDraw(Graphics.FromImage(bit2));
             }
-=======
->>>>>>> origin/master
 
             Graphics.FromImage(bit2).DrawImage(bit, 0, 0);
 
@@ -334,11 +331,9 @@ namespace Paint_Program
 
             p.Invalidate();
             System.GC.Collect(); //Prevent OutOfMemory Execptions
-<<<<<<< HEAD
             
             k.DrawImage(bit2, 0, 0);
            
-=======
 
             p.Width = (int) (ss.getDrawScale() * ss.getCanvasWidth());
             p.Height = (int) (ss.getDrawScale() * ss.getCanvasHeight());
@@ -347,7 +342,6 @@ namespace Paint_Program
 
             k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
             
->>>>>>> origin/master
         }
 
         public void setBitmap(Bitmap bit)
