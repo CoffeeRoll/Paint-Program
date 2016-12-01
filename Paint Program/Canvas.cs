@@ -131,7 +131,7 @@ namespace Paint_Program
             bs.Location = new Point(maxWidth - bs.Width, 0);
             this.Parent.Controls.Add(bs);
 
-            zc = new ZoomControl();
+            zc = new ZoomControl(ss);
             zc.Location = new Point(tsWidth, maxHeight - SystemInformation.CaptionHeight - menuHeight- zc.Height);
             this.Parent.Controls.Add(zc);
 
@@ -268,6 +268,8 @@ namespace Paint_Program
 
         public void handleMouseDown(object sender, MouseEventArgs e)
         {
+            MouseEventArgs evt = new MouseEventArgs(e.Button, e.Clicks, (int)(e.X / ss.getDrawScale()), (int)(e.Y / ss.getDrawScale()), e.Delta);
+
             //If there is a selected Tool
             if (iActiveTool >= 0)
             {
@@ -278,20 +280,23 @@ namespace Paint_Program
                 }
             }
             if (iActiveTool >= 0)
-                Tools[iActiveTool].onMouseDown(sender, e);
+                Tools[iActiveTool].onMouseDown(sender, evt);
         }
 
         public void handleMouseUp(object sender, MouseEventArgs e)
         {
+            MouseEventArgs evt = new MouseEventArgs(e.Button, e.Clicks, (int)(e.X / ss.getDrawScale()), (int)(e.Y / ss.getDrawScale()), e.Delta);
             if (iActiveTool >= 0)
-                Tools[iActiveTool].onMouseUp(sender, e);
+                Tools[iActiveTool].onMouseUp(sender, evt);
             lv.UpdateLayerInfoListener();
         }
 
         public void handleMouseMove(object sender, MouseEventArgs e)
         {
+            MouseEventArgs evt = new MouseEventArgs(e.Button, e.Clicks, (int)(e.X/ss.getDrawScale()), (int)(e.Y / ss.getDrawScale()), e.Delta);
             if (iActiveTool >= 0)
-                Tools[iActiveTool].onMouseMove(sender, e);
+                
+                Tools[iActiveTool].onMouseMove(sender, evt);
             updateCanvas(g);
             //Console.WriteLine("Mouse: " + e.X + " " + e.Y);
             Parent.Refresh();
@@ -307,11 +312,14 @@ namespace Paint_Program
         {
             Bitmap bit = lv.getRender();
             Bitmap bit2 = (Bitmap)bg.Clone();
+<<<<<<< HEAD
             //lv.GridDraw(Graphics.FromImage(Grid));
             if (ss.getGridToggle())
             {            
                 lv.GridDraw(Graphics.FromImage(bit2));
             }
+=======
+>>>>>>> origin/master
 
             Graphics.FromImage(bit2).DrawImage(bit, 0, 0);
 
@@ -321,11 +329,25 @@ namespace Paint_Program
                 lv.addImportImage(iitmp);
             }
             ss.setBitmapCanvas(bit);
+
+
+
             p.Invalidate();
             System.GC.Collect(); //Prevent OutOfMemory Execptions
+<<<<<<< HEAD
             
             k.DrawImage(bit2, 0, 0);
            
+=======
+
+            p.Width = (int) (ss.getDrawScale() * ss.getCanvasWidth());
+            p.Height = (int) (ss.getDrawScale() * ss.getCanvasHeight());
+            Rectangle source = new Rectangle(0, 0, bit2.Width, bit2.Height);
+            Rectangle dest = new Rectangle(0, 0, p.Width, p.Height);
+
+            k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
+            
+>>>>>>> origin/master
         }
 
         public void setBitmap(Bitmap bit)
