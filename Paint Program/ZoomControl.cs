@@ -15,14 +15,16 @@ namespace Paint_Program
 
         double dZoomFactor;
 
-        private const double ZOOM_MIN = 0.1;
+        private const double ZOOM_MIN = 1;
         private const double ZOOM_MAX = 3200;
+        private SharedSettings settings;
 
-
-        public ZoomControl()
+        public ZoomControl(SharedSettings ss)
         {
-            dZoomFactor = 1.0;
+            dZoomFactor = 100;
+            settings = ss;
             InitializeComponent();
+            tbZoom.Text = "100";
             
         }
 
@@ -45,6 +47,7 @@ namespace Paint_Program
                 }
                 
                 Console.WriteLine("Zoom: " + temp);
+                settings.setDrawScale((float)dZoomFactor/100.0f);
             }
             catch(Exception err)
             {

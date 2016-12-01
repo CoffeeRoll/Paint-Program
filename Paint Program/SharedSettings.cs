@@ -15,6 +15,8 @@ namespace Paint_Program
 
         public static float fBrushSize { get; set; }
 
+        public static float fScale { get; set; }
+
         public static int iBrushHardness { get; set; }
 
         public static int iTabletPressure { get; set; }
@@ -148,6 +150,11 @@ namespace Paint_Program
             LayerNames = names;
         }
 
+        public void setDrawScale(float s)
+        {
+            fScale = s;
+        }
+
 
         public Color getPrimaryBrushColor()
         {
@@ -238,6 +245,10 @@ namespace Paint_Program
             return LayerNames;
         }
 
+        public float getDrawScale()
+        {
+            return fScale;
+        }
 
         public static int MapValue(
     int originalStart, int originalEnd, // original range
