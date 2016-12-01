@@ -381,14 +381,11 @@ namespace Paint_Program
             Pen p = new Pen(Color.Black);
             int yMod = ss.getCanvasHeight();
             int xMod = ss.getCanvasWidth();
-
-          //  if(ss.getGridToggle())
-           // {
-                for (int y = 5; y < yMod; y+=5)
-                    g.DrawLine(p, 0, y, yMod, y);
-                for (int x = 1; x < xMod; x+=5)
-                    g.DrawLine(p, x , 0, x , xMod);
-           // }
+            int width = ss.getGridWitdh();
+            
+                g.DrawLine(p, 0, y, yMod, y);
+                g.DrawLine(p, x , 0, x , xMod);
+          
 
         }
 

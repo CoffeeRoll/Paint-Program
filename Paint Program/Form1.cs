@@ -74,9 +74,11 @@ namespace Paint_Program
         {
             //Save Project Function
 
-            try {
+            try
+            {
                 ProjectSave ps = new ProjectSave(c.getSharedSettings());
-            }catch(Exception err)
+            }
+            catch (Exception err)
             {
                 String s = "Error Saving Project! " + err.ToString();
                 MessageBox.Show(s);
@@ -91,9 +93,9 @@ namespace Paint_Program
             {
                 ImageImport ii = new Paint_Program.ImageImport(c.getSharedSettings());
             }
-            catch(Exception err)
+            catch (Exception err)
             {
-                Console.WriteLine(err.ToString()); 
+                Console.WriteLine(err.ToString());
             }
         }
 
@@ -117,18 +119,6 @@ namespace Paint_Program
         private void tsmiEdit_ImageSize_Click(object sender, EventArgs e)
         {
             //Resize Image Function
-        }
-
-        private void tsmiView_GridLines_Click(object sender, EventArgs e)
-        {
-            //Show/Hide Grid Lines
-            SharedSettings s = new SharedSettings();
-
-            if (gridLinesToolStripMenuItem.Checked)
-            {
-                s.setGridToggle(true);
-                s.setGridWidth(5);
-            }
         }
 
         private void tsmiView_Tablet_Click(object sender, EventArgs e)
@@ -155,12 +145,92 @@ namespace Paint_Program
             SharedSettings s = new SharedSettings();
             ProjectLoad pl = new ProjectLoad(s);
 
-            if(s.getLoadFromSettings() == false)
+            if (s.getLoadFromSettings() == false)
             {
                 return;
             }
 
             makeNewProject(s);
         }
+
+        #region GridLines
+        private void tsmiGrid5_Click(object sender, EventArgs e)
+        {
+            SharedSettings ss = new SharedSettings();
+            GridUncheck();
+            tsmiGrid5.CheckState = CheckState.Checked;
+
+            if(tsmiGrid5.Checked)
+            {
+                ss.setGridToggle(true);
+                ss.setGridWidth(5);
+            }
+        }
+
+        private void tsmiGrid10_Click(object sender, EventArgs e)
+        {
+            SharedSettings ss = new SharedSettings();
+            GridUncheck();
+            tsmiGrid10.CheckState = CheckState.Checked;
+
+            if (tsmiGrid10.Checked)
+            {
+                ss.setGridToggle(true);
+                ss.setGridWidth(10);
+            }
+        }
+
+        private void tsmiGrid25_Click(object sender, EventArgs e)
+        {
+            SharedSettings ss = new SharedSettings();
+            GridUncheck();
+            tsmiGrid25.CheckState = CheckState.Checked;
+
+            if (tsmiGrid25.Checked)
+            {
+                ss.setGridToggle(true);
+                ss.setGridWidth(25);
+            }
+        }
+
+        private void tsmiGrid50_Click(object sender, EventArgs e)
+        {
+            SharedSettings ss = new SharedSettings();
+            GridUncheck();
+            tsmiGrid50.CheckState = CheckState.Checked;
+
+            if (tsmiGrid50.Checked)
+            {
+                ss.setGridToggle(true);
+                ss.setGridWidth(50);
+            }
+        }
+
+        private void tsmiGrid100_Click(object sender, EventArgs e)
+        {
+            SharedSettings ss = new SharedSettings();
+            GridUncheck();
+            tsmiGrid100.CheckState = CheckState.Checked;
+
+            if (tsmiGrid100.Checked)
+            {
+                ss.setGridToggle(true);
+                ss.setGridWidth(100);
+            }
+        }
+
+        private void GridUncheck()
+        {
+            tsmiGrid5.CheckState = CheckState.Unchecked;
+            tsmiGrid10.CheckState = CheckState.Unchecked;
+            tsmiGrid25.CheckState = CheckState.Unchecked;
+            tsmiGrid50.CheckState = CheckState.Unchecked;
+            tsmiGrid100.CheckState = CheckState.Unchecked;
+        }
+
+        #endregion
+
+
     }
+
 }

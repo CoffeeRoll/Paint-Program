@@ -43,6 +43,12 @@
             this.aspectRatioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridLinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiGrid5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiGrid10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiGrid25 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiGrid50 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiGrid100 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiGridCustom = new System.Windows.Forms.ToolStripTextBox();
             this.tabletModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
@@ -153,11 +159,62 @@
             // 
             // gridLinesToolStripMenuItem
             // 
-            this.gridLinesToolStripMenuItem.CheckOnClick = true;
+            this.gridLinesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiGrid5,
+            this.tsmiGrid10,
+            this.tsmiGrid25,
+            this.tsmiGrid50,
+            this.tsmiGrid100,
+            this.tsmiGridCustom});
             this.gridLinesToolStripMenuItem.Name = "gridLinesToolStripMenuItem";
             this.gridLinesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.gridLinesToolStripMenuItem.Text = "Toggle Grid Lines";
-            this.gridLinesToolStripMenuItem.Click += new System.EventHandler(this.tsmiView_GridLines_Click);
+            // 
+            // tsmiGrid5
+            // 
+            this.tsmiGrid5.CheckOnClick = true;
+            this.tsmiGrid5.Name = "tsmiGrid5";
+            this.tsmiGrid5.Size = new System.Drawing.Size(240, 22);
+            this.tsmiGrid5.Text = "5";
+            this.tsmiGrid5.Click += new System.EventHandler(this.tsmiGrid5_Click);
+            // 
+            // tsmiGrid10
+            // 
+            this.tsmiGrid10.CheckOnClick = true;
+            this.tsmiGrid10.Name = "tsmiGrid10";
+            this.tsmiGrid10.Size = new System.Drawing.Size(240, 22);
+            this.tsmiGrid10.Text = "10";
+            this.tsmiGrid10.Click += new System.EventHandler(this.tsmiGrid10_Click);
+            // 
+            // tsmiGrid25
+            // 
+            this.tsmiGrid25.CheckOnClick = true;
+            this.tsmiGrid25.Name = "tsmiGrid25";
+            this.tsmiGrid25.Size = new System.Drawing.Size(240, 22);
+            this.tsmiGrid25.Text = "25";
+            this.tsmiGrid25.Click += new System.EventHandler(this.tsmiGrid25_Click);
+            // 
+            // tsmiGrid50
+            // 
+            this.tsmiGrid50.CheckOnClick = true;
+            this.tsmiGrid50.Name = "tsmiGrid50";
+            this.tsmiGrid50.Size = new System.Drawing.Size(240, 22);
+            this.tsmiGrid50.Text = "50";
+            this.tsmiGrid50.Click += new System.EventHandler(this.tsmiGrid50_Click);
+            // 
+            // tsmiGrid100
+            // 
+            this.tsmiGrid100.CheckOnClick = true;
+            this.tsmiGrid100.Name = "tsmiGrid100";
+            this.tsmiGrid100.Size = new System.Drawing.Size(240, 22);
+            this.tsmiGrid100.Text = "100";
+            this.tsmiGrid100.Click += new System.EventHandler(this.tsmiGrid100_Click);
+            // 
+            // tsmiGridCustom
+            // 
+            this.tsmiGridCustom.Name = "tsmiGridCustom";
+            this.tsmiGridCustom.Size = new System.Drawing.Size(180, 23);
+            this.tsmiGridCustom.Text = "Custom";
             // 
             // tabletModeToolStripMenuItem
             // 
@@ -218,6 +275,12 @@
         private System.Windows.Forms.ToolStripMenuItem tabletModeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showToolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiGrid5;
+        private System.Windows.Forms.ToolStripMenuItem tsmiGrid10;
+        private System.Windows.Forms.ToolStripMenuItem tsmiGrid25;
+        private System.Windows.Forms.ToolStripMenuItem tsmiGrid50;
+        private System.Windows.Forms.ToolStripMenuItem tsmiGrid100;
+        private System.Windows.Forms.ToolStripTextBox tsmiGridCustom;
     }
 }
 
