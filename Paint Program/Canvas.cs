@@ -173,8 +173,7 @@ namespace Paint_Program
             }
 
             g = p.CreateGraphics();
-
-
+            
 
             this.Controls.Add(pScaled);
             this.SendToBack();
@@ -340,6 +339,7 @@ namespace Paint_Program
             Rectangle source = new Rectangle(0, 0, bit2.Width, bit2.Height);
             Rectangle dest = new Rectangle(0, 0, p.Width, p.Height);
 
+            k.InterpolationMode = InterpolationMode.NearestNeighbor;
             k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
             
         }
