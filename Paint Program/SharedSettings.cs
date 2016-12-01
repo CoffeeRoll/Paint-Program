@@ -29,6 +29,10 @@ namespace Paint_Program
 
         public static int iCanvasHeight { get; set; }
 
+        public static int iGridWidth { get; set; }
+
+        public static bool bGridToggle { get; set; }
+
         public static bool bLoadFromSettings { get; set; }
 
         public static Bitmap bitmapCanvas { get; set; }
@@ -50,6 +54,8 @@ namespace Paint_Program
             fBrushSize = 1.0F;
 
             iBrushHardness = 255;
+
+            bGridToggle = false;
 
             //No Tablet Input
             iTabletPressure = -1;
@@ -111,6 +117,16 @@ namespace Paint_Program
         public void setCanvasHeight(int h)
         {
             iCanvasHeight = h;
+        }
+
+        public void setGridWidth(int w)
+        {
+            iGridWidth = w;
+        }
+
+        public void setGridToggle(bool b)
+        {
+            bGridToggle = b;
         }
 
         public void setLoadFromSettings(bool b)
@@ -197,6 +213,16 @@ namespace Paint_Program
         public int getCanvasHeight()
         {
             return iCanvasHeight;
+        }
+
+        public int getGridWitdh()
+        {
+            return iGridWidth;
+        }
+
+        public bool getGridToggle()
+        {
+            return bGridToggle;
         }
 
         public bool getLoadFromSettings()

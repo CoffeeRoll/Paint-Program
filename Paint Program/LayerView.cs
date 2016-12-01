@@ -87,6 +87,7 @@ namespace Paint_Program
                     if (Layers[t].isLayerVisible())
                     {
                         g.DrawImage(Layers[t].getBitmap(), 0, 0);
+                
                     }
                 }catch(Exception e)
                 {
@@ -370,6 +371,22 @@ namespace Paint_Program
 
             ss.setLayerBitmaps(tempBit.ToArray());
             ss.setLayerNames(tempStr.ToArray());
+
+        }
+
+        public void GridDraw(Graphics g)
+        {
+            Pen p = new Pen(Color.Black);
+            int yMod = ss.getCanvasHeight();
+            int xMod = ss.getCanvasWidth();
+
+          //  if(ss.getGridToggle())
+           // {
+                for (int y = 5; y < yMod; y+=5)
+                    g.DrawLine(p, 0, y, yMod, y);
+                for (int x = 1; x < xMod; x+=5)
+                    g.DrawLine(p, x , 0, x , xMod);
+           // }
 
         }
 

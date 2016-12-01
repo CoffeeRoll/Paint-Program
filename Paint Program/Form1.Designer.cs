@@ -59,7 +59,7 @@
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
             this.msMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.msMenu.Size = new System.Drawing.Size(785, 24);
+            this.msMenu.Size = new System.Drawing.Size(884, 24);
             this.msMenu.TabIndex = 1;
             this.msMenu.Text = "menuStrip1";
             // 
@@ -153,6 +153,7 @@
             // 
             // gridLinesToolStripMenuItem
             // 
+            this.gridLinesToolStripMenuItem.CheckOnClick = true;
             this.gridLinesToolStripMenuItem.Name = "gridLinesToolStripMenuItem";
             this.gridLinesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.gridLinesToolStripMenuItem.Text = "Toggle Grid Lines";
@@ -185,7 +186,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(785, 549);
+            this.ClientSize = new System.Drawing.Size(884, 639);
             this.Controls.Add(this.msMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.msMenu;

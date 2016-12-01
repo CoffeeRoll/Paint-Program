@@ -24,6 +24,8 @@ namespace Paint_Program
 
         private Bitmap bg;
 
+        private Bitmap Grid;
+
         private int canvasWidth, canvasHeight;
 
         //Width and height of Parrent
@@ -151,6 +153,7 @@ namespace Paint_Program
             Console.WriteLine(canvasWidth + " + " + canvasHeight);
 
             bg = new Bitmap(canvasWidth, canvasHeight, PixelFormat.Format24bppRgb);
+            Grid = new Bitmap(canvasWidth, canvasHeight, PixelFormat.Format24bppRgb);
 
             try
             {
@@ -170,6 +173,8 @@ namespace Paint_Program
             }
 
             g = p.CreateGraphics();
+
+
 
             this.Controls.Add(pScaled);
             this.SendToBack();
@@ -302,8 +307,11 @@ namespace Paint_Program
         {
             Bitmap bit = lv.getRender();
             Bitmap bit2 = (Bitmap)bg.Clone();
-
-           
+            //lv.GridDraw(Graphics.FromImage(Grid));
+            if (ss.getGridToggle())
+            {            
+                lv.GridDraw(Graphics.FromImage(bit2));
+            }
 
             Graphics.FromImage(bit2).DrawImage(bit, 0, 0);
 
@@ -317,7 +325,7 @@ namespace Paint_Program
             System.GC.Collect(); //Prevent OutOfMemory Execptions
             
             k.DrawImage(bit2, 0, 0);
-            
+           
         }
 
         public void setBitmap(Bitmap bit)

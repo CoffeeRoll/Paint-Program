@@ -122,6 +122,13 @@ namespace Paint_Program
         private void tsmiView_GridLines_Click(object sender, EventArgs e)
         {
             //Show/Hide Grid Lines
+            SharedSettings s = new SharedSettings();
+
+            if (gridLinesToolStripMenuItem.Checked)
+            {
+                s.setGridToggle(true);
+                s.setGridWidth(5);
+            }
         }
 
         private void tsmiView_Tablet_Click(object sender, EventArgs e)
