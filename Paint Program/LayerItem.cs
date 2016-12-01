@@ -15,7 +15,9 @@ namespace Paint_Program
     {
         private bool isVisible;
         private bool isActive;
-        
+
+        private SharedSettings ss;
+
         private String sLayerName;
 
         private Color cActive = Color.FromArgb(100, 155, 155);
@@ -23,8 +25,9 @@ namespace Paint_Program
 
         private Bitmap LayerBitmap;
 
-        public LayerItem(int w, int h, PixelFormat pf, String name)
+        public LayerItem(int w, int h, PixelFormat pf, String name, SharedSettings s)
         {
+            ss = s;
             InitializeComponent();
             isVisible = true;
             LayerBitmap = new Bitmap(w, h, pf);
@@ -68,7 +71,7 @@ namespace Paint_Program
         {
             isActive = f;
             updateColor();
-
+            ss.setBitmapCurrentLayer(getBitmap());
         }
 
         public void setVisibility(bool f)

@@ -27,7 +27,7 @@ namespace Paint_Program
             width = w;
             height = h;
             yLayerLocation = 0;
-            LayerItem setup = new LayerItem(w, h, pf, "DEBUG");
+            LayerItem setup = new LayerItem(w, h, pf, "DEBUG", ss);
             this.Width = setup.Width;
             pLayerDisplay.Scroll += handleScroll;
             pLayerDisplay.MouseWheel += handleMouseWheel;
@@ -165,7 +165,7 @@ namespace Paint_Program
                 layer.setActive(false);
             }
 
-            LayerItem temp = new LayerItem(width, height, pf, Layers.Count.ToString());
+            LayerItem temp = new LayerItem(width, height, pf, Layers.Count.ToString(), ss);
             temp.Location = new Point(0, yLayerLocation);
             yLayerLocation += temp.Height + 5;
             temp.setActive(true);
@@ -192,7 +192,7 @@ namespace Paint_Program
                 layer.setActive(false);
             }
 
-            LayerItem temp = new LayerItem(width, height, pf, Layers.Count.ToString());
+            LayerItem temp = new LayerItem(width, height, pf, Layers.Count.ToString(), ss);
             temp.Location = new Point(0, yLayerLocation);
             yLayerLocation += temp.Height + 5;
             temp.setActive(true);
@@ -213,13 +213,13 @@ namespace Paint_Program
 
         private void addLayer(Bitmap b, String name)
         {
-
+            
             foreach (LayerItem layer in Layers)
             {
                 layer.setActive(false);
             }
 
-            LayerItem temp = new LayerItem(width, height, pf, name);
+            LayerItem temp = new LayerItem(width, height, pf, name, ss);
             temp.Location = new Point(0, yLayerLocation);
             yLayerLocation += temp.Height + 5;
             temp.setActive(true);
@@ -235,6 +235,8 @@ namespace Paint_Program
                 bMoveDown.Enabled = true;
                 bMoveUp.Enabled = true;
             }
+
+            ss.setBitmapCurrentLayer(Layers[Layers.Count-1].getBitmap());
         }
 
         private void removeLayer()
