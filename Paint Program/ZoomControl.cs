@@ -15,7 +15,7 @@ namespace Paint_Program
 
         double dZoomFactor;
 
-        private const double ZOOM_MIN = 1;
+        private double ZOOM_MIN = 1;
         private const double ZOOM_MAX = 3200;
         private SharedSettings settings;
 
@@ -23,6 +23,24 @@ namespace Paint_Program
         {
             dZoomFactor = 100;
             settings = ss;
+            int temp = ss.getCanvasWidth();
+            temp = temp < ss.getCanvasHeight() ? temp : ss.getCanvasHeight();
+
+
+            if(temp > 100)
+            {
+                ZOOM_MIN = 1; //Prevent sub-pixel scaling
+            }
+            else if(temp > 10 && temp <= 100)
+            {
+                ZOOM_MIN = 10; //Prevent sub-pixel scaling
+            }
+            else
+            {
+                ZOOM_MIN = 100; //Prevent sub-pixel scaling
+            }
+
+
             InitializeComponent();
             tbZoom.Text = "100";
             
@@ -46,7 +64,7 @@ namespace Paint_Program
                     dZoomFactor = temp;
                 }
                 
-                Console.WriteLine("Zoom: " + temp);
+                Console.WriteLine("Zoom: " + dZoomFactor);
                 settings.setDrawScale((float)dZoomFactor/100.0f);
             }
             catch(Exception err)

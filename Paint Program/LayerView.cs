@@ -95,7 +95,7 @@ namespace Paint_Program
                 }
             }
 
-            return bit;
+            return (Bitmap) bit.Clone();
         }
 
         public Graphics getActiveLayerGraphics()

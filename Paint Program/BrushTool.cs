@@ -14,9 +14,9 @@ namespace Paint_Program
         private Graphics graphics;
         private int width, height, numPoints;
         private SharedSettings settings;
-        private bool bActive, bMouseDown, bInit;
+        private bool bMouseDown, bInit;
 
-        private Point pOld, pMid, pNew;
+        private Point pOld, pNew;
 
         private Brush pPrime, pSec;
 
@@ -42,7 +42,7 @@ namespace Paint_Program
             B = settings.getSecondaryBrushColor().B;
 
             pSec = new SolidBrush(Color.FromArgb(settings.getBrushHardness(), R, G, B));
-            
+
             //pSec.LineJoin = LineJoin.Round;
         }
 
@@ -52,11 +52,10 @@ namespace Paint_Program
             width = w;
             height = h;
             settings = s;
-            bActive = false;
             bInit = true;
             bMouseDown = false;
 
-            pOld = pMid = pNew = new Point(-1,-1);
+            pOld = pNew = new Point(-1, -1);
             numPoints = 0;
 
             if (graphics != null)
@@ -98,62 +97,34 @@ namespace Paint_Program
             if (graphics != null && bMouseDown)
             {
                 pNew = e.Location;
-                rect.X = pNew.X;
-                rect.Y = pNew.Y;
+                rect.X = pNew.X - (rect.Width / 2);
+                rect.Y = pNew.Y - (rect.Height / 2);
                 numPoints = 2;
                 int pressure = -1;
-                if(settings.getTabletPressure() >= 0)
+                if (settings.getTabletPressure() >= 0)
                 {
                     pressure = SharedSettings.MapValue(0, settings.getMaxTabletPressure(), settings.getMinTabletWidth(), settings.getMaxTabletWidth(), settings.getTabletPressure());
                 }
-                if(numPoints == 2)
+                if (e.Button == MouseButtons.Left)
                 {
-                    if (e.Button == MouseButtons.Left)
+                    if (pressure >= 0)
                     {
-                        if (pressure >= 0)
-                        {
-                            rect.Width = pressure / 2;
-                            rect.Height = pressure / 2;
-                        }
-                        graphics.FillEllipse(pPrime, rect);
+                        rect.Width = pressure / 2;
+                        rect.Height = pressure / 2;
                     }
-                    else if (e.Button == MouseButtons.Right)
-                    {
-                        if (pressure >= 0)
-                        {
-                            rect.Width = pressure / 2;
-                            rect.Height = pressure / 2;
-                        }
-                        graphics.FillEllipse(pSec, rect);
-                    }
-                    pMid = pNew;
-                    numPoints = 3;
+                    graphics.FillEllipse(pPrime, rect);
                 }
-                else if (numPoints == 3)
+                else if (e.Button == MouseButtons.Right)
                 {
-                    if (e.Button == MouseButtons.Left)
+                    if (pressure >= 0)
                     {
-                        if (pressure >= 0)
-                        {
-                            rect.Width = pressure / 2;
-                            rect.Height = pressure / 2;
-                        }
-                        // graphics.DrawLine(pPrime, pOld, pNew);
-                        graphics.FillEllipse(pPrime, rect);
+                        rect.Width = pressure / 2;
+                        rect.Height = pressure / 2;
                     }
-                    else if (e.Button == MouseButtons.Right)
-                    {
-                        if (pressure >= 0)
-                        {
-                            rect.Width = pressure / 2;
-                            rect.Height = pressure / 2;
-                        }
-                        graphics.FillEllipse(pSec, rect);
-                    }
+                    graphics.FillEllipse(pSec, rect);
                 }
+                numPoints = 3;
 
-                pOld = pMid;
-                pMid = pNew;
             }
         }
 
@@ -163,7 +134,6 @@ namespace Paint_Program
             {
                 bMouseDown = false;
             }
-            numPoints = 0;
         }
 
         public bool isInitalized()

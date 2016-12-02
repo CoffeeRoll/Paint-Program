@@ -87,6 +87,8 @@ namespace Paint_Program
 
             this.Width = canvasWidth;
             this.Height = canvasHeight;
+            this.AutoSize = true;
+            this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
         }
 
         public void initCanvas()
@@ -137,6 +139,7 @@ namespace Paint_Program
 
             p = new Display();
             p.Size = new Size(canvasWidth, canvasHeight);
+            p.Location = new Point(0,0);
             p.MouseDown += handleMouseDown;
             p.MouseUp += handleMouseUp;
             p.MouseMove += handleMouseMove;
@@ -144,9 +147,11 @@ namespace Paint_Program
 
             pScaled = new Panel();
             pScaled.Size = new Size( (lv.Location.X - this.Location.X) - ts.Width - 30 ,(zc.Location.Y - this.Location.Y) - 165 );
+            pScaled.MinimumSize = new Size(300, 300);
             pScaled.Location = new Point(0,0);
-            pScaled.BackColor = Color.Black;
+            pScaled.BackColor = Color.FromArgb(64,64,64);
             pScaled.AutoScroll = true;
+            
             this.Location = new Point(ts.Width + 15, SystemInformation.CaptionHeight + 15);
             pScaled.Controls.Add(p);
 
@@ -265,10 +270,16 @@ namespace Paint_Program
             Console.WriteLine(Parent.Width);
         }
 
+        private MouseEventArgs scaleMouseEvent(MouseEventArgs e)
+        {
+            return new MouseEventArgs(e.Button, e.Clicks, (int)((e.X - (ss.getDrawScale() / 200)) / ss.getDrawScale()), (int)((e.Y - (ss.getDrawScale() / 200)) / ss.getDrawScale()) + (int)(ss.getDrawScale() / 200), e.Delta);
+        }
+
         public void handleMouseDown(object sender, MouseEventArgs e)
         {
-            MouseEventArgs evt = new MouseEventArgs(e.Button, e.Clicks, (int)(e.X / ss.getDrawScale()), (int)(e.Y / ss.getDrawScale()), e.Delta);
-
+            
+            MouseEventArgs evt = scaleMouseEvent(e);
+            Console.WriteLine(e.X + " = " + evt.X + " " + e.Y + " = " + evt.Y);
             //If there is a selected Tool
             if (iActiveTool >= 0)
             {
@@ -284,7 +295,7 @@ namespace Paint_Program
 
         public void handleMouseUp(object sender, MouseEventArgs e)
         {
-            MouseEventArgs evt = new MouseEventArgs(e.Button, e.Clicks, (int)(e.X / ss.getDrawScale()), (int)(e.Y / ss.getDrawScale()), e.Delta);
+            MouseEventArgs evt = scaleMouseEvent(e);
             if (iActiveTool >= 0)
                 Tools[iActiveTool].onMouseUp(sender, evt);
             lv.UpdateLayerInfoListener();
@@ -292,7 +303,8 @@ namespace Paint_Program
 
         public void handleMouseMove(object sender, MouseEventArgs e)
         {
-            MouseEventArgs evt = new MouseEventArgs(e.Button, e.Clicks, (int)(e.X/ss.getDrawScale()), (int)(e.Y / ss.getDrawScale()), e.Delta);
+            MouseEventArgs evt = scaleMouseEvent(e);
+
             if (iActiveTool >= 0)
                 
                 Tools[iActiveTool].onMouseMove(sender, evt);
@@ -309,6 +321,7 @@ namespace Paint_Program
 
         public void updateCanvas(Graphics k)
         {
+
             Bitmap bit = lv.getRender();
             Bitmap bit2 = (Bitmap)bg.Clone();
             //lv.GridDraw(Graphics.FromImage(Grid));
@@ -326,20 +339,15 @@ namespace Paint_Program
             }
             ss.setBitmapCanvas(bit);
 
-
-
             p.Invalidate();
             System.GC.Collect(); //Prevent OutOfMemory Execptions
-            
-            k.DrawImage(bit2, 0, 0);
-           
 
             p.Width = (int) (ss.getDrawScale() * ss.getCanvasWidth());
             p.Height = (int) (ss.getDrawScale() * ss.getCanvasHeight());
-            Rectangle source = new Rectangle(0, 0, bit2.Width, bit2.Height);
+            Rectangle source = new Rectangle(-1, -1, bit2.Width+1, bit2.Height+1);
             Rectangle dest = new Rectangle(0, 0, p.Width, p.Height);
-
             k.InterpolationMode = InterpolationMode.NearestNeighbor;
+
             k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
             
         }

@@ -24,6 +24,10 @@ namespace Paint_Program
             pPrime.BackColor = settings.getPrimaryBrushColor();
             pSec.BackColor = settings.getSecondaryBrushColor();
 
+            tbSize.Value = (int)settings.getBrushSize();
+            tbHardness.Value = (int)settings.getBrushHardness();
+            this.Refresh();
+
         }
 
         private void pPrime_Paint(object sender, PaintEventArgs e)

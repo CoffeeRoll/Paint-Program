@@ -13,7 +13,9 @@ namespace Paint_Program
         private Graphics graphics;
         private int width, height;
         private SharedSettings settings;
-        private bool bActive, bMouseDown, bInit;
+        private bool bMouseDown, bInit;
+
+        Color cPrime, cSec;
 
         private Point pOld, pNew;
 
@@ -28,9 +30,9 @@ namespace Paint_Program
             width = w;
             height = h;
             settings = s;
-            bActive = false;
             bInit = true;
             bMouseDown = false;
+            updateColors();
 
             if (graphics != null)
             {
@@ -48,19 +50,44 @@ namespace Paint_Program
             return "Pencil Tool";
         }
 
+        private void updateColors()
+        {
+            int R = settings.getPrimaryBrushColor().R;
+            int G = settings.getPrimaryBrushColor().G;
+            int B = settings.getPrimaryBrushColor().B;
+
+            cPrime = Color.FromArgb(settings.getBrushHardness(), R, G, B);
+
+
+            R = settings.getSecondaryBrushColor().R;
+            G = settings.getSecondaryBrushColor().G;
+            B = settings.getSecondaryBrushColor().B;
+
+            cSec = Color.FromArgb(settings.getBrushHardness(), R, G, B);
+
+            //pSec.LineJoin = LineJoin.Round;
+        }
+
         public void onMouseDown(object sender, MouseEventArgs e)
         {
             if (graphics != null)
             {
                 bMouseDown = true;
                 pOld = e.Location;
+                Brush temp;
                 if (e.Button == MouseButtons.Left)
                 {
-                    graphics.FillRectangle(new SolidBrush(settings.getPrimaryBrushColor()), e.X, e.Y, 1, 1);
+                    temp = new SolidBrush(cPrime);
+                    graphics.FillRectangle(temp, e.X, e.Y, 1, 1);
                 }
                 else if(e.Button == MouseButtons.Right)
                 {
-                    graphics.FillRectangle(new SolidBrush(settings.getSecondaryBrushColor()), e.X, e.Y, 1, 1);
+                    int R = settings.getSecondaryBrushColor().R;
+                    int G = settings.getSecondaryBrushColor().G;
+                    int B = settings.getSecondaryBrushColor().B;
+
+                    temp = new SolidBrush(cSec);
+                    graphics.FillRectangle(temp, e.X, e.Y, 1, 1);
                 }
             }
         }
@@ -72,13 +99,13 @@ namespace Paint_Program
                 if (e.Button == MouseButtons.Left)
                 {
                     pNew = e.Location;
-                    graphics.DrawLine(new Pen(settings.getPrimaryBrushColor()), pOld, pNew);
+                    graphics.DrawLine(new Pen(cPrime), pOld, pNew);
                     pOld = pNew;
                 }
                 else
                 {
                     pNew = e.Location;
-                    graphics.DrawLine(new Pen(settings.getSecondaryBrushColor()), pOld, pNew);
+                    graphics.DrawLine(new Pen(cSec), pOld, pNew);
                     pOld = pNew;
                 }
             }
