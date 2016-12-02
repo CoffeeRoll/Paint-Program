@@ -12,13 +12,18 @@ namespace Paint_Program
 {
     public partial class Form1 : Form
     {
+
+        Canvas c;
+
+        private SharedSettings ss;
+
         public Form1()
         {
             InitializeComponent();
             this.MinimumSize = new System.Drawing.Size(900, 677);
+            ss = null;
         }
-        Canvas c;
-
+        
         private void tsmiFile_New_Click(object sender, EventArgs e)
         {
 
@@ -56,8 +61,7 @@ namespace Paint_Program
             c.Location = new Point(200, 5);
             this.Controls.Add(c);
             c.initCanvas();
-
-
+            ss = c.getSharedSettings();
             this.Update();
         }
 
@@ -156,66 +160,91 @@ namespace Paint_Program
         #region GridLines
         private void tsmiGrid5_Click(object sender, EventArgs e)
         {
-            SharedSettings ss = new SharedSettings();
-            GridUncheck();
-            tsmiGrid5.CheckState = CheckState.Checked;
-
-            if(tsmiGrid5.Checked)
+            if (ss != null)
             {
-                ss.setGridToggle(true);
-                ss.setGridWidth(5);
+                GridUncheck();
+                tsmiGrid5.CheckState = CheckState.Checked;
+
+                if (tsmiGrid5.Checked)
+                {
+                    ss.setGridToggle(true);
+                    ss.setGridWidth(5);
+                }
             }
         }
 
         private void tsmiGrid10_Click(object sender, EventArgs e)
         {
-            SharedSettings ss = new SharedSettings();
-            GridUncheck();
-            tsmiGrid10.CheckState = CheckState.Checked;
-
-            if (tsmiGrid10.Checked)
+            if (ss != null)
             {
-                ss.setGridToggle(true);
-                ss.setGridWidth(10);
+                GridUncheck();
+                tsmiGrid10.CheckState = CheckState.Checked;
+
+                if (tsmiGrid10.Checked)
+                {
+                    ss.setGridToggle(true);
+                    ss.setGridWidth(10);
+                }
             }
         }
 
         private void tsmiGrid25_Click(object sender, EventArgs e)
         {
-            SharedSettings ss = new SharedSettings();
-            GridUncheck();
-            tsmiGrid25.CheckState = CheckState.Checked;
-
-            if (tsmiGrid25.Checked)
+            if (ss != null)
             {
-                ss.setGridToggle(true);
-                ss.setGridWidth(25);
+                GridUncheck();
+                tsmiGrid25.CheckState = CheckState.Checked;
+
+                if (tsmiGrid25.Checked)
+                {
+                    ss.setGridToggle(true);
+                    ss.setGridWidth(25);
+                }
             }
         }
 
         private void tsmiGrid50_Click(object sender, EventArgs e)
         {
-            SharedSettings ss = new SharedSettings();
-            GridUncheck();
-            tsmiGrid50.CheckState = CheckState.Checked;
-
-            if (tsmiGrid50.Checked)
+            if (ss != null)
             {
-                ss.setGridToggle(true);
-                ss.setGridWidth(50);
+                GridUncheck();
+                tsmiGrid50.CheckState = CheckState.Checked;
+
+                if (tsmiGrid50.Checked)
+                {
+                    ss.setGridToggle(true);
+                    ss.setGridWidth(50);
+                }
             }
         }
 
         private void tsmiGrid100_Click(object sender, EventArgs e)
         {
-            SharedSettings ss = new SharedSettings();
-            GridUncheck();
-            tsmiGrid100.CheckState = CheckState.Checked;
-
-            if (tsmiGrid100.Checked)
+            if (ss != null)
             {
-                ss.setGridToggle(true);
-                ss.setGridWidth(100);
+                GridUncheck();
+                tsmiGrid100.CheckState = CheckState.Checked;
+
+                if (tsmiGrid100.Checked)
+                {
+                    ss.setGridToggle(true);
+                    ss.setGridWidth(100);
+                }
+            }
+        }
+
+        private void tsmiGridAuto_Click(object sender, EventArgs e)
+        {
+            if (ss != null)
+            {
+                GridUncheck();
+                tsmiGridAuto.CheckState = CheckState.Checked;
+
+                if (tsmiGrid5.Checked)
+                {
+                    ss.setGridToggle(true);
+                    ss.setGridWidth(-1);
+                }
             }
         }
 
@@ -226,11 +255,13 @@ namespace Paint_Program
             tsmiGrid25.CheckState = CheckState.Unchecked;
             tsmiGrid50.CheckState = CheckState.Unchecked;
             tsmiGrid100.CheckState = CheckState.Unchecked;
+            tsmiGridAuto.CheckState = CheckState.Unchecked;
         }
+
 
         #endregion
 
-
+        
     }
 
 }

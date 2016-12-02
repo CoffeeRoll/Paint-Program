@@ -48,7 +48,7 @@
             this.tsmiGrid25 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGrid50 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGrid100 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiGridCustom = new System.Windows.Forms.ToolStripTextBox();
+            this.tsmiGridAuto = new System.Windows.Forms.ToolStripMenuItem();
             this.tabletModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
@@ -64,8 +64,7 @@
             this.viewToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
-            this.msMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.msMenu.Size = new System.Drawing.Size(884, 24);
+            this.msMenu.Size = new System.Drawing.Size(1326, 33);
             this.msMenu.TabIndex = 1;
             this.msMenu.Text = "menuStrip1";
             // 
@@ -78,41 +77,41 @@
             this.importImageToolStripMenuItem,
             this.exportImageToolStripMenuItem});
             this.tsmiFile.Name = "tsmiFile";
-            this.tsmiFile.Size = new System.Drawing.Size(37, 22);
+            this.tsmiFile.Size = new System.Drawing.Size(50, 29);
             this.tsmiFile.Text = "File";
             // 
             // tsmiFile_New
             // 
             this.tsmiFile_New.Name = "tsmiFile_New";
-            this.tsmiFile_New.Size = new System.Drawing.Size(146, 22);
+            this.tsmiFile_New.Size = new System.Drawing.Size(207, 30);
             this.tsmiFile_New.Text = "New";
             this.tsmiFile_New.Click += new System.EventHandler(this.tsmiFile_New_Click);
             // 
             // saveImageToolStripMenuItem
             // 
             this.saveImageToolStripMenuItem.Name = "saveImageToolStripMenuItem";
-            this.saveImageToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveImageToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
             this.saveImageToolStripMenuItem.Text = "Save";
             this.saveImageToolStripMenuItem.Click += new System.EventHandler(this.tsmiFile_Save_Click);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // importImageToolStripMenuItem
             // 
             this.importImageToolStripMenuItem.Name = "importImageToolStripMenuItem";
-            this.importImageToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.importImageToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
             this.importImageToolStripMenuItem.Text = "Import Image";
             this.importImageToolStripMenuItem.Click += new System.EventHandler(this.tsmiFile_Import_Click);
             // 
             // exportImageToolStripMenuItem
             // 
             this.exportImageToolStripMenuItem.Name = "exportImageToolStripMenuItem";
-            this.exportImageToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.exportImageToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
             this.exportImageToolStripMenuItem.Text = "Export Image";
             this.exportImageToolStripMenuItem.Click += new System.EventHandler(this.tsmiFile_Export_Click);
             // 
@@ -123,27 +122,27 @@
             this.redoToolStripMenuItem,
             this.aspectRatioToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(183, 30);
             this.undoToolStripMenuItem.Text = "Undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.tsmiEdit_Undo_Click);
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(183, 30);
             this.redoToolStripMenuItem.Text = "Redo";
             this.redoToolStripMenuItem.Click += new System.EventHandler(this.tsmiEdit_Redo_Click);
             // 
             // aspectRatioToolStripMenuItem
             // 
             this.aspectRatioToolStripMenuItem.Name = "aspectRatioToolStripMenuItem";
-            this.aspectRatioToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.aspectRatioToolStripMenuItem.Size = new System.Drawing.Size(183, 30);
             this.aspectRatioToolStripMenuItem.Text = "Image Size";
             this.aspectRatioToolStripMenuItem.Click += new System.EventHandler(this.tsmiEdit_ImageSize_Click);
             // 
@@ -154,7 +153,7 @@
             this.tabletModeToolStripMenuItem,
             this.showToolsToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(61, 29);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // gridLinesToolStripMenuItem
@@ -165,16 +164,16 @@
             this.tsmiGrid25,
             this.tsmiGrid50,
             this.tsmiGrid100,
-            this.tsmiGridCustom});
+            this.tsmiGridAuto});
             this.gridLinesToolStripMenuItem.Name = "gridLinesToolStripMenuItem";
-            this.gridLinesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.gridLinesToolStripMenuItem.Size = new System.Drawing.Size(232, 30);
             this.gridLinesToolStripMenuItem.Text = "Toggle Grid Lines";
             // 
             // tsmiGrid5
             // 
             this.tsmiGrid5.CheckOnClick = true;
             this.tsmiGrid5.Name = "tsmiGrid5";
-            this.tsmiGrid5.Size = new System.Drawing.Size(240, 22);
+            this.tsmiGrid5.Size = new System.Drawing.Size(211, 30);
             this.tsmiGrid5.Text = "5";
             this.tsmiGrid5.Click += new System.EventHandler(this.tsmiGrid5_Click);
             // 
@@ -182,7 +181,7 @@
             // 
             this.tsmiGrid10.CheckOnClick = true;
             this.tsmiGrid10.Name = "tsmiGrid10";
-            this.tsmiGrid10.Size = new System.Drawing.Size(240, 22);
+            this.tsmiGrid10.Size = new System.Drawing.Size(211, 30);
             this.tsmiGrid10.Text = "10";
             this.tsmiGrid10.Click += new System.EventHandler(this.tsmiGrid10_Click);
             // 
@@ -190,7 +189,7 @@
             // 
             this.tsmiGrid25.CheckOnClick = true;
             this.tsmiGrid25.Name = "tsmiGrid25";
-            this.tsmiGrid25.Size = new System.Drawing.Size(240, 22);
+            this.tsmiGrid25.Size = new System.Drawing.Size(211, 30);
             this.tsmiGrid25.Text = "25";
             this.tsmiGrid25.Click += new System.EventHandler(this.tsmiGrid25_Click);
             // 
@@ -198,7 +197,7 @@
             // 
             this.tsmiGrid50.CheckOnClick = true;
             this.tsmiGrid50.Name = "tsmiGrid50";
-            this.tsmiGrid50.Size = new System.Drawing.Size(240, 22);
+            this.tsmiGrid50.Size = new System.Drawing.Size(211, 30);
             this.tsmiGrid50.Text = "50";
             this.tsmiGrid50.Click += new System.EventHandler(this.tsmiGrid50_Click);
             // 
@@ -206,20 +205,21 @@
             // 
             this.tsmiGrid100.CheckOnClick = true;
             this.tsmiGrid100.Name = "tsmiGrid100";
-            this.tsmiGrid100.Size = new System.Drawing.Size(240, 22);
+            this.tsmiGrid100.Size = new System.Drawing.Size(211, 30);
             this.tsmiGrid100.Text = "100";
             this.tsmiGrid100.Click += new System.EventHandler(this.tsmiGrid100_Click);
             // 
-            // tsmiGridCustom
+            // tsmiGridAuto
             // 
-            this.tsmiGridCustom.Name = "tsmiGridCustom";
-            this.tsmiGridCustom.Size = new System.Drawing.Size(180, 23);
-            this.tsmiGridCustom.Text = "Custom";
+            this.tsmiGridAuto.Name = "tsmiGridAuto";
+            this.tsmiGridAuto.Size = new System.Drawing.Size(211, 30);
+            this.tsmiGridAuto.Text = "Auto";
+            this.tsmiGridAuto.Click += new System.EventHandler(this.tsmiGridAuto_Click);
             // 
             // tabletModeToolStripMenuItem
             // 
             this.tabletModeToolStripMenuItem.Name = "tabletModeToolStripMenuItem";
-            this.tabletModeToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.tabletModeToolStripMenuItem.Size = new System.Drawing.Size(232, 30);
             this.tabletModeToolStripMenuItem.Text = "Tablet Mode";
             this.tabletModeToolStripMenuItem.Click += new System.EventHandler(this.tsmiView_Tablet_Click);
             // 
@@ -229,7 +229,7 @@
             this.showToolsToolStripMenuItem.CheckOnClick = true;
             this.showToolsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.showToolsToolStripMenuItem.Name = "showToolsToolStripMenuItem";
-            this.showToolsToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.showToolsToolStripMenuItem.Size = new System.Drawing.Size(232, 30);
             this.showToolsToolStripMenuItem.Text = "Show Tools";
             this.showToolsToolStripMenuItem.Click += new System.EventHandler(this.showToolsToolStripMenuItem_Click);
             // 
@@ -240,15 +240,15 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(884, 639);
+            this.ClientSize = new System.Drawing.Size(1326, 983);
             this.Controls.Add(this.msMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.msMenu;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MinimumSize = new System.Drawing.Size(900, 677);
+            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.MinimumSize = new System.Drawing.Size(1339, 1011);
             this.Name = "Form1";
             this.Text = "Le Paint BETA 0.0.0.0.3";
             this.msMenu.ResumeLayout(false);
@@ -280,7 +280,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiGrid25;
         private System.Windows.Forms.ToolStripMenuItem tsmiGrid50;
         private System.Windows.Forms.ToolStripMenuItem tsmiGrid100;
-        private System.Windows.Forms.ToolStripTextBox tsmiGridCustom;
+        private System.Windows.Forms.ToolStripMenuItem tsmiGridAuto;
     }
 }
 

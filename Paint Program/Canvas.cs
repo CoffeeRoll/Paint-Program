@@ -272,7 +272,10 @@ namespace Paint_Program
 
         private MouseEventArgs scaleMouseEvent(MouseEventArgs e)
         {
-            return new MouseEventArgs(e.Button, e.Clicks, (int)((e.X - (ss.getDrawScale() / 200)) / ss.getDrawScale()), (int)((e.Y - (ss.getDrawScale() / 200)) / ss.getDrawScale()) + (int)(ss.getDrawScale() / 200), e.Delta);
+            int offset = (int)ss.getDrawScale() / 2;
+            Console.WriteLine(offset + " ");
+            return new MouseEventArgs(e.Button, e.Clicks, (int)((e.X - offset) / ss.getDrawScale()), (int)((e.Y - offset) / ss.getDrawScale()), e.Delta);
+            
         }
 
         public void handleMouseDown(object sender, MouseEventArgs e)
