@@ -182,6 +182,9 @@ namespace Paint_Program
             this.SendToBack();
 
             initTools();
+
+            pScaled.Size = new Size((lv.Location.X - this.Location.X) - 15, (zc.Location.Y - this.Location.Y) - 15);
+            this.Refresh();
         }
 
         private void initTools()
