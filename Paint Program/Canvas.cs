@@ -155,8 +155,6 @@ namespace Paint_Program
             this.Location = new Point(ts.Width + 15, SystemInformation.CaptionHeight + 15);
             pScaled.Controls.Add(p);
 
-            Console.WriteLine(canvasWidth + " + " + canvasHeight);
-
             bg = new Bitmap(canvasWidth, canvasHeight, PixelFormat.Format24bppRgb);
             Grid = new Bitmap(canvasWidth, canvasHeight, PixelFormat.Format24bppRgb);
 
