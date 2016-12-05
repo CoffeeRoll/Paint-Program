@@ -48,7 +48,7 @@ namespace Paint_Program
         {
             for (int i = this.Controls.Count - 1; i >= 0; i--)
             {
-                if (!(this.Controls[i] is MenuStrip))
+                if (!(this.Controls[i] is MenuStrip) && !(this.Controls[i] is ToolStrip))
                 {
                     this.Controls.Remove(this.Controls[i]);
                 }
@@ -259,9 +259,23 @@ namespace Paint_Program
         }
 
 
-        #endregion
 
-        
+        #endregion
+        //Whoops,    v newfile v
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            tsmiFile_New_Click(sender, e);
+        }
+
+        private void OpenFile_Click(object sender, EventArgs e)
+        {
+            tsmiFile_Import_Click(sender, e);
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            tsmiFile_Save_Click(sender, e);
+        }
     }
 
 }

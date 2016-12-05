@@ -107,3 +107,4 @@ C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\Paint-Program\Paint 
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\Paint-Program\Paint Program\obj\Debug\Paint Program.exe
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\Paint-Program\Paint Program\obj\Debug\Paint_Program.ZoomControl.resources

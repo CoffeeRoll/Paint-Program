@@ -119,7 +119,7 @@ namespace Paint_Program
 
             ts = new ToolStrip();
             ts.Dock = DockStyle.None;
-            ts.Location = new Point(0, menuHeight);
+            ts.Location = new Point(0, menuHeight * 2);
             ts.AutoSize = false;
             ts.Height = maxHeight - menuHeight;
             ts.Width = tsWidth;
@@ -130,7 +130,7 @@ namespace Paint_Program
             this.Parent.Resize += handleParentResize;
 
             bs = new BrushSettings(ss);
-            bs.Location = new Point(maxWidth - bs.Width, 0);
+            bs.Location = new Point(maxWidth - bs.Width, menuHeight * 2);
             this.Parent.Controls.Add(bs);
 
             zc = new ZoomControl(ss);
@@ -139,7 +139,7 @@ namespace Paint_Program
 
             p = new Display();
             p.Size = new Size(canvasWidth, canvasHeight);
-            p.Location = new Point(0,0);
+            p.Location = new Point(0, menuHeight);
             p.MouseDown += handleMouseDown;
             p.MouseUp += handleMouseUp;
             p.MouseMove += handleMouseMove;
@@ -148,7 +148,7 @@ namespace Paint_Program
             pScaled = new Panel();
             pScaled.Size = new Size( (lv.Location.X - this.Location.X) - ts.Width - 30 ,(zc.Location.Y - this.Location.Y) - 165 );
             pScaled.MinimumSize = new Size(300, 300);
-            pScaled.Location = new Point(0,0);
+            pScaled.Location = new Point(0, 0);
             pScaled.BackColor = Color.FromArgb(64,64,64);
             pScaled.AutoScroll = true;
             
