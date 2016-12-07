@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,11 +27,12 @@ namespace Paint_Program
 
 
                 doOpen(settings, ofd);
+                ofd.Dispose();
 
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.InnerException);
+                Console.WriteLine("An Error Occured Somewhere!" + e.InnerException);
             }
         }
 
@@ -41,12 +44,20 @@ namespace Paint_Program
                 {
                     string baseDir = System.IO.Directory.GetCurrentDirectory();
 
-                    System.IO.Directory.Delete(baseDir + @"\load", true);
+                    try {
+                        DeleteDirectory(baseDir + @"\load");
+                    }
+                    catch(Exception e)
+                    {
+                        Console.WriteLine("Couldn't delete 'load' Directory!" + e.InnerException);
+                    }
 
                     List<String> layerNames = new List<String>();
                     List<Bitmap> layerBitmaps = new List<Bitmap>();
 
-                    System.IO.Directory.CreateDirectory("load");
+                    DirectorySecurity securityRules = new DirectorySecurity();
+                    securityRules.AddAccessRule(new FileSystemAccessRule("Users", FileSystemRights.FullControl, AccessControlType.Allow));
+                    DirectoryInfo di = Directory.CreateDirectory("load", securityRules);
 
                     System.IO.Compression.ZipFile.ExtractToDirectory(ofd.FileName, baseDir + @"\load");
 
@@ -60,6 +71,7 @@ namespace Paint_Program
                         }
 
                         sr.Close();
+                        sr.Dispose();
                     }
 
                     int w = 0;
@@ -67,14 +79,17 @@ namespace Paint_Program
 
                     for (int n = 0; n < layerNames.Count; n++)
                     {
-                        Bitmap temp = (Bitmap)Image.FromFile(baseDir + @"\load\" + layerNames[n] + ".png");
+                        Bitmap temp =(Bitmap)Image.FromFile(baseDir + @"\load\" + layerNames[n] + ".png");
 
                         w = (temp.Width > w) ? temp.Width : w;
                         h = (temp.Height > h) ? temp.Height : h;
                         Console.WriteLine(w + " " + h);
-                        layerBitmaps.Add(temp);
+                        layerBitmaps.Add((Bitmap)temp.Clone());
                         Console.WriteLine("LAYERS: " + layerBitmaps.Count);
                     }
+
+                    layerBitmaps.Clear();
+                    layerNames.Clear();
 
                     settings.setCanvasWidth(w);
                     settings.setCanvasHeight(h);
@@ -89,5 +104,25 @@ namespace Paint_Program
                 }
             }
         }
+
+        public static void DeleteDirectory(string target_dir)
+        {
+            string[] files = Directory.GetFiles(target_dir);
+            string[] dirs = Directory.GetDirectories(target_dir);
+
+            foreach (string file in files)
+            {
+                File.SetAttributes(file, FileAttributes.Normal);
+                File.Delete(file);
+            }
+
+            foreach (string dir in dirs)
+            {
+                DeleteDirectory(dir);
+            }
+
+            Directory.Delete(target_dir, false);
+        }
+
     }
 }
