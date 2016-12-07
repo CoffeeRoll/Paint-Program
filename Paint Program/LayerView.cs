@@ -382,8 +382,8 @@ namespace Paint_Program
             int yMod = ss.getCanvasHeight();
             int xMod = ss.getCanvasWidth();
             int width = ss.getGridWitdh();
-            int zoom = (int)ss.getDrawScale(); 
-
+            int zoom = (int)ss.getDrawScale();
+            
 
             if (width > 0)
             {
@@ -392,7 +392,7 @@ namespace Paint_Program
                 for (int x = 0; x < xMod; x += width)
                     g.DrawLine(p, x, 0, x, xMod);
             }
-            else
+            else if(width == -1)
             {
                 if (zoom >= 15)
                 {

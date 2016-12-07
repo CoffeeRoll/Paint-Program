@@ -46,6 +46,7 @@ namespace Paint_Program
 
         private void clearControls()
         {
+            Console.WriteLine(this.ToString());
             for (int i = this.Controls.Count - 1; i >= 0; i--)
             {
                 if (!(this.Controls[i] is MenuStrip) && !(this.Controls[i] is ToolStrip))
@@ -53,6 +54,7 @@ namespace Paint_Program
                     this.Controls.Remove(this.Controls[i]);
                 }
             }
+            Console.WriteLine(this.ToString());
         }
 
         private void makeNewProject(int w, int h)
@@ -62,7 +64,6 @@ namespace Paint_Program
             this.Controls.Add(c);
             c.initCanvas();
             ss = c.getSharedSettings();
-            this.Update();
         }
 
         private void makeNewProject(SharedSettings s)
@@ -144,8 +145,6 @@ namespace Paint_Program
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            clearControls();
-
             SharedSettings s = new SharedSettings();
             ProjectLoad pl = new ProjectLoad(s);
 
@@ -154,6 +153,7 @@ namespace Paint_Program
                 return;
             }
 
+            clearControls();
             makeNewProject(s);
         }
 
@@ -162,11 +162,14 @@ namespace Paint_Program
         {
             if (ss != null)
             {
-                GridUncheck();
-                tsmiGrid5.CheckState = CheckState.Checked;
-
-                if (tsmiGrid5.Checked)
+                if (tsmiGrid5.CheckState == CheckState.Unchecked)
                 {
+                    ss.setGridToggle(false);
+                }
+                else
+                {
+                    GridUncheck();
+                    tsmiGrid5.CheckState = CheckState.Checked;
                     ss.setGridToggle(true);
                     ss.setGridWidth(5);
                 }
@@ -177,11 +180,14 @@ namespace Paint_Program
         {
             if (ss != null)
             {
-                GridUncheck();
-                tsmiGrid10.CheckState = CheckState.Checked;
-
-                if (tsmiGrid10.Checked)
+                if (tsmiGrid10.CheckState == CheckState.Unchecked)
                 {
+                    ss.setGridToggle(false);
+                }
+                else
+                {
+                    GridUncheck();
+                    tsmiGrid10.CheckState = CheckState.Checked;
                     ss.setGridToggle(true);
                     ss.setGridWidth(10);
                 }
@@ -192,11 +198,14 @@ namespace Paint_Program
         {
             if (ss != null)
             {
-                GridUncheck();
-                tsmiGrid25.CheckState = CheckState.Checked;
-
-                if (tsmiGrid25.Checked)
+                if (tsmiGrid25.CheckState == CheckState.Unchecked)
                 {
+                    ss.setGridToggle(false);
+                }
+                else
+                {
+                    GridUncheck();
+                    tsmiGrid25.CheckState = CheckState.Checked;
                     ss.setGridToggle(true);
                     ss.setGridWidth(25);
                 }
@@ -207,11 +216,14 @@ namespace Paint_Program
         {
             if (ss != null)
             {
-                GridUncheck();
-                tsmiGrid50.CheckState = CheckState.Checked;
-
-                if (tsmiGrid50.Checked)
+                if (tsmiGrid50.CheckState == CheckState.Unchecked)
                 {
+                    ss.setGridToggle(false);
+                }
+                else
+                {
+                    GridUncheck();
+                    tsmiGrid50.CheckState = CheckState.Checked;
                     ss.setGridToggle(true);
                     ss.setGridWidth(50);
                 }
@@ -222,11 +234,14 @@ namespace Paint_Program
         {
             if (ss != null)
             {
-                GridUncheck();
-                tsmiGrid100.CheckState = CheckState.Checked;
-
-                if (tsmiGrid100.Checked)
+                if (tsmiGrid100.CheckState == CheckState.Unchecked)
                 {
+                    ss.setGridToggle(false);
+                }
+                else
+                {
+                    GridUncheck();
+                    tsmiGrid100.CheckState = CheckState.Checked;
                     ss.setGridToggle(true);
                     ss.setGridWidth(100);
                 }
@@ -237,13 +252,18 @@ namespace Paint_Program
         {
             if (ss != null)
             {
-                GridUncheck();
-                tsmiGridAuto.CheckState = CheckState.Checked;
-
-                if (tsmiGrid5.Checked)
+                if (tsmiGridAuto.CheckState == CheckState.Unchecked)
                 {
+                    GridUncheck();
+                    tsmiGridAuto.CheckState = CheckState.Checked;
                     ss.setGridToggle(true);
                     ss.setGridWidth(-1);
+                }
+                else
+                {
+                    tsmiGridAuto.CheckState = CheckState.Unchecked;
+                    ss.setGridToggle(false);
+
                 }
             }
         }

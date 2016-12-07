@@ -253,9 +253,16 @@ namespace Paint_Program
 
         private void handleParentResize(object sender, EventArgs e)
         {
+            Console.WriteLine(sender.ToString());
+
+            //Temporary Hack Fix - Please Find Better Solution
+            //Fixes Second New Project Null Parent Reference Bug
+            this.Parent = (System.Windows.Forms.Control) sender;
+            
+            
             //Updates Parent Width and Height Values
-            maxWidth = Parent.Width;
-            maxHeight = Parent.Height;
+            maxWidth = this.Parent.Width;
+            maxHeight = this.Parent.Height;
             
             //Moves all the Controls to their new location
             lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
@@ -328,13 +335,10 @@ namespace Paint_Program
 
             Bitmap bit = lv.getRender();
             Bitmap bit2 = (Bitmap)bg.Clone();
-            //lv.GridDraw(Graphics.FromImage(Grid));
-            if (ss.getGridToggle())
-            {            
-                lv.GridDraw(Graphics.FromImage(bit2));
-            }
 
             Graphics.FromImage(bit2).DrawImage(bit, 0, 0);
+
+            
 
             Bitmap iitmp = ss.getImportImage();
             if (iitmp != null)
@@ -350,10 +354,18 @@ namespace Paint_Program
             p.Height = (int) (ss.getDrawScale() * ss.getCanvasHeight());
             Rectangle source = new Rectangle(-1, -1, bit2.Width+1, bit2.Height+1);
             Rectangle dest = new Rectangle(0, 0, p.Width, p.Height);
+
             k.InterpolationMode = InterpolationMode.NearestNeighbor;
 
+            if (ss.getGridToggle())
+            {
+                lv.GridDraw(Graphics.FromImage(bit2));
+            }
+
             k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
+
             
+
         }
 
         public void setBitmap(Bitmap bit)

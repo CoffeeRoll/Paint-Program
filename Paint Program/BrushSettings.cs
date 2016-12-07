@@ -37,40 +37,51 @@ namespace Paint_Program
 
         private void pPrime_Click(object sender, EventArgs e)
         {
-            bw = new BackgroundWorker();
-            bw.DoWork += (send, args) =>
-            {
-                if (cdPicker.ShowDialog() == DialogResult.OK)
+
+            try {
+                bw = new BackgroundWorker();
+                bw.DoWork += (send, args) =>
                 {
-                    settings.setPrimaryBrushColor(cdPicker.Color);
-                }
-                
-            };
-            bw.RunWorkerCompleted += (send, args) =>
+                    if (cdPicker.ShowDialog() == DialogResult.OK)
+                    {
+                        settings.setPrimaryBrushColor(cdPicker.Color);
+                    }
+
+                };
+                bw.RunWorkerCompleted += (send, args) =>
+                {
+                    pPrime.BackColor = cdPicker.Color;
+                    pPrime.Refresh();
+                };
+                bw.RunWorkerAsync();
+            }catch(Exception err)
             {
-                pPrime.BackColor = cdPicker.Color;
-                pPrime.Refresh();
-            };
-            bw.RunWorkerAsync();
+                Console.WriteLine(err.ToString());
+            }
         }
 
         private void pSec_Click(object sender, EventArgs e)
         {
-            bw = new BackgroundWorker();
-            bw.DoWork += (send, args) =>
-            {
-                if (cdPicker.ShowDialog() == DialogResult.OK)
+            try {
+                bw = new BackgroundWorker();
+                bw.DoWork += (send, args) =>
                 {
-                    settings.setSecondaryBrushColor(cdPicker.Color);
-                }
+                    if (cdPicker.ShowDialog() == DialogResult.OK)
+                    {
+                        settings.setSecondaryBrushColor(cdPicker.Color);
+                    }
 
-            };
-            bw.RunWorkerCompleted += (send, args) =>
+                };
+                bw.RunWorkerCompleted += (send, args) =>
+                {
+                    pSec.BackColor = cdPicker.Color;
+                    pSec.Refresh();
+                };
+                bw.RunWorkerAsync();
+            }catch(Exception err)
             {
-                pSec.BackColor = cdPicker.Color;
-                pSec.Refresh();
-            };
-            bw.RunWorkerAsync();
+                Console.WriteLine(err.ToString());
+            }
         }
 
         private void tbSize_ValueChanged(object sender, EventArgs e)
