@@ -5,7 +5,6 @@ C:\Users\CoffeeRoll\Desktop\WintabDN\WintabDN\obj\Debug\WintabDN.dll
 C:\Users\CoffeeRoll\Desktop\WintabDN\WintabDN\obj\Debug\WintabDN.pdb
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\WintabDN\bin\Debug\WintabDN.dll
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\WintabDN\bin\Debug\WintabDN.pdb
-C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\WintabDN\obj\Debug\WintabDN.csprojResolveAssemblyReference.cache
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\WintabDN\obj\Debug\WintabDN.dll
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\WintabDN\obj\Debug\WintabDN.pdb
 C:\Users\mgoldstein\Source\Repos\Paint-Program\WintabDN\bin\Debug\WintabDN.dll

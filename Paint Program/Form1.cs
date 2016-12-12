@@ -57,6 +57,10 @@ namespace Paint_Program
 
         private void makeNewProject(int w, int h)
         {
+            if(c != null)
+            {
+                c.Trash(); //To help with memory leak issues
+            }
             c = new Canvas(w, h, this.Width, this.Height);
             c.Location = new Point(200, 5);
             this.Controls.Add(c);

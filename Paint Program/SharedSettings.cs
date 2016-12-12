@@ -284,5 +284,18 @@ namespace Paint_Program
             double scale = (double)(newEnd - newStart) / (originalEnd - originalStart);
             return (int)(newStart + ((value - originalStart) * scale));
         }
+
+        public void Trash()
+        {
+
+            //Disposes all Bitmap references to reduce memory leaks
+            foreach(Bitmap b in Layers)
+            {
+                b.Dispose();
+            }
+            bitmapCanvas.Dispose();
+            bitmapCurrentLayer.Dispose();
+            bitmapImportImage.Dispose();
+        }
     }
 }

@@ -406,5 +406,13 @@ namespace Paint_Program
         {
             return ss;
         }
+
+        public void Trash()
+        {
+            Console.WriteLine("Trashing. . .");
+            lv.Trash();
+            Tools.Clear();
+            this.Dispose();
+        }
     }
 }

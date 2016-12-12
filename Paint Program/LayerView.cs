@@ -409,5 +409,10 @@ namespace Paint_Program
 
         }
 
+        public void Trash()
+        {
+            Layers.Clear();
+        }
+
     }
 }
