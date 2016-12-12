@@ -88,14 +88,15 @@ namespace Paint_Program
                         Console.WriteLine("LAYERS: " + layerBitmaps.Count);
                     }
 
-                    layerBitmaps.Clear();
-                    layerNames.Clear();
-
                     settings.setCanvasWidth(w);
                     settings.setCanvasHeight(h);
                     settings.setLayerBitmaps(layerBitmaps.ToArray());
                     settings.setLayerNames(layerNames.ToArray());
                     settings.setLoadFromSettings(true);
+
+                    layerBitmaps.Clear(); //Clears all Bitmap File References
+                    layerNames.Clear(); //Clears Layer NAme File Reference
+
                 }
                 catch (Exception e)
                 {

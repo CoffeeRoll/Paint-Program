@@ -61,6 +61,7 @@
             this.tbWidth.Name = "tbWidth";
             this.tbWidth.Size = new System.Drawing.Size(156, 26);
             this.tbWidth.TabIndex = 2;
+            this.tbWidth.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Handle_KeyPress);
             // 
             // tbHeight
             // 
@@ -68,6 +69,7 @@
             this.tbHeight.Name = "tbHeight";
             this.tbHeight.Size = new System.Drawing.Size(156, 26);
             this.tbHeight.TabIndex = 3;
+            this.tbHeight.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Handle_KeyPress);
             // 
             // bSubmit
             // 

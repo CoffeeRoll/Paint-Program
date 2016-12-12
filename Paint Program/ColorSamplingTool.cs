@@ -47,7 +47,7 @@ namespace Paint_Program
 
         public string getToolTip()
         {
-            return "Pencil Tool";
+            return "Color Sampler";
         }
 
         public void onMouseDown(object sender, MouseEventArgs e)
@@ -65,7 +65,6 @@ namespace Paint_Program
                 {
                     settings.setSecondaryBrushColor(c);
                 }
-
             }
         }
 

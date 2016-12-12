@@ -51,5 +51,14 @@ namespace Paint_Program
                 this.Close();
             }
         }
+
+        private void Handle_KeyPress(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                bSubmit_Click(sender, null);
+            }
+        }
+
     }
 }

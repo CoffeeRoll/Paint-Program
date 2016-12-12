@@ -310,6 +310,7 @@ namespace Paint_Program
             if (iActiveTool >= 0)
                 Tools[iActiveTool].onMouseUp(sender, evt);
             lv.UpdateLayerInfoListener();
+            bs.CheckChange();
         }
 
         public void handleMouseMove(object sender, MouseEventArgs e)

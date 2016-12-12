@@ -26,6 +26,7 @@ namespace Paint_Program
 
             tbSize.Value = (int)settings.getBrushSize();
             tbHardness.Value = (int)settings.getBrushHardness();
+            
             this.Refresh();
 
         }
@@ -96,6 +97,13 @@ namespace Paint_Program
             lHard.Text = "Brush Hardness: " + tbHardness.Value.ToString();
             lHard.Refresh();
             settings.setBrushHardness(tbHardness.Value);
+        }
+
+        public void CheckChange()
+        {
+            pPrime.BackColor = settings.getPrimaryBrushColor();
+            pSec.BackColor = settings.getSecondaryBrushColor();
+            this.Refresh();
         }
     }
 }

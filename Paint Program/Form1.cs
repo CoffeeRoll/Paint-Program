@@ -46,15 +46,13 @@ namespace Paint_Program
 
         private void clearControls()
         {
-            Console.WriteLine(this.ToString());
             for (int i = this.Controls.Count - 1; i >= 0; i--)
             {
-                if (!(this.Controls[i] is MenuStrip) && !(this.Controls[i] is ToolStrip))
+                if (!(this.Controls[i] == msMenu) && !(this.Controls[i] == toolStrip1)) //prevents menu distruction
                 {
-                    this.Controls.Remove(this.Controls[i]);
+                    this.Controls[i].Dispose(); //Needs to be Dispose or will leak memory
                 }
             }
-            Console.WriteLine(this.ToString());
         }
 
         private void makeNewProject(int w, int h)

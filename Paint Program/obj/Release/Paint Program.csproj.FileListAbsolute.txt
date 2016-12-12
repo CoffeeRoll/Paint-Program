@@ -1,0 +1,17 @@
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\bin\Release\Paint Program.exe.config
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\bin\Release\Paint Program.exe
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\bin\Release\Paint Program.pdb
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\bin\Release\WintabDN.dll
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\bin\Release\WintabDN.pdb
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Release\Paint Program.csprojResolveAssemblyReference.cache
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Release\Paint_Program.BrushSettings.resources
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Release\Paint_Program.Canvas.resources
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Release\Paint_Program.Form1.resources
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Release\Paint_Program.LayerItem.resources
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Release\Paint_Program.LayerView.resources
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Release\Paint_Program.NewProjectForm.resources
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Release\Paint_Program.Properties.Resources.resources
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Release\Paint_Program.ZoomControl.resources
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Release\Paint Program.csproj.GenerateResource.Cache
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Release\Paint Program.exe
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Release\Paint Program.pdb
