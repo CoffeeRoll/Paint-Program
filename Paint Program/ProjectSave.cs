@@ -22,6 +22,7 @@ namespace Paint_Program
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.Filter = "Le Paint Project File|*.lep|All Files|*.*";
                 sfd.Title = "Save Project";
+                sfd.OverwritePrompt = false;
                 sfd.ShowDialog();
 
                 bw.DoWork += (send, args) =>
@@ -57,6 +58,11 @@ namespace Paint_Program
                     }
 
                     System.IO.File.WriteAllLines(baseDir + @"\save\names.txt", LayerNames);
+
+                    if (System.IO.File.Exists(sfd.FileName))
+                    {
+                        System.IO.File.Delete(sfd.FileName);
+                    }
 
                     ZipFile.CreateFromDirectory(baseDir + @"\save", sfd.FileName);
 
