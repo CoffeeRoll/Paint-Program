@@ -65,6 +65,8 @@ namespace Paint_Program
 
             this.Width = canvasWidth;
             this.Height = canvasHeight;
+            this.AutoSize = true;
+            this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
 
         }
 
@@ -411,6 +413,10 @@ namespace Paint_Program
         {
             Console.WriteLine("Trashing. . .");
             lv.Trash();
+            ss.Trash();
+            p.Dispose();
+            pScaled.Dispose();
+            g.Dispose();
             Tools.Clear();
             this.Dispose();
         }

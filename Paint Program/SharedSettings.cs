@@ -293,9 +293,16 @@ namespace Paint_Program
             {
                 b.Dispose();
             }
-            bitmapCanvas.Dispose();
-            bitmapCurrentLayer.Dispose();
-            bitmapImportImage.Dispose();
+            setLoadFromSettings(false);
+
+            if(bitmapCanvas != null)
+                bitmapCanvas.Dispose();
+
+            if(bitmapCurrentLayer != null)
+                bitmapCurrentLayer.Dispose();
+
+            if(bitmapImportImage != null)
+                bitmapImportImage.Dispose();
         }
     }
 }
