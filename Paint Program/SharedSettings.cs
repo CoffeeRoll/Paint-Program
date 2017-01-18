@@ -43,9 +43,15 @@ namespace Paint_Program
 
         public static Bitmap bitmapImportImage { get; set; }
 
+        public static Bitmap bitmapSelection { get; set; }
+
         public static Bitmap[] Layers { get; set; }
 
         public static String[] LayerNames { get; set; }
+
+        public static Point pSelectionPoint { get; set; }
+
+        public static Size sSelectionSize { get; set; }
 
         public SharedSettings()
         {
@@ -69,8 +75,7 @@ namespace Paint_Program
             //standard max pressure
             iMaxTabletPressure = 1023;
         }
-
-
+        
         public void setPrimaryBrushColor(Color c)
         {
             cPrimaryBrushColor = c;
@@ -170,6 +175,22 @@ namespace Paint_Program
         {
             fScale = s;
         }
+
+        public void setSelectionPoint(Point p)
+        {
+            pSelectionPoint = p;
+        }
+
+        public void setSelectionSize(Size s)
+        {
+            sSelectionSize = s;
+        }
+
+        public void setSelectionBitmap(Bitmap b)
+        {
+            bitmapSelection = b;
+        }
+
 
 
         public Color getPrimaryBrushColor()
@@ -275,6 +296,22 @@ namespace Paint_Program
         {
             return fScale;
         }
+
+        public Point getSelectionPoint()
+        {
+            return pSelectionPoint;
+        }
+
+        public Size getSelectionSize()
+        {
+            return sSelectionSize;
+        }
+
+        public Bitmap getSelectionBitmap()
+        {
+            return bitmapSelection;
+        }
+
 
         public static int MapValue(
     int originalStart, int originalEnd, // original range

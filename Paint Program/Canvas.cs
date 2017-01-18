@@ -8,10 +8,8 @@ using System.Drawing.Imaging;
 
 namespace Paint_Program
 {
-
     public partial class Canvas : UserControl
     {
-
         private Display p;
         private Panel pScaled;
 
@@ -192,6 +190,7 @@ namespace Paint_Program
             Tools.Add(new ColorSamplingTool());
             Tools.Add(new ErasoirTool());
             Tools.Add(new PaintBucketTool());
+            Tools.Add(new SelectionTool());
 
             foreach (ITool tool in Tools)
             {
@@ -335,8 +334,6 @@ namespace Paint_Program
             Bitmap bit2 = (Bitmap)bg.Clone();
 
             Graphics.FromImage(bit2).DrawImage(bit, 0, 0);
-
-            
 
             Bitmap iitmp = ss.getImportImage();
             if (iitmp != null)
