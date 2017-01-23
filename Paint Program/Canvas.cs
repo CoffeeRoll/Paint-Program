@@ -357,6 +357,11 @@ namespace Paint_Program
                 lv.GridDraw(Graphics.FromImage(bit2));
             }
 
+            if (ss.getRenderBitmapInterface() && ss.getInterfaceBitmap() != null)
+            {
+                Graphics.FromImage(bit2).DrawImage(ss.getInterfaceBitmap(), 0, 0);
+            }
+
             k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
 
         }

@@ -37,13 +37,15 @@ namespace Paint_Program
 
         public static bool bLoadFromSettings { get; set; }
 
+        public static bool bRenderBitmapInterface { get; set; }
+
         public static Bitmap bitmapCanvas { get; set; }
 
         public static Bitmap bitmapCurrentLayer { get; set; }
 
         public static Bitmap bitmapImportImage { get; set; }
 
-        public static Bitmap bitmapSelection { get; set; }
+        public static Bitmap bitmapInterface { get; set; }
 
         public static Bitmap[] Layers { get; set; }
 
@@ -186,9 +188,14 @@ namespace Paint_Program
             sSelectionSize = s;
         }
 
-        public void setSelectionBitmap(Bitmap b)
+        public void setInterfaceBitmap(Bitmap b)
         {
-            bitmapSelection = b;
+            bitmapInterface = b;
+        }
+
+        public void setRenderBitmapInterface(bool b)
+        {
+            bRenderBitmapInterface = b;
         }
 
 
@@ -307,10 +314,16 @@ namespace Paint_Program
             return sSelectionSize;
         }
 
-        public Bitmap getSelectionBitmap()
+        public Bitmap getInterfaceBitmap()
         {
-            return bitmapSelection;
+            return bitmapInterface;
         }
+
+        public bool getRenderBitmapInterface()
+        {
+            return bRenderBitmapInterface;
+        }
+
 
 
         public static int MapValue(
@@ -332,14 +345,25 @@ namespace Paint_Program
             }
             setLoadFromSettings(false);
 
-            if(bitmapCanvas != null)
+            if (bitmapCanvas != null)
+            {
                 bitmapCanvas.Dispose();
+            }
 
-            if(bitmapCurrentLayer != null)
+            if (bitmapCurrentLayer != null)
+            {
                 bitmapCurrentLayer.Dispose();
+            }
+
+            if (bitmapImportImage != null)
+            {
+                bitmapImportImage.Dispose();
+            }
 
             if(bitmapImportImage != null)
-                bitmapImportImage.Dispose();
+            {
+                bitmapInterface.Dispose();
+            }
         }
     }
 }

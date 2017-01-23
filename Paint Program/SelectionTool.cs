@@ -60,11 +60,13 @@ namespace Paint_Program
             {
                 ss.setSelectionPoint(new Point(-1, -1));
                 ss.setSelectionSize(new Size(-1, -1));
-                
+                ss.setRenderBitmapInterface(false);
             }
             else
             {
                 int tlX = p1.X, tlY = p1.Y;
+                int width = Math.Abs(p1.X - p2.X);
+                int height = Math.Abs(p1.Y - p2.Y);
 
                 if (p2.X < p1.X)
                 {
@@ -76,8 +78,12 @@ namespace Paint_Program
                 }
 
                 ss.setSelectionPoint(new Point(tlX, tlY));
-                ss.setSelectionSize(new Size(Math.Abs(p1.X - p2.X), Math.Abs(p1.Y - p2.Y)));
+                ss.setSelectionSize(new Size(width, height));
 
+                Bitmap temp = new Bitmap(ss.getCanvasWidth(), ss.getCanvasHeight());
+                Graphics.FromImage(temp)
+
+                ss.setRenderBitmapInterface(true);
 
             }
         }
