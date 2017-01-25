@@ -19,6 +19,9 @@ namespace Paint_Program
 
         private Bitmap Grid;
 
+        private const int GCperFrames = 100;
+        private int GCCurrentFrame = 0;
+
         private int canvasWidth, canvasHeight;
 
         //Width and height of Parrent
@@ -343,7 +346,13 @@ namespace Paint_Program
             ss.setBitmapCanvas(bit);
 
             p.Invalidate();
-            System.GC.Collect(); //Prevent OutOfMemory Execptions
+
+            if (GCCurrentFrame == GCperFrames)
+            {
+                System.GC.Collect(); //Prevent OutOfMemory Execptions
+            }
+            GCCurrentFrame += 1;
+            GCCurrentFrame %= 100;
 
             p.Width = (int) (ss.getDrawScale() * ss.getCanvasWidth());
             p.Height = (int) (ss.getDrawScale() * ss.getCanvasHeight());
