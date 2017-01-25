@@ -81,8 +81,11 @@ namespace Paint_Program
                 ss.setSelectionSize(new Size(width, height));
 
                 Bitmap temp = new Bitmap(ss.getCanvasWidth(), ss.getCanvasHeight());
-                Graphics.FromImage(temp)
-
+                Pen p = new Pen(Color.Black);
+                p.DashPattern = new float[] { 3.0F, 3.0F };
+                p.DashCap = System.Drawing.Drawing2D.DashCap.Flat;
+                Graphics.FromImage(temp).DrawRectangle(p, tlX, tlY, width, height);
+                ss.setInterfaceBitmap(temp);
                 ss.setRenderBitmapInterface(true);
 
             }
