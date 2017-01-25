@@ -41,8 +41,10 @@ namespace Paint_Program
             else
             {
                 addLayer();
-                ss.setBitmapCurrentLayer(Layers[0].getBitmap());
             }
+
+            ss.setBitmapCurrentLayer(Layers[0].getBitmap());
+
             redrawLayerItems();
             UpdateLayerInfo();
         }

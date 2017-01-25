@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Paint_Program
 {
@@ -49,6 +45,8 @@ namespace Paint_Program
 
         public static Bitmap bitmapInterface { get; set; }
 
+        public static Bitmap bitmapSelectionArea { get; set; }
+
         public static Bitmap[] Layers { get; set; }
 
         public static String[] LayerNames { get; set; }
@@ -56,6 +54,7 @@ namespace Paint_Program
         public static Point pSelectionPoint { get; set; }
 
         public static Size sSelectionSize { get; set; }
+
 
         public SharedSettings()
         {
@@ -200,6 +199,11 @@ namespace Paint_Program
             bRenderBitmapInterface = b;
         }
 
+        public void setBitmapSelectionArea(Bitmap b)
+        {
+            bitmapSelectionArea = b;
+        }
+
 
 
         public Color getPrimaryBrushColor()
@@ -324,6 +328,11 @@ namespace Paint_Program
         public bool getRenderBitmapInterface()
         {
             return bRenderBitmapInterface;
+        }
+
+        public Bitmap getBitmapSelectionArea()
+        {
+            return bitmapSelectionArea;
         }
 
 
