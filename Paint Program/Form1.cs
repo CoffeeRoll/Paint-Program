@@ -306,16 +306,41 @@ namespace Paint_Program
                 OpenFileDialog sfd = new OpenFileDialog();
                 sfd.Filter = "All Files|*.*";
                 sfd.Title = "Select Watermark File";
-                
                 sfd.ShowDialog();
+
+                SharedSettings.watermarkPath = sfd.FileName;
 
             }
             catch
             {
 
             }
+
+            if (SharedSettings.watermarkPath != null)
+            {
+                showWatermarkToolStripMenuItem.Enabled = true;
+                styleToolStripMenuItem.Enabled = true;
+            }
         }
 
+        private void showWatermarkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (showWatermarkToolStripMenuItem.Checked == false)
+            {
+                if(singleToolStripMenuItem.Checked == true)
+                {
+
+                }
+                else if (singleBottomToolStripMenuItem.Checked == true)
+                {
+
+                }
+                else if (tiledToolStripMenuItem.Checked == true)
+                {
+
+                }
+            }
+        }
     }
 
 }

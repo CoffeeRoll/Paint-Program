@@ -27,3 +27,8 @@ C:\Users\jchouinard01\Documents\GitHub\Paint-Program\WintabDN\bin\Debug\WintabDN
 C:\Users\jchouinard01\Documents\GitHub\Paint-Program\WintabDN\obj\Debug\WintabDN.csprojResolveAssemblyReference.cache
 C:\Users\jchouinard01\Documents\GitHub\Paint-Program\WintabDN\obj\Debug\WintabDN.dll
 C:\Users\jchouinard01\Documents\GitHub\Paint-Program\WintabDN\obj\Debug\WintabDN.pdb
+C:\Users\bmelanson.LRC\Source\Repos\Paint-Program\WintabDN\bin\Debug\WintabDN.dll
+C:\Users\bmelanson.LRC\Source\Repos\Paint-Program\WintabDN\bin\Debug\WintabDN.pdb
+C:\Users\bmelanson.LRC\Source\Repos\Paint-Program\WintabDN\obj\Debug\WintabDN.csprojResolveAssemblyReference.cache
+C:\Users\bmelanson.LRC\Source\Repos\Paint-Program\WintabDN\obj\Debug\WintabDN.dll
+C:\Users\bmelanson.LRC\Source\Repos\Paint-Program\WintabDN\obj\Debug\WintabDN.pdb
