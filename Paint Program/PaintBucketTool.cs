@@ -68,7 +68,8 @@ namespace Paint_Program
 
                     while (pixels.Count > 0)
                     {
-                        if (targetColor == replacementColor) break;
+                        if (targetColor.ToArgb() == replacementColor.ToArgb()) break;
+
                         Point a = pixels.Pop();
                         if (a.X < bmp.Width && a.X >= 0 &&
                                 a.Y < bmp.Height && a.Y >= 0)//make sure we stay within bounds
