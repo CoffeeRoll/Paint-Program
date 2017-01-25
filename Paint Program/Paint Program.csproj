@@ -76,6 +76,11 @@
     </Compile>
     <Compile Include="ImageImport.cs" />
     <Compile Include="ITool.cs" />
+    <Compile Include="Languages\en-us.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>en-us.resx</DependentUpon>
+    </Compile>
     <Compile Include="Layer.cs" />
     <Compile Include="LayerItem.cs">
       <SubType>UserControl</SubType>
@@ -121,6 +126,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\en-us.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>en-us.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="LayerItem.resx">
       <DependentUpon>LayerItem.cs</DependentUpon>

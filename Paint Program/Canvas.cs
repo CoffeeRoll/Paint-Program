@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WintabDN;
 using System.Drawing.Drawing2D;
@@ -13,10 +8,8 @@ using System.Drawing.Imaging;
 
 namespace Paint_Program
 {
-
     public partial class Canvas : UserControl
     {
-
         private Display p;
         private Panel pScaled;
 
@@ -25,6 +18,9 @@ namespace Paint_Program
         private Bitmap bg;
 
         private Bitmap Grid;
+
+        private const int GCperFrames = 100;
+        private int GCCurrentFrame = 0;
 
         private int canvasWidth, canvasHeight;
 
@@ -197,6 +193,7 @@ namespace Paint_Program
             Tools.Add(new ColorSamplingTool());
             Tools.Add(new ErasoirTool());
             Tools.Add(new PaintBucketTool());
+            Tools.Add(new SelectionTool());
 
             foreach (ITool tool in Tools)
             {
@@ -341,8 +338,6 @@ namespace Paint_Program
 
             Graphics.FromImage(bit2).DrawImage(bit, 0, 0);
 
-            
-
             Bitmap iitmp = ss.getImportImage();
             if (iitmp != null)
             {
@@ -351,7 +346,13 @@ namespace Paint_Program
             ss.setBitmapCanvas(bit);
 
             p.Invalidate();
-            System.GC.Collect(); //Prevent OutOfMemory Execptions
+
+            if (GCCurrentFrame == GCperFrames)
+            {
+                System.GC.Collect(); //Prevent OutOfMemory Execptions
+            }
+            GCCurrentFrame += 1;
+            GCCurrentFrame %= 100;
 
             p.Width = (int) (ss.getDrawScale() * ss.getCanvasWidth());
             p.Height = (int) (ss.getDrawScale() * ss.getCanvasHeight());
@@ -365,9 +366,12 @@ namespace Paint_Program
                 lv.GridDraw(Graphics.FromImage(bit2));
             }
 
-            k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
+            if (ss.getRenderBitmapInterface() && ss.getInterfaceBitmap() != null)
+            {
+                Graphics.FromImage(bit2).DrawImage(ss.getInterfaceBitmap(), 0, 0);
+            }
 
-            
+            k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
 
         }
 
@@ -411,7 +415,6 @@ namespace Paint_Program
 
         public void Trash()
         {
-            Console.WriteLine("Trashing. . .");
             lv.Trash();
             ss.Trash();
             p.Dispose();

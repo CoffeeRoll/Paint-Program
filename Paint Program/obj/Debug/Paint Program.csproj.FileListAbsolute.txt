@@ -108,3 +108,22 @@ C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\Paint-Program\Paint 
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\Paint-Program\Paint Program\obj\Debug\Paint Program.exe
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\Paint-Program\Paint Program\obj\Debug\Paint_Program.ZoomControl.resources
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Paint Program.exe.config
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Paint Program.exe
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Paint Program.pdb
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\WintabDN.dll
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\WintabDN.pdb
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.csprojResolveAssemblyReference.cache
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.BrushSettings.resources
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Canvas.resources
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Form1.resources
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.LayerItem.resources
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.LayerView.resources
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.NewProjectForm.resources
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Properties.Resources.resources
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.ZoomControl.resources
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.exe
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.en-us.resources
+C:\Users\mgoldstein\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.en-us.resources

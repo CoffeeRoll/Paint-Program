@@ -31,7 +31,6 @@ namespace Paint_Program
             InitializeComponent();
             isVisible = true;
             LayerBitmap = new Bitmap(w, h, pf);
-
             cbVisible.Checked = true;
 
             this.BackColor = cNotActive;

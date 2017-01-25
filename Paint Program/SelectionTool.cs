@@ -10,9 +10,21 @@ namespace Paint_Program
 {
     class SelectionTool : ITool
     {
+        bool isInit = false;
+        SharedSettings ss;
+
+        Point p1, p2;
+
+        public void init(Graphics g, int w, int h, SharedSettings s)
+        {
+            ss = s;
+            isInit = true;
+        }
+
+
         public string getToolIconPath()
         {
-            return "Selection Tool";
+            return @"..\..\Images\selector.png";
         }
 
         public Bitmap getToolLayer()
@@ -22,42 +34,68 @@ namespace Paint_Program
 
         public string getToolTip()
         {
-            throw new NotImplementedException();
-        }
-
-        public void init(Graphics g, int w, int h, SharedSettings s)
-        {
-            throw new NotImplementedException();
+            return "Selector Tool";
         }
 
         public bool isInitalized()
         {
-            throw new NotImplementedException();
+            return isInit;
         }
 
         public void onMouseDown(object sender, MouseEventArgs e)
         {
-            throw new NotImplementedException();
+            p1 = new Point(e.X, e.Y);
         }
 
         public void onMouseMove(object sender, MouseEventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void onMouseUp(object sender, MouseEventArgs e)
         {
-            throw new NotImplementedException();
+            p2 = new Point(e.X, e.Y);
+
+            if (p1 == p2)
+            {
+                ss.setSelectionPoint(new Point(-1, -1));
+                ss.setSelectionSize(new Size(-1, -1));
+                ss.setRenderBitmapInterface(false);
+            }
+            else
+            {
+                int tlX = p1.X, tlY = p1.Y;
+                int width = Math.Abs(p1.X - p2.X);
+                int height = Math.Abs(p1.Y - p2.Y);
+
+                if (p2.X < p1.X)
+                {
+                    tlX = p2.X;
+                }
+                if (p2.Y < p1.Y)
+                {
+                    tlY = p2.Y;
+                }
+
+                ss.setSelectionPoint(new Point(tlX, tlY));
+                ss.setSelectionSize(new Size(width, height));
+
+                Bitmap temp = new Bitmap(ss.getCanvasWidth(), ss.getCanvasHeight());
+                Graphics.FromImage(temp)
+
+                ss.setRenderBitmapInterface(true);
+
+            }
         }
 
         public bool requiresLayerData()
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         public void setLayerData(Bitmap bit)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
