@@ -37,6 +37,8 @@ namespace Paint_Program
 
         public static bool bLoadFromSettings { get; set; }
 
+        public static string watermarkPath { get; set; }
+
         public static Bitmap bitmapCanvas { get; set; }
 
         public static Bitmap bitmapCurrentLayer { get; set; }

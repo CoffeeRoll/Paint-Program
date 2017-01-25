@@ -56,6 +56,14 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.OpenFile = new System.Windows.Forms.ToolStripButton();
             this.SaveButton = new System.Windows.Forms.ToolStripButton();
+            this.prefrencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.watermarkSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showWatermarkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.styleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.singleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tiledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tiledToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +74,8 @@
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiFile,
             this.editToolStripMenuItem,
-            this.viewToolStripMenuItem});
+            this.viewToolStripMenuItem,
+            this.prefrencesToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
             this.msMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
@@ -89,35 +98,35 @@
             // tsmiFile_New
             // 
             this.tsmiFile_New.Name = "tsmiFile_New";
-            this.tsmiFile_New.Size = new System.Drawing.Size(152, 22);
+            this.tsmiFile_New.Size = new System.Drawing.Size(146, 22);
             this.tsmiFile_New.Text = "New";
             this.tsmiFile_New.Click += new System.EventHandler(this.tsmiFile_New_Click);
             // 
             // saveImageToolStripMenuItem
             // 
             this.saveImageToolStripMenuItem.Name = "saveImageToolStripMenuItem";
-            this.saveImageToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveImageToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.saveImageToolStripMenuItem.Text = "Save";
             this.saveImageToolStripMenuItem.Click += new System.EventHandler(this.tsmiFile_Save_Click);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // importImageToolStripMenuItem
             // 
             this.importImageToolStripMenuItem.Name = "importImageToolStripMenuItem";
-            this.importImageToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.importImageToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.importImageToolStripMenuItem.Text = "Import Image";
             this.importImageToolStripMenuItem.Click += new System.EventHandler(this.tsmiFile_Import_Click);
             // 
             // exportImageToolStripMenuItem
             // 
             this.exportImageToolStripMenuItem.Name = "exportImageToolStripMenuItem";
-            this.exportImageToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportImageToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.exportImageToolStripMenuItem.Text = "Export Image";
             this.exportImageToolStripMenuItem.Click += new System.EventHandler(this.tsmiFile_Export_Click);
             // 
@@ -286,6 +295,69 @@
             this.SaveButton.Text = "Save";
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // prefrencesToolStripMenuItem
+            // 
+            this.prefrencesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.watermarkSettingsToolStripMenuItem});
+            this.prefrencesToolStripMenuItem.Name = "prefrencesToolStripMenuItem";
+            this.prefrencesToolStripMenuItem.Size = new System.Drawing.Size(80, 22);
+            this.prefrencesToolStripMenuItem.Text = "Preferences";
+            // 
+            // watermarkSettingsToolStripMenuItem
+            // 
+            this.watermarkSettingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.setImageToolStripMenuItem,
+            this.showWatermarkToolStripMenuItem,
+            this.styleToolStripMenuItem});
+            this.watermarkSettingsToolStripMenuItem.Name = "watermarkSettingsToolStripMenuItem";
+            this.watermarkSettingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.watermarkSettingsToolStripMenuItem.Text = "Watermark...";
+            // 
+            // setImageToolStripMenuItem
+            // 
+            this.setImageToolStripMenuItem.Name = "setImageToolStripMenuItem";
+            this.setImageToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.setImageToolStripMenuItem.Text = "Set Image...";
+            this.setImageToolStripMenuItem.Click += new System.EventHandler(this.setImageToolStripMenuItem_Click);
+            // 
+            // showWatermarkToolStripMenuItem
+            // 
+            this.showWatermarkToolStripMenuItem.Enabled = false;
+            this.showWatermarkToolStripMenuItem.Name = "showWatermarkToolStripMenuItem";
+            this.showWatermarkToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.showWatermarkToolStripMenuItem.Text = "Show Watermark";
+            // 
+            // styleToolStripMenuItem
+            // 
+            this.styleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.singleToolStripMenuItem,
+            this.tiledToolStripMenuItem,
+            this.tiledToolStripMenuItem1});
+            this.styleToolStripMenuItem.Enabled = false;
+            this.styleToolStripMenuItem.Name = "styleToolStripMenuItem";
+            this.styleToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.styleToolStripMenuItem.Text = "Style";
+            // 
+            // singleToolStripMenuItem
+            // 
+            this.singleToolStripMenuItem.Checked = true;
+            this.singleToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.singleToolStripMenuItem.Name = "singleToolStripMenuItem";
+            this.singleToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.singleToolStripMenuItem.Text = "Single Centered";
+            // 
+            // tiledToolStripMenuItem
+            // 
+            this.tiledToolStripMenuItem.Name = "tiledToolStripMenuItem";
+            this.tiledToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.tiledToolStripMenuItem.Text = "Single Bottom";
+            // 
+            // tiledToolStripMenuItem1
+            // 
+            this.tiledToolStripMenuItem1.Name = "tiledToolStripMenuItem1";
+            this.tiledToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
+            this.tiledToolStripMenuItem1.Text = "Tiled";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,6 +409,14 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton OpenFile;
         private System.Windows.Forms.ToolStripButton SaveButton;
+        private System.Windows.Forms.ToolStripMenuItem prefrencesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem watermarkSettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setImageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showWatermarkToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem styleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem singleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tiledToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tiledToolStripMenuItem1;
     }
 }
 

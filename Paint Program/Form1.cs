@@ -298,6 +298,24 @@ namespace Paint_Program
         {
             tsmiFile_Save_Click(sender, e);
         }
+
+        private void setImageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog sfd = new OpenFileDialog();
+                sfd.Filter = "All Files|*.*";
+                sfd.Title = "Select Watermark File";
+                
+                sfd.ShowDialog();
+
+            }
+            catch
+            {
+
+            }
+        }
+
     }
 
 }
