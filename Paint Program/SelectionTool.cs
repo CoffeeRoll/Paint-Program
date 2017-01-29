@@ -84,7 +84,8 @@ namespace Paint_Program
                 Pen p = new Pen(Color.Black);
                 p.DashPattern = new float[] { 3.0F, 3.0F };
                 p.DashCap = System.Drawing.Drawing2D.DashCap.Flat;
-                Graphics.FromImage(temp).DrawRectangle(p, tlX, tlY, width, height);
+                Graphics tmpGr = Graphics.FromImage(temp);
+                tmpGr.DrawRectangle(p, tlX, tlY, width, height);
                 ss.setInterfaceBitmap(temp);
                 ss.setRenderBitmapInterface(true);
 
