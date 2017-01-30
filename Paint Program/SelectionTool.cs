@@ -91,10 +91,8 @@ namespace Paint_Program
                 ss.setInterfaceBitmap(temp);
                 ss.setRenderBitmapInterface(true);
                 ss.setActiveSelection(true);
-                if(ss.getBitmapCurrentLayer(true) == null)
-                {
-                    Console.WriteLine("IT'S NULL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                }
+                
+
                 Bitmap bEdit = ss.getBitmapCurrentLayer(false).Clone(new Rectangle(loc, sze), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                 ss.setBitmapSelectionArea(bEdit);
                 ss.setActiveGraphics(Graphics.FromImage(bEdit));

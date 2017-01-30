@@ -37,8 +37,6 @@ namespace Paint_Program
                     int w = NewProjForm.CanvasWidth;
                     int h = NewProjForm.CanvasHeight;
 
-                    Console.WriteLine(w + " + " + h);
-
                     makeNewProject(w, h);
                 }
             }

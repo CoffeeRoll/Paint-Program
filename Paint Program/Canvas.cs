@@ -74,9 +74,7 @@ namespace Paint_Program
 
             canvasWidth = w;
             canvasHeight = h;
-
-            Console.WriteLine(canvasWidth + " + " + canvasHeight);
-
+            
             maxWidth = pw;
             maxHeight = ph;
 
@@ -232,7 +230,6 @@ namespace Paint_Program
                         int pressure = (int)pkt.pkNormalPressure;
 
                         ss.setTabletPressure(pressure);
-                        //Console.WriteLine("Tablet Pressure: " + pressure);
                     }
                 }
             }
@@ -247,17 +244,14 @@ namespace Paint_Program
         {
             iActiveTool = ToolButtons.IndexOf((ToolStripButton)sender);
             Tools[iActiveTool].init(ss);
-            Console.WriteLine(Tools[iActiveTool].getToolTip());
         }
 
         private void handleParentResize(object sender, EventArgs e)
         {
-            Console.WriteLine(sender.ToString());
 
             //Temporary Hack Fix - Please Find Better Solution
             //Fixes Second New Project Null Parent Reference Bug
             this.Parent = (System.Windows.Forms.Control) sender;
-            
             
             //Updates Parent Width and Height Values
             maxWidth = this.Parent.Width;
@@ -273,14 +267,11 @@ namespace Paint_Program
 
             //Prevent controls from not redrawing
             this.Parent.Refresh();
-
-            Console.WriteLine(Parent.Width);
         }
 
         private MouseEventArgs scaleMouseEvent(MouseEventArgs e)
         {
             int offset = (int)ss.getDrawScale() / 2;
-            Console.WriteLine(offset + " ");
             return new MouseEventArgs(e.Button, e.Clicks, (int)((e.X - offset) / ss.getDrawScale()), (int)((e.Y - offset) / ss.getDrawScale()), e.Delta);
             
         }
@@ -289,7 +280,6 @@ namespace Paint_Program
         {
             
             MouseEventArgs evt = scaleMouseEvent(e);
-            Console.WriteLine(e.X + " = " + evt.X + " " + e.Y + " = " + evt.Y);
             //If there is a selected Tool
             if (iActiveTool >= 0)
             {
@@ -320,7 +310,6 @@ namespace Paint_Program
                 
                 Tools[iActiveTool].onMouseMove(sender, evt);
             updateCanvas(g);
-            //Console.WriteLine("Mouse: " + e.X + " " + e.Y);
             Parent.Refresh();
         }
 
@@ -373,6 +362,7 @@ namespace Paint_Program
 
             if (ss.getActiveSelection())
             {
+                
                 k.CompositingMode = CompositingMode.SourceCopy;
                 k.DrawImage(ss.getBitmapSelectionArea(), 0,0);
             }

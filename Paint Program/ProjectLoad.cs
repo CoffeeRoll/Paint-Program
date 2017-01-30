@@ -32,7 +32,7 @@ namespace Paint_Program
             }
             catch (Exception e)
             {
-                Console.WriteLine("An Error Occured Somewhere!" + e.InnerException);
+                Console.WriteLine("An error was thrown while opening!" + e.InnerException);
             }
         }
 
@@ -83,9 +83,7 @@ namespace Paint_Program
 
                         w = (temp.Width > w) ? temp.Width : w;
                         h = (temp.Height > h) ? temp.Height : h;
-                        Console.WriteLine(w + " " + h);
                         layerBitmaps.Add((Bitmap)temp.Clone());
-                        Console.WriteLine("LAYERS: " + layerBitmaps.Count);
                     }
 
                     settings.setCanvasWidth(w);

@@ -59,7 +59,6 @@ namespace Paint_Program
 
                 if (e.Button == MouseButtons.Left) {
                     settings.setPrimaryBrushColor(c);
-                    Console.WriteLine("Main Color Set to " + c.ToString());
                 }
                 else if(e.Button == MouseButtons.Right)
                 {
