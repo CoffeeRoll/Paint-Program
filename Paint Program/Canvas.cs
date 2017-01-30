@@ -194,6 +194,7 @@ namespace Paint_Program
             Tools.Add(new ErasoirTool());
             Tools.Add(new PaintBucketTool());
             Tools.Add(new SelectionTool());
+            Tools.Add(new TextTool());
 
             foreach (ITool tool in Tools)
             {
