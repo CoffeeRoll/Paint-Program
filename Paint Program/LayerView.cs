@@ -232,7 +232,7 @@ namespace Paint_Program
                 bMoveDown.Enabled = true;
                 bMoveUp.Enabled = true;
             }
-
+            
             ss.setBitmapCurrentLayer(Layers[Layers.Count-1].getBitmap());
         }
 

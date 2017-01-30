@@ -15,7 +15,7 @@ namespace Paint_Program
 
         Point p1, p2;
 
-        public void init(Graphics g, int w, int h, SharedSettings s)
+        public void init(SharedSettings s)
         {
             ss = s;
             isInit = true;
@@ -77,8 +77,10 @@ namespace Paint_Program
                     tlY = p2.Y;
                 }
 
-                ss.setSelectionPoint(new Point(tlX, tlY));
-                ss.setSelectionSize(new Size(width, height));
+                Point loc = new Point(tlX, tlY);
+                Size sze = new Size(width, height);
+                ss.setSelectionPoint(loc);
+                ss.setSelectionSize(sze);
 
                 Bitmap temp = new Bitmap(ss.getCanvasWidth(), ss.getCanvasHeight());
                 Pen p = new Pen(Color.Black);
@@ -88,6 +90,14 @@ namespace Paint_Program
                 tmpGr.DrawRectangle(p, tlX, tlY, width, height);
                 ss.setInterfaceBitmap(temp);
                 ss.setRenderBitmapInterface(true);
+                ss.setActiveSelection(true);
+                if(ss.getBitmapCurrentLayer(true) == null)
+                {
+                    Console.WriteLine("IT'S NULL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                }
+                Bitmap bEdit = ss.getBitmapCurrentLayer(false).Clone(new Rectangle(loc, sze), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                ss.setBitmapSelectionArea(bEdit);
+                ss.setActiveGraphics(Graphics.FromImage(bEdit));
 
             }
         }

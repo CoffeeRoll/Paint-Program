@@ -25,18 +25,21 @@ namespace Paint_Program
 
         private Bitmap LayerBitmap;
 
+        private Graphics g;
+
         public LayerItem(int w, int h, PixelFormat pf, String name, SharedSettings s)
         {
             ss = s;
             InitializeComponent();
             isVisible = true;
             LayerBitmap = new Bitmap(w, h, pf);
+            g = Graphics.FromImage(LayerBitmap);
             cbVisible.Checked = true;
 
             this.BackColor = cNotActive;
 
             //Stretch The Preview Image to fit
-            pbLayerPreview.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbLayerPreview.SizeMode = PictureBoxSizeMode.Zoom;
             
             pbLayerPreview.BackColor = Color.White;
 
@@ -53,7 +56,7 @@ namespace Paint_Program
 
         public Graphics getGraphics()
         {
-            return Graphics.FromImage(LayerBitmap);
+            return g;
         }
 
         public Bitmap getBitmap()
@@ -71,6 +74,7 @@ namespace Paint_Program
             isActive = f;
             updateColor();
             ss.setBitmapCurrentLayer(getBitmap());
+            ss.setActiveGraphics(g);
         }
 
         public void setVisibility(bool f)

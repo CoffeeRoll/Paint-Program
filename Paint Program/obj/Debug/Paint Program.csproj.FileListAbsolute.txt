@@ -145,3 +145,4 @@ C:\Users\bmelanson.LRC\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_
 C:\Users\bmelanson.LRC\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
 C:\Users\bmelanson.LRC\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.exe
 C:\Users\bmelanson.LRC\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.en-us.resources

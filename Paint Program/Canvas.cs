@@ -246,7 +246,7 @@ namespace Paint_Program
         private void handleToolStripItemClick(object sender, EventArgs e)
         {
             iActiveTool = ToolButtons.IndexOf((ToolStripButton)sender);
-            Tools[iActiveTool].init(lv.getActiveLayerGraphics(), canvasWidth, canvasHeight, ss);
+            Tools[iActiveTool].init(ss);
             Console.WriteLine(Tools[iActiveTool].getToolTip());
         }
 
@@ -293,7 +293,7 @@ namespace Paint_Program
             //If there is a selected Tool
             if (iActiveTool >= 0)
             {
-                Tools[iActiveTool].init(lv.getActiveLayerGraphics(), canvasWidth, canvasHeight, ss);
+                Tools[iActiveTool].init(ss);
                 if (Tools[iActiveTool].requiresLayerData())
                 {
                     Tools[iActiveTool].setLayerData(lv.getActiveLayerBitmap());
@@ -369,6 +369,12 @@ namespace Paint_Program
             if (ss.getRenderBitmapInterface() && ss.getInterfaceBitmap() != null)
             {
                 Graphics.FromImage(bit2).DrawImage(ss.getInterfaceBitmap(), 0, 0);
+            }
+
+            if (ss.getActiveSelection())
+            {
+                k.CompositingMode = CompositingMode.SourceCopy;
+                k.DrawImage(ss.getBitmapSelectionArea(), 0,0);
             }
 
             k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);

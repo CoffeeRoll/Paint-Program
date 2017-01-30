@@ -35,6 +35,8 @@ namespace Paint_Program
 
         public static bool bRenderBitmapInterface { get; set; }
 
+        public static bool bActiveSelection { get; set; }
+
         public static string watermarkPath { get; set; }
 
         public static Bitmap bitmapCanvas { get; set; }
@@ -48,6 +50,8 @@ namespace Paint_Program
         public static Bitmap bitmapSelectionArea { get; set; }
 
         public static Bitmap[] Layers { get; set; }
+
+        public static Graphics gActiveGraphics { get; set; }
 
         public static String[] LayerNames { get; set; }
 
@@ -204,6 +208,20 @@ namespace Paint_Program
             bitmapSelectionArea = b;
         }
 
+        public void setActiveGraphics(Graphics g)
+        {
+            gActiveGraphics = g;
+            if (bActiveSelection)
+            {
+                bActiveSelection = false;
+            }
+        }
+
+        public void setActiveSelection(bool b)
+        {
+            bActiveSelection = b;
+        }
+
 
 
         public Color getPrimaryBrushColor()
@@ -333,6 +351,16 @@ namespace Paint_Program
         public Bitmap getBitmapSelectionArea()
         {
             return bitmapSelectionArea;
+        }
+
+        public Graphics getActiveGraphics()
+        {
+            return gActiveGraphics;
+        }
+
+        public bool getActiveSelection()
+        {
+            return bActiveSelection;
         }
 
 
