@@ -56,11 +56,17 @@ namespace Paint_Program
         {
             p2 = new Point(e.X, e.Y);
 
-            if (p1 == p2)
+            if (p1.X == p2.X || p1.Y == p2.Y)
             {
                 ss.setSelectionPoint(new Point(-1, -1));
                 ss.setSelectionSize(new Size(-1, -1));
                 ss.setRenderBitmapInterface(false);
+
+                if (ss.getActiveSelection())
+                {
+                    ss.setFlattenSelection(true);
+                    ss.setActiveSelection(false);
+                }
             }
             else
             {
@@ -83,20 +89,21 @@ namespace Paint_Program
                 ss.setSelectionSize(sze);
 
                 Bitmap temp = new Bitmap(ss.getCanvasWidth(), ss.getCanvasHeight());
+
                 Pen p = new Pen(Color.Black);
                 p.DashPattern = new float[] { 3.0F, 3.0F };
                 p.DashCap = System.Drawing.Drawing2D.DashCap.Flat;
+
                 Graphics tmpGr = Graphics.FromImage(temp);
                 tmpGr.DrawRectangle(p, tlX, tlY, width, height);
                 ss.setInterfaceBitmap(temp);
-                ss.setRenderBitmapInterface(true);
-                ss.setActiveSelection(true);
                 
-
-                Bitmap bEdit = ss.getBitmapCurrentLayer(false).Clone(new Rectangle(loc, sze), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                Bitmap bEdit = ss.getBitmapCurrentLayer(false).Clone(new Rectangle(loc, sze), ss.getBitmapCurrentLayer(false).PixelFormat);
                 ss.setBitmapSelectionArea(bEdit);
                 ss.setActiveGraphics(Graphics.FromImage(bEdit));
 
+                ss.setRenderBitmapInterface(true);
+                ss.setActiveSelection(true);
             }
         }
 

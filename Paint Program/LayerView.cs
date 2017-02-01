@@ -366,6 +366,10 @@ namespace Paint_Program
             {
                 tempBit.Add(l.getBitmap());
                 tempStr.Add(l.getLayerName());
+                if (l.isLayerActive())
+                {
+                    ss.setCurrentLayerIndex(Layers.IndexOf(l));
+                }
             }
 
             ss.setLayerBitmaps(tempBit.ToArray());

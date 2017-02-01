@@ -95,9 +95,11 @@ namespace Paint_Program
             try
             {
                 ti = new TabletInfo(HandleTabletData);
+                ss.setTabletConnected(true);
             }
             catch (Exception e)
             {
+                ss.setTabletConnected(false);
                 Console.WriteLine(e.InnerException);
             }
 
@@ -235,6 +237,7 @@ namespace Paint_Program
             }
             catch (Exception err)
             {
+                ss.setTabletConnected(false);
                 Console.WriteLine(err.InnerException);
             }
 
@@ -325,7 +328,9 @@ namespace Paint_Program
             Bitmap bit = lv.getRender();
             Bitmap bit2 = (Bitmap)bg.Clone();
 
-            Graphics.FromImage(bit2).DrawImage(bit, 0, 0);
+            Graphics temp = Graphics.FromImage(bit2);
+
+            temp.DrawImage(bit, 0, 0);
 
             Bitmap iitmp = ss.getImportImage();
             if (iitmp != null)
@@ -352,19 +357,23 @@ namespace Paint_Program
 
             if (ss.getGridToggle())
             {
-                lv.GridDraw(Graphics.FromImage(bit2));
+                lv.GridDraw(temp);
             }
 
             if (ss.getRenderBitmapInterface() && ss.getInterfaceBitmap() != null)
             {
-                Graphics.FromImage(bit2).DrawImage(ss.getInterfaceBitmap(), 0, 0);
+                temp.DrawImage(ss.getInterfaceBitmap(), 0, 0);
             }
 
             if (ss.getActiveSelection())
             {
-                
-                k.CompositingMode = CompositingMode.SourceCopy;
-                k.DrawImage(ss.getBitmapSelectionArea(), 0,0);
+                temp.DrawImage(ss.getBitmapSelectionArea(), ss.getSelectionPoint().X, ss.getSelectionPoint().Y);
+            }
+
+            if (ss.getFlattenSelection())
+            {
+                Graphics.FromImage(ss.getLayerBitmaps()[ss.getCurrentLayerIndex()]).DrawImage(ss.getBitmapSelectionArea(), ss.getSelectionPoint().X, ss.getSelectionPoint().Y);
+                ss.setFlattenSelection(false);
             }
 
             k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);

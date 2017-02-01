@@ -29,6 +29,8 @@ namespace Paint_Program
 
         public static int iGridWidth { get; set; }
 
+        public static int icurentLayerIndex { get; set; }
+
         public static bool bGridToggle { get; set; }
 
         public static bool bLoadFromSettings { get; set; }
@@ -36,6 +38,10 @@ namespace Paint_Program
         public static bool bRenderBitmapInterface { get; set; }
 
         public static bool bActiveSelection { get; set; }
+
+        public static bool bFlattenSelection { get; set; }
+
+        public static bool bTabletConnected { get; set; }
 
         public static string watermarkPath { get; set; }
 
@@ -222,6 +228,20 @@ namespace Paint_Program
             bActiveSelection = b;
         }
 
+        public void setFlattenSelection(bool b)
+        {
+            bFlattenSelection = true;
+        }
+
+        public void setCurrentLayerIndex(int i)
+        {
+            icurentLayerIndex = i;
+        }
+
+        public void setTabletConnected(bool b)
+        {
+            bTabletConnected = b;
+        }
 
 
         public Color getPrimaryBrushColor()
@@ -361,6 +381,21 @@ namespace Paint_Program
         public bool getActiveSelection()
         {
             return bActiveSelection;
+        }
+
+        public bool getFlattenSelection()
+        {
+            return bFlattenSelection;
+        }
+
+        public int getCurrentLayerIndex()
+        {
+            return icurentLayerIndex;
+        }
+
+        public bool getTabletconnected()
+        {
+            return bTabletConnected;
         }
 
 
