@@ -375,7 +375,10 @@ namespace Paint_Program
             }
 
             k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
-
+            bit.Dispose();
+            bit2.Dispose();
+            if(iitmp != null)
+                iitmp.Dispose();
         }
 
         public void setBitmap(Bitmap bit)
