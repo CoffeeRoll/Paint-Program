@@ -58,13 +58,14 @@ namespace Paint_Program
             if (graphics != null)
             {
                 bMouseDown = true;
-                pOld = e.Location;
             }
+
+            CreateTextBox(e);
         }
 
         public void onMouseMove(object sender, MouseEventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
             //if (graphics != null && bMouseDown)
             //{
             //    if (e.Button == MouseButtons.Left)
@@ -103,6 +104,15 @@ namespace Paint_Program
         public void setLayerData(Bitmap bit)
         {
             
+        }
+
+        public void CreateTextBox(MouseEventArgs e)
+        {
+            TextBox TB = new TextBox();
+
+            TB.Font = new Font("Arial", 20);
+            TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            TB.Location = e.Location;
         }
     }
 }

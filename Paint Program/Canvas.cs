@@ -194,6 +194,7 @@ namespace Paint_Program
             Tools.Add(new ErasoirTool());
             Tools.Add(new PaintBucketTool());
             Tools.Add(new SelectionTool());
+            Tools.Add(new TextTool());
 
             foreach (ITool tool in Tools)
             {
@@ -347,12 +348,14 @@ namespace Paint_Program
 
             p.Invalidate();
 
-            if (GCCurrentFrame == GCperFrames)
-            {
-                System.GC.Collect(); //Prevent OutOfMemory Execptions
-            }
-            GCCurrentFrame += 1;
-            GCCurrentFrame %= 100;
+            //if (GCCurrentFrame == GCperFrames)
+            //{
+            //    System.GC.Collect(); //Prevent OutOfMemory Execptions
+            //}
+            //GCCurrentFrame += 1;
+            //GCCurrentFrame %= 100;
+
+            System.GC.Collect();
 
             p.Width = (int) (ss.getDrawScale() * ss.getCanvasWidth());
             p.Height = (int) (ss.getDrawScale() * ss.getCanvasHeight());
