@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace Paint_Program
         private Graphics graphics;
         private int width, height;
         private SharedSettings settings;
-        private bool bActive, bMouseDown, bInit;
+        private bool bMouseDown, bInit;
         private Pen eraser;
 
         private Point pOld, pNew;
@@ -40,13 +41,13 @@ namespace Paint_Program
             width = w;
             height = h;
             settings = s;
-            bActive = false;
             bInit = true;
             bMouseDown = false;
 
 
             eraser = new Pen(Color.Transparent);
-            eraser.Width = settings.getBrushSize();
+            eraser.Width = settings.getBrushSize() / 2;
+            eraser.SetLineCap(LineCap.Round, LineCap.Round, DashCap.Round);
 
             if (graphics != null)
             {

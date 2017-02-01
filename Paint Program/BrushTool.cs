@@ -12,15 +12,15 @@ namespace Paint_Program
     class BrushTool : ITool
     {
         private Graphics graphics;
-        private int width, height, numPoints;
+        private int width, height;
         private SharedSettings settings;
         private bool bMouseDown, bInit;
 
         private Point pOld, pNew;
+        
+        private Pen pen;
 
-        private Brush pPrime, pSec;
-
-        private RectangleF rect;
+        private Color primaryColor, secondaryColor;
 
         public BrushTool()
         {
@@ -33,17 +33,14 @@ namespace Paint_Program
             int G = settings.getPrimaryBrushColor().G;
             int B = settings.getPrimaryBrushColor().B;
 
-            pPrime = new SolidBrush(Color.FromArgb(settings.getBrushHardness(), R, G, B));
-            //pPrime.LineJoin = LineJoin.Round;
-            //pPrime.MiterLimit = pPrime.Width;
+            primaryColor = Color.FromArgb(settings.getBrushHardness(), R, G, B);
 
             R = settings.getSecondaryBrushColor().R;
             G = settings.getSecondaryBrushColor().G;
             B = settings.getSecondaryBrushColor().B;
 
-            pSec = new SolidBrush(Color.FromArgb(settings.getBrushHardness(), R, G, B));
-
-            //pSec.LineJoin = LineJoin.Round;
+            secondaryColor = Color.FromArgb(settings.getBrushHardness(), R, G, B);
+            
         }
 
         public void init(Graphics g, int w, int h, SharedSettings s)
@@ -56,7 +53,11 @@ namespace Paint_Program
             bMouseDown = false;
 
             pOld = pNew = new Point(-1, -1);
-            numPoints = 0;
+
+            updateBrush();
+            pen = new Pen(primaryColor, settings.getBrushSize() / 2);
+
+            pen.SetLineCap(LineCap.Round, LineCap.Round, DashCap.Round);
 
             if (graphics != null)
             {
@@ -84,12 +85,9 @@ namespace Paint_Program
             {
                 bMouseDown = true;
                 pOld = e.Location;
-                numPoints = 1;
-                rect.Width = settings.getBrushSize() / 2;
-                rect.Height = settings.getBrushSize() / 2;
-                rect.X = pOld.X / 2;
-                rect.Y = pOld.Y / 2;
             }
+
+            updateBrush();
         }
 
         public void onMouseMove(object sender, MouseEventArgs e)
@@ -97,33 +95,33 @@ namespace Paint_Program
             if (graphics != null && bMouseDown)
             {
                 pNew = e.Location;
-                rect.X = pNew.X - (rect.Width / 2);
-                rect.Y = pNew.Y - (rect.Height / 2);
-                numPoints = 2;
                 int pressure = -1;
                 if (settings.getTabletPressure() >= 0)
                 {
                     pressure = SharedSettings.MapValue(0, settings.getMaxTabletPressure(), settings.getMinTabletWidth(), settings.getMaxTabletWidth(), settings.getTabletPressure());
-                }
-                if (e.Button == MouseButtons.Left)
-                {
+
                     if (pressure >= 0)
                     {
-                        rect.Width = pressure / 2;
-                        rect.Height = pressure / 2;
+                        pen.Width = pressure / 2;
                     }
-                    graphics.FillEllipse(pPrime, rect);
                 }
-                else if (e.Button == MouseButtons.Right)
+                switch (e.Button)
                 {
-                    if (pressure >= 0)
-                    {
-                        rect.Width = pressure / 2;
-                        rect.Height = pressure / 2;
-                    }
-                    graphics.FillEllipse(pSec, rect);
+                    // TODO: Add tablet pressure back in...
+                    case MouseButtons.Left:
+                        pen.Color = primaryColor;
+                        pen.Width = settings.getBrushSize() / 2;
+                        graphics.DrawLine(pen, pOld, pNew);
+                        break;
+                    case MouseButtons.Right:
+                        pen.Color = secondaryColor;
+                        pen.Width = settings.getBrushSize() / 2;
+                        graphics.DrawLine(pen, pOld, pNew);
+                        break;
+                    default:
+                        break;
                 }
-                numPoints = 3;
+                pOld = pNew;
 
             }
         }
@@ -133,6 +131,26 @@ namespace Paint_Program
             if (graphics != null)
             {
                 bMouseDown = false;
+                pNew = e.Location;
+
+                switch (e.Button)
+                {
+                    //TODO: ADD TABLET PRESSURE
+                    case MouseButtons.Left:
+                        pen.Color = primaryColor;
+                        pen.Width = settings.getBrushSize() / 2;
+                        graphics.DrawLine(pen, pOld, pNew);
+                        break;
+                    case MouseButtons.Right:
+                        pen.Color = secondaryColor;
+                        pen.Width = settings.getBrushSize() / 2;
+                        graphics.DrawLine(pen, pOld, pNew);
+                        break;
+                    default:
+                        break;
+                }
+
+                pOld = pNew;
             }
         }
 

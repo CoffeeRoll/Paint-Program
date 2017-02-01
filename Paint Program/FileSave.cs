@@ -32,7 +32,7 @@ namespace Paint_Program
             }
 
         }
-
+        //test comment, please ignore
         private void doSave(Bitmap bm, SaveFileDialog sfd, object sender, DoWorkEventArgs args)
         {
             if (sfd.FileName != "")
