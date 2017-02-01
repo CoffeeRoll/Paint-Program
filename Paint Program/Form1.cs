@@ -325,21 +325,30 @@ namespace Paint_Program
 
         private void showWatermarkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (showWatermarkToolStripMenuItem.Checked == false)
+            if (showWatermarkToolStripMenuItem.Checked == true)
             {
-                if(singleToolStripMenuItem.Checked == true)
+                SharedSettings.bRenderWatermark = true;
+                SharedSettings.bitmapWatermark.SetResolution(SharedSettings.iCanvasWidth, SharedSettings.iCanvasHeight);
+                SharedSettings.bitmapWatermark = (Bitmap)Image.FromFile(SharedSettings.watermarkPath);
+                if (singleToolStripMenuItem.Checked == true)
                 {
-
+                                        
                 }
                 else if (singleBottomToolStripMenuItem.Checked == true)
                 {
 
                 }
-                else if (tiledToolStripMenuItem.Checked == true)
-                {
-
-                }
             }
+        }
+
+        private void singleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            singleBottomToolStripMenuItem.Checked = false;
+        }
+
+        private void singleBottomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            singleBottomToolStripMenuItem.Checked = false;
         }
     }
 

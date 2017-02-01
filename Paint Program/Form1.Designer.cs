@@ -58,7 +58,6 @@
             this.styleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.singleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.singleBottomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tiledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -285,8 +284,7 @@
             // 
             this.styleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.singleToolStripMenuItem,
-            this.singleBottomToolStripMenuItem,
-            this.tiledToolStripMenuItem});
+            this.singleBottomToolStripMenuItem});
             this.styleToolStripMenuItem.Enabled = false;
             this.styleToolStripMenuItem.Name = "styleToolStripMenuItem";
             this.styleToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
@@ -299,18 +297,14 @@
             this.singleToolStripMenuItem.Name = "singleToolStripMenuItem";
             this.singleToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.singleToolStripMenuItem.Text = "Single Centered";
+            this.singleToolStripMenuItem.Click += new System.EventHandler(this.singleToolStripMenuItem_Click);
             // 
             // singleBottomToolStripMenuItem
             // 
             this.singleBottomToolStripMenuItem.Name = "singleBottomToolStripMenuItem";
             this.singleBottomToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.singleBottomToolStripMenuItem.Text = "Single Bottom";
-            // 
-            // tiledToolStripMenuItem
-            // 
-            this.tiledToolStripMenuItem.Name = "tiledToolStripMenuItem";
-            this.tiledToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.tiledToolStripMenuItem.Text = "Tiled";
+            this.singleBottomToolStripMenuItem.Click += new System.EventHandler(this.singleBottomToolStripMenuItem_Click);
             // 
             // updateTimer
             // 
@@ -417,7 +411,6 @@
         private System.Windows.Forms.ToolStripMenuItem styleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem singleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem singleBottomToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tiledToolStripMenuItem;
     }
 }
 

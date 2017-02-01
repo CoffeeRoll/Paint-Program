@@ -39,6 +39,8 @@ namespace Paint_Program
 
         public static bool bRenderBitmapInterface { get; set; }
 
+        public static bool bRenderWatermark { get; set; }
+
         public static string watermarkPath { get; set; }
 
         public static Bitmap bitmapCanvas { get; set; }
@@ -48,6 +50,8 @@ namespace Paint_Program
         public static Bitmap bitmapImportImage { get; set; }
 
         public static Bitmap bitmapInterface { get; set; }
+
+        public static Bitmap bitmapWatermark { get; set; }
 
         public static Bitmap[] Layers { get; set; }
 
