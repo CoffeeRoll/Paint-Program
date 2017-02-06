@@ -289,7 +289,7 @@ namespace Paint_Program
                 }
                 else
                 {
-                    return new MouseEventArgs(e.Button, e.Clicks, -10000, -10000, e.Delta);
+                    return null;
                 }
             }
         }
@@ -303,7 +303,7 @@ namespace Paint_Program
             {
                 Tools[iActiveTool].init(ss);
             }
-            if (iActiveTool >= 0)
+            if (iActiveTool >= 0 && evt != null)
             {
                 Tools[iActiveTool].onMouseDown(sender, evt);
             }
@@ -312,7 +312,7 @@ namespace Paint_Program
         public void handleMouseUp(object sender, MouseEventArgs e)
         {
             MouseEventArgs evt = scaleMouseEvent(e);
-            if (iActiveTool >= 0)
+            if (iActiveTool >= 0 && evt != null)
                 Tools[iActiveTool].onMouseUp(sender, evt);
             lv.UpdateLayerInfoListener();
             bs.CheckChange();
@@ -322,7 +322,7 @@ namespace Paint_Program
         {
             MouseEventArgs evt = scaleMouseEvent(e);
 
-            if (iActiveTool >= 0)
+            if (iActiveTool >= 0 && evt != null)
                 
                 Tools[iActiveTool].onMouseMove(sender, evt);
             updateCanvas(g);

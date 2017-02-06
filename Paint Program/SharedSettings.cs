@@ -37,15 +37,13 @@ namespace Paint_Program
 
         public static bool bRenderBitmapInterface { get; set; }
 
-<<<<<<< HEAD
         public static bool bRenderWatermark { get; set; }
-=======
+
         public static bool bActiveSelection { get; set; }
 
         public static bool bFlattenSelection { get; set; }
 
         public static bool bTabletConnected { get; set; }
->>>>>>> refs/remotes/origin/Selection-Tool
 
         public static string watermarkPath { get; set; }
 
