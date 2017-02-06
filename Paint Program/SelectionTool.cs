@@ -15,12 +15,11 @@ namespace Paint_Program
 
         Point p1, p2;
 
-        public void init(Graphics g, int w, int h, SharedSettings s)
+        public void init(SharedSettings s)
         {
             ss = s;
             isInit = true;
         }
-
 
         public string getToolIconPath()
         {
@@ -56,11 +55,16 @@ namespace Paint_Program
         {
             p2 = new Point(e.X, e.Y);
 
-            if (p1 == p2)
+            if (p1.X == p2.X || p1.Y == p2.Y)
             {
-                ss.setSelectionPoint(new Point(-1, -1));
-                ss.setSelectionSize(new Size(-1, -1));
                 ss.setRenderBitmapInterface(false);
+
+                if (ss.getActiveSelection())
+                {
+                    ss.setActiveSelection(false);
+                    ss.setFlattenSelection(true);
+                    ss.setActiveGraphics(ss.getActiveLayerGraphics());
+                }
             }
             else
             {
@@ -77,17 +81,28 @@ namespace Paint_Program
                     tlY = p2.Y;
                 }
 
-                ss.setSelectionPoint(new Point(tlX, tlY));
-                ss.setSelectionSize(new Size(width, height));
+                Point loc = new Point(tlX, tlY);
+                Size sze = new Size(width, height);
+                ss.setSelectionPoint(loc);
+                ss.setSelectionSize(sze);
 
                 Bitmap temp = new Bitmap(ss.getCanvasWidth(), ss.getCanvasHeight());
+
                 Pen p = new Pen(Color.Black);
                 p.DashPattern = new float[] { 3.0F, 3.0F };
                 p.DashCap = System.Drawing.Drawing2D.DashCap.Flat;
-                Graphics.FromImage(temp).DrawRectangle(p, tlX, tlY, width, height);
-                ss.setInterfaceBitmap(temp);
-                ss.setRenderBitmapInterface(true);
 
+                Graphics tmpGr = Graphics.FromImage(temp);
+                tmpGr.DrawRectangle(p, tlX, tlY, width, height);
+                ss.setInterfaceBitmap(temp);
+                
+                Bitmap bEdit = ss.getBitmapCurrentLayer(false).Clone(new Rectangle(loc, sze), ss.getBitmapCurrentLayer(false).PixelFormat);
+                ss.setBitmapSelectionArea(bEdit);
+                ss.setActiveGraphics(Graphics.FromImage(bEdit));
+
+                ss.setRenderBitmapInterface(true);
+                ss.setActiveSelection(true);
+                ss.setFlattenSelection(false);
             }
         }
 

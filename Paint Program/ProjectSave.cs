@@ -48,7 +48,6 @@ namespace Paint_Program
                     System.IO.Directory.CreateDirectory("save");
 
                     Bitmap[] bitArr = settings.getLayerBitmaps();
-                    Console.WriteLine("HEY");
                     string baseDir = System.IO.Directory.GetCurrentDirectory();
                     string[] LayerNames = settings.getLayerNames();
 

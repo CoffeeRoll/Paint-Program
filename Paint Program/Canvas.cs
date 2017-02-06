@@ -74,9 +74,7 @@ namespace Paint_Program
 
             canvasWidth = w;
             canvasHeight = h;
-
-            Console.WriteLine(canvasWidth + " + " + canvasHeight);
-
+            
             maxWidth = pw;
             maxHeight = ph;
 
@@ -97,9 +95,11 @@ namespace Paint_Program
             try
             {
                 ti = new TabletInfo(HandleTabletData);
+                ss.setTabletConnected(true);
             }
             catch (Exception e)
             {
+                ss.setTabletConnected(false);
                 Console.WriteLine(e.InnerException);
             }
 
@@ -233,12 +233,12 @@ namespace Paint_Program
                         int pressure = (int)pkt.pkNormalPressure;
 
                         ss.setTabletPressure(pressure);
-                        //Console.WriteLine("Tablet Pressure: " + pressure);
                     }
                 }
             }
             catch (Exception err)
             {
+                ss.setTabletConnected(false);
                 Console.WriteLine(err.InnerException);
             }
 
@@ -247,18 +247,15 @@ namespace Paint_Program
         private void handleToolStripItemClick(object sender, EventArgs e)
         {
             iActiveTool = ToolButtons.IndexOf((ToolStripButton)sender);
-            Tools[iActiveTool].init(lv.getActiveLayerGraphics(), canvasWidth, canvasHeight, ss);
-            Console.WriteLine(Tools[iActiveTool].getToolTip());
+            Tools[iActiveTool].init(ss);
         }
 
         private void handleParentResize(object sender, EventArgs e)
         {
-            Console.WriteLine(sender.ToString());
 
             //Temporary Hack Fix - Please Find Better Solution
             //Fixes Second New Project Null Parent Reference Bug
             this.Parent = (System.Windows.Forms.Control) sender;
-            
             
             //Updates Parent Width and Height Values
             maxWidth = this.Parent.Width;
@@ -274,40 +271,48 @@ namespace Paint_Program
 
             //Prevent controls from not redrawing
             this.Parent.Refresh();
-
-            Console.WriteLine(Parent.Width);
         }
 
         private MouseEventArgs scaleMouseEvent(MouseEventArgs e)
         {
             int offset = (int)ss.getDrawScale() / 2;
-            Console.WriteLine(offset + " ");
-            return new MouseEventArgs(e.Button, e.Clicks, (int)((e.X - offset) / ss.getDrawScale()), (int)((e.Y - offset) / ss.getDrawScale()), e.Delta);
-            
+            if (!ss.getActiveSelection())
+            {
+                return new MouseEventArgs(e.Button, e.Clicks, (int)((e.X - offset) / ss.getDrawScale()), (int)((e.Y - offset) / ss.getDrawScale()), e.Delta);
+            }
+            else
+            {
+                Rectangle rect = new Rectangle(ss.getSelectionPoint(), ss.getSelectionSize());
+                if (ss.getActiveSelection() && rect.Contains(e.X, e.Y))
+                {
+                    return new MouseEventArgs(e.Button, e.Clicks, (int)(((e.X - ss.getSelectionPoint().X) - offset) / ss.getDrawScale()), (int)(((e.Y - ss.getSelectionPoint().Y) - offset) / ss.getDrawScale()), e.Delta);
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
 
         public void handleMouseDown(object sender, MouseEventArgs e)
         {
             
             MouseEventArgs evt = scaleMouseEvent(e);
-            Console.WriteLine(e.X + " = " + evt.X + " " + e.Y + " = " + evt.Y);
             //If there is a selected Tool
             if (iActiveTool >= 0)
             {
-                Tools[iActiveTool].init(lv.getActiveLayerGraphics(), canvasWidth, canvasHeight, ss);
-                if (Tools[iActiveTool].requiresLayerData())
-                {
-                    Tools[iActiveTool].setLayerData(lv.getActiveLayerBitmap());
-                }
+                Tools[iActiveTool].init(ss);
             }
-            if (iActiveTool >= 0)
+            if (iActiveTool >= 0 && evt != null)
+            {
                 Tools[iActiveTool].onMouseDown(sender, evt);
+            }
         }
 
         public void handleMouseUp(object sender, MouseEventArgs e)
         {
             MouseEventArgs evt = scaleMouseEvent(e);
-            if (iActiveTool >= 0)
+            if (iActiveTool >= 0 && evt != null)
                 Tools[iActiveTool].onMouseUp(sender, evt);
             lv.UpdateLayerInfoListener();
             bs.CheckChange();
@@ -317,11 +322,10 @@ namespace Paint_Program
         {
             MouseEventArgs evt = scaleMouseEvent(e);
 
-            if (iActiveTool >= 0)
+            if (iActiveTool >= 0 && evt != null)
                 
                 Tools[iActiveTool].onMouseMove(sender, evt);
             updateCanvas(g);
-            //Console.WriteLine("Mouse: " + e.X + " " + e.Y);
             Parent.Refresh();
         }
 
@@ -337,7 +341,9 @@ namespace Paint_Program
             Bitmap bit = lv.getRender();
             Bitmap bit2 = (Bitmap)bg.Clone();
 
-            Graphics.FromImage(bit2).DrawImage(bit, 0, 0);
+            Graphics temp = Graphics.FromImage(bit2);
+
+            temp.DrawImage(bit, 0, 0);
 
             Bitmap iitmp = ss.getImportImage();
             if (iitmp != null)
@@ -366,12 +372,31 @@ namespace Paint_Program
 
             if (ss.getGridToggle())
             {
-                lv.GridDraw(Graphics.FromImage(bit2));
+                lv.GridDraw(temp);
             }
 
             if (ss.getRenderBitmapInterface() && ss.getInterfaceBitmap() != null)
             {
-                Graphics.FromImage(bit2).DrawImage(ss.getInterfaceBitmap(), 0, 0);
+                temp.DrawImage(ss.getInterfaceBitmap(), 0, 0);
+            }
+
+            /*
+            if (ss.getActiveSelection() && ss.getBitmapSelectionArea() != null)
+            {
+                temp.DrawImage(ss.getBitmapSelectionArea(), ss.getSelectionPoint().X, ss.getSelectionPoint().Y);
+            }
+            */
+
+            if (ss.getActiveSelection() && ss.getBitmapSelectionArea() != null)
+            {
+                temp.DrawImage(ss.getBitmapSelectionArea(), ss.getSelectionPoint().X, ss.getSelectionPoint().Y);
+                
+            }
+
+            if (ss.getFlattenSelection())
+            {
+                ss.getActiveLayerGraphics().DrawImage(ss.getBitmapSelectionArea(), ss.getSelectionPoint().X, ss.getSelectionPoint().Y);
+                ss.setFlattenSelection(false);
             }
 
             if (SharedSettings.bRenderWatermark)
@@ -382,7 +407,10 @@ namespace Paint_Program
             }
 
             k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
-
+            bit.Dispose();
+            bit2.Dispose();
+            if(iitmp != null)
+                iitmp.Dispose();
         }
 
         public void setBitmap(Bitmap bit)

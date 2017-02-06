@@ -35,11 +35,11 @@ namespace Paint_Program
             return "Erasoir Tool";
         }
 
-        public void init(Graphics g, int w, int h, SharedSettings s)
+        public void init(SharedSettings s)
         {
-            graphics = g;
-            width = w;
-            height = h;
+            graphics = s.getActiveGraphics();
+            width = s.getCanvasWidth();
+            height = s.getCanvasHeight();
             settings = s;
             bInit = true;
             bMouseDown = false;
