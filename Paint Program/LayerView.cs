@@ -321,11 +321,7 @@ namespace Paint_Program
             {
                 
                 LayerItem layer = ((LayerItem)obj);
-                if (layer.isLayerActive())
-                {
-                    layer.setActive(false);
-                }
-                else
+                if (!layer.isLayerActive())
                 {
                     foreach (LayerItem l in Layers)
                     {
@@ -339,11 +335,7 @@ namespace Paint_Program
             else if (obj is PictureBox)
             {
                 LayerItem layer = (LayerItem)((PictureBox)obj).Parent;
-                if (layer.isLayerActive())
-                {
-                    layer.setActive(false);
-                }
-                else
+                if (!layer.isLayerActive())
                 {
                     foreach (LayerItem l in Layers)
                     {

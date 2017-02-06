@@ -75,6 +75,7 @@ namespace Paint_Program
             updateColor();
             ss.setBitmapCurrentLayer(getBitmap());
             ss.setActiveGraphics(g);
+            ss.setActiveLayerGraphics(g);
         }
 
         public void setVisibility(bool f)

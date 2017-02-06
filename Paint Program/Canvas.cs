@@ -275,8 +275,22 @@ namespace Paint_Program
         private MouseEventArgs scaleMouseEvent(MouseEventArgs e)
         {
             int offset = (int)ss.getDrawScale() / 2;
-            return new MouseEventArgs(e.Button, e.Clicks, (int)((e.X - offset) / ss.getDrawScale()), (int)((e.Y - offset) / ss.getDrawScale()), e.Delta);
-            
+            if (!ss.getActiveSelection())
+            {
+                return new MouseEventArgs(e.Button, e.Clicks, (int)((e.X - offset) / ss.getDrawScale()), (int)((e.Y - offset) / ss.getDrawScale()), e.Delta);
+            }
+            else
+            {
+                Rectangle rect = new Rectangle(ss.getSelectionPoint(), ss.getSelectionSize());
+                if (ss.getActiveSelection() && rect.Contains(e.X, e.Y))
+                {
+                    return new MouseEventArgs(e.Button, e.Clicks, (int)(((e.X - ss.getSelectionPoint().X) - offset) / ss.getDrawScale()), (int)(((e.Y - ss.getSelectionPoint().Y) - offset) / ss.getDrawScale()), e.Delta);
+                }
+                else
+                {
+                    return new MouseEventArgs(e.Button, e.Clicks, -10000, -10000, e.Delta);
+                }
+            }
         }
 
         public void handleMouseDown(object sender, MouseEventArgs e)
@@ -287,13 +301,11 @@ namespace Paint_Program
             if (iActiveTool >= 0)
             {
                 Tools[iActiveTool].init(ss);
-                if (Tools[iActiveTool].requiresLayerData())
-                {
-                    Tools[iActiveTool].setLayerData(lv.getActiveLayerBitmap());
-                }
             }
             if (iActiveTool >= 0)
+            {
                 Tools[iActiveTool].onMouseDown(sender, evt);
+            }
         }
 
         public void handleMouseUp(object sender, MouseEventArgs e)
@@ -365,14 +377,16 @@ namespace Paint_Program
                 temp.DrawImage(ss.getInterfaceBitmap(), 0, 0);
             }
 
-            if (ss.getActiveSelection())
+            /*
+            if (ss.getActiveSelection() && ss.getBitmapSelectionArea() != null)
             {
                 temp.DrawImage(ss.getBitmapSelectionArea(), ss.getSelectionPoint().X, ss.getSelectionPoint().Y);
             }
+            */
 
-            if (ss.getFlattenSelection())
+            if (ss.getActiveSelection() && ss.getBitmapSelectionArea() != null)
             {
-                Graphics.FromImage(ss.getLayerBitmaps()[ss.getCurrentLayerIndex()]).DrawImage(ss.getBitmapSelectionArea(), ss.getSelectionPoint().X, ss.getSelectionPoint().Y);
+                ss.getActiveLayerGraphics().DrawImage(ss.getBitmapSelectionArea(), ss.getSelectionPoint().X, ss.getSelectionPoint().Y);
                 ss.setFlattenSelection(false);
             }
 

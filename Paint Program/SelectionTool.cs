@@ -58,14 +58,12 @@ namespace Paint_Program
 
             if (p1.X == p2.X || p1.Y == p2.Y)
             {
-                ss.setSelectionPoint(new Point(-1, -1));
-                ss.setSelectionSize(new Size(-1, -1));
                 ss.setRenderBitmapInterface(false);
 
                 if (ss.getActiveSelection())
                 {
-                    ss.setFlattenSelection(true);
                     ss.setActiveSelection(false);
+                    ss.setActiveGraphics(ss.getActiveLayerGraphics());
                 }
             }
             else
@@ -104,6 +102,7 @@ namespace Paint_Program
 
                 ss.setRenderBitmapInterface(true);
                 ss.setActiveSelection(true);
+                ss.setFlattenSelection(false);
             }
         }
 

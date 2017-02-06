@@ -59,6 +59,8 @@ namespace Paint_Program
 
         public static Graphics gActiveGraphics { get; set; }
 
+        public static Graphics gActiveLayerGraphics { get; set; }
+
         public static String[] LayerNames { get; set; }
 
         public static Point pSelectionPoint { get; set; }
@@ -243,6 +245,12 @@ namespace Paint_Program
             bTabletConnected = b;
         }
 
+        public void setActiveLayerGraphics(Graphics g)
+        {
+            gActiveLayerGraphics = g;
+        }
+
+
 
         public Color getPrimaryBrushColor()
         {
@@ -398,7 +406,24 @@ namespace Paint_Program
             return bTabletConnected;
         }
 
+        public Graphics getActiveLayerGraphics()
+        {
+            return gActiveLayerGraphics;
+        }
 
+
+
+
+        public void scrubSelection()
+        {
+            setActiveSelection(false);
+            setFlattenSelection(false);
+            setSelectionPoint(new Point(-1,-1));
+            setSelectionSize(new Size(-1, -1));
+            setActiveGraphics(getActiveLayerGraphics());
+            setBitmapSelectionArea(null);
+            Console.WriteLine("Scrubed Selection Info. . .");
+        }
 
         public static int MapValue(
     int originalStart, int originalEnd, // original range
