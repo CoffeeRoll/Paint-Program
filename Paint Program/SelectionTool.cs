@@ -63,6 +63,7 @@ namespace Paint_Program
                 if (ss.getActiveSelection())
                 {
                     ss.setActiveSelection(false);
+                    ss.setFlattenSelection(true);
                     ss.setActiveGraphics(ss.getActiveLayerGraphics());
                 }
             }

@@ -236,7 +236,7 @@ namespace Paint_Program
 
         public void setFlattenSelection(bool b)
         {
-            bFlattenSelection = true;
+            bFlattenSelection = b;
         }
 
         public void setCurrentLayerIndex(int i)
