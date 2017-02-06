@@ -47,9 +47,9 @@ namespace Paint_Program
 
         public static Bitmap bitmapInterface { get; set; }
 
-        public static Bitmap bitmapWatermark { get; set; }
-
         public static Bitmap bitmapSelectionArea { get; set; }
+
+        public static Bitmap bitmapWatermark { get; set; }
 
         public static Bitmap[] Layers { get; set; }
 
