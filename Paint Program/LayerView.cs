@@ -232,7 +232,7 @@ namespace Paint_Program
                 bMoveDown.Enabled = true;
                 bMoveUp.Enabled = true;
             }
-
+            
             ss.setBitmapCurrentLayer(Layers[Layers.Count-1].getBitmap());
         }
 
@@ -321,11 +321,7 @@ namespace Paint_Program
             {
                 
                 LayerItem layer = ((LayerItem)obj);
-                if (layer.isLayerActive())
-                {
-                    layer.setActive(false);
-                }
-                else
+                if (!layer.isLayerActive())
                 {
                     foreach (LayerItem l in Layers)
                     {
@@ -339,11 +335,7 @@ namespace Paint_Program
             else if (obj is PictureBox)
             {
                 LayerItem layer = (LayerItem)((PictureBox)obj).Parent;
-                if (layer.isLayerActive())
-                {
-                    layer.setActive(false);
-                }
-                else
+                if (!layer.isLayerActive())
                 {
                     foreach (LayerItem l in Layers)
                     {
@@ -366,6 +358,10 @@ namespace Paint_Program
             {
                 tempBit.Add(l.getBitmap());
                 tempStr.Add(l.getLayerName());
+                if (l.isLayerActive())
+                {
+                    ss.setCurrentLayerIndex(Layers.IndexOf(l));
+                }
             }
 
             ss.setLayerBitmaps(tempBit.ToArray());

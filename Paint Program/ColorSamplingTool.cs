@@ -23,11 +23,11 @@ namespace Paint_Program
 
         }
 
-        public void init(Graphics g, int w, int h, SharedSettings s)
+        public void init(SharedSettings s)
         {
-            graphics = g;
-            width = w;
-            height = h;
+            graphics = s.getActiveGraphics();
+            width = s.getCanvasWidth();
+            height = s.getCanvasHeight();
             settings = s;
             bActive = false;
             bInit = true;
@@ -59,7 +59,6 @@ namespace Paint_Program
 
                 if (e.Button == MouseButtons.Left) {
                     settings.setPrimaryBrushColor(c);
-                    Console.WriteLine("Main Color Set to " + c.ToString());
                 }
                 else if(e.Button == MouseButtons.Right)
                 {

@@ -11,7 +11,7 @@ namespace Paint_Program
     interface ITool
     {
         /* Initalizes the Graphics object that the tool manipulates, as well as the width and height */
-        void init(Graphics g, int w, int h, SharedSettings s);
+        void init(SharedSettings s);
 
         /* Returns a bitmap of the layer produced by the tool to show information not in the picture
            such as when the pen tool needs nodes to maipulate the curve

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Paint_Program
@@ -21,11 +17,11 @@ namespace Paint_Program
         {
         }
 
-        public void init(Graphics g, int w, int h, SharedSettings s)
+        public void init(SharedSettings s)
         {
-            graphics = g;
-            width = w;
-            height = h;
+            graphics = s.getActiveGraphics();
+            width = s.getCanvasWidth();
+            height = s.getCanvasHeight();
             settings = s;
             bActive = false;
             bInit = true;
