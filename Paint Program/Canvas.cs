@@ -195,6 +195,7 @@ namespace Paint_Program
             Tools.Add(new PaintBucketTool());
             Tools.Add(new SelectionTool());
             Tools.Add(new TextTool());
+            Tools.Add(new GreenScreenTool());
 
             foreach (ITool tool in Tools)
             {
@@ -337,6 +338,11 @@ namespace Paint_Program
 
         public void updateCanvas(Graphics k)
         {
+
+            if(ss.getBitmapLayerUpdate() != null)
+            {
+                lv.updateActiveLayer();
+            }
 
             Bitmap bit = lv.getRender();
             Bitmap bit2 = (Bitmap)bg.Clone();

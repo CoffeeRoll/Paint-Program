@@ -51,6 +51,12 @@ namespace Paint_Program
 
         public void updatePreview()
         {
+            if (ss.getBitmapLayerUpdate() != null)
+            {
+                LayerBitmap = (Bitmap) ss.getBitmapLayerUpdate().Clone();
+                ss.setActiveGraphics(Graphics.FromImage(LayerBitmap));
+                ss.setBitmapLayerUpdate(null);
+            }
             pbLayerPreview.Image = LayerBitmap;
         }
 

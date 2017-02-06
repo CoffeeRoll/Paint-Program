@@ -61,6 +61,8 @@ namespace Paint_Program
 
         public static Bitmap[] Layers { get; set; }
 
+        public static Bitmap bitmapLayerUpdate { get; set; }
+
         public static Graphics gActiveGraphics { get; set; }
 
         public static Graphics gActiveLayerGraphics { get; set; }
@@ -254,6 +256,12 @@ namespace Paint_Program
             gActiveLayerGraphics = g;
         }
 
+        public void setBitmapLayerUpdate(Bitmap b)
+        {
+            bitmapLayerUpdate = b;
+        }
+
+
 
 
         public Color getPrimaryBrushColor()
@@ -413,6 +421,11 @@ namespace Paint_Program
         public Graphics getActiveLayerGraphics()
         {
             return gActiveLayerGraphics;
+        }
+
+        public Bitmap getBitmapLayerUpdate()
+        {
+            return bitmapLayerUpdate;
         }
 
 
