@@ -21,7 +21,6 @@ namespace Paint_Program
             isInit = true;
         }
 
-
         public string getToolIconPath()
         {
             return @"..\..\Images\selector.png";

@@ -395,7 +395,6 @@ namespace Paint_Program
 
             if (ss.getFlattenSelection())
             {
-                Console.WriteLine("Flattening Selection");
                 ss.getActiveLayerGraphics().DrawImage(ss.getBitmapSelectionArea(), ss.getSelectionPoint().X, ss.getSelectionPoint().Y);
                 ss.setFlattenSelection(false);
             }
