@@ -374,6 +374,13 @@ namespace Paint_Program
                 Graphics.FromImage(bit2).DrawImage(ss.getInterfaceBitmap(), 0, 0);
             }
 
+            if (SharedSettings.bRenderWatermark)
+            {
+
+
+                Graphics.FromImage(bit2).DrawImage(SharedSettings.bitmapWatermark, 0, 0);
+            }
+
             k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
 
         }
