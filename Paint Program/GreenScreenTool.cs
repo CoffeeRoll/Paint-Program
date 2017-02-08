@@ -41,7 +41,7 @@ namespace Paint_Program
 
         public string getToolTip()
         {
-            return "Colored Alpha";
+            return "Green Screen";
         }
 
         public void onMouseDown(object sender, MouseEventArgs e)
@@ -50,10 +50,30 @@ namespace Paint_Program
             {
                 Color c = settings.getBitmapCurrentLayer(true).GetPixel(e.X, e.Y);
 
+                int tol = 3;//settings.getGreenScreenTolerance();
+
                 if (e.Button == MouseButtons.Left)
                 {
-                    Bitmap Temp = settings.getBitmapCurrentLayer(true);
-                    Temp.MakeTransparent(c);
+                    Bitmap Temp = settings.getBitmapCurrentLayer(false);
+
+                    for (int a = -tol; a < tol; a++)
+                    {
+                        for (int r = -tol; r < tol; r++)
+                        {
+                            for (int g = -tol; g < tol; g++)
+                            {
+                                for (int b = -tol; b < tol; b++)
+                                {
+                                    if (!((c.R + r) < 0 || (c.G + g) < 0 || (c.B + b) < 0 || (c.R + r) > 255 || (c.G + g) > 255 || (c.B + b) > 255 || (c.A + a) < 0 || (c.A + a) > 255))
+                                    {
+                                        Color tmpColor = Color.FromArgb(c.R + r, c.G + g, c.B + b);
+                                        Temp.MakeTransparent(tmpColor);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
                     settings.setBitmapLayerUpdate(Temp);
                     
                 }

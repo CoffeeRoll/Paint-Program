@@ -31,6 +31,8 @@ namespace Paint_Program
 
         public static int icurentLayerIndex { get; set; }
 
+        public static int iGreenScreenTolerance { get; set; }
+
         public static bool bGridToggle { get; set; }
 
         public static bool bLoadFromSettings { get; set; }
@@ -261,6 +263,11 @@ namespace Paint_Program
             bitmapLayerUpdate = b;
         }
 
+        public void setGreenScreenTolerance(int i)
+        {
+            iGreenScreenTolerance = i;
+        }
+
 
 
 
@@ -426,6 +433,11 @@ namespace Paint_Program
         public Bitmap getBitmapLayerUpdate()
         {
             return bitmapLayerUpdate;
+        }
+
+        public int getGreenScreenTolerance()
+        {
+            return iGreenScreenTolerance;
         }
 
 
