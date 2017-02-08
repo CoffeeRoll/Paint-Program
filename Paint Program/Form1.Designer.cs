@@ -63,6 +63,7 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.OpenFile = new System.Windows.Forms.ToolStripButton();
             this.SaveButton = new System.Windows.Forms.ToolStripButton();
+            this.tiledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -284,7 +285,8 @@
             // 
             this.styleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.singleToolStripMenuItem,
-            this.singleBottomToolStripMenuItem});
+            this.singleBottomToolStripMenuItem,
+            this.tiledToolStripMenuItem});
             this.styleToolStripMenuItem.Enabled = false;
             this.styleToolStripMenuItem.Name = "styleToolStripMenuItem";
             this.styleToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
@@ -353,6 +355,13 @@
             this.SaveButton.Text = "Save";
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // tiledToolStripMenuItem
+            // 
+            this.tiledToolStripMenuItem.Name = "tiledToolStripMenuItem";
+            this.tiledToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.tiledToolStripMenuItem.Text = "Tiled";
+            this.tiledToolStripMenuItem.Click += new System.EventHandler(this.tiledToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,6 +420,7 @@
         private System.Windows.Forms.ToolStripMenuItem styleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem singleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem singleBottomToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tiledToolStripMenuItem;
     }
 }
 

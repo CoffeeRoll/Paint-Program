@@ -342,15 +342,26 @@ namespace Paint_Program
 
         private void singleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SharedSettings.watermarkStyle = "Single Center";
             singleToolStripMenuItem.Checked = true;
             singleBottomToolStripMenuItem.Checked = false;
+            tiledToolStripMenuItem.Checked = false;
         }
 
         private void singleBottomToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SharedSettings.watermarkStyle = "Single Bottom";
             singleToolStripMenuItem.Checked = false;
             singleBottomToolStripMenuItem.Checked = true;
+            tiledToolStripMenuItem.Checked = false;
+        }
+
+        private void tiledToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SharedSettings.watermarkStyle = "Tiled";
+            singleToolStripMenuItem.Checked = false;
+            singleBottomToolStripMenuItem.Checked = false;
+            tiledToolStripMenuItem.Checked = true;
         }
     }
 

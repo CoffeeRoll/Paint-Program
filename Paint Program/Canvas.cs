@@ -401,9 +401,37 @@ namespace Paint_Program
 
             if (SharedSettings.bRenderWatermark)
             {
-
-
-                Graphics.FromImage(bit2).DrawImage(SharedSettings.bitmapWatermark, 0, 0);
+                if (SharedSettings.watermarkStyle == "Tiled")
+                {
+                    try
+                    {
+                        Bitmap bgTile = (Bitmap)Bitmap.FromFile(SharedSettings.watermarkPath);
+                        using (TextureBrush brush = new TextureBrush(bgTile, WrapMode.Tile))
+                        {
+                            using (Graphics g = temp)
+                            {
+                                g.FillRectangle(brush, 0, 0, bg.Width, bg.Height);
+                            }
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                    }
+                }
+                if (SharedSettings.watermarkStyle == "Single Center")
+                {
+                    temp.InterpolationMode = InterpolationMode.NearestNeighbor;
+                    Rectangle src = new Rectangle(0, 0, SharedSettings.bitmapWatermark.Width, SharedSettings.bitmapWatermark.Height);
+                    Rectangle dst = new Rectangle(0, 0, p.Width, p.Height);
+                    temp.DrawImage(SharedSettings.bitmapWatermark, dst, src, GraphicsUnit.Pixel);
+                }
+                if (SharedSettings.watermarkStyle == "Single Bottom")
+                {
+                    Rectangle src = new Rectangle(0, 0, SharedSettings.bitmapWatermark.Width, SharedSettings.bitmapWatermark.Height);
+                    Rectangle dst = new Rectangle(p.Width - SharedSettings.bitmapWatermark.Width, p.Height - SharedSettings.bitmapWatermark.Height, SharedSettings.bitmapWatermark.Width, SharedSettings.bitmapWatermark.Height);
+                    temp.DrawImage(SharedSettings.bitmapWatermark, dst, src, GraphicsUnit.Pixel);
+                }
+                
             }
 
             k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);

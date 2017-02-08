@@ -47,6 +47,8 @@ namespace Paint_Program
 
         public static string watermarkPath { get; set; }
 
+        public static string watermarkStyle { get; set; }
+
         public static Bitmap bitmapCanvas { get; set; }
 
         public static Bitmap bitmapCurrentLayer { get; set; }
@@ -83,6 +85,8 @@ namespace Paint_Program
             iBrushHardness = 255;
 
             bGridToggle = false;
+
+            watermarkStyle = "Single Center";
 
             //No Tablet Input
             iTabletPressure = -1;
