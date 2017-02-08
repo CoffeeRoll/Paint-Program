@@ -195,6 +195,7 @@ namespace Paint_Program
             Tools.Add(new PaintBucketTool());
             Tools.Add(new SelectionTool());
             Tools.Add(new TextTool());
+            Tools.Add(new GreenScreenTool());
 
             foreach (ITool tool in Tools)
             {
@@ -283,7 +284,7 @@ namespace Paint_Program
             else
             {
                 Rectangle rect = new Rectangle(ss.getSelectionPoint(), ss.getSelectionSize());
-                if (ss.getActiveSelection() && rect.Contains(e.X, e.Y))
+                if ((ss.getActiveSelection() && rect.Contains(e.X, e.Y)) || Tools[iActiveTool] is SelectionTool)
                 {
                     return new MouseEventArgs(e.Button, e.Clicks, (int)(((e.X - ss.getSelectionPoint().X) - offset) / ss.getDrawScale()), (int)(((e.Y - ss.getSelectionPoint().Y) - offset) / ss.getDrawScale()), e.Delta);
                 }
@@ -338,6 +339,11 @@ namespace Paint_Program
         public void updateCanvas(Graphics k)
         {
 
+            if(ss.getBitmapLayerUpdate() != null)
+            {
+                lv.updateActiveLayer();
+            }
+
             Bitmap bit = lv.getRender();
             Bitmap bit2 = (Bitmap)bg.Clone();
 
@@ -379,14 +385,7 @@ namespace Paint_Program
             {
                 temp.DrawImage(ss.getInterfaceBitmap(), 0, 0);
             }
-
-            /*
-            if (ss.getActiveSelection() && ss.getBitmapSelectionArea() != null)
-            {
-                temp.DrawImage(ss.getBitmapSelectionArea(), ss.getSelectionPoint().X, ss.getSelectionPoint().Y);
-            }
-            */
-
+            
             if (ss.getActiveSelection() && ss.getBitmapSelectionArea() != null)
             {
                 temp.DrawImage(ss.getBitmapSelectionArea(), ss.getSelectionPoint().X, ss.getSelectionPoint().Y);

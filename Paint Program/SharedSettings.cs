@@ -31,6 +31,8 @@ namespace Paint_Program
 
         public static int icurentLayerIndex { get; set; }
 
+        public static int iGreenScreenTolerance { get; set; }
+
         public static bool bGridToggle { get; set; }
 
         public static bool bLoadFromSettings { get; set; }
@@ -62,6 +64,8 @@ namespace Paint_Program
         public static Bitmap bitmapWatermark { get; set; }
 
         public static Bitmap[] Layers { get; set; }
+
+        public static Bitmap bitmapLayerUpdate { get; set; }
 
         public static Graphics gActiveGraphics { get; set; }
 
@@ -258,6 +262,17 @@ namespace Paint_Program
             gActiveLayerGraphics = g;
         }
 
+        public void setBitmapLayerUpdate(Bitmap b)
+        {
+            bitmapLayerUpdate = b;
+        }
+
+        public void setGreenScreenTolerance(int i)
+        {
+            iGreenScreenTolerance = i;
+        }
+
+
 
 
         public Color getPrimaryBrushColor()
@@ -417,6 +432,16 @@ namespace Paint_Program
         public Graphics getActiveLayerGraphics()
         {
             return gActiveLayerGraphics;
+        }
+
+        public Bitmap getBitmapLayerUpdate()
+        {
+            return bitmapLayerUpdate;
+        }
+
+        public int getGreenScreenTolerance()
+        {
+            return iGreenScreenTolerance;
         }
 
 

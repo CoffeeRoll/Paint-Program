@@ -61,6 +61,7 @@
     <Compile Include="Canvas.Designer.cs">
       <DependentUpon>Canvas.cs</DependentUpon>
     </Compile>
+    <Compile Include="GreenScreenTool.cs" />
     <Compile Include="ColorSamplingTool.cs" />
     <Compile Include="DebugTool.cs" />
     <Compile Include="Display.cs">
