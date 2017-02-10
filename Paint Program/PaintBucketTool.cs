@@ -10,8 +10,27 @@ namespace Paint_Program
         private int width, height;
         private SharedSettings settings;
         private bool bActive, bMouseDown, bInit;
+        private Color replacementColor, targetColor;
+        private bool[,] state;
+        private Queue<Point> nextPixels;
+        private Bitmap bmp;
+
 
         private Point pOld, pNew;
+
+        public bool ColorMatch(Color a, Color b)
+        {
+            return (a.ToArgb() == b.ToArgb());
+        }
+
+        public void AddNextPixel(Point p)
+        {
+            if(!state[p.X,p.Y])
+            {
+                nextPixels.Enqueue(p);
+                state[p.X,p.Y] = true;
+            }
+        }
 
         public PaintBucketTool()
         {
@@ -45,49 +64,84 @@ namespace Paint_Program
 
         public void onMouseDown(object sender, MouseEventArgs e)
         {
-            if (graphics != null)
+            if(graphics != null)
             {
                 bMouseDown = true;
                 pOld = e.Location;
-                if (e.Button == MouseButtons.Left)
-                {
-                    Bitmap bmp = settings.getBitmapCurrentLayer(true);
-                    Stack<Point> pixels = new Stack<Point>();
-                    if (bmp == null)
-                    {
-                        return;
-                    }
+                int x = pOld.X;
+                int y = pOld.Y;
 
-                    Color targetColor = bmp.GetPixel(pOld.X, pOld.Y);
-                    Color replacementColor = settings.getPrimaryBrushColor();
-                    pixels.Push(pOld);
-
-                    while (pixels.Count > 0)
-                    {
-                        if (targetColor.ToArgb() == replacementColor.ToArgb()) break;
-
-                        Point a = pixels.Pop();
-                        if (a.X < bmp.Width && a.X >= 0 &&
-                                a.Y < bmp.Height && a.Y >= 0)//make sure we stay within bounds
-                        {
-
-                            if (bmp.GetPixel(a.X, a.Y) == targetColor)
-                            {
-                                bmp.SetPixel(a.X, a.Y, replacementColor);
-                                pixels.Push(new Point(a.X - 1, a.Y));
-                                pixels.Push(new Point(a.X + 1, a.Y));
-                                pixels.Push(new Point(a.X, a.Y - 1));
-                                pixels.Push(new Point(a.X, a.Y + 1));
-                            }
-                        }
-                    }
-                    pixels.Clear();
+                bmp = settings.getBitmapCurrentLayer(true);
+                state = new bool[bmp.Width, bmp.Height];
+                if (bmp == null)
                     return;
 
+                nextPixels = new Queue<Point>();
+
+                switch(e.Button)
+                {
+                    case MouseButtons.Left:
+                        replacementColor = settings.getPrimaryBrushColor();
+                        break;
+                    case MouseButtons.Right:
+                        replacementColor = settings.getSecondaryBrushColor();
+                        break;
+                    default:
+                        break;
                 }
 
+                targetColor = bmp.GetPixel(x, y);
+
+                if (targetColor.ToArgb() == replacementColor.ToArgb()) return;
+
+                AddNextPixel(pOld);
+                while(nextPixels.Count > 0) // while the queue is not empty
+                {
+                    Point p = nextPixels.Dequeue();
+                    if(ColorMatch(bmp.GetPixel(p.X, p.Y), targetColor))
+                    {
+                        // add 8 surrounding pixels to queue
+                        int xNew = p.X, yNew = p.Y;
+
+                        // add 3 pixels above
+                        if(yNew - 1 >= 0)
+                        {
+                            if (xNew + 1 < bmp.Width)
+                                AddNextPixel(new Point(xNew + 1, yNew - 1));
+                            if (xNew - 1 >= 0)
+                                AddNextPixel(new Point(xNew - 1, yNew - 1));
+                            AddNextPixel(new Point(xNew, yNew - 1));
+                        }
+
+                        // add left and right
+                        if (xNew > 0)
+                            AddNextPixel(new Point(xNew - 1, yNew));
+                        if (xNew + 1 < bmp.Width)
+                            AddNextPixel(new Point(xNew + 1, yNew));
+
+                        // add 3 upixels below
+                        if(yNew + 1 < bmp.Height)
+                        {
+                            if (xNew + 1 < bmp.Width)
+                                AddNextPixel(new Point(xNew + 1, yNew + 1));
+                            if (xNew - 1 >= 0)
+                                AddNextPixel(new Point(xNew - 1, yNew + 1));
+                            AddNextPixel(new Point(xNew, yNew + 1));
+                        }
+
+                        bmp.SetPixel(xNew, yNew, replacementColor); // replace the pixel color
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+
+                nextPixels.Clear();
+                return;
             }
         }
+        
 
         public void onMouseMove(object sender, MouseEventArgs e)
         {
