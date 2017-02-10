@@ -96,9 +96,10 @@ namespace Paint_Program
                 tmpGr.DrawRectangle(p, tlX, tlY, width, height);
                 ss.setInterfaceBitmap(temp);
                 
-                Bitmap bEdit = ss.getBitmapCurrentLayer(false).Clone(new Rectangle(loc, sze), ss.getBitmapCurrentLayer(false).PixelFormat);
+                Bitmap bEdit = ss.getBitmapCurrentLayer(true).Clone(new Rectangle(loc, sze), ss.getBitmapCurrentLayer(true).PixelFormat);
                 ss.setBitmapSelectionArea(bEdit);
                 ss.setActiveGraphics(Graphics.FromImage(bEdit));
+                ss.setBitmapCurrentLayer(bEdit);
 
                 ss.setRenderBitmapInterface(true);
                 ss.setActiveSelection(true);

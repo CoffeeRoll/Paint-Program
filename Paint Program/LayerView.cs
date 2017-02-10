@@ -72,6 +72,19 @@ namespace Paint_Program
             }
         }
 
+        public void updateActiveLayerSettings()
+        {
+            //Foreach loop to iterate through all layers
+            foreach (LayerItem layer in Layers)
+            {
+                if (layer.isLayerActive())
+                {
+                    layer.updateSettings();
+                    layer.Refresh();
+                }
+            }
+        }
+
         public Bitmap getRender()
         {
             Bitmap bit = new Bitmap(width, height, pf);
