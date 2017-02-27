@@ -25,7 +25,7 @@ namespace Paint_Program
 
         private Bitmap LayerBitmap;
 
-        private Graphics g;
+        private Graphics g; 
 
         public LayerItem(int w, int h, PixelFormat pf, String name, SharedSettings s)
         {
