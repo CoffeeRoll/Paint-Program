@@ -111,6 +111,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectionTool.cs" />
     <Compile Include="SharedSettings.cs" />
+    <Compile Include="StraightLineTool.cs" />
     <Compile Include="TabletInfo.cs" />
     <Compile Include="TextTool.cs" />
     <Compile Include="ZoomControl.cs">
