@@ -109,7 +109,7 @@ namespace Paint_Program
                 MetadataPTR += 1;
 
 
-                if (Data[MetadataPTR] == 0)
+                if (Data[MetadataPTR] == 0x00)
                 {
 
 
@@ -119,8 +119,7 @@ namespace Paint_Program
 
                         if (Data[MetadataPTR + 2] == 0xF9)
                         {
-
-
+                            
                             flag = 1;
 
 
@@ -133,7 +132,7 @@ namespace Paint_Program
                 }
 
 
-            } while (flag == 0);
+            } while (flag == 0 && MetadataPTR < Data.Count);
 
 
             //SET METADATA Repeat
