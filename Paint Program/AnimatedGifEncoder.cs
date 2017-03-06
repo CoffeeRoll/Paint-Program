@@ -2,18 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using System.Windows;
 using System.Drawing;
 using System.IO;
-using System.Windows.Forms;
-using System.ComponentModel;
-using System.Windows.Interop;
 
 namespace Paint_Program
 {
-    class AnimatedGifEncoder {
+    class AnimatedGifEncoder
+    {
 
         private GifBitmapEncoder GifEncoder = new GifBitmapEncoder();
 
@@ -42,7 +39,8 @@ namespace Paint_Program
         // Add a frame to the encoder frame collection
         // </summary>
         // <param name="Frame">The bitmap to be added</param>
-        public void AddFrame(Bitmap Frame) {
+        public void AddFrame(Bitmap Frame)
+        {
             if (Frame != null)
             {
                 if (!(Frame.Width == 0) && !(Frame.Height == 0))
@@ -71,11 +69,13 @@ namespace Paint_Program
         // Writes the animated GIF binary to a specified IO.Stream
         // </summary>
         // <param name="Stream">The stream where the binary is to be output. Can be any object type that derives from IO.Stream</param>
-        public void Save(Stream stream) {
+        public void Save(Stream stream)
+        {
 
             var Data = new List<byte>();
 
-            if (GifEncoder.Frames.Count != 0) {
+            if (GifEncoder.Frames.Count != 0)
+            {
 
                 //Get the raw binary
 
@@ -86,7 +86,8 @@ namespace Paint_Program
                 Data = MStream.ToArray().ToList();
 
             }
-            else {
+            else
+            {
 
                 throw (new Exception("Cannot encode the Gif. The frame collection is empty."));
 
@@ -108,13 +109,16 @@ namespace Paint_Program
                 MetadataPTR += 1;
 
 
-                if (Data[MetadataPTR] == 0) {
+                if (Data[MetadataPTR] == 0)
+                {
 
 
-                    if (Data[MetadataPTR + 1] == 0x21) {
+                    if (Data[MetadataPTR + 1] == 0x21)
+                    {
 
 
-                        if (Data[MetadataPTR + 2] == 0xF9) {
+                        if (Data[MetadataPTR + 2] == 0xF9)
+                        {
 
 
                             flag = 1;
@@ -136,7 +140,8 @@ namespace Paint_Program
 
             //This adds an Application Extension: Netscape2.0
 
-            if (Repeat) {
+            if (Repeat)
+            {
 
                 byte[] Temp = new byte[(int)((Data.Count) - 1 + 19)];
 
@@ -153,44 +158,56 @@ namespace Paint_Program
 
             //SET METADATA Comments
             //This add a Comment Extension for each string
-            if (MetadataString.Count > 0) {
-                foreach (String Comment in MetadataString) {
-                    if (!String.IsNullOrEmpty(Comment)) {
+            if (MetadataString.Count > 0)
+            {
+                foreach (String Comment in MetadataString)
+                {
+                    if (!String.IsNullOrEmpty(Comment))
+                    {
                         String TheComment;
-                    if(Comment.Length > 254) { 
-                        TheComment = Comment.Substring(0, 254)
-                            }else{ 
-                        TheComment = Comment
-                            }
-                            Dim CommentStringBytes() As Byte = System.Text.UTF7Encoding.UTF7.GetBytes(TheComment)
-                    Dim DataString() As Byte = New Byte() { 0x21, 0xFE, CByte(CommentStringBytes.Length)}
-                    DataString = DataString.Concat(CommentStringBytes).Concat(New Byte() { 0x0}).ToArray
-                Dim Temp(Data.Length - 1 + DataString.Length) As Byte
-                            Array.Copy(Data, Temp, MetadataPTR)
-                            Array.Copy(DataString, 0, Temp, MetadataPTR + 1, DataString.Length)
-                            Array.Copy(Data, MetadataPTR + 1, Temp, MetadataPTR + DataString.Length + 1, Data.Length - MetadataPTR - 1)
-                            Data = Temp;
+                        if (Comment.Length > 254)
+                        {
+                            TheComment = Comment.Substring(0, 254);
                         }
+                        else
+                        {
+                            TheComment = Comment;
+                        }
+                        byte[] CommentStringBytes = Encoding.UTF7.GetBytes(TheComment);
+                        byte[] DataString = new byte[] { 0x21, 0xFE, Convert.ToByte(CommentStringBytes.Length) };
+                        DataString = DataString.Concat(CommentStringBytes).Concat(new byte[] { 0x0 }).ToArray();
+                        byte[] Temp = new byte[(Data.Count - 1 + DataString.Length)];
+                        Array.Copy(Data.ToArray(), Temp, MetadataPTR);
+                        Array.Copy(DataString, 0, Temp, MetadataPTR + 1, DataString.Length);
+                        Array.Copy(Data.ToArray(), MetadataPTR + 1, Temp, MetadataPTR + DataString.Length + 1, Data.Count - MetadataPTR - 1);
+                        Data = Temp.ToList();
+                    }
+                }
             }
-        }
-    
-        'SET METADATA frameRate
-            'Sets the third and fourth byte of each Graphic Control Extension (5 bytes from each label 0x0021F9)
-            For x As Integer = 0 To Data.Count - 1
-                If Data(x) = 0 Then
-                If Data(x + 1) = 0x21 Then
-                    If Data(x + 2) = 0xF9 Then
-                        If Data(x + 3) = 4 Then
-                            'word, little endian, the hundredths of second to show this frame
-                            Dim Bte() As Byte = BitConverter.GetBytes(FrameRate \ 10)
-                            Data(x + 5) = Bte(0)
-                            Data(x + 6) = Bte(1)
-                        End If
-                    End If
-                End If
-            End If
-        Next
-        stream.Write(Data, 0, Data.Length)
+
+            //SET METADATA frameRate
+            //Sets the third and fourth byte of each Graphic Control Extension (5 bytes from each label 0x0021F9)
+            //For x As Integer = 0 To Data.Count - 1
+            for (int x = 0; x < Data.Count - 1; x++)
+            {
+                if (Data.ElementAt(x) == 0)
+                {
+                    if (Data.ElementAt(x + 1) == 0x21)
+                    {
+                        if (Data.ElementAt(x + 2) == 0xF9)
+                        {
+                            if (Data.ElementAt(x + 3) == 4)
+                            {
+                                //word, little endian, the hundredths of second to show this frame
+                                byte[] Bte = BitConverter.GetBytes(FrameRate / 10);
+                                Data[x + 5] = Bte[0];
+                                Data[x + 6] = Bte[1];
+                            }
+                        }
+                    }
+                }
+            }
+            stream.Write(Data.ToArray(), 0, Data.Count);
         }
 
     }
