@@ -190,6 +190,7 @@ namespace Paint_Program
 
             Tools.Add(new PencilTool());
             Tools.Add(new BrushTool());
+            Tools.Add(new StraightLineTool());
             Tools.Add(new ColorSamplingTool());
             Tools.Add(new ErasoirTool());
             Tools.Add(new PaintBucketTool());
