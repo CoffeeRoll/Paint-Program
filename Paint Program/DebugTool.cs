@@ -27,6 +27,7 @@ namespace Paint_Program
             
         }
 
+        //Update Function
         private void updateBrush()
         {
             int R = settings.getPrimaryBrushColor().R;
