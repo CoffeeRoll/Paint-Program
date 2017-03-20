@@ -372,7 +372,7 @@ namespace Paint_Program
 
             p.Width = (int) (ss.getDrawScale() * ss.getCanvasWidth());
             p.Height = (int) (ss.getDrawScale() * ss.getCanvasHeight());
-            Rectangle source = new Rectangle(-1, -1, bit2.Width+1, bit2.Height+1);
+            Rectangle source = new Rectangle(-1, -1, bit2.Width, bit2.Height);
             Rectangle dest = new Rectangle(0, 0, p.Width, p.Height);
 
             k.InterpolationMode = InterpolationMode.NearestNeighbor;
