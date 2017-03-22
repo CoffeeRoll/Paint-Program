@@ -25,7 +25,7 @@ namespace Paint_Program
 
         private Bitmap LayerBitmap;
 
-        private Graphics g;
+        private Graphics g; 
 
         public LayerItem(int w, int h, PixelFormat pf, String name, SharedSettings s)
         {
@@ -54,7 +54,8 @@ namespace Paint_Program
             if (ss.getBitmapLayerUpdate() != null)
             {
                 LayerBitmap = (Bitmap) ss.getBitmapLayerUpdate().Clone();
-                ss.setActiveGraphics(Graphics.FromImage(LayerBitmap));
+                g = Graphics.FromImage(LayerBitmap);
+                ss.setActiveGraphics(g);
                 ss.setBitmapLayerUpdate(null);
                 ss.setBitmapCurrentLayer(LayerBitmap);
             }

@@ -58,12 +58,12 @@
             this.styleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.singleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.singleBottomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tiledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.OpenFile = new System.Windows.Forms.ToolStripButton();
             this.SaveButton = new System.Windows.Forms.ToolStripButton();
-            this.tiledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -263,7 +263,7 @@
             this.showWatermarkToolStripMenuItem,
             this.styleToolStripMenuItem});
             this.watermarkSettingsToolStripMenuItem.Name = "watermarkSettingsToolStripMenuItem";
-            this.watermarkSettingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.watermarkSettingsToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.watermarkSettingsToolStripMenuItem.Text = "Watermark...";
             // 
             // setImageToolStripMenuItem
@@ -307,6 +307,13 @@
             this.singleBottomToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.singleBottomToolStripMenuItem.Text = "Single Bottom";
             this.singleBottomToolStripMenuItem.Click += new System.EventHandler(this.singleBottomToolStripMenuItem_Click);
+            // 
+            // tiledToolStripMenuItem
+            // 
+            this.tiledToolStripMenuItem.Name = "tiledToolStripMenuItem";
+            this.tiledToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.tiledToolStripMenuItem.Text = "Tiled";
+            this.tiledToolStripMenuItem.Click += new System.EventHandler(this.tiledToolStripMenuItem_Click);
             // 
             // updateTimer
             // 
@@ -355,13 +362,6 @@
             this.SaveButton.Text = "Save";
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
-            // tiledToolStripMenuItem
-            // 
-            this.tiledToolStripMenuItem.Name = "tiledToolStripMenuItem";
-            this.tiledToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.tiledToolStripMenuItem.Text = "Tiled";
-            this.tiledToolStripMenuItem.Click += new System.EventHandler(this.tiledToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,7 +376,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MinimumSize = new System.Drawing.Size(857, 652);
             this.Name = "Form1";
-            this.Text = "Le Paint BETA 0.0.0.0.3";
+            this.Text = "Le Paint BETA 0.0.0.0.0.3";
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

@@ -9,56 +9,55 @@ using System.Windows.Forms;
 
 namespace Paint_Program
 {
-    class DebugTool
+    class StraightLineTool : ITool
     {
         private Graphics graphics;
-        private int width, height, numPoints;
+        private int width, height;
         private SharedSettings settings;
         private bool bMouseDown, bInit;
 
         private Point pOld, pNew;
 
-        private Pen pPrime, pSec;
+        private Pen pen;
 
-        List<Point> points;
+        private Color primaryColor, secondaryColor;
 
-        public DebugTool()
+        public StraightLineTool()
         {
-            
+
         }
 
-        //Update Function
         private void updateBrush()
         {
             int R = settings.getPrimaryBrushColor().R;
             int G = settings.getPrimaryBrushColor().G;
             int B = settings.getPrimaryBrushColor().B;
 
-            pPrime = new Pen(Color.FromArgb(settings.getBrushHardness(), R, G, B), settings.getBrushSize());
-            pPrime.LineJoin = LineJoin.Round;
-            pPrime.MiterLimit = pPrime.Width;
+            primaryColor = Color.FromArgb(settings.getBrushHardness(), R, G, B);
 
             R = settings.getSecondaryBrushColor().R;
             G = settings.getSecondaryBrushColor().G;
             B = settings.getSecondaryBrushColor().B;
 
-            pSec = new Pen(Color.FromArgb(settings.getBrushHardness(), R, G, B), settings.getBrushSize());
-            pSec.LineJoin = LineJoin.Round;
+            secondaryColor = Color.FromArgb(settings.getBrushHardness(), R, G, B);
+
         }
 
-        public void init(Graphics g, int w, int h, SharedSettings s)
+        public void init(SharedSettings s)
         {
-            graphics = g;
-            width = w;
-            height = h;
+            graphics = s.getActiveGraphics();
+            width = s.getCanvasWidth();
+            height = s.getCanvasHeight();
             settings = s;
             bInit = true;
             bMouseDown = false;
 
-            points = new List<Point>();
-
             pOld = pNew = new Point(-1, -1);
-            numPoints = 0;
+
+            updateBrush();
+            pen = new Pen(primaryColor, settings.getBrushSize() / 2);
+
+            pen.SetLineCap(LineCap.Round, LineCap.Round, DashCap.Round);
 
             if (graphics != null)
             {
@@ -72,7 +71,7 @@ namespace Paint_Program
 
         public string getToolIconPath()
         {
-            return @"..\..\Images\brush.png";
+            return @"..\..\Images\Line.png";
         }
 
         public string getToolTip()
@@ -86,28 +85,14 @@ namespace Paint_Program
             {
                 bMouseDown = true;
                 pOld = e.Location;
-                numPoints = 1;
             }
+
+            updateBrush();
         }
 
         public void onMouseMove(object sender, MouseEventArgs e)
         {
-            if (graphics != null && bMouseDown)
-            {
-                pNew = e.Location;
-                
-                if(pOld.X != -1 && pOld.Y != -1)
-                {
-                    double slope = (double)(pNew.Y - pOld.Y) / (double)(pNew.X - pOld.X);
-                    double invSlope = -1.0 / slope; //y = mx + b
-                    double halfW = pPrime.Width / 2.0;
-
-
-
-                }
-
-                pOld = pNew;
-            }
+            //Shh! don't tell anyone I'm here... ;)
         }
 
         public void onMouseUp(object sender, MouseEventArgs e)
@@ -115,8 +100,27 @@ namespace Paint_Program
             if (graphics != null)
             {
                 bMouseDown = false;
+                pNew = e.Location;
+
+                switch (e.Button)
+                {
+                    //TODO: ADD TABLET PRESSURE
+                    case MouseButtons.Left:
+                        pen.Color = primaryColor;
+                        pen.Width = settings.getBrushSize() / 2;
+                        graphics.DrawLine(pen, pOld, pNew);
+                        break;
+                    case MouseButtons.Right:
+                        pen.Color = secondaryColor;
+                        pen.Width = settings.getBrushSize() / 2;
+                        graphics.DrawLine(pen, pOld, pNew);
+                        break;
+                    default:
+                        break;
+                }
+
+                pOld = pNew;
             }
-            numPoints = 0;
         }
 
         public bool isInitalized()

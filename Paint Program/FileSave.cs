@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.ComponentModel;
+using System.Windows.Media.Imaging;
 
 namespace Paint_Program
 {
@@ -15,7 +17,7 @@ namespace Paint_Program
 
             try {
                 SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "Bitmap Image|*.bmp|GIF Image|*.gif|Icon Image|*.ico|JPeg Image|*.jpg|PNG Image|*.png|TIFF Image|*.tiff";
+                sfd.Filter = "Bitmap Image|*.bmp|GIF Image|*.gif|Animated GIF|*.gif|Icon Image|*.ico|JPeg Image|*.jpg|PNG Image|*.png|TIFF Image|*.tiff";
                 sfd.Title = "Save an Image File";
                 sfd.ShowDialog();
 
@@ -50,15 +52,18 @@ namespace Paint_Program
                             bm.Save(fs, ImageFormat.Gif);
                             break;
                         case 3:
-                            bm.Save(fs, ImageFormat.Icon);
+                            saveGIFAnimation(fs);
                             break;
                         case 4:
-                            bm.Save(fs, ImageFormat.Jpeg);
+                            bm.Save(fs, ImageFormat.Icon);
                             break;
                         case 5:
-                            bm.Save(fs, ImageFormat.Png);
+                            bm.Save(fs, ImageFormat.Jpeg);
                             break;
                         case 6:
+                            bm.Save(fs, ImageFormat.Png);
+                            break;
+                        case 7:
                             bm.Save(fs, ImageFormat.Tiff);
                             break;
                     }
@@ -72,9 +77,25 @@ namespace Paint_Program
                     string message = "An error occurred while saving. \n\n" + e.ToString();
                     MessageBox.Show(message);
                 }
-
-
             }
+        }
+        
+        private void saveGIFAnimation(System.IO.FileStream fs)
+        {
+            GifBitmapEncoder gEnc = new GifBitmapEncoder();
+
+            foreach (System.Drawing.Bitmap bmpImage in SharedSettings.Layers)
+            {
+                var bmpSource = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
+                                      bmpImage.GetHbitmap(),
+                                      IntPtr.Zero,
+                                      Int32Rect.Empty,
+                                      BitmapSizeOptions.FromEmptyOptions());
+
+                gEnc.Frames.Add(BitmapFrame.Create(bmpSource));
+            }
+            gEnc.Save(fs);
+
         }
     }
 }
