@@ -28,7 +28,7 @@ namespace Paint_Program.Languages {
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
-        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledprivateCode")]
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal en_us() {
         }
         
@@ -61,11 +61,407 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Le Paint BETA.
+        ///   Looks up a localized string similar to Brush Hardness.
         /// </summary>
-        internal static string Title {
+        internal static string brush_hardness {
             get {
-                return ResourceManager.GetString("Title", resourceCulture);
+                return ResourceManager.GetString("brush_hardness", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brush Size.
+        /// </summary>
+        internal static string brush_size {
+            get {
+                return ResourceManager.GetString("brush_size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Visible.
+        /// </summary>
+        internal static string checkbox_visible {
+            get {
+                return ResourceManager.GetString("checkbox_visible", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Primary Color.
+        /// </summary>
+        internal static string color_primary {
+            get {
+                return ResourceManager.GetString("color_primary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Secondary Color.
+        /// </summary>
+        internal static string color_secondary {
+            get {
+                return ResourceManager.GetString("color_secondary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        internal static string edit_menu {
+            get {
+                return ResourceManager.GetString("edit_menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Redo.
+        /// </summary>
+        internal static string edit_menu_redo {
+            get {
+                return ResourceManager.GetString("edit_menu_redo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image Size.
+        /// </summary>
+        internal static string edit_menu_resize {
+            get {
+                return ResourceManager.GetString("edit_menu_resize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Undo.
+        /// </summary>
+        internal static string edit_menu_undo {
+            get {
+                return ResourceManager.GetString("edit_menu_undo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save and Image File.
+        /// </summary>
+        internal static string exportdialog_title {
+            get {
+                return ResourceManager.GetString("exportdialog_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File.
+        /// </summary>
+        internal static string file_menu {
+            get {
+                return ResourceManager.GetString("file_menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export Image.
+        /// </summary>
+        internal static string file_menu_export {
+            get {
+                return ResourceManager.GetString("file_menu_export", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Image.
+        /// </summary>
+        internal static string file_menu_import {
+            get {
+                return ResourceManager.GetString("file_menu_import", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New.
+        /// </summary>
+        internal static string file_menu_new {
+            get {
+                return ResourceManager.GetString("file_menu_new", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open.
+        /// </summary>
+        internal static string file_menu_open {
+            get {
+                return ResourceManager.GetString("file_menu_open", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string file_menu_save {
+            get {
+                return ResourceManager.GetString("file_menu_save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open an Image File.
+        /// </summary>
+        internal static string importdialog_title {
+            get {
+                return ResourceManager.GetString("importdialog_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open a Project File.
+        /// </summary>
+        internal static string loadproject_dialog_title {
+            get {
+                return ResourceManager.GetString("loadproject_dialog_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Height.
+        /// </summary>
+        internal static string newprojectdialog_height {
+            get {
+                return ResourceManager.GetString("newprojectdialog_height", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Submit.
+        /// </summary>
+        internal static string newprojectdialog_submit {
+            get {
+                return ResourceManager.GetString("newprojectdialog_submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Project.
+        /// </summary>
+        internal static string newprojectdialog_title {
+            get {
+                return ResourceManager.GetString("newprojectdialog_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Width.
+        /// </summary>
+        internal static string newprojectdialog_width {
+            get {
+                return ResourceManager.GetString("newprojectdialog_width", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preferences.
+        /// </summary>
+        internal static string preferences_menu {
+            get {
+                return ResourceManager.GetString("preferences_menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Watermark.
+        /// </summary>
+        internal static string preferences_menu_watermark {
+            get {
+                return ResourceManager.GetString("preferences_menu_watermark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set Image.
+        /// </summary>
+        internal static string preferences_menu_watermark_set {
+            get {
+                return ResourceManager.GetString("preferences_menu_watermark_set", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Watermark.
+        /// </summary>
+        internal static string preferences_menu_watermark_show {
+            get {
+                return ResourceManager.GetString("preferences_menu_watermark_show", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Style.
+        /// </summary>
+        internal static string preferences_menu_watermark_style {
+            get {
+                return ResourceManager.GetString("preferences_menu_watermark_style", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Single Bottom.
+        /// </summary>
+        internal static string preferences_menu_watermark_style_singlebottom {
+            get {
+                return ResourceManager.GetString("preferences_menu_watermark_style_singlebottom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Single Centered.
+        /// </summary>
+        internal static string preferences_menu_watermark_style_singlecentered {
+            get {
+                return ResourceManager.GetString("preferences_menu_watermark_style_singlecentered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to tiled.
+        /// </summary>
+        internal static string preferences_menu_watermark_style_tiled {
+            get {
+                return ResourceManager.GetString("preferences_menu_watermark_style_tiled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Le Paint Underground.
+        /// </summary>
+        internal static string title {
+            get {
+                return ResourceManager.GetString("title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brush Tool.
+        /// </summary>
+        internal static string tooltip_brush {
+            get {
+                return ResourceManager.GetString("tooltip_brush", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paint Bucket Tool.
+        /// </summary>
+        internal static string tooltip_bucket {
+            get {
+                return ResourceManager.GetString("tooltip_bucket", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Color Selection.
+        /// </summary>
+        internal static string tooltip_colorselect {
+            get {
+                return ResourceManager.GetString("tooltip_colorselect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eraser.
+        /// </summary>
+        internal static string tooltip_eraser {
+            get {
+                return ResourceManager.GetString("tooltip_eraser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Green Screen Tool.
+        /// </summary>
+        internal static string tooltip_greenscreen {
+            get {
+                return ResourceManager.GetString("tooltip_greenscreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Line Tool.
+        /// </summary>
+        internal static string tooltip_line {
+            get {
+                return ResourceManager.GetString("tooltip_line", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pencil Tool.
+        /// </summary>
+        internal static string tooltip_pencil {
+            get {
+                return ResourceManager.GetString("tooltip_pencil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selection Tool.
+        /// </summary>
+        internal static string tooltip_selection {
+            get {
+                return ResourceManager.GetString("tooltip_selection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text Tool.
+        /// </summary>
+        internal static string tooltip_text {
+            get {
+                return ResourceManager.GetString("tooltip_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View.
+        /// </summary>
+        internal static string view_menu {
+            get {
+                return ResourceManager.GetString("view_menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toggle Grid Lines.
+        /// </summary>
+        internal static string view_menu_grid {
+            get {
+                return ResourceManager.GetString("view_menu_grid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tablet Mode.
+        /// </summary>
+        internal static string view_menu_tablet {
+            get {
+                return ResourceManager.GetString("view_menu_tablet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Tools.
+        /// </summary>
+        internal static string view_menu_tools {
+            get {
+                return ResourceManager.GetString("view_menu_tools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zoom.
+        /// </summary>
+        internal static string zoom {
+            get {
+                return ResourceManager.GetString("zoom", resourceCulture);
             }
         }
     }

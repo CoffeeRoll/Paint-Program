@@ -112,12 +112,144 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, publicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, publicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Title" xml:space="preserve">
-    <value>Le Paint BETA</value>
+  <data name="brush_hardness" xml:space="preserve">
+    <value>Brush Hardness</value>
+  </data>
+  <data name="brush_size" xml:space="preserve">
+    <value>Brush Size</value>
+  </data>
+  <data name="checkbox_visible" xml:space="preserve">
+    <value>Visible</value>
+  </data>
+  <data name="color_primary" xml:space="preserve">
+    <value>Primary Color</value>
+  </data>
+  <data name="color_secondary" xml:space="preserve">
+    <value>Secondary Color</value>
+  </data>
+  <data name="edit_menu" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="edit_menu_redo" xml:space="preserve">
+    <value>Redo</value>
+  </data>
+  <data name="edit_menu_resize" xml:space="preserve">
+    <value>Image Size</value>
+  </data>
+  <data name="edit_menu_undo" xml:space="preserve">
+    <value>Undo</value>
+  </data>
+  <data name="exportdialog_title" xml:space="preserve">
+    <value>Save and Image File</value>
+  </data>
+  <data name="file_menu" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="file_menu_export" xml:space="preserve">
+    <value>Export Image</value>
+  </data>
+  <data name="file_menu_import" xml:space="preserve">
+    <value>Import Image</value>
+  </data>
+  <data name="file_menu_new" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="file_menu_open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="file_menu_save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="importdialog_title" xml:space="preserve">
+    <value>Open an Image File</value>
+  </data>
+  <data name="loadproject_dialog_title" xml:space="preserve">
+    <value>Open a Project File</value>
+  </data>
+  <data name="newprojectdialog_height" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="newprojectdialog_submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="newprojectdialog_title" xml:space="preserve">
+    <value>New Project</value>
+  </data>
+  <data name="newprojectdialog_width" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="preferences_menu" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="preferences_menu_watermark" xml:space="preserve">
+    <value>Watermark</value>
+  </data>
+  <data name="preferences_menu_watermark_set" xml:space="preserve">
+    <value>Set Image</value>
+  </data>
+  <data name="preferences_menu_watermark_show" xml:space="preserve">
+    <value>Show Watermark</value>
+  </data>
+  <data name="preferences_menu_watermark_style" xml:space="preserve">
+    <value>Style</value>
+  </data>
+  <data name="preferences_menu_watermark_style_singlebottom" xml:space="preserve">
+    <value>Single Bottom</value>
+  </data>
+  <data name="preferences_menu_watermark_style_singlecentered" xml:space="preserve">
+    <value>Single Centered</value>
+  </data>
+  <data name="preferences_menu_watermark_style_tiled" xml:space="preserve">
+    <value>tiled</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>Le Paint Underground</value>
+  </data>
+  <data name="tooltip_brush" xml:space="preserve">
+    <value>Brush Tool</value>
+  </data>
+  <data name="tooltip_bucket" xml:space="preserve">
+    <value>Paint Bucket Tool</value>
+  </data>
+  <data name="tooltip_colorselect" xml:space="preserve">
+    <value>Color Selection</value>
+  </data>
+  <data name="tooltip_eraser" xml:space="preserve">
+    <value>Eraser</value>
+  </data>
+  <data name="tooltip_greenscreen" xml:space="preserve">
+    <value>Green Screen Tool</value>
+  </data>
+  <data name="tooltip_line" xml:space="preserve">
+    <value>Line Tool</value>
+  </data>
+  <data name="tooltip_pencil" xml:space="preserve">
+    <value>Pencil Tool</value>
+  </data>
+  <data name="tooltip_selection" xml:space="preserve">
+    <value>Selection Tool</value>
+  </data>
+  <data name="tooltip_text" xml:space="preserve">
+    <value>Text Tool</value>
+  </data>
+  <data name="view_menu" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="view_menu_grid" xml:space="preserve">
+    <value>Toggle Grid Lines</value>
+  </data>
+  <data name="view_menu_tablet" xml:space="preserve">
+    <value>Tablet Mode</value>
+  </data>
+  <data name="view_menu_tools" xml:space="preserve">
+    <value>Show Tools</value>
+  </data>
+  <data name="zoom" xml:space="preserve">
+    <value>Zoom</value>
   </data>
 </root>
