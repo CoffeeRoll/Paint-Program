@@ -89,6 +89,9 @@ namespace Paint_Program
 
         public void initCanvas()
         {
+            ss.setResourceFilePath(@"Languages\en-us.resx");
+            SharedSettings.getGlobalString("brush_size");
+
             Tools = new List<ITool>();
             ToolButtons = new List<ToolStripButton>();
 

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Drawing;
+using System.Resources;
 
 namespace Paint_Program
 {
@@ -50,6 +52,8 @@ namespace Paint_Program
         public static string watermarkPath { get; set; }
 
         public static string watermarkStyle { get; set; }
+
+        public static string resourceFilePath { get; set; }
 
         public static Bitmap bitmapCanvas { get; set; }
 
@@ -272,6 +276,10 @@ namespace Paint_Program
             iGreenScreenTolerance = i;
         }
 
+        public void setResourceFilePath(string s)
+        {
+            resourceFilePath = s;
+        }
 
 
 
@@ -444,6 +452,11 @@ namespace Paint_Program
             return iGreenScreenTolerance;
         }
 
+        public string getResourceFilePath()
+        {
+            return resourceFilePath;
+        }
+
 
 
 
@@ -456,6 +469,21 @@ namespace Paint_Program
             setActiveGraphics(getActiveLayerGraphics());
             setBitmapSelectionArea(null);
             Console.WriteLine("Scrubed Selection Info. . .");
+        }
+
+
+        public static void getGlobalString(string key)
+        {
+            using (ResXResourceReader resxReader = new ResXResourceReader(resourceFilePath))
+            {
+                foreach (DictionaryEntry entry in resxReader)
+                {
+                    if((string) entry.Key == key)
+                    {
+                        Console.WriteLine(entry.Value);
+                    }
+                }
+            }
         }
 
         public static int MapValue(
