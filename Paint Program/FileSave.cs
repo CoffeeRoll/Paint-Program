@@ -93,7 +93,7 @@ namespace Paint_Program
                     Int32Rect.Empty,
                     BitmapSizeOptions.FromEmptyOptions());
                 gEnc.Frames.Add(BitmapFrame.Create(src));
-                src.An
+                //src.An;
             }
 
             gEnc.Save(fs);
