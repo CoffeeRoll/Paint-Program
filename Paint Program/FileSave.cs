@@ -82,20 +82,18 @@ namespace Paint_Program
         
         private void saveGIFAnimation(System.IO.FileStream fs)
         {
-            System.Windows.Media.Imaging.GifBitmapEncoder gEnc = new System.Windows.Media.Imaging.GifBitmapEncoder();
+            GifBitmapEncoder gEnc = new GifBitmapEncoder();
 
             foreach (System.Drawing.Bitmap bmpImage in SharedSettings.Layers)
             {
-                var bmp = bmpImage.GetHbitmap();
-                var src = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
-                    bmp,
-                    IntPtr.Zero,
-                    Int32Rect.Empty,
-                    BitmapSizeOptions.FromEmptyOptions());
-                gEnc.Frames.Add(BitmapFrame.Create(src));
-                //src.An;
-            }
+                var bmpSource = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
+                                      bmpImage.GetHbitmap(),
+                                      IntPtr.Zero,
+                                      Int32Rect.Empty,
+                                      BitmapSizeOptions.FromEmptyOptions());
 
+                gEnc.Frames.Add(BitmapFrame.Create(bmpSource));
+            }
             gEnc.Save(fs);
 
         }
