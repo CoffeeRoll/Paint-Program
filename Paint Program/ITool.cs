@@ -29,9 +29,6 @@ namespace Paint_Program
 
         bool isInitalized();
 
-        /* returns a string of the tool's tooltip */
-        string getToolTip();
-
         /* returns a bitmap that will be displayed in the ToolStrip */
         string getToolIconPath();
 

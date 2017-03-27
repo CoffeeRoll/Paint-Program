@@ -50,7 +50,7 @@ namespace Paint_Program
             {
                 Color c = settings.getBitmapCurrentLayer(true).GetPixel(e.X, e.Y);
 
-                int tol = 3;//settings.getGreenScreenTolerance();
+                int tol = 2;//settings.getGreenScreenTolerance();
 
                 if (e.Button == MouseButtons.Left)
                 {

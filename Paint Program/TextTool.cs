@@ -43,11 +43,6 @@ namespace Paint_Program
             return @"..\..\Images\text.png";
         }
 
-        public string getToolTip()
-        {
-            return "Text Tool";
-        }
-
         public bool isInitalized()
         {
             return bInit;

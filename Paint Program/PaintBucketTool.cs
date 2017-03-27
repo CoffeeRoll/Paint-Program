@@ -57,11 +57,6 @@ namespace Paint_Program
             return @"..\..\Images\bucket.png";
         }
 
-        public string getToolTip()
-        {
-            return "Paint Bucket Tool";
-        }
-
         public void onMouseDown(object sender, MouseEventArgs e)
         {
             if(graphics != null)

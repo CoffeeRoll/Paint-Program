@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Drawing;
+using System.Resources;
 
 namespace Paint_Program
 {
@@ -50,6 +52,10 @@ namespace Paint_Program
         public static string watermarkPath { get; set; }
 
         public static string watermarkStyle { get; set; }
+
+        public static string languageFolderPath { get; set; }
+
+        public static string language { get; set; }
 
         public static Bitmap bitmapCanvas { get; set; }
 
@@ -272,6 +278,16 @@ namespace Paint_Program
             iGreenScreenTolerance = i;
         }
 
+        public void setLanguageFolderPath(string s)
+        {
+            languageFolderPath = s;
+        }
+
+        public void setLanguage(string s)
+        {
+            language = s;
+        }
+
 
 
 
@@ -444,6 +460,11 @@ namespace Paint_Program
             return iGreenScreenTolerance;
         }
 
+        public string getLanguageFolderPath()
+        {
+            return languageFolderPath;
+        }
+
 
 
 
@@ -456,6 +477,29 @@ namespace Paint_Program
             setActiveGraphics(getActiveLayerGraphics());
             setBitmapSelectionArea(null);
             Console.WriteLine("Scrubed Selection Info. . .");
+        }
+
+
+        public static string getGlobalString(string key)
+        {
+            try {
+                using (ResXResourceReader resxReader = new ResXResourceReader(languageFolderPath + "\\" + language + ".resx"))
+                {
+                    foreach (DictionaryEntry entry in resxReader)
+                    {
+                        if ((string)entry.Key == key)
+                        {
+                            return (string)entry.Value;
+                        }
+                    }
+                }
+                return "";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error using the language " + language + ".\n" + e);
+            }
+            return "";
         }
 
         public static int MapValue(

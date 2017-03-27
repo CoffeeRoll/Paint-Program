@@ -146,5 +146,27 @@ C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Pai
 C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
 C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.exe
 C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\bin\Debug\Paint Program.exe.config
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\bin\Debug\Paint Program.exe
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\bin\Debug\Paint Program.pdb
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\bin\Debug\WintabDN.dll
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\bin\Debug\WintabDN.pdb
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint Program.csprojResolveAssemblyReference.cache
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint_Program.BrushSettings.resources
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint_Program.Canvas.resources
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint_Program.Form1.resources
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint_Program.Languages.en-us.resources
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint_Program.LayerItem.resources
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint_Program.LayerView.resources
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint_Program.NewProjectForm.resources
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint_Program.Properties.Resources.resources
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint_Program.ZoomControl.resources
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint Program.exe
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint Program.pdb
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint_Program.Languages.es-ES.resources
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint_Program.Languages.fr-FR.resources
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint_Program.Languages.de-DE.resources
+C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint_Program.Languages.en-UK.resources
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.en-us.resources
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.ZoomControl.resources

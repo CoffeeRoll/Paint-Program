@@ -6,7 +6,7 @@ using System.Drawing.Imaging;
 
 namespace Paint_Program
 {
-    public partial class LayerView : UserControl
+    public partial class LayerView : UserControl, ITextUpdate
     {
 
         private List<LayerItem> Layers;
@@ -420,5 +420,15 @@ namespace Paint_Program
             Layers.Clear();
         }
 
+        public void updateText()
+        {
+            foreach (Control c in Controls)
+            {
+                if (c is ITextUpdate)
+                {
+                    ((ITextUpdate)c).updateText();
+                }
+            }
+        }
     }
 }

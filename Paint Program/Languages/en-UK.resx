@@ -124,10 +124,10 @@
     <value>Brush Size</value>
   </data>
   <data name="brushsettings_color_primary" xml:space="preserve">
-    <value>Primary Color</value>
+    <value>Primary Colour</value>
   </data>
   <data name="brushsettings_color_secondary" xml:space="preserve">
-    <value>Secondary Color</value>
+    <value>Secondary Colour</value>
   </data>
   <data name="edit_menu" xml:space="preserve">
     <value>Edit</value>
@@ -172,7 +172,7 @@
     <value>Open an Image File</value>
   </data>
   <data name="imageimport_error" xml:space="preserve">
-    <value>An error occurred while opening.</value>
+    <value>An error occurred whilst opening.</value>
   </data>
   <data name="layeritem_checkbox_visible" xml:space="preserve">
     <value>Visible</value>
@@ -226,7 +226,7 @@
     <value>Open a Project File</value>
   </data>
   <data name="projectopen_error" xml:space="preserve">
-    <value>An error occurred while opening the project.</value>
+    <value>An error occurred whilst  opening the project.</value>
   </data>
   <data name="projectsave_dialog_filter" xml:space="preserve">
     <value>Le Paint Project File|*.lep|All Files|*.*</value>
@@ -235,13 +235,13 @@
     <value>Save Project</value>
   </data>
   <data name="projectsave_error" xml:space="preserve">
-    <value>An error occurred while saving.</value>
+    <value>An error occurred whilst saving.</value>
   </data>
   <data name="projectsave_saved" xml:space="preserve">
     <value>Project saved!</value>
   </data>
   <data name="resource_languagename" xml:space="preserve">
-    <value>English (US)</value>
+    <value>English (UK)</value>
   </data>
   <data name="title" xml:space="preserve">
     <value>Le Paint Underground</value>
@@ -262,7 +262,7 @@
     <value>Paint Bucket Tool</value>
   </data>
   <data name="tooltip_colorselect" xml:space="preserve">
-    <value>Color Selection</value>
+    <value>Colour Selection</value>
   </data>
   <data name="tooltip_eraser" xml:space="preserve">
     <value>Eraser</value>

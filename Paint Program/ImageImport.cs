@@ -15,8 +15,8 @@ namespace Paint_Program
             try
             {
                 OpenFileDialog ofd = new OpenFileDialog();
-                ofd.Filter = "All File Types|*.*|Bitmap Image|*.bmp|GIF Image|*.gif|Icon Image|*.ico|JPeg Image|*.jpg|PNG Image|*.png|TIFF Image|*.tiff";
-                ofd.Title = "Open an Image File";
+                ofd.Filter = SharedSettings.getGlobalString("imageimport_dialog_filter");
+                ofd.Title = SharedSettings.getGlobalString("imageimport_dialog_title");
                 ofd.ShowDialog();
 
                 bw.DoWork += (send, args) =>
@@ -44,7 +44,7 @@ namespace Paint_Program
                 }
                 catch (Exception e)
                 {
-                    string message = "An error occurred while opening. \n\n" + e.ToString();
+                    string message =  SharedSettings.getGlobalString("importimage_error") + "\n\n" + e.ToString();
                     MessageBox.Show(message);
                 }
             }

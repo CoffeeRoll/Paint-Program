@@ -30,11 +30,6 @@ namespace Paint_Program
             return @"..\..\Images\erasoir.png";
         }
 
-        public string getToolTip()
-        {
-            return "Erasoir Tool";
-        }
-
         public void init(SharedSettings s)
         {
             graphics = s.getActiveGraphics();

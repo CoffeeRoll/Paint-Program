@@ -5,8 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
+using System.Globalization;
+using System.IO;
+using System.Resources;
+using System.Collections;
 
 namespace Paint_Program
 {
@@ -21,7 +25,108 @@ namespace Paint_Program
         {
             InitializeComponent();
             this.MinimumSize = new System.Drawing.Size(900, 677);
-            ss = null;
+            ss = new SharedSettings();
+
+            CultureInfo ci = CultureInfo.CurrentUICulture;
+
+            SharedSettings.languageFolderPath = @"..\..\Languages\";
+            SharedSettings.language = ci.Name.ToString();
+
+            populateLanguages();
+
+            updateText();
+        }
+
+        private void populateLanguages()
+        {
+            string[] langs = Directory.GetFiles(SharedSettings.languageFolderPath);
+
+            foreach (string s in langs)
+            {
+                //Check to make sur file is a resource file
+                if (s.EndsWith(".resx"))
+                {
+                    try
+                    {
+                        using (ResXResourceReader resxReader = new ResXResourceReader(s))
+                        {
+                            foreach (DictionaryEntry entry in resxReader)
+                            {
+                                if ((string)entry.Key == "resource_languagename")
+                                {
+                                    Console.WriteLine("Adding: " + s + " to the list of available languages.");
+                                    ToolStripMenuItem temp = new ToolStripMenuItem();
+                                    temp.Text = (string) entry.Value;
+                                    temp.Tag = Path.GetFileNameWithoutExtension(s);
+                                    temp.Click += delegate (object sender, EventArgs e) {
+                                        //Sets language to the file name with no extention
+                                        string filename = (string)((ToolStripMenuItem) sender).Tag;
+                                        SharedSettings.language = filename;
+                                        updateText();
+                                    };
+                                    tsmiInternational.DropDownItems.Add(temp);
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Error using the resource file " + s + ".\n\n" + e);
+                    }
+                }
+            }
+        }
+
+        private void updateText()
+        {
+            //Form Title
+            this.Text = SharedSettings.getGlobalString("title");
+
+            //File Menu Items
+            tsmiFile.Text = SharedSettings.getGlobalString("file_menu");
+            tsmiFile_New.Text = SharedSettings.getGlobalString("file_menu_new");
+            tsmiFile_Save.Text = SharedSettings.getGlobalString("file_menu_save");
+            tsmiFile_Load.Text = SharedSettings.getGlobalString("file_menu_open");
+            tsmiFile_Import.Text = SharedSettings.getGlobalString("file_menu_import");
+            tsmiFile_Export.Text = SharedSettings.getGlobalString("file_menu_export");
+
+            //Edit Menu Items
+            tsmiEdit.Text = SharedSettings.getGlobalString("edit_menu");
+            tsmiEdit_Redo.Text = SharedSettings.getGlobalString("edit_menu_redo");
+            tsmiEdit_Undo.Text = SharedSettings.getGlobalString("edit_menu_undo");
+            tsmiEdit_Resize.Text = SharedSettings.getGlobalString("edit_menu_resize");
+            
+            //View Menu Items
+            tsmiView.Text = SharedSettings.getGlobalString("view_menu");
+            tsmiView_GridLines.Text = SharedSettings.getGlobalString("view_menu_grid");
+            tsmiView_GridLines_Auto.Text = SharedSettings.getGlobalString("view_menu_grid_auto");
+            tsmiView_ShowTools.Text = SharedSettings.getGlobalString("view_menu_tools");
+
+            //Preferences Menu Items
+            tsmiPreferences.Text = SharedSettings.getGlobalString("preferences_menu");
+            tsmiPreferences_Watermark.Text = SharedSettings.getGlobalString("preferences_menu_watermark");
+            tsmiPreferences_Watermark_SetImage.Text = SharedSettings.getGlobalString("preferences_menu_watermark_set");
+            tsmiPreferences_Watermark_ShowWatermark.Text = SharedSettings.getGlobalString("preferences_menu_watermark_show");
+            tsmiPreferences_Watermark_Style.Text = SharedSettings.getGlobalString("preferences_menu_watermark_style");
+            tsmiPreferences_Watermark_Style_SingleBottom.Text = SharedSettings.getGlobalString("preferences_menu_watermark_style_singlebottom");
+            tsmiPreferences_Watermark_Style_SingleCentered.Text = SharedSettings.getGlobalString("preferences_menu_watermark_style_singlecentered");
+            tsmiPreferences_Watermark_Style_Tiled.Text = SharedSettings.getGlobalString("preferences_menu_watermark_style_tiled");
+            tsmiInternational.Text = SharedSettings.getGlobalString("preferences_menu_international");
+
+            //ToolStrip Item ToolTips
+            tsNew.ToolTipText = SharedSettings.getGlobalString("toolstripmenu_new");
+            tsImport.ToolTipText = SharedSettings.getGlobalString("toolstripmenu_import");
+            tsSave.ToolTipText = SharedSettings.getGlobalString("toostripmenu_save");
+
+            foreach (Control c in Controls)
+            {
+                if (c is ITextUpdate)
+                {
+                    ((ITextUpdate)c).updateText();
+                }
+            }
+
+            this.Refresh();
         }
         
         private void tsmiFile_New_Click(object sender, EventArgs e)
@@ -85,10 +190,9 @@ namespace Paint_Program
             }
             catch (Exception err)
             {
-                String s = "Error Saving Project! " + err.ToString();
+                String s = SharedSettings.getGlobalString("error_save_project") + err.ToString();
                 MessageBox.Show(s);
             }
-
         }
 
         private void tsmiFile_Import_Click(object sender, EventArgs e)
@@ -131,9 +235,9 @@ namespace Paint_Program
             //Tablet Mode
         }
 
-        private void showToolsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsmiView_ShowTools_Click(object sender, EventArgs e)
         {
-            if (showToolsToolStripMenuItem.Checked)
+            if (tsmiView_ShowTools.Checked)
             {
                 c.ShowTools();
             }
@@ -143,7 +247,7 @@ namespace Paint_Program
             }
         }
 
-        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsmiFile_Load_Click(object sender, EventArgs e)
         {
             SharedSettings s = new SharedSettings();
             ProjectLoad pl = new ProjectLoad(s);
@@ -158,110 +262,110 @@ namespace Paint_Program
         }
 
         #region GridLines
-        private void tsmiGrid5_Click(object sender, EventArgs e)
+        private void tsmiView_GridLines_5_Click(object sender, EventArgs e)
         {
             if (ss != null)
             {
-                if (tsmiGrid5.CheckState == CheckState.Unchecked)
+                if (tsmiView_GridLines_5.CheckState == CheckState.Unchecked)
                 {
                     ss.setGridToggle(false);
                 }
                 else
                 {
                     GridUncheck();
-                    tsmiGrid5.CheckState = CheckState.Checked;
+                    tsmiView_GridLines_5.CheckState = CheckState.Checked;
                     ss.setGridToggle(true);
                     ss.setGridWidth(5);
                 }
             }
         }
 
-        private void tsmiGrid10_Click(object sender, EventArgs e)
+        private void tsmiView_GridLines_10_Click(object sender, EventArgs e)
         {
             if (ss != null)
             {
-                if (tsmiGrid10.CheckState == CheckState.Unchecked)
+                if (tsmiView_GridLines_10.CheckState == CheckState.Unchecked)
                 {
                     ss.setGridToggle(false);
                 }
                 else
                 {
                     GridUncheck();
-                    tsmiGrid10.CheckState = CheckState.Checked;
+                    tsmiView_GridLines_10.CheckState = CheckState.Checked;
                     ss.setGridToggle(true);
                     ss.setGridWidth(10);
                 }
             }
         }
 
-        private void tsmiGrid25_Click(object sender, EventArgs e)
+        private void tsmiView_GridLines_25_Click(object sender, EventArgs e)
         {
             if (ss != null)
             {
-                if (tsmiGrid25.CheckState == CheckState.Unchecked)
+                if (tsmiView_GridLines_25.CheckState == CheckState.Unchecked)
                 {
                     ss.setGridToggle(false);
                 }
                 else
                 {
                     GridUncheck();
-                    tsmiGrid25.CheckState = CheckState.Checked;
+                    tsmiView_GridLines_25.CheckState = CheckState.Checked;
                     ss.setGridToggle(true);
                     ss.setGridWidth(25);
                 }
             }
         }
 
-        private void tsmiGrid50_Click(object sender, EventArgs e)
+        private void tsmiView_GridLines_50_Click(object sender, EventArgs e)
         {
             if (ss != null)
             {
-                if (tsmiGrid50.CheckState == CheckState.Unchecked)
+                if (tsmiView_GridLines_50.CheckState == CheckState.Unchecked)
                 {
                     ss.setGridToggle(false);
                 }
                 else
                 {
                     GridUncheck();
-                    tsmiGrid50.CheckState = CheckState.Checked;
+                    tsmiView_GridLines_50.CheckState = CheckState.Checked;
                     ss.setGridToggle(true);
                     ss.setGridWidth(50);
                 }
             }
         }
 
-        private void tsmiGrid100_Click(object sender, EventArgs e)
+        private void tsmiView_GridLines_100_Click(object sender, EventArgs e)
         {
             if (ss != null)
             {
-                if (tsmiGrid100.CheckState == CheckState.Unchecked)
+                if (tsmiView_GridLines_100.CheckState == CheckState.Unchecked)
                 {
                     ss.setGridToggle(false);
                 }
                 else
                 {
                     GridUncheck();
-                    tsmiGrid100.CheckState = CheckState.Checked;
+                    tsmiView_GridLines_100.CheckState = CheckState.Checked;
                     ss.setGridToggle(true);
                     ss.setGridWidth(100);
                 }
             }
         }
 
-        private void tsmiGridAuto_Click(object sender, EventArgs e)
+        private void tsmiView_GridLines_Auto_Click(object sender, EventArgs e)
         {
             if (ss != null)
             {
-                if (tsmiGridAuto.CheckState == CheckState.Unchecked)
+                if (tsmiView_GridLines_Auto.CheckState == CheckState.Unchecked)
                 {
                     GridUncheck();
-                    tsmiGridAuto.CheckState = CheckState.Checked;
+                    tsmiView_GridLines_Auto.CheckState = CheckState.Checked;
                     ss.setGridToggle(true);
                     ss.setGridWidth(-1);
                 }
                 else
                 {
-                    tsmiGridAuto.CheckState = CheckState.Unchecked;
+                    tsmiView_GridLines_Auto.CheckState = CheckState.Unchecked;
                     ss.setGridToggle(false);
 
                 }
@@ -270,29 +374,29 @@ namespace Paint_Program
 
         private void GridUncheck()
         {
-            tsmiGrid5.CheckState = CheckState.Unchecked;
-            tsmiGrid10.CheckState = CheckState.Unchecked;
-            tsmiGrid25.CheckState = CheckState.Unchecked;
-            tsmiGrid50.CheckState = CheckState.Unchecked;
-            tsmiGrid100.CheckState = CheckState.Unchecked;
-            tsmiGridAuto.CheckState = CheckState.Unchecked;
+            tsmiView_GridLines_5.CheckState = CheckState.Unchecked;
+            tsmiView_GridLines_10.CheckState = CheckState.Unchecked;
+            tsmiView_GridLines_25.CheckState = CheckState.Unchecked;
+            tsmiView_GridLines_50.CheckState = CheckState.Unchecked;
+            tsmiView_GridLines_100.CheckState = CheckState.Unchecked;
+            tsmiView_GridLines_Auto.CheckState = CheckState.Unchecked;
         }
 
 
 
         #endregion
         //Whoops,    v newfile v
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void tsNew_Click(object sender, EventArgs e)
         {
             tsmiFile_New_Click(sender, e);
         }
 
-        private void OpenFile_Click(object sender, EventArgs e)
+        private void tsOpen_Click(object sender, EventArgs e)
         {
             tsmiFile_Import_Click(sender, e);
         }
 
-        private void SaveButton_Click(object sender, EventArgs e)
+        private void tsSave_Click(object sender, EventArgs e)
         {
             tsmiFile_Save_Click(sender, e);
         }
@@ -302,8 +406,8 @@ namespace Paint_Program
             try
             {
                 OpenFileDialog sfd = new OpenFileDialog();
-                sfd.Filter = "All Files|*.*";
-                sfd.Title = "Select Watermark File";
+                sfd.Filter = SharedSettings.getGlobalString("watermarkdialog_filter");
+                sfd.Title = SharedSettings.getGlobalString("watermarkdialog_title");
                 sfd.ShowDialog();
 
                 SharedSettings.watermarkPath = sfd.FileName;
@@ -316,52 +420,52 @@ namespace Paint_Program
 
             if (SharedSettings.watermarkPath != null)
             {
-                showWatermarkToolStripMenuItem.Enabled = true;
-                styleToolStripMenuItem.Enabled = true;
+                tsmiPreferences_Watermark_ShowWatermark.Enabled = true;
+                tsmiPreferences_Watermark_Style.Enabled = true;
             }
         }
 
         private void showWatermarkToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            if (showWatermarkToolStripMenuItem.Checked == false)
+            if (tsmiPreferences_Watermark_ShowWatermark.Checked == false)
             {
                 
                 SharedSettings.bitmapWatermark = (Bitmap)Image.FromFile(SharedSettings.watermarkPath);
                 SharedSettings.bitmapWatermark.SetResolution(SharedSettings.iCanvasWidth, SharedSettings.iCanvasHeight);
                 SharedSettings.bRenderWatermark = true;
-                showWatermarkToolStripMenuItem.Checked = true;
+                tsmiPreferences_Watermark_ShowWatermark.Checked = true;
 
             }
             else
             {
                 SharedSettings.bRenderWatermark = false;
-                showWatermarkToolStripMenuItem.Checked = false;
+                tsmiPreferences_Watermark_ShowWatermark.Checked = false;
             }
         }
 
-        private void singleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsmiPreferences_Watermark_SingleCenter_Click(object sender, EventArgs e)
         {
             SharedSettings.watermarkStyle = "Single Center";
-            singleToolStripMenuItem.Checked = true;
-            singleBottomToolStripMenuItem.Checked = false;
-            tiledToolStripMenuItem.Checked = false;
+            tsmiPreferences_Watermark_Style_SingleCentered.Checked = true;
+            tsmiPreferences_Watermark_Style_SingleBottom.Checked = false;
+            tsmiPreferences_Watermark_Style_Tiled.Checked = false;
         }
 
-        private void singleBottomToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsmiPreferences_Watermark_SingleBottom_Click(object sender, EventArgs e)
         {
             SharedSettings.watermarkStyle = "Single Bottom";
-            singleToolStripMenuItem.Checked = false;
-            singleBottomToolStripMenuItem.Checked = true;
-            tiledToolStripMenuItem.Checked = false;
+            tsmiPreferences_Watermark_Style_SingleCentered.Checked = false;
+            tsmiPreferences_Watermark_Style_SingleBottom.Checked = true;
+            tsmiPreferences_Watermark_Style_Tiled.Checked = false;
         }
 
-        private void tiledToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsmiPreferences_Watermark_Tiled_Click(object sender, EventArgs e)
         {
             SharedSettings.watermarkStyle = "Tiled";
-            singleToolStripMenuItem.Checked = false;
-            singleBottomToolStripMenuItem.Checked = false;
-            tiledToolStripMenuItem.Checked = true;
+            tsmiPreferences_Watermark_Style_SingleCentered.Checked = false;
+            tsmiPreferences_Watermark_Style_SingleBottom.Checked = false;
+            tsmiPreferences_Watermark_Style_Tiled.Checked = true;
         }
     }
 

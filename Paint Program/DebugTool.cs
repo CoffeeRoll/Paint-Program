@@ -75,11 +75,6 @@ namespace Paint_Program
             return @"..\..\Images\brush.png";
         }
 
-        public string getToolTip()
-        {
-            return "Brush Tool";
-        }
-
         public void onMouseDown(object sender, MouseEventArgs e)
         {
             if (graphics != null)

@@ -11,7 +11,7 @@ using System.Threading;
 
 namespace Paint_Program
 {
-    public partial class BrushSettings : UserControl
+    public partial class BrushSettings : UserControl, ITextUpdate
     {
         SharedSettings settings;
         BackgroundWorker bw;
@@ -19,6 +19,12 @@ namespace Paint_Program
         public BrushSettings(SharedSettings s)
         {
             InitializeComponent();
+
+            lPrime.Text = SharedSettings.getGlobalString("brushsettings_color_primary");
+            lSec.Text = SharedSettings.getGlobalString("brushsettings_color_secondary");
+            lSize.Text = SharedSettings.getGlobalString("brushsettings_brush_size");
+            lHard.Text = SharedSettings.getGlobalString("brushsettings_brush_hardness");
+
             settings = s;
 
             pPrime.BackColor = settings.getPrimaryBrushColor();
@@ -87,14 +93,14 @@ namespace Paint_Program
 
         private void tbSize_ValueChanged(object sender, EventArgs e)
         {
-            lSize.Text = "Brush Size: " + tbSize.Value.ToString();
+            lSize.Text = SharedSettings.getGlobalString("brushsettings_brush_size") + ": " + tbSize.Value.ToString();
             lSize.Refresh();
             settings.setBrushSize(tbSize.Value);
         }
 
         private void tbHardness_ValueChanged(object sender, EventArgs e)
         {
-            lHard.Text = "Brush Hardness: " + tbHardness.Value.ToString();
+            lHard.Text = SharedSettings.getGlobalString("brushsettings_brush_hardness") + ": " + tbHardness.Value.ToString();
             lHard.Refresh();
             settings.setBrushHardness(tbHardness.Value);
         }
@@ -104,6 +110,14 @@ namespace Paint_Program
             pPrime.BackColor = settings.getPrimaryBrushColor();
             pSec.BackColor = settings.getSecondaryBrushColor();
             this.Refresh();
+        }
+
+        public void updateText()
+        {
+            lPrime.Text = SharedSettings.getGlobalString("brushsettings_color_primary");
+            lSec.Text = SharedSettings.getGlobalString("brushsettings_color_secondary");
+            lSize.Text = SharedSettings.getGlobalString("brushsettings_brush_size") + ": " + tbSize.Value.ToString();
+            lHard.Text = SharedSettings.getGlobalString("brushsettings_brush_hardness") + ": " + tbHardness.Value.ToString();
         }
     }
 }

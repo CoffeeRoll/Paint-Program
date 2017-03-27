@@ -80,11 +80,32 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ImageImport.cs" />
+    <Compile Include="ITextUpdate.cs" />
     <Compile Include="ITool.cs" />
-    <Compile Include="Languages\en-us.Designer.cs">
+    <Compile Include="Languages\de-DE.Designer.cs">
+      <DependentUpon>de-DE.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\en-UK.Designer.cs">
+      <DependentUpon>en-UK.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\es-ES.Designer.cs">
+      <DependentUpon>es-ES.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\en-US.Designer.cs">
+      <DependentUpon>en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\fr-FR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>fr-FR.resx</DependentUpon>
     </Compile>
     <Compile Include="Layer.cs" />
     <Compile Include="LayerItem.cs">
@@ -133,9 +154,25 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Languages\en-us.resx">
+    <EmbeddedResource Include="Languages\de-DE.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>en-us.Designer.cs</LastGenOutput>
+      <LastGenOutput>de-DE.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\en-UK.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>en-UK.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\es-ES.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>es-ES.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\fr-FR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>fr-FR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="LayerItem.resx">
       <DependentUpon>LayerItem.cs</DependentUpon>

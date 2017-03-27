@@ -45,11 +45,6 @@ namespace Paint_Program
             return @"..\..\Images\sampler.png";
         }
 
-        public string getToolTip()
-        {
-            return "Color Sampler";
-        }
-
         public void onMouseDown(object sender, MouseEventArgs e)
         {
             if (graphics != null)

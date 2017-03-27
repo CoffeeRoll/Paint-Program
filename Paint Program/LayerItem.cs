@@ -11,7 +11,7 @@ using System.Drawing.Imaging;
 
 namespace Paint_Program
 {
-    public partial class LayerItem : UserControl
+    public partial class LayerItem : UserControl, ITextUpdate
     {
         private bool isVisible;
         private bool isActive;
@@ -31,6 +31,9 @@ namespace Paint_Program
         {
             ss = s;
             InitializeComponent();
+
+            cbVisible.Text = SharedSettings.getGlobalString("layeritem_checkbox_visible");
+
             isVisible = true;
             LayerBitmap = new Bitmap(w, h, pf);
             g = Graphics.FromImage(LayerBitmap);
@@ -165,6 +168,11 @@ namespace Paint_Program
         {
             tbLayerName.BackColor = Color.White;
             sLayerName = tbLayerName.Text;
+        }
+
+        public void updateText()
+        {
+            cbVisible.Text = SharedSettings.getGlobalString("layeritem_checkbox_visible");
         }
     }
 }
