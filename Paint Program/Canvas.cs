@@ -347,19 +347,18 @@ namespace Paint_Program
                 lv.updateActiveLayer();
             }
 
-            Bitmap bit = lv.getRender();
+            SharedSettings.bitmapCanvas = lv.getRender();
             Bitmap bit2 = (Bitmap)bg.Clone();
 
             Graphics temp = Graphics.FromImage(bit2);
 
-            temp.DrawImage(bit, 0, 0);
+            temp.DrawImage(SharedSettings.bitmapCanvas, 0, 0);
 
             Bitmap iitmp = ss.getImportImage();
             if (iitmp != null)
             {
                 lv.addImportImage(iitmp);
             }
-            ss.setBitmapCanvas(bit);
 
             p.Invalidate();
 
@@ -438,7 +437,6 @@ namespace Paint_Program
             }
 
             k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
-            bit.Dispose();
             bit2.Dispose();
             if(iitmp != null)
                 iitmp.Dispose();

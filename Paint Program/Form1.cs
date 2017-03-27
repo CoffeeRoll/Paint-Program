@@ -385,7 +385,7 @@ namespace Paint_Program
 
 
         #endregion
-        //Whoops,    v newfile v
+        
         private void tsNew_Click(object sender, EventArgs e)
         {
             tsmiFile_New_Click(sender, e);
@@ -466,6 +466,21 @@ namespace Paint_Program
             tsmiPreferences_Watermark_Style_SingleCentered.Checked = false;
             tsmiPreferences_Watermark_Style_SingleBottom.Checked = false;
             tsmiPreferences_Watermark_Style_Tiled.Checked = true;
+        }
+
+
+        private void tsmi_Save_Google_Drive_Click(object sender, EventArgs e)
+        {
+            using (GDriveSaveDialog gDrive = new GDriveSaveDialog())
+            {
+                if (gDrive.ShowDialog(this) == DialogResult.OK)
+                {
+                    string fileName = gDrive.fileName;
+                    string fileType = gDrive.fileType;
+
+                    SaveToDrive sd = new SaveToDrive(c.getSharedSettings(), fileName, fileType);
+                }
+            }
         }
     }
 

@@ -37,3 +37,13 @@ C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalizat
 C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\WintabDN\obj\Debug\WintabDN.csprojResolveAssemblyReference.cache
 C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\WintabDN\obj\Debug\WintabDN.dll
 C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\WintabDN\obj\Debug\WintabDN.pdb
+C:\Users\Matt\Documents\GitHub\Paint-Program\WintabDN\bin\Debug\WintabDN.dll
+C:\Users\Matt\Documents\GitHub\Paint-Program\WintabDN\bin\Debug\WintabDN.pdb
+C:\Users\Matt\Documents\GitHub\Paint-Program\WintabDN\obj\Debug\WintabDN.csprojResolveAssemblyReference.cache
+C:\Users\Matt\Documents\GitHub\Paint-Program\WintabDN\obj\Debug\WintabDN.dll
+C:\Users\Matt\Documents\GitHub\Paint-Program\WintabDN\obj\Debug\WintabDN.pdb
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\WintabDN\bin\Debug\WintabDN.dll
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\WintabDN\bin\Debug\WintabDN.pdb
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\WintabDN\obj\Debug\WintabDN.csprojResolveAssemblyReference.cache
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\WintabDN\obj\Debug\WintabDN.dll
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\WintabDN\obj\Debug\WintabDN.pdb
