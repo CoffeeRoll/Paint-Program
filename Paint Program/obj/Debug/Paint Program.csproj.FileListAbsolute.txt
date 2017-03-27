@@ -168,3 +168,5 @@ C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalizat
 C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint_Program.Languages.fr-FR.resources
 C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint_Program.Languages.de-DE.resources
 C:\Users\CoffeeRoll\Desktop\Paint-Program-Globalization\Paint-Program-Globalization\Paint Program\obj\Debug\Paint_Program.Languages.en-UK.resources
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.en-us.resources
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.ZoomControl.resources

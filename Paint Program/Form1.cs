@@ -411,7 +411,7 @@ namespace Paint_Program
                 sfd.ShowDialog();
 
                 SharedSettings.watermarkPath = sfd.FileName;
-
+                SharedSettings.bitmapWatermark = new Bitmap(sfd.FileName);
             }
             catch
             {
