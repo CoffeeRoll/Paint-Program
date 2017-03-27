@@ -301,3 +301,25 @@ C:\Users\jchouinard01\Desktop\Paint-Program\Paint Program\obj\Debug\Paint_Progra
 C:\Users\jchouinard01\Desktop\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
 C:\Users\jchouinard01\Desktop\Paint-Program\Paint Program\obj\Debug\Paint Program.exe
 C:\Users\jchouinard01\Desktop\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\client_secret.json
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Auth.dll
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Core.dll
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.dll
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Drive.v3.dll
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Zlib.Portable.dll
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.xml
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Auth.xml
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Auth.PlatformServices.xml
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Core.xml
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Drive.v3.xml
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.PlatformServices.xml
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Newtonsoft.Json.xml
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Zlib.Portable.xml
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.GDriveSaveDialog.resources
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.de-DE.resources
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.en-UK.resources
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.es-ES.resources
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.fr-FR.resources
