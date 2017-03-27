@@ -6,3 +6,8 @@ C:\Users\mgoldstein\Documents\GitHub\Paint-Program\WintabDN\bin\Release\WintabDN
 C:\Users\mgoldstein\Documents\GitHub\Paint-Program\WintabDN\bin\Release\WintabDN.pdb
 C:\Users\mgoldstein\Documents\GitHub\Paint-Program\WintabDN\obj\Release\WintabDN.dll
 C:\Users\mgoldstein\Documents\GitHub\Paint-Program\WintabDN\obj\Release\WintabDN.pdb
+C:\Users\Matt\Documents\GitHub\Paint-Program\WintabDN\bin\Release\WintabDN.dll
+C:\Users\Matt\Documents\GitHub\Paint-Program\WintabDN\bin\Release\WintabDN.pdb
+C:\Users\Matt\Documents\GitHub\Paint-Program\WintabDN\obj\Release\WintabDN.csprojResolveAssemblyReference.cache
+C:\Users\Matt\Documents\GitHub\Paint-Program\WintabDN\obj\Release\WintabDN.dll
+C:\Users\Matt\Documents\GitHub\Paint-Program\WintabDN\obj\Release\WintabDN.pdb
