@@ -37,6 +37,8 @@
             this.tsmiFile_Load = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFile_Import = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFile_Export = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_ExportImageToDrive = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_SaveToDrive = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEdit_Undo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEdit_Redo = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,7 +93,9 @@
             this.tsmiFile_Save,
             this.tsmiFile_Load,
             this.tsmiFile_Import,
-            this.tsmiFile_Export});
+            this.tsmiFile_Export,
+            this.tsmi_ExportImageToDrive,
+            this.tsmi_SaveToDrive});
             this.tsmiFile.Name = "tsmiFile";
             this.tsmiFile.Size = new System.Drawing.Size(37, 22);
             this.tsmiFile.Text = "File";
@@ -99,37 +103,51 @@
             // tsmiFile_New
             // 
             this.tsmiFile_New.Name = "tsmiFile_New";
-            this.tsmiFile_New.Size = new System.Drawing.Size(146, 22);
+            this.tsmiFile_New.Size = new System.Drawing.Size(228, 22);
             this.tsmiFile_New.Text = "New";
             this.tsmiFile_New.Click += new System.EventHandler(this.tsmiFile_New_Click);
             // 
             // tsmiFile_Save
             // 
             this.tsmiFile_Save.Name = "tsmiFile_Save";
-            this.tsmiFile_Save.Size = new System.Drawing.Size(146, 22);
+            this.tsmiFile_Save.Size = new System.Drawing.Size(228, 22);
             this.tsmiFile_Save.Text = "Save";
             this.tsmiFile_Save.Click += new System.EventHandler(this.tsmiFile_Save_Click);
             // 
             // tsmiFile_Load
             // 
             this.tsmiFile_Load.Name = "tsmiFile_Load";
-            this.tsmiFile_Load.Size = new System.Drawing.Size(146, 22);
+            this.tsmiFile_Load.Size = new System.Drawing.Size(228, 22);
             this.tsmiFile_Load.Text = "Load";
             this.tsmiFile_Load.Click += new System.EventHandler(this.tsmiFile_Load_Click);
             // 
             // tsmiFile_Import
             // 
             this.tsmiFile_Import.Name = "tsmiFile_Import";
-            this.tsmiFile_Import.Size = new System.Drawing.Size(146, 22);
+            this.tsmiFile_Import.Size = new System.Drawing.Size(228, 22);
             this.tsmiFile_Import.Text = "Import Image";
             this.tsmiFile_Import.Click += new System.EventHandler(this.tsmiFile_Import_Click);
             // 
             // tsmiFile_Export
             // 
             this.tsmiFile_Export.Name = "tsmiFile_Export";
-            this.tsmiFile_Export.Size = new System.Drawing.Size(146, 22);
+            this.tsmiFile_Export.Size = new System.Drawing.Size(228, 22);
             this.tsmiFile_Export.Text = "Export Image";
             this.tsmiFile_Export.Click += new System.EventHandler(this.tsmiFile_Export_Click);
+            // 
+            // tsmi_ExportImageToDrive
+            // 
+            this.tsmi_ExportImageToDrive.Name = "tsmi_ExportImageToDrive";
+            this.tsmi_ExportImageToDrive.Size = new System.Drawing.Size(228, 22);
+            this.tsmi_ExportImageToDrive.Text = "Export Image to Google Drive";
+            this.tsmi_ExportImageToDrive.Click += new System.EventHandler(this.tsmi_ExportImageToDrive_Click);
+            // 
+            // tsmi_SaveToDrive
+            // 
+            this.tsmi_SaveToDrive.Name = "tsmi_SaveToDrive";
+            this.tsmi_SaveToDrive.Size = new System.Drawing.Size(228, 22);
+            this.tsmi_SaveToDrive.Text = "Save Project to Google Drive";
+            this.tsmi_SaveToDrive.Click += new System.EventHandler(this.tsmi_SaveToDrive_Click);
             // 
             // tsmiEdit
             // 
@@ -265,7 +283,7 @@
             this.tsmiPreferences_Watermark_ShowWatermark,
             this.tsmiPreferences_Watermark_Style});
             this.tsmiPreferences_Watermark.Name = "tsmiPreferences_Watermark";
-            this.tsmiPreferences_Watermark.Size = new System.Drawing.Size(152, 22);
+            this.tsmiPreferences_Watermark.Size = new System.Drawing.Size(141, 22);
             this.tsmiPreferences_Watermark.Text = "Watermark...";
             // 
             // tsmiPreferences_Watermark_SetImage
@@ -320,7 +338,7 @@
             // tsmiInternational
             // 
             this.tsmiInternational.Name = "tsmiInternational";
-            this.tsmiInternational.Size = new System.Drawing.Size(152, 22);
+            this.tsmiInternational.Size = new System.Drawing.Size(141, 22);
             this.tsmiInternational.Text = "International";
             // 
             // updateTimer
@@ -431,6 +449,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiPreferences_Watermark_Style_SingleBottom;
         private System.Windows.Forms.ToolStripMenuItem tsmiPreferences_Watermark_Style_Tiled;
         private System.Windows.Forms.ToolStripMenuItem tsmiInternational;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_ExportImageToDrive;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_SaveToDrive;
     }
 }
 

@@ -467,6 +467,17 @@ namespace Paint_Program
             tsmiPreferences_Watermark_Style_SingleBottom.Checked = false;
             tsmiPreferences_Watermark_Style_Tiled.Checked = true;
         }
+
+
+        private void tsmi_SaveToDrive_Click(object sender, EventArgs e)
+        {
+            SaveProjectToDrive spd = new SaveProjectToDrive(c.getSharedSettings());
+        }
+
+        private void tsmi_ExportImageToDrive_Click(object sender, EventArgs e)
+        {
+            SaveToDrive sd = new SaveToDrive(c.getSharedSettings());
+        }
     }
 
 }
