@@ -37,8 +37,6 @@
             this.tsmiFile_Load = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFile_Import = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFile_Export = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi_ExportImageToDrive = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi_SaveToDrive = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEdit_Undo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEdit_Redo = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,6 +65,7 @@
             this.tsNew = new System.Windows.Forms.ToolStripButton();
             this.tsImport = new System.Windows.Forms.ToolStripButton();
             this.tsSave = new System.Windows.Forms.ToolStripButton();
+            this.tsmi_Save_Google_Drive = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -94,8 +93,7 @@
             this.tsmiFile_Load,
             this.tsmiFile_Import,
             this.tsmiFile_Export,
-            this.tsmi_ExportImageToDrive,
-            this.tsmi_SaveToDrive});
+            this.tsmi_Save_Google_Drive});
             this.tsmiFile.Name = "tsmiFile";
             this.tsmiFile.Size = new System.Drawing.Size(37, 22);
             this.tsmiFile.Text = "File";
@@ -134,20 +132,6 @@
             this.tsmiFile_Export.Size = new System.Drawing.Size(228, 22);
             this.tsmiFile_Export.Text = "Export Image";
             this.tsmiFile_Export.Click += new System.EventHandler(this.tsmiFile_Export_Click);
-            // 
-            // tsmi_ExportImageToDrive
-            // 
-            this.tsmi_ExportImageToDrive.Name = "tsmi_ExportImageToDrive";
-            this.tsmi_ExportImageToDrive.Size = new System.Drawing.Size(228, 22);
-            this.tsmi_ExportImageToDrive.Text = "Export Image to Google Drive";
-            this.tsmi_ExportImageToDrive.Click += new System.EventHandler(this.tsmi_ExportImageToDrive_Click);
-            // 
-            // tsmi_SaveToDrive
-            // 
-            this.tsmi_SaveToDrive.Name = "tsmi_SaveToDrive";
-            this.tsmi_SaveToDrive.Size = new System.Drawing.Size(228, 22);
-            this.tsmi_SaveToDrive.Text = "Save Project to Google Drive";
-            this.tsmi_SaveToDrive.Click += new System.EventHandler(this.tsmi_SaveToDrive_Click);
             // 
             // tsmiEdit
             // 
@@ -389,6 +373,13 @@
             this.tsSave.Text = "Save";
             this.tsSave.Click += new System.EventHandler(this.tsSave_Click);
             // 
+            // tsmi_Save_Google_Drive
+            // 
+            this.tsmi_Save_Google_Drive.Name = "tsmi_Save_Google_Drive";
+            this.tsmi_Save_Google_Drive.Size = new System.Drawing.Size(228, 22);
+            this.tsmi_Save_Google_Drive.Text = "Save To Google Drive";
+            this.tsmi_Save_Google_Drive.Click += new System.EventHandler(this.tsmi_Save_Google_Drive_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -449,8 +440,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiPreferences_Watermark_Style_SingleBottom;
         private System.Windows.Forms.ToolStripMenuItem tsmiPreferences_Watermark_Style_Tiled;
         private System.Windows.Forms.ToolStripMenuItem tsmiInternational;
-        private System.Windows.Forms.ToolStripMenuItem tsmi_ExportImageToDrive;
-        private System.Windows.Forms.ToolStripMenuItem tsmi_SaveToDrive;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_Save_Google_Drive;
     }
 }
 

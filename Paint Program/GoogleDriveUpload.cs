@@ -23,7 +23,7 @@ namespace Paint_Program
         {
             // Authenticate with Drive API
             UserCredential credential;
-            using (var stream =
+            using (var strm =
                 new FileStream("client_secret.json", FileMode.Open, FileAccess.Read))
             {
                 string credPath = System.Environment.GetFolderPath(
@@ -31,7 +31,7 @@ namespace Paint_Program
                 credPath = Path.Combine(credPath, ".credentials/drive-dotnet-lepaint.json");
 
                 credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
-                    GoogleClientSecrets.Load(stream).Secrets,
+                    GoogleClientSecrets.Load(strm).Secrets,
                     Scopes,
                     "user",
                     CancellationToken.None,
@@ -49,60 +49,24 @@ namespace Paint_Program
             FilesResource.ListRequest listRequest = service.Files.List();
             listRequest.Fields = "nextPageToken, files(name)";
 
-            // create a list of files
-            IList<Google.Apis.Drive.v3.Data.File> files = listRequest.Execute().Files;
-            bool exists = false;
-            Google.Apis.Drive.v3.Data.File f = null;
-            // check if the file exists
-            foreach (var file in files)
+            // insert as new file
+            Google.Apis.Drive.v3.Data.File body = new Google.Apis.Drive.v3.Data.File();
+            body.Name = System.IO.Path.GetFileName(pathToFile);
+            body.MimeType = GetMimeType(pathToFile);
+
+            byte[] byteArray = System.IO.File.ReadAllBytes(pathToFile);
+            System.IO.MemoryStream stream = new System.IO.MemoryStream(byteArray);
+            try
             {
-                Console.WriteLine(file.Name);
-                if (file.Name == Path.GetFileName(pathToFile))
-                {
-                    exists = true;
-                    f = file;
-                    break;
-                }
+                FilesResource.CreateMediaUpload request = service.Files.Create(body, stream, body.MimeType);
+                request.Upload();
+                Console.WriteLine("File Created " + body.Name + " - " + body.MimeType);
             }
-
-            if(exists)
+            catch (Exception e)
             {
-                // update existing file
-                Google.Apis.Drive.v3.Data.File body = new Google.Apis.Drive.v3.Data.File();
-                body.Name = System.IO.Path.GetFileName(pathToFile);
-                body.MimeType = GetMimeType(pathToFile);
-
-                byte[] byteArray = System.IO.File.ReadAllBytes(pathToFile);
-                System.IO.MemoryStream stream = new System.IO.MemoryStream(byteArray);
-
-                try
-                {
-                    service.Files.Update(body, f.Id, stream, GetMimeType(pathToFile));
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Error updating existing Drive file: " + e.Message);
-                }
+                MessageBox.Show("Error creating Drive file: " + e.Message);
             }
-            else
-            {
-                // insert as new file
-                Google.Apis.Drive.v3.Data.File body = new Google.Apis.Drive.v3.Data.File();
-                body.Name = System.IO.Path.GetFileName(pathToFile);
-                body.MimeType = GetMimeType(pathToFile);
-
-                byte[] byteArray = System.IO.File.ReadAllBytes(pathToFile);
-                System.IO.MemoryStream stream = new System.IO.MemoryStream(byteArray);
-                try
-                {
-                    service.Files.Create(body, stream, body.MimeType);
-                    Console.WriteLine("File Created " + body.Name + " - " + body.MimeType);
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Error creating Drive file: " + e.Message);
-                }
-            }
+            
 
         }
         

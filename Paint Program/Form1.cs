@@ -385,7 +385,7 @@ namespace Paint_Program
 
 
         #endregion
-        //Whoops,    v newfile v
+        
         private void tsNew_Click(object sender, EventArgs e)
         {
             tsmiFile_New_Click(sender, e);
@@ -469,14 +469,18 @@ namespace Paint_Program
         }
 
 
-        private void tsmi_SaveToDrive_Click(object sender, EventArgs e)
+        private void tsmi_Save_Google_Drive_Click(object sender, EventArgs e)
         {
-            SaveProjectToDrive spd = new SaveProjectToDrive(c.getSharedSettings());
-        }
+            using (GDriveSaveDialog gDrive = new GDriveSaveDialog())
+            {
+                if (gDrive.ShowDialog(this) == DialogResult.OK)
+                {
+                    string fileName = gDrive.fileName;
+                    string fileType = gDrive.fileType;
 
-        private void tsmi_ExportImageToDrive_Click(object sender, EventArgs e)
-        {
-            SaveToDrive sd = new SaveToDrive(c.getSharedSettings());
+                    SaveToDrive sd = new SaveToDrive(c.getSharedSettings(), fileName, fileType);
+                }
+            }
         }
     }
 
