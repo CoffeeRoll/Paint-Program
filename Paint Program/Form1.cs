@@ -89,6 +89,7 @@ namespace Paint_Program
             tsmiFile_Load.Text = SharedSettings.getGlobalString("file_menu_open");
             tsmiFile_Import.Text = SharedSettings.getGlobalString("file_menu_import");
             tsmiFile_Export.Text = SharedSettings.getGlobalString("file_menu_export");
+            tsmiFile_SaveGoogleDrive.Text = SharedSettings.getGlobalString("file_menu_googledrive");
 
             //Edit Menu Items
             tsmiEdit.Text = SharedSettings.getGlobalString("edit_menu");
