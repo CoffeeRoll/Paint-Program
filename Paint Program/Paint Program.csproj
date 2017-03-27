@@ -178,6 +178,12 @@
     <Compile Include="SharedSettings.cs" />
     <Compile Include="StraightLineTool.cs" />
     <Compile Include="TabletInfo.cs" />
+    <Compile Include="TextSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextSelect.Designer.cs">
+      <DependentUpon>TextSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="TextTool.cs" />
     <Compile Include="ZoomControl.cs">
       <SubType>UserControl</SubType>
