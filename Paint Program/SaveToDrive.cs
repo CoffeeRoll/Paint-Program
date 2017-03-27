@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 
 namespace Paint_Program
 {
@@ -14,13 +15,41 @@ namespace Paint_Program
     {
         public SaveToDrive(SharedSettings ss)
         {
-            Bitmap bm = ss.getBitmapCanvas();
-            //FileStream fs = new FileStream("tmpfile.jpg", FileMode.OpenOrCreate);
-            bm.Save("tmpfile.jpg", ImageFormat.Jpeg);
+            try
+            {
+                Bitmap bm = ss.getBitmapCanvas();
+                BackgroundWorker bw = new BackgroundWorker();
 
-            GoogleDriveUpload.DriveUpload("tmpfile.jpg");
+                bw.DoWork += (send, args) =>
+                {
+                    doSave(bm, ss, send, args);
+                };
 
-            System.IO.File.Delete(@"tmpfile.jpg");
+                bw.RunWorkerAsync();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error starting thread to save to drive: " + e.Message);
+            }
+        }
+
+        public void doSave(Bitmap bm, SharedSettings ss, object sender, DoWorkEventArgs args)
+        {
+            try
+            {
+                bm.Save("tmpfile.jpg", ImageFormat.Jpeg);
+
+                GoogleDriveUpload.DriveUpload("tmpfile.jpg");
+
+                string message = SharedSettings.getGlobalString("projectsave_saved");
+                MessageBox.Show(message);
+
+                System.IO.File.Delete(@"tmpfile.jpg");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Issue saving image to drive: " + e.Message);
+            }
         }
     }
 }

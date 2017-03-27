@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO.Compression;
@@ -16,6 +17,24 @@ namespace Paint_Program
         {
             try
             {
+                BackgroundWorker bw = new BackgroundWorker();
+                bw.DoWork += (send, args) =>
+                {
+                    doSave(ss, send, args);
+                };
+
+                bw.RunWorkerAsync();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Problem starting save project to drive thread: " + e.Message);
+            }
+        }
+
+        public void doSave(SharedSettings ss, object sender, DoWorkEventArgs args)
+        {
+            try
+            {
                 System.IO.Directory.CreateDirectory("save");
 
                 Bitmap[] bitArr = ss.getLayerBitmaps();
@@ -29,17 +48,14 @@ namespace Paint_Program
 
                 System.IO.File.WriteAllLines(baseDir + @"\save\names.txt", LayerNames);
 
-                if (System.IO.File.Exists("%APPDATA%\tmpfile.lep"))
+                if (System.IO.File.Exists("tmpfile.lep"))
                 {
-                    System.IO.File.Delete("%APPDATA%\tmpfile.lep");
+                    System.IO.File.Delete("tmpfile.lep");
                 }
 
-                ZipFile.CreateFromDirectory(baseDir + @"\save", @"%APPDATA%\tmpfile");
+                ZipFile.CreateFromDirectory(baseDir + @"\save", @"tmpfile.lep");
 
                 System.IO.Directory.Delete(baseDir + @"\save", true);
-
-                string message = SharedSettings.getGlobalString("projectsave_saved");
-                MessageBox.Show(message);
             }
             catch (Exception e)
             {
@@ -47,11 +63,24 @@ namespace Paint_Program
                 MessageBox.Show(message);
             }
 
-
-            GoogleDriveUpload.DriveUpload("%APPDATA%\tmpfile.lep");
-
-            System.IO.File.Delete("%APPDATA%\tmpfile.lep");
-
+            try
+            {
+                GoogleDriveUpload.DriveUpload("tmpfile.lep");
+                string message = SharedSettings.getGlobalString("projectsave_saved");
+                MessageBox.Show(message);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Problem with Google Drive - " + e.Message);
+            }
+            try
+            {
+                System.IO.File.Delete("tmpfile.lep");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Problem deleting temp lep file: " + e.Message);
+            }
         }
     }
 }

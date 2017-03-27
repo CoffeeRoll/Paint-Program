@@ -2,3 +2,7 @@ C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\WintabDN\bin\Release\WintabDN
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\WintabDN\bin\Release\WintabDN.pdb
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\WintabDN\obj\Release\WintabDN.dll
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\WintabDN\obj\Release\WintabDN.pdb
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\WintabDN\bin\Release\WintabDN.dll
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\WintabDN\bin\Release\WintabDN.pdb
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\WintabDN\obj\Release\WintabDN.dll
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\WintabDN\obj\Release\WintabDN.pdb

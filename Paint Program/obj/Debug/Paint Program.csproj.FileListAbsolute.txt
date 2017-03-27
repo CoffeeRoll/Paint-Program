@@ -199,3 +199,42 @@ C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Progr
 C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.fr-FR.resources
 C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.ZoomControl.resources
 C:\Users\Matt\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\client_secret.json
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\client_secret.json
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Paint Program.exe.config
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Paint Program.exe
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Paint Program.pdb
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Auth.dll
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Core.dll
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.dll
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Drive.v3.dll
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\WintabDN.dll
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Zlib.Portable.dll
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\WintabDN.pdb
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.xml
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Auth.xml
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Auth.PlatformServices.xml
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Core.xml
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Drive.v3.xml
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.PlatformServices.xml
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Zlib.Portable.xml
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.csprojResolveAssemblyReference.cache
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.BrushSettings.resources
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Canvas.resources
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Form1.resources
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.de-DE.resources
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.en-UK.resources
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.es-ES.resources
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.en-US.resources
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.fr-FR.resources
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.LayerItem.resources
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.LayerView.resources
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.NewProjectForm.resources
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Properties.Resources.resources
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.ZoomControl.resources
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.exe
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb

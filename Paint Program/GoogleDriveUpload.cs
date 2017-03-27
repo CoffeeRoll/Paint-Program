@@ -10,6 +10,7 @@ using Google.Apis.Drive.v3;
 using Google.Apis.Drive.v3.Data;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
+using System.Windows.Forms;
 
 namespace Paint_Program
 {
@@ -55,6 +56,7 @@ namespace Paint_Program
             // check if the file exists
             foreach (var file in files)
             {
+                Console.WriteLine(file.Name);
                 if (file.Name == Path.GetFileName(pathToFile))
                 {
                     exists = true;
@@ -79,7 +81,7 @@ namespace Paint_Program
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Error updating existing Drive file: " + e.Message);
+                    MessageBox.Show("Error updating existing Drive file: " + e.Message);
                 }
             }
             else
@@ -93,11 +95,12 @@ namespace Paint_Program
                 System.IO.MemoryStream stream = new System.IO.MemoryStream(byteArray);
                 try
                 {
-                    service.Files.Create(body, stream, GetMimeType(pathToFile));
+                    service.Files.Create(body, stream, body.MimeType);
+                    Console.WriteLine("File Created " + body.Name + " - " + body.MimeType);
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Error creating Drive file: " + e.Message);
+                    MessageBox.Show("Error creating Drive file: " + e.Message);
                 }
             }
 
