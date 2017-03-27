@@ -18,6 +18,7 @@ namespace Paint_Program
 
             try {
                 SaveFileDialog sfd = new SaveFileDialog();
+                sfd.OverwritePrompt = false;
                 sfd.Filter = "Bitmap Image|*.bmp|GIF Image|*.gif|Animated GIF|*.gif|Icon Image|*.ico|JPeg Image|*.jpg|PNG Image|*.png|TIFF Image|*.tiff";
                 sfd.Title = "Save an Image File";
                 sfd.ShowDialog();
@@ -44,34 +45,39 @@ namespace Paint_Program
                 {
                     System.IO.FileStream fs = (System.IO.FileStream)sfd.OpenFile();
 
-                    switch (sfd.FilterIndex)
+                    if (sfd.CheckFileExists)
                     {
-                        case 1:
-                            bm.Save(fs, ImageFormat.Bmp);
-                            break;
-                        case 2:
-                            bm.Save(fs, ImageFormat.Gif);
-                            break;
-                        case 3:
-                            saveGIFAnimation(fs);
-                            break;
-                        case 4:
-                            bm.Save(fs, ImageFormat.Icon);
-                            break;
-                        case 5:
-                            bm.Save(fs, ImageFormat.Jpeg);
-                            break;
-                        case 6:
-                            bm.Save(fs, ImageFormat.Png);
-                            break;
-                        case 7:
-                            bm.Save(fs, ImageFormat.Tiff);
-                            break;
+                        Console.WriteLine(sfd.FileName);
+                        System.IO.File.Delete(sfd.FileName);
                     }
+                        switch (sfd.FilterIndex)
+                        {
+                            case 1:
+                                bm.Save(fs, ImageFormat.Bmp);
+                                break;
+                            case 2:
+                                bm.Save(fs, ImageFormat.Gif);
+                                break;
+                            case 3:
+                                saveGIFAnimation(fs);
+                                break;
+                            case 4:
+                                bm.Save(fs, ImageFormat.Icon);
+                                break;
+                            case 5:
+                                bm.Save(fs, ImageFormat.Jpeg);
+                                break;
+                            case 6:
+                                bm.Save(fs, ImageFormat.Png);
+                                break;
+                            case 7:
+                                bm.Save(fs, ImageFormat.Tiff);
+                                break;
+                        }
 
-                    string message = "The file was saved!";
-                    MessageBox.Show(message);
-                    fs.Close();
+                        string message = "The file was saved!";
+                        MessageBox.Show(message);
+                        fs.Close();
                 }
                 catch (Exception e)
                 {
