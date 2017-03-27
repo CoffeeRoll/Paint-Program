@@ -53,7 +53,9 @@ namespace Paint_Program
 
         public static string watermarkStyle { get; set; }
 
-        public static string resourceFilePath { get; set; }
+        public static string languageFolderPath { get; set; }
+
+        public static string language { get; set; }
 
         public static Bitmap bitmapCanvas { get; set; }
 
@@ -276,10 +278,16 @@ namespace Paint_Program
             iGreenScreenTolerance = i;
         }
 
-        public void setResourceFilePath(string s)
+        public void setLanguageFolderPath(string s)
         {
-            resourceFilePath = s;
+            languageFolderPath = s;
         }
+
+        public void setLanguage(string s)
+        {
+            language = s;
+        }
+
 
 
 
@@ -452,9 +460,9 @@ namespace Paint_Program
             return iGreenScreenTolerance;
         }
 
-        public string getResourceFilePath()
+        public string getLanguageFolderPath()
         {
-            return resourceFilePath;
+            return languageFolderPath;
         }
 
 
@@ -472,18 +480,26 @@ namespace Paint_Program
         }
 
 
-        public static void getGlobalString(string key)
+        public static string getGlobalString(string key)
         {
-            using (ResXResourceReader resxReader = new ResXResourceReader(resourceFilePath))
-            {
-                foreach (DictionaryEntry entry in resxReader)
+            try {
+                using (ResXResourceReader resxReader = new ResXResourceReader(languageFolderPath + "\\" + language + ".resx"))
                 {
-                    if((string) entry.Key == key)
+                    foreach (DictionaryEntry entry in resxReader)
                     {
-                        Console.WriteLine(entry.Value);
+                        if ((string)entry.Key == key)
+                        {
+                            return (string)entry.Value;
+                        }
                     }
                 }
+                return "";
             }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error using the language " + language + ".\n" + e);
+            }
+            return "";
         }
 
         public static int MapValue(

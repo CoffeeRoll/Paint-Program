@@ -118,192 +118,192 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="brushsettings_brush_hardness" xml:space="preserve">
-    <value>Brush Hardness</value>
+    <value>Dureza del pincel</value>
   </data>
   <data name="brushsettings_brush_size" xml:space="preserve">
-    <value>Brush Size</value>
+    <value>Tamaño del pincel</value>
   </data>
   <data name="brushsettings_color_primary" xml:space="preserve">
-    <value>Primary Color</value>
+    <value>Color principal</value>
   </data>
   <data name="brushsettings_color_secondary" xml:space="preserve">
-    <value>Secondary Color</value>
+    <value>Segundo color</value>
   </data>
   <data name="edit_menu" xml:space="preserve">
-    <value>Edit</value>
+    <value>Editar</value>
   </data>
   <data name="edit_menu_redo" xml:space="preserve">
-    <value>Redo</value>
+    <value>Rehacer</value>
   </data>
   <data name="edit_menu_resize" xml:space="preserve">
-    <value>Image Size</value>
+    <value>Redimensionar</value>
   </data>
   <data name="edit_menu_undo" xml:space="preserve">
-    <value>Undo</value>
+    <value>Deshacer</value>
   </data>
   <data name="error_save_project" xml:space="preserve">
-    <value>Error Saving Project</value>
+    <value>Error al Guardar el Proyecto</value>
   </data>
   <data name="exportdialog_title" xml:space="preserve">
-    <value>Save and Image File</value>
+    <value>Guardar un Archivo de Imagen</value>
   </data>
   <data name="file_menu" xml:space="preserve">
-    <value>File</value>
+    <value>Archivo</value>
   </data>
   <data name="file_menu_export" xml:space="preserve">
-    <value>Export Image</value>
+    <value>Exportar la Imagen</value>
   </data>
   <data name="file_menu_import" xml:space="preserve">
-    <value>Import Image</value>
+    <value>Importar Imagen</value>
   </data>
   <data name="file_menu_new" xml:space="preserve">
-    <value>New</value>
+    <value>Nuevo</value>
   </data>
   <data name="file_menu_open" xml:space="preserve">
-    <value>Open</value>
+    <value>Abierto</value>
   </data>
   <data name="file_menu_save" xml:space="preserve">
-    <value>Save</value>
+    <value>Salvar</value>
   </data>
   <data name="imageimport_dialog_filter" xml:space="preserve">
-    <value>All File Types|*.*|Bitmap Image|*.bmp|GIF Image|*.gif|Icon Image|*.ico|JPeg Image|*.jpg|PNG Image|*.png|TIFF Image|*.tiff"</value>
+    <value>Todos los archivos|*.*|Bitmap Imagen|*.bmp|GIF Imagen|*.gif|Icon Imagen|*.ico|JPeg Imagen|*.jpg|PNG Imagen|*.png|TIFF Imagen|*.tiff"</value>
   </data>
   <data name="imageimport_dialog_title" xml:space="preserve">
-    <value>Open an Image File</value>
+    <value>Abrir un Archivo de Imagen</value>
   </data>
   <data name="imageimport_error" xml:space="preserve">
-    <value>An error occurred while opening.</value>
+    <value>Se produjo un error al abrir.</value>
   </data>
   <data name="layeritem_checkbox_visible" xml:space="preserve">
     <value>Visible</value>
   </data>
   <data name="loadproject_dialog_title" xml:space="preserve">
-    <value>Open a Project File</value>
+    <value>Abrir un Archivo de Proyecto</value>
   </data>
   <data name="newproject_dialog_height" xml:space="preserve">
-    <value>Height</value>
+    <value>Altura</value>
   </data>
   <data name="newproject_dialog_submit" xml:space="preserve">
-    <value>Submit</value>
+    <value>Enviar</value>
   </data>
   <data name="newproject_dialog_title" xml:space="preserve">
-    <value>New Project</value>
+    <value>Nuevo Proyecto</value>
   </data>
   <data name="newproject_dialog_width" xml:space="preserve">
-    <value>Width</value>
+    <value>Anchura</value>
   </data>
   <data name="preferences_menu" xml:space="preserve">
-    <value>Preferences</value>
+    <value>Preferencias</value>
   </data>
   <data name="preferences_menu_international" xml:space="preserve">
-    <value>International</value>
+    <value>Internacional</value>
   </data>
   <data name="preferences_menu_watermark" xml:space="preserve">
-    <value>Watermark</value>
+    <value>Filigrana</value>
   </data>
   <data name="preferences_menu_watermark_set" xml:space="preserve">
-    <value>Set Image</value>
+    <value>Establecer Imagen</value>
   </data>
   <data name="preferences_menu_watermark_show" xml:space="preserve">
-    <value>Show Watermark</value>
+    <value>Mostrar Filigrana</value>
   </data>
   <data name="preferences_menu_watermark_style" xml:space="preserve">
-    <value>Style</value>
+    <value>Estilo</value>
   </data>
   <data name="preferences_menu_watermark_style_singlebottom" xml:space="preserve">
-    <value>Single Bottom</value>
+    <value>Abajo a la derecha</value>
   </data>
   <data name="preferences_menu_watermark_style_singlecentered" xml:space="preserve">
-    <value>Single Centered</value>
+    <value>Solo Centrado</value>
   </data>
   <data name="preferences_menu_watermark_style_tiled" xml:space="preserve">
-    <value>Tiled</value>
+    <value>Patrón de Mosaico</value>
   </data>
   <data name="projectopen_dialog_filter" xml:space="preserve">
-    <value>Le Paint Project|*.lep|All File Types|*.*</value>
+    <value>Le Paint Project|*.lep|Todos los archivos|*.*</value>
   </data>
   <data name="projectopen_dialog_title" xml:space="preserve">
-    <value>Open a Project File</value>
+    <value>Abrir un archivo de proyecto</value>
   </data>
   <data name="projectopen_error" xml:space="preserve">
-    <value>An error occurred while opening the project.</value>
+    <value>Se produjo un error al abrir.</value>
   </data>
   <data name="projectsave_dialog_filter" xml:space="preserve">
-    <value>Le Paint Project File|*.lep|All Files|*.*</value>
+    <value>Le Paint Project File|*.lep|Todos los archivos|*.*</value>
   </data>
   <data name="projectsave_dialog_title" xml:space="preserve">
-    <value>Save Project</value>
+    <value>Guardar Proyecto</value>
   </data>
   <data name="projectsave_error" xml:space="preserve">
-    <value>An error occurred while saving.</value>
+    <value>Se produjo un error al guardar.</value>
   </data>
   <data name="projectsave_saved" xml:space="preserve">
-    <value>Project saved!</value>
+    <value>Proyecto guardado!</value>
   </data>
   <data name="resource_languagename" xml:space="preserve">
-    <value>English (US)</value>
+    <value>Español</value>
   </data>
   <data name="title" xml:space="preserve">
     <value>Le Paint Underground</value>
   </data>
   <data name="toolstripmenu_import" xml:space="preserve">
-    <value>Import Image</value>
+    <value>Importar Imagen</value>
   </data>
   <data name="toolstripmenu_new" xml:space="preserve">
-    <value>New Project</value>
+    <value>Nuevo Proyecto</value>
   </data>
   <data name="toolstripmenu_save" xml:space="preserve">
-    <value>Save Project</value>
+    <value>Guardar Proyecto</value>
   </data>
   <data name="tooltip_brush" xml:space="preserve">
-    <value>Brush Tool</value>
+    <value>Pincel</value>
   </data>
   <data name="tooltip_bucket" xml:space="preserve">
-    <value>Paint Bucket Tool</value>
+    <value>Herramienta Bote de Pintura</value>
   </data>
   <data name="tooltip_colorselect" xml:space="preserve">
-    <value>Color Selection</value>
+    <value>Herramienta de Selección de Color</value>
   </data>
   <data name="tooltip_eraser" xml:space="preserve">
-    <value>Eraser</value>
+    <value>Borrador</value>
   </data>
   <data name="tooltip_greenscreen" xml:space="preserve">
-    <value>Green Screen Tool</value>
+    <value>Herramienta de pantalla verde</value>
   </data>
   <data name="tooltip_line" xml:space="preserve">
-    <value>Line Tool</value>
+    <value>Herramienta de línea</value>
   </data>
   <data name="tooltip_pencil" xml:space="preserve">
-    <value>Pencil Tool</value>
+    <value>Herramienta Lápiz</value>
   </data>
   <data name="tooltip_selection" xml:space="preserve">
-    <value>Selection Tool</value>
+    <value>Herramienta de selección</value>
   </data>
   <data name="tooltip_text" xml:space="preserve">
-    <value>Text Tool</value>
+    <value>Herramienta de Texto</value>
   </data>
   <data name="view_menu" xml:space="preserve">
-    <value>View</value>
+    <value>Ver</value>
   </data>
   <data name="view_menu_grid" xml:space="preserve">
-    <value>Toggle Grid Lines</value>
+    <value>Alternar líneas de cuadrícula</value>
   </data>
   <data name="view_menu_grid_auto" xml:space="preserve">
-    <value>Auto</value>
+    <value>Automático</value>
   </data>
   <data name="view_menu_tablet" xml:space="preserve">
-    <value>Tablet Mode</value>
+    <value>Modo Tablet</value>
   </data>
   <data name="view_menu_tools" xml:space="preserve">
-    <value>Show Tools</value>
+    <value>Mostrar Herramientas</value>
   </data>
   <data name="watermarkdialog_filter" xml:space="preserve">
-    <value>All Files|*.*</value>
+    <value>Todos los archivos|*.*</value>
   </data>
   <data name="watermarkdialog_title" xml:space="preserve">
-    <value>Select a Watermark</value>
+    <value>Seleccione una filigrana</value>
   </data>
   <data name="zoom" xml:space="preserve">
-    <value>Zoom</value>
+    <value>Enfocar</value>
   </data>
 </root>

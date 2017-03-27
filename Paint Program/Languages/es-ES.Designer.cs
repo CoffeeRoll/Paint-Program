@@ -22,14 +22,14 @@ namespace Paint_Program.Languages {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class en_US {
+    internal class es_ES {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal en_US() {
+        internal es_ES() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Paint_Program.Languages {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Paint_Program.Languages.en-US", typeof(en_US).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Paint_Program.Languages.es-ES", typeof(es_ES).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Brush Hardness.
+        ///   Looks up a localized string similar to Dureza del pincel.
         /// </summary>
         internal static string brushsettings_brush_hardness {
             get {
@@ -70,7 +70,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Brush Size.
+        ///   Looks up a localized string similar to Tamaño del pincel.
         /// </summary>
         internal static string brushsettings_brush_size {
             get {
@@ -79,7 +79,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Primary Color.
+        ///   Looks up a localized string similar to Color principal.
         /// </summary>
         internal static string brushsettings_color_primary {
             get {
@@ -88,7 +88,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Secondary Color.
+        ///   Looks up a localized string similar to Segundo color.
         /// </summary>
         internal static string brushsettings_color_secondary {
             get {
@@ -97,7 +97,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit.
+        ///   Looks up a localized string similar to Editar.
         /// </summary>
         internal static string edit_menu {
             get {
@@ -106,7 +106,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Redo.
+        ///   Looks up a localized string similar to Rehacer.
         /// </summary>
         internal static string edit_menu_redo {
             get {
@@ -115,7 +115,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image Size.
+        ///   Looks up a localized string similar to Redimensionar.
         /// </summary>
         internal static string edit_menu_resize {
             get {
@@ -124,7 +124,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Undo.
+        ///   Looks up a localized string similar to Deshacer.
         /// </summary>
         internal static string edit_menu_undo {
             get {
@@ -133,7 +133,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error Saving Project.
+        ///   Looks up a localized string similar to Error al Guardar el Proyecto.
         /// </summary>
         internal static string error_save_project {
             get {
@@ -142,7 +142,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save and Image File.
+        ///   Looks up a localized string similar to Guardar un Archivo de Imagen.
         /// </summary>
         internal static string exportdialog_title {
             get {
@@ -151,7 +151,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to File.
+        ///   Looks up a localized string similar to Archivo.
         /// </summary>
         internal static string file_menu {
             get {
@@ -160,7 +160,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Export Image.
+        ///   Looks up a localized string similar to Exportar la Imagen.
         /// </summary>
         internal static string file_menu_export {
             get {
@@ -169,7 +169,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Import Image.
+        ///   Looks up a localized string similar to Importar Imagen.
         /// </summary>
         internal static string file_menu_import {
             get {
@@ -178,7 +178,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New.
+        ///   Looks up a localized string similar to Nuevo.
         /// </summary>
         internal static string file_menu_new {
             get {
@@ -187,7 +187,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open.
+        ///   Looks up a localized string similar to Abierto.
         /// </summary>
         internal static string file_menu_open {
             get {
@@ -196,7 +196,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save.
+        ///   Looks up a localized string similar to Salvar.
         /// </summary>
         internal static string file_menu_save {
             get {
@@ -205,7 +205,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All File Types|*.*|Bitmap Image|*.bmp|GIF Image|*.gif|Icon Image|*.ico|JPeg Image|*.jpg|PNG Image|*.png|TIFF Image|*.tiff&quot;.
+        ///   Looks up a localized string similar to Todos los archivos|*.*|Bitmap Imagen|*.bmp|GIF Imagen|*.gif|Icon Imagen|*.ico|JPeg Imagen|*.jpg|PNG Imagen|*.png|TIFF Imagen|*.tiff&quot;.
         /// </summary>
         internal static string imageimport_dialog_filter {
             get {
@@ -214,7 +214,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open an Image File.
+        ///   Looks up a localized string similar to Abrir un Archivo de Imagen.
         /// </summary>
         internal static string imageimport_dialog_title {
             get {
@@ -223,7 +223,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An error occurred while opening..
+        ///   Looks up a localized string similar to Se produjo un error al abrir..
         /// </summary>
         internal static string imageimport_error {
             get {
@@ -241,7 +241,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open a Project File.
+        ///   Looks up a localized string similar to Abrir un Archivo de Proyecto.
         /// </summary>
         internal static string loadproject_dialog_title {
             get {
@@ -250,7 +250,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Height.
+        ///   Looks up a localized string similar to Altura.
         /// </summary>
         internal static string newproject_dialog_height {
             get {
@@ -259,7 +259,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Submit.
+        ///   Looks up a localized string similar to Enviar.
         /// </summary>
         internal static string newproject_dialog_submit {
             get {
@@ -268,7 +268,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New Project.
+        ///   Looks up a localized string similar to Nuevo Proyecto.
         /// </summary>
         internal static string newproject_dialog_title {
             get {
@@ -277,7 +277,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Width.
+        ///   Looks up a localized string similar to Anchura.
         /// </summary>
         internal static string newproject_dialog_width {
             get {
@@ -286,7 +286,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Preferences.
+        ///   Looks up a localized string similar to Preferencias.
         /// </summary>
         internal static string preferences_menu {
             get {
@@ -295,7 +295,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to International.
+        ///   Looks up a localized string similar to Internacional.
         /// </summary>
         internal static string preferences_menu_international {
             get {
@@ -304,7 +304,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Watermark.
+        ///   Looks up a localized string similar to Filigrana.
         /// </summary>
         internal static string preferences_menu_watermark {
             get {
@@ -313,7 +313,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Set Image.
+        ///   Looks up a localized string similar to Establecer Imagen.
         /// </summary>
         internal static string preferences_menu_watermark_set {
             get {
@@ -322,7 +322,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show Watermark.
+        ///   Looks up a localized string similar to Mostrar Filigrana.
         /// </summary>
         internal static string preferences_menu_watermark_show {
             get {
@@ -331,7 +331,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Style.
+        ///   Looks up a localized string similar to Estilo.
         /// </summary>
         internal static string preferences_menu_watermark_style {
             get {
@@ -340,7 +340,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Single Bottom.
+        ///   Looks up a localized string similar to Abajo a la derecha.
         /// </summary>
         internal static string preferences_menu_watermark_style_singlebottom {
             get {
@@ -349,7 +349,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Single Centered.
+        ///   Looks up a localized string similar to Solo Centrado.
         /// </summary>
         internal static string preferences_menu_watermark_style_singlecentered {
             get {
@@ -358,7 +358,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tiled.
+        ///   Looks up a localized string similar to Patrón de Mosaico.
         /// </summary>
         internal static string preferences_menu_watermark_style_tiled {
             get {
@@ -367,7 +367,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Le Paint Project|*.lep|All File Types|*.*.
+        ///   Looks up a localized string similar to Le Paint Project|*.lep|Todos los archivos|*.*.
         /// </summary>
         internal static string projectopen_dialog_filter {
             get {
@@ -376,7 +376,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open a Project File.
+        ///   Looks up a localized string similar to Abrir un archivo de proyecto.
         /// </summary>
         internal static string projectopen_dialog_title {
             get {
@@ -385,7 +385,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An error occurred while opening the project..
+        ///   Looks up a localized string similar to Se produjo un error al abrir..
         /// </summary>
         internal static string projectopen_error {
             get {
@@ -394,7 +394,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Le Paint Project File|*.lep|All Files|*.*.
+        ///   Looks up a localized string similar to Le Paint Project File|*.lep|Todos los archivos|*.*.
         /// </summary>
         internal static string projectsave_dialog_filter {
             get {
@@ -403,7 +403,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save Project.
+        ///   Looks up a localized string similar to Guardar Proyecto.
         /// </summary>
         internal static string projectsave_dialog_title {
             get {
@@ -412,7 +412,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An error occurred while saving..
+        ///   Looks up a localized string similar to Se produjo un error al guardar..
         /// </summary>
         internal static string projectsave_error {
             get {
@@ -421,7 +421,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Project saved!.
+        ///   Looks up a localized string similar to Proyecto guardado!.
         /// </summary>
         internal static string projectsave_saved {
             get {
@@ -430,7 +430,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to English (US).
+        ///   Looks up a localized string similar to Español.
         /// </summary>
         internal static string resource_languagename {
             get {
@@ -448,7 +448,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Import Image.
+        ///   Looks up a localized string similar to Importar Imagen.
         /// </summary>
         internal static string toolstripmenu_import {
             get {
@@ -457,7 +457,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New Project.
+        ///   Looks up a localized string similar to Nuevo Proyecto.
         /// </summary>
         internal static string toolstripmenu_new {
             get {
@@ -466,7 +466,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save Project.
+        ///   Looks up a localized string similar to Guardar Proyecto.
         /// </summary>
         internal static string toolstripmenu_save {
             get {
@@ -475,7 +475,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Brush Tool.
+        ///   Looks up a localized string similar to Pincel.
         /// </summary>
         internal static string tooltip_brush {
             get {
@@ -484,7 +484,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Paint Bucket Tool.
+        ///   Looks up a localized string similar to Herramienta Bote de Pintura.
         /// </summary>
         internal static string tooltip_bucket {
             get {
@@ -493,7 +493,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Color Selection.
+        ///   Looks up a localized string similar to Herramienta de Selección de Color.
         /// </summary>
         internal static string tooltip_colorselect {
             get {
@@ -502,7 +502,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Eraser.
+        ///   Looks up a localized string similar to Borrador.
         /// </summary>
         internal static string tooltip_eraser {
             get {
@@ -511,7 +511,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Green Screen Tool.
+        ///   Looks up a localized string similar to Herramienta de pantalla verde.
         /// </summary>
         internal static string tooltip_greenscreen {
             get {
@@ -520,7 +520,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Line Tool.
+        ///   Looks up a localized string similar to Herramienta de línea.
         /// </summary>
         internal static string tooltip_line {
             get {
@@ -529,7 +529,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pencil Tool.
+        ///   Looks up a localized string similar to Herramienta Lápiz.
         /// </summary>
         internal static string tooltip_pencil {
             get {
@@ -538,7 +538,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Selection Tool.
+        ///   Looks up a localized string similar to Herramienta de selección.
         /// </summary>
         internal static string tooltip_selection {
             get {
@@ -547,7 +547,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Text Tool.
+        ///   Looks up a localized string similar to Herramienta de Texto.
         /// </summary>
         internal static string tooltip_text {
             get {
@@ -556,7 +556,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to View.
+        ///   Looks up a localized string similar to Ver.
         /// </summary>
         internal static string view_menu {
             get {
@@ -565,7 +565,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Toggle Grid Lines.
+        ///   Looks up a localized string similar to Alternar líneas de cuadrícula.
         /// </summary>
         internal static string view_menu_grid {
             get {
@@ -574,7 +574,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Auto.
+        ///   Looks up a localized string similar to Automático.
         /// </summary>
         internal static string view_menu_grid_auto {
             get {
@@ -583,7 +583,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tablet Mode.
+        ///   Looks up a localized string similar to Modo Tablet.
         /// </summary>
         internal static string view_menu_tablet {
             get {
@@ -592,7 +592,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show Tools.
+        ///   Looks up a localized string similar to Mostrar Herramientas.
         /// </summary>
         internal static string view_menu_tools {
             get {
@@ -601,7 +601,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All Files|*.*.
+        ///   Looks up a localized string similar to Todos los archivos|*.*.
         /// </summary>
         internal static string watermarkdialog_filter {
             get {
@@ -610,7 +610,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select a Watermark.
+        ///   Looks up a localized string similar to Seleccione una filigrana.
         /// </summary>
         internal static string watermarkdialog_title {
             get {
@@ -619,7 +619,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zoom.
+        ///   Looks up a localized string similar to Enfocar.
         /// </summary>
         internal static string zoom {
             get {

@@ -8,7 +8,7 @@ using System.Drawing.Imaging;
 
 namespace Paint_Program
 {
-    public partial class Canvas : UserControl
+    public partial class Canvas : UserControl, ITextUpdate
     {
         private Display p;
         private Panel pScaled;
@@ -89,8 +89,7 @@ namespace Paint_Program
 
         public void initCanvas()
         {
-            ss.setResourceFilePath(@"Languages\en-us.resx");
-            SharedSettings.getGlobalString("brush_size");
+            
 
             Tools = new List<ITool>();
             ToolButtons = new List<ToolStripButton>();
@@ -476,6 +475,17 @@ namespace Paint_Program
             }
 
             ToolsShown = false;
+        }
+
+        public void updateText()
+        {
+            foreach (Control c in Controls)
+            {
+                if(c is ITextUpdate)
+                {
+                    ((ITextUpdate) c).updateText();
+                }
+            }
         }
 
         public SharedSettings getSharedSettings()

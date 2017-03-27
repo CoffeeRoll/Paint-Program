@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.ComponentModel;
 using System.Windows.Media.Imaging;
+using System.IO;
 
 namespace Paint_Program
 {
@@ -82,19 +83,20 @@ namespace Paint_Program
         
         private void saveGIFAnimation(System.IO.FileStream fs)
         {
-            GifBitmapEncoder gEnc = new GifBitmapEncoder();
-
-            foreach (System.Drawing.Bitmap bmpImage in SharedSettings.Layers)
+            using (var stream = new MemoryStream())
             {
-                var bmpSource = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
-                                      bmpImage.GetHbitmap(),
-                                      IntPtr.Zero,
-                                      Int32Rect.Empty,
-                                      BitmapSizeOptions.FromEmptyOptions());
+                using (var encoder = new AnimatedGifEncoder(stream, null, null, 12))
+                {
+                    for (int i = 0; i < SharedSettings.Layers.Length; i++)
+                    {
+                        var image = (Image)(SharedSettings.Layers[i] as Bitmap).Clone();
+                        encoder.AddFrame(image, 0, 0, TimeSpan.FromSeconds(0));
+                    }
 
-                gEnc.Frames.Add(BitmapFrame.Create(bmpSource));
+                    stream.Position = 0;
+                    stream.WriteTo(fs);
+                }
             }
-            gEnc.Save(fs);
 
         }
     }

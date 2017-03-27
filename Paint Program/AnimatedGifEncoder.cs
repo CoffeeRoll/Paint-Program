@@ -1,213 +1,208 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Media.Imaging;
-using System.Windows;
+﻿/*
+    AnimatedGifEncoder.cs
+    Contributors: 
+        fschwiet
+        DataDink
+        JimBobSquarePants
+
+    Github Link: https://github.com/DataDink/Bumpkit/blob/master/BumpKit/BumpKit/GifEncoder.cs
+
+    From the Bumpkit Library
+*/
+using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
 
 namespace Paint_Program
 {
-    class AnimatedGifEncoder
+    /// <summary>
+    /// Encodes multiple images as an animated gif to a stream. <br />
+    /// ALWAYS ALWAYS ALWAYS wire this up   in a using block <br />
+    /// Disposing the encoder will complete the file. <br />
+    /// Uses default .net GIF encoding and adds animation headers.
+    /// </summary>
+    public class AnimatedGifEncoder : IDisposable
     {
+        #region Header Constants
+        private const string FileType = "GIF";
+        private const string FileVersion = "89a";
+        private const byte FileTrailer = 0x3b;
 
-        private GifBitmapEncoder GifEncoder = new GifBitmapEncoder();
+        private const int ApplicationExtensionBlockIdentifier = 0xff21;
+        private const byte ApplicationBlockSize = 0x0b;
+        private const string ApplicationIdentification = "NETSCAPE2.0";
 
-        // <summary>
-        // Return the GIF specification version. This always returns "GIF89a"
-        // </summary>
-        public static String EncoderVersion = "GIF89a";
+        private const int GraphicControlExtensionBlockIdentifier = 0xf921;
+        private const byte GraphicControlExtensionBlockSize = 0x04;
 
-        // <summary>
-        // Get or set a value that indicate if the GIF will repeat the animation after the last frame is shown. The default value is True
-        // </summary>
-        public static Boolean Repeat = true;
+        private const long SourceGlobalColorInfoPosition = 10;
+        private const long SourceGraphicControlExtensionPosition = 781;
+        private const long SourceGraphicControlExtensionLength = 8;
+        private const long SourceImageBlockPosition = 789;
+        private const long SourceImageBlockHeaderLength = 11;
+        private const long SourceColorBlockPosition = 13;
+        private const long SourceColorBlockLength = 768;
+        #endregion
 
-        // <summary>
-        // Get or set a collection of metadata string to be embedded in the GIF file. Each string has a max length of 254 
-        // characters (Any character above this limit will be truncated). The string will be encoded UTF-7. 
-        // </summary>
-        public static List<String> MetadataString = new List<String>();
+        private bool _isFirstImage = true;
+        private int? _width;
+        private int? _height;
+        private int? _repeatCount;
+        private readonly Stream _stream;
 
-        // <summary>
-        //  Get or set the amount of time each frame will be shown (in milliseconds). The default value is 200ms
-        // </summary>
-        public static int FrameRate = 200;
+        // Public Accessors
+        public TimeSpan FrameDelay { get; set; }
 
-        // <summary>
-        // Add a frame to the encoder frame collection
-        // </summary>
-        // <param name="Frame">The bitmap to be added</param>
-        public void AddFrame(Bitmap Frame)
+        /// <summary>
+        /// Encodes multiple images as an animated gif to a stream. <br />
+        /// ALWAYS ALWAYS ALWAYS wire this in a using block <br />
+        /// Disposing the encoder will complete the file. <br />
+        /// Uses default .net GIF encoding and adds animation headers.
+        /// </summary>
+        /// <param name="stream">The stream that will be written to.</param>
+        /// <param name="width">Sets the width for this gif or null to use the first frame's width.</param>
+        /// <param name="height">Sets the height for this gif or null to use the first frame's height.</param>
+        public AnimatedGifEncoder(Stream stream, int? width = null, int? height = null, int? repeatCount = null)
         {
-            if (Frame != null)
-            {
-                if (!(Frame.Width == 0) && !(Frame.Height == 0))
-                {
-                    var bmpSource = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
-                                      Frame.GetHbitmap(),
-                                      IntPtr.Zero,
-                                      Int32Rect.Empty,
-                                      BitmapSizeOptions.FromEmptyOptions());
+            _stream = stream;
+            _width = width;
+            _height = height;
+            _repeatCount = repeatCount;
+        }
 
-                    GifEncoder.Frames.Add(BitmapFrame.Create(bmpSource));
-                }
-                else
+        /// <summary>
+        /// Adds a frame to this animation.
+        /// </summary>
+        /// <param name="img">The image to add</param>
+        /// <param name="x">The positioning x offset this image should be displayed at.</param>
+        /// <param name="y">The positioning y offset this image should be displayed at.</param>
+        public void AddFrame(Image img, int x = 0, int y = 0, TimeSpan? frameDelay = null)
+        {
+            using (var gifStream = new MemoryStream())
+            {
+                img.Save(gifStream, ImageFormat.Gif);
+                if (_isFirstImage) // Steal the global color table info
                 {
-                    throw (new ArgumentException("Argument Frame, The bitmap size cannot be zero"));
+                    InitHeader(gifStream, img.Width, img.Height);
                 }
+                WriteGraphicControlBlock(gifStream, frameDelay.GetValueOrDefault(FrameDelay));
+                WriteImageBlock(gifStream, !_isFirstImage, x, y, img.Width, img.Height);
+            }
+            _isFirstImage = false;
+        }
+
+        private void InitHeader(Stream sourceGif, int w, int h)
+        {
+            // File Header
+            WriteString(FileType);
+            WriteString(FileVersion);
+            WriteShort(_width.GetValueOrDefault(w)); // Initial Logical Width
+            WriteShort(_height.GetValueOrDefault(h)); // Initial Logical Height
+            sourceGif.Position = SourceGlobalColorInfoPosition;
+            WriteByte(sourceGif.ReadByte()); // Global Color Table Info
+            WriteByte(0); // Background Color Index
+            WriteByte(0); // Pixel aspect ratio
+            WriteColorTable(sourceGif);
+
+            // App Extension Header
+            WriteShort(ApplicationExtensionBlockIdentifier);
+            WriteByte(ApplicationBlockSize);
+            WriteString(ApplicationIdentification);
+            WriteByte(3); // Application block length
+            WriteByte(1);
+            WriteShort(_repeatCount.GetValueOrDefault(0)); // Repeat count for images.
+            WriteByte(0); // terminator
+        }
+
+        private void WriteColorTable(Stream sourceGif)
+        {
+            sourceGif.Position = SourceColorBlockPosition; // Locating the image color table
+            var colorTable = new byte[SourceColorBlockLength];
+            sourceGif.Read(colorTable, 0, colorTable.Length);
+            _stream.Write(colorTable, 0, colorTable.Length);
+        }
+
+        private void WriteGraphicControlBlock(Stream sourceGif, TimeSpan frameDelay)
+        {
+            sourceGif.Position = SourceGraphicControlExtensionPosition; // Locating the source GCE
+            var blockhead = new byte[SourceGraphicControlExtensionLength];
+            sourceGif.Read(blockhead, 0, blockhead.Length); // Reading source GCE
+
+            WriteShort(GraphicControlExtensionBlockIdentifier); // Identifier
+            WriteByte(GraphicControlExtensionBlockSize); // Block Size
+            WriteByte(blockhead[3] & 0xf7 | 0x08); // Setting disposal flag
+            WriteShort(Convert.ToInt32(frameDelay.TotalMilliseconds / 10)); // Setting frame delay
+            WriteByte(blockhead[6]); // Transparent color index
+            WriteByte(0); // Terminator
+        }
+
+        private void WriteImageBlock(Stream sourceGif, bool includeColorTable, int x, int y, int h, int w)
+        {
+            sourceGif.Position = SourceImageBlockPosition; // Locating the image block
+            var header = new byte[SourceImageBlockHeaderLength];
+            sourceGif.Read(header, 0, header.Length);
+            WriteByte(header[0]); // Separator
+            WriteShort(x); // Position X
+            WriteShort(y); // Position Y
+            WriteShort(h); // Height
+            WriteShort(w); // Width
+
+            if (includeColorTable) // If first frame, use global color table - else use local
+            {
+                sourceGif.Position = SourceGlobalColorInfoPosition;
+                WriteByte(sourceGif.ReadByte() & 0x3f | 0x80); // Enabling local color table
+                WriteColorTable(sourceGif);
             }
             else
             {
-                throw (new ArgumentException("Argument Frame cannot be nothing"));
+                WriteByte(header[9] & 0x07 | 0x07); // Disabling local color table
             }
+
+            WriteByte(header[10]); // LZW Min Code Size
+
+            // Read/Write image data
+            sourceGif.Position = SourceImageBlockPosition + SourceImageBlockHeaderLength;
+
+            var dataLength = sourceGif.ReadByte();
+            while (dataLength > 0)
+            {
+                var imgData = new byte[dataLength];
+                sourceGif.Read(imgData, 0, dataLength);
+
+                _stream.WriteByte(Convert.ToByte(dataLength));
+                _stream.Write(imgData, 0, dataLength);
+                dataLength = sourceGif.ReadByte();
+            }
+
+            _stream.WriteByte(0); // Terminator
+
         }
 
-
-        // <summary>
-        // Writes the animated GIF binary to a specified IO.Stream
-        // </summary>
-        // <param name="Stream">The stream where the binary is to be output. Can be any object type that derives from IO.Stream</param>
-        public void Save(Stream stream)
+        private void WriteByte(int value)
         {
-
-            var Data = new List<byte>();
-
-            if (GifEncoder.Frames.Count != 0)
-            {
-
-                //Get the raw binary
-
-                MemoryStream MStream = new MemoryStream();
-
-                GifEncoder.Save(MStream);
-
-                Data = MStream.ToArray().ToList();
-
-            }
-            else
-            {
-
-                throw (new Exception("Cannot encode the Gif. The frame collection is empty."));
-
-                //Only documented exception is if Frames.count=0
-            }
-
-
-            //Locate the right location where to insert the metadata in the binary
-
-            //This will be just before the first label 0x0021F9 (Graphic Control Extension)
-
-            int MetadataPTR = -1;
-
-            int flag = 0;
-
-            do
-            {
-
-                MetadataPTR += 1;
-
-
-                if (Data[MetadataPTR] == 0x00)
-                {
-
-
-                    if (Data[MetadataPTR + 1] == 0x21)
-                    {
-
-
-                        if (Data[MetadataPTR + 2] == 0xF9)
-                        {
-                            
-                            flag = 1;
-
-
-                        }
-
-
-                    }
-
-
-                }
-
-
-            } while (flag == 0 && MetadataPTR < Data.Count);
-
-
-            //SET METADATA Repeat
-
-            //This adds an Application Extension: Netscape2.0
-
-            if (Repeat)
-            {
-
-                byte[] Temp = new byte[(int)((Data.Count) - 1 + 19)];
-
-
-                //label: 0x21, 0xFF + one byte: length(0xB) + NETSCAPE2.0 + one byte: Datalength(0x3) + {1, 0, 0} + Block terminator, 1 byte, 0x00
-
-
-                byte[] ApplicationExtension = { 0x21, 0xFF, 0xB, 0x4E, 0x45, 0x54, 0x53, 0x43, 0x41, 0x50, 0x45, 0x32, 0x2E, 0x30, 0x3, 0x1, 0x0, 0x0, 0x0 };
-                Array.Copy(Data.ToArray(), Temp, MetadataPTR);
-                Array.Copy(ApplicationExtension, 0, Temp, MetadataPTR + 1, 19);
-                Array.Copy(Data.ToArray(), MetadataPTR + 1, Temp, MetadataPTR + 20, Data.Count - MetadataPTR - 1);
-                Data = Temp.ToList();
-            }
-
-            //SET METADATA Comments
-            //This add a Comment Extension for each string
-            if (MetadataString.Count > 0)
-            {
-                foreach (String Comment in MetadataString)
-                {
-                    if (!String.IsNullOrEmpty(Comment))
-                    {
-                        String TheComment;
-                        if (Comment.Length > 254)
-                        {
-                            TheComment = Comment.Substring(0, 254);
-                        }
-                        else
-                        {
-                            TheComment = Comment;
-                        }
-                        byte[] CommentStringBytes = Encoding.UTF7.GetBytes(TheComment);
-                        byte[] DataString = new byte[] { 0x21, 0xFE, Convert.ToByte(CommentStringBytes.Length) };
-                        DataString = DataString.Concat(CommentStringBytes).Concat(new byte[] { 0x0 }).ToArray();
-                        byte[] Temp = new byte[(Data.Count - 1 + DataString.Length)];
-                        Array.Copy(Data.ToArray(), Temp, MetadataPTR);
-                        Array.Copy(DataString, 0, Temp, MetadataPTR + 1, DataString.Length);
-                        Array.Copy(Data.ToArray(), MetadataPTR + 1, Temp, MetadataPTR + DataString.Length + 1, Data.Count - MetadataPTR - 1);
-                        Data = Temp.ToList();
-                    }
-                }
-            }
-
-            //SET METADATA frameRate
-            //Sets the third and fourth byte of each Graphic Control Extension (5 bytes from each label 0x0021F9)
-            //For x As Integer = 0 To Data.Count - 1
-            for (int x = 0; x < Data.Count - 1; x++)
-            {
-                if (Data.ElementAt(x) == 0)
-                {
-                    if (Data.ElementAt(x + 1) == 0x21)
-                    {
-                        if (Data.ElementAt(x + 2) == 0xF9)
-                        {
-                            if (Data.ElementAt(x + 3) == 4)
-                            {
-                                //word, little endian, the hundredths of second to show this frame
-                                byte[] Bte = BitConverter.GetBytes(FrameRate / 10);
-                                Data[x + 5] = Bte[0];
-                                Data[x + 6] = Bte[1];
-                            }
-                        }
-                    }
-                }
-            }
-            stream.Write(Data.ToArray(), 0, Data.Count);
+            _stream.WriteByte(Convert.ToByte(value));
         }
 
+        private void WriteShort(int value)
+        {
+            _stream.WriteByte(Convert.ToByte(value & 0xff));
+            _stream.WriteByte(Convert.ToByte((value >> 8) & 0xff));
+        }
+
+        private void WriteString(string value)
+        {
+            _stream.Write(value.ToArray().Select(c => (byte)c).ToArray(), 0, value.Length);
+        }
+
+        public void Dispose()
+        {
+            // Complete File
+            WriteByte(FileTrailer);
+
+            // Pushing data
+            _stream.Flush();
+        }
     }
 }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Paint_Program
 {
-    public partial class ZoomControl : UserControl
+    public partial class ZoomControl : UserControl, ITextUpdate
     {
 
         double dZoomFactor;
@@ -49,24 +49,36 @@ namespace Paint_Program
         private void tbZoom_TextChanged(object sender, EventArgs e)
         {
             try {
+                bool flag = true;
                 string s = tbZoom.Text;
-                double temp = Double.Parse(s);
-                if(temp <= ZOOM_MIN)
+                foreach (char c in s)
                 {
-                    dZoomFactor = ZOOM_MIN;
+                    if (!char.IsDigit(c))
+                    {
+                        tbZoom.Text = dZoomFactor.ToString();
+                        flag = false;
+                    }
                 }
-                else if(temp > ZOOM_MAX)
+                if (flag)
                 {
-                    dZoomFactor = ZOOM_MAX;
+                    double temp = Double.Parse(s);
+                    if (temp <= ZOOM_MIN)
+                    {
+                        dZoomFactor = ZOOM_MIN;
+                    }
+                    else if (temp > ZOOM_MAX)
+                    {
+                        dZoomFactor = ZOOM_MAX;
+                    }
+                    else
+                    {
+                        dZoomFactor = temp;
+                    }
+
+                    Console.WriteLine("Zoom" + ": " + dZoomFactor);
+                    settings.setDrawScale((float)dZoomFactor / 100.0f);
+                    tbZoom.Text = dZoomFactor.ToString();
                 }
-                else
-                {
-                    dZoomFactor = temp;
-                }
-                
-                Console.WriteLine("Zoom: " + dZoomFactor);
-                settings.setDrawScale((float)dZoomFactor/100.0f);
-                tbZoom.Text = dZoomFactor.ToString();
             }
             catch(Exception err)
             {
@@ -88,6 +100,11 @@ namespace Paint_Program
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void updateText()
+        {
+            lZoom.Text = SharedSettings.getGlobalString("zoom");
         }
     }
 }

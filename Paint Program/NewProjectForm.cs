@@ -21,6 +21,12 @@ namespace Paint_Program
         public NewProjectForm()
         {
             InitializeComponent();
+
+            this.Text = SharedSettings.getGlobalString("newproject_dialog_title");
+            lWidth.Text = SharedSettings.getGlobalString("newproject_dialog_width");
+            lHeight.Text = SharedSettings.getGlobalString("newproject_dialog_height");
+            bSubmit.Text = SharedSettings.getGlobalString("newproject_dialog_submit");
+            
             CanvasWidth = -1;
             CanvasHeight = -1;
         }

@@ -31,11 +31,6 @@ namespace Paint_Program
             throw new NotImplementedException();
         }
 
-        public string getToolTip()
-        {
-            return "Selector Tool";
-        }
-
         public bool isInitalized()
         {
             return isInit;

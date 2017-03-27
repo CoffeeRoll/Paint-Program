@@ -20,8 +20,8 @@ namespace Paint_Program
             try
             {
                 SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "Le Paint Project File|*.lep|All Files|*.*";
-                sfd.Title = "Save Project";
+                sfd.Filter = SharedSettings.getGlobalString("projectsave_dialog_filter");
+                sfd.Title = SharedSettings.getGlobalString("projectsave_dialog_title");
                 sfd.OverwritePrompt = false;
                 sfd.ShowDialog();
 
@@ -67,12 +67,12 @@ namespace Paint_Program
 
                     System.IO.Directory.Delete(baseDir + @"\save", true);
 
-                    string message = "The file was saved!";
+                    string message = SharedSettings.getGlobalString("projectsave_saved");
                     MessageBox.Show(message);
                 }
                 catch (Exception e)
                 {
-                    string message = "An error occurred while saving. \n\n" + e.ToString();
+                    string message = SharedSettings.getGlobalString("projectsave_error") + "\n\n" + e.ToString();
                     MessageBox.Show(message);
                 }
 

@@ -21,8 +21,8 @@ namespace Paint_Program
             try
             {
                 OpenFileDialog ofd = new OpenFileDialog();
-                ofd.Filter = "Le Paint Project|*.lep|All File Types|*.*";
-                ofd.Title = "Open a Project File";
+                ofd.Filter = SharedSettings.getGlobalString("projectopen_dialog_filter");
+                ofd.Title = SharedSettings.getGlobalString("projectopen_dialog_title");
                 ofd.ShowDialog();
 
 
@@ -98,7 +98,7 @@ namespace Paint_Program
                 }
                 catch (Exception e)
                 {
-                    string message = "An error occurred while opening. \n\n" + e.ToString();
+                    string message = SharedSettings.getGlobalString("projectopen_error") + "\n\n" + e.ToString();
                     MessageBox.Show(message);
                 }
             }

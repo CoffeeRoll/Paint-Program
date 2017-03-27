@@ -22,14 +22,14 @@ namespace Paint_Program.Languages {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class en_US {
+    internal class en_UK {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal en_US() {
+        internal en_UK() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Paint_Program.Languages {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Paint_Program.Languages.en-US", typeof(en_US).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Paint_Program.Languages.en-UK", typeof(en_UK).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -79,7 +79,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Primary Color.
+        ///   Looks up a localized string similar to Primary Colour.
         /// </summary>
         internal static string brushsettings_color_primary {
             get {
@@ -88,7 +88,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Secondary Color.
+        ///   Looks up a localized string similar to Secondary Colour.
         /// </summary>
         internal static string brushsettings_color_secondary {
             get {
@@ -223,7 +223,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An error occurred while opening..
+        ///   Looks up a localized string similar to An error occurred whilst opening..
         /// </summary>
         internal static string imageimport_error {
             get {
@@ -385,7 +385,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An error occurred while opening the project..
+        ///   Looks up a localized string similar to An error occurred whilst  opening the project..
         /// </summary>
         internal static string projectopen_error {
             get {
@@ -412,7 +412,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An error occurred while saving..
+        ///   Looks up a localized string similar to An error occurred whilst saving..
         /// </summary>
         internal static string projectsave_error {
             get {
@@ -430,7 +430,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to English (US).
+        ///   Looks up a localized string similar to English (UK).
         /// </summary>
         internal static string resource_languagename {
             get {
@@ -493,7 +493,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Color Selection.
+        ///   Looks up a localized string similar to Colour Selection.
         /// </summary>
         internal static string tooltip_colorselect {
             get {
