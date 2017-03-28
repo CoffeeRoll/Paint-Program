@@ -252,6 +252,12 @@ namespace Paint_Program
         {
             iActiveTool = ToolButtons.IndexOf((ToolStripButton)sender);
             Tools[iActiveTool].init(ss);
+
+            foreach(ToolStripButton b in ToolButtons)
+            {
+                b.BackColor = Color.Transparent;
+            }
+            ToolButtons[iActiveTool].BackColor = Color.LightGreen;
         }
 
         private void handleParentResize(object sender, EventArgs e)

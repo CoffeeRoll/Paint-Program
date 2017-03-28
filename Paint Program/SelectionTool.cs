@@ -93,10 +93,20 @@ namespace Paint_Program
                     tmpGr.DrawRectangle(p, tlX, tlY, width, height);
                     ss.setInterfaceBitmap(temp);
 
+                    //Get selected area data
                     Bitmap bEdit = ss.getBitmapCurrentLayer(true).Clone(new Rectangle(loc, sze), ss.getBitmapCurrentLayer(true).PixelFormat);
+
+                    //clear data below selection
+                    ss.getActiveGraphics().CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
+                    ss.getActiveGraphics().FillRectangle(new SolidBrush(Color.Transparent), new Rectangle(loc, sze));
+                    ss.getActiveGraphics().CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceOver;
+
+                    //Update so selection is editable
                     ss.setBitmapSelectionArea(bEdit);
                     ss.setActiveGraphics(Graphics.FromImage(bEdit));
                     ss.setBitmapCurrentLayer(bEdit);
+
+                    
 
                     ss.setRenderBitmapInterface(true);
                     ss.setActiveSelection(true);
