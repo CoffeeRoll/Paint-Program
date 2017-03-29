@@ -109,5 +109,10 @@ namespace Paint_Program
             TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             TB.Location = e.Location;
         }
+
+        public string getToolTip()
+        {
+            return SharedSettings.getGlobalString("tooltip_text");
+        }
     }
 }

@@ -39,11 +39,6 @@ namespace Paint_Program
             return @"..\..\Images\sampler.png";
         }
 
-        public string getToolTip()
-        {
-            return "Green Screen";
-        }
-
         public void onMouseDown(object sender, MouseEventArgs e)
         {
             if (settings.getBitmapCurrentLayer(true) != null)
@@ -129,6 +124,11 @@ namespace Paint_Program
         public void setLayerData(Bitmap bit)
         {
             bLayer = bit;
+        }
+
+        public string getToolTip()
+        {
+            return SharedSettings.getGlobalString("tooltip_greenscreen");
         }
     }
 }

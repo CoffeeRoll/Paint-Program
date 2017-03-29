@@ -213,6 +213,8 @@ namespace Paint_Program
             foreach (ITool tool in Tools)
             {
                 ToolStripButton temp = new ToolStripButton(Image.FromFile(tool.getToolIconPath()));
+                temp.ToolTipText = tool.getToolTip();
+                temp.AutoToolTip = false;
                 temp.AutoSize = false;
                 temp.Width = tsWidth;
                 temp.Height = temp.Width;

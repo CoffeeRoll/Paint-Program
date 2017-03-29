@@ -124,5 +124,11 @@ namespace Paint_Program
         {
 
         }
+
+        public string getToolTip()
+        {
+            return SharedSettings.getGlobalString("tooltip_selection");
+        }
+
     }
 }

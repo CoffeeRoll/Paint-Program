@@ -45,11 +45,6 @@ namespace Paint_Program
             return @"..\..\Images\pencil.png";
         }
 
-        public string getToolTip()
-        {
-            return "Pencil Tool";
-        }
-
         private void updateColors()
         {
             int R = settings.getPrimaryBrushColor().R;
@@ -137,6 +132,11 @@ namespace Paint_Program
 
         public void setLayerData(Bitmap bit)
         {
+        }
+
+        public string getToolTip()
+        {
+            return SharedSettings.getGlobalString("tooltip_pencil");
         }
     }
 }

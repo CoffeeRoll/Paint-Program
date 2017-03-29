@@ -108,6 +108,10 @@ namespace Paint_Program
         {
             throw new NotImplementedException();
         }
-        
+
+        public string getToolTip()
+        {
+            return SharedSettings.getGlobalString("tooltip_eraser");
+        }
     }
 }
