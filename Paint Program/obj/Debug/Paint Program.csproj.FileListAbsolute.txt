@@ -323,10 +323,3 @@ C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Pai
 C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.en-UK.resources
 C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.es-ES.resources
 C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.fr-FR.resources
-K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.GDriveSaveDialog.resources
-K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.de-DE.resources
-K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.en-UK.resources
-K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.es-ES.resources
-K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.en-US.resources
-K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.fr-FR.resources
-K:\Paint-Program\Paint Program\obj\Debug\Paint_Program.ZoomControl.resources
