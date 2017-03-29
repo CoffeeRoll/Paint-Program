@@ -16,8 +16,6 @@ namespace Paint_Program
         private SharedSettings settings;
         private bool bActive, bMouseDown, bInit;
 
-        private Bitmap bLayer;
-
         public ColorSamplingTool()
         {
 
@@ -50,7 +48,7 @@ namespace Paint_Program
             if (graphics != null)
             {
                 bMouseDown = true;
-                Color c = bLayer.GetPixel(e.Location.X, e.Location.Y);
+                Color c = SharedSettings.bitmapCurrentLayer.GetPixel(e.Location.X, e.Location.Y);
 
                 if (e.Button == MouseButtons.Left) {
                     settings.setPrimaryBrushColor(c);
@@ -93,7 +91,6 @@ namespace Paint_Program
 
         public void setLayerData(Bitmap bit)
         {
-            bLayer = bit;
         }
     }
 }

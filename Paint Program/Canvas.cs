@@ -142,9 +142,9 @@ namespace Paint_Program
 
             //Center the canvas on the screen, but don't allow it to be draw off the screen
             int minXPos = 0;
-            int maxXPos = (bs.Location.X / 2) - (((int)(p.Width * zc.getZoomFactor())) / 2);
-            int minYPos = 0;
-            int maxYPos = (zc.Location.Y / 2) - (((int)(p.Height * zc.getZoomFactor())) / 2);
+            int maxXPos = (bs.Location.X / 2) - (((int)(p.Width)) / 2);
+            int minYPos = menuHeight;
+            int maxYPos = (zc.Location.Y / 2) - (((int)(p.Height)) / 2);
 
             int ploc_x = (maxXPos < minXPos) ? minXPos : maxXPos;
             int ploc_y = maxYPos < minYPos ? minYPos : maxYPos;
@@ -270,9 +270,11 @@ namespace Paint_Program
             ToolButtons[iActiveTool].BackColor = Color.LightGreen;
         }
 
-        public void updatePositions()
+        public void updatePositions(object sender)
         {
-            handleParentResize(null, null);
+            Parent.Refresh();
+            handleParentResize(sender, null);
+
         }
 
         private void handleParentResize(object sender, EventArgs e)
@@ -294,9 +296,9 @@ namespace Paint_Program
 
             //Center the canvas on the screen, but don't allow it to be draw off the screen
             int minXPos = 0;
-            int maxXPos = (bs.Location.X / 2) - (((int)(p.Width * zc.getZoomFactor())) / 2);
+            int maxXPos = (bs.Location.X / 2) - (((int)(p.Width)) / 2);
             int minYPos = menuHeight;
-            int maxYPos = (zc.Location.Y / 2) - (((int)(p.Height * zc.getZoomFactor())) / 2);
+            int maxYPos = (zc.Location.Y / 2) - (((int)(p.Height)) / 2);
 
             int ploc_x = (maxXPos < minXPos) ? minXPos : maxXPos;
             int ploc_y = maxYPos < minYPos ? minYPos : maxYPos;

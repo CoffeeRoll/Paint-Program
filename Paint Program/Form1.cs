@@ -486,6 +486,14 @@ namespace Paint_Program
                 }
             }
         }
+
+        public void updateViews()
+        {
+            if (c != null)
+            {
+                c.updatePositions(this);
+            }
+        }
     }
 
 }

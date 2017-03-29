@@ -78,6 +78,7 @@ namespace Paint_Program
                     Console.WriteLine("Zoom" + ": " + dZoomFactor);
                     settings.setDrawScale((float)dZoomFactor / 100.0f);
                     tbZoom.Text = dZoomFactor.ToString();
+                    ((Form1)this.Parent).updateViews();
                 }
             }
             catch(Exception err)
