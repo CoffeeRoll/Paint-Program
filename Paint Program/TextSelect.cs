@@ -14,17 +14,11 @@ namespace Paint_Program
     {
         public string UserText { get; private set; }
         public int FontSize { get; private set; }
-        public string FontType { get; private set; }
-        public FontFamily[] Families { get; }
+
 
         public TextSelect()
         {
             InitializeComponent();
-            
-            foreach(FontFamily oneFontFamily in FontFamily.Families)
-            {
-                Fontbox.Items.Add(oneFontFamily.Name);
-            }
         }
 
         private void tSelect_Click(object sender, EventArgs e)
@@ -40,7 +34,6 @@ namespace Paint_Program
             {
                 this.UserText = userText.Text;
                 this.FontSize = size;
-                this.FontType = Fontbox.Text;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

@@ -241,9 +241,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TextSelect.resx">
-      <DependentUpon>TextSelect.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ZoomControl.resx">
       <DependentUpon>ZoomControl.cs</DependentUpon>
     </EmbeddedResource>

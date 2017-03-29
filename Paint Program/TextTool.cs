@@ -82,9 +82,8 @@ namespace Paint_Program
                     {
                         string text = TxtSelect.UserText;
                         int fontSize = TxtSelect.FontSize;
-                        string fontType = TxtSelect.FontType;
 
-                        graphics.DrawString(text, new Font(fontType, fontSize), Brushes.Black, textRect);
+                        graphics.DrawString(text, new Font("Arial", fontSize), Brushes.Black, textRect);
                     }
 
                 }
