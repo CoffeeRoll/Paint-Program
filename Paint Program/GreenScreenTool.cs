@@ -54,27 +54,44 @@ namespace Paint_Program
 
                 if (e.Button == MouseButtons.Left)
                 {
-                    Bitmap Temp = settings.getBitmapCurrentLayer(false);
+                    Bitmap Temp = settings.getBitmapCurrentLayer(true);
 
-                    for (int a = -tol; a < tol; a++)
+                    //Avoid Green screening Transparancy
+                    //if (!(Temp.GetPixel(e.X, e.Y).A == 255))
                     {
-                        for (int r = -tol; r < tol; r++)
+
+                        for (int a = -tol; a < tol; a++)
                         {
-                            for (int g = -tol; g < tol; g++)
+                            for (int r = -tol; r < tol; r++)
                             {
-                                for (int b = -tol; b < tol; b++)
+                                for (int g = -tol; g < tol; g++)
                                 {
-                                    if (!((c.R + r) < 0 || (c.G + g) < 0 || (c.B + b) < 0 || (c.R + r) > 255 || (c.G + g) > 255 || (c.B + b) > 255 || (c.A + a) < 0 || (c.A + a) > 255))
+                                    for (int b = -tol; b < tol; b++)
                                     {
-                                        Color tmpColor = Color.FromArgb(c.R + r, c.G + g, c.B + b);
-                                        Temp.MakeTransparent(tmpColor);
+                                        if (!((c.R + r) < 0 || (c.G + g) < 0 || (c.B + b) < 0 || (c.R + r) > 255 || (c.G + g) > 255 || (c.B + b) > 255 || (c.A + a) < 0 || (c.A + a) > 255))
+                                        {
+                                            Color tmpColor = Color.FromArgb(c.R + r, c.G + g, c.B + b);
+                                            //Temp.MakeTransparent(tmpColor);
+
+                                            //Experimaental -- Slower, but avoids extra code complexity
+                                            for (int x = 0; x < Temp.Width; x++)
+                                            {
+                                                for (int y = 0; y < Temp.Height; y++)
+                                                {
+                                                    if (Temp.GetPixel(x, y).ToArgb() == tmpColor.ToArgb())
+                                                    {
+                                                        Temp.SetPixel(x, y, Color.Transparent);
+                                                    }
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                     
-                    settings.setBitmapLayerUpdate(Temp);
+                    //settings.setBitmapLayerUpdate(Temp);
                     
                 }
             }

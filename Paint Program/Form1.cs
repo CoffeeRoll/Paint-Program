@@ -29,12 +29,16 @@ namespace Paint_Program
 
             CultureInfo ci = CultureInfo.CurrentUICulture;
 
+            //Potential Issue is Computer Language isn't supported
             SharedSettings.languageFolderPath = @"..\..\Languages\";
             SharedSettings.language = ci.Name.ToString();
 
             populateLanguages();
 
             updateText();
+
+            //Default Project
+            makeNewProject(500, 500);
         }
 
         private void populateLanguages()

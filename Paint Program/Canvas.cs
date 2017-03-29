@@ -139,7 +139,17 @@ namespace Paint_Program
 
             p = new Display();
             p.Size = new Size(canvasWidth, canvasHeight);
-            p.Location = new Point(0, menuHeight);
+
+            //Center the canvas on the screen, but don't allow it to be draw off the screen
+            int minXPos = 0;
+            int maxXPos = (bs.Location.X / 2) - (((int)(p.Width * zc.getZoomFactor())) / 2);
+            int minYPos = 0;
+            int maxYPos = (zc.Location.Y / 2) - (((int)(p.Height * zc.getZoomFactor())) / 2);
+
+            int ploc_x = (maxXPos < minXPos) ? minXPos : maxXPos;
+            int ploc_y = maxYPos < minYPos ? minYPos : maxYPos;
+            p.Location = new Point(ploc_x, ploc_y);
+
             p.MouseDown += handleMouseDown;
             p.MouseUp += handleMouseUp;
             p.MouseMove += handleMouseMove;
@@ -260,6 +270,11 @@ namespace Paint_Program
             ToolButtons[iActiveTool].BackColor = Color.LightGreen;
         }
 
+        public void updatePositions()
+        {
+            handleParentResize(null, null);
+        }
+
         private void handleParentResize(object sender, EventArgs e)
         {
 
@@ -274,8 +289,18 @@ namespace Paint_Program
             //Moves all the Controls to their new location
             lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
             ts.Height = maxHeight - menuHeight;
-            bs.Location = new Point(maxWidth - bs.Width, menuHeight);
-            zc.Location = new Point(tsWidth, maxHeight -SystemInformation.CaptionHeight - menuHeight - zc.Height);
+            bs.Location = new Point(maxWidth - bs.Width, menuHeight * 2);
+            zc.Location = new Point(tsWidth, maxHeight - SystemInformation.CaptionHeight - menuHeight - zc.Height);
+
+            //Center the canvas on the screen, but don't allow it to be draw off the screen
+            int minXPos = 0;
+            int maxXPos = (bs.Location.X / 2) - (((int)(p.Width * zc.getZoomFactor())) / 2);
+            int minYPos = menuHeight;
+            int maxYPos = (zc.Location.Y / 2) - (((int)(p.Height * zc.getZoomFactor())) / 2);
+
+            int ploc_x = (maxXPos < minXPos) ? minXPos : maxXPos;
+            int ploc_y = maxYPos < minYPos ? minYPos : maxYPos;
+            p.Location = new Point(ploc_x, ploc_y);
 
             pScaled.Size = new Size((lv.Location.X - this.Location.X) - 15 , (zc.Location.Y - this.Location.Y) - 15);
 
