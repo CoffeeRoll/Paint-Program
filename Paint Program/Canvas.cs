@@ -35,6 +35,8 @@ namespace Paint_Program
         //Index of the currently active tool
         private int iActiveTool;
 
+        //private static ToolTip tt;
+
         LayerView lv;
         ToolStrip ts;
         BrushSettings bs;
@@ -69,7 +71,7 @@ namespace Paint_Program
         public Canvas(int w, int h, int pw, int ph)
         {
             InitializeComponent();
-            
+
             ss = new SharedSettings();
 
             canvasWidth = w;
@@ -213,6 +215,7 @@ namespace Paint_Program
             foreach (ITool tool in Tools)
             {
                 ToolStripButton temp = new ToolStripButton(Image.FromFile(tool.getToolIconPath()));
+                
                 temp.ToolTipText = tool.getToolTip();
                 temp.AutoToolTip = false;
                 temp.AutoSize = false;
@@ -221,10 +224,37 @@ namespace Paint_Program
                 temp.Click += handleToolStripItemClick;
                 ToolButtons.Add(temp);
                 ts.Items.Add(temp);
+
+                temp.MouseEnter += delegate
+                {
+                    //New object on every mouse over -- not great
+                    ToolTip tt = new ToolTip();
+                    temp.Tag = tt;
+
+                    //Draw the ToolTip Twice because it doesn't work with one draw -- also not great
+                    ((ToolTip)temp.Tag).Show(tool.getToolTip(), this, temp.Bounds.X, temp.Bounds.Y + temp.Height);
+                    ((ToolTip)temp.Tag).Show(tool.getToolTip(), this, temp.Bounds.X, temp.Bounds.Y + temp.Height);
+                };
+
+                temp.MouseLeave += delegate {
+                    //ToolTip.Hide doesn't work aparently?
+                    //Dispose the object when the mouse moves away to force it to go away -- really not great
+                    ((ToolTip)temp.Tag).Dispose();
+                };
             }
 
 
             /**/
+        }
+
+        public void zoomIn()
+        {
+            zc.setZoom(zc.getZoomPercentage() + 10);
+        }
+
+        public void zoomOut()
+        {
+            zc.setZoom(zc.getZoomPercentage() - 10);
         }
 
         private void HandleTabletData(object sender, MessageReceivedEventArgs e)

@@ -24,6 +24,10 @@ namespace Paint_Program
         public Form1()
         {
             InitializeComponent();
+
+            KeyPreview = true;
+            this.KeyDown += Form1_KeyDown;
+
             this.MinimumSize = new System.Drawing.Size(900, 677);
             ss = new SharedSettings();
 
@@ -492,6 +496,51 @@ namespace Paint_Program
             if (c != null)
             {
                 c.updatePositions(this);
+            }
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            //CTRL + N for New Project
+            if(e.Control && e.KeyCode == Keys.N)
+            {
+                tsmiFile_New_Click(this, null);
+            }
+            //CTRL + S for Save Project
+            if (e.Control && e.KeyCode == Keys.S)
+            {
+                tsmiFile_Save_Click(this, null);
+            }
+            //CTRL + O for open Project
+            if (e.Control && e.KeyCode == Keys.O)
+            {
+                tsmiFile_Load_Click(this, null);
+            }
+            //CTRL + I for Import Image
+            if (e.Control && e.KeyCode == Keys.I)
+            {
+                tsmiFile_Import_Click(this, null);
+            }
+            //CTRL + E for Export Image
+            if (e.Control && e.KeyCode == Keys.E)
+            {
+                tsmiFile_Export_Click(this, null);
+            }
+            //CTRL + + for zoom in
+            if (e.Control && e.KeyCode == Keys.Oemplus)
+            {
+                if(c != null)
+                {
+                    c.zoomIn();
+                }
+            }
+            //CTRL + - for zoom out
+            if (e.Control && e.KeyCode == Keys.OemMinus)
+            {
+                if (c != null)
+                {
+                    c.zoomOut();
+                }
             }
         }
     }
