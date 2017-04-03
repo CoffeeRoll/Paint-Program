@@ -23,7 +23,7 @@ namespace Paint_Program
     /// Disposing the encoder will complete the file. <br />
     /// Uses default .net GIF encoding and adds animation headers.
     /// </summary>
-    public class AnimatedGifEncoder : IDisposable
+    public class GifEncoder : IDisposable
     {
         #region Header Constants
         private const string FileType = "GIF";
@@ -64,7 +64,7 @@ namespace Paint_Program
         /// <param name="stream">The stream that will be written to.</param>
         /// <param name="width">Sets the width for this gif or null to use the first frame's width.</param>
         /// <param name="height">Sets the height for this gif or null to use the first frame's height.</param>
-        public AnimatedGifEncoder(Stream stream, int? width = null, int? height = null, int? repeatCount = null)
+        public GifEncoder(Stream stream, int? width = null, int? height = null, int? repeatCount = null)
         {
             _stream = stream;
             _width = width;

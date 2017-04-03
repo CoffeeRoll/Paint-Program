@@ -32,6 +32,8 @@ namespace Paint_Program
         /* returns a bitmap that will be displayed in the ToolStrip */
         string getToolIconPath();
 
+        string getToolTip();
+
         bool requiresLayerData();
 
         void setLayerData(Bitmap bit);

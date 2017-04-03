@@ -16,9 +16,6 @@ namespace Paint_Program
         private bool bActive, bMouseDown, bInit;
 
         private Point pOld, pNew;
-        private SizeF tSize;
-
-        private Color fontColor;
 
         public TextTool()
         {
@@ -56,14 +53,29 @@ namespace Paint_Program
             if (graphics != null)
             {
                 bMouseDown = true;
-                pOld = e.Location;
             }
-            
+
+            CreateTextBox(e);
         }
 
         public void onMouseMove(object sender, MouseEventArgs e)
         {
-
+            //throw new NotImplementedException();
+            //if (graphics != null && bMouseDown)
+            //{
+            //    if (e.Button == MouseButtons.Left)
+            //    {
+            //        pNew = e.Location;
+            //        graphics.DrawLine(new Pen(settings.getPrimaryBrushColor()), pOld, pNew);
+            //        pOld = pNew;
+            //    }
+            //    else
+            //    {
+            //        pNew = e.Location;
+            //        graphics.DrawLine(new Pen(settings.getSecondaryBrushColor()), pOld, pNew);
+            //        pOld = pNew;
+            //    }
+            //}
         }
 
         public void onMouseUp(object sender, MouseEventArgs e)
@@ -71,42 +83,6 @@ namespace Paint_Program
             if (graphics != null)
             {
                 bMouseDown = false;
-                pNew = e.Location;
-
-                tSize.Height = Math.Abs(pOld.X - pNew.X);
-                tSize.Width = Math.Abs(pOld.Y - pNew.Y);
-
-                RectangleF textRect = new RectangleF(pOld, tSize);
-
-                using (TextSelect TxtSelect = new TextSelect())
-                {
-                    if (TxtSelect.ShowDialog() == DialogResult.OK)
-                    {
-                        string text = TxtSelect.UserText;
-                        int fontSize = TxtSelect.FontSize;
-                        string fontType = TxtSelect.FontType;
-
-                        switch (e.Button)
-                        {
-                            case MouseButtons.Left:
-                                fontColor = settings.getPrimaryBrushColor();
-                                break;
-                            case MouseButtons.Right:
-                                fontColor = settings.getSecondaryBrushColor();
-                                break;
-                            default:
-                                fontColor = Color.Black;
-                                break;
-                        }
-
-                        SolidBrush brush = new SolidBrush(fontColor);
- 
-                        graphics.DrawString(text, new Font(fontType, fontSize), brush, textRect);
-                    }
-
-                }
-
-
             }
         }
 
@@ -124,6 +100,19 @@ namespace Paint_Program
         {
             
         }
-        
+
+        public void CreateTextBox(MouseEventArgs e)
+        {
+            TextBox TB = new TextBox();
+
+            TB.Font = new Font("Arial", 20);
+            TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            TB.Location = e.Location;
+        }
+
+        public string getToolTip()
+        {
+            return SharedSettings.getGlobalString("tooltip_text");
+        }
     }
 }

@@ -90,9 +90,12 @@ namespace Paint_Program
         {
             isActive = f;
             updateColor();
-            ss.setBitmapCurrentLayer(getBitmap());
-            ss.setActiveGraphics(g);
-            ss.setActiveLayerGraphics(g);
+            if (isActive)
+            {
+                ss.setBitmapCurrentLayer(getBitmap());
+                ss.setActiveGraphics(g);
+                ss.setActiveLayerGraphics(g);
+            }
         }
 
         public void setVisibility(bool f)

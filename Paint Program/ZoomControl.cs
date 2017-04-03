@@ -78,6 +78,7 @@ namespace Paint_Program
                     Console.WriteLine("Zoom" + ": " + dZoomFactor);
                     settings.setDrawScale((float)dZoomFactor / 100.0f);
                     tbZoom.Text = dZoomFactor.ToString();
+                    ((Form1)this.Parent).updateViews();
                 }
             }
             catch(Exception err)
@@ -87,9 +88,35 @@ namespace Paint_Program
             
         }
 
+        public void setZoom(double d)
+        {
+            if (d <= ZOOM_MIN)
+            {
+                dZoomFactor = ZOOM_MIN;
+            }
+            else if (d > ZOOM_MAX)
+            {
+                dZoomFactor = ZOOM_MAX;
+            }
+            else
+            {
+                dZoomFactor = d;
+            }
+
+            //Console.WriteLine("Zoom" + ": " + dZoomFactor);
+            settings.setDrawScale((float)dZoomFactor / 100.0f);
+            tbZoom.Text = dZoomFactor.ToString();
+            ((Form1)this.Parent).updateViews();
+        }
+
         public double getZoomPercentage()
         {
             return dZoomFactor;
+        }
+
+        public double getZoomFactor()
+        {
+            return dZoomFactor / 100.0;
         }
 
         private void label1_Click(object sender, EventArgs e)

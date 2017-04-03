@@ -19,7 +19,7 @@ namespace Paint_Program
             try {
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.OverwritePrompt = false;
-                sfd.Filter = SharedSettings.getGlobalString("filesave_filter");
+                sfd.Filter = "Bitmap Image|*.bmp|GIF Image|*.gif|Animated GIF|*.gif|Icon Image|*.ico|JPeg Image|*.jpg|PNG Image|*.png|TIFF Image|*.tiff";
                 sfd.Title = "Save an Image File";
                 sfd.ShowDialog();
 
@@ -75,13 +75,13 @@ namespace Paint_Program
                                 break;
                         }
 
-                        string message = SharedSettings.getGlobalString("filesave_saved");
+                        string message = "The file was saved!";
                         MessageBox.Show(message);
                         fs.Close();
                 }
                 catch (Exception e)
                 {
-                    string message = SharedSettings.getGlobalString("filesave_error") + "\n\n" + e.ToString();
+                    string message = "An error occurred while saving. \n\n" + e.ToString();
                     MessageBox.Show(message);
                 }
             }
@@ -91,7 +91,7 @@ namespace Paint_Program
         {
             using (var stream = new MemoryStream())
             {
-                using (var encoder = new AnimatedGifEncoder(stream, null, null, int.MaxValue))
+                using (var encoder = new GifEncoder(stream, null, null, 12))
                 {
                     for (int i = 0; i < SharedSettings.Layers.Length; i++)
                     {
