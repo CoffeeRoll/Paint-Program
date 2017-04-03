@@ -283,3 +283,4 @@ C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Pai
 C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.en-UK.resources
 C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.es-ES.resources
 C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.fr-FR.resources
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.TextSelect.resources
