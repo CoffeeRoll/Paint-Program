@@ -37,6 +37,8 @@ namespace Paint_Program
             isVisible = true;
             LayerBitmap = new Bitmap(w, h, pf);
             g = Graphics.FromImage(LayerBitmap);
+            SharedSettings.bitmapCurrentLayer = LayerBitmap;
+            SharedSettings.gActiveGraphics = g;
             cbVisible.Checked = true;
 
             this.BackColor = cNotActive;
@@ -84,6 +86,8 @@ namespace Paint_Program
         public void setBitmap(Bitmap b)
         {
             LayerBitmap = b;
+            this.g = Graphics.FromImage(b);
+            SharedSettings.gActiveGraphics = g;
         }
 
         public void setActive(bool f)

@@ -253,7 +253,7 @@
     <value>Beim Öffnen des Projekts ist ein Fehler aufgetreten.</value>
   </data>
   <data name="projectsave_dialog_filter" xml:space="preserve">
-    <value>Le Paint Projekt|*.lep|Alle Datein|*.*</value>
+    <value>Alle Datein|*.*|Le Paint Projekt|*.lep|Gif|*.gif</value>
   </data>
   <data name="projectsave_dialog_title" xml:space="preserve">
     <value>Projekt speichern</value>

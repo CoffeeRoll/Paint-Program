@@ -250,7 +250,7 @@
     <value>Tiled</value>
   </data>
   <data name="projectopen_dialog_filter" xml:space="preserve">
-    <value>Le Paint Project|*.lep|All File Types|*.*</value>
+    <value>All File Types|*.*|Le Paint Project|*.lep|Gif|*.gif</value>
   </data>
   <data name="projectopen_dialog_title" xml:space="preserve">
     <value>Open a Project File</value>

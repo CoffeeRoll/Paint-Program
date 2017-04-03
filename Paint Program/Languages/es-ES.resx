@@ -253,7 +253,7 @@
     <value>Se produjo un error al abrir.</value>
   </data>
   <data name="projectsave_dialog_filter" xml:space="preserve">
-    <value>Le Paint Project File|*.lep|Todos los archivos|*.*</value>
+    <value>Todos los archivos|*.*|Le Paint Project File|*.lep|Gif|*.gif</value>
   </data>
   <data name="projectsave_dialog_title" xml:space="preserve">
     <value>Guardar Proyecto</value>
