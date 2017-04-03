@@ -160,6 +160,7 @@
     <Compile Include="LayerView.Designer.cs">
       <DependentUpon>LayerView.cs</DependentUpon>
     </Compile>
+    <Compile Include="MoveTool.cs" />
     <Compile Include="NewProjectForm.cs">
       <SubType>Form</SubType>
     </Compile>
