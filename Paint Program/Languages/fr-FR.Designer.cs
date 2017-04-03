@@ -448,7 +448,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Projet Le Paint|*.lep|Tous les fichiers|*.*.
+        ///   Looks up a localized string similar to Tous les fichiers|*.*|Projet Le Paint|*.lep|Gif|*.gif.
         /// </summary>
         internal static string projectopen_dialog_filter {
             get {
