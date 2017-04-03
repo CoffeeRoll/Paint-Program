@@ -478,7 +478,7 @@ namespace Paint_Program
         }
 
 
-        private void tsmi_Save_Google_Drive_Click(object sender, EventArgs e)
+        private void tsmiFile_SaveGoogleDrive_Click(object sender, EventArgs e)
         {
             using (GDriveSaveDialog gDrive = new GDriveSaveDialog())
             {
@@ -526,6 +526,11 @@ namespace Paint_Program
             if (e.Control && e.KeyCode == Keys.E)
             {
                 tsmiFile_Export_Click(this, null);
+            }
+            //CTRL + G for Export to Google Drive
+            if (e.Control && e.KeyCode == Keys.G)
+            {
+                tsmiFile_SaveGoogleDrive_Click(this, null);
             }
             //CTRL + + for zoom in
             if (e.Control && e.KeyCode == Keys.Oemplus)

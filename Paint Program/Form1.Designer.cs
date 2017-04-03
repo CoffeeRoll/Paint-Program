@@ -138,7 +138,7 @@
             this.tsmiFile_SaveGoogleDrive.Name = "tsmiFile_SaveGoogleDrive";
             this.tsmiFile_SaveGoogleDrive.Size = new System.Drawing.Size(186, 22);
             this.tsmiFile_SaveGoogleDrive.Text = "Save To Google Drive";
-            this.tsmiFile_SaveGoogleDrive.Click += new System.EventHandler(this.tsmi_Save_Google_Drive_Click);
+            this.tsmiFile_SaveGoogleDrive.Click += new System.EventHandler(this.tsmiFile_SaveGoogleDrive_Click);
             // 
             // tsmiEdit
             // 
