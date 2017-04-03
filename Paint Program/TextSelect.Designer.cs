@@ -32,12 +32,13 @@
             this.tSelect = new System.Windows.Forms.Button();
             this.userText = new System.Windows.Forms.TextBox();
             this.fontSize = new System.Windows.Forms.TextBox();
+            this.fontBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // tSelect
             // 
             this.tSelect.BackColor = System.Drawing.Color.Green;
-            this.tSelect.Location = new System.Drawing.Point(172, 10);
+            this.tSelect.Location = new System.Drawing.Point(300, 10);
             this.tSelect.Name = "tSelect";
             this.tSelect.Size = new System.Drawing.Size(32, 23);
             this.tSelect.TabIndex = 0;
@@ -51,7 +52,6 @@
             this.userText.Name = "userText";
             this.userText.Size = new System.Drawing.Size(100, 20);
             this.userText.TabIndex = 1;
-            //this.userText.KeyPress += System.EventHandler(this.Handle_KeyPress);
             // 
             // fontSize
             // 
@@ -61,11 +61,20 @@
             this.fontSize.TabIndex = 2;
             this.fontSize.Text = "14";
             // 
+            // fontBox
+            // 
+            this.fontBox.FormattingEnabled = true;
+            this.fontBox.Location = new System.Drawing.Point(173, 13);
+            this.fontBox.Name = "fontBox";
+            this.fontBox.Size = new System.Drawing.Size(121, 21);
+            this.fontBox.TabIndex = 3;
+            // 
             // TextSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(213, 45);
+            this.ClientSize = new System.Drawing.Size(342, 45);
+            this.Controls.Add(this.fontBox);
             this.Controls.Add(this.fontSize);
             this.Controls.Add(this.userText);
             this.Controls.Add(this.tSelect);
@@ -81,5 +90,6 @@
         private System.Windows.Forms.Button tSelect;
         private System.Windows.Forms.TextBox userText;
         private System.Windows.Forms.TextBox fontSize;
+        private System.Windows.Forms.ComboBox fontBox;
     }
 }
