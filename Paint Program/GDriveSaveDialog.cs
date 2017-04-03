@@ -18,6 +18,10 @@ namespace Paint_Program
         public GDriveSaveDialog()
         {
             InitializeComponent();
+            this.Text = SharedSettings.getGlobalString("gdrivesavedialog_title");
+            lbl_FileName.Text = SharedSettings.getGlobalString("gdrivesavedialog_filename");
+            lbl_FileType.Text = SharedSettings.getGlobalString("gdrivesavedialog_filetype");
+            btn_save.Text = SharedSettings.getGlobalString("gdrivesavedialog_save");
         }
 
         private void btn_save_Click(object sender, EventArgs e)

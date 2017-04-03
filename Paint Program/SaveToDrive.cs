@@ -46,7 +46,7 @@ namespace Paint_Program
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error starting thread to save to drive: " + e.Message);
+                Console.WriteLine("Error starting thread to save to drive: " + e.Message);
             }
         }
 
@@ -97,7 +97,7 @@ namespace Paint_Program
             }
             catch (Exception e)
             {
-                MessageBox.Show("Issue saving image to drive: " + e.Message);
+                MessageBox.Show(SharedSettings.getGlobalString("gdrivesavedialog_error") + e.Message);
             }
         }
 
@@ -128,7 +128,7 @@ namespace Paint_Program
             }
             catch (Exception e)
             {
-                MessageBox.Show("Problem with Google Drive - " + e.Message);
+                MessageBox.Show(SharedSettings.getGlobalString("gdrivesavedialog_error") + e.Message);
             }
             try
             {
@@ -136,7 +136,7 @@ namespace Paint_Program
             }
             catch (Exception e)
             {
-                MessageBox.Show("Problem deleting temp gif file: " + e.Message);
+                Console.WriteLine("Problem deleting temp gif file: " + e.Message);
             }
         }
 
@@ -180,7 +180,7 @@ namespace Paint_Program
             }
             catch (Exception e)
             {
-                MessageBox.Show("Problem with Google Drive - " + e.Message);
+                MessageBox.Show(SharedSettings.getGlobalString("gdrivesavedialog_error") + e.Message);
             }
             try
             {
@@ -188,7 +188,7 @@ namespace Paint_Program
             }
             catch (Exception e)
             {
-                MessageBox.Show("Problem deleting temp lep file: " + e.Message);
+                Console.WriteLine("Problem deleting temp lep file: " + e.Message);
             }
         }
     }

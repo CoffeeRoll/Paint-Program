@@ -147,6 +147,18 @@
   <data name="exportdialog_title" xml:space="preserve">
     <value>Guardar un Archivo de Imagen</value>
   </data>
+  <data name="filesave_error" xml:space="preserve">
+    <value>Se ha producido un error al guardar.</value>
+  </data>
+  <data name="filesave_filter" xml:space="preserve">
+    <value>Bitmap Imagen|*.bmp|GIF Imagen|*.gif|Icon Imagen|*.ico|JPeg Imagen|*.jpg|PNG Imagen|*.png|TIFF Imagen|*.tiff"</value>
+  </data>
+  <data name="filesave_saved" xml:space="preserve">
+    <value>¡El archivo fue guardado!</value>
+  </data>
+  <data name="filesave_title" xml:space="preserve">
+    <value>Guardar un archivo de imagen</value>
+  </data>
   <data name="file_menu" xml:space="preserve">
     <value>Archivo</value>
   </data>
@@ -164,6 +176,18 @@
   </data>
   <data name="file_menu_save" xml:space="preserve">
     <value>Salvar</value>
+  </data>
+  <data name="gdrivesavedialog_filename" xml:space="preserve">
+    <value>Nombre del archivo</value>
+  </data>
+  <data name="gdrivesavedialog_filetype" xml:space="preserve">
+    <value>Tipo de archivo</value>
+  </data>
+  <data name="gdrivesavedialog_save" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
+  <data name="gdrivesavedialog_title" xml:space="preserve">
+    <value>Guardar en Google Drive</value>
   </data>
   <data name="imageimport_dialog_filter" xml:space="preserve">
     <value>Todos los archivos|*.*|Bitmap Imagen|*.bmp|GIF Imagen|*.gif|Icon Imagen|*.ico|JPeg Imagen|*.jpg|PNG Imagen|*.png|TIFF Imagen|*.tiff"</value>
@@ -305,5 +329,8 @@
   </data>
   <data name="zoom" xml:space="preserve">
     <value>Enfocar</value>
+  </data>
+  <data name="file_menu_googledrive" xml:space="preserve">
+    <value>Exportar a Google Drive</value>
   </data>
 </root>

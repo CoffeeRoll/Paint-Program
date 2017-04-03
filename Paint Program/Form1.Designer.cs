@@ -37,6 +37,7 @@
             this.tsmiFile_Load = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFile_Import = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFile_Export = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFile_SaveGoogleDrive = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEdit_Undo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEdit_Redo = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +66,6 @@
             this.tsNew = new System.Windows.Forms.ToolStripButton();
             this.tsImport = new System.Windows.Forms.ToolStripButton();
             this.tsSave = new System.Windows.Forms.ToolStripButton();
-            this.tsmi_Save_Google_Drive = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -93,7 +93,7 @@
             this.tsmiFile_Load,
             this.tsmiFile_Import,
             this.tsmiFile_Export,
-            this.tsmi_Save_Google_Drive});
+            this.tsmiFile_SaveGoogleDrive});
             this.tsmiFile.Name = "tsmiFile";
             this.tsmiFile.Size = new System.Drawing.Size(37, 22);
             this.tsmiFile.Text = "File";
@@ -101,37 +101,44 @@
             // tsmiFile_New
             // 
             this.tsmiFile_New.Name = "tsmiFile_New";
-            this.tsmiFile_New.Size = new System.Drawing.Size(228, 22);
+            this.tsmiFile_New.Size = new System.Drawing.Size(186, 22);
             this.tsmiFile_New.Text = "New";
             this.tsmiFile_New.Click += new System.EventHandler(this.tsmiFile_New_Click);
             // 
             // tsmiFile_Save
             // 
             this.tsmiFile_Save.Name = "tsmiFile_Save";
-            this.tsmiFile_Save.Size = new System.Drawing.Size(228, 22);
+            this.tsmiFile_Save.Size = new System.Drawing.Size(186, 22);
             this.tsmiFile_Save.Text = "Save";
             this.tsmiFile_Save.Click += new System.EventHandler(this.tsmiFile_Save_Click);
             // 
             // tsmiFile_Load
             // 
             this.tsmiFile_Load.Name = "tsmiFile_Load";
-            this.tsmiFile_Load.Size = new System.Drawing.Size(228, 22);
+            this.tsmiFile_Load.Size = new System.Drawing.Size(186, 22);
             this.tsmiFile_Load.Text = "Load";
             this.tsmiFile_Load.Click += new System.EventHandler(this.tsmiFile_Load_Click);
             // 
             // tsmiFile_Import
             // 
             this.tsmiFile_Import.Name = "tsmiFile_Import";
-            this.tsmiFile_Import.Size = new System.Drawing.Size(228, 22);
+            this.tsmiFile_Import.Size = new System.Drawing.Size(186, 22);
             this.tsmiFile_Import.Text = "Import Image";
             this.tsmiFile_Import.Click += new System.EventHandler(this.tsmiFile_Import_Click);
             // 
             // tsmiFile_Export
             // 
             this.tsmiFile_Export.Name = "tsmiFile_Export";
-            this.tsmiFile_Export.Size = new System.Drawing.Size(228, 22);
+            this.tsmiFile_Export.Size = new System.Drawing.Size(186, 22);
             this.tsmiFile_Export.Text = "Export Image";
             this.tsmiFile_Export.Click += new System.EventHandler(this.tsmiFile_Export_Click);
+            // 
+            // tsmiFile_SaveGoogleDrive
+            // 
+            this.tsmiFile_SaveGoogleDrive.Name = "tsmiFile_SaveGoogleDrive";
+            this.tsmiFile_SaveGoogleDrive.Size = new System.Drawing.Size(186, 22);
+            this.tsmiFile_SaveGoogleDrive.Text = "Save To Google Drive";
+            this.tsmiFile_SaveGoogleDrive.Click += new System.EventHandler(this.tsmi_Save_Google_Drive_Click);
             // 
             // tsmiEdit
             // 
@@ -184,7 +191,7 @@
             this.tsmiView_GridLines_100,
             this.tsmiView_GridLines_Auto});
             this.tsmiView_GridLines.Name = "tsmiView_GridLines";
-            this.tsmiView_GridLines.Size = new System.Drawing.Size(165, 22);
+            this.tsmiView_GridLines.Size = new System.Drawing.Size(166, 22);
             this.tsmiView_GridLines.Text = "Toggle Grid Lines";
             // 
             // tsmiView_GridLines_5
@@ -237,7 +244,7 @@
             // tsmiView_Tablet
             // 
             this.tsmiView_Tablet.Name = "tsmiView_Tablet";
-            this.tsmiView_Tablet.Size = new System.Drawing.Size(165, 22);
+            this.tsmiView_Tablet.Size = new System.Drawing.Size(166, 22);
             this.tsmiView_Tablet.Text = "Tablet Mode";
             this.tsmiView_Tablet.Click += new System.EventHandler(this.tsmiView_Tablet_Click);
             // 
@@ -247,7 +254,7 @@
             this.tsmiView_ShowTools.CheckOnClick = true;
             this.tsmiView_ShowTools.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsmiView_ShowTools.Name = "tsmiView_ShowTools";
-            this.tsmiView_ShowTools.Size = new System.Drawing.Size(165, 22);
+            this.tsmiView_ShowTools.Size = new System.Drawing.Size(166, 22);
             this.tsmiView_ShowTools.Text = "Show Tools";
             this.tsmiView_ShowTools.Click += new System.EventHandler(this.tsmiView_ShowTools_Click);
             // 
@@ -373,13 +380,6 @@
             this.tsSave.Text = "Save";
             this.tsSave.Click += new System.EventHandler(this.tsSave_Click);
             // 
-            // tsmi_Save_Google_Drive
-            // 
-            this.tsmi_Save_Google_Drive.Name = "tsmi_Save_Google_Drive";
-            this.tsmi_Save_Google_Drive.Size = new System.Drawing.Size(228, 22);
-            this.tsmi_Save_Google_Drive.Text = "Save To Google Drive";
-            this.tsmi_Save_Google_Drive.Click += new System.EventHandler(this.tsmi_Save_Google_Drive_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,7 +440,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiPreferences_Watermark_Style_SingleBottom;
         private System.Windows.Forms.ToolStripMenuItem tsmiPreferences_Watermark_Style_Tiled;
         private System.Windows.Forms.ToolStripMenuItem tsmiInternational;
-        private System.Windows.Forms.ToolStripMenuItem tsmi_Save_Google_Drive;
+        private System.Windows.Forms.ToolStripMenuItem tsmiFile_SaveGoogleDrive;
     }
 }
 

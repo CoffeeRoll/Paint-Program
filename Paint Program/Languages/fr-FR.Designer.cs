@@ -169,6 +169,15 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Exporter vers Google Drive.
+        /// </summary>
+        internal static string file_menu_googledrive {
+            get {
+                return ResourceManager.GetString("file_menu_googledrive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Importer une image.
         /// </summary>
         internal static string file_menu_import {
@@ -201,6 +210,78 @@ namespace Paint_Program.Languages {
         internal static string file_menu_save {
             get {
                 return ResourceManager.GetString("file_menu_save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Une erreur s&apos;est produite lors de l&apos;enregistrement..
+        /// </summary>
+        internal static string filesave_error {
+            get {
+                return ResourceManager.GetString("filesave_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitmap Image|*.bmp|GIF Image|*.gif|Icon Image|*.ico|JPeg Image|*.jpg|PNG Image|*.png|TIFF Image|*.tiff&quot;.
+        /// </summary>
+        internal static string filesave_filter {
+            get {
+                return ResourceManager.GetString("filesave_filter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Le fichier a été enregistré!.
+        /// </summary>
+        internal static string filesave_saved {
+            get {
+                return ResourceManager.GetString("filesave_saved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enregistrer un fichier d&apos;image.
+        /// </summary>
+        internal static string filesave_title {
+            get {
+                return ResourceManager.GetString("filesave_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nom de fichier.
+        /// </summary>
+        internal static string gdrivesavedialog_filename {
+            get {
+                return ResourceManager.GetString("gdrivesavedialog_filename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type de fichier.
+        /// </summary>
+        internal static string gdrivesavedialog_filetype {
+            get {
+                return ResourceManager.GetString("gdrivesavedialog_filetype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sauvegarder.
+        /// </summary>
+        internal static string gdrivesavedialog_save {
+            get {
+                return ResourceManager.GetString("gdrivesavedialog_save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enregistrer dans Google Drive.
+        /// </summary>
+        internal static string gdrivesavedialog_title {
+            get {
+                return ResourceManager.GetString("gdrivesavedialog_title", resourceCulture);
             }
         }
         

@@ -64,7 +64,7 @@ namespace Paint_Program
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error creating Drive file: " + e.Message);
+                MessageBox.Show(SharedSettings.getGlobalString("googledriveupload_error") + e.Message);
             }
             
 
