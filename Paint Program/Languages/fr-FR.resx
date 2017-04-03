@@ -247,6 +247,7 @@
     <value>Carrelage</value>
   </data>
   <data name="projectopen_dialog_filter" xml:space="preserve">
+    <value>Tous les fichiers|*.*|Projet Le Paint|*.lep|Gif|*.gif</value>
   </data>
   <data name="projectopen_dialog_title" xml:space="preserve">
     <value>Ouvrir un fichier de projet</value>
