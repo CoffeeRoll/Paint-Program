@@ -141,5 +141,10 @@ namespace Paint_Program
         {
             return SharedSettings.getGlobalString("tooltip_line");
         }
+
+        public void updateInterfaceLayer()
+        {
+
+        }
     }
 }

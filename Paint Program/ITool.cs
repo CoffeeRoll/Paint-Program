@@ -38,5 +38,7 @@ namespace Paint_Program
 
         void setLayerData(Bitmap bit);
 
+        void updateInterfaceLayer();
+
     }
 }

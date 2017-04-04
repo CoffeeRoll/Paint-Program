@@ -201,7 +201,6 @@ namespace Paint_Program
 
         private void initTools()
         {
-
             Tools.Add(new PencilTool());
             Tools.Add(new BrushTool());
             Tools.Add(new StraightLineTool());
@@ -211,6 +210,7 @@ namespace Paint_Program
             Tools.Add(new SelectionTool());
             Tools.Add(new TextTool());
             Tools.Add(new GreenScreenTool());
+            Tools.Add(new MoveTool());
 
             foreach (ITool tool in Tools)
             {
@@ -450,6 +450,7 @@ namespace Paint_Program
 
             if (ss.getRenderBitmapInterface() && ss.getInterfaceBitmap() != null)
             {
+                Tools[6].updateInterfaceLayer();
                 temp.DrawImage(ss.getInterfaceBitmap(), 0, 0);
             }
             

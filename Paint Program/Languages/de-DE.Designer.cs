@@ -610,6 +610,15 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Werkzeug Verschieben.
+        /// </summary>
+        internal static string tooltip_move {
+            get {
+                return ResourceManager.GetString("tooltip_move", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bleistift-Werkzeug.
         /// </summary>
         internal static string tooltip_pencil {

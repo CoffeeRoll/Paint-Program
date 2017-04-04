@@ -36,7 +36,7 @@ namespace Paint_Program
 
         public string getToolIconPath()
         {
-            return @"..\..\Images\sampler.png";
+            return @"..\..\Images\greenscreen.png";
         }
 
         public void onMouseDown(object sender, MouseEventArgs e)
@@ -129,6 +129,9 @@ namespace Paint_Program
         public string getToolTip()
         {
             return SharedSettings.getGlobalString("tooltip_greenscreen");
+        }
+        public void updateInterfaceLayer()
+        {
         }
     }
 }
