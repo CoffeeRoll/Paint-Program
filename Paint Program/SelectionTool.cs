@@ -141,7 +141,7 @@ namespace Paint_Program
         {
             Bitmap temp = new Bitmap(ss.getCanvasWidth(), ss.getCanvasHeight());
 
-            ss.setSelectionPoint(new Point(ss.getSelectionPoint().X + (pNew.X - pOld.X), ss.getSelectionPoint().Y + (pNew.Y - pOld.Y)));
+            ss.setSelectionPoint(new Point(ss.getSelectionPoint().X, ss.getSelectionPoint().Y));
 
             Pen p = new Pen(Color.Black);
             p.DashPattern = new float[] { 3.0F, 3.0F };

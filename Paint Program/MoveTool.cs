@@ -14,7 +14,7 @@ namespace Paint_Program
         private Graphics graphics;
         private int width, height;
         private SharedSettings settings;
-        private bool bMouseDown, bInit;
+        private bool bInit;
 
         private Point pOld, pNew;
         
@@ -31,23 +31,21 @@ namespace Paint_Program
             height = s.getCanvasHeight();
             settings = s;
             bInit = true;
-            bMouseDown = false;
         }
 
         public string getToolIconPath()
         {
-            return @"..\..\Images\brush.png";
+            return @"..\..\Images\move.png";
         }
 
         public void onMouseDown(object sender, MouseEventArgs e)
         {
             pOld = e.Location;
-            bMouseDown = true;
         }
 
         public void onMouseMove(object sender, MouseEventArgs e)
         {
-            if (bMouseDown)
+            if (e.Button == MouseButtons.Left)
             {
                 pNew = e.Location;
                 Point p = SharedSettings.pSelectionPoint;
@@ -61,7 +59,6 @@ namespace Paint_Program
             pOld.Y = 0;
             pNew.X = 0;
             pNew.Y = 0;
-            bMouseDown = false;
         }
 
         public bool isInitalized()
@@ -85,7 +82,7 @@ namespace Paint_Program
 
         public string getToolTip()
         {
-            return SharedSettings.getGlobalString("tooltip_brush");
+            return SharedSettings.getGlobalString("tooltip_move");
         }
 
         public void updateInterfaceLayer()

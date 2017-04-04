@@ -333,4 +333,7 @@
   <data name="file_menu_googledrive" xml:space="preserve">
     <value>Exportar a Google Drive</value>
   </data>
+  <data name="tooltip_move" xml:space="preserve">
+    <value>Herramienta de Movimiento</value>
+  </data>
 </root>

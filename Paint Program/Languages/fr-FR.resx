@@ -333,4 +333,7 @@
   <data name="zoom" xml:space="preserve">
     <value>Zoom</value>
   </data>
+  <data name="tooltip_move" xml:space="preserve">
+    <value>Outil de Déplacement</value>
+  </data>
 </root>
