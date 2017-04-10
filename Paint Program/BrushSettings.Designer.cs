@@ -37,14 +37,16 @@
             this.lHard = new System.Windows.Forms.Label();
             this.tbHardness = new System.Windows.Forms.TrackBar();
             this.cdPicker = new System.Windows.Forms.ColorDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbHardness)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lPrime
             // 
             this.lPrime.AutoSize = true;
-            this.lPrime.Location = new System.Drawing.Point(39, 30);
+            this.lPrime.Location = new System.Drawing.Point(39, 42);
             this.lPrime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lPrime.Name = "lPrime";
             this.lPrime.Size = new System.Drawing.Size(71, 13);
@@ -54,7 +56,9 @@
             // lSec
             // 
             this.lSec.AutoSize = true;
-            this.lSec.Location = new System.Drawing.Point(23, 67);
+            this.lSec.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lSec.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lSec.Location = new System.Drawing.Point(23, 79);
             this.lSec.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lSec.Name = "lSec";
             this.lSec.Size = new System.Drawing.Size(88, 13);
@@ -63,8 +67,8 @@
             // 
             // pPrime
             // 
-            this.pPrime.Location = new System.Drawing.Point(126, 23);
-            this.pPrime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pPrime.Location = new System.Drawing.Point(126, 35);
+            this.pPrime.Margin = new System.Windows.Forms.Padding(2);
             this.pPrime.Name = "pPrime";
             this.pPrime.Size = new System.Drawing.Size(33, 32);
             this.pPrime.TabIndex = 2;
@@ -73,8 +77,8 @@
             // 
             // pSec
             // 
-            this.pSec.Location = new System.Drawing.Point(126, 59);
-            this.pSec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pSec.Location = new System.Drawing.Point(126, 71);
+            this.pSec.Margin = new System.Windows.Forms.Padding(2);
             this.pSec.Name = "pSec";
             this.pSec.Size = new System.Drawing.Size(33, 32);
             this.pSec.TabIndex = 0;
@@ -83,7 +87,7 @@
             // tbSize
             // 
             this.tbSize.Location = new System.Drawing.Point(26, 142);
-            this.tbSize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSize.Margin = new System.Windows.Forms.Padding(2);
             this.tbSize.Maximum = 100;
             this.tbSize.Minimum = 1;
             this.tbSize.Name = "tbSize";
@@ -115,7 +119,7 @@
             // tbHardness
             // 
             this.tbHardness.Location = new System.Drawing.Point(26, 220);
-            this.tbHardness.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbHardness.Margin = new System.Windows.Forms.Padding(2);
             this.tbHardness.Maximum = 255;
             this.tbHardness.Minimum = 1;
             this.tbHardness.Name = "tbHardness";
@@ -129,12 +133,22 @@
             this.cdPicker.AnyColor = true;
             this.cdPicker.FullOpen = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(252, 31);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // BrushSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tbHardness);
             this.Controls.Add(this.lHard);
             this.Controls.Add(this.lSize);
@@ -143,11 +157,12 @@
             this.Controls.Add(this.pPrime);
             this.Controls.Add(this.lSec);
             this.Controls.Add(this.lPrime);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BrushSettings";
             this.Size = new System.Drawing.Size(250, 275);
             ((System.ComponentModel.ISupportInitialize)(this.tbSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbHardness)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,5 +179,6 @@
         private System.Windows.Forms.Label lHard;
         private System.Windows.Forms.TrackBar tbHardness;
         private System.Windows.Forms.ColorDialog cdPicker;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
