@@ -38,7 +38,7 @@
             // bAddLayer
             // 
             this.bAddLayer.Location = new System.Drawing.Point(2, 2);
-            this.bAddLayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bAddLayer.Margin = new System.Windows.Forms.Padding(2);
             this.bAddLayer.Name = "bAddLayer";
             this.bAddLayer.Size = new System.Drawing.Size(27, 26);
             this.bAddLayer.TabIndex = 0;
@@ -49,7 +49,7 @@
             // bRemoveLayer
             // 
             this.bRemoveLayer.Location = new System.Drawing.Point(33, 2);
-            this.bRemoveLayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bRemoveLayer.Margin = new System.Windows.Forms.Padding(2);
             this.bRemoveLayer.Name = "bRemoveLayer";
             this.bRemoveLayer.Size = new System.Drawing.Size(27, 26);
             this.bRemoveLayer.TabIndex = 1;
@@ -62,7 +62,7 @@
             this.pLayerDisplay.AutoScroll = true;
             this.pLayerDisplay.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.pLayerDisplay.Location = new System.Drawing.Point(0, 32);
-            this.pLayerDisplay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pLayerDisplay.Margin = new System.Windows.Forms.Padding(2);
             this.pLayerDisplay.Name = "pLayerDisplay";
             this.pLayerDisplay.Size = new System.Drawing.Size(240, 326);
             this.pLayerDisplay.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             this.bMoveDown.Enabled = false;
             this.bMoveDown.Location = new System.Drawing.Point(105, 2);
-            this.bMoveDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bMoveDown.Margin = new System.Windows.Forms.Padding(2);
             this.bMoveDown.Name = "bMoveDown";
             this.bMoveDown.Size = new System.Drawing.Size(27, 26);
             this.bMoveDown.TabIndex = 3;
@@ -83,7 +83,7 @@
             // 
             this.bMoveUp.Enabled = false;
             this.bMoveUp.Location = new System.Drawing.Point(136, 2);
-            this.bMoveUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bMoveUp.Margin = new System.Windows.Forms.Padding(2);
             this.bMoveUp.Name = "bMoveUp";
             this.bMoveUp.Size = new System.Drawing.Size(27, 26);
             this.bMoveUp.TabIndex = 4;
@@ -101,7 +101,7 @@
             this.Controls.Add(this.pLayerDisplay);
             this.Controls.Add(this.bRemoveLayer);
             this.Controls.Add(this.bAddLayer);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LayerView";
             this.Size = new System.Drawing.Size(240, 357);
             this.ResumeLayout(false);

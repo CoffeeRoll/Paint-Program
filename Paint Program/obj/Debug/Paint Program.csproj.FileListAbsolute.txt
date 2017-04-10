@@ -285,3 +285,10 @@ C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Pai
 C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.fr-FR.resources
 C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.TextSelect.resources
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.TextSelect.resources
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.pdb
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Auth.PlatformServices.pdb
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Core.pdb
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.PlatformServices.pdb
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.GDriveSaveDialog.resources
+C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.TextSelect.resources

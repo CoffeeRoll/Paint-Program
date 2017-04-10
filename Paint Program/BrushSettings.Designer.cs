@@ -64,7 +64,7 @@
             // pPrime
             // 
             this.pPrime.Location = new System.Drawing.Point(126, 23);
-            this.pPrime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pPrime.Margin = new System.Windows.Forms.Padding(2);
             this.pPrime.Name = "pPrime";
             this.pPrime.Size = new System.Drawing.Size(33, 32);
             this.pPrime.TabIndex = 2;
@@ -74,7 +74,7 @@
             // pSec
             // 
             this.pSec.Location = new System.Drawing.Point(126, 59);
-            this.pSec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pSec.Margin = new System.Windows.Forms.Padding(2);
             this.pSec.Name = "pSec";
             this.pSec.Size = new System.Drawing.Size(33, 32);
             this.pSec.TabIndex = 0;
@@ -83,7 +83,7 @@
             // tbSize
             // 
             this.tbSize.Location = new System.Drawing.Point(26, 142);
-            this.tbSize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSize.Margin = new System.Windows.Forms.Padding(2);
             this.tbSize.Maximum = 100;
             this.tbSize.Minimum = 1;
             this.tbSize.Name = "tbSize";
@@ -115,7 +115,7 @@
             // tbHardness
             // 
             this.tbHardness.Location = new System.Drawing.Point(26, 220);
-            this.tbHardness.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbHardness.Margin = new System.Windows.Forms.Padding(2);
             this.tbHardness.Maximum = 255;
             this.tbHardness.Minimum = 1;
             this.tbHardness.Name = "tbHardness";
@@ -143,7 +143,7 @@
             this.Controls.Add(this.pPrime);
             this.Controls.Add(this.lSec);
             this.Controls.Add(this.lPrime);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BrushSettings";
             this.Size = new System.Drawing.Size(250, 275);
             ((System.ComponentModel.ISupportInitialize)(this.tbSize)).EndInit();
