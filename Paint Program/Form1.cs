@@ -500,6 +500,7 @@ namespace Paint_Program
             }
         }
 
+        #region Shorcuts
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             //CTRL + N for New Project
@@ -583,6 +584,7 @@ namespace Paint_Program
                 }
             }
         }
+        #endregion
     }
 
 }
