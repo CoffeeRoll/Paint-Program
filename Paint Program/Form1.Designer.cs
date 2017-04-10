@@ -339,6 +339,8 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsNew,
@@ -356,7 +358,8 @@
             this.tsNew.Image = ((System.Drawing.Image)(resources.GetObject("tsNew.Image")));
             this.tsNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsNew.Name = "tsNew";
-            this.tsNew.Size = new System.Drawing.Size(28, 28);
+            this.tsNew.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.tsNew.Size = new System.Drawing.Size(35, 28);
             this.tsNew.Text = "New Project";
             this.tsNew.Click += new System.EventHandler(this.tsNew_Click);
             // 
