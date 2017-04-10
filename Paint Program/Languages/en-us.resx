@@ -250,7 +250,7 @@
     <value>Tiled</value>
   </data>
   <data name="projectopen_dialog_filter" xml:space="preserve">
-    <value>Le Paint Project|*.lep|All File Types|*.*</value>
+    <value>All File Types|*.*|Le Paint Project|*.lep|Gif|*.gif</value>
   </data>
   <data name="projectopen_dialog_title" xml:space="preserve">
     <value>Open a Project File</value>
@@ -335,5 +335,8 @@
   </data>
   <data name="zoom" xml:space="preserve">
     <value>Zoom</value>
+  </data>
+  <data name="tooltip_move" xml:space="preserve">
+    <value>Move Tool</value>
   </data>
 </root>

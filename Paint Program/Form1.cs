@@ -24,17 +24,25 @@ namespace Paint_Program
         public Form1()
         {
             InitializeComponent();
+
+            KeyPreview = true;
+            this.KeyDown += Form1_KeyDown;
+
             this.MinimumSize = new System.Drawing.Size(900, 677);
             ss = new SharedSettings();
 
             CultureInfo ci = CultureInfo.CurrentUICulture;
 
+            //Potential Issue is Computer Language isn't supported
             SharedSettings.languageFolderPath = @"..\..\Languages\";
             SharedSettings.language = ci.Name.ToString();
 
             populateLanguages();
 
             updateText();
+
+            //Default Project
+            makeNewProject(500, 500);
         }
 
         private void populateLanguages()
@@ -470,7 +478,7 @@ namespace Paint_Program
         }
 
 
-        private void tsmi_Save_Google_Drive_Click(object sender, EventArgs e)
+        private void tsmiFile_SaveGoogleDrive_Click(object sender, EventArgs e)
         {
             using (GDriveSaveDialog gDrive = new GDriveSaveDialog())
             {
@@ -480,6 +488,64 @@ namespace Paint_Program
                     string fileType = gDrive.fileType;
 
                     SaveToDrive sd = new SaveToDrive(c.getSharedSettings(), fileName, fileType);
+                }
+            }
+        }
+
+        public void updateViews()
+        {
+            if (c != null)
+            {
+                c.updatePositions(this);
+            }
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            //CTRL + N for New Project
+            if(e.Control && e.KeyCode == Keys.N)
+            {
+                tsmiFile_New_Click(this, null);
+            }
+            //CTRL + S for Save Project
+            if (e.Control && e.KeyCode == Keys.S)
+            {
+                tsmiFile_Save_Click(this, null);
+            }
+            //CTRL + O for open Project
+            if (e.Control && e.KeyCode == Keys.O)
+            {
+                tsmiFile_Load_Click(this, null);
+            }
+            //CTRL + I for Import Image
+            if (e.Control && e.KeyCode == Keys.I)
+            {
+                tsmiFile_Import_Click(this, null);
+            }
+            //CTRL + E for Export Image
+            if (e.Control && e.KeyCode == Keys.E)
+            {
+                tsmiFile_Export_Click(this, null);
+            }
+            //CTRL + G for Export to Google Drive
+            if (e.Control && e.KeyCode == Keys.G)
+            {
+                tsmiFile_SaveGoogleDrive_Click(this, null);
+            }
+            //CTRL + + for zoom in
+            if (e.Control && e.KeyCode == Keys.Oemplus)
+            {
+                if(c != null)
+                {
+                    c.zoomIn();
+                }
+            }
+            //CTRL + - for zoom out
+            if (e.Control && e.KeyCode == Keys.OemMinus)
+            {
+                if (c != null)
+                {
+                    c.zoomOut();
                 }
             }
         }

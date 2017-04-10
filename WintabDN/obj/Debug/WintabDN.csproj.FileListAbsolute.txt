@@ -52,3 +52,4 @@ C:\Users\jchouinard01\Desktop\Paint-Program\WintabDN\bin\Debug\WintabDN.pdb
 C:\Users\jchouinard01\Desktop\Paint-Program\WintabDN\obj\Debug\WintabDN.csprojResolveAssemblyReference.cache
 C:\Users\jchouinard01\Desktop\Paint-Program\WintabDN\obj\Debug\WintabDN.dll
 C:\Users\jchouinard01\Desktop\Paint-Program\WintabDN\obj\Debug\WintabDN.pdb
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\WintabDN\obj\Debug\WintabDN.csprojResolveAssemblyReference.cache

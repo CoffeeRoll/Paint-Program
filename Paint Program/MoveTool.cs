@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,15 +9,17 @@ using System.Windows.Forms;
 
 namespace Paint_Program
 {
-    class ColorSamplingTool : ITool
+    class MoveTool:ITool
     {
-
         private Graphics graphics;
         private int width, height;
         private SharedSettings settings;
-        private bool bActive, bMouseDown, bInit;
+        private bool bInit;
 
-        public ColorSamplingTool()
+        private Point pOld, pNew;
+        
+
+        public MoveTool()
         {
 
         }
@@ -27,51 +30,35 @@ namespace Paint_Program
             width = s.getCanvasWidth();
             height = s.getCanvasHeight();
             settings = s;
-            bActive = false;
             bInit = true;
-            bMouseDown = false;
-        }
-
-        public Bitmap getCanvas()
-        {
-            //Not used
-            return null;
         }
 
         public string getToolIconPath()
         {
-            return @"..\..\Images\sampler.png";
+            return @"..\..\Images\move.png";
         }
 
         public void onMouseDown(object sender, MouseEventArgs e)
         {
-            if (graphics != null)
-            {
-                bMouseDown = true;
-                Color c = SharedSettings.bitmapCurrentLayer.GetPixel(e.Location.X, e.Location.Y);
-
-                if (e.Button == MouseButtons.Left) {
-                    settings.setPrimaryBrushColor(c);
-                }
-                else if(e.Button == MouseButtons.Right)
-                {
-                    settings.setSecondaryBrushColor(c);
-                }
-            }
+            pOld = e.Location;
         }
 
         public void onMouseMove(object sender, MouseEventArgs e)
         {
-
+            if (e.Button == MouseButtons.Left)
+            {
+                pNew = e.Location;
+                Point p = SharedSettings.pSelectionPoint;
+                SharedSettings.pSelectionPoint = new Point(p.X + (pNew.X - pOld.X), p.Y + (pNew.Y - pOld.Y));
+            }
         }
 
         public void onMouseUp(object sender, MouseEventArgs e)
         {
-            if (graphics != null)
-            {
-                bMouseDown = false;
-
-            }
+            pOld.X = 0;
+            pOld.Y = 0;
+            pNew.X = 0;
+            pNew.Y = 0;
         }
 
         public bool isInitalized()
@@ -86,7 +73,7 @@ namespace Paint_Program
 
         public bool requiresLayerData()
         {
-            return true;
+            return false;
         }
 
         public void setLayerData(Bitmap bit)
@@ -95,7 +82,7 @@ namespace Paint_Program
 
         public string getToolTip()
         {
-            return SharedSettings.getGlobalString("tooltip_colorselect");
+            return SharedSettings.getGlobalString("tooltip_move");
         }
 
         public void updateInterfaceLayer()

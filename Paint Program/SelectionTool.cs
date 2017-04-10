@@ -15,6 +15,8 @@ namespace Paint_Program
 
         Point p1, p2;
 
+        Point pOld, pNew;
+
         public void init(SharedSettings s)
         {
             ss = s;
@@ -39,15 +41,24 @@ namespace Paint_Program
         public void onMouseDown(object sender, MouseEventArgs e)
         {
             p1 = new Point(e.X, e.Y);
+            pOld = e.Location;
         }
 
         public void onMouseMove(object sender, MouseEventArgs e)
         {
-
+            if(e.Button == MouseButtons.Left)
+            {
+                pNew = e.Location;
+            }
         }
 
         public void onMouseUp(object sender, MouseEventArgs e)
         {
+            pOld.X = 0;
+            pOld.Y = 0;
+            pNew.X = 0;
+            pNew.Y = 0;
+
             p2 = new Point(e.X, e.Y);
 
             if (p1.X == p2.X || p1.Y == p2.Y)
@@ -83,20 +94,26 @@ namespace Paint_Program
                     ss.setSelectionPoint(loc);
                     ss.setSelectionSize(sze);
 
-                    Bitmap temp = new Bitmap(ss.getCanvasWidth(), ss.getCanvasHeight());
+                    
 
-                    Pen p = new Pen(Color.Black);
-                    p.DashPattern = new float[] { 3.0F, 3.0F };
-                    p.DashCap = System.Drawing.Drawing2D.DashCap.Flat;
+                    
 
-                    Graphics tmpGr = Graphics.FromImage(temp);
-                    tmpGr.DrawRectangle(p, tlX, tlY, width, height);
-                    ss.setInterfaceBitmap(temp);
+                    updateInterfaceLayer();
 
+                    //Get selected area data
                     Bitmap bEdit = ss.getBitmapCurrentLayer(true).Clone(new Rectangle(loc, sze), ss.getBitmapCurrentLayer(true).PixelFormat);
+
+                    //clear data below selection
+                    ss.getActiveGraphics().CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
+                    ss.getActiveGraphics().FillRectangle(new SolidBrush(Color.Transparent), new Rectangle(loc, sze));
+                    ss.getActiveGraphics().CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceOver;
+
+                    //Update so selection is editable
                     ss.setBitmapSelectionArea(bEdit);
                     ss.setActiveGraphics(Graphics.FromImage(bEdit));
                     ss.setBitmapCurrentLayer(bEdit);
+
+                    
 
                     ss.setRenderBitmapInterface(true);
                     ss.setActiveSelection(true);
@@ -114,5 +131,26 @@ namespace Paint_Program
         {
 
         }
+
+        public string getToolTip()
+        {
+            return SharedSettings.getGlobalString("tooltip_selection");
+        }
+
+        public void updateInterfaceLayer()
+        {
+            Bitmap temp = new Bitmap(ss.getCanvasWidth(), ss.getCanvasHeight());
+
+            ss.setSelectionPoint(new Point(ss.getSelectionPoint().X, ss.getSelectionPoint().Y));
+
+            Pen p = new Pen(Color.Black);
+            p.DashPattern = new float[] { 3.0F, 3.0F };
+            p.DashCap = System.Drawing.Drawing2D.DashCap.Flat;
+
+            Graphics tmpGr = Graphics.FromImage(temp);
+            tmpGr.DrawRectangle(p, new Rectangle(SharedSettings.pSelectionPoint, SharedSettings.sSelectionSize));
+            ss.setInterfaceBitmap(temp);
+        }
+
     }
 }

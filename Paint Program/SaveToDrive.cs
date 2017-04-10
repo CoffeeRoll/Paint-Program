@@ -106,7 +106,7 @@ namespace Paint_Program
             FileStream fs = new FileStream(filename + ".gif", FileMode.OpenOrCreate);
             using (var stream = new MemoryStream())
             {
-                using (var encoder = new AnimatedGifEncoder(stream, null, null, 12))
+                using (var encoder = new GifEncoder(stream, null, null, 12))
                 {
                     for (int i = 0; i < SharedSettings.Layers.Length; i++)
                     {

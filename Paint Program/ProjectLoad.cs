@@ -8,6 +8,7 @@ using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.Imaging;
 
 namespace Paint_Program
 {
@@ -42,58 +43,82 @@ namespace Paint_Program
             {
                 try
                 {
-                    string baseDir = System.IO.Directory.GetCurrentDirectory();
-
-                    try {
-                        DeleteDirectory(baseDir + @"\load");
-                    }
-                    catch(Exception e)
+                    if (ofd.FileName.EndsWith(".gif"))
                     {
-                        Console.WriteLine("Couldn't delete 'load' Directory!" + e.InnerException);
-                    }
-
-                    List<String> layerNames = new List<String>();
-                    List<Bitmap> layerBitmaps = new List<Bitmap>();
-
-                    DirectorySecurity securityRules = new DirectorySecurity();
-                    securityRules.AddAccessRule(new FileSystemAccessRule("Users", FileSystemRights.FullControl, AccessControlType.Allow));
-                    DirectoryInfo di = Directory.CreateDirectory("load", securityRules);
-
-                    System.IO.Compression.ZipFile.ExtractToDirectory(ofd.FileName, baseDir + @"\load");
-
-                    using (System.IO.StreamReader sr = new System.IO.StreamReader(baseDir + @"\load\names.txt", Encoding.Default))
-                    {
-                        string line;
-                        // Read the stream to a string, and write the string to the console.
-                        while ((line = sr.ReadLine()) != null)
+                        using (System.IO.Stream sr = new FileStream(ofd.FileName,FileMode.Open, FileAccess.Read, FileShare.Read))
                         {
-                            layerNames.Add(line);
+                            GifBitmapDecoder gbd = new GifBitmapDecoder(sr, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.Default);
+                            List<Bitmap> bmps = new List<Bitmap>();
+                            List<string> names = new List<string>();
+                            for(int i = 0; i < gbd.Frames.Count; i++)
+                            {
+                                bmps.Add(BitmapFromSource(gbd.Frames[i]));
+                                names.Add(i.ToString());
+                            }
+                            settings.setCanvasWidth((int)gbd.Frames[0].Width);
+                            settings.setCanvasHeight((int)gbd.Frames[0].Height);
+                            settings.setLayerBitmaps(bmps.ToArray());
+                            settings.setLayerNames(names.ToArray());
+                            settings.setLoadFromSettings(true);
+                            bmps.Clear();
+                            names.Clear();
+                        }
+                        
+                    }else{
+
+                        string baseDir = System.IO.Directory.GetCurrentDirectory();
+
+                        try {
+                            DeleteDirectory(baseDir + @"\load");
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("Couldn't delete 'load' Directory!" + e.InnerException);
                         }
 
-                        sr.Close();
-                        sr.Dispose();
+                        List<String> layerNames = new List<String>();
+                        List<Bitmap> layerBitmaps = new List<Bitmap>();
+
+                        DirectorySecurity securityRules = new DirectorySecurity();
+                        securityRules.AddAccessRule(new FileSystemAccessRule("Users", FileSystemRights.FullControl, AccessControlType.Allow));
+                        DirectoryInfo di = Directory.CreateDirectory("load", securityRules);
+
+                        System.IO.Compression.ZipFile.ExtractToDirectory(ofd.FileName, baseDir + @"\load");
+
+                        using (System.IO.StreamReader sr = new System.IO.StreamReader(baseDir + @"\load\names.txt", Encoding.Default))
+                        {
+                            string line;
+                            // Read the stream to a string, and write the string to the console.
+                            while ((line = sr.ReadLine()) != null)
+                            {
+                                layerNames.Add(line);
+                            }
+
+                            sr.Close();
+                            sr.Dispose();
+                        }
+
+                        int w = 0;
+                        int h = 0;
+
+                        for (int n = 0; n < layerNames.Count; n++)
+                        {
+                            Bitmap temp = (Bitmap)Image.FromFile(baseDir + @"\load\" + layerNames[n] + ".png");
+
+                            w = (temp.Width > w) ? temp.Width : w;
+                            h = (temp.Height > h) ? temp.Height : h;
+                            layerBitmaps.Add((Bitmap)temp.Clone());
+                        }
+
+                        settings.setCanvasWidth(w);
+                        settings.setCanvasHeight(h);
+                        settings.setLayerBitmaps(layerBitmaps.ToArray());
+                        settings.setLayerNames(layerNames.ToArray());
+                        settings.setLoadFromSettings(true);
+
+                        layerBitmaps.Clear(); //Clears all Bitmap File References
+                        layerNames.Clear(); //Clears Layer Name File Reference
                     }
-
-                    int w = 0;
-                    int h = 0;
-
-                    for (int n = 0; n < layerNames.Count; n++)
-                    {
-                        Bitmap temp =(Bitmap)Image.FromFile(baseDir + @"\load\" + layerNames[n] + ".png");
-
-                        w = (temp.Width > w) ? temp.Width : w;
-                        h = (temp.Height > h) ? temp.Height : h;
-                        layerBitmaps.Add((Bitmap)temp.Clone());
-                    }
-
-                    settings.setCanvasWidth(w);
-                    settings.setCanvasHeight(h);
-                    settings.setLayerBitmaps(layerBitmaps.ToArray());
-                    settings.setLayerNames(layerNames.ToArray());
-                    settings.setLoadFromSettings(true);
-
-                    layerBitmaps.Clear(); //Clears all Bitmap File References
-                    layerNames.Clear(); //Clears Layer NAme File Reference
 
                 }
                 catch (Exception e)
@@ -102,6 +127,24 @@ namespace Paint_Program
                     MessageBox.Show(message);
                 }
             }
+        }
+
+        public Bitmap BitmapFromSource(BitmapSource bitmapsource)
+        {
+            //convert image format
+            var src = new System.Windows.Media.Imaging.FormatConvertedBitmap();
+            src.BeginInit();
+            src.Source = bitmapsource;
+            src.DestinationFormat = System.Windows.Media.PixelFormats.Bgra32;
+            src.EndInit();
+
+            //copy to bitmap
+            Bitmap bitmap = new Bitmap(src.PixelWidth, src.PixelHeight, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            var data = bitmap.LockBits(new Rectangle(Point.Empty, bitmap.Size), System.Drawing.Imaging.ImageLockMode.WriteOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            src.CopyPixels(System.Windows.Int32Rect.Empty, data.Scan0, data.Height * data.Stride, data.Stride);
+            bitmap.UnlockBits(data);
+
+            return bitmap;
         }
 
         public static void DeleteDirectory(string target_dir)

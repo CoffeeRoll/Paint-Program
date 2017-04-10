@@ -136,5 +136,15 @@ namespace Paint_Program
         public void setLayerData(Bitmap bit)
         {
         }
+
+        public string getToolTip()
+        {
+            return SharedSettings.getGlobalString("tooltip_line");
+        }
+
+        public void updateInterfaceLayer()
+        {
+
+        }
     }
 }

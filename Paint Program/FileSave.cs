@@ -20,7 +20,7 @@ namespace Paint_Program
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.OverwritePrompt = false;
                 sfd.Filter = SharedSettings.getGlobalString("filesave_filter");
-                sfd.Title = "Save an Image File";
+                sfd.Title = SharedSettings.getGlobalString("filesave_title");
                 sfd.ShowDialog();
 
                 bw.DoWork += (send, args) =>
@@ -75,8 +75,8 @@ namespace Paint_Program
                                 break;
                         }
 
-                        string message = SharedSettings.getGlobalString("filesave_saved");
-                        MessageBox.Show(message);
+                    string message = SharedSettings.getGlobalString("filesave_saved");
+                    MessageBox.Show(message);
                         fs.Close();
                 }
                 catch (Exception e)
@@ -91,7 +91,7 @@ namespace Paint_Program
         {
             using (var stream = new MemoryStream())
             {
-                using (var encoder = new AnimatedGifEncoder(stream, null, null, int.MaxValue))
+                using (var encoder = new GifEncoder(stream, null, null, int.MaxValue))
                 {
                     for (int i = 0; i < SharedSettings.Layers.Length; i++)
                     {

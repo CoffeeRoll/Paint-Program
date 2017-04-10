@@ -457,7 +457,7 @@ namespace Paint_Program.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Le Paint Project|*.lep|All File Types|*.*.
+        ///   Looks up a localized string similar to All File Types|*.*|Le Paint Project|*.lep|Gif|*.gif.
         /// </summary>
         internal static string projectopen_dialog_filter {
             get {
@@ -615,6 +615,15 @@ namespace Paint_Program.Languages {
         internal static string tooltip_line {
             get {
                 return ResourceManager.GetString("tooltip_line", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Move Tool.
+        /// </summary>
+        internal static string tooltip_move {
+            get {
+                return ResourceManager.GetString("tooltip_move", resourceCulture);
             }
         }
         

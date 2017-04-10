@@ -18,6 +18,8 @@ namespace Paint_Program
         private Point pOld, pNew;
         private SizeF tSize;
 
+        private Color fontColor;
+
         public TextTool()
         {
 
@@ -56,7 +58,7 @@ namespace Paint_Program
                 bMouseDown = true;
                 pOld = e.Location;
             }
-            
+
         }
 
         public void onMouseMove(object sender, MouseEventArgs e)
@@ -81,8 +83,25 @@ namespace Paint_Program
                     if (TxtSelect.ShowDialog() == DialogResult.OK)
                     {
                         string text = TxtSelect.UserText;
+                        int fontSize = TxtSelect.FontSize;
+                        string fontType = TxtSelect.FontType;
 
-                        graphics.DrawString(text, new Font("Arial", 14), Brushes.Black, textRect);
+                        switch (e.Button)
+                        {
+                            case MouseButtons.Left:
+                                fontColor = settings.getPrimaryBrushColor();
+                                break;
+                            case MouseButtons.Right:
+                                fontColor = settings.getSecondaryBrushColor();
+                                break;
+                            default:
+                                fontColor = Color.Black;
+                                break;
+                        }
+
+                        SolidBrush brush = new SolidBrush(fontColor);
+
+                        graphics.DrawString(text, new Font(fontType, fontSize), brush, textRect);
                     }
 
                 }
@@ -103,8 +122,16 @@ namespace Paint_Program
 
         public void setLayerData(Bitmap bit)
         {
-            
+
         }
-        
+
+        public string getToolTip()
+        {
+            return SharedSettings.getGlobalString("tooltip_text");
+        }
+
+        public void updateInterfaceLayer()
+        {
+        }
     }
 }

@@ -84,7 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnimatedGifEncoder.cs" />
+    <Compile Include="GifEncoder.cs" />
     <Compile Include="BrushSettings.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -160,6 +160,7 @@
     <Compile Include="LayerView.Designer.cs">
       <DependentUpon>LayerView.cs</DependentUpon>
     </Compile>
+    <Compile Include="MoveTool.cs" />
     <Compile Include="NewProjectForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +242,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TextSelect.resx">
+      <DependentUpon>TextSelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ZoomControl.resx">
       <DependentUpon>ZoomControl.cs</DependentUpon>
     </EmbeddedResource>
