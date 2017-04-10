@@ -532,6 +532,40 @@ namespace Paint_Program
             {
                 tsmiFile_SaveGoogleDrive_Click(this, null);
             }
+            //CTRL + C for Copy Selection
+            if(e.Control && e.KeyCode == Keys.C)
+            {
+                if(SharedSettings.bitmapSelectionArea != null)
+                {
+                    Clipboard.SetImage(SharedSettings.bitmapSelectionArea);
+                }
+            }
+            //CTRL + X for Cut Selection
+            if (e.Control && e.KeyCode == Keys.X)
+            {
+                if (SharedSettings.bitmapSelectionArea != null)
+                {
+                    Clipboard.SetImage(SharedSettings.bitmapSelectionArea);
+                    SharedSettings.bitmapSelectionArea = null;
+                    SharedSettings.bRenderBitmapInterface = false;
+                    SharedSettings.bActiveSelection = false;
+                    SharedSettings.bFlattenSelection = true;
+                    SharedSettings.gActiveGraphics = SharedSettings.gActiveLayerGraphics;
+                }
+            }
+            //CTRL + V for Paste Clipboard
+            if (e.Control && e.KeyCode == Keys.V)
+            {
+                if(Clipboard.GetImage() != null)
+                {
+                    SharedSettings.bitmapSelectionArea = (Bitmap) Clipboard.GetImage();
+                    SharedSettings.sSelectionSize = new Size(SharedSettings.bitmapSelectionArea.Width, SharedSettings.bitmapSelectionArea.Height);
+                    SharedSettings.pSelectionPoint = new Point(0, 0);
+                    SharedSettings.bActiveSelection = true;
+                    SharedSettings.bFlattenSelection = false;
+                    SharedSettings.bRenderBitmapInterface = true;
+                }
+            }
             //CTRL + + for zoom in
             if (e.Control && e.KeyCode == Keys.Oemplus)
             {

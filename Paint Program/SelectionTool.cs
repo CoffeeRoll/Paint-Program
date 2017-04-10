@@ -17,6 +17,8 @@ namespace Paint_Program
 
         Point pOld, pNew;
 
+        Bitmap bEdit;
+
         public void init(SharedSettings s)
         {
             ss = s;
@@ -101,7 +103,7 @@ namespace Paint_Program
                     updateInterfaceLayer();
 
                     //Get selected area data
-                    Bitmap bEdit = ss.getBitmapCurrentLayer(true).Clone(new Rectangle(loc, sze), ss.getBitmapCurrentLayer(true).PixelFormat);
+                    bEdit = ss.getBitmapCurrentLayer(true).Clone(new Rectangle(loc, sze), ss.getBitmapCurrentLayer(true).PixelFormat);
 
                     //clear data below selection
                     ss.getActiveGraphics().CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
@@ -135,6 +137,11 @@ namespace Paint_Program
         public string getToolTip()
         {
             return SharedSettings.getGlobalString("tooltip_selection");
+        }
+
+        public void Clean()
+        {
+            bEdit.Dispose();
         }
 
         public void updateInterfaceLayer()
