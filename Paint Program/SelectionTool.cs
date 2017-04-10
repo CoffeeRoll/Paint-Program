@@ -92,14 +92,10 @@ namespace Paint_Program
                     }
 
                     Point loc = new Point(tlX, tlY);
-                    Size sze = new Size(width, height);
+                    Size sze = new Size(width + 1, height + 1);
                     ss.setSelectionPoint(loc);
                     ss.setSelectionSize(sze);
-
                     
-
-                    
-
                     updateInterfaceLayer();
 
                     //Get selected area data
@@ -114,9 +110,7 @@ namespace Paint_Program
                     ss.setBitmapSelectionArea(bEdit);
                     ss.setActiveGraphics(Graphics.FromImage(bEdit));
                     ss.setBitmapCurrentLayer(bEdit);
-
                     
-
                     ss.setRenderBitmapInterface(true);
                     ss.setActiveSelection(true);
                     ss.setFlattenSelection(false);
@@ -141,7 +135,10 @@ namespace Paint_Program
 
         public void Clean()
         {
-            bEdit.Dispose();
+            if (bEdit != null)
+            {
+                bEdit.Dispose();
+            }
         }
 
         public void updateInterfaceLayer()

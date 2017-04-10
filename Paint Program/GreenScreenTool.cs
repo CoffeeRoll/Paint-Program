@@ -45,11 +45,11 @@ namespace Paint_Program
             {
                 Color c = settings.getBitmapCurrentLayer(true).GetPixel(e.X, e.Y);
 
-                int tol = 2;//settings.getGreenScreenTolerance();
+                int tol = 1;//settings.getGreenScreenTolerance();
 
                 if (e.Button == MouseButtons.Left)
                 {
-                    Bitmap Temp = settings.getBitmapCurrentLayer(true);
+                    Bitmap Temp = SharedSettings.bitmapCurrentLayer;
 
                     //Avoid Green screening Transparancy
                     //if (!(Temp.GetPixel(e.X, e.Y).A == 255))

@@ -11,6 +11,7 @@ using System.Globalization;
 using System.IO;
 using System.Resources;
 using System.Collections;
+using System.Drawing.Imaging;
 
 namespace Paint_Program
 {
@@ -538,7 +539,7 @@ namespace Paint_Program
             {
                 if(SharedSettings.bitmapSelectionArea != null)
                 {
-                    Clipboard.SetImage(SharedSettings.bitmapSelectionArea);
+                    copySelectionToClipboard();
                 }
             }
             //CTRL + X for Cut Selection
@@ -546,7 +547,7 @@ namespace Paint_Program
             {
                 if (SharedSettings.bitmapSelectionArea != null)
                 {
-                    Clipboard.SetImage(SharedSettings.bitmapSelectionArea);
+                    copySelectionToClipboard();
                     SharedSettings.bitmapSelectionArea = null;
                     SharedSettings.bRenderBitmapInterface = false;
                     SharedSettings.bActiveSelection = false;
@@ -559,12 +560,13 @@ namespace Paint_Program
             {
                 if(Clipboard.GetImage() != null)
                 {
-                    SharedSettings.bitmapSelectionArea = (Bitmap) Clipboard.GetImage();
+                    SharedSettings.bitmapSelectionArea = (Bitmap) GetClipboardImage();
                     SharedSettings.sSelectionSize = new Size(SharedSettings.bitmapSelectionArea.Width, SharedSettings.bitmapSelectionArea.Height);
                     SharedSettings.pSelectionPoint = new Point(0, 0);
                     SharedSettings.bActiveSelection = true;
                     SharedSettings.bFlattenSelection = false;
                     SharedSettings.bRenderBitmapInterface = true;
+                    SharedSettings.bitmapCurrentLayer = SharedSettings.bitmapSelectionArea;
                 }
             }
             //CTRL + + for zoom in
@@ -584,6 +586,44 @@ namespace Paint_Program
                 }
             }
         }
+
+        private void copySelectionToClipboard()
+        {
+            IDataObject data = new DataObject();
+            MemoryStream ms = new MemoryStream();
+            SharedSettings.bitmapSelectionArea.Save(ms, ImageFormat.Png);
+            data.SetData(DataFormats.Bitmap, SharedSettings.bitmapCurrentLayer);
+            data.SetData("PNG", false, ms);
+            
+            Clipboard.Clear();
+            Clipboard.SetImage(SharedSettings.bitmapCurrentLayer);
+            Clipboard.SetDataObject(data, true);
+            
+        }
+
+        private Image GetClipboardImage()
+        {
+            // Try to paste PNG data.
+            if (Clipboard.ContainsData("PNG"))
+            {
+                Object png_object = Clipboard.GetData("PNG");
+                if (png_object is MemoryStream)
+                {
+                    MemoryStream png_stream = png_object as MemoryStream;
+                    return Image.FromStream(png_stream);
+                }
+            }
+
+            // Try to paste bitmap data.
+            if (Clipboard.ContainsImage())
+            {
+                return Clipboard.GetImage();
+            }
+
+            // We couldn't find anything useful. Return null.
+            return null;
+        }
+
         #endregion
     }
 
