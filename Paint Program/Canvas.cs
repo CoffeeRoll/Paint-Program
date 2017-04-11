@@ -211,6 +211,7 @@ namespace Paint_Program
             Tools.Add(new TextTool());
             Tools.Add(new GreenScreenTool());
             Tools.Add(new MoveTool());
+            Tools.Add(new DebugTool());
 
             foreach (ITool tool in Tools)
             {

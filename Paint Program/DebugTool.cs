@@ -9,56 +9,81 @@ using System.Windows.Forms;
 
 namespace Paint_Program
 {
-    class DebugTool
+    class DebugTool : ITool
     {
         private Graphics graphics;
-        private int width, height, numPoints;
+        private int width, height;
         private SharedSettings settings;
         private bool bMouseDown, bInit;
 
         private Point pOld, pNew;
 
-        private Pen pPrime, pSec;
+        private Pen pen;
 
-        List<Point> points;
+        private TextureBrush brTexture;
+
+        private Color primaryColor, secondaryColor;
+
+        Bitmap TextureOG, texture1, texture2;
+
+        int pr, pg, pb, sr, sg, sb;
 
         public DebugTool()
         {
-            
+
         }
 
-        //Update Function
         private void updateBrush()
         {
-            int R = settings.getPrimaryBrushColor().R;
-            int G = settings.getPrimaryBrushColor().G;
-            int B = settings.getPrimaryBrushColor().B;
+            pr = settings.getPrimaryBrushColor().R;
+            pg = settings.getPrimaryBrushColor().G;
+            pb = settings.getPrimaryBrushColor().B;
 
-            pPrime = new Pen(Color.FromArgb(settings.getBrushHardness(), R, G, B), settings.getBrushSize());
-            pPrime.LineJoin = LineJoin.Round;
-            pPrime.MiterLimit = pPrime.Width;
+            primaryColor = Color.FromArgb(settings.getBrushHardness(), pr, pg, pb);
 
-            R = settings.getSecondaryBrushColor().R;
-            G = settings.getSecondaryBrushColor().G;
-            B = settings.getSecondaryBrushColor().B;
+            sr = settings.getSecondaryBrushColor().R;
+            sg = settings.getSecondaryBrushColor().G;
+            sb = settings.getSecondaryBrushColor().B;
 
-            pSec = new Pen(Color.FromArgb(settings.getBrushHardness(), R, G, B), settings.getBrushSize());
-            pSec.LineJoin = LineJoin.Round;
+            secondaryColor = Color.FromArgb(settings.getBrushHardness(), sr, sg, sb);
+
+            updateBrushColor();
+
         }
 
-        public void init(Graphics g, int w, int h, SharedSettings s)
+        private void updateBrushColor()
         {
-            graphics = g;
-            width = w;
-            height = h;
+            for(int w = 0; w < texture1.Width; w++)
+            {
+                for(int h = 0; h < texture1.Height; h++)
+                {
+                    int v = texture1.GetPixel(w, h).A;
+                    texture1.SetPixel(w, h, Color.FromArgb((int)(v * ((float)SharedSettings.iBrushHardness / 255.0)), pr, pg, pb));
+                }
+            }
+            brTexture = new TextureBrush(texture1);
+            pen = new Pen(brTexture);
+            pen.SetLineCap(LineCap.Round, LineCap.Round, DashCap.Round);
+        }
+
+        public void init(SharedSettings s)
+        {
+            graphics = s.getActiveGraphics();
+            width = s.getCanvasWidth();
+            height = s.getCanvasHeight();
             settings = s;
             bInit = true;
             bMouseDown = false;
 
-            points = new List<Point>();
-
             pOld = pNew = new Point(-1, -1);
-            numPoints = 0;
+
+            TextureOG = (Bitmap) Bitmap.FromFile(@"..\..\Brushes\stripes.png");
+            texture1 = (Bitmap) TextureOG.Clone();
+            texture2 = (Bitmap)TextureOG.Clone();
+            updateBrush();
+            pen = new Pen(primaryColor, settings.getBrushSize() / 2);
+
+            pen.SetLineCap(LineCap.Round, LineCap.Round, DashCap.Round);
 
             if (graphics != null)
             {
@@ -81,8 +106,9 @@ namespace Paint_Program
             {
                 bMouseDown = true;
                 pOld = e.Location;
-                numPoints = 1;
             }
+
+            updateBrush();
         }
 
         public void onMouseMove(object sender, MouseEventArgs e)
@@ -90,18 +116,34 @@ namespace Paint_Program
             if (graphics != null && bMouseDown)
             {
                 pNew = e.Location;
-                
-                if(pOld.X != -1 && pOld.Y != -1)
+                int pressure = -1;
+                if (settings.getTabletPressure() >= 0)
                 {
-                    double slope = (double)(pNew.Y - pOld.Y) / (double)(pNew.X - pOld.X);
-                    double invSlope = -1.0 / slope; //y = mx + b
-                    double halfW = pPrime.Width / 2.0;
+                    pressure = SharedSettings.MapValue(0, settings.getMaxTabletPressure(), settings.getMinTabletWidth(), settings.getMaxTabletWidth(), settings.getTabletPressure());
 
-
-
+                    if (pressure >= 0)
+                    {
+                        pen.Width = pressure / 2;
+                    }
                 }
-
+                switch (e.Button)
+                {
+                    // TODO: Add tablet pressure back in...
+                    case MouseButtons.Left:
+                        //pen.Color = primaryColor;
+                        pen.Width = settings.getBrushSize() / 2;
+                        graphics.DrawLine(pen, pOld, pNew);
+                        break;
+                    case MouseButtons.Right:
+                        //pen.Color = secondaryColor;
+                        pen.Width = settings.getBrushSize() / 2;
+                        graphics.DrawLine(pen, pOld, pNew);
+                        break;
+                    default:
+                        break;
+                }
                 pOld = pNew;
+
             }
         }
 
@@ -110,8 +152,27 @@ namespace Paint_Program
             if (graphics != null)
             {
                 bMouseDown = false;
+                pNew = e.Location;
+
+                switch (e.Button)
+                {
+                    //TODO: ADD TABLET PRESSURE
+                    case MouseButtons.Left:
+                        //pen.Color = primaryColor;
+                        pen.Width = settings.getBrushSize() / 2;
+                        graphics.DrawLine(pen, pOld, pNew);
+                        break;
+                    case MouseButtons.Right:
+                        //pen.Color = secondaryColor;
+                        pen.Width = settings.getBrushSize() / 2;
+                        graphics.DrawLine(pen, pOld, pNew);
+                        break;
+                    default:
+                        break;
+                }
+
+                pOld = pNew;
             }
-            numPoints = 0;
         }
 
         public bool isInitalized()
@@ -130,6 +191,15 @@ namespace Paint_Program
         }
 
         public void setLayerData(Bitmap bit)
+        {
+        }
+
+        public string getToolTip()
+        {
+            return SharedSettings.getGlobalString("tooltip_brush");
+        }
+
+        public void updateInterfaceLayer()
         {
         }
     }

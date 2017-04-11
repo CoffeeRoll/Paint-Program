@@ -305,3 +305,4 @@ C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Prog
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.en-UK.resources
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.es-ES.resources
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.fr-FR.resources
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.TextSelect.resources
