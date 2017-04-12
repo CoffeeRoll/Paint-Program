@@ -192,6 +192,7 @@
       <DependentUpon>TextSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="TextTool.cs" />
+    <Compile Include="TextureTool.cs" />
     <Compile Include="ZoomControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
