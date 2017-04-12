@@ -580,6 +580,8 @@ namespace Paint_Program
             p.Dispose();
             pScaled.Dispose();
             g.Dispose();
+            brSel.Trash();
+            brSel.Dispose();
             Tools.Clear();
             this.Dispose();
         }
