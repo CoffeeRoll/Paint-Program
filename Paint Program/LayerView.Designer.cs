@@ -95,7 +95,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Crimson;
+            this.BackColor = System.Drawing.SystemColors.Highlight;
             this.Controls.Add(this.bMoveUp);
             this.Controls.Add(this.bMoveDown);
             this.Controls.Add(this.pLayerDisplay);
