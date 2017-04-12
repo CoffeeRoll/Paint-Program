@@ -126,6 +126,8 @@ namespace Paint_Program
             ts.Height = maxHeight - menuHeight;
             ts.Width = tsWidth;
             ts.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            ts.BackColor = Color.FromArgb(128, 128, 128);
+            ts.GripStyle = ToolStripGripStyle.Hidden;
             ts.ShowItemToolTips = true;
 
             this.Parent.Controls.Add(ts);

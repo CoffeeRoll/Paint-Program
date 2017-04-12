@@ -241,6 +241,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="TextSelect.resx">
       <DependentUpon>TextSelect.cs</DependentUpon>
@@ -271,6 +272,9 @@
       <Project>{73eae30a-60b9-43a5-ad81-9b05873e405c}</Project>
       <Name>WintabDN</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\GreyTileing.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
