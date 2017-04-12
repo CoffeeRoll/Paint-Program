@@ -445,10 +445,7 @@ namespace Paint_Program
 
             k.InterpolationMode = InterpolationMode.NearestNeighbor;
 
-            if (ss.getGridToggle())
-            {
-                lv.GridDraw(temp);
-            }
+          
 
             if (ss.getRenderBitmapInterface() && ss.getInterfaceBitmap() != null)
             {
@@ -514,6 +511,12 @@ namespace Paint_Program
             }
 
             k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
+
+            if (ss.getGridToggle())
+            {
+                lv.GridDraw(k);
+            }
+
             bit2.Dispose();
             if(iitmp != null)
                 iitmp.Dispose();
