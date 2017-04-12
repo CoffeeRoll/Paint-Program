@@ -464,9 +464,18 @@ namespace Paint_Program
 
             if (ss.getFlattenSelection())
             {
-                ss.getActiveLayerGraphics().DrawImage(ss.getBitmapSelectionArea(), ss.getSelectionPoint().X, ss.getSelectionPoint().Y);
-                lv.updateActiveLayerSettings();
+                if (SharedSettings.bitmapSelectionArea != null) {
+                    ss.getActiveLayerGraphics().DrawImage(ss.getBitmapSelectionArea(), ss.getSelectionPoint().X, ss.getSelectionPoint().Y);
+                }
                 ss.setFlattenSelection(false);
+                lv.updateActiveLayerSettings();
+                foreach (ITool t in Tools)
+                {
+                    if (t is SelectionTool)
+                    {
+                        ((SelectionTool)t).Clean();
+                    }
+                }
             }
 
             if (SharedSettings.bRenderWatermark)

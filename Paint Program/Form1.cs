@@ -11,6 +11,7 @@ using System.Globalization;
 using System.IO;
 using System.Resources;
 using System.Collections;
+using System.Drawing.Imaging;
 
 namespace Paint_Program
 {
@@ -500,6 +501,7 @@ namespace Paint_Program
             }
         }
 
+        #region Shorcuts
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             //CTRL + N for New Project
@@ -532,6 +534,41 @@ namespace Paint_Program
             {
                 tsmiFile_SaveGoogleDrive_Click(this, null);
             }
+            //CTRL + C for Copy Selection
+            if(e.Control && e.KeyCode == Keys.C)
+            {
+                if(SharedSettings.bitmapSelectionArea != null)
+                {
+                    copySelectionToClipboard();
+                }
+            }
+            //CTRL + X for Cut Selection
+            if (e.Control && e.KeyCode == Keys.X)
+            {
+                if (SharedSettings.bitmapSelectionArea != null)
+                {
+                    copySelectionToClipboard();
+                    SharedSettings.bitmapSelectionArea = null;
+                    SharedSettings.bRenderBitmapInterface = false;
+                    SharedSettings.bActiveSelection = false;
+                    SharedSettings.bFlattenSelection = true;
+                    SharedSettings.gActiveGraphics = SharedSettings.gActiveLayerGraphics;
+                }
+            }
+            //CTRL + V for Paste Clipboard
+            if (e.Control && e.KeyCode == Keys.V)
+            {
+                if(Clipboard.GetImage() != null)
+                {
+                    SharedSettings.bitmapSelectionArea = (Bitmap) GetClipboardImage();
+                    SharedSettings.sSelectionSize = new Size(SharedSettings.bitmapSelectionArea.Width, SharedSettings.bitmapSelectionArea.Height);
+                    SharedSettings.pSelectionPoint = new Point(0, 0);
+                    SharedSettings.bActiveSelection = true;
+                    SharedSettings.bFlattenSelection = false;
+                    SharedSettings.bRenderBitmapInterface = true;
+                    SharedSettings.bitmapCurrentLayer = SharedSettings.bitmapSelectionArea;
+                }
+            }
             //CTRL + + for zoom in
             if (e.Control && e.KeyCode == Keys.Oemplus)
             {
@@ -549,6 +586,45 @@ namespace Paint_Program
                 }
             }
         }
+
+        private void copySelectionToClipboard()
+        {
+            IDataObject data = new DataObject();
+            MemoryStream ms = new MemoryStream();
+            SharedSettings.bitmapSelectionArea.Save(ms, ImageFormat.Png);
+            data.SetData(DataFormats.Bitmap, SharedSettings.bitmapCurrentLayer);
+            data.SetData("PNG", false, ms);
+            
+            Clipboard.Clear();
+            Clipboard.SetImage(SharedSettings.bitmapCurrentLayer);
+            Clipboard.SetDataObject(data, true);
+            
+        }
+
+        private Image GetClipboardImage()
+        {
+            // Try to paste PNG data.
+            if (Clipboard.ContainsData("PNG"))
+            {
+                Object png_object = Clipboard.GetData("PNG");
+                if (png_object is MemoryStream)
+                {
+                    MemoryStream png_stream = png_object as MemoryStream;
+                    return Image.FromStream(png_stream);
+                }
+            }
+
+            // Try to paste bitmap data.
+            if (Clipboard.ContainsImage())
+            {
+                return Clipboard.GetImage();
+            }
+
+            // We couldn't find anything useful. Return null.
+            return null;
+        }
+
+        #endregion
     }
 
 }
