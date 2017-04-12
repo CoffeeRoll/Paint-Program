@@ -41,6 +41,7 @@ namespace Paint_Program
         ToolStrip ts;
         BrushSettings bs;
         ZoomControl zc;
+        BrushSelector brSel;
 
         TabletInfo ti;
 
@@ -134,6 +135,10 @@ namespace Paint_Program
             bs = new BrushSettings(ss);
             bs.Location = new Point(maxWidth - bs.Width, menuHeight * 2);
             this.Parent.Controls.Add(bs);
+
+            brSel = new BrushSelector();
+            brSel.Location = new Point(bs.Location.X, bs.Location.Y + bs.Height + 10);
+            this.Parent.Controls.Add(brSel);
 
             zc = new ZoomControl(ss);
             zc.Location = new Point(tsWidth, maxHeight - SystemInformation.CaptionHeight - menuHeight- zc.Height);
@@ -325,6 +330,7 @@ namespace Paint_Program
             lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
             ts.Height = maxHeight - menuHeight;
             bs.Location = new Point(maxWidth - bs.Width, menuHeight * 2);
+            brSel.Location = new Point(bs.Location.X, bs.Location.Y + bs.Height + 10);
             zc.Location = new Point(tsWidth, maxHeight - SystemInformation.CaptionHeight - menuHeight - zc.Height);
 
             //Center the canvas on the screen, but don't allow it to be draw off the screen

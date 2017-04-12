@@ -73,6 +73,8 @@ namespace Paint_Program
 
         public static Bitmap bitmapLayerUpdate { get; set; }
 
+        public static Bitmap bitmapBrushTexture { get; set; }
+
         public static Graphics gActiveGraphics { get; set; }
 
         public static Graphics gActiveLayerGraphics { get; set; }

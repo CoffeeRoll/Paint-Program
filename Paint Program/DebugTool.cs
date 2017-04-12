@@ -77,7 +77,7 @@ namespace Paint_Program
 
             pOld = pNew = new Point(-1, -1);
 
-            TextureOG = (Bitmap) Bitmap.FromFile(@"..\..\Brushes\stripes.png");
+            TextureOG = SharedSettings.bitmapBrushTexture;
             texture1 = (Bitmap) TextureOG.Clone();
             texture2 = (Bitmap)TextureOG.Clone();
             updateBrush();

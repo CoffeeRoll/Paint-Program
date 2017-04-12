@@ -84,6 +84,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrushSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BrushSelector.Designer.cs">
+      <DependentUpon>BrushSelector.cs</DependentUpon>
+    </Compile>
     <Compile Include="GifEncoder.cs" />
     <Compile Include="BrushSettings.cs">
       <SubType>UserControl</SubType>
@@ -192,6 +198,9 @@
     <Compile Include="ZoomControl.Designer.cs">
       <DependentUpon>ZoomControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BrushSelector.resx">
+      <DependentUpon>BrushSelector.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BrushSettings.resx">
       <DependentUpon>BrushSettings.cs</DependentUpon>
     </EmbeddedResource>
