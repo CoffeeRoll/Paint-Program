@@ -542,6 +542,10 @@ namespace Paint_Program
             {
                 bitmapInterface.Dispose();
             }
+            if(bitmapBrushTexture != null)
+            {
+                bitmapBrushTexture.Dispose();
+            }
         }
     }
 }
