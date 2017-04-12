@@ -15,11 +15,6 @@ namespace Paint_Program
         private int yLayerLocation;
         private SharedSettings ss;
 
-        public void LayerView_MouseEnter(object sender, MouseEventArgs e)
-        {
-
-        }
-
         public LayerView(int w, int h, SharedSettings s)
         {
             InitializeComponent();
@@ -30,7 +25,7 @@ namespace Paint_Program
             LayerItem setup = new LayerItem(w, h, pf, "DEBUG", ss);
             this.Width = setup.Width;
             pLayerDisplay.Scroll += handleScroll;
-            //pLayerDisplay.MouseWheel += handleMouseWheel;
+            pLayerDisplay.MouseWheel += handleMouseWheel;
             Layers = new List<LayerItem>();
 
             if (ss.getLoadFromSettings() && ss.getLayerBitmaps().Length > 0)
@@ -424,7 +419,6 @@ namespace Paint_Program
         {
             Layers.Clear();
         }
-
 
         public void updateText()
         {

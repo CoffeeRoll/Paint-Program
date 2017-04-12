@@ -67,7 +67,6 @@
             // 
             // pPrime
             // 
-            this.pPrime.Location = new System.Drawing.Point(126, 23);
             this.pPrime.Location = new System.Drawing.Point(126, 35);
             this.pPrime.Margin = new System.Windows.Forms.Padding(2);
             this.pPrime.Name = "pPrime";
@@ -78,7 +77,6 @@
             // 
             // pSec
             // 
-            this.pSec.Location = new System.Drawing.Point(126, 59);
             this.pSec.Location = new System.Drawing.Point(126, 71);
             this.pSec.Margin = new System.Windows.Forms.Padding(2);
             this.pSec.Name = "pSec";

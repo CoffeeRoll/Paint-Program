@@ -32,11 +32,7 @@ namespace Paint_Program
 
             tbSize.Value = (int)settings.getBrushSize();
             tbHardness.Value = (int)settings.getBrushHardness();
-
-            tbSize.MouseWheel += (sender, e) => ((HandledMouseEventArgs)e).Handled = true;
-            tbHardness.MouseWheel += (sender, e) => ((HandledMouseEventArgs)e).Handled = true;
-
-
+            
             this.Refresh();
 
         }
@@ -123,7 +119,5 @@ namespace Paint_Program
             lSize.Text = SharedSettings.getGlobalString("brushsettings_brush_size") + ": " + tbSize.Value.ToString();
             lHard.Text = SharedSettings.getGlobalString("brushsettings_brush_hardness") + ": " + tbHardness.Value.ToString();
         }
-
-        
     }
 }
