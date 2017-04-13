@@ -161,7 +161,7 @@ namespace Paint_Program
 
             pScaled = new Panel();
             pScaled.Size = new Size( (lv.Location.X - this.Location.X) - ts.Width - 30 ,(zc.Location.Y - this.Location.Y) - 165 );
-            pScaled.MinimumSize = new Size(300, 300);
+            pScaled.MinimumSize = new Size(canvasWidth, canvasHeight);
             pScaled.Location = new Point(0, 0);
             pScaled.BackColor = Color.FromArgb(64,64,64);
             pScaled.AutoScroll = true;
@@ -317,11 +317,14 @@ namespace Paint_Program
             //Temporary Hack Fix - Please Find Better Solution
             //Fixes Second New Project Null Parent Reference Bug
             this.Parent = (System.Windows.Forms.Control) sender;
-            
+
             //Updates Parent Width and Height Values
             maxWidth = this.Parent.Width;
             maxHeight = this.Parent.Height;
-            
+
+            this.Size = new Size((int)(canvasWidth * zc.getZoomFactor()), (int)(canvasHeight * zc.getZoomFactor()));
+            this.Location = new Point(0,0);
+
             //Moves all the Controls to their new location
             lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
             ts.Height = maxHeight - menuHeight;
@@ -338,7 +341,7 @@ namespace Paint_Program
             int ploc_y = maxYPos < minYPos ? minYPos : maxYPos;
             p.Location = new Point(ploc_x, ploc_y);
 
-            pScaled.Size = new Size((lv.Location.X - this.Location.X) - 15 , (zc.Location.Y - this.Location.Y) - 15);
+            pScaled.Size = new Size((lv.Location.X - this.Location.X), (zc.Location.Y - this.Location.Y));
 
             //Prevent controls from not redrawing
             this.Parent.Refresh();
@@ -346,7 +349,7 @@ namespace Paint_Program
 
         private MouseEventArgs scaleMouseEvent(MouseEventArgs e)
         {
-            int offset = (int)ss.getDrawScale() / 2;
+            int offset = 0;// (int)(SharedSettings.fScale);
             if (!ss.getActiveSelection())
             {
                 return new MouseEventArgs(e.Button, e.Clicks, (int)((e.X - offset) / ss.getDrawScale()), (int)((e.Y - offset) / ss.getDrawScale()), e.Delta);
@@ -440,12 +443,11 @@ namespace Paint_Program
 
             p.Width = (int) (ss.getDrawScale() * ss.getCanvasWidth());
             p.Height = (int) (ss.getDrawScale() * ss.getCanvasHeight());
-            Rectangle source = new Rectangle(-1, -1, bit2.Width, bit2.Height);
+            Rectangle source = new Rectangle(0, 0, bit2.Width, bit2.Height);
             Rectangle dest = new Rectangle(0, 0, p.Width, p.Height);
 
             k.InterpolationMode = InterpolationMode.NearestNeighbor;
-
-          
+            k.PixelOffsetMode = PixelOffsetMode.Half;
 
             if (ss.getRenderBitmapInterface() && ss.getInterfaceBitmap() != null)
             {
@@ -508,7 +510,6 @@ namespace Paint_Program
             }
 
             k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
-
             if (ss.getGridToggle())
             {
                 lv.GridDraw(k);
