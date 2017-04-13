@@ -486,7 +486,7 @@ namespace Paint_Program
                 bActiveSelection = false;
                 bFlattenSelection = true;
                 gActiveLayerGraphics.DrawImage(bitmapSelectionArea, pSelectionPoint);
-                gActiveLayerGraphics = gActiveLayerGraphics;
+                gActiveGraphics = gActiveLayerGraphics;
             }
         }
 

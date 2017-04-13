@@ -210,7 +210,7 @@ namespace Paint_Program
             //Import Image
             try
             {
-                ImageImport ii = new Paint_Program.ImageImport(c.getSharedSettings());
+                ImageImport ii = new ImageImport(c.getSharedSettings());
             }
             catch (Exception err)
             {

@@ -170,17 +170,21 @@ namespace Paint_Program
 
         public void addImportImage(Bitmap b)
         {
+            SharedSettings.flattenSelection();
             foreach (LayerItem layer in Layers)
             {
                 layer.setActive(false);
             }
+
+            Bitmap bit = new Bitmap(SharedSettings.iCanvasWidth, SharedSettings.iCanvasHeight, PixelFormat.Format32bppArgb);
+            Graphics.FromImage(bit).DrawImage(b, 0, 0);
 
             LayerItem temp = new LayerItem(width, height, pf, Layers.Count.ToString(), ss);
             temp.Location = new Point(0, yLayerLocation);
             yLayerLocation += temp.Height + 5;
             temp.setActive(true);
             temp.setOnClick(handleLayerItemClick);
-            temp.setBitmap((Bitmap)b.Clone());
+            temp.setBitmap((Bitmap)bit.Clone());
             Layers.Add(temp);
             pLayerDisplay.Controls.Add(Layers[Layers.Count - 1]);
 
@@ -191,13 +195,16 @@ namespace Paint_Program
                 bMoveUp.Enabled = true;
             }
 
+            b.Dispose();
+            bit.Dispose();
+
             redrawLayerItems();
         }
 
         private void addLayer()
         {
-
-            foreach(LayerItem layer in Layers)
+            SharedSettings.flattenSelection();
+            foreach (LayerItem layer in Layers)
             {
                 layer.setActive(false);
             }
@@ -223,7 +230,7 @@ namespace Paint_Program
 
         private void addLayer(Bitmap b, String name)
         {
-            
+            SharedSettings.flattenSelection();
             foreach (LayerItem layer in Layers)
             {
                 layer.setActive(false);
@@ -251,6 +258,7 @@ namespace Paint_Program
 
         private void removeLayer()
         {
+            SharedSettings.flattenSelection();
             //Foreach loop to iterate through all layers
             try
             {
@@ -304,6 +312,7 @@ namespace Paint_Program
 
         private void bMoveDown_Click(object sender, EventArgs e)
         {
+            //SharedSettings.flattenSelection();
             int i = getActiveLayerIndex();
 
             if(i != -1 && i != 0)
@@ -317,6 +326,7 @@ namespace Paint_Program
 
         private void bMoveUp_Click(object sender, EventArgs e)
         {
+            //SharedSettings.flattenSelection();
             int i = getActiveLayerIndex();
 
             if (i != -1 && i != Layers.Count -1)
@@ -336,6 +346,7 @@ namespace Paint_Program
                 LayerItem layer = ((LayerItem)obj);
                 if (!layer.isLayerActive())
                 {
+                    SharedSettings.flattenSelection();
                     foreach (LayerItem l in Layers)
                     {
                         l.setActive(false);
@@ -350,6 +361,7 @@ namespace Paint_Program
                 LayerItem layer = (LayerItem)((PictureBox)obj).Parent;
                 if (!layer.isLayerActive())
                 {
+                    SharedSettings.flattenSelection();
                     foreach (LayerItem l in Layers)
                     {
                         l.setActive(false);
