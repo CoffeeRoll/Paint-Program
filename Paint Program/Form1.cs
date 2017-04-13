@@ -41,7 +41,7 @@ namespace Paint_Program
             populateLanguages();
 
             updateText();
-
+            
             //Default Project
             makeNewProject(500, 500);
         }
@@ -560,13 +560,13 @@ namespace Paint_Program
             {
                 if(Clipboard.GetImage() != null)
                 {
-                    SharedSettings.bitmapSelectionArea = (Bitmap) GetClipboardImage();
-                    SharedSettings.sSelectionSize = new Size(SharedSettings.bitmapSelectionArea.Width, SharedSettings.bitmapSelectionArea.Height);
-                    SharedSettings.pSelectionPoint = new Point(0, 0);
-                    SharedSettings.bActiveSelection = true;
-                    SharedSettings.bFlattenSelection = false;
-                    SharedSettings.bRenderBitmapInterface = true;
-                    SharedSettings.bitmapCurrentLayer = SharedSettings.bitmapSelectionArea;
+                    SharedSettings.flattenSelection();
+                    Bitmap temp = (Bitmap) GetClipboardImage();
+                    Bitmap temp2 = new Bitmap(temp.Width, temp.Height, PixelFormat.Format32bppArgb);
+                    Graphics.FromImage(temp2).DrawImage(temp, 0, 0);
+                    temp.Dispose();
+                    SharedSettings.setSelection((Bitmap)temp2.Clone(), new Point(0,0));
+                    temp.Dispose();
                 }
             }
             //CTRL + + for zoom in

@@ -461,9 +461,6 @@ namespace Paint_Program
 
             if (ss.getFlattenSelection())
             {
-                if (SharedSettings.bitmapSelectionArea != null) {
-                    ss.getActiveLayerGraphics().DrawImage(ss.getBitmapSelectionArea(), ss.getSelectionPoint().X, ss.getSelectionPoint().Y);
-                }
                 ss.setFlattenSelection(false);
                 lv.updateActiveLayerSettings();
                 foreach (ITool t in Tools)

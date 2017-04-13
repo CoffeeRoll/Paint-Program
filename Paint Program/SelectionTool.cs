@@ -65,14 +65,7 @@ namespace Paint_Program
 
             if (p1.X == p2.X || p1.Y == p2.Y)
             {
-                ss.setRenderBitmapInterface(false);
-
-                if (ss.getActiveSelection())
-                {
-                    ss.setActiveSelection(false);
-                    ss.setFlattenSelection(true);
-                    ss.setActiveGraphics(ss.getActiveLayerGraphics());
-                }
+                SharedSettings.flattenSelection();
             }
             else
             {
@@ -106,14 +99,7 @@ namespace Paint_Program
                     ss.getActiveGraphics().FillRectangle(new SolidBrush(Color.Transparent), new Rectangle(loc, sze));
                     ss.getActiveGraphics().CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceOver;
 
-                    //Update so selection is editable
-                    ss.setBitmapSelectionArea(bEdit);
-                    ss.setActiveGraphics(Graphics.FromImage(bEdit));
-                    ss.setBitmapCurrentLayer(bEdit);
-                    
-                    ss.setRenderBitmapInterface(true);
-                    ss.setActiveSelection(true);
-                    ss.setFlattenSelection(false);
+                    SharedSettings.setSelection(bEdit, loc);
                 }
             }
         }
