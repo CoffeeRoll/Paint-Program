@@ -150,6 +150,11 @@ namespace Paint_Program
             return -1;
         }
 
+        public LayerItem getActiveLayer()
+        {
+            return Layers[getActiveLayerIndex()];
+        }
+
         private void bAddLayer_Click(object sender, EventArgs e)
         {
             addLayer();

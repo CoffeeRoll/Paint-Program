@@ -352,7 +352,14 @@ namespace Paint_Program
             int offset = 0;// (int)(SharedSettings.fScale);
             if (!ss.getActiveSelection())
             {
-                return new MouseEventArgs(e.Button, e.Clicks, (int)((e.X - offset) / ss.getDrawScale()), (int)((e.Y - offset) / ss.getDrawScale()), e.Delta);
+                if (lv.getActiveLayer().isLayerVisible())
+                {
+                    return new MouseEventArgs(e.Button, e.Clicks, (int)((e.X - offset) / ss.getDrawScale()), (int)((e.Y - offset) / ss.getDrawScale()), e.Delta);
+                }
+                else
+                {
+                    return null;
+                }
             }
             else
             {
@@ -366,6 +373,7 @@ namespace Paint_Program
                     return null;
                 }
             }
+            return null;
         }
 
         public void handleMouseDown(object sender, MouseEventArgs e)
