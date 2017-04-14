@@ -135,7 +135,7 @@ namespace Paint_Program
                     ((ITextUpdate)c).updateText();
                 }
             }
-
+            
             this.Refresh();
         }
         
