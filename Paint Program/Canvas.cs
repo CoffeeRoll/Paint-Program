@@ -76,7 +76,7 @@ namespace Paint_Program
 
             canvasWidth = w;
             canvasHeight = h;
-            
+
             maxWidth = pw;
             maxHeight = ph;
 
@@ -91,7 +91,7 @@ namespace Paint_Program
 
         public void initCanvas()
         {
-            
+
 
             Tools = new List<ITool>();
             ToolButtons = new List<ToolStripButton>();
@@ -138,7 +138,7 @@ namespace Paint_Program
             this.Parent.Controls.Add(bs);
 
             zc = new ZoomControl(ss);
-            zc.Location = new Point(tsWidth, maxHeight - SystemInformation.CaptionHeight - menuHeight- zc.Height);
+            zc.Location = new Point(tsWidth, maxHeight - SystemInformation.CaptionHeight - menuHeight - zc.Height);
             this.Parent.Controls.Add(zc);
 
             p = new Display();
@@ -160,12 +160,12 @@ namespace Paint_Program
             p.Paint += EDisplayPaint;
 
             pScaled = new Panel();
-            pScaled.Size = new Size( (lv.Location.X - this.Location.X) - ts.Width - 30 ,(zc.Location.Y - this.Location.Y) - 165 );
+            pScaled.Size = new Size((lv.Location.X - this.Location.X) - ts.Width - 30, (zc.Location.Y - this.Location.Y) - 165);
             pScaled.MinimumSize = new Size(canvasWidth, canvasHeight);
             pScaled.Location = new Point(0, 0);
-            pScaled.BackColor = Color.FromArgb(64,64,64);
+            pScaled.BackColor = Color.FromArgb(64, 64, 64);
             pScaled.AutoScroll = true;
-            
+
             this.Location = new Point(ts.Width + 15, SystemInformation.CaptionHeight + 15);
             pScaled.Controls.Add(p);
 
@@ -190,7 +190,7 @@ namespace Paint_Program
             }
 
             g = p.CreateGraphics();
-            
+
 
             this.Controls.Add(pScaled);
             this.SendToBack();
@@ -217,7 +217,7 @@ namespace Paint_Program
             foreach (ITool tool in Tools)
             {
                 ToolStripButton temp = new ToolStripButton(Image.FromFile(tool.getToolIconPath()));
-                
+
                 temp.ToolTipText = tool.getToolTip();
                 temp.AutoToolTip = false;
                 temp.AutoSize = false;
@@ -238,7 +238,8 @@ namespace Paint_Program
                     ((ToolTip)temp.Tag).Show(tool.getToolTip(), this, temp.Bounds.X, temp.Bounds.Y + temp.Height);
                 };
 
-                temp.MouseLeave += delegate {
+                temp.MouseLeave += delegate
+                {
                     //ToolTip.Hide doesn't work aparently?
                     //Dispose the object when the mouse moves away to force it to go away -- really not great
                     ((ToolTip)temp.Tag).Dispose();
@@ -297,7 +298,7 @@ namespace Paint_Program
             iActiveTool = ToolButtons.IndexOf((ToolStripButton)sender);
             Tools[iActiveTool].init(ss);
 
-            foreach(ToolStripButton b in ToolButtons)
+            foreach (ToolStripButton b in ToolButtons)
             {
                 b.BackColor = Color.Transparent;
             }
@@ -316,14 +317,14 @@ namespace Paint_Program
 
             //Temporary Hack Fix - Please Find Better Solution
             //Fixes Second New Project Null Parent Reference Bug
-            this.Parent = (System.Windows.Forms.Control) sender;
+            this.Parent = (System.Windows.Forms.Control)sender;
 
             //Updates Parent Width and Height Values
             maxWidth = this.Parent.Width;
             maxHeight = this.Parent.Height;
 
             this.Size = new Size((int)(canvasWidth * zc.getZoomFactor()), (int)(canvasHeight * zc.getZoomFactor()));
-            this.Location = new Point(0,0);
+            this.Location = new Point(0, 0);
 
             //Moves all the Controls to their new location
             lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
@@ -378,7 +379,7 @@ namespace Paint_Program
 
         public void handleMouseDown(object sender, MouseEventArgs e)
         {
-            
+
             MouseEventArgs evt = scaleMouseEvent(e);
             //If there is a selected Tool
             if (iActiveTool >= 0)
@@ -405,7 +406,7 @@ namespace Paint_Program
             MouseEventArgs evt = scaleMouseEvent(e);
 
             if (iActiveTool >= 0 && evt != null)
-                
+
                 Tools[iActiveTool].onMouseMove(sender, evt);
             updateCanvas(g);
             Parent.Refresh();
@@ -420,7 +421,7 @@ namespace Paint_Program
         public void updateCanvas(Graphics k)
         {
 
-            if(ss.getBitmapLayerUpdate() != null)
+            if (ss.getBitmapLayerUpdate() != null)
             {
                 lv.updateActiveLayer();
             }
@@ -449,8 +450,8 @@ namespace Paint_Program
 
             System.GC.Collect();
 
-            p.Width = (int) (ss.getDrawScale() * ss.getCanvasWidth());
-            p.Height = (int) (ss.getDrawScale() * ss.getCanvasHeight());
+            p.Width = (int)(ss.getDrawScale() * ss.getCanvasWidth());
+            p.Height = (int)(ss.getDrawScale() * ss.getCanvasHeight());
             Rectangle source = new Rectangle(0, 0, bit2.Width, bit2.Height);
             Rectangle dest = new Rectangle(0, 0, p.Width, p.Height);
 
@@ -462,11 +463,11 @@ namespace Paint_Program
                 Tools[6].updateInterfaceLayer();
                 temp.DrawImage(ss.getInterfaceBitmap(), 0, 0);
             }
-            
+
             if (ss.getActiveSelection() && ss.getBitmapSelectionArea() != null)
             {
                 temp.DrawImage(ss.getBitmapSelectionArea(), ss.getSelectionPoint().X, ss.getSelectionPoint().Y);
-                
+
             }
 
             if (ss.getFlattenSelection())
@@ -482,6 +483,21 @@ namespace Paint_Program
                 }
             }
 
+            handleWatermark(temp);
+
+            k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
+            if (ss.getGridToggle())
+            {
+                lv.GridDraw(k);
+            }
+
+            bit2.Dispose();
+            if (iitmp != null)
+                iitmp.Dispose();
+        }
+
+        public static void handleWatermark(Graphics temp)
+        {
             if (SharedSettings.bRenderWatermark)
             {
                 if (SharedSettings.watermarkStyle == "Tiled")
@@ -493,7 +509,7 @@ namespace Paint_Program
                         {
                             using (Graphics g = temp)
                             {
-                                g.FillRectangle(brush, 0, 0, bg.Width, bg.Height);
+                                g.FillRectangle(brush, 0, 0, SharedSettings.bitmapCanvas.Width, SharedSettings.bitmapCanvas.Height);
                             }
                         }
                     }
@@ -505,33 +521,26 @@ namespace Paint_Program
                 {
                     temp.InterpolationMode = InterpolationMode.NearestNeighbor;
                     Rectangle src = new Rectangle(0, 0, SharedSettings.bitmapWatermark.Width, SharedSettings.bitmapWatermark.Height);
-                    Rectangle dst = new Rectangle(0, 0, p.Width, p.Height);
+                    Rectangle dst = new Rectangle(0, 0, SharedSettings.bitmapCanvas.Width, SharedSettings.bitmapCanvas.Height);
                     temp.DrawImage(SharedSettings.bitmapWatermark, dst, src, GraphicsUnit.Pixel);
                 }
                 if (SharedSettings.watermarkStyle == "Single Bottom")
                 {
                     Rectangle src = new Rectangle(0, 0, SharedSettings.bitmapWatermark.Width, SharedSettings.bitmapWatermark.Height);
-                    Rectangle dst = new Rectangle(p.Width - SharedSettings.bitmapWatermark.Width, p.Height - SharedSettings.bitmapWatermark.Height, SharedSettings.bitmapWatermark.Width, SharedSettings.bitmapWatermark.Height);
+                    Rectangle dst = new Rectangle(SharedSettings.bitmapCanvas.Width - SharedSettings.bitmapWatermark.Width,
+                        SharedSettings.bitmapCanvas.Height - SharedSettings.bitmapWatermark.Height,
+                        SharedSettings.bitmapWatermark.Width,
+                        SharedSettings.bitmapWatermark.Height);
                     temp.DrawImage(SharedSettings.bitmapWatermark, dst, src, GraphicsUnit.Pixel);
                 }
-                
-            }
 
-            k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
-            if (ss.getGridToggle())
-            {
-                lv.GridDraw(k);
             }
-
-            bit2.Dispose();
-            if(iitmp != null)
-                iitmp.Dispose();
         }
 
         public void setBitmap(Bitmap bit)
         {
             //Sets the Background Image
-            p.BackgroundImage = bit; 
+            p.BackgroundImage = bit;
         }
 
         public Bitmap getBitmap()
@@ -545,7 +554,7 @@ namespace Paint_Program
             if (!ToolsShown)
             {
                 ts.Visible = true;
-                
+
             }
             ToolsShown = true;
             Parent.Refresh();
@@ -565,9 +574,9 @@ namespace Paint_Program
         {
             foreach (Control c in Controls)
             {
-                if(c is ITextUpdate)
+                if (c is ITextUpdate)
                 {
-                    ((ITextUpdate) c).updateText();
+                    ((ITextUpdate)c).updateText();
                 }
             }
         }

@@ -6,6 +6,7 @@ using System.Drawing.Imaging;
 using System.ComponentModel;
 using System.Windows.Media.Imaging;
 using System.IO;
+using System.Drawing.Drawing2D;
 
 namespace Paint_Program
 {
@@ -13,10 +14,15 @@ namespace Paint_Program
     {
         public FileSave(SharedSettings ss)
         {
-            Bitmap bm = ss.getBitmapCanvas();   // Get the image from the bitmap object
+            Bitmap bm = (Bitmap)ss.getBitmapCanvas().Clone();   // Get the image from the bitmap object
+            Graphics temp = Graphics.FromImage(bm);
+
+            Canvas.handleWatermark(temp);
+
             BackgroundWorker bw = new BackgroundWorker();
 
-            try {
+            try
+            {
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.OverwritePrompt = false;
                 sfd.Filter = SharedSettings.getGlobalString("filesave_filter");
@@ -35,6 +41,7 @@ namespace Paint_Program
                 Console.WriteLine(e.InnerException);
             }
 
+
         }
         //test comment, please ignore
         private void doSave(Bitmap bm, SaveFileDialog sfd, object sender, DoWorkEventArgs args)
@@ -50,34 +57,34 @@ namespace Paint_Program
                         Console.WriteLine(sfd.FileName);
                         System.IO.File.Delete(sfd.FileName);
                     }
-                        switch (sfd.FilterIndex)
-                        {
-                            case 1:
-                                bm.Save(fs, ImageFormat.Bmp);
-                                break;
-                            case 2:
-                                bm.Save(fs, ImageFormat.Gif);
-                                break;
-                            case 3:
-                                saveGIFAnimation(fs);
-                                break;
-                            case 4:
-                                bm.Save(fs, ImageFormat.Icon);
-                                break;
-                            case 5:
-                                bm.Save(fs, ImageFormat.Jpeg);
-                                break;
-                            case 6:
-                                bm.Save(fs, ImageFormat.Png);
-                                break;
-                            case 7:
-                                bm.Save(fs, ImageFormat.Tiff);
-                                break;
-                        }
+                    switch (sfd.FilterIndex)
+                    {
+                        case 1:
+                            bm.Save(fs, ImageFormat.Bmp);
+                            break;
+                        case 2:
+                            bm.Save(fs, ImageFormat.Gif);
+                            break;
+                        case 3:
+                            saveGIFAnimation(fs);
+                            break;
+                        case 4:
+                            bm.Save(fs, ImageFormat.Icon);
+                            break;
+                        case 5:
+                            bm.Save(fs, ImageFormat.Jpeg);
+                            break;
+                        case 6:
+                            bm.Save(fs, ImageFormat.Png);
+                            break;
+                        case 7:
+                            bm.Save(fs, ImageFormat.Tiff);
+                            break;
+                    }
 
                     string message = SharedSettings.getGlobalString("filesave_saved");
                     MessageBox.Show(message);
-                        fs.Close();
+                    fs.Close();
                 }
                 catch (Exception e)
                 {
@@ -86,7 +93,7 @@ namespace Paint_Program
                 }
             }
         }
-        
+
         private void saveGIFAnimation(System.IO.FileStream fs)
         {
             using (var stream = new MemoryStream())

@@ -260,11 +260,11 @@ namespace Paint_Program
         private void tsmiFile_Load_Click(object sender, EventArgs e)
         {
             SharedSettings s = new SharedSettings();
-            ProjectLoad pl = new ProjectLoad(s);
+            ProjectLoad pl = new ProjectLoad();
 
             if (s.getLoadFromSettings() == false)
             {
-                return;
+                //return;
             }
 
             clearControls();
