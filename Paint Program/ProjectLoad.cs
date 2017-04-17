@@ -15,10 +15,15 @@ namespace Paint_Program
     class ProjectLoad
     {
         SharedSettings settings;
+        string Result;
 
         public ProjectLoad(SharedSettings ss)
         {
             settings = ss;
+            Result = "";
+
+            BackgroundWorker bw = new BackgroundWorker();
+
             try
             {
                 OpenFileDialog ofd = new OpenFileDialog();
@@ -26,8 +31,10 @@ namespace Paint_Program
                 ofd.Title = SharedSettings.getGlobalString("projectopen_dialog_title");
                 ofd.ShowDialog();
 
-
-                doOpen(settings, ofd);
+                bw.DoWork += (send, args) =>
+                {
+                    doOpen(settings, ofd, send, args);
+                };
                 ofd.Dispose();
 
             }
@@ -37,7 +44,12 @@ namespace Paint_Program
             }
         }
 
-        private void doOpen(SharedSettings ss, OpenFileDialog ofd)
+        public string getResultMessage()
+        {
+            return Result;
+        }
+
+        private void doOpen(SharedSettings ss, OpenFileDialog ofd, object sender, DoWorkEventArgs args)
         {
             if (ofd.FileName != "")
             {
@@ -64,7 +76,9 @@ namespace Paint_Program
                             names.Clear();
                         }
                         
-                    }else{
+                    }
+                    else if (ofd.FileName.EndsWith(".lep"))
+                    {
 
                         string baseDir = System.IO.Directory.GetCurrentDirectory();
 
@@ -119,12 +133,19 @@ namespace Paint_Program
                         layerBitmaps.Clear(); //Clears all Bitmap File References
                         layerNames.Clear(); //Clears Layer Name File Reference
                     }
+                    else
+                    {
+                        SharedSettings.bLoadFromSettings = false;
+                        Result = SharedSettings.getGlobalString("projectopen_error");
+                        MessageBox.Show(Result);
+                        
+                    }
 
                 }
                 catch (Exception e)
                 {
-                    string message = SharedSettings.getGlobalString("projectopen_error") + "\n\n" + e.ToString();
-                    MessageBox.Show(message);
+                    Result = SharedSettings.getGlobalString("projectopen_error") + "\n\n" + e.ToString();
+                    MessageBox.Show(Result);
                 }
             }
         }

@@ -466,7 +466,29 @@ namespace Paint_Program
         }
 
 
+        public static void setSelection(Bitmap bit, Point p)
+        {
+            SharedSettings.bitmapSelectionArea = bit;
+            SharedSettings.sSelectionSize = new Size(SharedSettings.bitmapSelectionArea.Width, SharedSettings.bitmapSelectionArea.Height);
+            SharedSettings.pSelectionPoint = p;
+            SharedSettings.bActiveSelection = true;
+            SharedSettings.bFlattenSelection = false;
+            SharedSettings.bRenderBitmapInterface = true;
+            SharedSettings.bitmapCurrentLayer = SharedSettings.bitmapSelectionArea;
+            SharedSettings.gActiveGraphics = Graphics.FromImage(SharedSettings.bitmapCurrentLayer);
+        }
 
+        public static void flattenSelection()
+        {
+            bRenderBitmapInterface = false;
+            if (bActiveSelection)
+            {
+                bActiveSelection = false;
+                bFlattenSelection = true;
+                gActiveLayerGraphics.DrawImage(bitmapSelectionArea, pSelectionPoint);
+                gActiveGraphics = gActiveLayerGraphics;
+            }
+        }
 
         public void scrubSelection()
         {
