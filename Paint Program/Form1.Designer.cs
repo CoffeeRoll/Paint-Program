@@ -64,8 +64,10 @@
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsNew = new System.Windows.Forms.ToolStripButton();
-            this.tsImport = new System.Windows.Forms.ToolStripButton();
+            this.tsOpen = new System.Windows.Forms.ToolStripButton();
             this.tsSave = new System.Windows.Forms.ToolStripButton();
+            this.tsExport = new System.Windows.Forms.ToolStripButton();
+            this.tsImport = new System.Windows.Forms.ToolStripButton();
             this.msMenu.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -170,7 +172,7 @@
             this.tsmiEdit_Undo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tsmiEdit_Undo.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiEdit_Undo.Name = "tsmiEdit_Undo";
-            this.tsmiEdit_Undo.Size = new System.Drawing.Size(152, 22);
+            this.tsmiEdit_Undo.Size = new System.Drawing.Size(130, 22);
             this.tsmiEdit_Undo.Text = "Undo";
             this.tsmiEdit_Undo.Click += new System.EventHandler(this.tsmiEdit_Undo_Click);
             // 
@@ -179,7 +181,7 @@
             this.tsmiEdit_Redo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tsmiEdit_Redo.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiEdit_Redo.Name = "tsmiEdit_Redo";
-            this.tsmiEdit_Redo.Size = new System.Drawing.Size(152, 22);
+            this.tsmiEdit_Redo.Size = new System.Drawing.Size(130, 22);
             this.tsmiEdit_Redo.Text = "Redo";
             this.tsmiEdit_Redo.Click += new System.EventHandler(this.tsmiEdit_Redo_Click);
             // 
@@ -188,7 +190,7 @@
             this.tsmiEdit_Resize.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tsmiEdit_Resize.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiEdit_Resize.Name = "tsmiEdit_Resize";
-            this.tsmiEdit_Resize.Size = new System.Drawing.Size(152, 22);
+            this.tsmiEdit_Resize.Size = new System.Drawing.Size(130, 22);
             this.tsmiEdit_Resize.Text = "Image Size";
             this.tsmiEdit_Resize.Click += new System.EventHandler(this.tsmiEdit_ImageSize_Click);
             // 
@@ -224,7 +226,7 @@
             this.tsmiView_GridLines_5.CheckOnClick = true;
             this.tsmiView_GridLines_5.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiView_GridLines_5.Name = "tsmiView_GridLines_5";
-            this.tsmiView_GridLines_5.Size = new System.Drawing.Size(152, 22);
+            this.tsmiView_GridLines_5.Size = new System.Drawing.Size(100, 22);
             this.tsmiView_GridLines_5.Text = "5";
             this.tsmiView_GridLines_5.Click += new System.EventHandler(this.tsmiView_GridLines_5_Click);
             // 
@@ -234,7 +236,7 @@
             this.tsmiView_GridLines_10.CheckOnClick = true;
             this.tsmiView_GridLines_10.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiView_GridLines_10.Name = "tsmiView_GridLines_10";
-            this.tsmiView_GridLines_10.Size = new System.Drawing.Size(152, 22);
+            this.tsmiView_GridLines_10.Size = new System.Drawing.Size(100, 22);
             this.tsmiView_GridLines_10.Text = "10";
             this.tsmiView_GridLines_10.Click += new System.EventHandler(this.tsmiView_GridLines_10_Click);
             // 
@@ -244,7 +246,7 @@
             this.tsmiView_GridLines_25.CheckOnClick = true;
             this.tsmiView_GridLines_25.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiView_GridLines_25.Name = "tsmiView_GridLines_25";
-            this.tsmiView_GridLines_25.Size = new System.Drawing.Size(152, 22);
+            this.tsmiView_GridLines_25.Size = new System.Drawing.Size(100, 22);
             this.tsmiView_GridLines_25.Text = "25";
             this.tsmiView_GridLines_25.Click += new System.EventHandler(this.tsmiView_GridLines_25_Click);
             // 
@@ -254,7 +256,7 @@
             this.tsmiView_GridLines_50.CheckOnClick = true;
             this.tsmiView_GridLines_50.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiView_GridLines_50.Name = "tsmiView_GridLines_50";
-            this.tsmiView_GridLines_50.Size = new System.Drawing.Size(152, 22);
+            this.tsmiView_GridLines_50.Size = new System.Drawing.Size(100, 22);
             this.tsmiView_GridLines_50.Text = "50";
             this.tsmiView_GridLines_50.Click += new System.EventHandler(this.tsmiView_GridLines_50_Click);
             // 
@@ -264,7 +266,7 @@
             this.tsmiView_GridLines_100.CheckOnClick = true;
             this.tsmiView_GridLines_100.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiView_GridLines_100.Name = "tsmiView_GridLines_100";
-            this.tsmiView_GridLines_100.Size = new System.Drawing.Size(152, 22);
+            this.tsmiView_GridLines_100.Size = new System.Drawing.Size(100, 22);
             this.tsmiView_GridLines_100.Text = "100";
             this.tsmiView_GridLines_100.Click += new System.EventHandler(this.tsmiView_GridLines_100_Click);
             // 
@@ -273,7 +275,7 @@
             this.tsmiView_GridLines_Auto.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tsmiView_GridLines_Auto.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiView_GridLines_Auto.Name = "tsmiView_GridLines_Auto";
-            this.tsmiView_GridLines_Auto.Size = new System.Drawing.Size(152, 22);
+            this.tsmiView_GridLines_Auto.Size = new System.Drawing.Size(100, 22);
             this.tsmiView_GridLines_Auto.Text = "Auto";
             this.tsmiView_GridLines_Auto.Click += new System.EventHandler(this.tsmiView_GridLines_Auto_Click);
             // 
@@ -320,7 +322,7 @@
             this.tsmiPreferences_Watermark_Style});
             this.tsmiPreferences_Watermark.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiPreferences_Watermark.Name = "tsmiPreferences_Watermark";
-            this.tsmiPreferences_Watermark.Size = new System.Drawing.Size(152, 22);
+            this.tsmiPreferences_Watermark.Size = new System.Drawing.Size(141, 22);
             this.tsmiPreferences_Watermark.Text = "Watermark...";
             // 
             // tsmiPreferences_Watermark_SetImage
@@ -387,7 +389,7 @@
             this.tsmiInternational.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tsmiInternational.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiInternational.Name = "tsmiInternational";
-            this.tsmiInternational.Size = new System.Drawing.Size(152, 22);
+            this.tsmiInternational.Size = new System.Drawing.Size(141, 22);
             this.tsmiInternational.Text = "International";
             // 
             // updateTimer
@@ -402,8 +404,10 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsNew,
+            this.tsOpen,
+            this.tsSave,
             this.tsImport,
-            this.tsSave});
+            this.tsExport});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(884, 31);
@@ -421,15 +425,15 @@
             this.tsNew.Text = "New Project";
             this.tsNew.Click += new System.EventHandler(this.tsNew_Click);
             // 
-            // tsImport
+            // tsOpen
             // 
-            this.tsImport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsImport.Image = ((System.Drawing.Image)(resources.GetObject("tsImport.Image")));
-            this.tsImport.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsImport.Name = "tsImport";
-            this.tsImport.Size = new System.Drawing.Size(28, 28);
-            this.tsImport.Text = "Open File";
-            this.tsImport.Click += new System.EventHandler(this.tsOpen_Click);
+            this.tsOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsOpen.Image = ((System.Drawing.Image)(resources.GetObject("tsOpen.Image")));
+            this.tsOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsOpen.Name = "tsOpen";
+            this.tsOpen.Size = new System.Drawing.Size(28, 28);
+            this.tsOpen.Text = "Open File";
+            this.tsOpen.Click += new System.EventHandler(this.tsOpen_Click);
             // 
             // tsSave
             // 
@@ -440,6 +444,26 @@
             this.tsSave.Size = new System.Drawing.Size(28, 28);
             this.tsSave.Text = "Save";
             this.tsSave.Click += new System.EventHandler(this.tsSave_Click);
+            // 
+            // tsExport
+            // 
+            this.tsExport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsExport.Image = global::Paint_Program.Properties.Resources.Export;
+            this.tsExport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsExport.Name = "tsExport";
+            this.tsExport.Size = new System.Drawing.Size(28, 28);
+            this.tsExport.Text = "toolStripButton1";
+            this.tsExport.Click += new System.EventHandler(this.tsExport_Click);
+            // 
+            // tsImport
+            // 
+            this.tsImport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsImport.Image = global::Paint_Program.Properties.Resources.import;
+            this.tsImport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsImport.Name = "tsImport";
+            this.tsImport.Size = new System.Drawing.Size(28, 28);
+            this.tsImport.Text = "toolStripButton1";
+            this.tsImport.Click += new System.EventHandler(this.tsImport_Click);
             // 
             // Form1
             // 
@@ -490,7 +514,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiView_GridLines_Auto;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsNew;
-        private System.Windows.Forms.ToolStripButton tsImport;
+        private System.Windows.Forms.ToolStripButton tsOpen;
         private System.Windows.Forms.ToolStripButton tsSave;
         private System.Windows.Forms.ToolStripMenuItem tsmiPreferences;
         private System.Windows.Forms.ToolStripMenuItem tsmiPreferences_Watermark;
@@ -502,6 +526,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiPreferences_Watermark_Style_Tiled;
         private System.Windows.Forms.ToolStripMenuItem tsmiInternational;
         private System.Windows.Forms.ToolStripMenuItem tsmiFile_SaveGoogleDrive;
+        private System.Windows.Forms.ToolStripButton tsExport;
+        private System.Windows.Forms.ToolStripButton tsImport;
     }
 }
 

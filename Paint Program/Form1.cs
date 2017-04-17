@@ -125,7 +125,7 @@ namespace Paint_Program
 
             //ToolStrip Item ToolTips
             tsNew.ToolTipText = SharedSettings.getGlobalString("toolstripmenu_new");
-            tsImport.ToolTipText = SharedSettings.getGlobalString("toolstripmenu_import");
+            tsOpen.ToolTipText = SharedSettings.getGlobalString("toolstripmenu_import");
             tsSave.ToolTipText = SharedSettings.getGlobalString("toostripmenu_save");
 
             foreach (Control c in Controls)
@@ -403,12 +403,22 @@ namespace Paint_Program
 
         private void tsOpen_Click(object sender, EventArgs e)
         {
-            tsmiFile_Import_Click(sender, e);
+            tsmiFile_Load_Click(sender, e);
         }
 
         private void tsSave_Click(object sender, EventArgs e)
         {
             tsmiFile_Save_Click(sender, e);
+        }
+
+        private void tsImport_Click(object sender, EventArgs e)
+        {
+            tsmiFile_Import_Click(sender, e);
+        }
+
+        private void tsExport_Click(object sender, EventArgs e)
+        {
+            tsmiFile_Export_Click(sender, e);
         }
 
         private void setImageToolStripMenuItem_Click(object sender, EventArgs e)
@@ -624,7 +634,9 @@ namespace Paint_Program
             return null;
         }
 
+
         #endregion
+
     }
 
 }
