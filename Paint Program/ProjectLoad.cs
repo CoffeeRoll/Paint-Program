@@ -27,7 +27,7 @@ namespace Paint_Program
                 ofd.Title = SharedSettings.getGlobalString("projectopen_dialog_title");
                 ofd.ShowDialog();
 
-                doOpen(ofd, null, null);
+                doOpen(ofd);
 
                 ofd.Dispose();
 
@@ -43,7 +43,7 @@ namespace Paint_Program
             return Result;
         }
 
-        private void doOpen(OpenFileDialog ofd, object sender, DoWorkEventArgs args)
+        private void doOpen(OpenFileDialog ofd)
         {
 
             Console.WriteLine("Attempting to open: " + ofd.FileName);
@@ -121,6 +121,18 @@ namespace Paint_Program
                             layerBitmaps.Add((Bitmap)temp.Clone());
                         }
 
+                        try {
+                            if (Directory.Exists(baseDir + @"\load\watermark"))
+                            {
+                                Console.WriteLine("Watermark Found");
+                                SharedSettings.bitmapWatermark = (Bitmap)Bitmap.FromFile(baseDir + @"\load\watermark\watermark.png").Clone();
+                            }
+                        }catch(Exception err)
+                        {
+                            SharedSettings.bitmapWatermark = null;
+                            Console.WriteLine("Exception Thrown in Watermark Loading" + err.InnerException);
+                        }
+
                         SharedSettings.iCanvasWidth = w;
                         SharedSettings.iCanvasHeight = h;
                         SharedSettings.Layers = layerBitmaps.ToArray();
@@ -132,6 +144,7 @@ namespace Paint_Program
                         layerBitmaps.Clear(); //Clears all Bitmap File References
                         layerNames.Clear(); //Clears Layer Name File Reference
                         Console.WriteLine(SharedSettings.Layers.Count());
+
                     }
 
                 }
