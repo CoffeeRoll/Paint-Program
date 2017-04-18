@@ -332,9 +332,9 @@ namespace Paint_Program
             zc.Location = new Point(tsWidth, maxHeight - SystemInformation.CaptionHeight - menuHeight - zc.Height);
 
             //Center the canvas on the screen, but don't allow it to be draw off the screen
-            int minXPos = 0;
+            int minXPos = menuHeight * 3;
             int maxXPos = (bs.Location.X / 2) - (((int)(p.Width)) / 2);
-            int minYPos = menuHeight;
+            int minYPos = menuHeight * 3;
             int maxYPos = (zc.Location.Y / 2) - (((int)(p.Height)) / 2);
 
             int ploc_x = (maxXPos < minXPos) ? minXPos : maxXPos;
