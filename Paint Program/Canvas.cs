@@ -50,14 +50,14 @@ namespace Paint_Program
 
         SharedSettings ss;
 
-        public Canvas(int pw, int ph, SharedSettings settings)
+        public Canvas(int pw, int ph)
         {
             InitializeComponent();
 
-            ss = settings;
+            ss = new SharedSettings();
 
-            canvasWidth = settings.getCanvasWidth();
-            canvasHeight = settings.getCanvasHeight();
+            canvasWidth = SharedSettings.bitmapCanvas.Width;
+            canvasHeight = SharedSettings.bitmapCanvas.Height;
             maxWidth = pw;
             maxHeight = ph;
 
@@ -589,7 +589,7 @@ namespace Paint_Program
         public void Trash()
         {
             lv.Trash();
-            ss.Trash();
+            SharedSettings.Trash();
             p.Dispose();
             pScaled.Dispose();
             g.Dispose();

@@ -533,7 +533,7 @@ namespace Paint_Program
             return (int)(newStart + ((value - originalStart) * scale));
         }
 
-        public void Trash()
+        public static void Trash()
         {
 
             //Disposes all Bitmap references to reduce memory leaks
@@ -541,7 +541,8 @@ namespace Paint_Program
             {
                 b.Dispose();
             }
-            setLoadFromSettings(false);
+
+            bLoadFromSettings = false;
 
             if (bitmapCanvas != null)
             {
@@ -558,9 +559,14 @@ namespace Paint_Program
                 bitmapImportImage.Dispose();
             }
 
-            if(bitmapImportImage != null)
+            if(bitmapInterface != null)
             {
                 bitmapInterface.Dispose();
+            }
+
+            if(bitmapWatermark != null)
+            {
+                bitmapWatermark.Dispose();
             }
         }
     }

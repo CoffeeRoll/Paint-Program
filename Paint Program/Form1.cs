@@ -181,9 +181,9 @@ namespace Paint_Program
             ss = c.getSharedSettings();
         }
 
-        private void makeNewProject(SharedSettings s)
+        private void makeNewProject()
         {
-            c = new Canvas(this.Width, this.Height, s);
+            c = new Canvas(this.Width, this.Height);
             c.Location = new Point(200, 5);
             this.Controls.Add(c);
             c.initCanvas();
@@ -259,16 +259,15 @@ namespace Paint_Program
 
         private void tsmiFile_Load_Click(object sender, EventArgs e)
         {
-            SharedSettings s = new SharedSettings();
             ProjectLoad pl = new ProjectLoad();
 
-            if (s.getLoadFromSettings() == false)
+            if (SharedSettings.bLoadFromSettings == false)
             {
-                //return;
+                return;
             }
-
+            //SharedSettings.Trash();
             clearControls();
-            makeNewProject(s);
+            makeNewProject();
         }
 
         #region GridLines

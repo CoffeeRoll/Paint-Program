@@ -125,7 +125,9 @@ namespace Paint_Program
                             if (Directory.Exists(baseDir + @"\load\watermark"))
                             {
                                 Console.WriteLine("Watermark Found");
+                                SharedSettings.bRenderWatermark = true;
                                 SharedSettings.bitmapWatermark = (Bitmap)Bitmap.FromFile(baseDir + @"\load\watermark\watermark.png").Clone();
+                                SharedSettings.watermarkPath = baseDir + @"\load\watermark\watermark.png";
                             }
                         }catch(Exception err)
                         {
@@ -133,6 +135,7 @@ namespace Paint_Program
                             Console.WriteLine("Exception Thrown in Watermark Loading" + err.InnerException);
                         }
 
+                        SharedSettings.bRenderWatermark = false;
                         SharedSettings.iCanvasWidth = w;
                         SharedSettings.iCanvasHeight = h;
                         SharedSettings.Layers = layerBitmaps.ToArray();
