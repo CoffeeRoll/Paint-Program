@@ -567,6 +567,11 @@ namespace Paint_Program
             {
                 bitmapWatermark.Dispose();
             }
+            bRenderBitmapInterface = false;
+            bRenderWatermark = false;
+            bLoadFromSettings = false;
+            bActiveSelection = false;
+            bFlattenSelection = false;
         }
     }
 }
