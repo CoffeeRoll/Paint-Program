@@ -66,8 +66,8 @@
             this.tsNew = new System.Windows.Forms.ToolStripButton();
             this.tsOpen = new System.Windows.Forms.ToolStripButton();
             this.tsSave = new System.Windows.Forms.ToolStripButton();
-            this.tsExport = new System.Windows.Forms.ToolStripButton();
             this.tsImport = new System.Windows.Forms.ToolStripButton();
+            this.tsExport = new System.Windows.Forms.ToolStripButton();
             this.msMenu.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -322,7 +322,7 @@
             this.tsmiPreferences_Watermark_Style});
             this.tsmiPreferences_Watermark.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiPreferences_Watermark.Name = "tsmiPreferences_Watermark";
-            this.tsmiPreferences_Watermark.Size = new System.Drawing.Size(141, 22);
+            this.tsmiPreferences_Watermark.Size = new System.Drawing.Size(152, 22);
             this.tsmiPreferences_Watermark.Text = "Watermark...";
             // 
             // tsmiPreferences_Watermark_SetImage
@@ -337,10 +337,12 @@
             // tsmiPreferences_Watermark_ShowWatermark
             // 
             this.tsmiPreferences_Watermark_ShowWatermark.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tsmiPreferences_Watermark_ShowWatermark.Enabled = false;
             this.tsmiPreferences_Watermark_ShowWatermark.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiPreferences_Watermark_ShowWatermark.Name = "tsmiPreferences_Watermark_ShowWatermark";
             this.tsmiPreferences_Watermark_ShowWatermark.Size = new System.Drawing.Size(164, 22);
             this.tsmiPreferences_Watermark_ShowWatermark.Text = "Show Watermark";
+            this.tsmiPreferences_Watermark_ShowWatermark.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.tsmiPreferences_Watermark_ShowWatermark.Click += new System.EventHandler(this.showWatermarkToolStripMenuItem_Click);
             // 
             // tsmiPreferences_Watermark_Style
@@ -350,6 +352,7 @@
             this.tsmiPreferences_Watermark_Style_SingleCentered,
             this.tsmiPreferences_Watermark_Style_SingleBottom,
             this.tsmiPreferences_Watermark_Style_Tiled});
+            this.tsmiPreferences_Watermark_Style.Enabled = false;
             this.tsmiPreferences_Watermark_Style.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiPreferences_Watermark_Style.Name = "tsmiPreferences_Watermark_Style";
             this.tsmiPreferences_Watermark_Style.Size = new System.Drawing.Size(164, 22);
@@ -389,7 +392,7 @@
             this.tsmiInternational.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tsmiInternational.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiInternational.Name = "tsmiInternational";
-            this.tsmiInternational.Size = new System.Drawing.Size(141, 22);
+            this.tsmiInternational.Size = new System.Drawing.Size(152, 22);
             this.tsmiInternational.Text = "International";
             // 
             // updateTimer
@@ -445,16 +448,6 @@
             this.tsSave.Text = "Save";
             this.tsSave.Click += new System.EventHandler(this.tsSave_Click);
             // 
-            // tsExport
-            // 
-            this.tsExport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsExport.Image = global::Paint_Program.Properties.Resources.Export;
-            this.tsExport.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsExport.Name = "tsExport";
-            this.tsExport.Size = new System.Drawing.Size(28, 28);
-            this.tsExport.Text = "toolStripButton1";
-            this.tsExport.Click += new System.EventHandler(this.tsExport_Click);
-            // 
             // tsImport
             // 
             this.tsImport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -464,6 +457,16 @@
             this.tsImport.Size = new System.Drawing.Size(28, 28);
             this.tsImport.Text = "toolStripButton1";
             this.tsImport.Click += new System.EventHandler(this.tsImport_Click);
+            // 
+            // tsExport
+            // 
+            this.tsExport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsExport.Image = global::Paint_Program.Properties.Resources.Export;
+            this.tsExport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsExport.Name = "tsExport";
+            this.tsExport.Size = new System.Drawing.Size(28, 28);
+            this.tsExport.Text = "toolStripButton1";
+            this.tsExport.Click += new System.EventHandler(this.tsExport_Click);
             // 
             // Form1
             // 
