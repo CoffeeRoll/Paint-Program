@@ -62,6 +62,8 @@ namespace Paint_Program
                     {
                         System.IO.Directory.CreateDirectory("save\\watermark");
                         SharedSettings.bitmapWatermark.Save("save\\watermark\\watermark.png", ImageFormat.Png);
+                        string[] watermarkInfo = {SharedSettings.bRenderWatermark.ToString(), SharedSettings.watermarkStyle};
+                        System.IO.File.WriteAllLines(baseDir + @"\\save\\watermark\\watermarkdata.txt", watermarkInfo);
                     }
 
                     if (System.IO.File.Exists(sfd.FileName))

@@ -96,7 +96,7 @@ namespace Paint_Program
 
             bGridToggle = false;
 
-            watermarkStyle = "Single Center";
+            //watermarkStyle = "Single Center";
 
             //No Tablet Input
             iTabletPressure = -1;

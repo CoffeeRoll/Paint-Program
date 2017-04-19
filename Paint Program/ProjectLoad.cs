@@ -126,10 +126,28 @@ namespace Paint_Program
                         {
                             if (Directory.Exists(baseDir + @"\load\watermark"))
                             {
-                                Console.WriteLine("Watermark Found");
-                                SharedSettings.bRenderWatermark = true;
+                                //Console.WriteLine("Watermark Found");
                                 SharedSettings.bitmapWatermark = (Bitmap)Bitmap.FromFile(baseDir + @"\load\watermark\watermark.png").Clone();
                                 SharedSettings.watermarkPath = baseDir + @"\load\watermark\watermark.png";
+                                List<string> watermarkdata = new List<string>();
+                                using (System.IO.StreamReader sr = new System.IO.StreamReader(baseDir + @"\load\watermark\watermarkdata.txt", Encoding.Default))
+                                {
+                                    string line;
+                                    
+                                    // Read the stream to a string, and write the string to the console.
+                                    while ((line = sr.ReadLine()) != null)
+                                    {
+                                        Console.WriteLine(line);
+                                        watermarkdata.Add(line);
+                                    }
+                                    sr.Close();
+                                    sr.Dispose();
+                                }
+
+                                bool show;
+                                Boolean.TryParse(watermarkdata[0], out show);
+                                SharedSettings.bRenderWatermark = show;
+                                SharedSettings.watermarkStyle = watermarkdata[1];
                             }
                         }
                         catch (Exception err)
@@ -137,8 +155,7 @@ namespace Paint_Program
                             SharedSettings.bitmapWatermark = null;
                             Console.WriteLine("Exception Thrown in Watermark Loading" + err.InnerException);
                         }
-
-                        SharedSettings.bRenderWatermark = false;
+                        
                         SharedSettings.iCanvasWidth = w;
                         SharedSettings.iCanvasHeight = h;
                         SharedSettings.Layers = layerBitmaps.ToArray();
