@@ -45,6 +45,11 @@ namespace Paint_Program
                 {
                     System.IO.FileStream fs = (System.IO.FileStream)sfd.OpenFile();
 
+                    if (SharedSettings.bRenderWatermark && SharedSettings.bitmapWatermark != null)
+                    {
+                        Canvas.handleWatermark(Graphics.FromImage(bm));
+                    }
+
                     if (sfd.CheckFileExists)
                     {
                         Console.WriteLine(sfd.FileName);
