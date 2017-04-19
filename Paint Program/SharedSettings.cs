@@ -558,9 +558,14 @@ namespace Paint_Program
                 bitmapImportImage.Dispose();
             }
 
-            if(bitmapImportImage != null)
+            if (bitmapInterface != null)
             {
                 bitmapInterface.Dispose();
+            }
+
+            if (bitmapWatermark != null)
+            {
+                bitmapWatermark.Dispose();
             }
         }
     }

@@ -18,7 +18,7 @@ namespace Paint_Program
         {
             try
             {
-                Bitmap bm = ss.getBitmapCanvas();
+                Bitmap bm = ss.getBitmapCanvas().Clone() as Bitmap;
                 BackgroundWorker bw = new BackgroundWorker();
 
                 if (fileType == "LePaint Project File | *.lep")
@@ -54,6 +54,8 @@ namespace Paint_Program
         {
             try
             {
+                Canvas.handleWatermark(Graphics.FromImage(bm));
+
                 string ext = ".png";
                 ImageFormat fmt = ImageFormat.Png;
                 switch (filetype)
@@ -156,6 +158,12 @@ namespace Paint_Program
                 }
 
                 System.IO.File.WriteAllLines(baseDir + @"\save\names.txt", LayerNames);
+
+                if (SharedSettings.bitmapWatermark != null)
+                {
+                    System.IO.Directory.CreateDirectory("save\\watermark");
+                    SharedSettings.bitmapWatermark.Save("save\\watermark\\watermark.png", ImageFormat.Png);
+                }
 
                 if (System.IO.File.Exists(filename + ".lep"))
                 {
