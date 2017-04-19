@@ -558,10 +558,21 @@ namespace Paint_Program
                 bitmapImportImage.Dispose();
             }
 
-            if(bitmapImportImage != null)
+            if (bitmapInterface != null)
             {
                 bitmapInterface.Dispose();
             }
+
+            if (bitmapWatermark != null)
+            {
+                bitmapWatermark.Dispose();
+            }
+            bRenderBitmapInterface = false;
+            bRenderWatermark = false;
+            bLoadFromSettings = false;
+            bActiveSelection = false;
+            bFlattenSelection = false;
+            watermarkPath = "";
         }
     }
 }

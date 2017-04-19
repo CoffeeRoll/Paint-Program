@@ -50,14 +50,14 @@ namespace Paint_Program
 
         SharedSettings ss;
 
-        public Canvas(int pw, int ph, SharedSettings settings)
+        public Canvas(int pw, int ph)
         {
             InitializeComponent();
 
-            ss = settings;
+            ss = new SharedSettings();
 
-            canvasWidth = settings.getCanvasWidth();
-            canvasHeight = settings.getCanvasHeight();
+            canvasWidth = SharedSettings.bitmapCanvas.Width;
+            canvasHeight = SharedSettings.bitmapCanvas.Height;
             maxWidth = pw;
             maxHeight = ph;
 
@@ -482,7 +482,22 @@ namespace Paint_Program
                 }
             }
 
-            if (SharedSettings.bRenderWatermark)
+            handleWatermark(temp);
+
+            k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
+            if (ss.getGridToggle())
+            {
+                lv.GridDraw(k);
+            }
+
+            bit2.Dispose();
+            if(iitmp != null)
+                iitmp.Dispose();
+        }
+
+        public static void handleWatermark(Graphics temp)
+        {
+            if (SharedSettings.bRenderWatermark && SharedSettings.bitmapWatermark != null)
             {
                 if (SharedSettings.watermarkStyle == "Tiled")
                 {
@@ -493,7 +508,7 @@ namespace Paint_Program
                         {
                             using (Graphics g = temp)
                             {
-                                g.FillRectangle(brush, 0, 0, bg.Width, bg.Height);
+                                g.FillRectangle(brush, 0, 0, SharedSettings.bitmapCanvas.Width, SharedSettings.bitmapCanvas.Height);
                             }
                         }
                     }
@@ -505,27 +520,20 @@ namespace Paint_Program
                 {
                     temp.InterpolationMode = InterpolationMode.NearestNeighbor;
                     Rectangle src = new Rectangle(0, 0, SharedSettings.bitmapWatermark.Width, SharedSettings.bitmapWatermark.Height);
-                    Rectangle dst = new Rectangle(0, 0, p.Width, p.Height);
+                    Rectangle dst = new Rectangle(0, 0, SharedSettings.bitmapCanvas.Width, SharedSettings.bitmapCanvas.Height);
                     temp.DrawImage(SharedSettings.bitmapWatermark, dst, src, GraphicsUnit.Pixel);
                 }
                 if (SharedSettings.watermarkStyle == "Single Bottom")
                 {
                     Rectangle src = new Rectangle(0, 0, SharedSettings.bitmapWatermark.Width, SharedSettings.bitmapWatermark.Height);
-                    Rectangle dst = new Rectangle(p.Width - SharedSettings.bitmapWatermark.Width, p.Height - SharedSettings.bitmapWatermark.Height, SharedSettings.bitmapWatermark.Width, SharedSettings.bitmapWatermark.Height);
+                    Rectangle dst = new Rectangle(SharedSettings.bitmapCanvas.Width - SharedSettings.bitmapWatermark.Width,
+                        SharedSettings.bitmapCanvas.Height - SharedSettings.bitmapWatermark.Height,
+                        SharedSettings.bitmapWatermark.Width,
+                        SharedSettings.bitmapWatermark.Height);
                     temp.DrawImage(SharedSettings.bitmapWatermark, dst, src, GraphicsUnit.Pixel);
                 }
-                
-            }
 
-            k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
-            if (ss.getGridToggle())
-            {
-                lv.GridDraw(k);
             }
-
-            bit2.Dispose();
-            if(iitmp != null)
-                iitmp.Dispose();
         }
 
         public void setBitmap(Bitmap bit)
