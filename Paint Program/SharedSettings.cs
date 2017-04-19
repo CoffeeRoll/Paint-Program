@@ -572,6 +572,7 @@ namespace Paint_Program
             bLoadFromSettings = false;
             bActiveSelection = false;
             bFlattenSelection = false;
+            watermarkPath = "";
         }
     }
 }
