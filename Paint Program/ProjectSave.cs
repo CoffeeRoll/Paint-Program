@@ -27,7 +27,7 @@ namespace Paint_Program
 
                 bw.DoWork += (send, args) =>
                 {
-                    doSave(sfd, send, args);
+                    doSave(sfd);
                 };
 
                 bw.RunWorkerAsync();
@@ -39,7 +39,7 @@ namespace Paint_Program
 
         }
 
-        private void doSave( SaveFileDialog sfd, object sender, DoWorkEventArgs args)
+        private void doSave(SaveFileDialog sfd)
         {
             if (sfd.FileName != "")
             {
@@ -51,12 +51,20 @@ namespace Paint_Program
                     string baseDir = System.IO.Directory.GetCurrentDirectory();
                     string[] LayerNames = settings.getLayerNames();
 
-                    for(int n = 0; n < bitArr.Length; n++)
+                    for (int n = 0; n < bitArr.Length; n++)
                     {
                         bitArr[n].Save(baseDir + "\\save\\" + LayerNames[n] + ".png", ImageFormat.Png);
                     }
 
                     System.IO.File.WriteAllLines(baseDir + @"\save\names.txt", LayerNames);
+
+                    if (SharedSettings.bitmapWatermark != null)
+                    {
+                        System.IO.Directory.CreateDirectory("save\\watermark");
+                        SharedSettings.bitmapWatermark.Save("save\\watermark\\watermark.png", ImageFormat.Png);
+                        string[] watermarkInfo = {SharedSettings.bRenderWatermark.ToString(), SharedSettings.watermarkStyle};
+                        System.IO.File.WriteAllLines(baseDir + @"\\save\\watermark\\watermarkdata.txt", watermarkInfo);
+                    }
 
                     if (System.IO.File.Exists(sfd.FileName))
                     {

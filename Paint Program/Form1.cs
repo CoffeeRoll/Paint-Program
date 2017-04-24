@@ -41,7 +41,7 @@ namespace Paint_Program
             populateLanguages();
 
             updateText();
-
+            
             //Default Project
             makeNewProject(500, 500);
         }
@@ -125,7 +125,7 @@ namespace Paint_Program
 
             //ToolStrip Item ToolTips
             tsNew.ToolTipText = SharedSettings.getGlobalString("toolstripmenu_new");
-            tsImport.ToolTipText = SharedSettings.getGlobalString("toolstripmenu_import");
+            tsOpen.ToolTipText = SharedSettings.getGlobalString("toolstripmenu_import");
             tsSave.ToolTipText = SharedSettings.getGlobalString("toostripmenu_save");
 
             foreach (Control c in Controls)
@@ -135,7 +135,7 @@ namespace Paint_Program
                     ((ITextUpdate)c).updateText();
                 }
             }
-
+            
             this.Refresh();
         }
         
@@ -181,9 +181,9 @@ namespace Paint_Program
             ss = c.getSharedSettings();
         }
 
-        private void makeNewProject(SharedSettings s)
+        private void makeNewProject()
         {
-            c = new Canvas(this.Width, this.Height, s);
+            c = new Canvas(this.Width, this.Height);
             c.Location = new Point(200, 5);
             this.Controls.Add(c);
             c.initCanvas();
@@ -210,7 +210,7 @@ namespace Paint_Program
             //Import Image
             try
             {
-                ImageImport ii = new Paint_Program.ImageImport(c.getSharedSettings());
+                ImageImport ii = new ImageImport(c.getSharedSettings());
             }
             catch (Exception err)
             {
@@ -259,16 +259,15 @@ namespace Paint_Program
 
         private void tsmiFile_Load_Click(object sender, EventArgs e)
         {
-            SharedSettings s = new SharedSettings();
-            ProjectLoad pl = new ProjectLoad(s);
+            ProjectLoad pl = new ProjectLoad();
 
-            if (s.getLoadFromSettings() == false)
+            if (SharedSettings.bLoadFromSettings == false)
             {
                 return;
             }
-
+            //SharedSettings.Trash();
             clearControls();
-            makeNewProject(s);
+            makeNewProject();
         }
 
         #region GridLines
@@ -403,12 +402,22 @@ namespace Paint_Program
 
         private void tsOpen_Click(object sender, EventArgs e)
         {
-            tsmiFile_Import_Click(sender, e);
+            tsmiFile_Load_Click(sender, e);
         }
 
         private void tsSave_Click(object sender, EventArgs e)
         {
             tsmiFile_Save_Click(sender, e);
+        }
+
+        private void tsImport_Click(object sender, EventArgs e)
+        {
+            tsmiFile_Import_Click(sender, e);
+        }
+
+        private void tsExport_Click(object sender, EventArgs e)
+        {
+            tsmiFile_Export_Click(sender, e);
         }
 
         private void setImageToolStripMenuItem_Click(object sender, EventArgs e)
@@ -560,13 +569,13 @@ namespace Paint_Program
             {
                 if(Clipboard.GetImage() != null)
                 {
-                    SharedSettings.bitmapSelectionArea = (Bitmap) GetClipboardImage();
-                    SharedSettings.sSelectionSize = new Size(SharedSettings.bitmapSelectionArea.Width, SharedSettings.bitmapSelectionArea.Height);
-                    SharedSettings.pSelectionPoint = new Point(0, 0);
-                    SharedSettings.bActiveSelection = true;
-                    SharedSettings.bFlattenSelection = false;
-                    SharedSettings.bRenderBitmapInterface = true;
-                    SharedSettings.bitmapCurrentLayer = SharedSettings.bitmapSelectionArea;
+                    SharedSettings.flattenSelection();
+                    Bitmap temp = (Bitmap) GetClipboardImage();
+                    Bitmap temp2 = new Bitmap(temp.Width, temp.Height, PixelFormat.Format32bppArgb);
+                    Graphics.FromImage(temp2).DrawImage(temp, 0, 0);
+                    temp.Dispose();
+                    SharedSettings.setSelection((Bitmap)temp2.Clone(), new Point(0,0));
+                    temp.Dispose();
                 }
             }
             //CTRL + + for zoom in
@@ -624,7 +633,9 @@ namespace Paint_Program
             return null;
         }
 
+
         #endregion
+
     }
 
 }

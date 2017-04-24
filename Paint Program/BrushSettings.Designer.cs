@@ -46,6 +46,7 @@
             // lPrime
             // 
             this.lPrime.AutoSize = true;
+            this.lPrime.ForeColor = System.Drawing.Color.Snow;
             this.lPrime.Location = new System.Drawing.Point(39, 42);
             this.lPrime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lPrime.Name = "lPrime";
@@ -57,7 +58,7 @@
             // 
             this.lSec.AutoSize = true;
             this.lSec.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lSec.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lSec.ForeColor = System.Drawing.Color.Snow;
             this.lSec.Location = new System.Drawing.Point(23, 79);
             this.lSec.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lSec.Name = "lSec";
@@ -67,7 +68,6 @@
             // 
             // pPrime
             // 
-            this.pPrime.Location = new System.Drawing.Point(126, 23);
             this.pPrime.Location = new System.Drawing.Point(126, 35);
             this.pPrime.Margin = new System.Windows.Forms.Padding(2);
             this.pPrime.Name = "pPrime";
@@ -78,7 +78,6 @@
             // 
             // pSec
             // 
-            this.pSec.Location = new System.Drawing.Point(126, 59);
             this.pSec.Location = new System.Drawing.Point(126, 71);
             this.pSec.Margin = new System.Windows.Forms.Padding(2);
             this.pSec.Name = "pSec";
@@ -101,6 +100,7 @@
             // lSize
             // 
             this.lSize.AutoSize = true;
+            this.lSize.ForeColor = System.Drawing.Color.Snow;
             this.lSize.Location = new System.Drawing.Point(23, 120);
             this.lSize.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lSize.Name = "lSize";
@@ -111,6 +111,7 @@
             // lHard
             // 
             this.lHard.AutoSize = true;
+            this.lHard.ForeColor = System.Drawing.Color.Snow;
             this.lHard.Location = new System.Drawing.Point(23, 189);
             this.lHard.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lHard.Name = "lHard";
@@ -137,7 +138,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(252, 31);

@@ -14,11 +14,12 @@ namespace Paint_Program
 {
     class ProjectLoad
     {
-        SharedSettings settings;
+        string Result;
 
-        public ProjectLoad(SharedSettings ss)
+        public ProjectLoad()
         {
-            settings = ss;
+            Result = "";
+
             try
             {
                 OpenFileDialog ofd = new OpenFileDialog();
@@ -26,8 +27,8 @@ namespace Paint_Program
                 ofd.Title = SharedSettings.getGlobalString("projectopen_dialog_title");
                 ofd.ShowDialog();
 
+                doOpen(ofd);
 
-                doOpen(settings, ofd);
                 ofd.Dispose();
 
             }
@@ -37,38 +38,49 @@ namespace Paint_Program
             }
         }
 
-        private void doOpen(SharedSettings ss, OpenFileDialog ofd)
+        public string getResultMessage()
         {
+            return Result;
+        }
+
+        private void doOpen(OpenFileDialog ofd)
+        {
+
+            Console.WriteLine("Attempting to open: " + ofd.FileName);
+
             if (ofd.FileName != "")
             {
                 try
                 {
                     if (ofd.FileName.EndsWith(".gif"))
                     {
-                        using (System.IO.Stream sr = new FileStream(ofd.FileName,FileMode.Open, FileAccess.Read, FileShare.Read))
+                        using (System.IO.Stream sr = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read, FileShare.Read))
                         {
                             GifBitmapDecoder gbd = new GifBitmapDecoder(sr, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.Default);
                             List<Bitmap> bmps = new List<Bitmap>();
                             List<string> names = new List<string>();
-                            for(int i = 0; i < gbd.Frames.Count; i++)
+                            for (int i = 0; i < gbd.Frames.Count; i++)
                             {
                                 bmps.Add(BitmapFromSource(gbd.Frames[i]));
                                 names.Add(i.ToString());
                             }
-                            settings.setCanvasWidth((int)gbd.Frames[0].Width);
-                            settings.setCanvasHeight((int)gbd.Frames[0].Height);
-                            settings.setLayerBitmaps(bmps.ToArray());
-                            settings.setLayerNames(names.ToArray());
-                            settings.setLoadFromSettings(true);
+                            SharedSettings.iCanvasWidth = ((int)gbd.Frames[0].Width);
+                            SharedSettings.iCanvasHeight = ((int)gbd.Frames[0].Height);
+                            SharedSettings.Layers = (bmps.ToArray());
+                            SharedSettings.LayerNames = (names.ToArray());
+                            SharedSettings.bLoadFromSettings = (true);
                             bmps.Clear();
                             names.Clear();
                         }
-                        
-                    }else{
 
+                    }
+                    else if (ofd.FileName.EndsWith(".lep"))
+                    {
+                        Console.WriteLine(ofd.FileName);
                         string baseDir = System.IO.Directory.GetCurrentDirectory();
 
-                        try {
+                        try
+                        {
                             DeleteDirectory(baseDir + @"\load");
                         }
                         catch (Exception e)
@@ -110,21 +122,59 @@ namespace Paint_Program
                             layerBitmaps.Add((Bitmap)temp.Clone());
                         }
 
-                        settings.setCanvasWidth(w);
-                        settings.setCanvasHeight(h);
-                        settings.setLayerBitmaps(layerBitmaps.ToArray());
-                        settings.setLayerNames(layerNames.ToArray());
-                        settings.setLoadFromSettings(true);
+                        try
+                        {
+                            if (Directory.Exists(baseDir + @"\load\watermark"))
+                            {
+                                //Console.WriteLine("Watermark Found");
+                                SharedSettings.bitmapWatermark = (Bitmap)Bitmap.FromFile(baseDir + @"\load\watermark\watermark.png").Clone();
+                                SharedSettings.watermarkPath = baseDir + @"\load\watermark\watermark.png";
+                                List<string> watermarkdata = new List<string>();
+                                using (System.IO.StreamReader sr = new System.IO.StreamReader(baseDir + @"\load\watermark\watermarkdata.txt", Encoding.Default))
+                                {
+                                    string line;
+                                    
+                                    // Read the stream to a string, and write the string to the console.
+                                    while ((line = sr.ReadLine()) != null)
+                                    {
+                                        Console.WriteLine(line);
+                                        watermarkdata.Add(line);
+                                    }
+                                    sr.Close();
+                                    sr.Dispose();
+                                }
+
+                                bool show;
+                                Boolean.TryParse(watermarkdata[0], out show);
+                                SharedSettings.bRenderWatermark = show;
+                                SharedSettings.watermarkStyle = watermarkdata[1];
+                            }
+                        }
+                        catch (Exception err)
+                        {
+                            SharedSettings.bitmapWatermark = null;
+                            Console.WriteLine("Exception Thrown in Watermark Loading" + err.InnerException);
+                        }
+                        
+                        SharedSettings.iCanvasWidth = w;
+                        SharedSettings.iCanvasHeight = h;
+                        SharedSettings.Layers = layerBitmaps.ToArray();
+                        SharedSettings.LayerNames = layerNames.ToArray();
+                        SharedSettings.bLoadFromSettings = true;
+
+                        Console.WriteLine(SharedSettings.Layers.Count());
 
                         layerBitmaps.Clear(); //Clears all Bitmap File References
                         layerNames.Clear(); //Clears Layer Name File Reference
+                        Console.WriteLine(SharedSettings.Layers.Count());
+
                     }
 
                 }
                 catch (Exception e)
                 {
-                    string message = SharedSettings.getGlobalString("projectopen_error") + "\n\n" + e.ToString();
-                    MessageBox.Show(message);
+                    Result = SharedSettings.getGlobalString("projectopen_error") + "\n\n" + e.ToString();
+                    //MessageBox.Show(Result);
                 }
             }
         }

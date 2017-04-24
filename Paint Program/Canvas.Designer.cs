@@ -34,11 +34,13 @@ namespace Paint_Program
             // 
             // Canvas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Canvas";
-            this.Size = new System.Drawing.Size(211, 169);
+            this.Size = new System.Drawing.Size(316, 260);
+
             this.ResumeLayout(false);
 
         }

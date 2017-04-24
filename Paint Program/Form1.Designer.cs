@@ -64,14 +64,17 @@
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsNew = new System.Windows.Forms.ToolStripButton();
-            this.tsImport = new System.Windows.Forms.ToolStripButton();
+            this.tsOpen = new System.Windows.Forms.ToolStripButton();
             this.tsSave = new System.Windows.Forms.ToolStripButton();
+            this.tsImport = new System.Windows.Forms.ToolStripButton();
+            this.tsExport = new System.Windows.Forms.ToolStripButton();
             this.msMenu.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // msMenu
             // 
+            this.msMenu.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.msMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiFile,
@@ -94,12 +97,15 @@
             this.tsmiFile_Import,
             this.tsmiFile_Export,
             this.tsmiFile_SaveGoogleDrive});
+            this.tsmiFile.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiFile.Name = "tsmiFile";
             this.tsmiFile.Size = new System.Drawing.Size(37, 22);
             this.tsmiFile.Text = "File";
             // 
             // tsmiFile_New
             // 
+            this.tsmiFile_New.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tsmiFile_New.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiFile_New.Name = "tsmiFile_New";
             this.tsmiFile_New.Size = new System.Drawing.Size(186, 22);
             this.tsmiFile_New.Text = "New";
@@ -107,6 +113,8 @@
             // 
             // tsmiFile_Save
             // 
+            this.tsmiFile_Save.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tsmiFile_Save.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiFile_Save.Name = "tsmiFile_Save";
             this.tsmiFile_Save.Size = new System.Drawing.Size(186, 22);
             this.tsmiFile_Save.Text = "Save";
@@ -114,6 +122,8 @@
             // 
             // tsmiFile_Load
             // 
+            this.tsmiFile_Load.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tsmiFile_Load.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiFile_Load.Name = "tsmiFile_Load";
             this.tsmiFile_Load.Size = new System.Drawing.Size(186, 22);
             this.tsmiFile_Load.Text = "Load";
@@ -121,6 +131,8 @@
             // 
             // tsmiFile_Import
             // 
+            this.tsmiFile_Import.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tsmiFile_Import.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiFile_Import.Name = "tsmiFile_Import";
             this.tsmiFile_Import.Size = new System.Drawing.Size(186, 22);
             this.tsmiFile_Import.Text = "Import Image";
@@ -128,6 +140,8 @@
             // 
             // tsmiFile_Export
             // 
+            this.tsmiFile_Export.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tsmiFile_Export.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiFile_Export.Name = "tsmiFile_Export";
             this.tsmiFile_Export.Size = new System.Drawing.Size(186, 22);
             this.tsmiFile_Export.Text = "Export Image";
@@ -135,6 +149,8 @@
             // 
             // tsmiFile_SaveGoogleDrive
             // 
+            this.tsmiFile_SaveGoogleDrive.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tsmiFile_SaveGoogleDrive.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiFile_SaveGoogleDrive.Name = "tsmiFile_SaveGoogleDrive";
             this.tsmiFile_SaveGoogleDrive.Size = new System.Drawing.Size(186, 22);
             this.tsmiFile_SaveGoogleDrive.Text = "Save To Google Drive";
@@ -146,12 +162,15 @@
             this.tsmiEdit_Undo,
             this.tsmiEdit_Redo,
             this.tsmiEdit_Resize});
+            this.tsmiEdit.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiEdit.Name = "tsmiEdit";
             this.tsmiEdit.Size = new System.Drawing.Size(39, 22);
             this.tsmiEdit.Text = "Edit";
             // 
             // tsmiEdit_Undo
             // 
+            this.tsmiEdit_Undo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tsmiEdit_Undo.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiEdit_Undo.Name = "tsmiEdit_Undo";
             this.tsmiEdit_Undo.Size = new System.Drawing.Size(130, 22);
             this.tsmiEdit_Undo.Text = "Undo";
@@ -159,6 +178,8 @@
             // 
             // tsmiEdit_Redo
             // 
+            this.tsmiEdit_Redo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tsmiEdit_Redo.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiEdit_Redo.Name = "tsmiEdit_Redo";
             this.tsmiEdit_Redo.Size = new System.Drawing.Size(130, 22);
             this.tsmiEdit_Redo.Text = "Redo";
@@ -166,6 +187,8 @@
             // 
             // tsmiEdit_Resize
             // 
+            this.tsmiEdit_Resize.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tsmiEdit_Resize.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiEdit_Resize.Name = "tsmiEdit_Resize";
             this.tsmiEdit_Resize.Size = new System.Drawing.Size(130, 22);
             this.tsmiEdit_Resize.Text = "Image Size";
@@ -177,12 +200,14 @@
             this.tsmiView_GridLines,
             this.tsmiView_Tablet,
             this.tsmiView_ShowTools});
+            this.tsmiView.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiView.Name = "tsmiView";
             this.tsmiView.Size = new System.Drawing.Size(44, 22);
             this.tsmiView.Text = "View";
             // 
             // tsmiView_GridLines
             // 
+            this.tsmiView_GridLines.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tsmiView_GridLines.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiView_GridLines_5,
             this.tsmiView_GridLines_10,
@@ -190,13 +215,16 @@
             this.tsmiView_GridLines_50,
             this.tsmiView_GridLines_100,
             this.tsmiView_GridLines_Auto});
+            this.tsmiView_GridLines.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiView_GridLines.Name = "tsmiView_GridLines";
             this.tsmiView_GridLines.Size = new System.Drawing.Size(166, 22);
             this.tsmiView_GridLines.Text = "Toggle Grid Lines";
             // 
             // tsmiView_GridLines_5
             // 
+            this.tsmiView_GridLines_5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tsmiView_GridLines_5.CheckOnClick = true;
+            this.tsmiView_GridLines_5.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiView_GridLines_5.Name = "tsmiView_GridLines_5";
             this.tsmiView_GridLines_5.Size = new System.Drawing.Size(100, 22);
             this.tsmiView_GridLines_5.Text = "5";
@@ -204,7 +232,9 @@
             // 
             // tsmiView_GridLines_10
             // 
+            this.tsmiView_GridLines_10.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tsmiView_GridLines_10.CheckOnClick = true;
+            this.tsmiView_GridLines_10.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiView_GridLines_10.Name = "tsmiView_GridLines_10";
             this.tsmiView_GridLines_10.Size = new System.Drawing.Size(100, 22);
             this.tsmiView_GridLines_10.Text = "10";
@@ -212,7 +242,9 @@
             // 
             // tsmiView_GridLines_25
             // 
+            this.tsmiView_GridLines_25.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tsmiView_GridLines_25.CheckOnClick = true;
+            this.tsmiView_GridLines_25.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiView_GridLines_25.Name = "tsmiView_GridLines_25";
             this.tsmiView_GridLines_25.Size = new System.Drawing.Size(100, 22);
             this.tsmiView_GridLines_25.Text = "25";
@@ -220,7 +252,9 @@
             // 
             // tsmiView_GridLines_50
             // 
+            this.tsmiView_GridLines_50.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tsmiView_GridLines_50.CheckOnClick = true;
+            this.tsmiView_GridLines_50.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiView_GridLines_50.Name = "tsmiView_GridLines_50";
             this.tsmiView_GridLines_50.Size = new System.Drawing.Size(100, 22);
             this.tsmiView_GridLines_50.Text = "50";
@@ -228,7 +262,9 @@
             // 
             // tsmiView_GridLines_100
             // 
+            this.tsmiView_GridLines_100.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tsmiView_GridLines_100.CheckOnClick = true;
+            this.tsmiView_GridLines_100.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiView_GridLines_100.Name = "tsmiView_GridLines_100";
             this.tsmiView_GridLines_100.Size = new System.Drawing.Size(100, 22);
             this.tsmiView_GridLines_100.Text = "100";
@@ -236,6 +272,8 @@
             // 
             // tsmiView_GridLines_Auto
             // 
+            this.tsmiView_GridLines_Auto.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tsmiView_GridLines_Auto.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiView_GridLines_Auto.Name = "tsmiView_GridLines_Auto";
             this.tsmiView_GridLines_Auto.Size = new System.Drawing.Size(100, 22);
             this.tsmiView_GridLines_Auto.Text = "Auto";
@@ -243,6 +281,8 @@
             // 
             // tsmiView_Tablet
             // 
+            this.tsmiView_Tablet.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tsmiView_Tablet.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiView_Tablet.Name = "tsmiView_Tablet";
             this.tsmiView_Tablet.Size = new System.Drawing.Size(166, 22);
             this.tsmiView_Tablet.Text = "Tablet Mode";
@@ -250,9 +290,11 @@
             // 
             // tsmiView_ShowTools
             // 
+            this.tsmiView_ShowTools.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tsmiView_ShowTools.Checked = true;
             this.tsmiView_ShowTools.CheckOnClick = true;
             this.tsmiView_ShowTools.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.tsmiView_ShowTools.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiView_ShowTools.Name = "tsmiView_ShowTools";
             this.tsmiView_ShowTools.Size = new System.Drawing.Size(166, 22);
             this.tsmiView_ShowTools.Text = "Show Tools";
@@ -260,25 +302,33 @@
             // 
             // tsmiPreferences
             // 
+            this.tsmiPreferences.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tsmiPreferences.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiPreferences_Watermark,
             this.tsmiInternational});
+            this.tsmiPreferences.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.tsmiPreferences.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsmiPreferences.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.tsmiPreferences.Name = "tsmiPreferences";
             this.tsmiPreferences.Size = new System.Drawing.Size(80, 22);
             this.tsmiPreferences.Text = "Preferences";
             // 
             // tsmiPreferences_Watermark
             // 
+            this.tsmiPreferences_Watermark.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tsmiPreferences_Watermark.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiPreferences_Watermark_SetImage,
             this.tsmiPreferences_Watermark_ShowWatermark,
             this.tsmiPreferences_Watermark_Style});
+            this.tsmiPreferences_Watermark.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiPreferences_Watermark.Name = "tsmiPreferences_Watermark";
-            this.tsmiPreferences_Watermark.Size = new System.Drawing.Size(141, 22);
+            this.tsmiPreferences_Watermark.Size = new System.Drawing.Size(152, 22);
             this.tsmiPreferences_Watermark.Text = "Watermark...";
             // 
             // tsmiPreferences_Watermark_SetImage
             // 
+            this.tsmiPreferences_Watermark_SetImage.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tsmiPreferences_Watermark_SetImage.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiPreferences_Watermark_SetImage.Name = "tsmiPreferences_Watermark_SetImage";
             this.tsmiPreferences_Watermark_SetImage.Size = new System.Drawing.Size(164, 22);
             this.tsmiPreferences_Watermark_SetImage.Text = "Set Image...";
@@ -286,27 +336,34 @@
             // 
             // tsmiPreferences_Watermark_ShowWatermark
             // 
+            this.tsmiPreferences_Watermark_ShowWatermark.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tsmiPreferences_Watermark_ShowWatermark.Enabled = false;
+            this.tsmiPreferences_Watermark_ShowWatermark.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiPreferences_Watermark_ShowWatermark.Name = "tsmiPreferences_Watermark_ShowWatermark";
             this.tsmiPreferences_Watermark_ShowWatermark.Size = new System.Drawing.Size(164, 22);
             this.tsmiPreferences_Watermark_ShowWatermark.Text = "Show Watermark";
+            this.tsmiPreferences_Watermark_ShowWatermark.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.tsmiPreferences_Watermark_ShowWatermark.Click += new System.EventHandler(this.showWatermarkToolStripMenuItem_Click);
             // 
             // tsmiPreferences_Watermark_Style
             // 
+            this.tsmiPreferences_Watermark_Style.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tsmiPreferences_Watermark_Style.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiPreferences_Watermark_Style_SingleCentered,
             this.tsmiPreferences_Watermark_Style_SingleBottom,
             this.tsmiPreferences_Watermark_Style_Tiled});
             this.tsmiPreferences_Watermark_Style.Enabled = false;
+            this.tsmiPreferences_Watermark_Style.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiPreferences_Watermark_Style.Name = "tsmiPreferences_Watermark_Style";
             this.tsmiPreferences_Watermark_Style.Size = new System.Drawing.Size(164, 22);
             this.tsmiPreferences_Watermark_Style.Text = "Style";
             // 
             // tsmiPreferences_Watermark_Style_SingleCentered
             // 
+            this.tsmiPreferences_Watermark_Style_SingleCentered.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tsmiPreferences_Watermark_Style_SingleCentered.Checked = true;
             this.tsmiPreferences_Watermark_Style_SingleCentered.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.tsmiPreferences_Watermark_Style_SingleCentered.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiPreferences_Watermark_Style_SingleCentered.Name = "tsmiPreferences_Watermark_Style_SingleCentered";
             this.tsmiPreferences_Watermark_Style_SingleCentered.Size = new System.Drawing.Size(157, 22);
             this.tsmiPreferences_Watermark_Style_SingleCentered.Text = "Single Centered";
@@ -314,6 +371,8 @@
             // 
             // tsmiPreferences_Watermark_Style_SingleBottom
             // 
+            this.tsmiPreferences_Watermark_Style_SingleBottom.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tsmiPreferences_Watermark_Style_SingleBottom.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiPreferences_Watermark_Style_SingleBottom.Name = "tsmiPreferences_Watermark_Style_SingleBottom";
             this.tsmiPreferences_Watermark_Style_SingleBottom.Size = new System.Drawing.Size(157, 22);
             this.tsmiPreferences_Watermark_Style_SingleBottom.Text = "Single Bottom";
@@ -321,6 +380,8 @@
             // 
             // tsmiPreferences_Watermark_Style_Tiled
             // 
+            this.tsmiPreferences_Watermark_Style_Tiled.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tsmiPreferences_Watermark_Style_Tiled.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiPreferences_Watermark_Style_Tiled.Name = "tsmiPreferences_Watermark_Style_Tiled";
             this.tsmiPreferences_Watermark_Style_Tiled.Size = new System.Drawing.Size(157, 22);
             this.tsmiPreferences_Watermark_Style_Tiled.Text = "Tiled";
@@ -328,8 +389,10 @@
             // 
             // tsmiInternational
             // 
+            this.tsmiInternational.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tsmiInternational.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tsmiInternational.Name = "tsmiInternational";
-            this.tsmiInternational.Size = new System.Drawing.Size(141, 22);
+            this.tsmiInternational.Size = new System.Drawing.Size(152, 22);
             this.tsmiInternational.Text = "International";
             // 
             // updateTimer
@@ -344,8 +407,10 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsNew,
+            this.tsOpen,
+            this.tsSave,
             this.tsImport,
-            this.tsSave});
+            this.tsExport});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(884, 31);
@@ -363,15 +428,15 @@
             this.tsNew.Text = "New Project";
             this.tsNew.Click += new System.EventHandler(this.tsNew_Click);
             // 
-            // tsImport
+            // tsOpen
             // 
-            this.tsImport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsImport.Image = ((System.Drawing.Image)(resources.GetObject("tsImport.Image")));
-            this.tsImport.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsImport.Name = "tsImport";
-            this.tsImport.Size = new System.Drawing.Size(28, 28);
-            this.tsImport.Text = "Open File";
-            this.tsImport.Click += new System.EventHandler(this.tsOpen_Click);
+            this.tsOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsOpen.Image = ((System.Drawing.Image)(resources.GetObject("tsOpen.Image")));
+            this.tsOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsOpen.Name = "tsOpen";
+            this.tsOpen.Size = new System.Drawing.Size(28, 28);
+            this.tsOpen.Text = "Open File";
+            this.tsOpen.Click += new System.EventHandler(this.tsOpen_Click);
             // 
             // tsSave
             // 
@@ -382,6 +447,26 @@
             this.tsSave.Size = new System.Drawing.Size(28, 28);
             this.tsSave.Text = "Save";
             this.tsSave.Click += new System.EventHandler(this.tsSave_Click);
+            // 
+            // tsImport
+            // 
+            this.tsImport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsImport.Image = global::Paint_Program.Properties.Resources.import;
+            this.tsImport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsImport.Name = "tsImport";
+            this.tsImport.Size = new System.Drawing.Size(28, 28);
+            this.tsImport.Text = "toolStripButton1";
+            this.tsImport.Click += new System.EventHandler(this.tsImport_Click);
+            // 
+            // tsExport
+            // 
+            this.tsExport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsExport.Image = global::Paint_Program.Properties.Resources.Export;
+            this.tsExport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsExport.Name = "tsExport";
+            this.tsExport.Size = new System.Drawing.Size(28, 28);
+            this.tsExport.Text = "toolStripButton1";
+            this.tsExport.Click += new System.EventHandler(this.tsExport_Click);
             // 
             // Form1
             // 
@@ -432,7 +517,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiView_GridLines_Auto;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsNew;
-        private System.Windows.Forms.ToolStripButton tsImport;
+        private System.Windows.Forms.ToolStripButton tsOpen;
         private System.Windows.Forms.ToolStripButton tsSave;
         private System.Windows.Forms.ToolStripMenuItem tsmiPreferences;
         private System.Windows.Forms.ToolStripMenuItem tsmiPreferences_Watermark;
@@ -444,6 +529,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiPreferences_Watermark_Style_Tiled;
         private System.Windows.Forms.ToolStripMenuItem tsmiInternational;
         private System.Windows.Forms.ToolStripMenuItem tsmiFile_SaveGoogleDrive;
+        private System.Windows.Forms.ToolStripButton tsExport;
+        private System.Windows.Forms.ToolStripButton tsImport;
     }
 }
 

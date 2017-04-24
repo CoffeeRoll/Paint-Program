@@ -96,7 +96,7 @@ namespace Paint_Program
 
             bGridToggle = false;
 
-            watermarkStyle = "Single Center";
+            //watermarkStyle = "Single Center";
 
             //No Tablet Input
             iTabletPressure = -1;
@@ -466,7 +466,29 @@ namespace Paint_Program
         }
 
 
+        public static void setSelection(Bitmap bit, Point p)
+        {
+            SharedSettings.bitmapSelectionArea = bit;
+            SharedSettings.sSelectionSize = new Size(SharedSettings.bitmapSelectionArea.Width, SharedSettings.bitmapSelectionArea.Height);
+            SharedSettings.pSelectionPoint = p;
+            SharedSettings.bActiveSelection = true;
+            SharedSettings.bFlattenSelection = false;
+            SharedSettings.bRenderBitmapInterface = true;
+            SharedSettings.bitmapCurrentLayer = SharedSettings.bitmapSelectionArea;
+            SharedSettings.gActiveGraphics = Graphics.FromImage(SharedSettings.bitmapCurrentLayer);
+        }
 
+        public static void flattenSelection()
+        {
+            bRenderBitmapInterface = false;
+            if (bActiveSelection)
+            {
+                bActiveSelection = false;
+                bFlattenSelection = true;
+                gActiveLayerGraphics.DrawImage(bitmapSelectionArea, pSelectionPoint);
+                gActiveGraphics = gActiveLayerGraphics;
+            }
+        }
 
         public void scrubSelection()
         {
@@ -536,10 +558,21 @@ namespace Paint_Program
                 bitmapImportImage.Dispose();
             }
 
-            if(bitmapImportImage != null)
+            if (bitmapInterface != null)
             {
                 bitmapInterface.Dispose();
             }
+
+            if (bitmapWatermark != null)
+            {
+                bitmapWatermark.Dispose();
+            }
+            bRenderBitmapInterface = false;
+            bRenderWatermark = false;
+            bLoadFromSettings = false;
+            bActiveSelection = false;
+            bFlattenSelection = false;
+            watermarkPath = "";
         }
     }
 }

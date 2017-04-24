@@ -20,7 +20,7 @@ namespace Paint_Program
 
         private String sLayerName;
 
-        private Color cActive = Color.FromArgb(100, 155, 155);
+        private Color cActive = Color.FromArgb(40, 163, 119);
         private Color cNotActive = Color.FromArgb(192, 192, 192);
 
         private Bitmap LayerBitmap;

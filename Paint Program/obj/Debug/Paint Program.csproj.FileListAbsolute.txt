@@ -283,15 +283,6 @@ C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Pai
 C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.en-UK.resources
 C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.es-ES.resources
 C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.fr-FR.resources
-C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.TextSelect.resources
-C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.TextSelect.resources
-C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.pdb
-C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Auth.pdb
-C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Auth.PlatformServices.pdb
-C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Core.pdb
-C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.PlatformServices.pdb
-C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.GDriveSaveDialog.resources
-C:\Users\mgoldstein\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.TextSelect.resources
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\bin\Debug\client_secret.json
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\bin\Debug\Google.Apis.Auth.dll
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\bin\Debug\Google.Apis.Auth.PlatformServices.dll
@@ -314,3 +305,6 @@ C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Prog
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.en-UK.resources
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.es-ES.resources
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.fr-FR.resources
+C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.TextSelect.resources
+C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.TextSelect.resources
+C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.TextSelect.resources
