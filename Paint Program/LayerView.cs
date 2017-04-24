@@ -309,6 +309,7 @@ namespace Paint_Program
                 //adds AutoScrollPosition.Y to accomodate for vertical scrolling
                 Layers[t].Location = new Point(pLayerDisplay.AutoScrollPosition.X, yLayerLocation + pLayerDisplay.AutoScrollPosition.Y);
                 yLayerLocation += Layers[t].Height + 5;
+                Layers[t].updatePreview();
                 
             }
             UpdateLayerInfo();
