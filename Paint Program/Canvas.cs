@@ -50,6 +50,10 @@ namespace Paint_Program
 
         SharedSettings ss;
 
+        long _total_redraws;
+
+        DateTime _start, _current;
+
         public Canvas(int pw, int ph)
         {
             InitializeComponent();
@@ -91,7 +95,9 @@ namespace Paint_Program
 
         public void initCanvas()
         {
-            
+
+            _total_redraws = 0;
+            _start = DateTime.Now;
 
             Tools = new List<ITool>();
             ToolButtons = new List<ToolStripButton>();
@@ -420,7 +426,7 @@ namespace Paint_Program
 
         public void updateCanvas(Graphics k)
         {
-
+            //_start = DateTime.Now;
             if(ss.getBitmapLayerUpdate() != null)
             {
                 lv.updateActiveLayer();
@@ -492,8 +498,34 @@ namespace Paint_Program
             }
 
             bit2.Dispose();
-            if(iitmp != null)
+            if (iitmp != null)
+            {
                 iitmp.Dispose();
+            }
+
+            _current = DateTime.Now;
+            _total_redraws++;
+            if (_total_redraws == 10)
+            {
+                print_debug_info();
+                _total_redraws = 0;
+                _start = _current;
+                
+            }
+            
+        }
+
+        private void print_debug_info()
+        {
+            Console.Write("Total Redraws / Second (RPS): ");
+            var secs = (_current - _start).TotalSeconds;
+            if (secs != 0)
+            {
+                Console.Write(_total_redraws / secs + "\n");
+            }else
+            {
+                Console.Write("NaN\n");
+            }
         }
 
         public static void handleWatermark(Graphics temp)
