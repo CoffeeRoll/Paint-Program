@@ -362,6 +362,10 @@ namespace Paint_Program
                     return null;
                 }
             }
+            else if (Tools[iActiveTool] is MoveTool)
+            {
+                return new MouseEventArgs(e.Button, e.Clicks, (int)(((e.X - ss.getSelectionPoint().X) - offset) / ss.getDrawScale()), (int)(((e.Y - ss.getSelectionPoint().Y) - offset) / ss.getDrawScale()), e.Delta);
+            }
             else
             {
                 Rectangle rect = new Rectangle(ss.getSelectionPoint(), ss.getSelectionSize());
