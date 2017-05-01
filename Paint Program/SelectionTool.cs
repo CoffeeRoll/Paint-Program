@@ -84,8 +84,13 @@ namespace Paint_Program
                         tlY = p2.Y;
                     }
 
+                    tlX = tlX < 0 ? 0 : tlX;
+                    tlY = tlY < 0 ? 0 : tlY;
+                    width = width + tlX <= SharedSettings.iCanvasWidth ? width : SharedSettings.iCanvasWidth - tlX;
+                    height = height + tlY <= SharedSettings.iCanvasHeight ? height : SharedSettings.iCanvasHeight - tlY;
+
                     Point loc = new Point(tlX, tlY);
-                    Size sze = new Size(width + 1, height + 1);
+                    Size sze = new Size(width, height);
                     ss.setSelectionPoint(loc);
                     ss.setSelectionSize(sze);
                     
