@@ -169,11 +169,24 @@ namespace Paint_Program
                         Console.WriteLine(SharedSettings.Layers.Count());
 
                     }
+                    else
+                    {
+                        BackgroundWorker bw = new BackgroundWorker();
+                        bw.DoWork += (send, args) =>
+                        {
+                            Console.WriteLine("Wrong File Type");
+                            string message = SharedSettings.getGlobalString("projectopen_error");
+                            MessageBox.Show(new Form() { WindowState = FormWindowState.Maximized, TopMost = true }, message);
+                        };
 
+                        bw.RunWorkerAsync();
+                        
+                    }
                 }
                 catch (Exception e)
                 {
-                    Result = SharedSettings.getGlobalString("projectopen_error") + "\n\n" + e.ToString();
+                    Console.WriteLine(e.ToString());
+                    Result = SharedSettings.getGlobalString("projectopen_error");
                     //MessageBox.Show(Result);
                 }
             }
