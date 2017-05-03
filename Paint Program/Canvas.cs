@@ -35,6 +35,8 @@ namespace Paint_Program
         //Index of the currently active tool
         private int iActiveTool;
 
+        private bool isPasued = false;
+
         //private static ToolTip tt;
 
         LayerView lv;
@@ -418,8 +420,11 @@ namespace Paint_Program
 
         private void EDisplayPaint(object sender, PaintEventArgs e)
         {
-            updateCanvas(e.Graphics);
-            lv.updateActiveLayer();
+            if (!isPasued)
+            {
+                updateCanvas(e.Graphics);
+                lv.updateActiveLayer();
+            }
         }
 
         public void updateCanvas(Graphics k)
@@ -539,6 +544,11 @@ namespace Paint_Program
                 }
 
             }
+        }
+
+        public void setPause(bool b)
+        {
+            isPasued = b;
         }
 
         public void setBitmap(Bitmap bit)

@@ -196,6 +196,7 @@ namespace Paint_Program
 
             try
             {
+                c.setPause(true);
                 ProjectSave ps = new ProjectSave(c.getSharedSettings());
             }
             catch (Exception err)
@@ -203,6 +204,7 @@ namespace Paint_Program
                 String s = SharedSettings.getGlobalString("error_save_project") + err.ToString();
                 MessageBox.Show(s);
             }
+            c.setPause(false);
         }
 
         private void tsmiFile_Import_Click(object sender, EventArgs e)
@@ -487,9 +489,9 @@ namespace Paint_Program
             tsmiPreferences_Watermark_Style_Tiled.Checked = true;
         }
 
-
         private void tsmiFile_SaveGoogleDrive_Click(object sender, EventArgs e)
         {
+            c.setPause(true);
             using (GDriveSaveDialog gDrive = new GDriveSaveDialog())
             {
                 if (gDrive.ShowDialog(this) == DialogResult.OK)
@@ -500,6 +502,7 @@ namespace Paint_Program
                     SaveToDrive sd = new SaveToDrive(c.getSharedSettings(), fileName, fileType);
                 }
             }
+            c.setPause(false);
         }
 
         public void updateViews()
