@@ -202,7 +202,7 @@ namespace Paint_Program
             catch (Exception err)
             {
                 String s = SharedSettings.getGlobalString("error_save_project") + err.ToString();
-                MessageBox.Show(s);
+                MessageBox.Show(new Form() { WindowState = FormWindowState.Maximized, TopMost = true }, s);
             }
             c.setPause(false);
         }

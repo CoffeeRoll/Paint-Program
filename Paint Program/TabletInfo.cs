@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using WintabDN;
+using System.Windows.Forms;
 
 namespace Paint_Program
 {
@@ -230,7 +231,7 @@ namespace Paint_Program
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                System.Windows.Forms.MessageBox.Show(new Form() { WindowState = FormWindowState.Maximized, TopMost = true }, ex.ToString());
             }
         }
 
@@ -321,7 +322,7 @@ namespace Paint_Program
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                System.Windows.Forms.MessageBox.Show(new Form() { WindowState = FormWindowState.Maximized, TopMost = true }, ex.ToString());
             }
         }
     }

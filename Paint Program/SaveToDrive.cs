@@ -93,13 +93,13 @@ namespace Paint_Program
                 GoogleDriveUpload.DriveUpload(filename + ext);
 
                 string message = SharedSettings.getGlobalString("projectsave_saved");
-                MessageBox.Show(message);
+                MessageBox.Show(new Form() { WindowState = FormWindowState.Maximized, TopMost = true }, message);
 
                 System.IO.File.Delete(filename + ext);
             }
             catch (Exception e)
             {
-                MessageBox.Show(SharedSettings.getGlobalString("gdrivesavedialog_error") + e.Message);
+                MessageBox.Show(new Form() { WindowState = FormWindowState.Maximized, TopMost = true }, SharedSettings.getGlobalString("gdrivesavedialog_error") + e.Message);
             }
         }
 
@@ -126,11 +126,11 @@ namespace Paint_Program
             {
                 GoogleDriveUpload.DriveUpload(filename + ".gif");
                 string message = SharedSettings.getGlobalString("projectsave_saved");
-                MessageBox.Show(message);
+                MessageBox.Show(new Form() { WindowState = FormWindowState.Maximized, TopMost = true }, message);
             }
             catch (Exception e)
             {
-                MessageBox.Show(SharedSettings.getGlobalString("gdrivesavedialog_error") + e.Message);
+                MessageBox.Show(new Form() { WindowState = FormWindowState.Maximized, TopMost = true }, SharedSettings.getGlobalString("gdrivesavedialog_error") + e.Message);
             }
             try
             {
@@ -179,18 +179,18 @@ namespace Paint_Program
             catch (Exception e)
             {
                 string message = SharedSettings.getGlobalString("projectsave_error") + "\n\n" + e.ToString();
-                MessageBox.Show(message);
+                MessageBox.Show(new Form() { WindowState = FormWindowState.Maximized, TopMost = true }, message);
             }
 
             try
             {
                 GoogleDriveUpload.DriveUpload(filename + ".lep");
                 string message = SharedSettings.getGlobalString("projectsave_saved");
-                MessageBox.Show(message);
+                MessageBox.Show(new Form() { WindowState = FormWindowState.Maximized, TopMost = true }, message);
             }
             catch (Exception e)
             {
-                MessageBox.Show(SharedSettings.getGlobalString("gdrivesavedialog_error") + e.Message);
+                MessageBox.Show(new Form() { WindowState = FormWindowState.Maximized, TopMost = true }, SharedSettings.getGlobalString("gdrivesavedialog_error") + e.Message);
             }
             try
             {

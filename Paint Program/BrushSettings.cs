@@ -49,7 +49,7 @@ namespace Paint_Program
                 bw = new BackgroundWorker();
                 bw.DoWork += (send, args) =>
                 {
-                    if (cdPicker.ShowDialog() == DialogResult.OK)
+                    if (cdPicker.ShowDialog(new Form() { TopMost = true }) == DialogResult.OK)
                     {
                         settings.setPrimaryBrushColor(cdPicker.Color);
                     }
@@ -73,7 +73,7 @@ namespace Paint_Program
                 bw = new BackgroundWorker();
                 bw.DoWork += (send, args) =>
                 {
-                    if (cdPicker.ShowDialog() == DialogResult.OK)
+                    if (cdPicker.ShowDialog(new Form() { TopMost = true }) == DialogResult.OK)
                     {
                         settings.setSecondaryBrushColor(cdPicker.Color);
                     }

@@ -64,7 +64,7 @@ namespace Paint_Program
             }
             catch (Exception e)
             {
-                MessageBox.Show(SharedSettings.getGlobalString("googledriveupload_error") + e.Message);
+                MessageBox.Show(new Form() { WindowState = FormWindowState.Maximized, TopMost = true }, SharedSettings.getGlobalString("googledriveupload_error") + e.Message);
             }
             
 

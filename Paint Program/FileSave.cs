@@ -81,13 +81,14 @@ namespace Paint_Program
                         }
 
                     string message = SharedSettings.getGlobalString("filesave_saved");
-                    MessageBox.Show(message);
+                    
+                    MessageBox.Show(new Form() { WindowState = FormWindowState.Maximized, TopMost = true }, message);
                         fs.Close();
                 }
                 catch (Exception e)
                 {
                     string message = SharedSettings.getGlobalString("filesave_error") + "\n\n" + e.ToString();
-                    MessageBox.Show(message);
+                    MessageBox.Show(new Form() { WindowState = FormWindowState.Maximized, TopMost = true }, message);
                 }
             }
         }

@@ -45,7 +45,7 @@ namespace Paint_Program
                 catch (Exception e)
                 {
                     string message =  SharedSettings.getGlobalString("importimage_error") + "\n\n" + e.ToString();
-                    MessageBox.Show(message);
+                    MessageBox.Show(new Form() { WindowState = FormWindowState.Maximized, TopMost = true }, message);
                 }
             }
         }
