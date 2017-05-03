@@ -77,7 +77,7 @@ namespace Paint_Program
                         graphics.DrawLine(eraser, pOld, pNew);
                     }else if(settings.getTabletPressure() >= 0)
                     {
-                        eraser.Width = SharedSettings.MapValue(0, settings.getMaxTabletPressure(), settings.getMinTabletWidth(), settings.getMaxTabletWidth(), settings.getTabletPressure());
+                        eraser.Width = (float) Math.Pow(2.0, SharedSettings.MapDouble(0, SharedSettings.iMaxTabletPressure, 0.0, 6.0, SharedSettings.iTabletPressure));
                         graphics.DrawLine(eraser, pOld, pNew);
                     }
                     pOld = pNew;

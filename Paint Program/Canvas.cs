@@ -102,6 +102,7 @@ namespace Paint_Program
             {
                 ti = new TabletInfo(HandleTabletData);
                 ss.setTabletConnected(true);
+                Console.WriteLine("Tablet Connected.");
             }
             catch (Exception e)
             {
@@ -237,8 +238,8 @@ namespace Paint_Program
                     temp.Tag = tt;
 
                     //Draw the ToolTip Twice because it doesn't work with one draw -- also not great
-                    ((ToolTip)temp.Tag).Show(tool.getToolTip(), this, temp.Bounds.X, temp.Bounds.Y + temp.Height);
-                    ((ToolTip)temp.Tag).Show(tool.getToolTip(), this, temp.Bounds.X, temp.Bounds.Y + temp.Height);
+                    ((ToolTip)temp.Tag).Show(tool.getToolTip(), this, temp.Bounds.X + temp.Width, temp.Bounds.Y + temp.Height);
+                    ((ToolTip)temp.Tag).Show(tool.getToolTip(), this, temp.Bounds.X + temp.Width, temp.Bounds.Y + temp.Height);
                 };
 
                 temp.MouseLeave += delegate {
@@ -282,7 +283,6 @@ namespace Paint_Program
                     if (pkt.pkContext != 0)
                     {
                         int pressure = (int)pkt.pkNormalPressure;
-
                         ss.setTabletPressure(pressure);
                     }
                 }

@@ -81,7 +81,6 @@ namespace Paint_Program
                 bMouseDown = true;
                 pOld = e.Location;
             }
-
             updateBrush();
         }
 
@@ -90,31 +89,35 @@ namespace Paint_Program
             if (graphics != null && bMouseDown)
             {
                 pNew = e.Location;
-                int pressure = -1;
-                if (settings.getTabletPressure() >= 0)
+                if (settings.getTabletPressure() > 0)
                 {
-                    pressure = SharedSettings.MapValue(0, settings.getMaxTabletPressure(), settings.getMinTabletWidth(), settings.getMaxTabletWidth(), settings.getTabletPressure());
+                    double pressure = Math.Pow(2.0, SharedSettings.MapDouble(0, SharedSettings.iMaxTabletPressure, 0.0, 6.0, SharedSettings.iTabletPressure));
+                    Console.WriteLine(pressure);
 
                     if (pressure >= 0)
                     {
-                        pen.Width = pressure / 2;
+                        pen.Width = (float) pressure;
                     }
                 }
+                else
+                {
+                    pen.Width = settings.getBrushSize() / 2;
+                }
+
                 switch (e.Button)
                 {
                     // TODO: Add tablet pressure back in...
                     case MouseButtons.Left:
                         pen.Color = primaryColor;
-                        pen.Width = settings.getBrushSize() / 2;
                         graphics.DrawLine(pen, pOld, pNew);
                         break;
                     case MouseButtons.Right:
                         pen.Color = secondaryColor;
-                        pen.Width = settings.getBrushSize() / 2;
                         graphics.DrawLine(pen, pOld, pNew);
                         break;
                     default:
                         break;
+                
                 }
                 pOld = pNew;
 

@@ -101,7 +101,7 @@ namespace Paint_Program
             //No Tablet Input
             iTabletPressure = -1;
 
-            iMaxTabletWidth = 25;
+            iMaxTabletWidth = 128;
 
             iMinTabletWidth = 1;
 
@@ -531,6 +531,15 @@ namespace Paint_Program
         {
             double scale = (double)(newEnd - newStart) / (originalEnd - originalStart);
             return (int)(newStart + ((value - originalStart) * scale));
+        }
+
+        public static double MapDouble(
+    double originalStart, double originalEnd, // original range
+    double newStart, double newEnd, // desired range
+    double value) // value to convert
+        {
+            double scale = (newEnd - newStart) / (originalEnd - originalStart);
+            return (newStart + ((value - originalStart) * scale));
         }
 
         public void Trash()
