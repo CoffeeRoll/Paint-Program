@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Paint_Program
 {
+	/// <summary>
+	/// Debug class, please ignore
+	/// </summary>
     class DebugTool
     {
         private Graphics graphics;
         private int width, height, numPoints;
-        private SharedSettings settings;
         private bool bMouseDown, bInit;
 
         private Point pOld, pNew;
@@ -30,28 +28,27 @@ namespace Paint_Program
         //Update Function
         private void updateBrush()
         {
-            int R = settings.getPrimaryBrushColor().R;
-            int G = settings.getPrimaryBrushColor().G;
-            int B = settings.getPrimaryBrushColor().B;
+            int R = SharedSettings.getPrimaryBrushColor().R;
+            int G = SharedSettings.getPrimaryBrushColor().G;
+            int B = SharedSettings.getPrimaryBrushColor().B;
 
-            pPrime = new Pen(Color.FromArgb(settings.getBrushHardness(), R, G, B), settings.getBrushSize());
+            pPrime = new Pen(Color.FromArgb(SharedSettings.getBrushHardness(), R, G, B), SharedSettings.getBrushSize());
             pPrime.LineJoin = LineJoin.Round;
             pPrime.MiterLimit = pPrime.Width;
 
-            R = settings.getSecondaryBrushColor().R;
-            G = settings.getSecondaryBrushColor().G;
-            B = settings.getSecondaryBrushColor().B;
+            R = SharedSettings.getSecondaryBrushColor().R;
+            G = SharedSettings.getSecondaryBrushColor().G;
+            B = SharedSettings.getSecondaryBrushColor().B;
 
-            pSec = new Pen(Color.FromArgb(settings.getBrushHardness(), R, G, B), settings.getBrushSize());
+            pSec = new Pen(Color.FromArgb(SharedSettings.getBrushHardness(), R, G, B), SharedSettings.getBrushSize());
             pSec.LineJoin = LineJoin.Round;
         }
 
-        public void init(Graphics g, int w, int h, SharedSettings s)
+        public void init(Graphics g, int w, int h)
         {
             graphics = g;
             width = w;
             height = h;
-            settings = s;
             bInit = true;
             bMouseDown = false;
 

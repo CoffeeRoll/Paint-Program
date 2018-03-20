@@ -8,7 +8,7 @@ namespace Paint_Program
 {
     class ImageImport
     {
-        public ImageImport(SharedSettings ss)
+        public ImageImport()
         {
             BackgroundWorker bw = new BackgroundWorker();
 
@@ -21,7 +21,7 @@ namespace Paint_Program
 
                 bw.DoWork += (send, args) =>
                 {
-                    doOpen(ss, ofd, send, args);
+                    doOpen(ofd, send, args);
                 };
 
                 bw.RunWorkerAsync();
@@ -32,7 +32,7 @@ namespace Paint_Program
             }
         }
 
-        private void doOpen(SharedSettings ss, OpenFileDialog ofd, object sender, DoWorkEventArgs args)
+        private void doOpen(OpenFileDialog ofd, object sender, DoWorkEventArgs args)
         {
             if (ofd.FileName != "")
             {
@@ -40,7 +40,7 @@ namespace Paint_Program
                 {
                     var ms = new MemoryStream(File.ReadAllBytes(ofd.FileName));
                     Bitmap bm = new Bitmap(Image.FromStream(ms));
-                    ss.setImportImage(bm);
+					SharedSettings.setImportImage(bm);
                 }
                 catch (Exception e)
                 {

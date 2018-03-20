@@ -308,3 +308,45 @@ C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Prog
 C:\Users\bmelanson\Source\Repos\Paint-Program\Paint Program\obj\Debug\Paint_Program.TextSelect.resources
 C:\Users\jchouinard01\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.TextSelect.resources
 C:\Users\CoffeeRoll\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.TextSelect.resources
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.csprojResolveAssemblyReference.cache
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.BrushSettings.resources
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Canvas.resources
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Form1.resources
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.GDriveSaveDialog.resources
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.de-DE.resources
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.en-UK.resources
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.es-ES.resources
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.en-US.resources
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Languages.fr-FR.resources
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.LayerItem.resources
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.LayerView.resources
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.NewProjectForm.resources
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.Properties.Resources.resources
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.TextSelect.resources
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint_Program.ZoomControl.resources
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.GenerateResource.Cache
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.csproj.CoreCompileInputs.cache
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\client_secret.json
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Paint Program.exe.config
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Paint Program.exe
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Paint Program.pdb
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Auth.dll
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Core.dll
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.dll
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Drive.v3.dll
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\WintabDN.dll
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Zlib.Portable.dll
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\WintabDN.pdb
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.xml
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Auth.xml
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Auth.PlatformServices.xml
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Core.xml
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.Drive.v3.xml
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Google.Apis.PlatformServices.xml
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\bin\Debug\Zlib.Portable.xml
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.exe
+C:\Users\Maltodextrin\Documents\GitHub\Paint-Program\Paint Program\obj\Debug\Paint Program.pdb

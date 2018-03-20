@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Paint_Program
@@ -12,7 +8,6 @@ namespace Paint_Program
     {
         private Graphics graphics;
         private int width, height;
-        private SharedSettings settings;
         private bool bActive, bMouseDown, bInit;
 
         private Point pOld, pNew;
@@ -25,12 +20,11 @@ namespace Paint_Program
 
         }
 
-        public void init(SharedSettings s)
+        public void init()
         {
-            graphics = s.getActiveGraphics();
-            width = s.getCanvasWidth();
-            height = s.getCanvasHeight();
-            settings = s;
+            graphics = SharedSettings.getActiveGraphics();
+            width = SharedSettings.getCanvasWidth();
+            height = SharedSettings.getCanvasHeight();
             bActive = false;
             bInit = true;
             bMouseDown = false;
@@ -89,10 +83,10 @@ namespace Paint_Program
                         switch (e.Button)
                         {
                             case MouseButtons.Left:
-                                fontColor = settings.getPrimaryBrushColor();
+                                fontColor = SharedSettings.getPrimaryBrushColor();
                                 break;
                             case MouseButtons.Right:
-                                fontColor = settings.getSecondaryBrushColor();
+                                fontColor = SharedSettings.getSecondaryBrushColor();
                                 break;
                             default:
                                 fontColor = Color.Black;

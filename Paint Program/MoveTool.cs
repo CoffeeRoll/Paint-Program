@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Paint_Program
@@ -13,7 +7,6 @@ namespace Paint_Program
     {
         private Graphics graphics;
         private int width, height;
-        private SharedSettings settings;
         private bool bInit;
 
         private Point pOld, pNew;
@@ -24,12 +17,11 @@ namespace Paint_Program
 
         }
 
-        public void init(SharedSettings s)
+        public void init()
         {
-            graphics = s.getActiveGraphics();
-            width = s.getCanvasWidth();
-            height = s.getCanvasHeight();
-            settings = s;
+            graphics = SharedSettings.getActiveGraphics();
+            width = SharedSettings.getCanvasWidth();
+            height = SharedSettings.getCanvasHeight();
             bInit = true;
         }
 

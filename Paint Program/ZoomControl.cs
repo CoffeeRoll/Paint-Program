@@ -17,14 +17,12 @@ namespace Paint_Program
 
         private double ZOOM_MIN = 1;
         private const double ZOOM_MAX = 3200;
-        private SharedSettings settings;
 
-        public ZoomControl(SharedSettings ss)
+        public ZoomControl()
         {
             dZoomFactor = 100;
-            settings = ss;
-            int temp = ss.getCanvasWidth();
-            temp = temp < ss.getCanvasHeight() ? temp : ss.getCanvasHeight();
+            int temp = SharedSettings.getCanvasWidth();
+            temp = temp < SharedSettings.getCanvasHeight() ? temp : SharedSettings.getCanvasHeight();
 
 
             if(temp > 100)
@@ -76,7 +74,7 @@ namespace Paint_Program
                     }
 
                     Console.WriteLine("Zoom" + ": " + dZoomFactor);
-                    settings.setDrawScale((float)dZoomFactor / 100.0f);
+					SharedSettings.setDrawScale((float)dZoomFactor / 100.0f);
                     tbZoom.Text = dZoomFactor.ToString();
                     ((Form1)this.Parent).updateViews();
                 }
@@ -102,9 +100,8 @@ namespace Paint_Program
             {
                 dZoomFactor = d;
             }
-
-            //Console.WriteLine("Zoom" + ": " + dZoomFactor);
-            settings.setDrawScale((float)dZoomFactor / 100.0f);
+			
+			SharedSettings.setDrawScale((float)dZoomFactor / 100.0f);
             tbZoom.Text = dZoomFactor.ToString();
             ((Form1)this.Parent).updateViews();
         }

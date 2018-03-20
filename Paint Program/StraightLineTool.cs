@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Paint_Program
@@ -13,7 +8,6 @@ namespace Paint_Program
     {
         private Graphics graphics;
         private int width, height;
-        private SharedSettings settings;
         private bool bMouseDown, bInit;
 
         private Point pOld, pNew;
@@ -29,33 +23,32 @@ namespace Paint_Program
 
         private void updateBrush()
         {
-            int R = settings.getPrimaryBrushColor().R;
-            int G = settings.getPrimaryBrushColor().G;
-            int B = settings.getPrimaryBrushColor().B;
+            int R = SharedSettings.getPrimaryBrushColor().R;
+            int G = SharedSettings.getPrimaryBrushColor().G;
+            int B = SharedSettings.getPrimaryBrushColor().B;
 
-            primaryColor = Color.FromArgb(settings.getBrushHardness(), R, G, B);
+            primaryColor = Color.FromArgb(SharedSettings.getBrushHardness(), R, G, B);
 
-            R = settings.getSecondaryBrushColor().R;
-            G = settings.getSecondaryBrushColor().G;
-            B = settings.getSecondaryBrushColor().B;
+            R = SharedSettings.getSecondaryBrushColor().R;
+            G = SharedSettings.getSecondaryBrushColor().G;
+            B = SharedSettings.getSecondaryBrushColor().B;
 
-            secondaryColor = Color.FromArgb(settings.getBrushHardness(), R, G, B);
+            secondaryColor = Color.FromArgb(SharedSettings.getBrushHardness(), R, G, B);
 
         }
 
-        public void init(SharedSettings s)
+        public void init()
         {
-            graphics = s.getActiveGraphics();
-            width = s.getCanvasWidth();
-            height = s.getCanvasHeight();
-            settings = s;
+            graphics = SharedSettings.getActiveGraphics();
+            width = SharedSettings.getCanvasWidth();
+            height = SharedSettings.getCanvasHeight();
             bInit = true;
             bMouseDown = false;
 
             pOld = pNew = new Point(-1, -1);
 
             updateBrush();
-            pen = new Pen(primaryColor, settings.getBrushSize() / 2);
+            pen = new Pen(primaryColor, SharedSettings.getBrushSize() / 2);
 
             pen.SetLineCap(LineCap.Round, LineCap.Round, DashCap.Round);
 
@@ -99,15 +92,14 @@ namespace Paint_Program
 
                 switch (e.Button)
                 {
-                    //TODO: ADD TABLET PRESSURE
                     case MouseButtons.Left:
                         pen.Color = primaryColor;
-                        pen.Width = settings.getBrushSize() / 2;
+                        pen.Width = SharedSettings.getBrushSize() / 2;
                         graphics.DrawLine(pen, pOld, pNew);
                         break;
                     case MouseButtons.Right:
                         pen.Color = secondaryColor;
-                        pen.Width = settings.getBrushSize() / 2;
+                        pen.Width = SharedSettings.getBrushSize() / 2;
                         graphics.DrawLine(pen, pOld, pNew);
                         break;
                     default:

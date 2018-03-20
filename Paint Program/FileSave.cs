@@ -1,19 +1,17 @@
 ﻿using System;
-using System.Windows;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.ComponentModel;
-using System.Windows.Media.Imaging;
 using System.IO;
 
 namespace Paint_Program
 {
     public class FileSave
     {
-        public FileSave(SharedSettings ss)
+        public FileSave()
         {
-            Bitmap bm = ss.getBitmapCanvas();   // Get the image from the bitmap object
+            Bitmap bm = SharedSettings.getBitmapCanvas();   // Get the image from the bitmap object
             BackgroundWorker bw = new BackgroundWorker();
 
             try {

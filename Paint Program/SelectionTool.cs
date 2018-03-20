@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Paint_Program
@@ -11,7 +7,6 @@ namespace Paint_Program
     class SelectionTool : ITool
     {
         bool isInit = false;
-        SharedSettings ss;
 
         Point p1, p2;
 
@@ -19,9 +14,8 @@ namespace Paint_Program
 
         Bitmap bEdit;
 
-        public void init(SharedSettings s)
+        public void init()
         {
-            ss = s;
             isInit = true;
         }
 
@@ -69,7 +63,7 @@ namespace Paint_Program
             }
             else
             {
-                if (!ss.getActiveSelection())
+                if (!SharedSettings.getActiveSelection())
                 {
                     int tlX = p1.X, tlY = p1.Y;
                     int width = Math.Abs(p1.X - p2.X);
@@ -91,18 +85,18 @@ namespace Paint_Program
 
                     Point loc = new Point(tlX, tlY);
                     Size sze = new Size(width, height);
-                    ss.setSelectionPoint(loc);
-                    ss.setSelectionSize(sze);
+					SharedSettings.setSelectionPoint(loc);
+					SharedSettings.setSelectionSize(sze);
                     
                     updateInterfaceLayer();
 
                     //Get selected area data
-                    bEdit = ss.getBitmapCurrentLayer(true).Clone(new Rectangle(loc, sze), ss.getBitmapCurrentLayer(true).PixelFormat);
+                    bEdit = SharedSettings.getBitmapCurrentLayer(true).Clone(new Rectangle(loc, sze), SharedSettings.getBitmapCurrentLayer(true).PixelFormat);
 
-                    //clear data below selection
-                    ss.getActiveGraphics().CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
-                    ss.getActiveGraphics().FillRectangle(new SolidBrush(Color.Transparent), new Rectangle(loc, sze));
-                    ss.getActiveGraphics().CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceOver;
+					//clear data below selection
+					SharedSettings.getActiveGraphics().CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
+					SharedSettings.getActiveGraphics().FillRectangle(new SolidBrush(Color.Transparent), new Rectangle(loc, sze));
+					SharedSettings.getActiveGraphics().CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceOver;
 
                     SharedSettings.setSelection(bEdit, loc);
                 }
@@ -134,9 +128,9 @@ namespace Paint_Program
 
         public void updateInterfaceLayer()
         {
-            Bitmap temp = new Bitmap(ss.getCanvasWidth(), ss.getCanvasHeight());
+            Bitmap temp = new Bitmap(SharedSettings.getCanvasWidth(), SharedSettings.getCanvasHeight());
 
-            ss.setSelectionPoint(new Point(ss.getSelectionPoint().X, ss.getSelectionPoint().Y));
+			SharedSettings.setSelectionPoint(new Point(SharedSettings.getSelectionPoint().X, SharedSettings.getSelectionPoint().Y));
 
             Pen p = new Pen(Color.Black);
             p.DashPattern = new float[] { 3.0F, 3.0F };
@@ -144,7 +138,7 @@ namespace Paint_Program
 
             Graphics tmpGr = Graphics.FromImage(temp);
             tmpGr.DrawRectangle(p, new Rectangle(SharedSettings.pSelectionPoint, SharedSettings.sSelectionSize));
-            ss.setInterfaceBitmap(temp);
+			SharedSettings.setInterfaceBitmap(temp);
         }
 
     }

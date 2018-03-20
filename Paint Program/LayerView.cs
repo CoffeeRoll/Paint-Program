@@ -13,29 +13,27 @@ namespace Paint_Program
         private PixelFormat pf = PixelFormat.Format32bppArgb;
         private int width, height;
         private int yLayerLocation;
-        private SharedSettings ss;
 
-        public LayerView(int w, int h, SharedSettings s)
+        public LayerView(int w, int h)
         {
             InitializeComponent();
-            ss = s;
             width = w;
             height = h;
             yLayerLocation = 0;
-            LayerItem setup = new LayerItem(w, h, pf, "DEBUG", ss);
+            LayerItem setup = new LayerItem(w, h, pf, "DEBUG");
             this.Width = setup.Width;
             pLayerDisplay.Scroll += handleScroll;
             pLayerDisplay.MouseWheel += handleMouseWheel;
             Layers = new List<LayerItem>();
 
-            if (ss.getLoadFromSettings() && ss.getLayerBitmaps().Length > 0)
+            if (SharedSettings.getLoadFromSettings() && SharedSettings.getLayerBitmaps().Length > 0)
             {
 
-                int layers = ss.getLayerBitmaps().Length;
+                int layers = SharedSettings.getLayerBitmaps().Length;
 
                 for (int n = 0; n < layers; n++)
                 {
-                    addLayer(ss.getLayerBitmaps()[n], ss.getLayerNames()[n]);
+                    addLayer(SharedSettings.getLayerBitmaps()[n], SharedSettings.getLayerNames()[n]);
                 }
             }
             else
@@ -184,7 +182,7 @@ namespace Paint_Program
             Bitmap bit = new Bitmap(SharedSettings.iCanvasWidth, SharedSettings.iCanvasHeight, PixelFormat.Format32bppArgb);
             Graphics.FromImage(bit).DrawImage(b, 0, 0);
 
-            LayerItem temp = new LayerItem(width, height, pf, Layers.Count.ToString(), ss);
+            LayerItem temp = new LayerItem(width, height, pf, Layers.Count.ToString());
             temp.Location = new Point(0, yLayerLocation);
             yLayerLocation += temp.Height + 5;
             temp.setActive(true);
@@ -214,7 +212,7 @@ namespace Paint_Program
                 layer.setActive(false);
             }
 
-            LayerItem temp = new LayerItem(width, height, pf, Layers.Count.ToString(), ss);
+            LayerItem temp = new LayerItem(width, height, pf, Layers.Count.ToString());
             temp.Location = new Point(0, yLayerLocation);
             yLayerLocation += temp.Height + 5;
             temp.setActive(true);
@@ -241,7 +239,7 @@ namespace Paint_Program
                 layer.setActive(false);
             }
 
-            LayerItem temp = new LayerItem(width, height, pf, name, ss);
+            LayerItem temp = new LayerItem(width, height, pf, name);
             temp.Location = new Point(0, yLayerLocation);
             yLayerLocation += temp.Height + 5;
             temp.setActive(true);
@@ -257,8 +255,8 @@ namespace Paint_Program
                 bMoveDown.Enabled = true;
                 bMoveUp.Enabled = true;
             }
-            
-            ss.setBitmapCurrentLayer(Layers[Layers.Count-1].getBitmap());
+
+			SharedSettings.setBitmapCurrentLayer(Layers[Layers.Count-1].getBitmap());
         }
 
         private void removeLayer()
@@ -306,7 +304,7 @@ namespace Paint_Program
             for(int t = Layers.Count - 1; t >= 0; t--)
             {
 
-                //adds AutoScrollPosition.Y to accomodate for vertical scrolling
+                //adds AutoScrollPosition.Y to accommodate for vertical scrolling
                 Layers[t].Location = new Point(pLayerDisplay.AutoScrollPosition.X, yLayerLocation + pLayerDisplay.AutoScrollPosition.Y);
                 yLayerLocation += Layers[t].Height + 5;
                 Layers[t].updatePreview();
@@ -358,7 +356,7 @@ namespace Paint_Program
                         l.setActive(false);
                     }
                     layer.setActive(true);
-                    ss.setBitmapCurrentLayer(layer.getBitmap());
+					SharedSettings.setBitmapCurrentLayer(layer.getBitmap());
                 }
                 layer.Refresh();
             }
@@ -391,23 +389,23 @@ namespace Paint_Program
                 tempStr.Add(l.getLayerName());
                 if (l.isLayerActive())
                 {
-                    ss.setCurrentLayerIndex(Layers.IndexOf(l));
+					SharedSettings.setCurrentLayerIndex(Layers.IndexOf(l));
                 }
             }
 
-            ss.setLayerBitmaps(tempBit.ToArray());
-            ss.setLayerNames(tempStr.ToArray());
+			SharedSettings.setLayerBitmaps(tempBit.ToArray());
+			SharedSettings.setLayerNames(tempStr.ToArray());
 
         }
 
         public void GridDraw(Graphics g)
         {
             Pen p = new Pen(Color.Black);
-            int yMod = ss.getCanvasHeight();
-            int xMod = ss.getCanvasWidth();
-            int width = ss.getGridWitdh();
-            int zoom = (int)ss.getDrawScale();
-            float factor = (ss.getDrawScale());
+            int yMod = SharedSettings.getCanvasHeight();
+            int xMod = SharedSettings.getCanvasWidth();
+            int width = SharedSettings.getGridWitdh();
+            int zoom = (int)SharedSettings.getDrawScale();
+            float factor = (SharedSettings.getDrawScale());
             
 
             if (width > 0)

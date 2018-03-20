@@ -10,11 +10,8 @@ namespace Paint_Program
     public class ProjectSave
     {
 
-        SharedSettings settings;
-
-        public ProjectSave(SharedSettings ss)
+        public ProjectSave()
         {
-            settings = ss;
             BackgroundWorker bw = new BackgroundWorker();
 
             try
@@ -47,9 +44,9 @@ namespace Paint_Program
                 {
                     System.IO.Directory.CreateDirectory("save");
 
-                    Bitmap[] bitArr = settings.getLayerBitmaps();
+                    Bitmap[] bitArr = SharedSettings.getLayerBitmaps();
                     string baseDir = System.IO.Directory.GetCurrentDirectory();
-                    string[] LayerNames = settings.getLayerNames();
+                    string[] LayerNames = SharedSettings.getLayerNames();
 
                     for (int n = 0; n < bitArr.Length; n++)
                     {

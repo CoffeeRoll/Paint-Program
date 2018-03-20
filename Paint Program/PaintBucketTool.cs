@@ -8,7 +8,6 @@ namespace Paint_Program
     {
         private Graphics graphics;
         private int width, height;
-        private SharedSettings settings;
         private bool bActive, bMouseDown, bInit;
         private Color replacementColor, targetColor;
         private bool[,] state;
@@ -36,12 +35,11 @@ namespace Paint_Program
         {
         }
 
-        public void init(SharedSettings s)
+        public void init()
         {
-            graphics = s.getActiveGraphics();
-            width = s.getCanvasWidth();
-            height = s.getCanvasHeight();
-            settings = s;
+            graphics = SharedSettings.getActiveGraphics();
+            width = SharedSettings.getCanvasWidth();
+            height = SharedSettings.getCanvasHeight();
             bActive = false;
             bInit = true;
             bMouseDown = false;
@@ -66,7 +64,7 @@ namespace Paint_Program
                 int x = pOld.X;
                 int y = pOld.Y;
 
-                bmp = settings.getBitmapCurrentLayer(true);
+                bmp = SharedSettings.getBitmapCurrentLayer(true);
                 state = new bool[bmp.Width, bmp.Height];
                 if (bmp == null)
                     return;
@@ -76,10 +74,10 @@ namespace Paint_Program
                 switch(e.Button)
                 {
                     case MouseButtons.Left:
-                        replacementColor = settings.getPrimaryBrushColor();
+                        replacementColor = SharedSettings.getPrimaryBrushColor();
                         break;
                     case MouseButtons.Right:
-                        replacementColor = settings.getSecondaryBrushColor();
+                        replacementColor = SharedSettings.getSecondaryBrushColor();
                         break;
                     default:
                         break;
@@ -114,7 +112,7 @@ namespace Paint_Program
                         if (xNew + 1 < bmp.Width)
                             AddNextPixel(new Point(xNew + 1, yNew));
 
-                        // add 3 upixels below
+                        // add 3 pixels below
                         if(yNew + 1 < bmp.Height)
                         {
                             if (xNew + 1 < bmp.Width)

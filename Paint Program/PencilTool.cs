@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Paint_Program
@@ -12,7 +7,6 @@ namespace Paint_Program
     {
         private Graphics graphics;
         private int width, height;
-        private SharedSettings settings;
         private bool bMouseDown, bInit;
 
         Color cPrime, cSec;
@@ -24,12 +18,11 @@ namespace Paint_Program
 
         }
 
-        public void init(SharedSettings s)
+        public void init()
         {
-            graphics = s.getActiveGraphics();
-            width = s.getCanvasWidth();
-            height = s.getCanvasHeight();
-            settings = s;
+            graphics = SharedSettings.getActiveGraphics();
+            width = SharedSettings.getCanvasWidth();
+            height = SharedSettings.getCanvasHeight();
             bInit = true;
             bMouseDown = false;
             updateColors();
@@ -47,18 +40,18 @@ namespace Paint_Program
 
         private void updateColors()
         {
-            int R = settings.getPrimaryBrushColor().R;
-            int G = settings.getPrimaryBrushColor().G;
-            int B = settings.getPrimaryBrushColor().B;
+            int R = SharedSettings.getPrimaryBrushColor().R;
+            int G = SharedSettings.getPrimaryBrushColor().G;
+            int B = SharedSettings.getPrimaryBrushColor().B;
 
-            cPrime = Color.FromArgb(settings.getBrushHardness(), R, G, B);
+            cPrime = Color.FromArgb(SharedSettings.getBrushHardness(), R, G, B);
 
 
-            R = settings.getSecondaryBrushColor().R;
-            G = settings.getSecondaryBrushColor().G;
-            B = settings.getSecondaryBrushColor().B;
+            R = SharedSettings.getSecondaryBrushColor().R;
+            G = SharedSettings.getSecondaryBrushColor().G;
+            B = SharedSettings.getSecondaryBrushColor().B;
 
-            cSec = Color.FromArgb(settings.getBrushHardness(), R, G, B);
+            cSec = Color.FromArgb(SharedSettings.getBrushHardness(), R, G, B);
 
             //pSec.LineJoin = LineJoin.Round;
         }
@@ -77,9 +70,9 @@ namespace Paint_Program
                 }
                 else if(e.Button == MouseButtons.Right)
                 {
-                    int R = settings.getSecondaryBrushColor().R;
-                    int G = settings.getSecondaryBrushColor().G;
-                    int B = settings.getSecondaryBrushColor().B;
+                    int R = SharedSettings.getSecondaryBrushColor().R;
+                    int G = SharedSettings.getSecondaryBrushColor().G;
+                    int B = SharedSettings.getSecondaryBrushColor().B;
 
                     temp = new SolidBrush(cSec);
                     graphics.FillRectangle(temp, e.X, e.Y, 1, 1);

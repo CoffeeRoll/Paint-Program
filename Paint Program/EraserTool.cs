@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace Paint_Program
 {
-    class ErasoirTool : ITool
+    class EraserTool : ITool
     {
         private Graphics graphics;
         private int width, height;
-        private SharedSettings settings;
         private bool bMouseDown, bInit;
         private Pen eraser;
 
@@ -30,23 +24,21 @@ namespace Paint_Program
             return @"..\..\Images\erasoir.png";
         }
 
-        public void init(SharedSettings s)
+        public void init()
         {
-            graphics = s.getActiveGraphics();
-            width = s.getCanvasWidth();
-            height = s.getCanvasHeight();
-            settings = s;
+            graphics = SharedSettings.getActiveGraphics();
+            width = SharedSettings.getCanvasWidth();
+            height = SharedSettings.getCanvasHeight();
             bInit = true;
             bMouseDown = false;
 
-
             eraser = new Pen(Color.Transparent);
-            eraser.Width = settings.getBrushSize() / 2;
+            eraser.Width = SharedSettings.getBrushSize() / 2;
             eraser.SetLineCap(LineCap.Round, LineCap.Round, DashCap.Round);
 
             if (graphics != null)
             {
-                graphics.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
+                graphics.CompositingMode = CompositingMode.SourceCopy;
             }
         }
 
@@ -72,10 +64,10 @@ namespace Paint_Program
                 {
                     pNew = e.Location;
 
-                    if (settings.getTabletPressure() == -1)
+                    if (SharedSettings.getTabletPressure() == -1)
                     {
                         graphics.DrawLine(eraser, pOld, pNew);
-                    }else if(settings.getTabletPressure() >= 0)
+                    }else if(SharedSettings.getTabletPressure() >= 0)
                     {
                         eraser.Width = (float) Math.Pow(2.0, SharedSettings.MapDouble(0, SharedSettings.iMaxTabletPressure, 0.0, 6.0, SharedSettings.iTabletPressure));
                         graphics.DrawLine(eraser, pOld, pNew);

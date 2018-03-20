@@ -5,7 +5,7 @@ using System.Resources;
 
 namespace Paint_Program
 {
-    public class SharedSettings
+    public static class SharedSettings
     {
         public static Color cPrimaryBrushColor { get; set; }
 
@@ -84,7 +84,7 @@ namespace Paint_Program
         public static Size sSelectionSize { get; set; }
 
 
-        public SharedSettings()
+        public static void Init()
         {
             cPrimaryBrushColor = Color.Black;
 
@@ -107,89 +107,94 @@ namespace Paint_Program
 
             //standard max pressure
             iMaxTabletPressure = 1023;
+
+			//Sharp green screen tolerance
+			iGreenScreenTolerance = 1;
+
+			fBrushSize = 1.0f;
         }
         
-        public void setPrimaryBrushColor(Color c)
+        public static void setPrimaryBrushColor(Color c)
         {
             cPrimaryBrushColor = c;
         }
 
-        public void setSecondaryBrushColor(Color c)
+        public static void setSecondaryBrushColor(Color c)
         {
             cSecondaryBrushColor = c;
         }
 
-        public void setBrushSize(float f)
+        public static void setBrushSize(float f)
         {
             fBrushSize = f;
         }
 
-        public void setBrushHardness(int f)
+        public static void setBrushHardness(int f)
         {
             iBrushHardness = f;
         }
 
-        public void setTabletPressure(int p)
+        public static void setTabletPressure(int p)
         {
             iTabletPressure = p;
         }
 
-        public void setMaxTabletPressure(int p)
+        public static void setMaxTabletPressure(int p)
         {
             iMaxTabletPressure = p;
         }
 
-        public void setMaxTabletWidth(int w)
+        public static void setMaxTabletWidth(int w)
         {
             iMaxTabletWidth = w;
         }
 
-        public void setMinTabletWidth(int w)
+        public static void setMinTabletWidth(int w)
         {
             iMinTabletWidth = w;
         }
 
-        public void setCanvasWidth(int w)
+        public static void setCanvasWidth(int w)
         {
             iCanvasWidth = w;
         }
 
-        public void setCanvasHeight(int h)
+        public static void setCanvasHeight(int h)
         {
             iCanvasHeight = h;
         }
 
-        public void setGridWidth(int w)
+        public static void setGridWidth(int w)
         {
             iGridWidth = w;
         }
 
-        public void setGridToggle(bool b)
+        public static void setGridToggle(bool b)
         {
             bGridToggle = b;
         }
 
-        public void setLoadFromSettings(bool b)
+        public static void setLoadFromSettings(bool b)
         {
             bLoadFromSettings = b;
         }
 
-        public void setBitmapCanvas(Bitmap b)
+        public static void setBitmapCanvas(Bitmap b)
         {
             bitmapCanvas = b;
         }
 
-        public void setImportImage(Bitmap b)
+        public static void setImportImage(Bitmap b)
         {
             bitmapImportImage = b;
         }
 
-        public void setBitmapCurrentLayer(Bitmap b)
+        public static void setBitmapCurrentLayer(Bitmap b)
         {
             bitmapCurrentLayer = b;
         }
 
-        public void setLayerBitmaps(Bitmap[] bitArr)
+        public static void setLayerBitmaps(Bitmap[] bitArr)
         {
             Layers = new Bitmap[bitArr.Length];
             for(int n = 0; n < bitArr.Length; n++)
@@ -199,42 +204,42 @@ namespace Paint_Program
             }
         }
 
-        public void setLayerNames(String[] names)
+        public static void setLayerNames(String[] names)
         {
             LayerNames = names;
         }
 
-        public void setDrawScale(float s)
+        public static void setDrawScale(float s)
         {
             fScale = s;
         }
 
-        public void setSelectionPoint(Point p)
+        public static void setSelectionPoint(Point p)
         {
             pSelectionPoint = p;
         }
 
-        public void setSelectionSize(Size s)
+        public static void setSelectionSize(Size s)
         {
             sSelectionSize = s;
         }
 
-        public void setInterfaceBitmap(Bitmap b)
+        public static void setInterfaceBitmap(Bitmap b)
         {
             bitmapInterface = b;
         }
 
-        public void setRenderBitmapInterface(bool b)
+        public static void setRenderBitmapInterface(bool b)
         {
             bRenderBitmapInterface = b;
         }
 
-        public void setBitmapSelectionArea(Bitmap b)
+        public static void setBitmapSelectionArea(Bitmap b)
         {
             bitmapSelectionArea = b;
         }
 
-        public void setActiveGraphics(Graphics g)
+        public static void setActiveGraphics(Graphics g)
         {
             gActiveGraphics = g;
             if (bActiveSelection)
@@ -243,47 +248,47 @@ namespace Paint_Program
             }
         }
 
-        public void setActiveSelection(bool b)
+        public static void setActiveSelection(bool b)
         {
             bActiveSelection = b;
         }
 
-        public void setFlattenSelection(bool b)
+        public static void setFlattenSelection(bool b)
         {
             bFlattenSelection = b;
         }
 
-        public void setCurrentLayerIndex(int i)
+        public static void setCurrentLayerIndex(int i)
         {
             icurentLayerIndex = i;
         }
 
-        public void setTabletConnected(bool b)
+        public static void setTabletConnected(bool b)
         {
             bTabletConnected = b;
         }
 
-        public void setActiveLayerGraphics(Graphics g)
+        public static void setActiveLayerGraphics(Graphics g)
         {
             gActiveLayerGraphics = g;
         }
 
-        public void setBitmapLayerUpdate(Bitmap b)
+        public static void setBitmapLayerUpdate(Bitmap b)
         {
             bitmapLayerUpdate = b;
         }
 
-        public void setGreenScreenTolerance(int i)
+        public static void setGreenScreenTolerance(int i)
         {
             iGreenScreenTolerance = i;
         }
 
-        public void setLanguageFolderPath(string s)
+        public static void setLanguageFolderPath(string s)
         {
             languageFolderPath = s;
         }
 
-        public void setLanguage(string s)
+        public static void setLanguage(string s)
         {
             language = s;
         }
@@ -291,84 +296,86 @@ namespace Paint_Program
 
 
 
-        public Color getPrimaryBrushColor()
+        public static Color getPrimaryBrushColor()
         {
             return cPrimaryBrushColor;
         }
 
-        public Color getSecondaryBrushColor()
+        public static Color getSecondaryBrushColor()
         {
             return cSecondaryBrushColor;
         }
 
-        public float getBrushSize()
+        public static float getBrushSize()
         {
-            return fBrushSize;
+			//Cannot return a brush size of 0;
+            return fBrushSize <= 0 ? 1.0f : fBrushSize;
         }
 
-        public int getBrushHardness()
+        public static int getBrushHardness()
         {
-            return iBrushHardness;
+			//Cannot have 0 hardness
+            return iBrushHardness <= 0 ? 1 : iBrushHardness;
         }
 
-        public int getTabletPressure()
+        public static int getTabletPressure()
         {
             return iTabletPressure;
         }
 
-        public int getMaxTabletPressure()
+        public static int getMaxTabletPressure()
         {
             return iMaxTabletPressure;
         }
 
-        public int getMaxTabletWidth()
+        public static int getMaxTabletWidth()
         {
             return iMaxTabletWidth;
         }
 
-        public int getMinTabletWidth()
+        public static int getMinTabletWidth()
         {
             return iMinTabletWidth;
         }
 
-        public int getCanvasWidth()
+        public static int getCanvasWidth()
         {
             return iCanvasWidth;
         }
 
-        public int getCanvasHeight()
+        public static int getCanvasHeight()
         {
             return iCanvasHeight;
         }
 
-        public int getGridWitdh()
+        public static int getGridWitdh()
         {
             return iGridWidth;
         }
 
-        public bool getGridToggle()
+        public static bool getGridToggle()
         {
             return bGridToggle;
         }
 
-        public bool getLoadFromSettings()
+        public static bool getLoadFromSettings()
         {
             return bLoadFromSettings;
         }
 
-        public Bitmap getBitmapCanvas()
+        public static Bitmap getBitmapCanvas()
         {
             return bitmapCanvas;
         }
 
-        public Bitmap getImportImage()
+        public static Bitmap getImportImage()
         {
             Bitmap tmp = bitmapImportImage;
             bitmapImportImage = null;
             return tmp;
         }
 
-        public Bitmap getBitmapCurrentLayer(bool source)
+        public static Bitmap getBitmapCurrentLayer(bool source)
         {
             if (source)
             {
@@ -380,87 +387,87 @@ namespace Paint_Program
             }
         }
 
-        public Bitmap[] getLayerBitmaps()
+        public static Bitmap[] getLayerBitmaps()
         {
             return Layers;
         }
 
-        public String[] getLayerNames()
+        public static String[] getLayerNames()
         {
             return LayerNames;
         }
 
-        public float getDrawScale()
+        public static float getDrawScale()
         {
             return fScale;
         }
 
-        public Point getSelectionPoint()
+        public static Point getSelectionPoint()
         {
             return pSelectionPoint;
         }
 
-        public Size getSelectionSize()
+        public static Size getSelectionSize()
         {
             return sSelectionSize;
         }
 
-        public Bitmap getInterfaceBitmap()
+        public static Bitmap getInterfaceBitmap()
         {
             return bitmapInterface;
         }
 
-        public bool getRenderBitmapInterface()
+        public static bool getRenderBitmapInterface()
         {
             return bRenderBitmapInterface;
         }
 
-        public Bitmap getBitmapSelectionArea()
+        public static Bitmap getBitmapSelectionArea()
         {
             return bitmapSelectionArea;
         }
 
-        public Graphics getActiveGraphics()
+        public static Graphics getActiveGraphics()
         {
             return gActiveGraphics;
         }
 
-        public bool getActiveSelection()
+        public static bool getActiveSelection()
         {
             return bActiveSelection;
         }
 
-        public bool getFlattenSelection()
+        public static bool getFlattenSelection()
         {
             return bFlattenSelection;
         }
 
-        public int getCurrentLayerIndex()
+        public static int getCurrentLayerIndex()
         {
             return icurentLayerIndex;
         }
 
-        public bool getTabletconnected()
+        public static bool getTabletconnected()
         {
             return bTabletConnected;
         }
 
-        public Graphics getActiveLayerGraphics()
+        public static Graphics getActiveLayerGraphics()
         {
             return gActiveLayerGraphics;
         }
 
-        public Bitmap getBitmapLayerUpdate()
+        public static Bitmap getBitmapLayerUpdate()
         {
             return bitmapLayerUpdate;
         }
 
-        public int getGreenScreenTolerance()
+        public static int getGreenScreenTolerance()
         {
             return iGreenScreenTolerance;
         }
 
-        public string getLanguageFolderPath()
+        public static string getLanguageFolderPath()
         {
             return languageFolderPath;
         }
@@ -490,7 +497,7 @@ namespace Paint_Program
             }
         }
 
-        public void scrubSelection()
+        public static void scrubSelection()
         {
             setActiveSelection(false);
             setFlattenSelection(false);
@@ -498,7 +505,7 @@ namespace Paint_Program
             setSelectionSize(new Size(-1, -1));
             setActiveGraphics(getActiveLayerGraphics());
             setBitmapSelectionArea(null);
-            Console.WriteLine("Scrubed Selection Info. . .");
+            Console.WriteLine("Scrubbed Selection Info. . .");
         }
 
 
@@ -542,7 +549,7 @@ namespace Paint_Program
             return (newStart + ((value - originalStart) * scale));
         }
 
-        public void Trash()
+        public static void Trash()
         {
 
             //Disposes all Bitmap references to reduce memory leaks

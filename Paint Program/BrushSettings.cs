@@ -13,10 +13,9 @@ namespace Paint_Program
 {
     public partial class BrushSettings : UserControl, ITextUpdate
     {
-        SharedSettings settings;
         BackgroundWorker bw;
 
-        public BrushSettings(SharedSettings s)
+        public BrushSettings()
         {
             InitializeComponent();
 
@@ -24,14 +23,12 @@ namespace Paint_Program
             lSec.Text = SharedSettings.getGlobalString("brushsettings_color_secondary");
             lSize.Text = SharedSettings.getGlobalString("brushsettings_brush_size");
             lHard.Text = SharedSettings.getGlobalString("brushsettings_brush_hardness");
+			
+            pPrime.BackColor = SharedSettings.getPrimaryBrushColor();
+            pSec.BackColor = SharedSettings.getSecondaryBrushColor();
 
-            settings = s;
-
-            pPrime.BackColor = settings.getPrimaryBrushColor();
-            pSec.BackColor = settings.getSecondaryBrushColor();
-
-            tbSize.Value = (int)settings.getBrushSize();
-            tbHardness.Value = (int)settings.getBrushHardness();
+            tbSize.Value = (int)SharedSettings.getBrushSize();
+            tbHardness.Value = (int)SharedSettings.getBrushHardness();
             
             this.Refresh();
 
@@ -51,7 +48,7 @@ namespace Paint_Program
                 {
                     if (cdPicker.ShowDialog(new Form() { TopMost = true }) == DialogResult.OK)
                     {
-                        settings.setPrimaryBrushColor(cdPicker.Color);
+						SharedSettings.setPrimaryBrushColor(cdPicker.Color);
                     }
 
                 };
@@ -75,7 +72,7 @@ namespace Paint_Program
                 {
                     if (cdPicker.ShowDialog(new Form() { TopMost = true }) == DialogResult.OK)
                     {
-                        settings.setSecondaryBrushColor(cdPicker.Color);
+						SharedSettings.setSecondaryBrushColor(cdPicker.Color);
                     }
 
                 };
@@ -95,20 +92,20 @@ namespace Paint_Program
         {
             lSize.Text = SharedSettings.getGlobalString("brushsettings_brush_size") + ": " + tbSize.Value.ToString();
             lSize.Refresh();
-            settings.setBrushSize(tbSize.Value);
+			SharedSettings.setBrushSize(tbSize.Value);
         }
 
         private void tbHardness_ValueChanged(object sender, EventArgs e)
         {
             lHard.Text = SharedSettings.getGlobalString("brushsettings_brush_hardness") + ": " + tbHardness.Value.ToString();
             lHard.Refresh();
-            settings.setBrushHardness(tbHardness.Value);
+			SharedSettings.setBrushHardness(tbHardness.Value);
         }
 
         public void CheckChange()
         {
-            pPrime.BackColor = settings.getPrimaryBrushColor();
-            pSec.BackColor = settings.getSecondaryBrushColor();
+            pPrime.BackColor = SharedSettings.getPrimaryBrushColor();
+            pSec.BackColor = SharedSettings.getSecondaryBrushColor();
             this.Refresh();
         }
 

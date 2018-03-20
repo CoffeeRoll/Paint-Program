@@ -16,8 +16,6 @@ namespace Paint_Program
         private bool isVisible;
         private bool isActive;
 
-        private SharedSettings ss;
-
         private String sLayerName;
 
         private Color cActive = Color.FromArgb(40, 163, 119);
@@ -27,9 +25,8 @@ namespace Paint_Program
 
         private Graphics g; 
 
-        public LayerItem(int w, int h, PixelFormat pf, String name, SharedSettings s)
+        public LayerItem(int w, int h, PixelFormat pf, String name)
         {
-            ss = s;
             InitializeComponent();
 
             cbVisible.Text = SharedSettings.getGlobalString("layeritem_checkbox_visible");
@@ -56,21 +53,21 @@ namespace Paint_Program
 
         public void updatePreview()
         {
-            if (ss.getBitmapLayerUpdate() != null)
+            if (SharedSettings.getBitmapLayerUpdate() != null)
             {
-                LayerBitmap = (Bitmap) ss.getBitmapLayerUpdate().Clone();
+                LayerBitmap = (Bitmap)SharedSettings.getBitmapLayerUpdate().Clone();
                 g = Graphics.FromImage(LayerBitmap);
-                ss.setActiveGraphics(g);
-                ss.setBitmapLayerUpdate(null);
-                ss.setBitmapCurrentLayer(LayerBitmap);
+				SharedSettings.setActiveGraphics(g);
+				SharedSettings.setBitmapLayerUpdate(null);
+				SharedSettings.setBitmapCurrentLayer(LayerBitmap);
             }
             pbLayerPreview.Image = LayerBitmap;
         }
 
         public void updateSettings()
         {
-            ss.setBitmapCurrentLayer(LayerBitmap);
-            ss.setActiveLayerGraphics(Graphics.FromImage(LayerBitmap));
+			SharedSettings.setBitmapCurrentLayer(LayerBitmap);
+			SharedSettings.setActiveLayerGraphics(Graphics.FromImage(LayerBitmap));
         }
 
         public Graphics getGraphics()
@@ -96,9 +93,9 @@ namespace Paint_Program
             updateColor();
             if (isActive)
             {
-                ss.setBitmapCurrentLayer(getBitmap());
-                ss.setActiveGraphics(g);
-                ss.setActiveLayerGraphics(g);
+				SharedSettings.setBitmapCurrentLayer(getBitmap());
+				SharedSettings.setActiveGraphics(g);
+				SharedSettings.setActiveLayerGraphics(g);
             }
         }
 

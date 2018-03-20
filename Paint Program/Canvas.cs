@@ -24,10 +24,10 @@ namespace Paint_Program
 
         private int canvasWidth, canvasHeight;
 
-        //Width and height of Parrent
+        //Width and height of Parent
         private int maxWidth, maxHeight;
 
-        //width and height of the vertical and horizontal scroll bars respectivly
+        //width and height of the vertical and horizontal scroll bars respectively
         private int scrollWidth, scrollHeight;
 
         private int tsWidth, menuHeight;
@@ -36,8 +36,6 @@ namespace Paint_Program
         private int iActiveTool;
 
         private bool isPasued = false;
-
-        //private static ToolTip tt;
 
         LayerView lv;
         ToolStrip ts;
@@ -50,13 +48,9 @@ namespace Paint_Program
         public List<ToolStripButton> ToolButtons;
         private bool ToolsShown = true;
 
-        SharedSettings ss;
-
         public Canvas(int pw, int ph)
         {
             InitializeComponent();
-
-            ss = new SharedSettings();
 
             canvasWidth = SharedSettings.bitmapCanvas.Width;
             canvasHeight = SharedSettings.bitmapCanvas.Height;
@@ -74,16 +68,14 @@ namespace Paint_Program
         {
             InitializeComponent();
 
-            ss = new SharedSettings();
-
             canvasWidth = w;
             canvasHeight = h;
             
             maxWidth = pw;
             maxHeight = ph;
 
-            ss.setCanvasWidth(canvasWidth);
-            ss.setCanvasHeight(canvasHeight);
+            SharedSettings.setCanvasWidth(canvasWidth);
+            SharedSettings.setCanvasHeight(canvasHeight);
 
             this.Width = canvasWidth;
             this.Height = canvasHeight;
@@ -93,20 +85,20 @@ namespace Paint_Program
 
         public void initCanvas()
         {
-            
+			SharedSettings.Init();
 
-            Tools = new List<ITool>();
+			Tools = new List<ITool>();
             ToolButtons = new List<ToolStripButton>();
 
             try
             {
                 ti = new TabletInfo(HandleTabletData);
-                ss.setTabletConnected(true);
+                SharedSettings.setTabletConnected(true);
                 Console.WriteLine("Tablet Connected.");
             }
             catch (Exception e)
             {
-                ss.setTabletConnected(false);
+                SharedSettings.setTabletConnected(false);
                 Console.WriteLine(e.InnerException);
             }
 
@@ -116,7 +108,7 @@ namespace Paint_Program
             scrollWidth = System.Windows.Forms.SystemInformation.VerticalScrollBarWidth;
             scrollHeight = System.Windows.Forms.SystemInformation.HorizontalScrollBarHeight;
 
-            lv = new LayerView(canvasWidth, canvasHeight, ss);
+            lv = new LayerView(canvasWidth, canvasHeight);
             lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
 
             this.Location = new Point((maxWidth / 2) - (this.Width / 2), (maxHeight / 2) - (this.Height / 2));
@@ -136,11 +128,11 @@ namespace Paint_Program
             this.Parent.Controls.Add(ts);
             this.Parent.Resize += handleParentResize;
 
-            bs = new BrushSettings(ss);
+            bs = new BrushSettings();
             bs.Location = new Point(maxWidth - bs.Width, menuHeight * 2);
             this.Parent.Controls.Add(bs);
 
-            zc = new ZoomControl(ss);
+            zc = new ZoomControl();
             zc.Location = new Point(tsWidth, maxHeight - SystemInformation.CaptionHeight - menuHeight- zc.Height);
             this.Parent.Controls.Add(zc);
 
@@ -211,7 +203,7 @@ namespace Paint_Program
             Tools.Add(new BrushTool());
             Tools.Add(new StraightLineTool());
             Tools.Add(new ColorSamplingTool());
-            Tools.Add(new ErasoirTool());
+            Tools.Add(new EraserTool());
             Tools.Add(new PaintBucketTool());
             Tools.Add(new SelectionTool());
             Tools.Add(new TextTool());
@@ -243,7 +235,7 @@ namespace Paint_Program
                 };
 
                 temp.MouseLeave += delegate {
-                    //ToolTip.Hide doesn't work aparently?
+                    //ToolTip.Hide doesn't work apparently?
                     //Dispose the object when the mouse moves away to force it to go away -- really not great
                     ((ToolTip)temp.Tag).Dispose();
                 };
@@ -265,40 +257,43 @@ namespace Paint_Program
 
         private void HandleTabletData(object sender, MessageReceivedEventArgs e)
         {
-            CWintabData m_wtData = ti.getWintabData();
-            UInt32 m_maxPkts = ti.getMaxPackets();
+			if (SharedSettings.getTabletconnected())
+			{
+				CWintabData m_wtData = ti.getWintabData();
+				UInt32 m_maxPkts = ti.getMaxPackets();
 
-            if (m_wtData == null)
-            {
-                return;
-            }
+				if (m_wtData == null)
+				{
+					return;
+				}
 
-            try
-            {
-                if (m_maxPkts == 1)
-                {
-                    uint pktID = (uint)e.Message.WParam;
-                    WintabPacket pkt = m_wtData.GetDataPacket((uint)e.Message.LParam, pktID);
+				try
+				{
+					if (m_maxPkts == 1)
+					{
+						uint pktID = (uint)e.Message.WParam;
+						WintabPacket pkt = m_wtData.GetDataPacket((uint)e.Message.LParam, pktID);
 
-                    if (pkt.pkContext != 0)
-                    {
-                        int pressure = (int)pkt.pkNormalPressure;
-                        ss.setTabletPressure(pressure);
-                    }
-                }
-            }
-            catch (Exception err)
-            {
-                ss.setTabletConnected(false);
-                Console.WriteLine(err.InnerException);
-            }
+						if (pkt.pkContext != 0)
+						{
+							int pressure = (int)pkt.pkNormalPressure;
+							SharedSettings.setTabletPressure(pressure);
+						}
+					}
+				}
+				catch (Exception err)
+				{
+					SharedSettings.setTabletConnected(false);
+					Console.WriteLine(err.InnerException);
+				}
+			}
 
         }
 
         private void handleToolStripItemClick(object sender, EventArgs e)
         {
             iActiveTool = ToolButtons.IndexOf((ToolStripButton)sender);
-            Tools[iActiveTool].init(ss);
+            Tools[iActiveTool].init();
 
             foreach(ToolStripButton b in ToolButtons)
             {
@@ -353,11 +348,11 @@ namespace Paint_Program
         private MouseEventArgs scaleMouseEvent(MouseEventArgs e)
         {
             int offset = 0;// (int)(SharedSettings.fScale);
-            if (!ss.getActiveSelection())
+            if (!SharedSettings.getActiveSelection())
             {
                 if (lv.getActiveLayer().isLayerVisible())
                 {
-                    return new MouseEventArgs(e.Button, e.Clicks, (int)((e.X - offset) / ss.getDrawScale()), (int)((e.Y - offset) / ss.getDrawScale()), e.Delta);
+                    return new MouseEventArgs(e.Button, e.Clicks, (int)((e.X - offset) / SharedSettings.getDrawScale()), (int)((e.Y - offset) / SharedSettings.getDrawScale()), e.Delta);
                 }
                 else
                 {
@@ -366,14 +361,14 @@ namespace Paint_Program
             }
             else if (Tools[iActiveTool] is MoveTool)
             {
-                return new MouseEventArgs(e.Button, e.Clicks, (int)(((e.X - ss.getSelectionPoint().X) - offset) / ss.getDrawScale()), (int)(((e.Y - ss.getSelectionPoint().Y) - offset) / ss.getDrawScale()), e.Delta);
+                return new MouseEventArgs(e.Button, e.Clicks, (int)(((e.X - SharedSettings.getSelectionPoint().X) - offset) / SharedSettings.getDrawScale()), (int)(((e.Y - SharedSettings.getSelectionPoint().Y) - offset) / SharedSettings.getDrawScale()), e.Delta);
             }
             else
             {
-                Rectangle rect = new Rectangle(ss.getSelectionPoint(), ss.getSelectionSize());
-                if ((ss.getActiveSelection() && rect.Contains(e.X, e.Y)) || Tools[iActiveTool] is SelectionTool)
+                Rectangle rect = new Rectangle(SharedSettings.getSelectionPoint(), SharedSettings.getSelectionSize());
+                if ((SharedSettings.getActiveSelection() && rect.Contains(e.X, e.Y)) || Tools[iActiveTool] is SelectionTool)
                 {
-                    return new MouseEventArgs(e.Button, e.Clicks, (int)(((e.X - ss.getSelectionPoint().X) - offset) / ss.getDrawScale()), (int)(((e.Y - ss.getSelectionPoint().Y) - offset) / ss.getDrawScale()), e.Delta);
+                    return new MouseEventArgs(e.Button, e.Clicks, (int)(((e.X - SharedSettings.getSelectionPoint().X) - offset) / SharedSettings.getDrawScale()), (int)(((e.Y - SharedSettings.getSelectionPoint().Y) - offset) / SharedSettings.getDrawScale()), e.Delta);
                 }
                 else
                 {
@@ -390,7 +385,7 @@ namespace Paint_Program
             //If there is a selected Tool
             if (iActiveTool >= 0)
             {
-                Tools[iActiveTool].init(ss);
+                Tools[iActiveTool].init();
             }
             if (iActiveTool >= 0 && evt != null)
             {
@@ -430,7 +425,7 @@ namespace Paint_Program
         public void updateCanvas(Graphics k)
         {
 
-            if(ss.getBitmapLayerUpdate() != null)
+            if(SharedSettings.getBitmapLayerUpdate() != null)
             {
                 lv.updateActiveLayer();
             }
@@ -442,7 +437,7 @@ namespace Paint_Program
 
             temp.DrawImage(SharedSettings.bitmapCanvas, 0, 0);
 
-            Bitmap iitmp = ss.getImportImage();
+            Bitmap iitmp = SharedSettings.getImportImage();
             if (iitmp != null)
             {
                 lv.addImportImage(iitmp);
@@ -459,29 +454,29 @@ namespace Paint_Program
 
             System.GC.Collect();
 
-            p.Width = (int) (ss.getDrawScale() * ss.getCanvasWidth());
-            p.Height = (int) (ss.getDrawScale() * ss.getCanvasHeight());
+            p.Width = (int) (SharedSettings.getDrawScale() * SharedSettings.getCanvasWidth());
+            p.Height = (int) (SharedSettings.getDrawScale() * SharedSettings.getCanvasHeight());
             Rectangle source = new Rectangle(0, 0, bit2.Width, bit2.Height);
             Rectangle dest = new Rectangle(0, 0, p.Width, p.Height);
 
             k.InterpolationMode = InterpolationMode.NearestNeighbor;
             k.PixelOffsetMode = PixelOffsetMode.Half;
 
-            if (ss.getRenderBitmapInterface() && ss.getInterfaceBitmap() != null)
+            if (SharedSettings.getRenderBitmapInterface() && SharedSettings.getInterfaceBitmap() != null)
             {
                 Tools[6].updateInterfaceLayer();
-                temp.DrawImage(ss.getInterfaceBitmap(), 0, 0);
+                temp.DrawImage(SharedSettings.getInterfaceBitmap(), 0, 0);
             }
             
-            if (ss.getActiveSelection() && ss.getBitmapSelectionArea() != null)
+            if (SharedSettings.getActiveSelection() && SharedSettings.getBitmapSelectionArea() != null)
             {
-                temp.DrawImage(ss.getBitmapSelectionArea(), ss.getSelectionPoint().X, ss.getSelectionPoint().Y);
+                temp.DrawImage(SharedSettings.getBitmapSelectionArea(), SharedSettings.getSelectionPoint().X, SharedSettings.getSelectionPoint().Y);
                 
             }
 
-            if (ss.getFlattenSelection())
+            if (SharedSettings.getFlattenSelection())
             {
-                ss.setFlattenSelection(false);
+                SharedSettings.setFlattenSelection(false);
                 lv.updateActiveLayerSettings();
                 foreach (ITool t in Tools)
                 {
@@ -495,7 +490,7 @@ namespace Paint_Program
             handleWatermark(temp);
 
             k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
-            if (ss.getGridToggle())
+            if (SharedSettings.getGridToggle())
             {
                 lv.GridDraw(k);
             }
@@ -595,15 +590,10 @@ namespace Paint_Program
             }
         }
 
-        public SharedSettings getSharedSettings()
-        {
-            return ss;
-        }
-
         public void Trash()
         {
             lv.Trash();
-            ss.Trash();
+			SharedSettings.Trash();
             p.Dispose();
             pScaled.Dispose();
             g.Dispose();

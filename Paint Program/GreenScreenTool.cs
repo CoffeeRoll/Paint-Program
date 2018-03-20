@@ -1,135 +1,137 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Paint_Program
 {
-    class GreenScreenTool : ITool
-    {
-        private Graphics graphics;
-        private int width, height;
-        private SharedSettings settings;
-        private bool bActive, bMouseDown, bInit;
+	class GreenScreenTool : ITool
+	{
+		private Graphics graphics;
+		private int width, height;
+		private bool bActive, bMouseDown, bInit;
 
-        private Bitmap bLayer;
+		private Bitmap bLayer;
 
-        public void init(SharedSettings s)
-        {
-            graphics = s.getActiveGraphics();
-            width = s.getCanvasWidth();
-            height = s.getCanvasHeight();
-            settings = s;
-            bActive = false;
-            bInit = true;
-            bMouseDown = false;
-        }
+		public void init()
+		{
+			graphics = SharedSettings.getActiveGraphics();
+			width = SharedSettings.getCanvasWidth();
+			height = SharedSettings.getCanvasHeight();
+			bActive = false;
+			bInit = true;
+			bMouseDown = false;
+		}
 
-        public Bitmap getCanvas()
-        {
-            //Not used
-            return null;
-        }
+		public Bitmap getCanvas()
+		{
+			//Not used
+			return null;
+		}
 
-        public string getToolIconPath()
-        {
-            return @"..\..\Images\greenscreen.png";
-        }
+		public string getToolIconPath()
+		{
+			return @"..\..\Images\greenscreen.png";
+		}
 
-        public void onMouseDown(object sender, MouseEventArgs e)
-        {
-            if (settings.getBitmapCurrentLayer(true) != null)
-            {
-                Color c = settings.getBitmapCurrentLayer(true).GetPixel(e.X, e.Y);
+		public void onMouseDown(object sender, MouseEventArgs e)
+		{
+			if (SharedSettings.getBitmapCurrentLayer(true) != null)
+			{
+				Color c = SharedSettings.getBitmapCurrentLayer(true).GetPixel(e.X, e.Y);
 
-                int tol = 1;//settings.getGreenScreenTolerance();
+				Console.WriteLine("Color: " + c.ToString());
 
-                if (e.Button == MouseButtons.Left)
-                {
-                    Bitmap Temp = SharedSettings.bitmapCurrentLayer;
+				if (e.Button == MouseButtons.Left)
+				{
+					Bitmap Temp = SharedSettings.getBitmapCurrentLayer(true);
 
-                    //Avoid Green screening Transparancy
-                    //if (!(Temp.GetPixel(e.X, e.Y).A == 255))
-                    {
-                        for (int r = -tol; r < tol; r++)
-                        {
-                            for (int g = -tol; g < tol; g++)
-                            {
-                                for (int b = -tol; b < tol; b++)
-                                {
-                                    if (!((c.R + r) < 0 || (c.G + g) < 0 || (c.B + b) < 0 || (c.R + r) > 255 || (c.G + g) > 255 || (c.B + b) > 255))
-                                        {
-                                        Color tmpColor = Color.FromArgb(c.R + r, c.G + g, c.B + b);
-                                        //Temp.MakeTransparent(tmpColor);
+					for (int x = 0; x < Temp.Width; x++)
+					{
+						for (int y = 0; y < Temp.Height; y++)
+						{
+							Color tmp = Temp.GetPixel(x, y);
+							//Console.WriteLine("Distance: " + Distance(tmp.R, c.R, tmp.G, c.G, tmp.B, c.B) + " -- " + SharedSettings.getGreenScreenTolerance());
+							if (Distance(tmp.R, tmp.G, tmp.B, c.R, c.G, c.B) <= SharedSettings.getGreenScreenTolerance())
+							{
+								Temp.SetPixel(x, y, Color.Transparent);
+							}
+						}
+					}
 
-                                        //Experimaental -- Slower, but avoids extra code complexity
-                                        for (int x = 0; x < Temp.Width; x++)
-                                        {
-                                            for (int y = 0; y < Temp.Height; y++)
-                                            {
-                                                Color tmp = Temp.GetPixel(x, y);
-                                                if (tmp.R == tmpColor.R && tmp.G == tmpColor.G && tmp.B == tmpColor.B)
-                                                {
-                                                    Temp.SetPixel(x, y, Color.Transparent);
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+					/* Cringe City, please ignore
+					for (int r = -tol; r < tol; r++)
+					{
+						for (int g = -tol; g < tol; g++)
+						{
+							for (int b = -tol; b < tol; b++)
+							{
+								if (!((c.R + r) < 0 || (c.G + g) < 0 || (c.B + b) < 0 || (c.R + r) > 255 || (c.G + g) > 255 || (c.B + b) > 255))
+								{
+									Color tmpColor = Color.FromArgb(c.R + r, c.G + g, c.B + b);
+									
+									for (int x = 0; x < Temp.Width; x++)
+									{
+										for (int y = 0; y < Temp.Height; y++)
+										{
+											Color tmp = Temp.GetPixel(x, y);
+											if (tmp.R == tmpColor.R && tmp.G == tmpColor.G && tmp.B == tmpColor.B)
+											{
+												Temp.SetPixel(x, y, Color.Transparent);
+											}
+										}
+									}
+								}
+							}
+						}
+					}*/
+				}
+			}
+		}
 
-                        }
-                    }
+		public void onMouseMove(object sender, MouseEventArgs e)
+		{
 
-                    //settings.setBitmapLayerUpdate(Temp);
+		}
 
-                }
-            }
-        }
+		public void onMouseUp(object sender, MouseEventArgs e)
+		{
+			if (graphics != null)
+			{
+				bMouseDown = false;
 
-        public void onMouseMove(object sender, MouseEventArgs e)
-        {
+			}
+		}
 
-        }
+		public bool isInitalized()
+		{
+			return bInit;
+		}
 
-        public void onMouseUp(object sender, MouseEventArgs e)
-        {
-            if (graphics != null)
-            {
-                bMouseDown = false;
+		public Bitmap getToolLayer()
+		{
+			return null;
+		}
 
-            }
-        }
+		public bool requiresLayerData()
+		{
+			return true;
+		}
 
-        public bool isInitalized()
-        {
-            return bInit;
-        }
+		public void setLayerData(Bitmap bit)
+		{
+			bLayer = bit;
+		}
 
-        public Bitmap getToolLayer()
-        {
-            return null;
-        }
+		public string getToolTip()
+		{
+			return SharedSettings.getGlobalString("tooltip_greenscreen");
+		}
+		public void updateInterfaceLayer()
+		{
+		}
 
-        public bool requiresLayerData()
-        {
-            return true;
-        }
-
-        public void setLayerData(Bitmap bit)
-        {
-            bLayer = bit;
-        }
-
-        public string getToolTip()
-        {
-            return SharedSettings.getGlobalString("tooltip_greenscreen");
-        }
-        public void updateInterfaceLayer()
-        {
-        }
-    }
+		private double Distance(int x1, int y1, int z1, int x2, int y2, int z2) {
+			return Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2));
+		} 
+	}
 }

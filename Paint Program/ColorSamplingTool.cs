@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Paint_Program
@@ -13,7 +8,6 @@ namespace Paint_Program
 
         private Graphics graphics;
         private int width, height;
-        private SharedSettings settings;
         private bool bActive, bMouseDown, bInit;
 
         public ColorSamplingTool()
@@ -21,12 +15,11 @@ namespace Paint_Program
 
         }
 
-        public void init(SharedSettings s)
+        public void init()
         {
-            graphics = s.getActiveGraphics();
-            width = s.getCanvasWidth();
-            height = s.getCanvasHeight();
-            settings = s;
+            graphics = SharedSettings.getActiveGraphics();
+            width = SharedSettings.getCanvasWidth();
+            height = SharedSettings.getCanvasHeight();
             bActive = false;
             bInit = true;
             bMouseDown = false;
@@ -51,11 +44,11 @@ namespace Paint_Program
                 Color c = SharedSettings.bitmapCurrentLayer.GetPixel(e.Location.X, e.Location.Y);
 
                 if (e.Button == MouseButtons.Left) {
-                    settings.setPrimaryBrushColor(c);
+					SharedSettings.setPrimaryBrushColor(c);
                 }
                 else if(e.Button == MouseButtons.Right)
                 {
-                    settings.setSecondaryBrushColor(c);
+					SharedSettings.setSecondaryBrushColor(c);
                 }
             }
         }

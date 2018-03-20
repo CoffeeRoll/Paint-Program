@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Paint_Program
 {
     interface ITool
     {
-        /* Initalizes the Graphics object that the tool manipulates, as well as the width and height */
-        void init(SharedSettings s);
+        /* Initializes the Graphics object that the tool manipulates, as well as the width and height */
+        void init();
 
         /* Returns a bitmap of the layer produced by the tool to show information not in the picture
-           such as when the pen tool needs nodes to maipulate the curve
+           such as when the pen tool needs nodes to manipulate the curve
         */
         Bitmap getToolLayer();
 

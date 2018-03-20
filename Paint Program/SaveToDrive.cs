@@ -1,31 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.IO.Compression;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Paint_Program
 {
     class SaveToDrive
     {
-        public SaveToDrive(SharedSettings ss, string fileName, string fileType)
+        public SaveToDrive(string fileName, string fileType)
         {
             try
             {
-                Bitmap bm = ss.getBitmapCanvas().Clone() as Bitmap;
+                Bitmap bm = SharedSettings.getBitmapCanvas().Clone() as Bitmap;
                 BackgroundWorker bw = new BackgroundWorker();
 
                 if (fileType == "LePaint Project File | *.lep")
                 {
                     bw.DoWork += (send, args) =>
                     {
-                        doSaveProject(ss, fileName, send, args);
+                        doSaveProject(fileName, send, args);
                     };
                 }
                 else if (fileType == "Animated GIF | *.gif")
@@ -84,7 +80,7 @@ namespace Paint_Program
                         fmt = ImageFormat.Bmp;
                         break;
                     default:
-                        // on error, default to png
+                        // on error, default to .png
                         break;
                 }
 
@@ -138,30 +134,30 @@ namespace Paint_Program
             }
             catch (Exception e)
             {
-                Console.WriteLine("Problem deleting temp gif file: " + e.Message);
+                Console.WriteLine("Problem deleting temp .gif file: " + e.Message);
             }
         }
 
-        public void doSaveProject(SharedSettings ss, string filename, object sender, DoWorkEventArgs args)
+        public void doSaveProject(string filename, object sender, DoWorkEventArgs args)
         {
             try
             {
-                System.IO.Directory.CreateDirectory("save");
+				Directory.CreateDirectory("save");
 
-                Bitmap[] bitArr = ss.getLayerBitmaps();
-                string baseDir = System.IO.Directory.GetCurrentDirectory();
-                string[] LayerNames = ss.getLayerNames();
+                Bitmap[] bitArr = SharedSettings.getLayerBitmaps();
+                string baseDir = Directory.GetCurrentDirectory();
+                string[] LayerNames = SharedSettings.getLayerNames();
 
                 for (int n = 0; n < bitArr.Length; n++)
                 {
                     bitArr[n].Save(baseDir + "\\save\\" + LayerNames[n] + ".png", ImageFormat.Png);
                 }
 
-                System.IO.File.WriteAllLines(baseDir + @"\save\names.txt", LayerNames);
+                File.WriteAllLines(baseDir + @"\save\names.txt", LayerNames);
 
                 if (SharedSettings.bitmapWatermark != null)
                 {
-                    System.IO.Directory.CreateDirectory("save\\watermark");
+                    Directory.CreateDirectory("save\\watermark");
                     SharedSettings.bitmapWatermark.Save("save\\watermark\\watermark.png", ImageFormat.Png);
                     string[] watermarkInfo = { SharedSettings.bRenderWatermark.ToString(), SharedSettings.watermarkStyle };
                     System.IO.File.WriteAllLines(baseDir + @"\\save\\watermark\\watermarkdata.txt", watermarkInfo);
@@ -198,7 +194,7 @@ namespace Paint_Program
             }
             catch (Exception e)
             {
-                Console.WriteLine("Problem deleting temp lep file: " + e.Message);
+                Console.WriteLine("Problem deleting temp .lep file: " + e.Message);
             }
         }
     }
