@@ -437,13 +437,13 @@ namespace Paint_Program
             Layers.Clear();
         }
 
-        public void updateText()
+        public void UpdateText()
         {
             foreach (Control c in Controls)
             {
                 if (c is ITextUpdate)
                 {
-                    ((ITextUpdate)c).updateText();
+                    ((ITextUpdate)c).UpdateText();
                 }
             }
         }

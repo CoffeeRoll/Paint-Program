@@ -1,0 +1,253 @@
+\hypertarget{class_wintab_d_n_1_1_c_wintab_extensions}{}\section{Wintab\+D\+N.\+C\+Wintab\+Extensions Class Reference}
+\label{class_wintab_d_n_1_1_c_wintab_extensions}\index{Wintab\+D\+N.\+C\+Wintab\+Extensions@{Wintab\+D\+N.\+C\+Wintab\+Extensions}}
+
+
+A\+PI for Wintab extensions functionality (Wintab 1.\+4).  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static U\+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_extensions_ab68b335cdc5010dab82f1941d39fea67}{Get\+W\+T\+Extension\+Mask}} (\mbox{\hyperlink{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059b}{E\+W\+T\+X\+Extension\+Tag}} tag\+\_\+I)
+\begin{DoxyCompactList}\small\item\em Return the extension mask for the given tag. \end{DoxyCompactList}\item 
+static U\+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_extensions_a1677bed45e60d70b5fa2a14b381851d7}{Find\+W\+T\+Extension\+Index}} (\mbox{\hyperlink{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059b}{E\+W\+T\+X\+Extension\+Tag}} tag\+\_\+I)
+\begin{DoxyCompactList}\small\item\em Returns extension index tag for given tag, if possible. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_extensions_ac81f1953072b1c812e2602c835813cbe}{Control\+Property\+Get}} (\mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}} context\+\_\+I, byte ext\+Tag\+Index\+\_\+I, byte tablet\+Index\+\_\+I, byte control\+Index\+\_\+I, byte function\+Index\+\_\+I, ushort property\+I\+D\+\_\+I, ref U\+Int32 result\+\_\+O)
+\begin{DoxyCompactList}\small\item\em Get a property value from an extension. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_extensions_a8e0839db892d1ea0a1a3c6acefd972f9}{Control\+Property\+Set}} (\mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}} context\+\_\+I, byte ext\+Tag\+Index\+\_\+I, byte tablet\+Index\+\_\+I, byte control\+Index\+\_\+I, byte function\+Index\+\_\+I, ushort property\+I\+D\+\_\+I, U\+Int32 value\+\_\+I)
+\begin{DoxyCompactList}\small\item\em Sets an extension control property value. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_extensions_a12bb26b5c04d235203bdd18a48f16b68}{Control\+Property\+Set}} (\mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}} context\+\_\+I, byte ext\+Tag\+Index\+\_\+I, byte tablet\+Index\+\_\+I, byte control\+Index\+\_\+I, byte function\+Index\+\_\+I, ushort property\+I\+D\+\_\+I, String value\+\_\+I)
+\begin{DoxyCompactList}\small\item\em Sets an extension control property string. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_extensions_a631b5401d1dc5614ce194ec259c12e43}{Control\+Property\+Set\+Image}} (\mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}} context\+\_\+I, byte ext\+Tag\+Index\+\_\+I, byte tablet\+Index\+\_\+I, byte control\+Index\+\_\+I, byte function\+Index\+\_\+I, ushort property\+I\+D\+\_\+I, String image\+File\+Path\+\_\+I)
+\begin{DoxyCompactList}\small\item\em Sets an extension control property image (if supported by tablet). \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_extensions_ad35998f82be4c5ff67e3c476d89bcbdb}{Set\+Display\+Property}} (\mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context}{C\+Wintab\+Context}} context\+\_\+I, \mbox{\hyperlink{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059b}{E\+W\+T\+X\+Extension\+Tag}} ext\+Tag\+Index\+\_\+I, U\+Int32 tablet\+Index\+\_\+I, U\+Int32 control\+Index\+\_\+I, U\+Int32 function\+Index\+\_\+I, String image\+File\+Path\+\_\+I)
+\begin{DoxyCompactList}\small\item\em Set tablet O\+L\+ED display property. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_extensions_a328174cc03d3baaed1772b68059a142b}{Set\+Icon}} (\mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context}{C\+Wintab\+Context}} context\+\_\+I, \mbox{\hyperlink{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059b}{E\+W\+T\+X\+Extension\+Tag}} ext\+Tag\+Index\+\_\+I, U\+Int32 tablet\+Index\+\_\+I, U\+Int32 control\+Index\+\_\+I, U\+Int32 function\+Index\+\_\+I, String image\+File\+Path\+\_\+I)
+\begin{DoxyCompactList}\small\item\em Write out an image to a tablet\textquotesingle{}s O\+L\+ED (Organic Light Emitting Diode) if supported by the tablet (eg\+: Intuos4). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+PI for Wintab extensions functionality (Wintab 1.\+4). 
+
+Wintab Extensions provides support for overriding tablet control functionality with functionality provided by an application. The tablet controls that can be overriden with extensions are\+: Express Keys, Touch Rings and Touch Strips.
+
+For example, an application can respond to an Express Key button press by defining what action should occur within that application when the button is pressed. Similarly, an application can define actions for Touch Ring and Touch Strip button modes, and respond to user swipes on those controls to provide customized behavior. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_extensions_ac81f1953072b1c812e2602c835813cbe}\label{class_wintab_d_n_1_1_c_wintab_extensions_ac81f1953072b1c812e2602c835813cbe}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Extensions@{Wintab\+D\+N\+::\+C\+Wintab\+Extensions}!Control\+Property\+Get@{Control\+Property\+Get}}
+\index{Control\+Property\+Get@{Control\+Property\+Get}!Wintab\+D\+N\+::\+C\+Wintab\+Extensions@{Wintab\+D\+N\+::\+C\+Wintab\+Extensions}}
+\subsubsection{\texorpdfstring{Control\+Property\+Get()}{ControlPropertyGet()}}
+{\footnotesize\ttfamily static bool Wintab\+D\+N.\+C\+Wintab\+Extensions.\+Control\+Property\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}}}]{context\+\_\+I,  }\item[{byte}]{ext\+Tag\+Index\+\_\+I,  }\item[{byte}]{tablet\+Index\+\_\+I,  }\item[{byte}]{control\+Index\+\_\+I,  }\item[{byte}]{function\+Index\+\_\+I,  }\item[{ushort}]{property\+I\+D\+\_\+I,  }\item[{ref U\+Int32}]{result\+\_\+O }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get a property value from an extension. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context\+\_\+I} & Wintab context\\
+\hline
+{\em ext\+Tag\+Index\+\_\+I} & extension index tag\\
+\hline
+{\em tablet\+Index\+\_\+I} & tablet index\\
+\hline
+{\em control\+Index\+\_\+I} & control index on the tablet\\
+\hline
+{\em function\+Index\+\_\+I} & function index on the control\\
+\hline
+{\em property\+I\+D\+\_\+I} & ID of the property requested\\
+\hline
+{\em result\+\_\+O} & value of the property requested\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if property obtained
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_extensions_a8e0839db892d1ea0a1a3c6acefd972f9}\label{class_wintab_d_n_1_1_c_wintab_extensions_a8e0839db892d1ea0a1a3c6acefd972f9}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Extensions@{Wintab\+D\+N\+::\+C\+Wintab\+Extensions}!Control\+Property\+Set@{Control\+Property\+Set}}
+\index{Control\+Property\+Set@{Control\+Property\+Set}!Wintab\+D\+N\+::\+C\+Wintab\+Extensions@{Wintab\+D\+N\+::\+C\+Wintab\+Extensions}}
+\subsubsection{\texorpdfstring{Control\+Property\+Set()}{ControlPropertySet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool Wintab\+D\+N.\+C\+Wintab\+Extensions.\+Control\+Property\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}}}]{context\+\_\+I,  }\item[{byte}]{ext\+Tag\+Index\+\_\+I,  }\item[{byte}]{tablet\+Index\+\_\+I,  }\item[{byte}]{control\+Index\+\_\+I,  }\item[{byte}]{function\+Index\+\_\+I,  }\item[{ushort}]{property\+I\+D\+\_\+I,  }\item[{U\+Int32}]{value\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Sets an extension control property value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context\+\_\+I} & wintab context\\
+\hline
+{\em ext\+Tag\+Index\+\_\+I} & which extension tag we\textquotesingle{}re setting\\
+\hline
+{\em tablet\+Index\+\_\+I} & index of the tablet being set\\
+\hline
+{\em control\+Index\+\_\+I} & the index of the control being set\\
+\hline
+{\em function\+Index\+\_\+I} & the index of the control function being set\\
+\hline
+{\em property\+I\+D\+\_\+I} & ID of the property being set\\
+\hline
+{\em value\+\_\+I} & value of the property being set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_extensions_a12bb26b5c04d235203bdd18a48f16b68}\label{class_wintab_d_n_1_1_c_wintab_extensions_a12bb26b5c04d235203bdd18a48f16b68}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Extensions@{Wintab\+D\+N\+::\+C\+Wintab\+Extensions}!Control\+Property\+Set@{Control\+Property\+Set}}
+\index{Control\+Property\+Set@{Control\+Property\+Set}!Wintab\+D\+N\+::\+C\+Wintab\+Extensions@{Wintab\+D\+N\+::\+C\+Wintab\+Extensions}}
+\subsubsection{\texorpdfstring{Control\+Property\+Set()}{ControlPropertySet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool Wintab\+D\+N.\+C\+Wintab\+Extensions.\+Control\+Property\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}}}]{context\+\_\+I,  }\item[{byte}]{ext\+Tag\+Index\+\_\+I,  }\item[{byte}]{tablet\+Index\+\_\+I,  }\item[{byte}]{control\+Index\+\_\+I,  }\item[{byte}]{function\+Index\+\_\+I,  }\item[{ushort}]{property\+I\+D\+\_\+I,  }\item[{String}]{value\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Sets an extension control property string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context\+\_\+I} & wintab context\\
+\hline
+{\em ext\+Tag\+Index\+\_\+I} & which extension tag we\textquotesingle{}re setting\\
+\hline
+{\em tablet\+Index\+\_\+I} & index of the tablet being set\\
+\hline
+{\em control\+Index\+\_\+I} & the index of the control being set\\
+\hline
+{\em function\+Index\+\_\+I} & the index of the control function being set\\
+\hline
+{\em property\+I\+D\+\_\+I} & ID of the property being set\\
+\hline
+{\em value\+\_\+I} & value of the property being set (a string)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_extensions_a631b5401d1dc5614ce194ec259c12e43}\label{class_wintab_d_n_1_1_c_wintab_extensions_a631b5401d1dc5614ce194ec259c12e43}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Extensions@{Wintab\+D\+N\+::\+C\+Wintab\+Extensions}!Control\+Property\+Set\+Image@{Control\+Property\+Set\+Image}}
+\index{Control\+Property\+Set\+Image@{Control\+Property\+Set\+Image}!Wintab\+D\+N\+::\+C\+Wintab\+Extensions@{Wintab\+D\+N\+::\+C\+Wintab\+Extensions}}
+\subsubsection{\texorpdfstring{Control\+Property\+Set\+Image()}{ControlPropertySetImage()}}
+{\footnotesize\ttfamily static bool Wintab\+D\+N.\+C\+Wintab\+Extensions.\+Control\+Property\+Set\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}}}]{context\+\_\+I,  }\item[{byte}]{ext\+Tag\+Index\+\_\+I,  }\item[{byte}]{tablet\+Index\+\_\+I,  }\item[{byte}]{control\+Index\+\_\+I,  }\item[{byte}]{function\+Index\+\_\+I,  }\item[{ushort}]{property\+I\+D\+\_\+I,  }\item[{String}]{image\+File\+Path\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Sets an extension control property image (if supported by tablet). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context\+\_\+I} & wintab context\\
+\hline
+{\em ext\+Tag\+Index\+\_\+I} & which extension tag we\textquotesingle{}re setting\\
+\hline
+{\em tablet\+Index\+\_\+I} & index of the tablet being set\\
+\hline
+{\em control\+Index\+\_\+I} & the index of the control being set\\
+\hline
+{\em function\+Index\+\_\+I} & the index of the control function being set\\
+\hline
+{\em property\+I\+D\+\_\+I} & ID of the property being set\\
+\hline
+{\em value\+\_\+I} & value of the property being set (a string)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_extensions_a1677bed45e60d70b5fa2a14b381851d7}\label{class_wintab_d_n_1_1_c_wintab_extensions_a1677bed45e60d70b5fa2a14b381851d7}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Extensions@{Wintab\+D\+N\+::\+C\+Wintab\+Extensions}!Find\+W\+T\+Extension\+Index@{Find\+W\+T\+Extension\+Index}}
+\index{Find\+W\+T\+Extension\+Index@{Find\+W\+T\+Extension\+Index}!Wintab\+D\+N\+::\+C\+Wintab\+Extensions@{Wintab\+D\+N\+::\+C\+Wintab\+Extensions}}
+\subsubsection{\texorpdfstring{Find\+W\+T\+Extension\+Index()}{FindWTExtensionIndex()}}
+{\footnotesize\ttfamily static U\+Int32 Wintab\+D\+N.\+C\+Wintab\+Extensions.\+Find\+W\+T\+Extension\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059b}{E\+W\+T\+X\+Extension\+Tag}}}]{tag\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns extension index tag for given tag, if possible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag\+\_\+I} & type of extension being searched for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0x\+F\+F\+F\+F\+F\+F\+FF on error
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_extensions_ab68b335cdc5010dab82f1941d39fea67}\label{class_wintab_d_n_1_1_c_wintab_extensions_ab68b335cdc5010dab82f1941d39fea67}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Extensions@{Wintab\+D\+N\+::\+C\+Wintab\+Extensions}!Get\+W\+T\+Extension\+Mask@{Get\+W\+T\+Extension\+Mask}}
+\index{Get\+W\+T\+Extension\+Mask@{Get\+W\+T\+Extension\+Mask}!Wintab\+D\+N\+::\+C\+Wintab\+Extensions@{Wintab\+D\+N\+::\+C\+Wintab\+Extensions}}
+\subsubsection{\texorpdfstring{Get\+W\+T\+Extension\+Mask()}{GetWTExtensionMask()}}
+{\footnotesize\ttfamily static U\+Int32 Wintab\+D\+N.\+C\+Wintab\+Extensions.\+Get\+W\+T\+Extension\+Mask (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059b}{E\+W\+T\+X\+Extension\+Tag}}}]{tag\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return the extension mask for the given tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag\+\_\+I} & type of extension being searched for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0x\+F\+F\+F\+F\+F\+F\+FF on error
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_extensions_ad35998f82be4c5ff67e3c476d89bcbdb}\label{class_wintab_d_n_1_1_c_wintab_extensions_ad35998f82be4c5ff67e3c476d89bcbdb}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Extensions@{Wintab\+D\+N\+::\+C\+Wintab\+Extensions}!Set\+Display\+Property@{Set\+Display\+Property}}
+\index{Set\+Display\+Property@{Set\+Display\+Property}!Wintab\+D\+N\+::\+C\+Wintab\+Extensions@{Wintab\+D\+N\+::\+C\+Wintab\+Extensions}}
+\subsubsection{\texorpdfstring{Set\+Display\+Property()}{SetDisplayProperty()}}
+{\footnotesize\ttfamily static bool Wintab\+D\+N.\+C\+Wintab\+Extensions.\+Set\+Display\+Property (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context}{C\+Wintab\+Context}}}]{context\+\_\+I,  }\item[{\mbox{\hyperlink{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059b}{E\+W\+T\+X\+Extension\+Tag}}}]{ext\+Tag\+Index\+\_\+I,  }\item[{U\+Int32}]{tablet\+Index\+\_\+I,  }\item[{U\+Int32}]{control\+Index\+\_\+I,  }\item[{U\+Int32}]{function\+Index\+\_\+I,  }\item[{String}]{image\+File\+Path\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Set tablet O\+L\+ED display property. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context\+\_\+I} & wintab context\\
+\hline
+{\em ext\+Tag\+Index\+\_\+I} & which extension tag we\textquotesingle{}re setting\\
+\hline
+{\em tablet\+Index\+\_\+I} & index of the tablet being set\\
+\hline
+{\em control\+Index\+\_\+I} & the index of the control being set\\
+\hline
+{\em function\+Index\+\_\+I} & the index of the control function being set\\
+\hline
+{\em image\+File\+Path\+\_\+I} & path to P\+NG image file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful and tablet supports property
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_extensions_a328174cc03d3baaed1772b68059a142b}\label{class_wintab_d_n_1_1_c_wintab_extensions_a328174cc03d3baaed1772b68059a142b}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Extensions@{Wintab\+D\+N\+::\+C\+Wintab\+Extensions}!Set\+Icon@{Set\+Icon}}
+\index{Set\+Icon@{Set\+Icon}!Wintab\+D\+N\+::\+C\+Wintab\+Extensions@{Wintab\+D\+N\+::\+C\+Wintab\+Extensions}}
+\subsubsection{\texorpdfstring{Set\+Icon()}{SetIcon()}}
+{\footnotesize\ttfamily static bool Wintab\+D\+N.\+C\+Wintab\+Extensions.\+Set\+Icon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context}{C\+Wintab\+Context}}}]{context\+\_\+I,  }\item[{\mbox{\hyperlink{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059b}{E\+W\+T\+X\+Extension\+Tag}}}]{ext\+Tag\+Index\+\_\+I,  }\item[{U\+Int32}]{tablet\+Index\+\_\+I,  }\item[{U\+Int32}]{control\+Index\+\_\+I,  }\item[{U\+Int32}]{function\+Index\+\_\+I,  }\item[{String}]{image\+File\+Path\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Write out an image to a tablet\textquotesingle{}s O\+L\+ED (Organic Light Emitting Diode) if supported by the tablet (eg\+: Intuos4). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context\+\_\+I} & wintab context\\
+\hline
+{\em ext\+Tag\+Index\+\_\+I} & which extension tag we\textquotesingle{}re setting\\
+\hline
+{\em tablet\+Index\+\_\+I} & index of the tablet being set\\
+\hline
+{\em control\+Index\+\_\+I} & the index of the control being set\\
+\hline
+{\em function\+Index\+\_\+I} & the index of the control function being set\\
+\hline
+{\em image\+File\+Path\+\_\+I} & path to P\+NG image file\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Wintab\+D\+N/\mbox{\hyperlink{_c_wintab_extensions_8cs}{C\+Wintab\+Extensions.\+cs}}\end{DoxyCompactItemize}

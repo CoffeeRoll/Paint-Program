@@ -1,0 +1,130 @@
+\hypertarget{class_wintab_d_n_1_1_message_events}{}\section{Wintab\+D\+N.\+Message\+Events Class Reference}
+\label{class_wintab_d_n_1_1_message_events}\index{Wintab\+D\+N.\+Message\+Events@{Wintab\+D\+N.\+Message\+Events}}
+
+
+Windows native message handler, to provide support for detecting and responding to Wintab messages.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_message_events_1_1_message_window}{Message\+Window}}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_wintab_d_n_1_1_message_events_a6e2e3e429a0a6b9d5e75d0d7a50c079d}{Watch\+Message}} (int message)
+\begin{DoxyCompactList}\small\item\em Registers to receive the specified native Windows message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static Int\+Ptr \mbox{\hyperlink{class_wintab_d_n_1_1_message_events_a9136eca6f023dfd73fd1c9edfe7ded9e}{Window\+Handle}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the \mbox{\hyperlink{class_wintab_d_n_1_1_message_events}{Message\+Events}} native Windows handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+static Event\+Handler$<$ \mbox{\hyperlink{class_wintab_d_n_1_1_message_received_event_args}{Message\+Received\+Event\+Args}} $>$ \mbox{\hyperlink{class_wintab_d_n_1_1_message_events_a0bb034056135d121fabac9184ece932d}{Message\+Received}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_wintab_d_n_1_1_message_events}{Message\+Events}} delegate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_wintab_d_n_1_1_message_events_a560e49ea1588cadcdc66548f8a7c46c7}{Ensure\+Initialized}} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static object \mbox{\hyperlink{class_wintab_d_n_1_1_message_events_a468088e621b52930258b37349dd68b13}{\+\_\+lock}} = new object()
+\item 
+static \mbox{\hyperlink{class_wintab_d_n_1_1_message_events_1_1_message_window}{Message\+Window}} \mbox{\hyperlink{class_wintab_d_n_1_1_message_events_a6955650f3ae702ff52e4961595ca61c9}{\+\_\+window}}
+\item 
+static Int\+Ptr \mbox{\hyperlink{class_wintab_d_n_1_1_message_events_a574fbe6ab9f320153cac478583dbe5ae}{\+\_\+window\+Handle}}
+\item 
+static Synchronization\+Context \mbox{\hyperlink{class_wintab_d_n_1_1_message_events_af89f7b8162756a5ac35e64b25935adbd}{\+\_\+context}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Windows native message handler, to provide support for detecting and responding to Wintab messages. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_message_events_a560e49ea1588cadcdc66548f8a7c46c7}\label{class_wintab_d_n_1_1_message_events_a560e49ea1588cadcdc66548f8a7c46c7}} 
+\index{Wintab\+D\+N\+::\+Message\+Events@{Wintab\+D\+N\+::\+Message\+Events}!Ensure\+Initialized@{Ensure\+Initialized}}
+\index{Ensure\+Initialized@{Ensure\+Initialized}!Wintab\+D\+N\+::\+Message\+Events@{Wintab\+D\+N\+::\+Message\+Events}}
+\subsubsection{\texorpdfstring{Ensure\+Initialized()}{EnsureInitialized()}}
+{\footnotesize\ttfamily static void Wintab\+D\+N.\+Message\+Events.\+Ensure\+Initialized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_message_events_a6e2e3e429a0a6b9d5e75d0d7a50c079d}\label{class_wintab_d_n_1_1_message_events_a6e2e3e429a0a6b9d5e75d0d7a50c079d}} 
+\index{Wintab\+D\+N\+::\+Message\+Events@{Wintab\+D\+N\+::\+Message\+Events}!Watch\+Message@{Watch\+Message}}
+\index{Watch\+Message@{Watch\+Message}!Wintab\+D\+N\+::\+Message\+Events@{Wintab\+D\+N\+::\+Message\+Events}}
+\subsubsection{\texorpdfstring{Watch\+Message()}{WatchMessage()}}
+{\footnotesize\ttfamily static void Wintab\+D\+N.\+Message\+Events.\+Watch\+Message (\begin{DoxyParamCaption}\item[{int}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Registers to receive the specified native Windows message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Native Windows message to watch for.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_message_events_af89f7b8162756a5ac35e64b25935adbd}\label{class_wintab_d_n_1_1_message_events_af89f7b8162756a5ac35e64b25935adbd}} 
+\index{Wintab\+D\+N\+::\+Message\+Events@{Wintab\+D\+N\+::\+Message\+Events}!\+\_\+context@{\+\_\+context}}
+\index{\+\_\+context@{\+\_\+context}!Wintab\+D\+N\+::\+Message\+Events@{Wintab\+D\+N\+::\+Message\+Events}}
+\subsubsection{\texorpdfstring{\+\_\+context}{\_context}}
+{\footnotesize\ttfamily Synchronization\+Context Wintab\+D\+N.\+Message\+Events.\+\_\+context\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_message_events_a468088e621b52930258b37349dd68b13}\label{class_wintab_d_n_1_1_message_events_a468088e621b52930258b37349dd68b13}} 
+\index{Wintab\+D\+N\+::\+Message\+Events@{Wintab\+D\+N\+::\+Message\+Events}!\+\_\+lock@{\+\_\+lock}}
+\index{\+\_\+lock@{\+\_\+lock}!Wintab\+D\+N\+::\+Message\+Events@{Wintab\+D\+N\+::\+Message\+Events}}
+\subsubsection{\texorpdfstring{\+\_\+lock}{\_lock}}
+{\footnotesize\ttfamily object Wintab\+D\+N.\+Message\+Events.\+\_\+lock = new object()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_message_events_a6955650f3ae702ff52e4961595ca61c9}\label{class_wintab_d_n_1_1_message_events_a6955650f3ae702ff52e4961595ca61c9}} 
+\index{Wintab\+D\+N\+::\+Message\+Events@{Wintab\+D\+N\+::\+Message\+Events}!\+\_\+window@{\+\_\+window}}
+\index{\+\_\+window@{\+\_\+window}!Wintab\+D\+N\+::\+Message\+Events@{Wintab\+D\+N\+::\+Message\+Events}}
+\subsubsection{\texorpdfstring{\+\_\+window}{\_window}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wintab_d_n_1_1_message_events_1_1_message_window}{Message\+Window}} Wintab\+D\+N.\+Message\+Events.\+\_\+window\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_message_events_a574fbe6ab9f320153cac478583dbe5ae}\label{class_wintab_d_n_1_1_message_events_a574fbe6ab9f320153cac478583dbe5ae}} 
+\index{Wintab\+D\+N\+::\+Message\+Events@{Wintab\+D\+N\+::\+Message\+Events}!\+\_\+window\+Handle@{\+\_\+window\+Handle}}
+\index{\+\_\+window\+Handle@{\+\_\+window\+Handle}!Wintab\+D\+N\+::\+Message\+Events@{Wintab\+D\+N\+::\+Message\+Events}}
+\subsubsection{\texorpdfstring{\+\_\+window\+Handle}{\_windowHandle}}
+{\footnotesize\ttfamily Int\+Ptr Wintab\+D\+N.\+Message\+Events.\+\_\+window\+Handle\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_message_events_a9136eca6f023dfd73fd1c9edfe7ded9e}\label{class_wintab_d_n_1_1_message_events_a9136eca6f023dfd73fd1c9edfe7ded9e}} 
+\index{Wintab\+D\+N\+::\+Message\+Events@{Wintab\+D\+N\+::\+Message\+Events}!Window\+Handle@{Window\+Handle}}
+\index{Window\+Handle@{Window\+Handle}!Wintab\+D\+N\+::\+Message\+Events@{Wintab\+D\+N\+::\+Message\+Events}}
+\subsubsection{\texorpdfstring{Window\+Handle}{WindowHandle}}
+{\footnotesize\ttfamily Int\+Ptr Wintab\+D\+N.\+Message\+Events.\+Window\+Handle\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Returns the \mbox{\hyperlink{class_wintab_d_n_1_1_message_events}{Message\+Events}} native Windows handle. 
+
+
+
+\subsection{Event Documentation}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_message_events_a0bb034056135d121fabac9184ece932d}\label{class_wintab_d_n_1_1_message_events_a0bb034056135d121fabac9184ece932d}} 
+\index{Wintab\+D\+N\+::\+Message\+Events@{Wintab\+D\+N\+::\+Message\+Events}!Message\+Received@{Message\+Received}}
+\index{Message\+Received@{Message\+Received}!Wintab\+D\+N\+::\+Message\+Events@{Wintab\+D\+N\+::\+Message\+Events}}
+\subsubsection{\texorpdfstring{Message\+Received}{MessageReceived}}
+{\footnotesize\ttfamily Event\+Handler$<$\mbox{\hyperlink{class_wintab_d_n_1_1_message_received_event_args}{Message\+Received\+Event\+Args}}$>$ Wintab\+D\+N.\+Message\+Events.\+Message\+Received\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{class_wintab_d_n_1_1_message_events}{Message\+Events}} delegate. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Wintab\+D\+N/\mbox{\hyperlink{_message_events_8cs}{Message\+Events.\+cs}}\end{DoxyCompactItemize}

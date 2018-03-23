@@ -1,0 +1,360 @@
+\hypertarget{class_paint___program_1_1_layer_view}{}\section{Paint\+\_\+\+Program.\+Layer\+View Class Reference}
+\label{class_paint___program_1_1_layer_view}\index{Paint\+\_\+\+Program.\+Layer\+View@{Paint\+\_\+\+Program.\+Layer\+View}}
+Inheritance diagram for Paint\+\_\+\+Program.\+Layer\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_paint___program_1_1_layer_view}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_paint___program_1_1_layer_view_a237468f9156f9a2dbdde7692209acb91}{Layer\+View}} (int w, int h)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_a4872c0c1b55f0c4a1f842061def219fd}{update\+Active\+Layer}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_ad82f5a23e54318684a6ff17b5ee7c32e}{update\+Active\+Layer\+Settings}} ()
+\item 
+Bitmap \mbox{\hyperlink{class_paint___program_1_1_layer_view_a8d4ff09153310ad7fc153cd45f8ec90d}{get\+Render}} ()
+\item 
+Graphics \mbox{\hyperlink{class_paint___program_1_1_layer_view_af4347af0118fb18274cfead40ebde85d}{get\+Active\+Layer\+Graphics}} ()
+\item 
+Bitmap \mbox{\hyperlink{class_paint___program_1_1_layer_view_a782154cc9526719190749ce372e6afdd}{get\+Active\+Layer\+Bitmap}} ()
+\item 
+\mbox{\hyperlink{class_paint___program_1_1_layer_item}{Layer\+Item}} \mbox{\hyperlink{class_paint___program_1_1_layer_view_ab1d91b912733c8ac3ac51087bde8ac94}{get\+Active\+Layer}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_a3a8cf41dfd57b3b755331b2cd411acdb}{Update\+Layer\+Info\+Listener}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_aed4ebc6256430120819f0de98d65976b}{add\+Import\+Image}} (Bitmap b)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_a8904d504aab68f82088349dba9a06e50}{Grid\+Draw}} (Graphics g)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_a0f223144d8d2e7833b530abbeb224f98}{Trash}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_a9524e183d6c00b15c217e9d5c1d14aea}{Update\+Text}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_paint___program_1_1_layer_view_a50b056c433212a850e348643339ec504}{Dispose}} (bool disposing)
+\begin{DoxyCompactList}\small\item\em Clean up any resources being used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_ae37145bc09093999c35a5ed4cfd0b4f4}{handle\+Mouse\+Wheel}} (object sender, Mouse\+Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_a4f472408447efa4b42636652e8e6543c}{handle\+Scroll}} (object sender, Scroll\+Event\+Args e)
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_layer_view_a530e1b907d4d7170ed2bb4458142ab4e}{get\+Active\+Layer\+Index}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_a5a79b6f0d42626db4e46740ba7acd3d6}{b\+Add\+Layer\+\_\+\+Click}} (object sender, Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_a9113020298ddd2453ded7a2c9f290f25}{b\+Remove\+Layer\+\_\+\+Click}} (object sender, Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_ae9cf7ac141487ef8296aa8982f36dd4b}{add\+Layer}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_aa7d7b70619b86d67ed2e86b94df5da89}{add\+Layer}} (Bitmap b, String name)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_ac0005cdabdf8818860cc85ec9a9620c7}{remove\+Layer}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_a3aea3b23c16f637b1e71c6e124c0d1ed}{redraw\+Layer\+Items}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_ae1c2bd86cca19963e75832b53810f39f}{b\+Move\+Down\+\_\+\+Click}} (object sender, Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_af33e0c3be1c72f6893591068f1735f6c}{b\+Move\+Up\+\_\+\+Click}} (object sender, Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_a61a0b7470102d6ce9f9e306f703aac1a}{handle\+Layer\+Item\+Click}} (object obj, System.\+Event\+Args args)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_af4ccbb4bfa3763c0a1f5de15ff56b7d9}{Update\+Layer\+Info}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_layer_view_ab1fd7e88ea143f00447d961a8a77d9a9}{Initialize\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Required method for Designer support -\/ do not modify the contents of this method with the code editor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_paint___program_1_1_layer_item}{Layer\+Item}} $>$ \mbox{\hyperlink{class_paint___program_1_1_layer_view_ac94fe6f338830996625a4e1c297f9c75}{Layers}}
+\item 
+Pixel\+Format \mbox{\hyperlink{class_paint___program_1_1_layer_view_acec4ede408dedde54bbc0faad679d1e6}{pf}} = Pixel\+Format.\+Format32bpp\+Argb
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_layer_view_ab92e792ae9f4af51ed5b57934bcde11e}{width}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_layer_view_aee179d5b2aaacd360854d9854cdda1b0}{height}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_layer_view_a4572b531bb2946727fc9a526f75b562d}{y\+Layer\+Location}}
+\item 
+System.\+Component\+Model.\+I\+Container \mbox{\hyperlink{class_paint___program_1_1_layer_view_aac66b9e83900bdaeec479b935b825252}{components}} = null
+\begin{DoxyCompactList}\small\item\em Required designer variable. \end{DoxyCompactList}\item 
+System.\+Windows.\+Forms.\+Button \mbox{\hyperlink{class_paint___program_1_1_layer_view_a8ca58fa9fa516110bddcd76b9577f116}{b\+Add\+Layer}}
+\item 
+System.\+Windows.\+Forms.\+Button \mbox{\hyperlink{class_paint___program_1_1_layer_view_a7b254e29d7a94cb0552ea83df6a0a45b}{b\+Remove\+Layer}}
+\item 
+System.\+Windows.\+Forms.\+Panel \mbox{\hyperlink{class_paint___program_1_1_layer_view_abd82f28fbd4532a9f141eea2b00598ba}{p\+Layer\+Display}}
+\item 
+System.\+Windows.\+Forms.\+Button \mbox{\hyperlink{class_paint___program_1_1_layer_view_a9862d49d934058a27b6a5bf66f618a0c}{b\+Move\+Down}}
+\item 
+System.\+Windows.\+Forms.\+Button \mbox{\hyperlink{class_paint___program_1_1_layer_view_af9aec4799746fd50bb01365269f3fd31}{b\+Move\+Up}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a237468f9156f9a2dbdde7692209acb91}\label{class_paint___program_1_1_layer_view_a237468f9156f9a2dbdde7692209acb91}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!Layer\+View@{Layer\+View}}
+\index{Layer\+View@{Layer\+View}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{Layer\+View()}{LayerView()}}
+{\footnotesize\ttfamily Paint\+\_\+\+Program.\+Layer\+View.\+Layer\+View (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_aed4ebc6256430120819f0de98d65976b}\label{class_paint___program_1_1_layer_view_aed4ebc6256430120819f0de98d65976b}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!add\+Import\+Image@{add\+Import\+Image}}
+\index{add\+Import\+Image@{add\+Import\+Image}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{add\+Import\+Image()}{addImportImage()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+add\+Import\+Image (\begin{DoxyParamCaption}\item[{Bitmap}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_ae9cf7ac141487ef8296aa8982f36dd4b}\label{class_paint___program_1_1_layer_view_ae9cf7ac141487ef8296aa8982f36dd4b}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!add\+Layer@{add\+Layer}}
+\index{add\+Layer@{add\+Layer}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{add\+Layer()}{addLayer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+add\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_aa7d7b70619b86d67ed2e86b94df5da89}\label{class_paint___program_1_1_layer_view_aa7d7b70619b86d67ed2e86b94df5da89}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!add\+Layer@{add\+Layer}}
+\index{add\+Layer@{add\+Layer}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{add\+Layer()}{addLayer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+add\+Layer (\begin{DoxyParamCaption}\item[{Bitmap}]{b,  }\item[{String}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a5a79b6f0d42626db4e46740ba7acd3d6}\label{class_paint___program_1_1_layer_view_a5a79b6f0d42626db4e46740ba7acd3d6}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!b\+Add\+Layer\+\_\+\+Click@{b\+Add\+Layer\+\_\+\+Click}}
+\index{b\+Add\+Layer\+\_\+\+Click@{b\+Add\+Layer\+\_\+\+Click}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{b\+Add\+Layer\+\_\+\+Click()}{bAddLayer\_Click()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+b\+Add\+Layer\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_ae1c2bd86cca19963e75832b53810f39f}\label{class_paint___program_1_1_layer_view_ae1c2bd86cca19963e75832b53810f39f}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!b\+Move\+Down\+\_\+\+Click@{b\+Move\+Down\+\_\+\+Click}}
+\index{b\+Move\+Down\+\_\+\+Click@{b\+Move\+Down\+\_\+\+Click}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{b\+Move\+Down\+\_\+\+Click()}{bMoveDown\_Click()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+b\+Move\+Down\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_af33e0c3be1c72f6893591068f1735f6c}\label{class_paint___program_1_1_layer_view_af33e0c3be1c72f6893591068f1735f6c}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!b\+Move\+Up\+\_\+\+Click@{b\+Move\+Up\+\_\+\+Click}}
+\index{b\+Move\+Up\+\_\+\+Click@{b\+Move\+Up\+\_\+\+Click}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{b\+Move\+Up\+\_\+\+Click()}{bMoveUp\_Click()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+b\+Move\+Up\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a9113020298ddd2453ded7a2c9f290f25}\label{class_paint___program_1_1_layer_view_a9113020298ddd2453ded7a2c9f290f25}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!b\+Remove\+Layer\+\_\+\+Click@{b\+Remove\+Layer\+\_\+\+Click}}
+\index{b\+Remove\+Layer\+\_\+\+Click@{b\+Remove\+Layer\+\_\+\+Click}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{b\+Remove\+Layer\+\_\+\+Click()}{bRemoveLayer\_Click()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+b\+Remove\+Layer\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a50b056c433212a850e348643339ec504}\label{class_paint___program_1_1_layer_view_a50b056c433212a850e348643339ec504}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Paint\+\_\+\+Program.\+Layer\+View.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Clean up any resources being used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disposing} & true if managed resources should be disposed; otherwise, false.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_ab1d91b912733c8ac3ac51087bde8ac94}\label{class_paint___program_1_1_layer_view_ab1d91b912733c8ac3ac51087bde8ac94}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!get\+Active\+Layer@{get\+Active\+Layer}}
+\index{get\+Active\+Layer@{get\+Active\+Layer}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{get\+Active\+Layer()}{getActiveLayer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_paint___program_1_1_layer_item}{Layer\+Item}} Paint\+\_\+\+Program.\+Layer\+View.\+get\+Active\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a782154cc9526719190749ce372e6afdd}\label{class_paint___program_1_1_layer_view_a782154cc9526719190749ce372e6afdd}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!get\+Active\+Layer\+Bitmap@{get\+Active\+Layer\+Bitmap}}
+\index{get\+Active\+Layer\+Bitmap@{get\+Active\+Layer\+Bitmap}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{get\+Active\+Layer\+Bitmap()}{getActiveLayerBitmap()}}
+{\footnotesize\ttfamily Bitmap Paint\+\_\+\+Program.\+Layer\+View.\+get\+Active\+Layer\+Bitmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_af4347af0118fb18274cfead40ebde85d}\label{class_paint___program_1_1_layer_view_af4347af0118fb18274cfead40ebde85d}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!get\+Active\+Layer\+Graphics@{get\+Active\+Layer\+Graphics}}
+\index{get\+Active\+Layer\+Graphics@{get\+Active\+Layer\+Graphics}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{get\+Active\+Layer\+Graphics()}{getActiveLayerGraphics()}}
+{\footnotesize\ttfamily Graphics Paint\+\_\+\+Program.\+Layer\+View.\+get\+Active\+Layer\+Graphics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a530e1b907d4d7170ed2bb4458142ab4e}\label{class_paint___program_1_1_layer_view_a530e1b907d4d7170ed2bb4458142ab4e}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!get\+Active\+Layer\+Index@{get\+Active\+Layer\+Index}}
+\index{get\+Active\+Layer\+Index@{get\+Active\+Layer\+Index}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{get\+Active\+Layer\+Index()}{getActiveLayerIndex()}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Layer\+View.\+get\+Active\+Layer\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a8d4ff09153310ad7fc153cd45f8ec90d}\label{class_paint___program_1_1_layer_view_a8d4ff09153310ad7fc153cd45f8ec90d}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!get\+Render@{get\+Render}}
+\index{get\+Render@{get\+Render}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{get\+Render()}{getRender()}}
+{\footnotesize\ttfamily Bitmap Paint\+\_\+\+Program.\+Layer\+View.\+get\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a8904d504aab68f82088349dba9a06e50}\label{class_paint___program_1_1_layer_view_a8904d504aab68f82088349dba9a06e50}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!Grid\+Draw@{Grid\+Draw}}
+\index{Grid\+Draw@{Grid\+Draw}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{Grid\+Draw()}{GridDraw()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+Grid\+Draw (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a61a0b7470102d6ce9f9e306f703aac1a}\label{class_paint___program_1_1_layer_view_a61a0b7470102d6ce9f9e306f703aac1a}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!handle\+Layer\+Item\+Click@{handle\+Layer\+Item\+Click}}
+\index{handle\+Layer\+Item\+Click@{handle\+Layer\+Item\+Click}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{handle\+Layer\+Item\+Click()}{handleLayerItemClick()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+handle\+Layer\+Item\+Click (\begin{DoxyParamCaption}\item[{object}]{obj,  }\item[{System.\+Event\+Args}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_ae37145bc09093999c35a5ed4cfd0b4f4}\label{class_paint___program_1_1_layer_view_ae37145bc09093999c35a5ed4cfd0b4f4}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!handle\+Mouse\+Wheel@{handle\+Mouse\+Wheel}}
+\index{handle\+Mouse\+Wheel@{handle\+Mouse\+Wheel}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{handle\+Mouse\+Wheel()}{handleMouseWheel()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+handle\+Mouse\+Wheel (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a4f472408447efa4b42636652e8e6543c}\label{class_paint___program_1_1_layer_view_a4f472408447efa4b42636652e8e6543c}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!handle\+Scroll@{handle\+Scroll}}
+\index{handle\+Scroll@{handle\+Scroll}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{handle\+Scroll()}{handleScroll()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+handle\+Scroll (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Scroll\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_ab1fd7e88ea143f00447d961a8a77d9a9}\label{class_paint___program_1_1_layer_view_ab1fd7e88ea143f00447d961a8a77d9a9}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!Initialize\+Component@{Initialize\+Component}}
+\index{Initialize\+Component@{Initialize\+Component}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{Initialize\+Component()}{InitializeComponent()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+Initialize\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Required method for Designer support -\/ do not modify the contents of this method with the code editor. 
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a3aea3b23c16f637b1e71c6e124c0d1ed}\label{class_paint___program_1_1_layer_view_a3aea3b23c16f637b1e71c6e124c0d1ed}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!redraw\+Layer\+Items@{redraw\+Layer\+Items}}
+\index{redraw\+Layer\+Items@{redraw\+Layer\+Items}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{redraw\+Layer\+Items()}{redrawLayerItems()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+redraw\+Layer\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_ac0005cdabdf8818860cc85ec9a9620c7}\label{class_paint___program_1_1_layer_view_ac0005cdabdf8818860cc85ec9a9620c7}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!remove\+Layer@{remove\+Layer}}
+\index{remove\+Layer@{remove\+Layer}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{remove\+Layer()}{removeLayer()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+remove\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a0f223144d8d2e7833b530abbeb224f98}\label{class_paint___program_1_1_layer_view_a0f223144d8d2e7833b530abbeb224f98}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!Trash@{Trash}}
+\index{Trash@{Trash}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{Trash()}{Trash()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+Trash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a4872c0c1b55f0c4a1f842061def219fd}\label{class_paint___program_1_1_layer_view_a4872c0c1b55f0c4a1f842061def219fd}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!update\+Active\+Layer@{update\+Active\+Layer}}
+\index{update\+Active\+Layer@{update\+Active\+Layer}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{update\+Active\+Layer()}{updateActiveLayer()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+update\+Active\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_ad82f5a23e54318684a6ff17b5ee7c32e}\label{class_paint___program_1_1_layer_view_ad82f5a23e54318684a6ff17b5ee7c32e}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!update\+Active\+Layer\+Settings@{update\+Active\+Layer\+Settings}}
+\index{update\+Active\+Layer\+Settings@{update\+Active\+Layer\+Settings}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{update\+Active\+Layer\+Settings()}{updateActiveLayerSettings()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+update\+Active\+Layer\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_af4ccbb4bfa3763c0a1f5de15ff56b7d9}\label{class_paint___program_1_1_layer_view_af4ccbb4bfa3763c0a1f5de15ff56b7d9}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!Update\+Layer\+Info@{Update\+Layer\+Info}}
+\index{Update\+Layer\+Info@{Update\+Layer\+Info}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{Update\+Layer\+Info()}{UpdateLayerInfo()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+Update\+Layer\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a3a8cf41dfd57b3b755331b2cd411acdb}\label{class_paint___program_1_1_layer_view_a3a8cf41dfd57b3b755331b2cd411acdb}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!Update\+Layer\+Info\+Listener@{Update\+Layer\+Info\+Listener}}
+\index{Update\+Layer\+Info\+Listener@{Update\+Layer\+Info\+Listener}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{Update\+Layer\+Info\+Listener()}{UpdateLayerInfoListener()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+Update\+Layer\+Info\+Listener (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a9524e183d6c00b15c217e9d5c1d14aea}\label{class_paint___program_1_1_layer_view_a9524e183d6c00b15c217e9d5c1d14aea}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!Update\+Text@{Update\+Text}}
+\index{Update\+Text@{Update\+Text}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{Update\+Text()}{UpdateText()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Layer\+View.\+Update\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_text_update_ad1e94db137571608917117e9a6f7479b}{Paint\+\_\+\+Program.\+I\+Text\+Update}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a8ca58fa9fa516110bddcd76b9577f116}\label{class_paint___program_1_1_layer_view_a8ca58fa9fa516110bddcd76b9577f116}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!b\+Add\+Layer@{b\+Add\+Layer}}
+\index{b\+Add\+Layer@{b\+Add\+Layer}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{b\+Add\+Layer}{bAddLayer}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Button Paint\+\_\+\+Program.\+Layer\+View.\+b\+Add\+Layer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a9862d49d934058a27b6a5bf66f618a0c}\label{class_paint___program_1_1_layer_view_a9862d49d934058a27b6a5bf66f618a0c}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!b\+Move\+Down@{b\+Move\+Down}}
+\index{b\+Move\+Down@{b\+Move\+Down}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{b\+Move\+Down}{bMoveDown}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Button Paint\+\_\+\+Program.\+Layer\+View.\+b\+Move\+Down\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_af9aec4799746fd50bb01365269f3fd31}\label{class_paint___program_1_1_layer_view_af9aec4799746fd50bb01365269f3fd31}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!b\+Move\+Up@{b\+Move\+Up}}
+\index{b\+Move\+Up@{b\+Move\+Up}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{b\+Move\+Up}{bMoveUp}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Button Paint\+\_\+\+Program.\+Layer\+View.\+b\+Move\+Up\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a7b254e29d7a94cb0552ea83df6a0a45b}\label{class_paint___program_1_1_layer_view_a7b254e29d7a94cb0552ea83df6a0a45b}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!b\+Remove\+Layer@{b\+Remove\+Layer}}
+\index{b\+Remove\+Layer@{b\+Remove\+Layer}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{b\+Remove\+Layer}{bRemoveLayer}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Button Paint\+\_\+\+Program.\+Layer\+View.\+b\+Remove\+Layer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_aac66b9e83900bdaeec479b935b825252}\label{class_paint___program_1_1_layer_view_aac66b9e83900bdaeec479b935b825252}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!components@{components}}
+\index{components@{components}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{components}{components}}
+{\footnotesize\ttfamily System.\+Component\+Model.\+I\+Container Paint\+\_\+\+Program.\+Layer\+View.\+components = null\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Required designer variable. 
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_aee179d5b2aaacd360854d9854cdda1b0}\label{class_paint___program_1_1_layer_view_aee179d5b2aaacd360854d9854cdda1b0}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!height@{height}}
+\index{height@{height}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Layer\+View.\+height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_ac94fe6f338830996625a4e1c297f9c75}\label{class_paint___program_1_1_layer_view_ac94fe6f338830996625a4e1c297f9c75}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!Layers@{Layers}}
+\index{Layers@{Layers}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{Layers}{Layers}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_paint___program_1_1_layer_item}{Layer\+Item}}$>$ Paint\+\_\+\+Program.\+Layer\+View.\+Layers\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_acec4ede408dedde54bbc0faad679d1e6}\label{class_paint___program_1_1_layer_view_acec4ede408dedde54bbc0faad679d1e6}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!pf@{pf}}
+\index{pf@{pf}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{pf}{pf}}
+{\footnotesize\ttfamily Pixel\+Format Paint\+\_\+\+Program.\+Layer\+View.\+pf = Pixel\+Format.\+Format32bpp\+Argb\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_abd82f28fbd4532a9f141eea2b00598ba}\label{class_paint___program_1_1_layer_view_abd82f28fbd4532a9f141eea2b00598ba}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!p\+Layer\+Display@{p\+Layer\+Display}}
+\index{p\+Layer\+Display@{p\+Layer\+Display}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{p\+Layer\+Display}{pLayerDisplay}}
+{\footnotesize\ttfamily System.\+Windows.\+Forms.\+Panel Paint\+\_\+\+Program.\+Layer\+View.\+p\+Layer\+Display\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_ab92e792ae9f4af51ed5b57934bcde11e}\label{class_paint___program_1_1_layer_view_ab92e792ae9f4af51ed5b57934bcde11e}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!width@{width}}
+\index{width@{width}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Layer\+View.\+width\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_layer_view_a4572b531bb2946727fc9a526f75b562d}\label{class_paint___program_1_1_layer_view_a4572b531bb2946727fc9a526f75b562d}} 
+\index{Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}!y\+Layer\+Location@{y\+Layer\+Location}}
+\index{y\+Layer\+Location@{y\+Layer\+Location}!Paint\+\_\+\+Program\+::\+Layer\+View@{Paint\+\_\+\+Program\+::\+Layer\+View}}
+\subsubsection{\texorpdfstring{y\+Layer\+Location}{yLayerLocation}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Layer\+View.\+y\+Layer\+Location\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Paint Program/\mbox{\hyperlink{_layer_view_8cs}{Layer\+View.\+cs}}\item 
+Paint Program/\mbox{\hyperlink{_layer_view_8_designer_8cs}{Layer\+View.\+Designer.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,183 @@
+\hypertarget{struct_wintab_d_n_1_1_wintab_packet}{}\section{Wintab\+D\+N.\+Wintab\+Packet Struct Reference}
+\label{struct_wintab_d_n_1_1_wintab_packet}\index{Wintab\+D\+N.\+Wintab\+Packet@{Wintab\+D\+N.\+Wintab\+Packet}}
+
+
+Wintab data packet. Contains the \char`\"{}\+Full Monty\char`\"{} for all possible data values.  
+
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}} \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_a61891db49d8d8f38ace11982c406d27f}{pk\+Context}}
+\begin{DoxyCompactList}\small\item\em Specifies the context that generated the event. \end{DoxyCompactList}\item 
+U\+Int32 \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_acab466b784a0d38759f246940f7faccd}{pk\+Status}}
+\begin{DoxyCompactList}\small\item\em Specifies various status and error conditions. These conditions can be combined by using the bitwise OR opera-\/tor. The pk\+Status field can be any any combination of the values defined in E\+Wintab\+Packet\+Status\+Value. \end{DoxyCompactList}\item 
+U\+Int32 \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_a9296716584867a40acdc50f831ecb68c}{pk\+Time}}
+\begin{DoxyCompactList}\small\item\em In absolute mode, specifies the system time at which the event was posted. In relative mode, specifies the elapsed time in milliseconds since the last packet. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_wintab_d_n_1_1_w_t_p_k_t}{W\+T\+P\+KT}} \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_aa2d358ed11aeb84cd10c943c17c123c1}{pk\+Changed}}
+\begin{DoxyCompactList}\small\item\em Specifies which of the included packet data items have changed since the previously posted event. \end{DoxyCompactList}\item 
+U\+Int32 \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_acf152814269e76ecb7e957d9b46c2b68}{pk\+Serial\+Number}}
+\begin{DoxyCompactList}\small\item\em This is an identifier assigned to the packet by the context. Consecutive packets will have consecutive serial numbers. \end{DoxyCompactList}\item 
+U\+Int32 \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_a1e426b5b92617ed4a6ad158a415f3c88}{pk\+Cursor}}
+\begin{DoxyCompactList}\small\item\em Specifies which cursor type generated the packet. \end{DoxyCompactList}\item 
+U\+Int32 \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_af9d3fe5f03366ce26c3023b7b5ae5fcc}{pk\+Buttons}}
+\begin{DoxyCompactList}\small\item\em In absolute mode, is a U\+Int32 containing the current button state. In relative mode, is a U\+Int32 whose low word contains a button number, and whose high word contains one of the codes in E\+Wintab\+Packet\+Button\+Code. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_abc78995c3ee22fc3203a0b78eb2ed771}{pkX}}
+\begin{DoxyCompactList}\small\item\em In absolute mode, each is a U\+Int32 containing the scaled cursor location along the X axis. In relative mode, this is an Int32 containing scaled change in cursor position. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_a81cedb6973cd5298fe65d36f3e16d792}{pkY}}
+\begin{DoxyCompactList}\small\item\em In absolute mode, each is a U\+Int32 containing the scaled cursor location along the Y axis. In relative mode, this is an Int32 containing scaled change in cursor position. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_a7bfc56cd0228a44c13579ffa53196ac1}{pkZ}}
+\begin{DoxyCompactList}\small\item\em In absolute mode, each is a U\+Int32 containing the scaled cursor location along the Z axis. In relative mode, this is an Int32 containing scaled change in cursor position. \end{DoxyCompactList}\item 
+U\+Int32 \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_a5fdd43fd4c829d000ed88a12717f1684}{pk\+Normal\+Pressure}}
+\begin{DoxyCompactList}\small\item\em In absolute mode, this is a U\+I\+NT containing the adjusted state ~\newline
+of the normal pressure, respectively. In relative mode, this is an int containing the change in adjusted pressure state. \end{DoxyCompactList}\item 
+U\+Int32 \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_a32641d97db6e9dcd0fced24782e522af}{pk\+Tangent\+Pressure}}
+\begin{DoxyCompactList}\small\item\em In absolute mode, this is a U\+I\+NT containing the adjusted state ~\newline
+of the tangential pressure, respectively. In relative mode, this is an int containing the change in adjusted pressure state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_wintab_d_n_1_1_w_t_orientation}{W\+T\+Orientation}} \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_a78aa4c64fed2484fd43e079dde7a4aaf}{pk\+Orientation}}
+\begin{DoxyCompactList}\small\item\em Contains updated cursor orientation information. See the \mbox{\hyperlink{struct_wintab_d_n_1_1_w_t_orientation}{W\+T\+Orientation}} structure for details. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Wintab data packet. Contains the \char`\"{}\+Full Monty\char`\"{} for all possible data values. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_wintab_d_n_1_1_wintab_packet_af9d3fe5f03366ce26c3023b7b5ae5fcc}\label{struct_wintab_d_n_1_1_wintab_packet_af9d3fe5f03366ce26c3023b7b5ae5fcc}} 
+\index{Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}!pk\+Buttons@{pk\+Buttons}}
+\index{pk\+Buttons@{pk\+Buttons}!Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}}
+\subsubsection{\texorpdfstring{pk\+Buttons}{pkButtons}}
+{\footnotesize\ttfamily U\+Int32 Wintab\+D\+N.\+Wintab\+Packet.\+pk\+Buttons}
+
+
+
+In absolute mode, is a U\+Int32 containing the current button state. In relative mode, is a U\+Int32 whose low word contains a button number, and whose high word contains one of the codes in E\+Wintab\+Packet\+Button\+Code. 
+
+\mbox{\Hypertarget{struct_wintab_d_n_1_1_wintab_packet_aa2d358ed11aeb84cd10c943c17c123c1}\label{struct_wintab_d_n_1_1_wintab_packet_aa2d358ed11aeb84cd10c943c17c123c1}} 
+\index{Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}!pk\+Changed@{pk\+Changed}}
+\index{pk\+Changed@{pk\+Changed}!Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}}
+\subsubsection{\texorpdfstring{pk\+Changed}{pkChanged}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wintab_d_n_1_1_w_t_p_k_t}{W\+T\+P\+KT}} Wintab\+D\+N.\+Wintab\+Packet.\+pk\+Changed}
+
+
+
+Specifies which of the included packet data items have changed since the previously posted event. 
+
+\mbox{\Hypertarget{struct_wintab_d_n_1_1_wintab_packet_a61891db49d8d8f38ace11982c406d27f}\label{struct_wintab_d_n_1_1_wintab_packet_a61891db49d8d8f38ace11982c406d27f}} 
+\index{Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}!pk\+Context@{pk\+Context}}
+\index{pk\+Context@{pk\+Context}!Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}}
+\subsubsection{\texorpdfstring{pk\+Context}{pkContext}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}} Wintab\+D\+N.\+Wintab\+Packet.\+pk\+Context}
+
+
+
+Specifies the context that generated the event. 
+
+\mbox{\Hypertarget{struct_wintab_d_n_1_1_wintab_packet_a1e426b5b92617ed4a6ad158a415f3c88}\label{struct_wintab_d_n_1_1_wintab_packet_a1e426b5b92617ed4a6ad158a415f3c88}} 
+\index{Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}!pk\+Cursor@{pk\+Cursor}}
+\index{pk\+Cursor@{pk\+Cursor}!Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}}
+\subsubsection{\texorpdfstring{pk\+Cursor}{pkCursor}}
+{\footnotesize\ttfamily U\+Int32 Wintab\+D\+N.\+Wintab\+Packet.\+pk\+Cursor}
+
+
+
+Specifies which cursor type generated the packet. 
+
+\mbox{\Hypertarget{struct_wintab_d_n_1_1_wintab_packet_a5fdd43fd4c829d000ed88a12717f1684}\label{struct_wintab_d_n_1_1_wintab_packet_a5fdd43fd4c829d000ed88a12717f1684}} 
+\index{Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}!pk\+Normal\+Pressure@{pk\+Normal\+Pressure}}
+\index{pk\+Normal\+Pressure@{pk\+Normal\+Pressure}!Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}}
+\subsubsection{\texorpdfstring{pk\+Normal\+Pressure}{pkNormalPressure}}
+{\footnotesize\ttfamily U\+Int32 Wintab\+D\+N.\+Wintab\+Packet.\+pk\+Normal\+Pressure}
+
+
+
+In absolute mode, this is a U\+I\+NT containing the adjusted state ~\newline
+of the normal pressure, respectively. In relative mode, this is an int containing the change in adjusted pressure state. 
+
+\mbox{\Hypertarget{struct_wintab_d_n_1_1_wintab_packet_a78aa4c64fed2484fd43e079dde7a4aaf}\label{struct_wintab_d_n_1_1_wintab_packet_a78aa4c64fed2484fd43e079dde7a4aaf}} 
+\index{Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}!pk\+Orientation@{pk\+Orientation}}
+\index{pk\+Orientation@{pk\+Orientation}!Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}}
+\subsubsection{\texorpdfstring{pk\+Orientation}{pkOrientation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_wintab_d_n_1_1_w_t_orientation}{W\+T\+Orientation}} Wintab\+D\+N.\+Wintab\+Packet.\+pk\+Orientation}
+
+
+
+Contains updated cursor orientation information. See the \mbox{\hyperlink{struct_wintab_d_n_1_1_w_t_orientation}{W\+T\+Orientation}} structure for details. 
+
+\mbox{\Hypertarget{struct_wintab_d_n_1_1_wintab_packet_acf152814269e76ecb7e957d9b46c2b68}\label{struct_wintab_d_n_1_1_wintab_packet_acf152814269e76ecb7e957d9b46c2b68}} 
+\index{Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}!pk\+Serial\+Number@{pk\+Serial\+Number}}
+\index{pk\+Serial\+Number@{pk\+Serial\+Number}!Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}}
+\subsubsection{\texorpdfstring{pk\+Serial\+Number}{pkSerialNumber}}
+{\footnotesize\ttfamily U\+Int32 Wintab\+D\+N.\+Wintab\+Packet.\+pk\+Serial\+Number}
+
+
+
+This is an identifier assigned to the packet by the context. Consecutive packets will have consecutive serial numbers. 
+
+\mbox{\Hypertarget{struct_wintab_d_n_1_1_wintab_packet_acab466b784a0d38759f246940f7faccd}\label{struct_wintab_d_n_1_1_wintab_packet_acab466b784a0d38759f246940f7faccd}} 
+\index{Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}!pk\+Status@{pk\+Status}}
+\index{pk\+Status@{pk\+Status}!Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}}
+\subsubsection{\texorpdfstring{pk\+Status}{pkStatus}}
+{\footnotesize\ttfamily U\+Int32 Wintab\+D\+N.\+Wintab\+Packet.\+pk\+Status}
+
+
+
+Specifies various status and error conditions. These conditions can be combined by using the bitwise OR opera-\/tor. The pk\+Status field can be any any combination of the values defined in E\+Wintab\+Packet\+Status\+Value. 
+
+\mbox{\Hypertarget{struct_wintab_d_n_1_1_wintab_packet_a32641d97db6e9dcd0fced24782e522af}\label{struct_wintab_d_n_1_1_wintab_packet_a32641d97db6e9dcd0fced24782e522af}} 
+\index{Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}!pk\+Tangent\+Pressure@{pk\+Tangent\+Pressure}}
+\index{pk\+Tangent\+Pressure@{pk\+Tangent\+Pressure}!Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}}
+\subsubsection{\texorpdfstring{pk\+Tangent\+Pressure}{pkTangentPressure}}
+{\footnotesize\ttfamily U\+Int32 Wintab\+D\+N.\+Wintab\+Packet.\+pk\+Tangent\+Pressure}
+
+
+
+In absolute mode, this is a U\+I\+NT containing the adjusted state ~\newline
+of the tangential pressure, respectively. In relative mode, this is an int containing the change in adjusted pressure state. 
+
+\mbox{\Hypertarget{struct_wintab_d_n_1_1_wintab_packet_a9296716584867a40acdc50f831ecb68c}\label{struct_wintab_d_n_1_1_wintab_packet_a9296716584867a40acdc50f831ecb68c}} 
+\index{Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}!pk\+Time@{pk\+Time}}
+\index{pk\+Time@{pk\+Time}!Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}}
+\subsubsection{\texorpdfstring{pk\+Time}{pkTime}}
+{\footnotesize\ttfamily U\+Int32 Wintab\+D\+N.\+Wintab\+Packet.\+pk\+Time}
+
+
+
+In absolute mode, specifies the system time at which the event was posted. In relative mode, specifies the elapsed time in milliseconds since the last packet. 
+
+\mbox{\Hypertarget{struct_wintab_d_n_1_1_wintab_packet_abc78995c3ee22fc3203a0b78eb2ed771}\label{struct_wintab_d_n_1_1_wintab_packet_abc78995c3ee22fc3203a0b78eb2ed771}} 
+\index{Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}!pkX@{pkX}}
+\index{pkX@{pkX}!Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}}
+\subsubsection{\texorpdfstring{pkX}{pkX}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+Wintab\+Packet.\+pkX}
+
+
+
+In absolute mode, each is a U\+Int32 containing the scaled cursor location along the X axis. In relative mode, this is an Int32 containing scaled change in cursor position. 
+
+\mbox{\Hypertarget{struct_wintab_d_n_1_1_wintab_packet_a81cedb6973cd5298fe65d36f3e16d792}\label{struct_wintab_d_n_1_1_wintab_packet_a81cedb6973cd5298fe65d36f3e16d792}} 
+\index{Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}!pkY@{pkY}}
+\index{pkY@{pkY}!Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}}
+\subsubsection{\texorpdfstring{pkY}{pkY}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+Wintab\+Packet.\+pkY}
+
+
+
+In absolute mode, each is a U\+Int32 containing the scaled cursor location along the Y axis. In relative mode, this is an Int32 containing scaled change in cursor position. 
+
+\mbox{\Hypertarget{struct_wintab_d_n_1_1_wintab_packet_a7bfc56cd0228a44c13579ffa53196ac1}\label{struct_wintab_d_n_1_1_wintab_packet_a7bfc56cd0228a44c13579ffa53196ac1}} 
+\index{Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}!pkZ@{pkZ}}
+\index{pkZ@{pkZ}!Wintab\+D\+N\+::\+Wintab\+Packet@{Wintab\+D\+N\+::\+Wintab\+Packet}}
+\subsubsection{\texorpdfstring{pkZ}{pkZ}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+Wintab\+Packet.\+pkZ}
+
+
+
+In absolute mode, each is a U\+Int32 containing the scaled cursor location along the Z axis. In relative mode, this is an Int32 containing scaled change in cursor position. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Wintab\+D\+N/\mbox{\hyperlink{_c_wintab_data_8cs}{C\+Wintab\+Data.\+cs}}\end{DoxyCompactItemize}

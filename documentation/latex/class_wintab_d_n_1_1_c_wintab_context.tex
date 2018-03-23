@@ -1,0 +1,602 @@
+\hypertarget{class_wintab_d_n_1_1_c_wintab_context}{}\section{Wintab\+D\+N.\+C\+Wintab\+Context Class Reference}
+\label{class_wintab_d_n_1_1_c_wintab_context}\index{Wintab\+D\+N.\+C\+Wintab\+Context@{Wintab\+D\+N.\+C\+Wintab\+Context}}
+
+
+Class to support access to Wintab context management.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_ae2ce09949d3d633790254555f9db2d49}{C\+Wintab\+Context}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor sets all data bits to be captured. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}} \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a4bb06f01ce05bcac01ed611ea7d241d8}{Open}} (\mbox{\hyperlink{struct_wintab_d_n_1_1_h_w_n_d}{H\+W\+ND}} hwnd\+\_\+I, bool enable\+\_\+I)
+\begin{DoxyCompactList}\small\item\em Open a Wintab context to the specified hwnd. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a1522d857d00373971e9c0e010ae9e756}{Open}} ()
+\begin{DoxyCompactList}\small\item\em Open a Wintab context that will send packet events to a message window. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a53d935082727bc049f9d817363e6200f}{Close}} ()
+\begin{DoxyCompactList}\small\item\em Close the context for this object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a580c1e6691c4c58c8d54d429e7d7ebd8}{Enable}} (bool enable\+\_\+I)
+\begin{DoxyCompactList}\small\item\em Enable/disable this Wintab context. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a26240e1cdf96ad7859a8fae08a41e412}{Set\+Overlap\+Order}} (bool to\+Top\+\_\+I)
+\begin{DoxyCompactList}\small\item\em Sends a tablet context to the top or bottom of the order of overlapping tablet contexts \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_log_context}{Wintab\+Log\+Context}} \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_ad1aaf328b7c7aeb2b98e8c4e167047b6}{Log\+Context}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Logical Wintab context managed by this object. ~\newline
+\end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}} \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_ad4709db10fbf92aa19dcdf0c19c53415}{H\+Ctx}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Handle (identifier) used to identify this context. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a275c652af6e326a3b8750ae5ea047237}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get/\+Set context name. \end{DoxyCompactList}\item 
+U\+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a3e5d1e938f9bd00d82474b670292b5a7}{Options}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies options for the context. These options can be combined by using the bitwise OR operator. The lc\+Options field can be any combination of the values defined in E\+C\+T\+X\+Option\+Values. \end{DoxyCompactList}\item 
+U\+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a25169d39580b4d7a30d7feb05c1872d5}{Status}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies current status conditions for the context. These conditions can be combined by using the bitwise OR operator. The lc\+Status field can be any combination of the values defined in E\+C\+T\+X\+Status\+Values. \end{DoxyCompactList}\item 
+U\+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_ab05bc9afc19654c5495adfb60efdc06d}{Locks}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies which attributes of the context the application wishes to be locked. Lock conditions specify attributes of the context that cannot be changed once the context has been opened (calls to W\+T\+Config will have no effect on the locked attributes). The lock conditions can be combined by using the bitwise OR operator. The lc\+Locks field can be any combination of the values defined in E\+C\+T\+X\+Lock\+Values. Locks can only be changed by the task or process that owns the context. \end{DoxyCompactList}\item 
+U\+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a074fcb0607df8048600719c8875b12a7}{Msg\+Base}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the range of message numbers that will be used for reporting the activity of the context. \end{DoxyCompactList}\item 
+U\+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a1f56c63dab67a86ba44b53bce0bc882a}{Device}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the device whose input the context processes. \end{DoxyCompactList}\item 
+U\+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a20f3b1ba020637ac525e1a2f0a67011f}{Pkt\+Rate}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the desired packet report rate in Hertz. Once the con-\/text is opened, this field will contain the actual report rate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_wintab_d_n_1_1_w_t_p_k_t}{W\+T\+P\+KT}} \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a3da21ad3b21239b8463f54a83f7f1bb8}{Pkt\+Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies which optional data items will be in packets returned from the context. Requesting unsupported data items will cause \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a1522d857d00373971e9c0e010ae9e756}{Open()}} to fail. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_wintab_d_n_1_1_w_t_p_k_t}{W\+T\+P\+KT}} \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a05489816378ed5052a3e0e6a8a517d7b}{Pkt\+Mode}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies whether the packet data items will be returned in absolute or relative mode. If the item\textquotesingle{}s bit is set in this field, the item will be returned in relative mode. Bits in this field for items not selected in the Pkt\+Data property will be ignored. Bits for data items that only allow one mode (such as the packet identifier) will also be ignored. ~\newline
+\end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_wintab_d_n_1_1_w_t_p_k_t}{W\+T\+P\+KT}} \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a76772f28304fd4f8e4c511e7b65bdd59}{Move\+Mask}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies which packet data items can generate move events in the context. Bits for items that are not part of the packet definition in the Pkt\+Data property will be ignored. The bits for buttons, time stamp, and the packet identifier will also be ignored. In the case of overlapping contexts, movement events for data items not selected in this field may be processed by underlying contexts. \end{DoxyCompactList}\item 
+U\+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a972a0b1d0634fc580aa65b8943af3905}{Btn\+Dn\+Mask}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the buttons for which button press events will be processed in the context. In the case of overlapping contexts, button press events for buttons that are not selected in this field may be processed by underlying contexts. \end{DoxyCompactList}\item 
+U\+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_af90630abd6dc8926709bbf875744de8c}{Btn\+Up\+Mask}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the buttons for which button release events will be processed in the context. In the case of overlapping contexts, button release events for buttons that are not selected in this field may be processed by underlying contexts. If both press and release events are selected for a button (see the Btn\+Dn\+Mask property), then the interface will cause the context to implicitly capture all tablet events while the button is down. In this case, events occurring outside the context will be clipped to the context and processed as if they had occurred in the context. When the button is released, the context will receive the button release event, and then event processing will return to normal. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a326fb62231cb2f9b783cb29a6716b6b7}{In\+OrgX}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the X origin of the context\textquotesingle{}s input area in the tablet\textquotesingle{}s native coordinates. Value is clipped to the tablet native coordinate space when the context is opened or modified. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a0f480b34eb30bf42edd2adf565572ae3}{In\+OrgY}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the Y origin of the context\textquotesingle{}s input area in the tablet\textquotesingle{}s native coordinates. Value is clipped to the tablet native coordinate space when the context is opened or modified. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_afe123e2d48ea3c171c2b040dd512cda6}{In\+OrgZ}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the Z origin of the context\textquotesingle{}s input area in the tablet\textquotesingle{}s native coordinates. Value is clipped to the tablet native coordinate space when the context is opened or modified. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a8f33e05910bcde9fe611f32a986a1ea5}{In\+ExtX}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the X extent of the context\textquotesingle{}s input area in the tablet\textquotesingle{}s native coordinates. Value is clipped to the tablet native coordinate space when the context is opened or modified. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_abb73e61691a4b2480b7997b73202b63b}{In\+ExtY}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the Y extent of the context\textquotesingle{}s input area in the tablet\textquotesingle{}s native coordinates. Value is clipped to the tablet native coordinate space when the context is opened or modified. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a8d699ca76769679eca827b033e4f5fde}{In\+ExtZ}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the Z extent of the context\textquotesingle{}s input area in the tablet\textquotesingle{}s native coordinates. Value is clipped to the tablet native coordinate space when the context is opened or modified. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a93f133c38a24202d1b3b7396893ed7fd}{Out\+OrgX}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the X origin of the context\textquotesingle{}s output area in context output coordinates. Value is used in coordinate scaling for absolute mode only. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a5d27ca1711aa3f176519a1484936972b}{Out\+OrgY}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the Y origin of the context\textquotesingle{}s output area in context output coordinates. Value is used in coordinate scaling for absolute mode only. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_aee6840f04cc34b466e683d9892e82648}{Out\+OrgZ}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the Z origin of the context\textquotesingle{}s output area in context output coordinates. Value is used in coordinate scaling for absolute mode only. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_af911044cb67b004b35cca63883d598ae}{Out\+ExtX}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the X extent of the context\textquotesingle{}s output area in context output coordinates. Value is used in coordinate scaling for absolute mode only. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_aeb9155dbf8f387cfa2a38679b5af45a3}{Out\+ExtY}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the Y extent of the context\textquotesingle{}s output area in context output coordinates. Value is used in coordinate scaling for absolute mode only. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a02c9755f5d0ccefef8aa8728136b3c7d}{Out\+ExtZ}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the Z extent of the context\textquotesingle{}s output area in context output coordinates. Value is used in coordinate scaling for absolute mode only. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_wintab_d_n_1_1_f_i_x32}{F\+I\+X32}} \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_ab5cff8c2a8dbecad852fb2fb7d4a31d4}{SensX}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the relative-\/mode sensitivity factor for the x axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_wintab_d_n_1_1_f_i_x32}{F\+I\+X32}} \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_ac35412cff3ea7455fedd6e2e38cd65e5}{SensY}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the relative-\/mode sensitivity factor for the y axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_wintab_d_n_1_1_f_i_x32}{F\+I\+X32}} \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a4908c82cd430554df3ca0e1268ee3af9}{SensZ}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the relative-\/mode sensitivity factor for the Z axis. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a50763a15570f18f433580630dfa7fe8a}{Sys\+Mode}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the system cursor tracking mode. Zero specifies absolute; non-\/zero means relative. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a14ba5470dacaafe10618a3d4cd0931bd}{Sys\+OrgX}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the X origin of the screen mapping area for system cursor tracking, in screen coordinates. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_ab630649b89e1029b4ded69f815cf9947}{Sys\+OrgY}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the Y origin of the screen mapping area for system cursor tracking, in screen coordinates. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_af7bb13537c0ce3d915309bcc4de86bb3}{Sys\+ExtX}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the X extent of the screen mapping area for system cursor tracking, in screen coordinates. \end{DoxyCompactList}\item 
+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_abcafe640181563d36f23c87433f485a5}{Sys\+ExtY}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the Y extent of the screen mapping area for system cursor tracking, in screen coordinates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_wintab_d_n_1_1_f_i_x32}{F\+I\+X32}} \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_ae4188eab9083490c471951381961d6a8}{Sys\+SensX}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the system-\/cursor relative-\/mode sensitivity factor for the x axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_wintab_d_n_1_1_f_i_x32}{F\+I\+X32}} \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_ab1c31c691d5659eb3bde3c999b62d5b6}{Sys\+SensY}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Specifies the system-\/cursor relative-\/mode sensitivity factor for the y axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const bool \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_aff540bf7703bf6e96bae3d5bfc3eaaa7}{D\+I\+S\+P\+L\+A\+Y\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+B\+O\+X\+ES}} = false
+\item 
+\mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_log_context}{Wintab\+Log\+Context}} \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a076aee1ffdce4966d7f4b46acd39d501}{m\+\_\+log\+Context}} = new \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_log_context}{Wintab\+Log\+Context}}()
+\item 
+\mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}} \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_ab31f2970a3e0658878f4716dbe2387cd}{m\+\_\+h\+C\+TX}} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to support access to Wintab context management. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_ae2ce09949d3d633790254555f9db2d49}\label{class_wintab_d_n_1_1_c_wintab_context_ae2ce09949d3d633790254555f9db2d49}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!C\+Wintab\+Context@{C\+Wintab\+Context}}
+\index{C\+Wintab\+Context@{C\+Wintab\+Context}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{C\+Wintab\+Context()}{CWintabContext()}}
+{\footnotesize\ttfamily Wintab\+D\+N.\+C\+Wintab\+Context.\+C\+Wintab\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor sets all data bits to be captured. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a53d935082727bc049f9d817363e6200f}\label{class_wintab_d_n_1_1_c_wintab_context_a53d935082727bc049f9d817363e6200f}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Close@{Close}}
+\index{Close@{Close}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily bool Wintab\+D\+N.\+C\+Wintab\+Context.\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Close the context for this object. 
+
+\begin{DoxyReturn}{Returns}
+true if context successfully closed
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a580c1e6691c4c58c8d54d429e7d7ebd8}\label{class_wintab_d_n_1_1_c_wintab_context_a580c1e6691c4c58c8d54d429e7d7ebd8}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Enable@{Enable}}
+\index{Enable@{Enable}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Enable()}{Enable()}}
+{\footnotesize\ttfamily bool Wintab\+D\+N.\+C\+Wintab\+Context.\+Enable (\begin{DoxyParamCaption}\item[{bool}]{enable\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Enable/disable this Wintab context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable\+\_\+I} & true = enable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if completed successfully
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a4bb06f01ce05bcac01ed611ea7d241d8}\label{class_wintab_d_n_1_1_c_wintab_context_a4bb06f01ce05bcac01ed611ea7d241d8}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Open@{Open}}
+\index{Open@{Open}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Open()}{Open()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}} Wintab\+D\+N.\+C\+Wintab\+Context.\+Open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_wintab_d_n_1_1_h_w_n_d}{H\+W\+ND}}}]{hwnd\+\_\+I,  }\item[{bool}]{enable\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Open a Wintab context to the specified hwnd. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hwnd\+\_\+I} & parent window for the context\\
+\hline
+{\em enable\+\_\+I} & true to enable, false to disable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns non-\/zero context handle if successful.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a1522d857d00373971e9c0e010ae9e756}\label{class_wintab_d_n_1_1_c_wintab_context_a1522d857d00373971e9c0e010ae9e756}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Open@{Open}}
+\index{Open@{Open}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Open()}{Open()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Wintab\+D\+N.\+C\+Wintab\+Context.\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Open a Wintab context that will send packet events to a message window. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if successful.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a26240e1cdf96ad7859a8fae08a41e412}\label{class_wintab_d_n_1_1_c_wintab_context_a26240e1cdf96ad7859a8fae08a41e412}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Set\+Overlap\+Order@{Set\+Overlap\+Order}}
+\index{Set\+Overlap\+Order@{Set\+Overlap\+Order}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Set\+Overlap\+Order()}{SetOverlapOrder()}}
+{\footnotesize\ttfamily bool Wintab\+D\+N.\+C\+Wintab\+Context.\+Set\+Overlap\+Order (\begin{DoxyParamCaption}\item[{bool}]{to\+Top\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sends a tablet context to the top or bottom of the order of overlapping tablet contexts 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+Top\+\_\+I} & true = send tablet to top of order\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if successsful
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_aff540bf7703bf6e96bae3d5bfc3eaaa7}\label{class_wintab_d_n_1_1_c_wintab_context_aff540bf7703bf6e96bae3d5bfc3eaaa7}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!D\+I\+S\+P\+L\+A\+Y\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+B\+O\+X\+ES@{D\+I\+S\+P\+L\+A\+Y\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+B\+O\+X\+ES}}
+\index{D\+I\+S\+P\+L\+A\+Y\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+B\+O\+X\+ES@{D\+I\+S\+P\+L\+A\+Y\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+B\+O\+X\+ES}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{D\+I\+S\+P\+L\+A\+Y\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+B\+O\+X\+ES}{DISPLAY\_MESSAGE\_BOXES}}
+{\footnotesize\ttfamily const bool Wintab\+D\+N.\+C\+Wintab\+Context.\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+B\+O\+X\+ES = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_ab31f2970a3e0658878f4716dbe2387cd}\label{class_wintab_d_n_1_1_c_wintab_context_ab31f2970a3e0658878f4716dbe2387cd}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!m\+\_\+h\+C\+TX@{m\+\_\+h\+C\+TX}}
+\index{m\+\_\+h\+C\+TX@{m\+\_\+h\+C\+TX}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{m\+\_\+h\+C\+TX}{m\_hCTX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}} Wintab\+D\+N.\+C\+Wintab\+Context.\+m\+\_\+h\+C\+TX = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a076aee1ffdce4966d7f4b46acd39d501}\label{class_wintab_d_n_1_1_c_wintab_context_a076aee1ffdce4966d7f4b46acd39d501}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!m\+\_\+log\+Context@{m\+\_\+log\+Context}}
+\index{m\+\_\+log\+Context@{m\+\_\+log\+Context}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{m\+\_\+log\+Context}{m\_logContext}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_log_context}{Wintab\+Log\+Context}} Wintab\+D\+N.\+C\+Wintab\+Context.\+m\+\_\+log\+Context = new \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_log_context}{Wintab\+Log\+Context}}()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a972a0b1d0634fc580aa65b8943af3905}\label{class_wintab_d_n_1_1_c_wintab_context_a972a0b1d0634fc580aa65b8943af3905}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Btn\+Dn\+Mask@{Btn\+Dn\+Mask}}
+\index{Btn\+Dn\+Mask@{Btn\+Dn\+Mask}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Btn\+Dn\+Mask}{BtnDnMask}}
+{\footnotesize\ttfamily U\+Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+Btn\+Dn\+Mask\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the buttons for which button press events will be processed in the context. In the case of overlapping contexts, button press events for buttons that are not selected in this field may be processed by underlying contexts. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_af90630abd6dc8926709bbf875744de8c}\label{class_wintab_d_n_1_1_c_wintab_context_af90630abd6dc8926709bbf875744de8c}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Btn\+Up\+Mask@{Btn\+Up\+Mask}}
+\index{Btn\+Up\+Mask@{Btn\+Up\+Mask}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Btn\+Up\+Mask}{BtnUpMask}}
+{\footnotesize\ttfamily U\+Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+Btn\+Up\+Mask\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the buttons for which button release events will be processed in the context. In the case of overlapping contexts, button release events for buttons that are not selected in this field may be processed by underlying contexts. If both press and release events are selected for a button (see the Btn\+Dn\+Mask property), then the interface will cause the context to implicitly capture all tablet events while the button is down. In this case, events occurring outside the context will be clipped to the context and processed as if they had occurred in the context. When the button is released, the context will receive the button release event, and then event processing will return to normal. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a1f56c63dab67a86ba44b53bce0bc882a}\label{class_wintab_d_n_1_1_c_wintab_context_a1f56c63dab67a86ba44b53bce0bc882a}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Device@{Device}}
+\index{Device@{Device}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Device}{Device}}
+{\footnotesize\ttfamily U\+Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+Device\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the device whose input the context processes. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_ad4709db10fbf92aa19dcdf0c19c53415}\label{class_wintab_d_n_1_1_c_wintab_context_ad4709db10fbf92aa19dcdf0c19c53415}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!H\+Ctx@{H\+Ctx}}
+\index{H\+Ctx@{H\+Ctx}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{H\+Ctx}{HCtx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}} Wintab\+D\+N.\+C\+Wintab\+Context.\+H\+Ctx\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Handle (identifier) used to identify this context. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a8f33e05910bcde9fe611f32a986a1ea5}\label{class_wintab_d_n_1_1_c_wintab_context_a8f33e05910bcde9fe611f32a986a1ea5}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!In\+ExtX@{In\+ExtX}}
+\index{In\+ExtX@{In\+ExtX}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{In\+ExtX}{InExtX}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+In\+ExtX\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the X extent of the context\textquotesingle{}s input area in the tablet\textquotesingle{}s native coordinates. Value is clipped to the tablet native coordinate space when the context is opened or modified. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_abb73e61691a4b2480b7997b73202b63b}\label{class_wintab_d_n_1_1_c_wintab_context_abb73e61691a4b2480b7997b73202b63b}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!In\+ExtY@{In\+ExtY}}
+\index{In\+ExtY@{In\+ExtY}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{In\+ExtY}{InExtY}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+In\+ExtY\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the Y extent of the context\textquotesingle{}s input area in the tablet\textquotesingle{}s native coordinates. Value is clipped to the tablet native coordinate space when the context is opened or modified. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a8d699ca76769679eca827b033e4f5fde}\label{class_wintab_d_n_1_1_c_wintab_context_a8d699ca76769679eca827b033e4f5fde}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!In\+ExtZ@{In\+ExtZ}}
+\index{In\+ExtZ@{In\+ExtZ}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{In\+ExtZ}{InExtZ}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+In\+ExtZ\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the Z extent of the context\textquotesingle{}s input area in the tablet\textquotesingle{}s native coordinates. Value is clipped to the tablet native coordinate space when the context is opened or modified. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a326fb62231cb2f9b783cb29a6716b6b7}\label{class_wintab_d_n_1_1_c_wintab_context_a326fb62231cb2f9b783cb29a6716b6b7}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!In\+OrgX@{In\+OrgX}}
+\index{In\+OrgX@{In\+OrgX}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{In\+OrgX}{InOrgX}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+In\+OrgX\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the X origin of the context\textquotesingle{}s input area in the tablet\textquotesingle{}s native coordinates. Value is clipped to the tablet native coordinate space when the context is opened or modified. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a0f480b34eb30bf42edd2adf565572ae3}\label{class_wintab_d_n_1_1_c_wintab_context_a0f480b34eb30bf42edd2adf565572ae3}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!In\+OrgY@{In\+OrgY}}
+\index{In\+OrgY@{In\+OrgY}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{In\+OrgY}{InOrgY}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+In\+OrgY\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the Y origin of the context\textquotesingle{}s input area in the tablet\textquotesingle{}s native coordinates. Value is clipped to the tablet native coordinate space when the context is opened or modified. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_afe123e2d48ea3c171c2b040dd512cda6}\label{class_wintab_d_n_1_1_c_wintab_context_afe123e2d48ea3c171c2b040dd512cda6}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!In\+OrgZ@{In\+OrgZ}}
+\index{In\+OrgZ@{In\+OrgZ}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{In\+OrgZ}{InOrgZ}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+In\+OrgZ\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the Z origin of the context\textquotesingle{}s input area in the tablet\textquotesingle{}s native coordinates. Value is clipped to the tablet native coordinate space when the context is opened or modified. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_ab05bc9afc19654c5495adfb60efdc06d}\label{class_wintab_d_n_1_1_c_wintab_context_ab05bc9afc19654c5495adfb60efdc06d}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Locks@{Locks}}
+\index{Locks@{Locks}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Locks}{Locks}}
+{\footnotesize\ttfamily U\+Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+Locks\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies which attributes of the context the application wishes to be locked. Lock conditions specify attributes of the context that cannot be changed once the context has been opened (calls to W\+T\+Config will have no effect on the locked attributes). The lock conditions can be combined by using the bitwise OR operator. The lc\+Locks field can be any combination of the values defined in E\+C\+T\+X\+Lock\+Values. Locks can only be changed by the task or process that owns the context. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_ad1aaf328b7c7aeb2b98e8c4e167047b6}\label{class_wintab_d_n_1_1_c_wintab_context_ad1aaf328b7c7aeb2b98e8c4e167047b6}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Log\+Context@{Log\+Context}}
+\index{Log\+Context@{Log\+Context}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Log\+Context}{LogContext}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_log_context}{Wintab\+Log\+Context}} Wintab\+D\+N.\+C\+Wintab\+Context.\+Log\+Context\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Logical Wintab context managed by this object. ~\newline
+
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a76772f28304fd4f8e4c511e7b65bdd59}\label{class_wintab_d_n_1_1_c_wintab_context_a76772f28304fd4f8e4c511e7b65bdd59}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Move\+Mask@{Move\+Mask}}
+\index{Move\+Mask@{Move\+Mask}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Move\+Mask}{MoveMask}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wintab_d_n_1_1_w_t_p_k_t}{W\+T\+P\+KT}} Wintab\+D\+N.\+C\+Wintab\+Context.\+Move\+Mask\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies which packet data items can generate move events in the context. Bits for items that are not part of the packet definition in the Pkt\+Data property will be ignored. The bits for buttons, time stamp, and the packet identifier will also be ignored. In the case of overlapping contexts, movement events for data items not selected in this field may be processed by underlying contexts. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a074fcb0607df8048600719c8875b12a7}\label{class_wintab_d_n_1_1_c_wintab_context_a074fcb0607df8048600719c8875b12a7}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Msg\+Base@{Msg\+Base}}
+\index{Msg\+Base@{Msg\+Base}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Msg\+Base}{MsgBase}}
+{\footnotesize\ttfamily U\+Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+Msg\+Base\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the range of message numbers that will be used for reporting the activity of the context. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a275c652af6e326a3b8750ae5ea047237}\label{class_wintab_d_n_1_1_c_wintab_context_a275c652af6e326a3b8750ae5ea047237}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Name@{Name}}
+\index{Name@{Name}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily string Wintab\+D\+N.\+C\+Wintab\+Context.\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Get/\+Set context name. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a3e5d1e938f9bd00d82474b670292b5a7}\label{class_wintab_d_n_1_1_c_wintab_context_a3e5d1e938f9bd00d82474b670292b5a7}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Options@{Options}}
+\index{Options@{Options}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Options}{Options}}
+{\footnotesize\ttfamily U\+Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+Options\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies options for the context. These options can be combined by using the bitwise OR operator. The lc\+Options field can be any combination of the values defined in E\+C\+T\+X\+Option\+Values. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_af911044cb67b004b35cca63883d598ae}\label{class_wintab_d_n_1_1_c_wintab_context_af911044cb67b004b35cca63883d598ae}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Out\+ExtX@{Out\+ExtX}}
+\index{Out\+ExtX@{Out\+ExtX}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Out\+ExtX}{OutExtX}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+Out\+ExtX\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the X extent of the context\textquotesingle{}s output area in context output coordinates. Value is used in coordinate scaling for absolute mode only. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_aeb9155dbf8f387cfa2a38679b5af45a3}\label{class_wintab_d_n_1_1_c_wintab_context_aeb9155dbf8f387cfa2a38679b5af45a3}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Out\+ExtY@{Out\+ExtY}}
+\index{Out\+ExtY@{Out\+ExtY}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Out\+ExtY}{OutExtY}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+Out\+ExtY\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the Y extent of the context\textquotesingle{}s output area in context output coordinates. Value is used in coordinate scaling for absolute mode only. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a02c9755f5d0ccefef8aa8728136b3c7d}\label{class_wintab_d_n_1_1_c_wintab_context_a02c9755f5d0ccefef8aa8728136b3c7d}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Out\+ExtZ@{Out\+ExtZ}}
+\index{Out\+ExtZ@{Out\+ExtZ}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Out\+ExtZ}{OutExtZ}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+Out\+ExtZ\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the Z extent of the context\textquotesingle{}s output area in context output coordinates. Value is used in coordinate scaling for absolute mode only. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a93f133c38a24202d1b3b7396893ed7fd}\label{class_wintab_d_n_1_1_c_wintab_context_a93f133c38a24202d1b3b7396893ed7fd}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Out\+OrgX@{Out\+OrgX}}
+\index{Out\+OrgX@{Out\+OrgX}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Out\+OrgX}{OutOrgX}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+Out\+OrgX\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the X origin of the context\textquotesingle{}s output area in context output coordinates. Value is used in coordinate scaling for absolute mode only. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a5d27ca1711aa3f176519a1484936972b}\label{class_wintab_d_n_1_1_c_wintab_context_a5d27ca1711aa3f176519a1484936972b}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Out\+OrgY@{Out\+OrgY}}
+\index{Out\+OrgY@{Out\+OrgY}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Out\+OrgY}{OutOrgY}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+Out\+OrgY\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the Y origin of the context\textquotesingle{}s output area in context output coordinates. Value is used in coordinate scaling for absolute mode only. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_aee6840f04cc34b466e683d9892e82648}\label{class_wintab_d_n_1_1_c_wintab_context_aee6840f04cc34b466e683d9892e82648}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Out\+OrgZ@{Out\+OrgZ}}
+\index{Out\+OrgZ@{Out\+OrgZ}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Out\+OrgZ}{OutOrgZ}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+Out\+OrgZ\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the Z origin of the context\textquotesingle{}s output area in context output coordinates. Value is used in coordinate scaling for absolute mode only. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a3da21ad3b21239b8463f54a83f7f1bb8}\label{class_wintab_d_n_1_1_c_wintab_context_a3da21ad3b21239b8463f54a83f7f1bb8}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Pkt\+Data@{Pkt\+Data}}
+\index{Pkt\+Data@{Pkt\+Data}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Pkt\+Data}{PktData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wintab_d_n_1_1_w_t_p_k_t}{W\+T\+P\+KT}} Wintab\+D\+N.\+C\+Wintab\+Context.\+Pkt\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies which optional data items will be in packets returned from the context. Requesting unsupported data items will cause \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context_a1522d857d00373971e9c0e010ae9e756}{Open()}} to fail. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a05489816378ed5052a3e0e6a8a517d7b}\label{class_wintab_d_n_1_1_c_wintab_context_a05489816378ed5052a3e0e6a8a517d7b}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Pkt\+Mode@{Pkt\+Mode}}
+\index{Pkt\+Mode@{Pkt\+Mode}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Pkt\+Mode}{PktMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wintab_d_n_1_1_w_t_p_k_t}{W\+T\+P\+KT}} Wintab\+D\+N.\+C\+Wintab\+Context.\+Pkt\+Mode\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies whether the packet data items will be returned in absolute or relative mode. If the item\textquotesingle{}s bit is set in this field, the item will be returned in relative mode. Bits in this field for items not selected in the Pkt\+Data property will be ignored. Bits for data items that only allow one mode (such as the packet identifier) will also be ignored. ~\newline
+
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a20f3b1ba020637ac525e1a2f0a67011f}\label{class_wintab_d_n_1_1_c_wintab_context_a20f3b1ba020637ac525e1a2f0a67011f}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Pkt\+Rate@{Pkt\+Rate}}
+\index{Pkt\+Rate@{Pkt\+Rate}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Pkt\+Rate}{PktRate}}
+{\footnotesize\ttfamily U\+Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+Pkt\+Rate\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the desired packet report rate in Hertz. Once the con-\/text is opened, this field will contain the actual report rate. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_ab5cff8c2a8dbecad852fb2fb7d4a31d4}\label{class_wintab_d_n_1_1_c_wintab_context_ab5cff8c2a8dbecad852fb2fb7d4a31d4}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!SensX@{SensX}}
+\index{SensX@{SensX}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{SensX}{SensX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wintab_d_n_1_1_f_i_x32}{F\+I\+X32}} Wintab\+D\+N.\+C\+Wintab\+Context.\+SensX\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the relative-\/mode sensitivity factor for the x axis. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_ac35412cff3ea7455fedd6e2e38cd65e5}\label{class_wintab_d_n_1_1_c_wintab_context_ac35412cff3ea7455fedd6e2e38cd65e5}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!SensY@{SensY}}
+\index{SensY@{SensY}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{SensY}{SensY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wintab_d_n_1_1_f_i_x32}{F\+I\+X32}} Wintab\+D\+N.\+C\+Wintab\+Context.\+SensY\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the relative-\/mode sensitivity factor for the y axis. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a4908c82cd430554df3ca0e1268ee3af9}\label{class_wintab_d_n_1_1_c_wintab_context_a4908c82cd430554df3ca0e1268ee3af9}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!SensZ@{SensZ}}
+\index{SensZ@{SensZ}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{SensZ}{SensZ}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wintab_d_n_1_1_f_i_x32}{F\+I\+X32}} Wintab\+D\+N.\+C\+Wintab\+Context.\+SensZ\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the relative-\/mode sensitivity factor for the Z axis. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a25169d39580b4d7a30d7feb05c1872d5}\label{class_wintab_d_n_1_1_c_wintab_context_a25169d39580b4d7a30d7feb05c1872d5}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Status@{Status}}
+\index{Status@{Status}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily U\+Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+Status\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies current status conditions for the context. These conditions can be combined by using the bitwise OR operator. The lc\+Status field can be any combination of the values defined in E\+C\+T\+X\+Status\+Values. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_af7bb13537c0ce3d915309bcc4de86bb3}\label{class_wintab_d_n_1_1_c_wintab_context_af7bb13537c0ce3d915309bcc4de86bb3}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Sys\+ExtX@{Sys\+ExtX}}
+\index{Sys\+ExtX@{Sys\+ExtX}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Sys\+ExtX}{SysExtX}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+Sys\+ExtX\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the X extent of the screen mapping area for system cursor tracking, in screen coordinates. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_abcafe640181563d36f23c87433f485a5}\label{class_wintab_d_n_1_1_c_wintab_context_abcafe640181563d36f23c87433f485a5}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Sys\+ExtY@{Sys\+ExtY}}
+\index{Sys\+ExtY@{Sys\+ExtY}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Sys\+ExtY}{SysExtY}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+Sys\+ExtY\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the Y extent of the screen mapping area for system cursor tracking, in screen coordinates. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a50763a15570f18f433580630dfa7fe8a}\label{class_wintab_d_n_1_1_c_wintab_context_a50763a15570f18f433580630dfa7fe8a}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Sys\+Mode@{Sys\+Mode}}
+\index{Sys\+Mode@{Sys\+Mode}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Sys\+Mode}{SysMode}}
+{\footnotesize\ttfamily bool Wintab\+D\+N.\+C\+Wintab\+Context.\+Sys\+Mode\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the system cursor tracking mode. Zero specifies absolute; non-\/zero means relative. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_a14ba5470dacaafe10618a3d4cd0931bd}\label{class_wintab_d_n_1_1_c_wintab_context_a14ba5470dacaafe10618a3d4cd0931bd}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Sys\+OrgX@{Sys\+OrgX}}
+\index{Sys\+OrgX@{Sys\+OrgX}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Sys\+OrgX}{SysOrgX}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+Sys\+OrgX\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the X origin of the screen mapping area for system cursor tracking, in screen coordinates. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_ab630649b89e1029b4ded69f815cf9947}\label{class_wintab_d_n_1_1_c_wintab_context_ab630649b89e1029b4ded69f815cf9947}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Sys\+OrgY@{Sys\+OrgY}}
+\index{Sys\+OrgY@{Sys\+OrgY}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Sys\+OrgY}{SysOrgY}}
+{\footnotesize\ttfamily Int32 Wintab\+D\+N.\+C\+Wintab\+Context.\+Sys\+OrgY\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the Y origin of the screen mapping area for system cursor tracking, in screen coordinates. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_ae4188eab9083490c471951381961d6a8}\label{class_wintab_d_n_1_1_c_wintab_context_ae4188eab9083490c471951381961d6a8}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Sys\+SensX@{Sys\+SensX}}
+\index{Sys\+SensX@{Sys\+SensX}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Sys\+SensX}{SysSensX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wintab_d_n_1_1_f_i_x32}{F\+I\+X32}} Wintab\+D\+N.\+C\+Wintab\+Context.\+Sys\+SensX\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the system-\/cursor relative-\/mode sensitivity factor for the x axis. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_context_ab1c31c691d5659eb3bde3c999b62d5b6}\label{class_wintab_d_n_1_1_c_wintab_context_ab1c31c691d5659eb3bde3c999b62d5b6}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}!Sys\+SensY@{Sys\+SensY}}
+\index{Sys\+SensY@{Sys\+SensY}!Wintab\+D\+N\+::\+C\+Wintab\+Context@{Wintab\+D\+N\+::\+C\+Wintab\+Context}}
+\subsubsection{\texorpdfstring{Sys\+SensY}{SysSensY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wintab_d_n_1_1_f_i_x32}{F\+I\+X32}} Wintab\+D\+N.\+C\+Wintab\+Context.\+Sys\+SensY\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Specifies the system-\/cursor relative-\/mode sensitivity factor for the y axis. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Wintab\+D\+N/\mbox{\hyperlink{_c_wintab_context_8cs}{C\+Wintab\+Context.\+cs}}\end{DoxyCompactItemize}

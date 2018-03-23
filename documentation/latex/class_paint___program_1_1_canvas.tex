@@ -1,0 +1,636 @@
+\hypertarget{class_paint___program_1_1_canvas}{}\section{Paint\+\_\+\+Program.\+Canvas Class Reference}
+\label{class_paint___program_1_1_canvas}\index{Paint\+\_\+\+Program.\+Canvas@{Paint\+\_\+\+Program.\+Canvas}}
+
+
+Class handling the main rendering of the layers, and interfacing with tools  
+
+
+Inheritance diagram for Paint\+\_\+\+Program.\+Canvas\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_paint___program_1_1_canvas}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_paint___program_1_1_canvas_add693d71442d497fe310ccab15a4b22f}{Canvas}} (int pw, int ph)
+\item 
+\mbox{\hyperlink{class_paint___program_1_1_canvas_af40bf569df831849e1c369dec074cc41}{Canvas}} (int w, int h, int pw, int ph)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_ab2cd1e144d21d48fcd8e123df1b7214c}{Init\+Canvas}} ()
+\begin{DoxyCompactList}\small\item\em Initializes all main components that the canvas interfaces with \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_a2c266c354fa86bc892a2eebf183d04f3}{Zoom\+In}} ()
+\begin{DoxyCompactList}\small\item\em Zooms canvas in by 10\% \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_a6470498d99b7f3fb2d2b26116c2abb44}{Zoom\+Out}} ()
+\begin{DoxyCompactList}\small\item\em Zooms canvas out by 10\% \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_a472cbf23dbea24d0bd70e2267529307a}{Update\+Positions}} (object sender)
+\begin{DoxyCompactList}\small\item\em Updates the positions of the different components in the application \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_a08e5d5aa35c75a7e6c64db752a79df8e}{Handle\+Mouse\+Down}} (object sender, Mouse\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Handles mouse down events and sends event data to tools \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_a9e3612510a869438dad1e5bd0ec3870e}{Handle\+Mouse\+Up}} (object sender, Mouse\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Handles mouse up events and sends event data to tools \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_a469df114198596cb65df4a22fcabc685}{Handle\+Mouse\+Move}} (object sender, Mouse\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Handles mouse move events and sends event data to tools \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_addf9e6c4759c930a9aaba20125f66a24}{Update\+Canvas}} (Graphics graphics)
+\begin{DoxyCompactList}\small\item\em Called periodically to render the image to the screen \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_a3ba07590551cf4f24d942302e90db30f}{Set\+Pause}} (bool b)
+\begin{DoxyCompactList}\small\item\em Sets the pause flag to start or stop rendering of the main canvas \end{DoxyCompactList}\item 
+Bitmap \mbox{\hyperlink{class_paint___program_1_1_canvas_a1dad48a553831296e7920219e8614a6f}{Get\+Bitmap}} ()
+\begin{DoxyCompactList}\small\item\em Renders all layers to a new Bitmap \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_a8548f36df2fefafcbcc23d857592ddc6}{Show\+Tools}} ()
+\begin{DoxyCompactList}\small\item\em Displays the tool strip \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_a26985c4da349cdddbe1c91bfef8e1a10}{Hide\+Tools}} ()
+\begin{DoxyCompactList}\small\item\em Hides the tool strip \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_ad80b3ef48814a229e01a330b49344f3b}{Update\+Text}} ()
+\begin{DoxyCompactList}\small\item\em Calls the Update Text method for all classes that implement \mbox{\hyperlink{interface_paint___program_1_1_i_text_update}{I\+Text\+Update}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_ac7d12ff2474d5bca00d8d399f0f6f17f}{Trash}} ()
+\begin{DoxyCompactList}\small\item\em Disposes all resources \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_paint___program_1_1_canvas_a94533b18db7d150d723ecaaf789d406b}{Handle\+Watermark}} (Graphics graphics)
+\begin{DoxyCompactList}\small\item\em Handles rendering the watermark to a Bitmap using the provided Graphics object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ Tool\+Strip\+Button $>$ \mbox{\hyperlink{class_paint___program_1_1_canvas_ada97231f783b6eb308b9e54523729bd5}{Tool\+Buttons}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_paint___program_1_1_canvas_aafaa253cb056ff1725f6c1c7c74895a7}{Dispose}} (bool disposing)
+\begin{DoxyCompactList}\small\item\em Clean up any resources being used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_a7fa8707eec6c1868ec18f7151146bfae}{Init\+Tools}} ()
+\begin{DoxyCompactList}\small\item\em Adds all tools to the tool bar \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_a9cf2287e46eb0e4408c936f9d063662e}{Handle\+Tablet\+Data}} (object sender, \mbox{\hyperlink{class_wintab_d_n_1_1_message_received_event_args}{Message\+Received\+Event\+Args}} e)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{namespace_wintab_d_n}{Wintab\+DN}} event handler to interface with U\+SB drawing tablets \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_a2b9769c074033d3e7b9782f058adac34}{Handle\+Tool\+Strip\+Item\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Handles tool changes \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_a03a3c5c5aa5410c596ca804543048cd2}{Handle\+Parent\+Resize}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Handles window resize by adjusting the position of all components \end{DoxyCompactList}\item 
+Mouse\+Event\+Args \mbox{\hyperlink{class_paint___program_1_1_canvas_ad115e2e049fe0710853b8eb6c87ba578}{Scale\+Mouse\+Event}} (Mouse\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Scales the mouse event so that when the canvas is zoomed in the mouse is still in the correct location \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_a7dcd37fbb4f649a9a52109244cdc06c8}{E\+Display\+Paint}} (object sender, Paint\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Calls Update\+Graphics() \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_canvas_a34dfcf5fd2dd88431a7172cce26887ba}{Initialize\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Required method for Designer support -\/ do not modify the contents of this method with the code editor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_paint___program_1_1_display}{Display}} \mbox{\hyperlink{class_paint___program_1_1_canvas_a062e8c62840a26ff882cc4d04df225ee}{p}}
+\item 
+Panel \mbox{\hyperlink{class_paint___program_1_1_canvas_a2b8da1cfbec0bf30e3c75ec1b2254e2b}{p\+Scaled}}
+\item 
+Graphics \mbox{\hyperlink{class_paint___program_1_1_canvas_aa6c67366d90077fa9b0628d9366bcbca}{g}}
+\item 
+Bitmap \mbox{\hyperlink{class_paint___program_1_1_canvas_a0cc3e58e865cf5a755d4d9f35f70238a}{bg}}
+\item 
+Bitmap \mbox{\hyperlink{class_paint___program_1_1_canvas_a19a0714ac47bc1320dcc9cefd12b380b}{Grid}}
+\item 
+const int \mbox{\hyperlink{class_paint___program_1_1_canvas_ac3c70713c3f72a4d4e8663dc90c10285}{G\+Cper\+Frames}} = 100
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_canvas_aa8fa583bc964d8ea68628c9b8e7e648a}{canvas\+Width}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_canvas_abee27e7eab8e6f5afb30044e97de2de2}{canvas\+Height}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_canvas_a0f7c080162d099242cfa35dc480c3ba9}{max\+Width}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_canvas_a1a8c4189ce38200f313962cad08a7fe3}{max\+Height}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_canvas_aaa74adb42b806ce50aa45a9b7501e042}{scroll\+Width}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_canvas_acc89dc931642d1b1874c96781f67932e}{scroll\+Height}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_canvas_ab971915f406e70cbe0b793ff8bfa44ad}{ts\+Width}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_canvas_af7619a49de47ab8a829b7d54cd13fa34}{menu\+Height}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_canvas_a069f9fb1fdfda2efb72002def8de69b8}{i\+Active\+Tool}}
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_canvas_ae594f00ab27c7c5535b99ef3ea83330f}{is\+Pasued}} = false
+\item 
+\mbox{\hyperlink{class_paint___program_1_1_layer_view}{Layer\+View}} \mbox{\hyperlink{class_paint___program_1_1_canvas_a76ad801807be5089e7fa17fb5e49cd87}{lv}}
+\item 
+Tool\+Strip \mbox{\hyperlink{class_paint___program_1_1_canvas_a25f473e57732815bbfd29ece6c8d9e1a}{ts}}
+\item 
+\mbox{\hyperlink{class_paint___program_1_1_brush_settings}{Brush\+Settings}} \mbox{\hyperlink{class_paint___program_1_1_canvas_a8d4ab120fa6b6a09a21550b9c529ee32}{bs}}
+\item 
+\mbox{\hyperlink{class_paint___program_1_1_zoom_control}{Zoom\+Control}} \mbox{\hyperlink{class_paint___program_1_1_canvas_ae476a361419679063d08d82be0d75586}{zc}}
+\item 
+\mbox{\hyperlink{class_paint___program_1_1_tablet_info}{Tablet\+Info}} \mbox{\hyperlink{class_paint___program_1_1_canvas_a82ed26ab78c420733a97cbf4b70cd0c1}{ti}}
+\item 
+List$<$ \mbox{\hyperlink{interface_paint___program_1_1_i_tool}{I\+Tool}} $>$ \mbox{\hyperlink{class_paint___program_1_1_canvas_aa4c39db74d3d28be21479042ebbb5ac1}{Tools}}
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_canvas_a6b215f6b92ac2e3215da878200ce02b6}{Tools\+Shown}} = true
+\item 
+System.\+Component\+Model.\+I\+Container \mbox{\hyperlink{class_paint___program_1_1_canvas_a669e31bb19fca7ec4eaa939d5068eed4}{components}} = null
+\begin{DoxyCompactList}\small\item\em Required designer variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class handling the main rendering of the layers, and interfacing with tools 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_add693d71442d497fe310ccab15a4b22f}\label{class_paint___program_1_1_canvas_add693d71442d497fe310ccab15a4b22f}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Canvas@{Canvas}}
+\index{Canvas@{Canvas}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Canvas()}{Canvas()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Paint\+\_\+\+Program.\+Canvas.\+Canvas (\begin{DoxyParamCaption}\item[{int}]{pw,  }\item[{int}]{ph }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_af40bf569df831849e1c369dec074cc41}\label{class_paint___program_1_1_canvas_af40bf569df831849e1c369dec074cc41}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Canvas@{Canvas}}
+\index{Canvas@{Canvas}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Canvas()}{Canvas()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Paint\+\_\+\+Program.\+Canvas.\+Canvas (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h,  }\item[{int}]{pw,  }\item[{int}]{ph }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_aafaa253cb056ff1725f6c1c7c74895a7}\label{class_paint___program_1_1_canvas_aafaa253cb056ff1725f6c1c7c74895a7}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Paint\+\_\+\+Program.\+Canvas.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Clean up any resources being used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disposing} & true if managed resources should be disposed; otherwise, false.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a7dcd37fbb4f649a9a52109244cdc06c8}\label{class_paint___program_1_1_canvas_a7dcd37fbb4f649a9a52109244cdc06c8}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!E\+Display\+Paint@{E\+Display\+Paint}}
+\index{E\+Display\+Paint@{E\+Display\+Paint}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{E\+Display\+Paint()}{EDisplayPaint()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+E\+Display\+Paint (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Paint\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Calls Update\+Graphics() 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Not Used\\
+\hline
+{\em e} & Paint\+Event\+Args object where the Graphics property is passed to Update\+Graphics()\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a1dad48a553831296e7920219e8614a6f}\label{class_paint___program_1_1_canvas_a1dad48a553831296e7920219e8614a6f}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Get\+Bitmap@{Get\+Bitmap}}
+\index{Get\+Bitmap@{Get\+Bitmap}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Get\+Bitmap()}{GetBitmap()}}
+{\footnotesize\ttfamily Bitmap Paint\+\_\+\+Program.\+Canvas.\+Get\+Bitmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renders all layers to a new Bitmap 
+
+\begin{DoxyReturn}{Returns}
+Bitmap containing a render of all the layer data
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a08e5d5aa35c75a7e6c64db752a79df8e}\label{class_paint___program_1_1_canvas_a08e5d5aa35c75a7e6c64db752a79df8e}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Handle\+Mouse\+Down@{Handle\+Mouse\+Down}}
+\index{Handle\+Mouse\+Down@{Handle\+Mouse\+Down}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Handle\+Mouse\+Down()}{HandleMouseDown()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+Handle\+Mouse\+Down (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Handles mouse down events and sends event data to tools 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & N/A\\
+\hline
+{\em e} & Mouse\+Event\+Args containing data of the mouse event\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a469df114198596cb65df4a22fcabc685}\label{class_paint___program_1_1_canvas_a469df114198596cb65df4a22fcabc685}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Handle\+Mouse\+Move@{Handle\+Mouse\+Move}}
+\index{Handle\+Mouse\+Move@{Handle\+Mouse\+Move}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Handle\+Mouse\+Move()}{HandleMouseMove()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+Handle\+Mouse\+Move (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Handles mouse move events and sends event data to tools 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & N/A\\
+\hline
+{\em e} & Mouse\+Event\+Args containing data of the mouse event\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a9e3612510a869438dad1e5bd0ec3870e}\label{class_paint___program_1_1_canvas_a9e3612510a869438dad1e5bd0ec3870e}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Handle\+Mouse\+Up@{Handle\+Mouse\+Up}}
+\index{Handle\+Mouse\+Up@{Handle\+Mouse\+Up}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Handle\+Mouse\+Up()}{HandleMouseUp()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+Handle\+Mouse\+Up (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Handles mouse up events and sends event data to tools 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & N/A\\
+\hline
+{\em e} & Mouse\+Event\+Args containing data of the mouse event\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a03a3c5c5aa5410c596ca804543048cd2}\label{class_paint___program_1_1_canvas_a03a3c5c5aa5410c596ca804543048cd2}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Handle\+Parent\+Resize@{Handle\+Parent\+Resize}}
+\index{Handle\+Parent\+Resize@{Handle\+Parent\+Resize}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Handle\+Parent\+Resize()}{HandleParentResize()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+Handle\+Parent\+Resize (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Handles window resize by adjusting the position of all components 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & The parent control of this \mbox{\hyperlink{class_paint___program_1_1_canvas}{Canvas}} class\\
+\hline
+{\em e} & N/A\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a9cf2287e46eb0e4408c936f9d063662e}\label{class_paint___program_1_1_canvas_a9cf2287e46eb0e4408c936f9d063662e}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Handle\+Tablet\+Data@{Handle\+Tablet\+Data}}
+\index{Handle\+Tablet\+Data@{Handle\+Tablet\+Data}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Handle\+Tablet\+Data()}{HandleTabletData()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+Handle\+Tablet\+Data (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{\mbox{\hyperlink{class_wintab_d_n_1_1_message_received_event_args}{Message\+Received\+Event\+Args}}}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{namespace_wintab_d_n}{Wintab\+DN}} event handler to interface with U\+SB drawing tablets 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & N/A\\
+\hline
+{\em e} & Tablet event data\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a2b9769c074033d3e7b9782f058adac34}\label{class_paint___program_1_1_canvas_a2b9769c074033d3e7b9782f058adac34}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Handle\+Tool\+Strip\+Item\+Click@{Handle\+Tool\+Strip\+Item\+Click}}
+\index{Handle\+Tool\+Strip\+Item\+Click@{Handle\+Tool\+Strip\+Item\+Click}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Handle\+Tool\+Strip\+Item\+Click()}{HandleToolStripItemClick()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+Handle\+Tool\+Strip\+Item\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Handles tool changes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a94533b18db7d150d723ecaaf789d406b}\label{class_paint___program_1_1_canvas_a94533b18db7d150d723ecaaf789d406b}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Handle\+Watermark@{Handle\+Watermark}}
+\index{Handle\+Watermark@{Handle\+Watermark}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Handle\+Watermark()}{HandleWatermark()}}
+{\footnotesize\ttfamily static void Paint\+\_\+\+Program.\+Canvas.\+Handle\+Watermark (\begin{DoxyParamCaption}\item[{Graphics}]{graphics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Handles rendering the watermark to a Bitmap using the provided Graphics object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graphics} & Graphics object used to render the watermark\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a26985c4da349cdddbe1c91bfef8e1a10}\label{class_paint___program_1_1_canvas_a26985c4da349cdddbe1c91bfef8e1a10}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Hide\+Tools@{Hide\+Tools}}
+\index{Hide\+Tools@{Hide\+Tools}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Hide\+Tools()}{HideTools()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+Hide\+Tools (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Hides the tool strip 
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_ab2cd1e144d21d48fcd8e123df1b7214c}\label{class_paint___program_1_1_canvas_ab2cd1e144d21d48fcd8e123df1b7214c}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Init\+Canvas@{Init\+Canvas}}
+\index{Init\+Canvas@{Init\+Canvas}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Init\+Canvas()}{InitCanvas()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+Init\+Canvas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes all main components that the canvas interfaces with 
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a34dfcf5fd2dd88431a7172cce26887ba}\label{class_paint___program_1_1_canvas_a34dfcf5fd2dd88431a7172cce26887ba}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Initialize\+Component@{Initialize\+Component}}
+\index{Initialize\+Component@{Initialize\+Component}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Initialize\+Component()}{InitializeComponent()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+Initialize\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Required method for Designer support -\/ do not modify the contents of this method with the code editor. 
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a7fa8707eec6c1868ec18f7151146bfae}\label{class_paint___program_1_1_canvas_a7fa8707eec6c1868ec18f7151146bfae}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Init\+Tools@{Init\+Tools}}
+\index{Init\+Tools@{Init\+Tools}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Init\+Tools()}{InitTools()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+Init\+Tools (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Adds all tools to the tool bar 
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_ad115e2e049fe0710853b8eb6c87ba578}\label{class_paint___program_1_1_canvas_ad115e2e049fe0710853b8eb6c87ba578}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Scale\+Mouse\+Event@{Scale\+Mouse\+Event}}
+\index{Scale\+Mouse\+Event@{Scale\+Mouse\+Event}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Scale\+Mouse\+Event()}{ScaleMouseEvent()}}
+{\footnotesize\ttfamily Mouse\+Event\+Args Paint\+\_\+\+Program.\+Canvas.\+Scale\+Mouse\+Event (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Scales the mouse event so that when the canvas is zoomed in the mouse is still in the correct location 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Mouse\+Event\+Args containing the mouse event data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a3ba07590551cf4f24d942302e90db30f}\label{class_paint___program_1_1_canvas_a3ba07590551cf4f24d942302e90db30f}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Set\+Pause@{Set\+Pause}}
+\index{Set\+Pause@{Set\+Pause}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Set\+Pause()}{SetPause()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+Set\+Pause (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the pause flag to start or stop rendering of the main canvas 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Boolean value, true stops canvas rendering, false continues rendering \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a8548f36df2fefafcbcc23d857592ddc6}\label{class_paint___program_1_1_canvas_a8548f36df2fefafcbcc23d857592ddc6}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Show\+Tools@{Show\+Tools}}
+\index{Show\+Tools@{Show\+Tools}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Show\+Tools()}{ShowTools()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+Show\+Tools (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Displays the tool strip 
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_ac7d12ff2474d5bca00d8d399f0f6f17f}\label{class_paint___program_1_1_canvas_ac7d12ff2474d5bca00d8d399f0f6f17f}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Trash@{Trash}}
+\index{Trash@{Trash}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Trash()}{Trash()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+Trash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Disposes all resources 
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_addf9e6c4759c930a9aaba20125f66a24}\label{class_paint___program_1_1_canvas_addf9e6c4759c930a9aaba20125f66a24}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Update\+Canvas@{Update\+Canvas}}
+\index{Update\+Canvas@{Update\+Canvas}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Update\+Canvas()}{UpdateCanvas()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+Update\+Canvas (\begin{DoxyParamCaption}\item[{Graphics}]{graphics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Called periodically to render the image to the screen 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graphics} & Graphics object of the Bitmap being rendered to\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a472cbf23dbea24d0bd70e2267529307a}\label{class_paint___program_1_1_canvas_a472cbf23dbea24d0bd70e2267529307a}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Update\+Positions@{Update\+Positions}}
+\index{Update\+Positions@{Update\+Positions}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Update\+Positions()}{UpdatePositions()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+Update\+Positions (\begin{DoxyParamCaption}\item[{object}]{sender }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the positions of the different components in the application 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & N/A\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_ad80b3ef48814a229e01a330b49344f3b}\label{class_paint___program_1_1_canvas_ad80b3ef48814a229e01a330b49344f3b}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Update\+Text@{Update\+Text}}
+\index{Update\+Text@{Update\+Text}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Update\+Text()}{UpdateText()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+Update\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calls the Update Text method for all classes that implement \mbox{\hyperlink{interface_paint___program_1_1_i_text_update}{I\+Text\+Update}} 
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_text_update_ad1e94db137571608917117e9a6f7479b}{Paint\+\_\+\+Program.\+I\+Text\+Update}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a2c266c354fa86bc892a2eebf183d04f3}\label{class_paint___program_1_1_canvas_a2c266c354fa86bc892a2eebf183d04f3}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Zoom\+In@{Zoom\+In}}
+\index{Zoom\+In@{Zoom\+In}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Zoom\+In()}{ZoomIn()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+Zoom\+In (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zooms canvas in by 10\% 
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a6470498d99b7f3fb2d2b26116c2abb44}\label{class_paint___program_1_1_canvas_a6470498d99b7f3fb2d2b26116c2abb44}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Zoom\+Out@{Zoom\+Out}}
+\index{Zoom\+Out@{Zoom\+Out}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Zoom\+Out()}{ZoomOut()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Canvas.\+Zoom\+Out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zooms canvas out by 10\% 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a0cc3e58e865cf5a755d4d9f35f70238a}\label{class_paint___program_1_1_canvas_a0cc3e58e865cf5a755d4d9f35f70238a}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!bg@{bg}}
+\index{bg@{bg}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{bg}{bg}}
+{\footnotesize\ttfamily Bitmap Paint\+\_\+\+Program.\+Canvas.\+bg\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a8d4ab120fa6b6a09a21550b9c529ee32}\label{class_paint___program_1_1_canvas_a8d4ab120fa6b6a09a21550b9c529ee32}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!bs@{bs}}
+\index{bs@{bs}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{bs}{bs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_paint___program_1_1_brush_settings}{Brush\+Settings}} Paint\+\_\+\+Program.\+Canvas.\+bs\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_abee27e7eab8e6f5afb30044e97de2de2}\label{class_paint___program_1_1_canvas_abee27e7eab8e6f5afb30044e97de2de2}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!canvas\+Height@{canvas\+Height}}
+\index{canvas\+Height@{canvas\+Height}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{canvas\+Height}{canvasHeight}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Canvas.\+canvas\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_aa8fa583bc964d8ea68628c9b8e7e648a}\label{class_paint___program_1_1_canvas_aa8fa583bc964d8ea68628c9b8e7e648a}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!canvas\+Width@{canvas\+Width}}
+\index{canvas\+Width@{canvas\+Width}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{canvas\+Width}{canvasWidth}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Canvas.\+canvas\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a669e31bb19fca7ec4eaa939d5068eed4}\label{class_paint___program_1_1_canvas_a669e31bb19fca7ec4eaa939d5068eed4}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!components@{components}}
+\index{components@{components}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{components}{components}}
+{\footnotesize\ttfamily System.\+Component\+Model.\+I\+Container Paint\+\_\+\+Program.\+Canvas.\+components = null\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Required designer variable. 
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_aa6c67366d90077fa9b0628d9366bcbca}\label{class_paint___program_1_1_canvas_aa6c67366d90077fa9b0628d9366bcbca}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!g@{g}}
+\index{g@{g}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{g}{g}}
+{\footnotesize\ttfamily Graphics Paint\+\_\+\+Program.\+Canvas.\+g\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_ac3c70713c3f72a4d4e8663dc90c10285}\label{class_paint___program_1_1_canvas_ac3c70713c3f72a4d4e8663dc90c10285}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!G\+Cper\+Frames@{G\+Cper\+Frames}}
+\index{G\+Cper\+Frames@{G\+Cper\+Frames}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{G\+Cper\+Frames}{GCperFrames}}
+{\footnotesize\ttfamily const int Paint\+\_\+\+Program.\+Canvas.\+G\+Cper\+Frames = 100\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a19a0714ac47bc1320dcc9cefd12b380b}\label{class_paint___program_1_1_canvas_a19a0714ac47bc1320dcc9cefd12b380b}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Grid@{Grid}}
+\index{Grid@{Grid}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Grid}{Grid}}
+{\footnotesize\ttfamily Bitmap Paint\+\_\+\+Program.\+Canvas.\+Grid\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a069f9fb1fdfda2efb72002def8de69b8}\label{class_paint___program_1_1_canvas_a069f9fb1fdfda2efb72002def8de69b8}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!i\+Active\+Tool@{i\+Active\+Tool}}
+\index{i\+Active\+Tool@{i\+Active\+Tool}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{i\+Active\+Tool}{iActiveTool}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Canvas.\+i\+Active\+Tool\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_ae594f00ab27c7c5535b99ef3ea83330f}\label{class_paint___program_1_1_canvas_ae594f00ab27c7c5535b99ef3ea83330f}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!is\+Pasued@{is\+Pasued}}
+\index{is\+Pasued@{is\+Pasued}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{is\+Pasued}{isPasued}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Canvas.\+is\+Pasued = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a76ad801807be5089e7fa17fb5e49cd87}\label{class_paint___program_1_1_canvas_a76ad801807be5089e7fa17fb5e49cd87}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!lv@{lv}}
+\index{lv@{lv}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{lv}{lv}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_paint___program_1_1_layer_view}{Layer\+View}} Paint\+\_\+\+Program.\+Canvas.\+lv\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a1a8c4189ce38200f313962cad08a7fe3}\label{class_paint___program_1_1_canvas_a1a8c4189ce38200f313962cad08a7fe3}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!max\+Height@{max\+Height}}
+\index{max\+Height@{max\+Height}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{max\+Height}{maxHeight}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Canvas.\+max\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a0f7c080162d099242cfa35dc480c3ba9}\label{class_paint___program_1_1_canvas_a0f7c080162d099242cfa35dc480c3ba9}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!max\+Width@{max\+Width}}
+\index{max\+Width@{max\+Width}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{max\+Width}{maxWidth}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Canvas.\+max\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_af7619a49de47ab8a829b7d54cd13fa34}\label{class_paint___program_1_1_canvas_af7619a49de47ab8a829b7d54cd13fa34}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!menu\+Height@{menu\+Height}}
+\index{menu\+Height@{menu\+Height}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{menu\+Height}{menuHeight}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Canvas.\+menu\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a062e8c62840a26ff882cc4d04df225ee}\label{class_paint___program_1_1_canvas_a062e8c62840a26ff882cc4d04df225ee}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!p@{p}}
+\index{p@{p}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_paint___program_1_1_display}{Display}} Paint\+\_\+\+Program.\+Canvas.\+p\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a2b8da1cfbec0bf30e3c75ec1b2254e2b}\label{class_paint___program_1_1_canvas_a2b8da1cfbec0bf30e3c75ec1b2254e2b}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!p\+Scaled@{p\+Scaled}}
+\index{p\+Scaled@{p\+Scaled}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{p\+Scaled}{pScaled}}
+{\footnotesize\ttfamily Panel Paint\+\_\+\+Program.\+Canvas.\+p\+Scaled\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_acc89dc931642d1b1874c96781f67932e}\label{class_paint___program_1_1_canvas_acc89dc931642d1b1874c96781f67932e}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!scroll\+Height@{scroll\+Height}}
+\index{scroll\+Height@{scroll\+Height}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{scroll\+Height}{scrollHeight}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Canvas.\+scroll\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_aaa74adb42b806ce50aa45a9b7501e042}\label{class_paint___program_1_1_canvas_aaa74adb42b806ce50aa45a9b7501e042}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!scroll\+Width@{scroll\+Width}}
+\index{scroll\+Width@{scroll\+Width}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{scroll\+Width}{scrollWidth}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Canvas.\+scroll\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a82ed26ab78c420733a97cbf4b70cd0c1}\label{class_paint___program_1_1_canvas_a82ed26ab78c420733a97cbf4b70cd0c1}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!ti@{ti}}
+\index{ti@{ti}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{ti}{ti}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_paint___program_1_1_tablet_info}{Tablet\+Info}} Paint\+\_\+\+Program.\+Canvas.\+ti\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_ada97231f783b6eb308b9e54523729bd5}\label{class_paint___program_1_1_canvas_ada97231f783b6eb308b9e54523729bd5}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Tool\+Buttons@{Tool\+Buttons}}
+\index{Tool\+Buttons@{Tool\+Buttons}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Tool\+Buttons}{ToolButtons}}
+{\footnotesize\ttfamily List$<$Tool\+Strip\+Button$>$ Paint\+\_\+\+Program.\+Canvas.\+Tool\+Buttons}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_aa4c39db74d3d28be21479042ebbb5ac1}\label{class_paint___program_1_1_canvas_aa4c39db74d3d28be21479042ebbb5ac1}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Tools@{Tools}}
+\index{Tools@{Tools}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Tools}{Tools}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{interface_paint___program_1_1_i_tool}{I\+Tool}}$>$ Paint\+\_\+\+Program.\+Canvas.\+Tools\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a6b215f6b92ac2e3215da878200ce02b6}\label{class_paint___program_1_1_canvas_a6b215f6b92ac2e3215da878200ce02b6}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!Tools\+Shown@{Tools\+Shown}}
+\index{Tools\+Shown@{Tools\+Shown}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{Tools\+Shown}{ToolsShown}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Canvas.\+Tools\+Shown = true\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_a25f473e57732815bbfd29ece6c8d9e1a}\label{class_paint___program_1_1_canvas_a25f473e57732815bbfd29ece6c8d9e1a}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!ts@{ts}}
+\index{ts@{ts}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{ts}{ts}}
+{\footnotesize\ttfamily Tool\+Strip Paint\+\_\+\+Program.\+Canvas.\+ts\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_ab971915f406e70cbe0b793ff8bfa44ad}\label{class_paint___program_1_1_canvas_ab971915f406e70cbe0b793ff8bfa44ad}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!ts\+Width@{ts\+Width}}
+\index{ts\+Width@{ts\+Width}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{ts\+Width}{tsWidth}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Canvas.\+ts\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_canvas_ae476a361419679063d08d82be0d75586}\label{class_paint___program_1_1_canvas_ae476a361419679063d08d82be0d75586}} 
+\index{Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}!zc@{zc}}
+\index{zc@{zc}!Paint\+\_\+\+Program\+::\+Canvas@{Paint\+\_\+\+Program\+::\+Canvas}}
+\subsubsection{\texorpdfstring{zc}{zc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_paint___program_1_1_zoom_control}{Zoom\+Control}} Paint\+\_\+\+Program.\+Canvas.\+zc\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Paint Program/\mbox{\hyperlink{_canvas_8cs}{Canvas.\+cs}}\item 
+Paint Program/\mbox{\hyperlink{_canvas_8_designer_8cs}{Canvas.\+Designer.\+cs}}\end{DoxyCompactItemize}

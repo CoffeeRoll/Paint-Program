@@ -12,7 +12,7 @@ namespace Paint_Program
 
 		private Bitmap bLayer;
 
-		public void init()
+		public void Init()
 		{
 			graphics = SharedSettings.getActiveGraphics();
 			width = SharedSettings.getCanvasWidth();
@@ -28,12 +28,12 @@ namespace Paint_Program
 			return null;
 		}
 
-		public string getToolIconPath()
+		public string GetToolIconPath()
 		{
 			return @"..\..\Images\greenscreen.png";
 		}
 
-		public void onMouseDown(object sender, MouseEventArgs e)
+		public void OnMouseDown(object sender, MouseEventArgs e)
 		{
 			if (SharedSettings.getBitmapCurrentLayer(true) != null)
 			{
@@ -88,12 +88,12 @@ namespace Paint_Program
 			}
 		}
 
-		public void onMouseMove(object sender, MouseEventArgs e)
+		public void OnMouseMove(object sender, MouseEventArgs e)
 		{
 
 		}
 
-		public void onMouseUp(object sender, MouseEventArgs e)
+		public void OnMouseUp(object sender, MouseEventArgs e)
 		{
 			if (graphics != null)
 			{
@@ -107,26 +107,26 @@ namespace Paint_Program
 			return bInit;
 		}
 
-		public Bitmap getToolLayer()
+		public Bitmap GetToolLayer()
 		{
 			return null;
 		}
 
-		public bool requiresLayerData()
+		public bool RequiresLayerData()
 		{
 			return true;
 		}
 
-		public void setLayerData(Bitmap bit)
+		public void SetLayerData(Bitmap bit)
 		{
 			bLayer = bit;
 		}
 
-		public string getToolTip()
+		public string GetToolTip()
 		{
 			return SharedSettings.getGlobalString("tooltip_greenscreen");
 		}
-		public void updateInterfaceLayer()
+		public void UpdateInterfaceLayer()
 		{
 		}
 

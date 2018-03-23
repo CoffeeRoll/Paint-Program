@@ -1,0 +1,248 @@
+\hypertarget{class_paint___program_1_1_text_tool}{}\section{Paint\+\_\+\+Program.\+Text\+Tool Class Reference}
+\label{class_paint___program_1_1_text_tool}\index{Paint\+\_\+\+Program.\+Text\+Tool@{Paint\+\_\+\+Program.\+Text\+Tool}}
+Inheritance diagram for Paint\+\_\+\+Program.\+Text\+Tool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_paint___program_1_1_text_tool}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_paint___program_1_1_text_tool_a600ec6a0003ca544a857f7e6a79f5688}{Text\+Tool}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_text_tool_a8351e31f6387ff80cbff288a73a10a3d}{Init}} ()
+\item 
+string \mbox{\hyperlink{class_paint___program_1_1_text_tool_a0adfe4c942f7d97c2d9cf626fb3b78c7}{Get\+Tool\+Icon\+Path}} ()
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_text_tool_a053b13ff961f302f816b57ab5c48952a}{is\+Initalized}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_text_tool_a56294ea8e94d8aa58282660c24eb74bb}{On\+Mouse\+Down}} (object sender, Mouse\+Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_text_tool_a25bd60db2eeff1a131bce076e7f68757}{On\+Mouse\+Move}} (object sender, Mouse\+Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_text_tool_a0b77db4478e19cd1f957c37af981fbf5}{On\+Mouse\+Up}} (object sender, Mouse\+Event\+Args e)
+\item 
+Bitmap \mbox{\hyperlink{class_paint___program_1_1_text_tool_acb2114b449f982664f1fd49e3bb0b017}{Get\+Tool\+Layer}} ()
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_text_tool_a6fdb8fac7060beb3677489c709a7913f}{Requires\+Layer\+Data}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_text_tool_a3022ee066b3c9dfdff596027c3a184ed}{Set\+Layer\+Data}} (Bitmap bit)
+\item 
+string \mbox{\hyperlink{class_paint___program_1_1_text_tool_a39c92c312fa71a01a3ce97c2c0293c25}{Get\+Tool\+Tip}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_text_tool_a7fdf6ff8d7fa9bf43cbb4c6668862f2c}{Update\+Interface\+Layer}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Graphics \mbox{\hyperlink{class_paint___program_1_1_text_tool_aebcdbc77df8cc28b59213744989d2b74}{graphics}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_text_tool_a77267cf0c8405057fb527c0ac3e81229}{width}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_text_tool_ab6ddb1da76c16dd70e8d1682d0770b41}{height}}
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_text_tool_a2f0edf40e994616034bd0c71ce1d1735}{b\+Active}}
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_text_tool_a9a3ba132a7bc742c7dede40be6bbeeee}{b\+Mouse\+Down}}
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_text_tool_a7e8cc3ec53e73fc57bc1f6c698654bb1}{b\+Init}}
+\item 
+Point \mbox{\hyperlink{class_paint___program_1_1_text_tool_ad0b053bdd29fa0a048dd743305ad76b3}{p\+Old}}
+\item 
+Point \mbox{\hyperlink{class_paint___program_1_1_text_tool_ad3f0da3f42463a6c21694898bfb37f7d}{p\+New}}
+\item 
+SizeF \mbox{\hyperlink{class_paint___program_1_1_text_tool_a2fe7070d05a4b5970daf782a2cd3a54b}{t\+Size}}
+\item 
+Color \mbox{\hyperlink{class_paint___program_1_1_text_tool_af0636766c9cdf1139840aaa79a513cd9}{font\+Color}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_a600ec6a0003ca544a857f7e6a79f5688}\label{class_paint___program_1_1_text_tool_a600ec6a0003ca544a857f7e6a79f5688}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!Text\+Tool@{Text\+Tool}}
+\index{Text\+Tool@{Text\+Tool}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{Text\+Tool()}{TextTool()}}
+{\footnotesize\ttfamily Paint\+\_\+\+Program.\+Text\+Tool.\+Text\+Tool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_a0adfe4c942f7d97c2d9cf626fb3b78c7}\label{class_paint___program_1_1_text_tool_a0adfe4c942f7d97c2d9cf626fb3b78c7}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!Get\+Tool\+Icon\+Path@{Get\+Tool\+Icon\+Path}}
+\index{Get\+Tool\+Icon\+Path@{Get\+Tool\+Icon\+Path}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{Get\+Tool\+Icon\+Path()}{GetToolIconPath()}}
+{\footnotesize\ttfamily string Paint\+\_\+\+Program.\+Text\+Tool.\+Get\+Tool\+Icon\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_aa057d2f99c59d7bec0215dcad2da1b72}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_acb2114b449f982664f1fd49e3bb0b017}\label{class_paint___program_1_1_text_tool_acb2114b449f982664f1fd49e3bb0b017}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!Get\+Tool\+Layer@{Get\+Tool\+Layer}}
+\index{Get\+Tool\+Layer@{Get\+Tool\+Layer}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{Get\+Tool\+Layer()}{GetToolLayer()}}
+{\footnotesize\ttfamily Bitmap Paint\+\_\+\+Program.\+Text\+Tool.\+Get\+Tool\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a9b057905515f42a988c166a6a40318e0}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_a39c92c312fa71a01a3ce97c2c0293c25}\label{class_paint___program_1_1_text_tool_a39c92c312fa71a01a3ce97c2c0293c25}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!Get\+Tool\+Tip@{Get\+Tool\+Tip}}
+\index{Get\+Tool\+Tip@{Get\+Tool\+Tip}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{Get\+Tool\+Tip()}{GetToolTip()}}
+{\footnotesize\ttfamily string Paint\+\_\+\+Program.\+Text\+Tool.\+Get\+Tool\+Tip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_ac11f1591587144b6e74f5767bbf1df56}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_a8351e31f6387ff80cbff288a73a10a3d}\label{class_paint___program_1_1_text_tool_a8351e31f6387ff80cbff288a73a10a3d}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!Init@{Init}}
+\index{Init@{Init}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Text\+Tool.\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_af823123a30fbda34e24e907243241046}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_a053b13ff961f302f816b57ab5c48952a}\label{class_paint___program_1_1_text_tool_a053b13ff961f302f816b57ab5c48952a}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!is\+Initalized@{is\+Initalized}}
+\index{is\+Initalized@{is\+Initalized}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{is\+Initalized()}{isInitalized()}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Text\+Tool.\+is\+Initalized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a951b844bcbf47a6c306104fa86be7a5d}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_a56294ea8e94d8aa58282660c24eb74bb}\label{class_paint___program_1_1_text_tool_a56294ea8e94d8aa58282660c24eb74bb}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!On\+Mouse\+Down@{On\+Mouse\+Down}}
+\index{On\+Mouse\+Down@{On\+Mouse\+Down}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{On\+Mouse\+Down()}{OnMouseDown()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Text\+Tool.\+On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a73d8797f4f2b1e0d8efe8aadcd44e840}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_a25bd60db2eeff1a131bce076e7f68757}\label{class_paint___program_1_1_text_tool_a25bd60db2eeff1a131bce076e7f68757}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!On\+Mouse\+Move@{On\+Mouse\+Move}}
+\index{On\+Mouse\+Move@{On\+Mouse\+Move}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{On\+Mouse\+Move()}{OnMouseMove()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Text\+Tool.\+On\+Mouse\+Move (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a6a1cbe840b5cfc8a9b9463cc21590845}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_a0b77db4478e19cd1f957c37af981fbf5}\label{class_paint___program_1_1_text_tool_a0b77db4478e19cd1f957c37af981fbf5}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!On\+Mouse\+Up@{On\+Mouse\+Up}}
+\index{On\+Mouse\+Up@{On\+Mouse\+Up}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{On\+Mouse\+Up()}{OnMouseUp()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Text\+Tool.\+On\+Mouse\+Up (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a47984c2879213022f1684c07f7bba73e}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_a6fdb8fac7060beb3677489c709a7913f}\label{class_paint___program_1_1_text_tool_a6fdb8fac7060beb3677489c709a7913f}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!Requires\+Layer\+Data@{Requires\+Layer\+Data}}
+\index{Requires\+Layer\+Data@{Requires\+Layer\+Data}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{Requires\+Layer\+Data()}{RequiresLayerData()}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Text\+Tool.\+Requires\+Layer\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a6d45b6c48da8130ae41db3a66cdaef9a}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_a3022ee066b3c9dfdff596027c3a184ed}\label{class_paint___program_1_1_text_tool_a3022ee066b3c9dfdff596027c3a184ed}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!Set\+Layer\+Data@{Set\+Layer\+Data}}
+\index{Set\+Layer\+Data@{Set\+Layer\+Data}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{Set\+Layer\+Data()}{SetLayerData()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Text\+Tool.\+Set\+Layer\+Data (\begin{DoxyParamCaption}\item[{Bitmap}]{bit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a2d3e63715dfe04075d27dacf367d1633}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_a7fdf6ff8d7fa9bf43cbb4c6668862f2c}\label{class_paint___program_1_1_text_tool_a7fdf6ff8d7fa9bf43cbb4c6668862f2c}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!Update\+Interface\+Layer@{Update\+Interface\+Layer}}
+\index{Update\+Interface\+Layer@{Update\+Interface\+Layer}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{Update\+Interface\+Layer()}{UpdateInterfaceLayer()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Text\+Tool.\+Update\+Interface\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a36db75d29e88dfd739f658633c40e955}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_a2f0edf40e994616034bd0c71ce1d1735}\label{class_paint___program_1_1_text_tool_a2f0edf40e994616034bd0c71ce1d1735}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!b\+Active@{b\+Active}}
+\index{b\+Active@{b\+Active}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{b\+Active}{bActive}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Text\+Tool.\+b\+Active\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_a7e8cc3ec53e73fc57bc1f6c698654bb1}\label{class_paint___program_1_1_text_tool_a7e8cc3ec53e73fc57bc1f6c698654bb1}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!b\+Init@{b\+Init}}
+\index{b\+Init@{b\+Init}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{b\+Init}{bInit}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Text\+Tool.\+b\+Init\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_a9a3ba132a7bc742c7dede40be6bbeeee}\label{class_paint___program_1_1_text_tool_a9a3ba132a7bc742c7dede40be6bbeeee}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!b\+Mouse\+Down@{b\+Mouse\+Down}}
+\index{b\+Mouse\+Down@{b\+Mouse\+Down}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{b\+Mouse\+Down}{bMouseDown}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Text\+Tool.\+b\+Mouse\+Down\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_af0636766c9cdf1139840aaa79a513cd9}\label{class_paint___program_1_1_text_tool_af0636766c9cdf1139840aaa79a513cd9}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!font\+Color@{font\+Color}}
+\index{font\+Color@{font\+Color}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{font\+Color}{fontColor}}
+{\footnotesize\ttfamily Color Paint\+\_\+\+Program.\+Text\+Tool.\+font\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_aebcdbc77df8cc28b59213744989d2b74}\label{class_paint___program_1_1_text_tool_aebcdbc77df8cc28b59213744989d2b74}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!graphics@{graphics}}
+\index{graphics@{graphics}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{graphics}{graphics}}
+{\footnotesize\ttfamily Graphics Paint\+\_\+\+Program.\+Text\+Tool.\+graphics\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_ab6ddb1da76c16dd70e8d1682d0770b41}\label{class_paint___program_1_1_text_tool_ab6ddb1da76c16dd70e8d1682d0770b41}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!height@{height}}
+\index{height@{height}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Text\+Tool.\+height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_ad3f0da3f42463a6c21694898bfb37f7d}\label{class_paint___program_1_1_text_tool_ad3f0da3f42463a6c21694898bfb37f7d}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!p\+New@{p\+New}}
+\index{p\+New@{p\+New}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{p\+New}{pNew}}
+{\footnotesize\ttfamily Point Paint\+\_\+\+Program.\+Text\+Tool.\+p\+New\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_ad0b053bdd29fa0a048dd743305ad76b3}\label{class_paint___program_1_1_text_tool_ad0b053bdd29fa0a048dd743305ad76b3}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!p\+Old@{p\+Old}}
+\index{p\+Old@{p\+Old}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{p\+Old}{pOld}}
+{\footnotesize\ttfamily Point Paint\+\_\+\+Program.\+Text\+Tool.\+p\+Old\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_a2fe7070d05a4b5970daf782a2cd3a54b}\label{class_paint___program_1_1_text_tool_a2fe7070d05a4b5970daf782a2cd3a54b}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!t\+Size@{t\+Size}}
+\index{t\+Size@{t\+Size}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{t\+Size}{tSize}}
+{\footnotesize\ttfamily SizeF Paint\+\_\+\+Program.\+Text\+Tool.\+t\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_text_tool_a77267cf0c8405057fb527c0ac3e81229}\label{class_paint___program_1_1_text_tool_a77267cf0c8405057fb527c0ac3e81229}} 
+\index{Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}!width@{width}}
+\index{width@{width}!Paint\+\_\+\+Program\+::\+Text\+Tool@{Paint\+\_\+\+Program\+::\+Text\+Tool}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Text\+Tool.\+width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Paint Program/\mbox{\hyperlink{_text_tool_8cs}{Text\+Tool.\+cs}}\end{DoxyCompactItemize}

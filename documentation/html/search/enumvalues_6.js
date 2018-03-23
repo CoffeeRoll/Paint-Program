@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['tablet_5ficon_5ffmt_5f4bpp_5fgray',['TABLET_ICON_FMT_4BPP_GRAY',['../namespace_wintab_d_n.html#a4fb4432ff158db77a634fed851e23f6fab9a6d62298bf4bc839441b64575f1ddf',1,'WintabDN']]],
+  ['tablet_5ficon_5ffmt_5fnone',['TABLET_ICON_FMT_NONE',['../namespace_wintab_d_n.html#a4fb4432ff158db77a634fed851e23f6fa0446c21253fe697ee3b277098ba4bb31',1,'WintabDN']]],
+  ['tablet_5fproperty_5favailable',['TABLET_PROPERTY_AVAILABLE',['../namespace_wintab_d_n.html#a21cb408997e6cbe0866e75b0fe0a743fafe78032df724f828c6f140635eed7887',1,'WintabDN']]],
+  ['tablet_5fproperty_5fcontrolcount',['TABLET_PROPERTY_CONTROLCOUNT',['../namespace_wintab_d_n.html#a21cb408997e6cbe0866e75b0fe0a743fa5af622ac7a13def5db5b08435d00b439',1,'WintabDN']]],
+  ['tablet_5fproperty_5ffunccount',['TABLET_PROPERTY_FUNCCOUNT',['../namespace_wintab_d_n.html#a21cb408997e6cbe0866e75b0fe0a743fa39f6b55f874c94dfb2b2d51ae4a0826f',1,'WintabDN']]],
+  ['tablet_5fproperty_5ficon_5fformat',['TABLET_PROPERTY_ICON_FORMAT',['../namespace_wintab_d_n.html#a21cb408997e6cbe0866e75b0fe0a743faba80300949561c39af936e605a9f68b9',1,'WintabDN']]],
+  ['tablet_5fproperty_5ficon_5fheight',['TABLET_PROPERTY_ICON_HEIGHT',['../namespace_wintab_d_n.html#a21cb408997e6cbe0866e75b0fe0a743fab8b62de116d36392009ae950ae6e3b98',1,'WintabDN']]],
+  ['tablet_5fproperty_5ficon_5fwidth',['TABLET_PROPERTY_ICON_WIDTH',['../namespace_wintab_d_n.html#a21cb408997e6cbe0866e75b0fe0a743fa99216856caa5692f1f62c5120691087b',1,'WintabDN']]],
+  ['tablet_5fproperty_5flocation',['TABLET_PROPERTY_LOCATION',['../namespace_wintab_d_n.html#a21cb408997e6cbe0866e75b0fe0a743fa24f7e0ec25355bf64201e8dfb537ea07',1,'WintabDN']]],
+  ['tablet_5fproperty_5fmax',['TABLET_PROPERTY_MAX',['../namespace_wintab_d_n.html#a21cb408997e6cbe0866e75b0fe0a743fa318fb1e74a32cc80261480e0b0919cef',1,'WintabDN']]],
+  ['tablet_5fproperty_5fmin',['TABLET_PROPERTY_MIN',['../namespace_wintab_d_n.html#a21cb408997e6cbe0866e75b0fe0a743fa4bedc9e7f075df45e176b3c198dfbfd0',1,'WintabDN']]],
+  ['tablet_5fproperty_5foverride',['TABLET_PROPERTY_OVERRIDE',['../namespace_wintab_d_n.html#a21cb408997e6cbe0866e75b0fe0a743faf8244c64472fa9109d30391c321370f4',1,'WintabDN']]],
+  ['tablet_5fproperty_5foverride_5ficon',['TABLET_PROPERTY_OVERRIDE_ICON',['../namespace_wintab_d_n.html#a21cb408997e6cbe0866e75b0fe0a743fa58adb2483ea25b0f0b7f9faa96ec60bc',1,'WintabDN']]],
+  ['tablet_5fproperty_5foverride_5fname',['TABLET_PROPERTY_OVERRIDE_NAME',['../namespace_wintab_d_n.html#a21cb408997e6cbe0866e75b0fe0a743faff7de937427af883ac3f81f13dbe6e7d',1,'WintabDN']]],
+  ['tbn_5fdown',['TBN_DOWN',['../namespace_wintab_d_n.html#a0829e0e054dd601b4f043415c0090c31a429caf34e990ae37d3686c1b183900d6',1,'WintabDN']]],
+  ['tbn_5fnone',['TBN_NONE',['../namespace_wintab_d_n.html#a0829e0e054dd601b4f043415c0090c31a925e5d7da57c5c2d7a009cff85eb9d3f',1,'WintabDN']]],
+  ['tbn_5fup',['TBN_UP',['../namespace_wintab_d_n.html#a0829e0e054dd601b4f043415c0090c31a1ff7e6dd3b84fa37d7db1878e4842df8',1,'WintabDN']]],
+  ['tps_5fgrab',['TPS_GRAB',['../namespace_wintab_d_n.html#afe14d17b83fb34685a298d857c203caca611f4dc1a636ab77e3bbe6f078fea276',1,'WintabDN']]],
+  ['tps_5finvert',['TPS_INVERT',['../namespace_wintab_d_n.html#afe14d17b83fb34685a298d857c203caca7b360a1118406f2729a1bcc4074ddfdf',1,'WintabDN']]],
+  ['tps_5fmargin',['TPS_MARGIN',['../namespace_wintab_d_n.html#afe14d17b83fb34685a298d857c203caca316fc213c5429266093cca277197bc89',1,'WintabDN']]],
+  ['tps_5fproximity',['TPS_PROXIMITY',['../namespace_wintab_d_n.html#afe14d17b83fb34685a298d857c203caca94d2fbc94052d403edeb48e33deaab5d',1,'WintabDN']]],
+  ['tps_5fqueue_5ferr',['TPS_QUEUE_ERR',['../namespace_wintab_d_n.html#afe14d17b83fb34685a298d857c203caca453a492937569cfa4e919f1de9a1eaa8',1,'WintabDN']]]
+];

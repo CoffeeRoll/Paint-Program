@@ -1,0 +1,1252 @@
+\hypertarget{namespace_wintab_d_n}{}\section{Wintab\+DN Namespace Reference}
+\label{namespace_wintab_d_n}\index{Wintab\+DN@{Wintab\+DN}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_c_mem_utils}{C\+Mem\+Utils}}
+\begin{DoxyCompactList}\small\item\em Provide utility methods for unmanaged memory management. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context}{C\+Wintab\+Context}}
+\begin{DoxyCompactList}\small\item\em Class to support access to Wintab context management. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_data}{C\+Wintab\+Data}}
+\begin{DoxyCompactList}\small\item\em Class to support capture and management of Wintab daa. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_extensions}{C\+Wintab\+Extensions}}
+\begin{DoxyCompactList}\small\item\em A\+PI for Wintab extensions functionality (Wintab 1.\+4). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_funcs}{C\+Wintab\+Funcs}}
+\begin{DoxyCompactList}\small\item\em P/\+Invoke wrappers for Wintab functions. See Wintab\+\_\+v140.\+doc (Wintab 1.\+4 spec) and related Wintab documentation for details. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_info}{C\+Wintab\+Info}}
+\begin{DoxyCompactList}\small\item\em Class to access Wintab interface data. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_f_i_x32}{F\+I\+X32}}
+\begin{DoxyCompactList}\small\item\em Managed implementation of Wintab \mbox{\hyperlink{class_wintab_d_n_1_1_f_i_x32}{F\+I\+X32}} typedef. Used for a fixed-\/point arithmetic value. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}}
+\begin{DoxyCompactList}\small\item\em Managed implementation of Wintab \mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}} typedef. Holds a Wintab context identifier. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_h_w_n_d}{H\+W\+ND}}
+\begin{DoxyCompactList}\small\item\em Managed implementation of Wintab \mbox{\hyperlink{struct_wintab_d_n_1_1_h_w_n_d}{H\+W\+ND}} typedef. Holds native Window handle. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_message_events}{Message\+Events}}
+\begin{DoxyCompactList}\small\item\em Windows native message handler, to provide support for detecting and responding to Wintab messages. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_message_received_event_args}{Message\+Received\+Event\+Args}}
+\begin{DoxyCompactList}\small\item\em Support for registering a Native Windows message with \mbox{\hyperlink{class_wintab_d_n_1_1_message_events}{Message\+Events}} class. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_axis}{Wintab\+Axis}}
+\begin{DoxyCompactList}\small\item\em Managed version of A\+X\+IS struct. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_axis_array}{Wintab\+Axis\+Array}}
+\begin{DoxyCompactList}\small\item\em Array of \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_axis}{Wintab\+Axis}} objects. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_log_context}{Wintab\+Log\+Context}}
+\begin{DoxyCompactList}\small\item\em Managed version of Wintab L\+O\+G\+C\+O\+N\+T\+E\+XT struct. This structure determines what events an application will get, how they will be processed, and how they will be delivered to the application or to Windows itself. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet}{Wintab\+Packet}}
+\begin{DoxyCompactList}\small\item\em Wintab data packet. Contains the \char`\"{}\+Full Monty\char`\"{} for all possible data values. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_ext}{Wintab\+Packet\+Ext}}
+\begin{DoxyCompactList}\small\item\em Wintab extension data packet for one tablet control. The tablet controls for which extension data is available are\+: Express Key, Touch Ring and Touch Strip controls. Note that tablets will have either Touch Rings or Touch Strips -\/ not both. All tablets have Express Keys. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_w_t_exp_key_data}{W\+T\+Exp\+Key\+Data}}
+\begin{DoxyCompactList}\small\item\em Extension data for one Express Key. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_w_t_extension_base}{W\+T\+Extension\+Base}}
+\begin{DoxyCompactList}\small\item\em Common properties for control extension data transactions. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_w_t_extension_image_property}{W\+T\+Extension\+Image\+Property}}
+\begin{DoxyCompactList}\small\item\em Structure read/writing image Wintab extension data. (Wintab 1.\+4) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_w_t_extension_property}{W\+T\+Extension\+Property}}
+\begin{DoxyCompactList}\small\item\em Structure for reading/writing non-\/image Wintab extension data. (Wintab 1.\+4) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_w_t_extension_property_base}{W\+T\+Extension\+Property\+Base}}
+\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_w_t_extensions_global}{W\+T\+Extensions\+Global}}
+\begin{DoxyCompactList}\small\item\em Globals used for Wintab extensions. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_w_t_orientation}{W\+T\+Orientation}}
+\begin{DoxyCompactList}\small\item\em Pen Orientation \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_w_t_p_k_t}{W\+T\+P\+KT}}
+\begin{DoxyCompactList}\small\item\em Managed implementation of Wintab \mbox{\hyperlink{class_wintab_d_n_1_1_w_t_p_k_t}{W\+T\+P\+KT}} typedef. Holds Wintab packet identifier. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_w_t_rotation}{W\+T\+Rotation}}
+\begin{DoxyCompactList}\small\item\em Pen Rotation \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_w_t_slider_data}{W\+T\+Slider\+Data}}
+\begin{DoxyCompactList}\small\item\em Extension data for one touch ring or one touch strip. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespace_wintab_d_n_a465f8a123fa56040cd62f6a4df2707aa}{P\+\_\+\+W\+T\+P\+KT}} = U\+Int32
+\item 
+using \mbox{\hyperlink{namespace_wintab_d_n_ae94d0383e02caff0b36afc0b8aa1cd32}{P\+\_\+\+F\+I\+X32}} = U\+Int32
+\item 
+using \mbox{\hyperlink{namespace_wintab_d_n_a9ae61204cd14d7ef23008991d1fb6dff}{P\+\_\+\+H\+C\+TX}} = U\+Int32
+\item 
+using \mbox{\hyperlink{namespace_wintab_d_n_a33ba63b3dc16db27638a5f294140f53a}{P\+\_\+\+H\+W\+ND}} = System.\+Int\+Ptr
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a38705aa38c49c04846399172fa9fd1cd}{E\+Axis\+Dimension}} \{ \mbox{\hyperlink{namespace_wintab_d_n_a38705aa38c49c04846399172fa9fd1cdafb7ec808a21c7770ccd7060e715983ba}{E\+Axis\+Dimension.\+A\+X\+I\+S\+\_\+X}} = E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+X, 
+\mbox{\hyperlink{namespace_wintab_d_n_a38705aa38c49c04846399172fa9fd1cda3e69e41ce011d74658d6ccce110e5f1a}{E\+Axis\+Dimension.\+A\+X\+I\+S\+\_\+Y}} = E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+Y, 
+\mbox{\hyperlink{namespace_wintab_d_n_a38705aa38c49c04846399172fa9fd1cda19aa520601d5d2f29571f14a3278216f}{E\+Axis\+Dimension.\+A\+X\+I\+S\+\_\+Z}} = E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+Z
+ \}
+\begin{DoxyCompactList}\small\item\em Values to use when asking for X, Y or Z Wintab\+Axis object. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2}{E\+C\+T\+X\+Option\+Values}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a6a2dbfc83a1b63b06d00fa7fbdf841e6}{E\+C\+T\+X\+Option\+Values.\+C\+X\+O\+\_\+\+S\+Y\+S\+T\+EM}} = 0x0001, 
+\mbox{\hyperlink{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a1188b3bdf64b7ce3ac8b0dfbbbcd79ab}{E\+C\+T\+X\+Option\+Values.\+C\+X\+O\+\_\+\+P\+EN}} = 0x0002, 
+\mbox{\hyperlink{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a27fdcdd9ab4b471db2109a328c40cc8d}{E\+C\+T\+X\+Option\+Values.\+C\+X\+O\+\_\+\+M\+E\+S\+S\+A\+G\+ES}} = 0x0004, 
+\mbox{\hyperlink{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a2bbf4dbbadddd85531bf5c0224cdfa8c}{E\+C\+T\+X\+Option\+Values.\+C\+X\+O\+\_\+\+C\+S\+R\+M\+E\+S\+S\+A\+G\+ES}} = 0x0008, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a70d0e87bbdf4cb7110640ac0f47747f0}{E\+C\+T\+X\+Option\+Values.\+C\+X\+O\+\_\+\+M\+G\+N\+I\+N\+S\+I\+DE}} = 0x4000, 
+\mbox{\hyperlink{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a3c2c4234d4c16baa098b7c979a231f1b}{E\+C\+T\+X\+Option\+Values.\+C\+X\+O\+\_\+\+M\+A\+R\+G\+IN}} = 0x8000
+ \}
+\begin{DoxyCompactList}\small\item\em Context option values. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a6d3f719c7eebc1f9b081c2d31678536e}{E\+C\+T\+X\+Status\+Values}} \{ \mbox{\hyperlink{namespace_wintab_d_n_a6d3f719c7eebc1f9b081c2d31678536ea773aec303a05b1f2bbbb72fec5c371f3}{E\+C\+T\+X\+Status\+Values.\+C\+X\+S\+\_\+\+D\+I\+S\+A\+B\+L\+ED}} = 0x0001, 
+\mbox{\hyperlink{namespace_wintab_d_n_a6d3f719c7eebc1f9b081c2d31678536ea289cbc7da5860d2d8b658573790809de}{E\+C\+T\+X\+Status\+Values.\+C\+X\+S\+\_\+\+O\+B\+S\+C\+U\+R\+ED}} = 0x0002, 
+\mbox{\hyperlink{namespace_wintab_d_n_a6d3f719c7eebc1f9b081c2d31678536eac9a22eca76f43903f077a73792176eb8}{E\+C\+T\+X\+Status\+Values.\+C\+X\+S\+\_\+\+O\+N\+T\+OP}} = 0x0004
+ \}
+\begin{DoxyCompactList}\small\item\em Context status values. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31}{E\+C\+T\+X\+Lock\+Values}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31ad9335c4e973a33e84061e0a1c9932419}{E\+C\+T\+X\+Lock\+Values.\+C\+X\+L\+\_\+\+I\+N\+S\+I\+ZE}} = 0x0001, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31aac7209cec3b1fde6187d8d452bfa4fe8}{E\+C\+T\+X\+Lock\+Values.\+C\+X\+L\+\_\+\+I\+N\+A\+S\+P\+E\+CT}} = 0x0002, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31a409f9e66401e8acb484ab8a8d4a7cc52}{E\+C\+T\+X\+Lock\+Values.\+C\+X\+L\+\_\+\+S\+E\+N\+S\+I\+T\+I\+V\+I\+TY}} = 0x0004, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31ab83c05435e8d81d1da9fd0a6960a6071}{E\+C\+T\+X\+Lock\+Values.\+C\+X\+L\+\_\+\+M\+A\+R\+G\+IN}} = 0x0008, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31afa00c568415836f7a8fda6c5850bab4c}{E\+C\+T\+X\+Lock\+Values.\+C\+X\+L\+\_\+\+S\+Y\+S\+O\+UT}} = 0x0010
+ \}
+\begin{DoxyCompactList}\small\item\em Context lock values. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184}{E\+Wintab\+Packet\+Bit}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184ab73fe0c8937280862762449f9dc791ff}{E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+C\+O\+N\+T\+E\+XT}} = 0x0001, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a96f57de10a298069d7898a4fba27a008}{E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+S\+T\+A\+T\+US}} = 0x0002, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184abf68b8b97a2e596004ec367b4ce63d26}{E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+T\+I\+ME}} = 0x0004, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a5fa232826b657d9dfc747022b1ca86d3}{E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+C\+H\+A\+N\+G\+ED}} = 0x0008, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184ae27e538a81e4bf7f9769569b5cdd41db}{E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+N\+U\+M\+B\+ER}} = 0x0010, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a03e28509372ceace08e89b3cbff310af}{E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+C\+U\+R\+S\+OR}} = 0x0020, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a07c256014a5d3ca6ff2f34faa45577f4}{E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+B\+U\+T\+T\+O\+NS}} = 0x0040, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184ae7367a72ea936eb5525ff4e6b83ba02c}{E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+X}} = 0x0080, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a252362a32d7e17018570eda4d184e8fd}{E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+Y}} = 0x0100, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a78b0b04b0e8a16d78fd756ab58c2c0a2}{E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+Z}} = 0x0200, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a92f289a82836fc13f7a0a245a88e4cad}{E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+P\+R\+E\+S\+S\+U\+RE}} = 0x0400, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184adac46407b8f4b2a4b488a0a05b24efdf}{E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+T\+A\+N\+G\+E\+N\+T\+\_\+\+P\+R\+E\+S\+S\+U\+RE}} = 0x0800, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a0efa990069921977338d297e402e961b}{E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON}} = 0x1000, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a7b6c299e6217c043dbcaca3e0121bb9e}{E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+P\+K\+T\+B\+I\+T\+S\+\_\+\+A\+LL}} = 0x1\+F\+FF
+ \}
+\begin{DoxyCompactList}\small\item\em Wintab Packet bits. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0d}{E\+Wintab\+Event\+Message}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da5e95613ce2527a446d9ee3e10fe5be2c}{E\+Wintab\+Event\+Message.\+W\+T\+\_\+\+P\+A\+C\+K\+ET}} = 0x7\+F\+F0, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da66563739a7673e139b15ecbe3f3cb070}{E\+Wintab\+Event\+Message.\+W\+T\+\_\+\+C\+T\+X\+O\+P\+EN}} = 0x7\+F\+F1, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0daf846b2579d39425c3fe0fe99295e2468}{E\+Wintab\+Event\+Message.\+W\+T\+\_\+\+C\+T\+X\+C\+L\+O\+SE}} = 0x7\+F\+F2, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da648ab71e6134daaf33ea9e0cb4bf964f}{E\+Wintab\+Event\+Message.\+W\+T\+\_\+\+C\+T\+X\+U\+P\+D\+A\+TE}} = 0x7\+F\+F3, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0daa886d4222e1c460af87c692cee3f37de}{E\+Wintab\+Event\+Message.\+W\+T\+\_\+\+C\+T\+X\+O\+V\+E\+R\+L\+AP}} = 0x7\+F\+F4, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da6eddf7611875138581fbe38874b39591}{E\+Wintab\+Event\+Message.\+W\+T\+\_\+\+P\+R\+O\+X\+I\+M\+I\+TY}} = 0x7\+F\+F5, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0dac079adb185c52e56ecd97b614e9645c2}{E\+Wintab\+Event\+Message.\+W\+T\+\_\+\+I\+N\+F\+O\+C\+H\+A\+N\+GE}} = 0x7\+F\+F6, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da63fa7928d9cbd4eb040bfe38b3b18edb}{E\+Wintab\+Event\+Message.\+W\+T\+\_\+\+C\+S\+R\+C\+H\+A\+N\+GE}} = 0x7\+F\+F7, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da713ddca3660017276e227f39450f3c76}{E\+Wintab\+Event\+Message.\+W\+T\+\_\+\+P\+A\+C\+K\+E\+T\+E\+XT}} = 0x7\+F\+F8
+ \}
+\begin{DoxyCompactList}\small\item\em Wintab event messsages sent to an application. See Wintab Spec 1.\+4 for a description of these messages. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203cac}{E\+Wintab\+Packet\+Status\+Value}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca94d2fbc94052d403edeb48e33deaab5d}{E\+Wintab\+Packet\+Status\+Value.\+T\+P\+S\+\_\+\+P\+R\+O\+X\+I\+M\+I\+TY}} = 0x0001, 
+\mbox{\hyperlink{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca453a492937569cfa4e919f1de9a1eaa8}{E\+Wintab\+Packet\+Status\+Value.\+T\+P\+S\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+E\+RR}} = 0x0002, 
+\mbox{\hyperlink{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca316fc213c5429266093cca277197bc89}{E\+Wintab\+Packet\+Status\+Value.\+T\+P\+S\+\_\+\+M\+A\+R\+G\+IN}} = 0x0004, 
+\mbox{\hyperlink{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca611f4dc1a636ab77e3bbe6f078fea276}{E\+Wintab\+Packet\+Status\+Value.\+T\+P\+S\+\_\+\+G\+R\+AB}} = 0x0008, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca7b360a1118406f2729a1bcc4074ddfdf}{E\+Wintab\+Packet\+Status\+Value.\+T\+P\+S\+\_\+\+I\+N\+V\+E\+RT}} = 0x0010
+ \}
+\begin{DoxyCompactList}\small\item\em Wintab packet status values. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a0829e0e054dd601b4f043415c0090c31}{E\+Wintab\+Packet\+Button\+Code}} \{ \mbox{\hyperlink{namespace_wintab_d_n_a0829e0e054dd601b4f043415c0090c31a925e5d7da57c5c2d7a009cff85eb9d3f}{E\+Wintab\+Packet\+Button\+Code.\+T\+B\+N\+\_\+\+N\+O\+NE}} = 0, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0829e0e054dd601b4f043415c0090c31a1ff7e6dd3b84fa37d7db1878e4842df8}{E\+Wintab\+Packet\+Button\+Code.\+T\+B\+N\+\_\+\+UP}} = 1, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0829e0e054dd601b4f043415c0090c31a429caf34e990ae37d3686c1b183900d6}{E\+Wintab\+Packet\+Button\+Code.\+T\+B\+N\+\_\+\+D\+O\+WN}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Wintab\+Packet.\+pk\+Button codes. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059b}{E\+W\+T\+X\+Extension\+Tag}} \{ \mbox{\hyperlink{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059baa60d07914907f3b8ea00887b6bb64288}{E\+W\+T\+X\+Extension\+Tag.\+W\+T\+X\+\_\+\+T\+O\+U\+C\+H\+S\+T\+R\+IP}} = 6, 
+\mbox{\hyperlink{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059ba54459ba04880b0badafe291a1c10206d}{E\+W\+T\+X\+Extension\+Tag.\+W\+T\+X\+\_\+\+T\+O\+U\+C\+H\+R\+I\+NG}} = 7, 
+\mbox{\hyperlink{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059bad58841126978f27c2e58df6c507db6cf}{E\+W\+T\+X\+Extension\+Tag.\+W\+T\+X\+\_\+\+E\+X\+P\+K\+E\+Y\+S2}} = 8
+ \}
+\begin{DoxyCompactList}\small\item\em Tag values used to get extension masks in Get\+W\+T\+Extension\+Mask \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438d}{E\+W\+T\+I\+Extension\+Index}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da1ec0e4f68094eb2e5859e96251b4a0ec}{E\+W\+T\+I\+Extension\+Index.\+E\+X\+T\+\_\+\+N\+A\+ME}} = 1, 
+\mbox{\hyperlink{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da1cc6a78e746837d3411ac9f4a2e6c7d1}{E\+W\+T\+I\+Extension\+Index.\+E\+X\+T\+\_\+\+T\+AG}} = 2, 
+\mbox{\hyperlink{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438daaac931541c2f53185b193d3d1a49ff6b}{E\+W\+T\+I\+Extension\+Index.\+E\+X\+T\+\_\+\+M\+A\+SK}} = 3, 
+\mbox{\hyperlink{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da6d1cd8a011d4a738d2dca76d2cf33135}{E\+W\+T\+I\+Extension\+Index.\+E\+X\+T\+\_\+\+S\+I\+ZE}} = 4, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da381f486f06a6e75d307ac22bbe713769}{E\+W\+T\+I\+Extension\+Index.\+E\+X\+T\+\_\+\+A\+X\+ES}} = 5, 
+\mbox{\hyperlink{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da9071a43376322d78e7d7f130518c7b0b}{E\+W\+T\+I\+Extension\+Index.\+E\+X\+T\+\_\+\+D\+E\+F\+A\+U\+LT}} = 6, 
+\mbox{\hyperlink{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438dabf003112a9bc3a0e98c7e66980db14a5}{E\+W\+T\+I\+Extension\+Index.\+E\+X\+T\+\_\+\+D\+E\+F\+C\+O\+N\+T\+E\+XT}} = 7, 
+\mbox{\hyperlink{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da1ae7e21f7b68ac6f8f9ef7955350268e}{E\+W\+T\+I\+Extension\+Index.\+E\+X\+T\+\_\+\+D\+E\+F\+S\+Y\+S\+C\+TX}} = 8, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da0b3aaf32240828ddea4bb17e181e7e72}{E\+W\+T\+I\+Extension\+Index.\+E\+X\+T\+\_\+\+C\+U\+R\+S\+O\+RS}} = 9, 
+\mbox{\hyperlink{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438dacadc6afca8e1cb7eda7a02e8290cb20e}{E\+W\+T\+I\+Extension\+Index.\+E\+X\+T\+\_\+\+D\+E\+V\+I\+C\+ES}} = 110, 
+\mbox{\hyperlink{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438daf0e151047e92ec2a7458b4b99858f4d8}{E\+W\+T\+I\+Extension\+Index.\+E\+X\+T\+\_\+\+M\+AX}} = 210
+ \}
+\begin{DoxyCompactList}\small\item\em Index values used for W\+TI extensions. For more information, see Wintab 1.\+4. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743f}{E\+W\+T\+Extension\+Tablet\+Property}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa5af622ac7a13def5db5b08435d00b439}{E\+W\+T\+Extension\+Tablet\+Property.\+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+C\+O\+U\+NT}} = 0, 
+\mbox{\hyperlink{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa39f6b55f874c94dfb2b2d51ae4a0826f}{E\+W\+T\+Extension\+Tablet\+Property.\+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+F\+U\+N\+C\+C\+O\+U\+NT}} = 1, 
+\mbox{\hyperlink{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fafe78032df724f828c6f140635eed7887}{E\+W\+T\+Extension\+Tablet\+Property.\+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE}} = 2, 
+\mbox{\hyperlink{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa4bedc9e7f075df45e176b3c198dfbfd0}{E\+W\+T\+Extension\+Tablet\+Property.\+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+M\+IN}} = 3, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa318fb1e74a32cc80261480e0b0919cef}{E\+W\+T\+Extension\+Tablet\+Property.\+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+M\+AX}} = 4, 
+\mbox{\hyperlink{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743faf8244c64472fa9109d30391c321370f4}{E\+W\+T\+Extension\+Tablet\+Property.\+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+V\+E\+R\+R\+I\+DE}} = 5, 
+\mbox{\hyperlink{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743faff7de937427af883ac3f81f13dbe6e7d}{E\+W\+T\+Extension\+Tablet\+Property.\+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E\+\_\+\+N\+A\+ME}} = 6, 
+\mbox{\hyperlink{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa58adb2483ea25b0f0b7f9faa96ec60bc}{E\+W\+T\+Extension\+Tablet\+Property.\+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E\+\_\+\+I\+C\+ON}} = 7, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa99216856caa5692f1f62c5120691087b}{E\+W\+T\+Extension\+Tablet\+Property.\+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+I\+C\+O\+N\+\_\+\+W\+I\+D\+TH}} = 8, 
+\mbox{\hyperlink{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fab8b62de116d36392009ae950ae6e3b98}{E\+W\+T\+Extension\+Tablet\+Property.\+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+I\+C\+O\+N\+\_\+\+H\+E\+I\+G\+HT}} = 9, 
+\mbox{\hyperlink{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743faba80300949561c39af936e605a9f68b9}{E\+W\+T\+Extension\+Tablet\+Property.\+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+I\+C\+O\+N\+\_\+\+F\+O\+R\+M\+AT}} = 10, 
+\mbox{\hyperlink{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa24f7e0ec25355bf64201e8dfb537ea07}{E\+W\+T\+Extension\+Tablet\+Property.\+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+L\+O\+C\+A\+T\+I\+ON}} = 11
+ \}
+\begin{DoxyCompactList}\small\item\em Tablet property values used with W\+T\+Ext\+Get and W\+T\+Ext\+Set \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a4fb4432ff158db77a634fed851e23f6f}{E\+W\+T\+Extension\+Icon\+Property}} \{ \mbox{\hyperlink{namespace_wintab_d_n_a4fb4432ff158db77a634fed851e23f6fa0446c21253fe697ee3b277098ba4bb31}{E\+W\+T\+Extension\+Icon\+Property.\+T\+A\+B\+L\+E\+T\+\_\+\+I\+C\+O\+N\+\_\+\+F\+M\+T\+\_\+\+N\+O\+NE}} = 0, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4fb4432ff158db77a634fed851e23f6fab9a6d62298bf4bc839441b64575f1ddf}{E\+W\+T\+Extension\+Icon\+Property.\+T\+A\+B\+L\+E\+T\+\_\+\+I\+C\+O\+N\+\_\+\+F\+M\+T\+\_\+4\+B\+P\+P\+\_\+\+G\+R\+AY}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Tablet Icon values used with W\+T\+Ext\+Get and W\+T\+Ext\+Set \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875}{E\+W\+T\+I\+Category\+Index}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875ac65fabfb07e834f30a3afca244a04042}{E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+I\+N\+T\+E\+R\+F\+A\+CE}} = 1, 
+\mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875aa20fa5b0815fd2a7092a5d7889b1022f}{E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+S\+T\+A\+T\+US}} = 2, 
+\mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a16d13b61cd342e276a42402d6923855a}{E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+D\+E\+F\+C\+O\+N\+T\+E\+XT}} = 3, 
+\mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a6c5be5d5af8ebdf5c21b30c93485c850}{E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+D\+E\+F\+S\+Y\+S\+C\+TX}} = 4, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a5a63ac9350330d363b4f38184ed39ed8}{E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+D\+E\+V\+I\+C\+ES}} = 100, 
+\mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a222bda6407f41864cdde9329e2174f12}{E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+C\+U\+R\+S\+O\+RS}} = 200, 
+\mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a4a581c91c398d49adb7d4e2271195648}{E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+NS}} = 300, 
+\mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875ad5b18b294793c4f58c270459876cdf4e}{E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+D\+D\+C\+T\+XS}} = 400, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875accd1360fe596c46f84d0cce24206a6f0}{E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+D\+S\+C\+T\+XS}} = 500
+ \}
+\begin{DoxyCompactList}\small\item\em Index values for W\+T\+Info w\+Category parameter. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4}{E\+W\+T\+I\+Interface\+Index}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4aa4c992eca8fadaa75fa4d0910bdcbccc}{E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+W\+I\+N\+T\+A\+B\+ID}} = 1, 
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4ab9bed5dd215fbeec0007239b1850b9f7}{E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+S\+P\+E\+C\+V\+E\+R\+S\+I\+ON}} = 2, 
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a5f808e9fc4d2ffbd19377e7c06f927f2}{E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+I\+M\+P\+L\+V\+E\+R\+S\+I\+ON}} = 3, 
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4af71e168a75784ef330769eec1dd60621}{E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+N\+D\+E\+V\+I\+C\+ES}} = 4, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a9e32e34f37e8e5ed8220c15a104cdc18}{E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+N\+C\+U\+R\+S\+O\+RS}} = 5, 
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a4d401777c6d7a245345dcd0b55b75129}{E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+N\+C\+O\+N\+T\+E\+X\+TS}} = 6, 
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4ae1ffd32a8c5c3359303ad696444351d3}{E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+C\+T\+X\+O\+P\+T\+I\+O\+NS}} = 7, 
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a85b331c529261ec1bb740876a588040b}{E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+C\+T\+X\+S\+A\+V\+E\+S\+I\+ZE}} = 8, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a914b22675942e67f35a771ed1a6056b0}{E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+N\+E\+X\+T\+E\+N\+S\+I\+O\+NS}} = 9, 
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4ab00f7004cf3bde5a5eca61ca0c655402}{E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+N\+M\+A\+N\+A\+G\+E\+RS}} = 10
+ \}
+\begin{DoxyCompactList}\small\item\em Index values for W\+T\+I\+\_\+\+I\+N\+T\+E\+R\+F\+A\+CE. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565c}{E\+W\+T\+I\+Devices\+Index}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca36228a7af166158266b4945b4cf320e8}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+N\+A\+ME}} = 1, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca7ef189500dca51cb5081b1495c36611d}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+H\+A\+R\+D\+W\+A\+RE}} = 2, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca9a9a43ba18c0983ea960b2128a6210df}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+N\+C\+S\+R\+T\+Y\+P\+ES}} = 3, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565caff267ac1f5895792643f43c45498277f}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+F\+I\+R\+S\+T\+C\+SR}} = 4, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca8356e002037f9cd3acc6699d5c6decb3}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+P\+K\+T\+R\+A\+TE}} = 5, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca9b24628dcced21dd4f679e90cad593a9}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+P\+K\+T\+D\+A\+TA}} = 6, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565cae4e7ac8def1a6179016ecec08650f9e0}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+P\+K\+T\+M\+O\+DE}} = 7, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca9d3f0457670a6d7a18f305d93883af1f}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+C\+S\+R\+D\+A\+TA}} = 8, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca9b1dcd54737d3e341d86338b9834451d}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+X\+M\+A\+R\+G\+IN}} = 9, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca82d911bfa2423df6e0458a1a61e68369}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+Y\+M\+A\+R\+G\+IN}} = 10, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565cae13690a5ec66f2d2af12eaeaf7dd913d}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+Z\+M\+A\+R\+G\+IN}} = 11, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca1caaaea5b0b04abfeb80d0aa163e40d0}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+X}} = 12, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca07cd6a2a411f159d26c92dee033634cf}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+Y}} = 13, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca72feabe514e5dfa4edd58fe2a8863933}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+Z}} = 14, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565cad5006bddd567193470908da64091a74c}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+N\+P\+R\+E\+S\+S\+U\+RE}} = 15, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca84b3d724b9969e4e11e3d2a7e24e1da2}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+T\+P\+R\+E\+S\+S\+U\+RE}} = 16, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565caf7a01674933b87c80bfd6abb427ccad4}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON}} = 17, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565caf41cd5dd7f23faa0c29759287bd48d31}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+R\+O\+T\+A\+T\+I\+ON}} = 18, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca64d03ad2498f400198da58816caa9995}{E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+P\+N\+P\+ID}} = 19
+ \}
+\begin{DoxyCompactList}\small\item\em Index values for W\+T\+I\+\_\+\+D\+E\+V\+I\+C\+ES \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61}{E\+W\+T\+I\+Cursors\+Index}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a3bd7c2b56898962a7309dda568b328b8}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+N\+A\+ME}} = 1, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a2a360558d93a67ef0b2f03792c1f037c}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+A\+C\+T\+I\+VE}} = 2, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61acd1b188aeaa6c3ab7f4c175172bc758e}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+P\+K\+T\+D\+A\+TA}} = 3, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61ab055c216de8d3fe9476fa85c814274a6}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+NS}} = 4, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a3325fb802d4fb101015330ea2020e29f}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+N\+B\+I\+TS}} = 5, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61af7d1e37842c2ae5703a69196b3422c59}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+B\+T\+N\+N\+A\+M\+ES}} = 6, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a70cf055630552ecc639750af9b3e4139}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+N\+M\+AP}} = 7, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61acf2bee9b60a6d6512c21ae188c439414}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+S\+Y\+S\+B\+T\+N\+M\+AP}} = 8, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a3eb010d8976dfa4e4e66b6ad32993ba4}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+N\+P\+B\+U\+T\+T\+ON}} = 9, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a2747b22e4802942bb92f61bac1ddf3c2}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+N\+P\+B\+T\+N\+M\+A\+R\+KS}} = 10, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a80c5507e01ac69fd9465a19688c9e0f4}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+N\+P\+R\+E\+S\+P\+O\+N\+SE}} = 11, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61aee5aec6617eb8884b186f024167ba071}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+T\+P\+B\+U\+T\+T\+ON}} = 12, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61ac4f653870e85099916ca25d4b5518de3}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+T\+P\+B\+T\+N\+M\+A\+R\+KS}} = 13, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61acd91016b78104fd5101c6444f3408e92}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+T\+P\+R\+E\+S\+P\+O\+N\+SE}} = 14, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61ad5cde33c3cdf509f22c56890181a31cd}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+P\+H\+Y\+S\+ID}} = 15, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a924c987d81b3feccad9350fb3f4cd7d8}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+M\+O\+DE}} = 16, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a14a1819f7adf8dd64d75fd0edcb7b3dc}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+M\+I\+N\+P\+K\+T\+D\+A\+TA}} = 17, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61ad08e54efaae57acbad904f7e5abf96ab}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+M\+I\+N\+B\+U\+T\+T\+O\+NS}} = 18, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a99af52f3e638ae50b5f16c6f67a16120}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+C\+A\+P\+A\+B\+I\+L\+I\+T\+I\+ES}} = 19, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a1c0737f8288fe2dd1ac3e7e8b1eff7e1}{E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+T\+Y\+PE}} = 20
+ \}
+\begin{DoxyCompactList}\small\item\em Index values for W\+T\+I\+\_\+\+C\+U\+R\+S\+O\+RS. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a54fdc0e52106effb073b35f8f6b3920a}{E\+W\+T\+I\+Cursor\+Name\+Index}} \{ \mbox{\hyperlink{namespace_wintab_d_n_a54fdc0e52106effb073b35f8f6b3920aac73b96dbefc213fba2efcb5cc9afd68b}{E\+W\+T\+I\+Cursor\+Name\+Index.\+C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+P\+U\+CK}} = E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+C\+U\+R\+S\+O\+RS + 0, 
+\mbox{\hyperlink{namespace_wintab_d_n_a54fdc0e52106effb073b35f8f6b3920aafdca87133e7f591ba6a72c4f92c960f2}{E\+W\+T\+I\+Cursor\+Name\+Index.\+C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+P\+R\+E\+S\+S\+U\+R\+E\+\_\+\+S\+T\+Y\+L\+US}} = E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+C\+U\+R\+S\+O\+RS + 1, 
+\mbox{\hyperlink{namespace_wintab_d_n_a54fdc0e52106effb073b35f8f6b3920aa34cde7b9ed3b19e48fc745bf6ef9c932}{E\+W\+T\+I\+Cursor\+Name\+Index.\+C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+E\+R\+A\+S\+ER}} = E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+C\+U\+R\+S\+O\+RS + 2
+ \}
+\begin{DoxyCompactList}\small\item\em Index used with C\+S\+R\+\_\+\+N\+A\+ME to get stylus types. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26}{E\+W\+T\+I\+Context\+Index}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a0abc03013052c76f444e85b56d6b63cc}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+N\+A\+ME}} = 1, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a60edb117c33614b8c81ffab5d4ed508e}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+O\+P\+T\+I\+O\+NS}} = 2, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a8cca36bceb7386c28221fc6ba8c76bac}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+T\+A\+T\+US}} = 3, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a0f58f02be788990e331393ef8c6c5842}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+L\+O\+C\+KS}} = 4, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ab00fa5157288a65d78f9d25e28ff53a6}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+M\+S\+G\+B\+A\+SE}} = 5, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26acfc405aa2117b2ee1dd071504c7a81c2}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+D\+E\+V\+I\+CE}} = 6, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a6ec22f168bbe5c4828397bf97e9ea802}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+P\+K\+T\+R\+A\+TE}} = 7, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26abb35cbd7a6fc909d3e5dac6ca4e9c8c8}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+P\+K\+T\+D\+A\+TA}} = 8, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a1886bf9fe23701d37f7df5015a1ad42c}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+P\+K\+T\+M\+O\+DE}} = 9, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a8bb4177fb3846d0e0b8f076fd791c4f7}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+M\+O\+V\+E\+M\+A\+SK}} = 10, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a312dfa94c785c07f923e56816d96739f}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+B\+T\+N\+D\+N\+M\+A\+SK}} = 11, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ae0791fc78a50af8172a5c0c9ea53819c}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+B\+T\+N\+U\+P\+M\+A\+SK}} = 12, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ad2779300216eafe15a49ae5b08a3c9a2}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+I\+N\+O\+R\+GX}} = 13, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26af1d4a4ea149ddd23bd53d56d70d55313}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+I\+N\+O\+R\+GY}} = 14, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ac14df9508947a8363a3c1f0dea9358dc}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+I\+N\+O\+R\+GZ}} = 15, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a492f91adf7715a0a7fefeafd6c05dc6a}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+I\+N\+E\+X\+TX}} = 16, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26abb0b8bdbc91ffacf1345b62cbe81042f}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+I\+N\+E\+X\+TY}} = 17, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a986ad852f55ab25af415709281ea5c44}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+I\+N\+E\+X\+TZ}} = 18, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a63c4324c7f16f189e7f8188f02d05f46}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GX}} = 19, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26aa5569727f52885df550291c92cf6ac2a}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GY}} = 20, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a157a27ca7f376bcf9b157484664dc172}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GZ}} = 21, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a568d77e19db0329301190c36eb342210}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TX}} = 22, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a3412adb4639e3d7c04828e95ca4bd152}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TY}} = 23, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a4cca94819b259c2d3ade49be544219c1}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TZ}} = 24, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a2b35bcc09bd27eef0917d66b0b4b652b}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+E\+N\+SX}} = 25, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a56e51c95eefe7db5c7a4d09e6776633e}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+E\+N\+SY}} = 26, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ad47910ed4fac3508a302bddf03bf2e8c}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+E\+N\+SZ}} = 27, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a7639c44b7cf3ea7e5de254bb88523e3b}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+Y\+S\+M\+O\+DE}} = 28, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a3a233bc7a75828a996e0c2b5ff4908cd}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+Y\+S\+O\+R\+GX}} = 29, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a512734848f9eb5419125ddca5b466a8c}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+Y\+S\+O\+R\+GY}} = 30, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26aa5e6acba76c02128cc6c48c6a4f73172}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+Y\+S\+E\+X\+TX}} = 31, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a9866fb8f9d6e115217bd7d40906f83cd}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+Y\+S\+E\+X\+TY}} = 32, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a87c965d49bfaa92097f18a0f07b89e0f}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+Y\+S\+S\+E\+N\+SX}} = 33, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26afea64dc18968a391794238e812f46fdb}{E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+Y\+S\+S\+E\+N\+SY}} = 34
+ \}
+\begin{DoxyCompactList}\small\item\em Index values for W\+TI contexts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{namespace_wintab_d_n_ae94d0383e02caff0b36afc0b8aa1cd32}\label{namespace_wintab_d_n_ae94d0383e02caff0b36afc0b8aa1cd32}} 
+\index{Wintab\+DN@{Wintab\+DN}!P\+\_\+\+F\+I\+X32@{P\+\_\+\+F\+I\+X32}}
+\index{P\+\_\+\+F\+I\+X32@{P\+\_\+\+F\+I\+X32}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{P\+\_\+\+F\+I\+X32}{P\_FIX32}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_wintab_d_n_ae94d0383e02caff0b36afc0b8aa1cd32}{Wintab\+D\+N.\+P\+\_\+\+F\+I\+X32}} = typedef U\+Int32}
+
+\mbox{\Hypertarget{namespace_wintab_d_n_a9ae61204cd14d7ef23008991d1fb6dff}\label{namespace_wintab_d_n_a9ae61204cd14d7ef23008991d1fb6dff}} 
+\index{Wintab\+DN@{Wintab\+DN}!P\+\_\+\+H\+C\+TX@{P\+\_\+\+H\+C\+TX}}
+\index{P\+\_\+\+H\+C\+TX@{P\+\_\+\+H\+C\+TX}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{P\+\_\+\+H\+C\+TX}{P\_HCTX}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_wintab_d_n_a9ae61204cd14d7ef23008991d1fb6dff}{Wintab\+D\+N.\+P\+\_\+\+H\+C\+TX}} = typedef U\+Int32}
+
+\mbox{\Hypertarget{namespace_wintab_d_n_a33ba63b3dc16db27638a5f294140f53a}\label{namespace_wintab_d_n_a33ba63b3dc16db27638a5f294140f53a}} 
+\index{Wintab\+DN@{Wintab\+DN}!P\+\_\+\+H\+W\+ND@{P\+\_\+\+H\+W\+ND}}
+\index{P\+\_\+\+H\+W\+ND@{P\+\_\+\+H\+W\+ND}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{P\+\_\+\+H\+W\+ND}{P\_HWND}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_wintab_d_n_a33ba63b3dc16db27638a5f294140f53a}{Wintab\+D\+N.\+P\+\_\+\+H\+W\+ND}} = typedef System.\+Int\+Ptr}
+
+\mbox{\Hypertarget{namespace_wintab_d_n_a465f8a123fa56040cd62f6a4df2707aa}\label{namespace_wintab_d_n_a465f8a123fa56040cd62f6a4df2707aa}} 
+\index{Wintab\+DN@{Wintab\+DN}!P\+\_\+\+W\+T\+P\+KT@{P\+\_\+\+W\+T\+P\+KT}}
+\index{P\+\_\+\+W\+T\+P\+KT@{P\+\_\+\+W\+T\+P\+KT}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{P\+\_\+\+W\+T\+P\+KT}{P\_WTPKT}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_wintab_d_n_a465f8a123fa56040cd62f6a4df2707aa}{Wintab\+D\+N.\+P\+\_\+\+W\+T\+P\+KT}} = typedef U\+Int32}
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_wintab_d_n_a38705aa38c49c04846399172fa9fd1cd}\label{namespace_wintab_d_n_a38705aa38c49c04846399172fa9fd1cd}} 
+\index{Wintab\+DN@{Wintab\+DN}!E\+Axis\+Dimension@{E\+Axis\+Dimension}}
+\index{E\+Axis\+Dimension@{E\+Axis\+Dimension}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{E\+Axis\+Dimension}{EAxisDimension}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_wintab_d_n_a38705aa38c49c04846399172fa9fd1cd}{Wintab\+D\+N.\+E\+Axis\+Dimension}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Values to use when asking for X, Y or Z \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_axis}{Wintab\+Axis}} object. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+X\+I\+S\+\_\+X@{A\+X\+I\+S\+\_\+X}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!A\+X\+I\+S\+\_\+X@{A\+X\+I\+S\+\_\+X}}}\mbox{\Hypertarget{namespace_wintab_d_n_a38705aa38c49c04846399172fa9fd1cdafb7ec808a21c7770ccd7060e715983ba}\label{namespace_wintab_d_n_a38705aa38c49c04846399172fa9fd1cdafb7ec808a21c7770ccd7060e715983ba}} 
+A\+X\+I\+S\+\_\+X&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+X\+I\+S\+\_\+Y@{A\+X\+I\+S\+\_\+Y}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!A\+X\+I\+S\+\_\+Y@{A\+X\+I\+S\+\_\+Y}}}\mbox{\Hypertarget{namespace_wintab_d_n_a38705aa38c49c04846399172fa9fd1cda3e69e41ce011d74658d6ccce110e5f1a}\label{namespace_wintab_d_n_a38705aa38c49c04846399172fa9fd1cda3e69e41ce011d74658d6ccce110e5f1a}} 
+A\+X\+I\+S\+\_\+Y&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+X\+I\+S\+\_\+Z@{A\+X\+I\+S\+\_\+Z}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!A\+X\+I\+S\+\_\+Z@{A\+X\+I\+S\+\_\+Z}}}\mbox{\Hypertarget{namespace_wintab_d_n_a38705aa38c49c04846399172fa9fd1cda19aa520601d5d2f29571f14a3278216f}\label{namespace_wintab_d_n_a38705aa38c49c04846399172fa9fd1cda19aa520601d5d2f29571f14a3278216f}} 
+A\+X\+I\+S\+\_\+Z&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31}\label{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31}} 
+\index{Wintab\+DN@{Wintab\+DN}!E\+C\+T\+X\+Lock\+Values@{E\+C\+T\+X\+Lock\+Values}}
+\index{E\+C\+T\+X\+Lock\+Values@{E\+C\+T\+X\+Lock\+Values}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{E\+C\+T\+X\+Lock\+Values}{ECTXLockValues}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31}{Wintab\+D\+N.\+E\+C\+T\+X\+Lock\+Values}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Context lock values. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+X\+L\+\_\+\+I\+N\+S\+I\+ZE@{C\+X\+L\+\_\+\+I\+N\+S\+I\+ZE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+X\+L\+\_\+\+I\+N\+S\+I\+ZE@{C\+X\+L\+\_\+\+I\+N\+S\+I\+ZE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31ad9335c4e973a33e84061e0a1c9932419}\label{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31ad9335c4e973a33e84061e0a1c9932419}} 
+C\+X\+L\+\_\+\+I\+N\+S\+I\+ZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+X\+L\+\_\+\+I\+N\+A\+S\+P\+E\+CT@{C\+X\+L\+\_\+\+I\+N\+A\+S\+P\+E\+CT}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+X\+L\+\_\+\+I\+N\+A\+S\+P\+E\+CT@{C\+X\+L\+\_\+\+I\+N\+A\+S\+P\+E\+CT}}}\mbox{\Hypertarget{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31aac7209cec3b1fde6187d8d452bfa4fe8}\label{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31aac7209cec3b1fde6187d8d452bfa4fe8}} 
+C\+X\+L\+\_\+\+I\+N\+A\+S\+P\+E\+CT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+X\+L\+\_\+\+S\+E\+N\+S\+I\+T\+I\+V\+I\+TY@{C\+X\+L\+\_\+\+S\+E\+N\+S\+I\+T\+I\+V\+I\+TY}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+X\+L\+\_\+\+S\+E\+N\+S\+I\+T\+I\+V\+I\+TY@{C\+X\+L\+\_\+\+S\+E\+N\+S\+I\+T\+I\+V\+I\+TY}}}\mbox{\Hypertarget{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31a409f9e66401e8acb484ab8a8d4a7cc52}\label{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31a409f9e66401e8acb484ab8a8d4a7cc52}} 
+C\+X\+L\+\_\+\+S\+E\+N\+S\+I\+T\+I\+V\+I\+TY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+X\+L\+\_\+\+M\+A\+R\+G\+IN@{C\+X\+L\+\_\+\+M\+A\+R\+G\+IN}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+X\+L\+\_\+\+M\+A\+R\+G\+IN@{C\+X\+L\+\_\+\+M\+A\+R\+G\+IN}}}\mbox{\Hypertarget{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31ab83c05435e8d81d1da9fd0a6960a6071}\label{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31ab83c05435e8d81d1da9fd0a6960a6071}} 
+C\+X\+L\+\_\+\+M\+A\+R\+G\+IN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+X\+L\+\_\+\+S\+Y\+S\+O\+UT@{C\+X\+L\+\_\+\+S\+Y\+S\+O\+UT}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+X\+L\+\_\+\+S\+Y\+S\+O\+UT@{C\+X\+L\+\_\+\+S\+Y\+S\+O\+UT}}}\mbox{\Hypertarget{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31afa00c568415836f7a8fda6c5850bab4c}\label{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31afa00c568415836f7a8fda6c5850bab4c}} 
+C\+X\+L\+\_\+\+S\+Y\+S\+O\+UT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2}\label{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2}} 
+\index{Wintab\+DN@{Wintab\+DN}!E\+C\+T\+X\+Option\+Values@{E\+C\+T\+X\+Option\+Values}}
+\index{E\+C\+T\+X\+Option\+Values@{E\+C\+T\+X\+Option\+Values}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{E\+C\+T\+X\+Option\+Values}{ECTXOptionValues}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2}{Wintab\+D\+N.\+E\+C\+T\+X\+Option\+Values}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Context option values. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+X\+O\+\_\+\+S\+Y\+S\+T\+EM@{C\+X\+O\+\_\+\+S\+Y\+S\+T\+EM}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+X\+O\+\_\+\+S\+Y\+S\+T\+EM@{C\+X\+O\+\_\+\+S\+Y\+S\+T\+EM}}}\mbox{\Hypertarget{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a6a2dbfc83a1b63b06d00fa7fbdf841e6}\label{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a6a2dbfc83a1b63b06d00fa7fbdf841e6}} 
+C\+X\+O\+\_\+\+S\+Y\+S\+T\+EM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+X\+O\+\_\+\+P\+EN@{C\+X\+O\+\_\+\+P\+EN}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+X\+O\+\_\+\+P\+EN@{C\+X\+O\+\_\+\+P\+EN}}}\mbox{\Hypertarget{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a1188b3bdf64b7ce3ac8b0dfbbbcd79ab}\label{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a1188b3bdf64b7ce3ac8b0dfbbbcd79ab}} 
+C\+X\+O\+\_\+\+P\+EN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+X\+O\+\_\+\+M\+E\+S\+S\+A\+G\+ES@{C\+X\+O\+\_\+\+M\+E\+S\+S\+A\+G\+ES}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+X\+O\+\_\+\+M\+E\+S\+S\+A\+G\+ES@{C\+X\+O\+\_\+\+M\+E\+S\+S\+A\+G\+ES}}}\mbox{\Hypertarget{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a27fdcdd9ab4b471db2109a328c40cc8d}\label{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a27fdcdd9ab4b471db2109a328c40cc8d}} 
+C\+X\+O\+\_\+\+M\+E\+S\+S\+A\+G\+ES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+X\+O\+\_\+\+C\+S\+R\+M\+E\+S\+S\+A\+G\+ES@{C\+X\+O\+\_\+\+C\+S\+R\+M\+E\+S\+S\+A\+G\+ES}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+X\+O\+\_\+\+C\+S\+R\+M\+E\+S\+S\+A\+G\+ES@{C\+X\+O\+\_\+\+C\+S\+R\+M\+E\+S\+S\+A\+G\+ES}}}\mbox{\Hypertarget{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a2bbf4dbbadddd85531bf5c0224cdfa8c}\label{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a2bbf4dbbadddd85531bf5c0224cdfa8c}} 
+C\+X\+O\+\_\+\+C\+S\+R\+M\+E\+S\+S\+A\+G\+ES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+X\+O\+\_\+\+M\+G\+N\+I\+N\+S\+I\+DE@{C\+X\+O\+\_\+\+M\+G\+N\+I\+N\+S\+I\+DE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+X\+O\+\_\+\+M\+G\+N\+I\+N\+S\+I\+DE@{C\+X\+O\+\_\+\+M\+G\+N\+I\+N\+S\+I\+DE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a70d0e87bbdf4cb7110640ac0f47747f0}\label{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a70d0e87bbdf4cb7110640ac0f47747f0}} 
+C\+X\+O\+\_\+\+M\+G\+N\+I\+N\+S\+I\+DE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+X\+O\+\_\+\+M\+A\+R\+G\+IN@{C\+X\+O\+\_\+\+M\+A\+R\+G\+IN}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+X\+O\+\_\+\+M\+A\+R\+G\+IN@{C\+X\+O\+\_\+\+M\+A\+R\+G\+IN}}}\mbox{\Hypertarget{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a3c2c4234d4c16baa098b7c979a231f1b}\label{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a3c2c4234d4c16baa098b7c979a231f1b}} 
+C\+X\+O\+\_\+\+M\+A\+R\+G\+IN&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_wintab_d_n_a6d3f719c7eebc1f9b081c2d31678536e}\label{namespace_wintab_d_n_a6d3f719c7eebc1f9b081c2d31678536e}} 
+\index{Wintab\+DN@{Wintab\+DN}!E\+C\+T\+X\+Status\+Values@{E\+C\+T\+X\+Status\+Values}}
+\index{E\+C\+T\+X\+Status\+Values@{E\+C\+T\+X\+Status\+Values}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{E\+C\+T\+X\+Status\+Values}{ECTXStatusValues}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_wintab_d_n_a6d3f719c7eebc1f9b081c2d31678536e}{Wintab\+D\+N.\+E\+C\+T\+X\+Status\+Values}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Context status values. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+X\+S\+\_\+\+D\+I\+S\+A\+B\+L\+ED@{C\+X\+S\+\_\+\+D\+I\+S\+A\+B\+L\+ED}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+X\+S\+\_\+\+D\+I\+S\+A\+B\+L\+ED@{C\+X\+S\+\_\+\+D\+I\+S\+A\+B\+L\+ED}}}\mbox{\Hypertarget{namespace_wintab_d_n_a6d3f719c7eebc1f9b081c2d31678536ea773aec303a05b1f2bbbb72fec5c371f3}\label{namespace_wintab_d_n_a6d3f719c7eebc1f9b081c2d31678536ea773aec303a05b1f2bbbb72fec5c371f3}} 
+C\+X\+S\+\_\+\+D\+I\+S\+A\+B\+L\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+X\+S\+\_\+\+O\+B\+S\+C\+U\+R\+ED@{C\+X\+S\+\_\+\+O\+B\+S\+C\+U\+R\+ED}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+X\+S\+\_\+\+O\+B\+S\+C\+U\+R\+ED@{C\+X\+S\+\_\+\+O\+B\+S\+C\+U\+R\+ED}}}\mbox{\Hypertarget{namespace_wintab_d_n_a6d3f719c7eebc1f9b081c2d31678536ea289cbc7da5860d2d8b658573790809de}\label{namespace_wintab_d_n_a6d3f719c7eebc1f9b081c2d31678536ea289cbc7da5860d2d8b658573790809de}} 
+C\+X\+S\+\_\+\+O\+B\+S\+C\+U\+R\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+X\+S\+\_\+\+O\+N\+T\+OP@{C\+X\+S\+\_\+\+O\+N\+T\+OP}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+X\+S\+\_\+\+O\+N\+T\+OP@{C\+X\+S\+\_\+\+O\+N\+T\+OP}}}\mbox{\Hypertarget{namespace_wintab_d_n_a6d3f719c7eebc1f9b081c2d31678536eac9a22eca76f43903f077a73792176eb8}\label{namespace_wintab_d_n_a6d3f719c7eebc1f9b081c2d31678536eac9a22eca76f43903f077a73792176eb8}} 
+C\+X\+S\+\_\+\+O\+N\+T\+OP&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0d}\label{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0d}} 
+\index{Wintab\+DN@{Wintab\+DN}!E\+Wintab\+Event\+Message@{E\+Wintab\+Event\+Message}}
+\index{E\+Wintab\+Event\+Message@{E\+Wintab\+Event\+Message}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{E\+Wintab\+Event\+Message}{EWintabEventMessage}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0d}{Wintab\+D\+N.\+E\+Wintab\+Event\+Message}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Wintab event messsages sent to an application. See Wintab Spec 1.\+4 for a description of these messages. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+\_\+\+P\+A\+C\+K\+ET@{W\+T\+\_\+\+P\+A\+C\+K\+ET}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+\_\+\+P\+A\+C\+K\+ET@{W\+T\+\_\+\+P\+A\+C\+K\+ET}}}\mbox{\Hypertarget{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da5e95613ce2527a446d9ee3e10fe5be2c}\label{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da5e95613ce2527a446d9ee3e10fe5be2c}} 
+W\+T\+\_\+\+P\+A\+C\+K\+ET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+\_\+\+C\+T\+X\+O\+P\+EN@{W\+T\+\_\+\+C\+T\+X\+O\+P\+EN}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+\_\+\+C\+T\+X\+O\+P\+EN@{W\+T\+\_\+\+C\+T\+X\+O\+P\+EN}}}\mbox{\Hypertarget{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da66563739a7673e139b15ecbe3f3cb070}\label{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da66563739a7673e139b15ecbe3f3cb070}} 
+W\+T\+\_\+\+C\+T\+X\+O\+P\+EN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+\_\+\+C\+T\+X\+C\+L\+O\+SE@{W\+T\+\_\+\+C\+T\+X\+C\+L\+O\+SE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+\_\+\+C\+T\+X\+C\+L\+O\+SE@{W\+T\+\_\+\+C\+T\+X\+C\+L\+O\+SE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0daf846b2579d39425c3fe0fe99295e2468}\label{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0daf846b2579d39425c3fe0fe99295e2468}} 
+W\+T\+\_\+\+C\+T\+X\+C\+L\+O\+SE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+\_\+\+C\+T\+X\+U\+P\+D\+A\+TE@{W\+T\+\_\+\+C\+T\+X\+U\+P\+D\+A\+TE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+\_\+\+C\+T\+X\+U\+P\+D\+A\+TE@{W\+T\+\_\+\+C\+T\+X\+U\+P\+D\+A\+TE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da648ab71e6134daaf33ea9e0cb4bf964f}\label{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da648ab71e6134daaf33ea9e0cb4bf964f}} 
+W\+T\+\_\+\+C\+T\+X\+U\+P\+D\+A\+TE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+\_\+\+C\+T\+X\+O\+V\+E\+R\+L\+AP@{W\+T\+\_\+\+C\+T\+X\+O\+V\+E\+R\+L\+AP}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+\_\+\+C\+T\+X\+O\+V\+E\+R\+L\+AP@{W\+T\+\_\+\+C\+T\+X\+O\+V\+E\+R\+L\+AP}}}\mbox{\Hypertarget{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0daa886d4222e1c460af87c692cee3f37de}\label{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0daa886d4222e1c460af87c692cee3f37de}} 
+W\+T\+\_\+\+C\+T\+X\+O\+V\+E\+R\+L\+AP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+\_\+\+P\+R\+O\+X\+I\+M\+I\+TY@{W\+T\+\_\+\+P\+R\+O\+X\+I\+M\+I\+TY}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+\_\+\+P\+R\+O\+X\+I\+M\+I\+TY@{W\+T\+\_\+\+P\+R\+O\+X\+I\+M\+I\+TY}}}\mbox{\Hypertarget{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da6eddf7611875138581fbe38874b39591}\label{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da6eddf7611875138581fbe38874b39591}} 
+W\+T\+\_\+\+P\+R\+O\+X\+I\+M\+I\+TY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+\_\+\+I\+N\+F\+O\+C\+H\+A\+N\+GE@{W\+T\+\_\+\+I\+N\+F\+O\+C\+H\+A\+N\+GE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+\_\+\+I\+N\+F\+O\+C\+H\+A\+N\+GE@{W\+T\+\_\+\+I\+N\+F\+O\+C\+H\+A\+N\+GE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0dac079adb185c52e56ecd97b614e9645c2}\label{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0dac079adb185c52e56ecd97b614e9645c2}} 
+W\+T\+\_\+\+I\+N\+F\+O\+C\+H\+A\+N\+GE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+\_\+\+C\+S\+R\+C\+H\+A\+N\+GE@{W\+T\+\_\+\+C\+S\+R\+C\+H\+A\+N\+GE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+\_\+\+C\+S\+R\+C\+H\+A\+N\+GE@{W\+T\+\_\+\+C\+S\+R\+C\+H\+A\+N\+GE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da63fa7928d9cbd4eb040bfe38b3b18edb}\label{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da63fa7928d9cbd4eb040bfe38b3b18edb}} 
+W\+T\+\_\+\+C\+S\+R\+C\+H\+A\+N\+GE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+\_\+\+P\+A\+C\+K\+E\+T\+E\+XT@{W\+T\+\_\+\+P\+A\+C\+K\+E\+T\+E\+XT}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+\_\+\+P\+A\+C\+K\+E\+T\+E\+XT@{W\+T\+\_\+\+P\+A\+C\+K\+E\+T\+E\+XT}}}\mbox{\Hypertarget{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da713ddca3660017276e227f39450f3c76}\label{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da713ddca3660017276e227f39450f3c76}} 
+W\+T\+\_\+\+P\+A\+C\+K\+E\+T\+E\+XT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184}\label{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184}} 
+\index{Wintab\+DN@{Wintab\+DN}!E\+Wintab\+Packet\+Bit@{E\+Wintab\+Packet\+Bit}}
+\index{E\+Wintab\+Packet\+Bit@{E\+Wintab\+Packet\+Bit}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{E\+Wintab\+Packet\+Bit}{EWintabPacketBit}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Bit}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Wintab Packet bits. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+K\+\_\+\+C\+O\+N\+T\+E\+XT@{P\+K\+\_\+\+C\+O\+N\+T\+E\+XT}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!P\+K\+\_\+\+C\+O\+N\+T\+E\+XT@{P\+K\+\_\+\+C\+O\+N\+T\+E\+XT}}}\mbox{\Hypertarget{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184ab73fe0c8937280862762449f9dc791ff}\label{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184ab73fe0c8937280862762449f9dc791ff}} 
+P\+K\+\_\+\+C\+O\+N\+T\+E\+XT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+K\+\_\+\+S\+T\+A\+T\+US@{P\+K\+\_\+\+S\+T\+A\+T\+US}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!P\+K\+\_\+\+S\+T\+A\+T\+US@{P\+K\+\_\+\+S\+T\+A\+T\+US}}}\mbox{\Hypertarget{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a96f57de10a298069d7898a4fba27a008}\label{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a96f57de10a298069d7898a4fba27a008}} 
+P\+K\+\_\+\+S\+T\+A\+T\+US&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+K\+\_\+\+T\+I\+ME@{P\+K\+\_\+\+T\+I\+ME}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!P\+K\+\_\+\+T\+I\+ME@{P\+K\+\_\+\+T\+I\+ME}}}\mbox{\Hypertarget{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184abf68b8b97a2e596004ec367b4ce63d26}\label{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184abf68b8b97a2e596004ec367b4ce63d26}} 
+P\+K\+\_\+\+T\+I\+ME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+K\+\_\+\+C\+H\+A\+N\+G\+ED@{P\+K\+\_\+\+C\+H\+A\+N\+G\+ED}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!P\+K\+\_\+\+C\+H\+A\+N\+G\+ED@{P\+K\+\_\+\+C\+H\+A\+N\+G\+ED}}}\mbox{\Hypertarget{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a5fa232826b657d9dfc747022b1ca86d3}\label{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a5fa232826b657d9dfc747022b1ca86d3}} 
+P\+K\+\_\+\+C\+H\+A\+N\+G\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+K\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+N\+U\+M\+B\+ER@{P\+K\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+N\+U\+M\+B\+ER}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!P\+K\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+N\+U\+M\+B\+ER@{P\+K\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+N\+U\+M\+B\+ER}}}\mbox{\Hypertarget{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184ae27e538a81e4bf7f9769569b5cdd41db}\label{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184ae27e538a81e4bf7f9769569b5cdd41db}} 
+P\+K\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+N\+U\+M\+B\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+K\+\_\+\+C\+U\+R\+S\+OR@{P\+K\+\_\+\+C\+U\+R\+S\+OR}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!P\+K\+\_\+\+C\+U\+R\+S\+OR@{P\+K\+\_\+\+C\+U\+R\+S\+OR}}}\mbox{\Hypertarget{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a03e28509372ceace08e89b3cbff310af}\label{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a03e28509372ceace08e89b3cbff310af}} 
+P\+K\+\_\+\+C\+U\+R\+S\+OR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+K\+\_\+\+B\+U\+T\+T\+O\+NS@{P\+K\+\_\+\+B\+U\+T\+T\+O\+NS}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!P\+K\+\_\+\+B\+U\+T\+T\+O\+NS@{P\+K\+\_\+\+B\+U\+T\+T\+O\+NS}}}\mbox{\Hypertarget{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a07c256014a5d3ca6ff2f34faa45577f4}\label{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a07c256014a5d3ca6ff2f34faa45577f4}} 
+P\+K\+\_\+\+B\+U\+T\+T\+O\+NS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+K\+\_\+X@{P\+K\+\_\+X}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!P\+K\+\_\+X@{P\+K\+\_\+X}}}\mbox{\Hypertarget{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184ae7367a72ea936eb5525ff4e6b83ba02c}\label{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184ae7367a72ea936eb5525ff4e6b83ba02c}} 
+P\+K\+\_\+X&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+K\+\_\+Y@{P\+K\+\_\+Y}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!P\+K\+\_\+Y@{P\+K\+\_\+Y}}}\mbox{\Hypertarget{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a252362a32d7e17018570eda4d184e8fd}\label{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a252362a32d7e17018570eda4d184e8fd}} 
+P\+K\+\_\+Y&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+K\+\_\+Z@{P\+K\+\_\+Z}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!P\+K\+\_\+Z@{P\+K\+\_\+Z}}}\mbox{\Hypertarget{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a78b0b04b0e8a16d78fd756ab58c2c0a2}\label{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a78b0b04b0e8a16d78fd756ab58c2c0a2}} 
+P\+K\+\_\+Z&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+K\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+P\+R\+E\+S\+S\+U\+RE@{P\+K\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+P\+R\+E\+S\+S\+U\+RE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!P\+K\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+P\+R\+E\+S\+S\+U\+RE@{P\+K\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+P\+R\+E\+S\+S\+U\+RE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a92f289a82836fc13f7a0a245a88e4cad}\label{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a92f289a82836fc13f7a0a245a88e4cad}} 
+P\+K\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+P\+R\+E\+S\+S\+U\+RE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+K\+\_\+\+T\+A\+N\+G\+E\+N\+T\+\_\+\+P\+R\+E\+S\+S\+U\+RE@{P\+K\+\_\+\+T\+A\+N\+G\+E\+N\+T\+\_\+\+P\+R\+E\+S\+S\+U\+RE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!P\+K\+\_\+\+T\+A\+N\+G\+E\+N\+T\+\_\+\+P\+R\+E\+S\+S\+U\+RE@{P\+K\+\_\+\+T\+A\+N\+G\+E\+N\+T\+\_\+\+P\+R\+E\+S\+S\+U\+RE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184adac46407b8f4b2a4b488a0a05b24efdf}\label{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184adac46407b8f4b2a4b488a0a05b24efdf}} 
+P\+K\+\_\+\+T\+A\+N\+G\+E\+N\+T\+\_\+\+P\+R\+E\+S\+S\+U\+RE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+K\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON@{P\+K\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!P\+K\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON@{P\+K\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON}}}\mbox{\Hypertarget{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a0efa990069921977338d297e402e961b}\label{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a0efa990069921977338d297e402e961b}} 
+P\+K\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+K\+\_\+\+P\+K\+T\+B\+I\+T\+S\+\_\+\+A\+LL@{P\+K\+\_\+\+P\+K\+T\+B\+I\+T\+S\+\_\+\+A\+LL}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!P\+K\+\_\+\+P\+K\+T\+B\+I\+T\+S\+\_\+\+A\+LL@{P\+K\+\_\+\+P\+K\+T\+B\+I\+T\+S\+\_\+\+A\+LL}}}\mbox{\Hypertarget{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a7b6c299e6217c043dbcaca3e0121bb9e}\label{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a7b6c299e6217c043dbcaca3e0121bb9e}} 
+P\+K\+\_\+\+P\+K\+T\+B\+I\+T\+S\+\_\+\+A\+LL&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_wintab_d_n_a0829e0e054dd601b4f043415c0090c31}\label{namespace_wintab_d_n_a0829e0e054dd601b4f043415c0090c31}} 
+\index{Wintab\+DN@{Wintab\+DN}!E\+Wintab\+Packet\+Button\+Code@{E\+Wintab\+Packet\+Button\+Code}}
+\index{E\+Wintab\+Packet\+Button\+Code@{E\+Wintab\+Packet\+Button\+Code}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{E\+Wintab\+Packet\+Button\+Code}{EWintabPacketButtonCode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_wintab_d_n_a0829e0e054dd601b4f043415c0090c31}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Button\+Code}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Wintab\+Packet.\+pk\+Button codes. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+B\+N\+\_\+\+N\+O\+NE@{T\+B\+N\+\_\+\+N\+O\+NE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+B\+N\+\_\+\+N\+O\+NE@{T\+B\+N\+\_\+\+N\+O\+NE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a0829e0e054dd601b4f043415c0090c31a925e5d7da57c5c2d7a009cff85eb9d3f}\label{namespace_wintab_d_n_a0829e0e054dd601b4f043415c0090c31a925e5d7da57c5c2d7a009cff85eb9d3f}} 
+T\+B\+N\+\_\+\+N\+O\+NE&No change in button state. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+B\+N\+\_\+\+UP@{T\+B\+N\+\_\+\+UP}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+B\+N\+\_\+\+UP@{T\+B\+N\+\_\+\+UP}}}\mbox{\Hypertarget{namespace_wintab_d_n_a0829e0e054dd601b4f043415c0090c31a1ff7e6dd3b84fa37d7db1878e4842df8}\label{namespace_wintab_d_n_a0829e0e054dd601b4f043415c0090c31a1ff7e6dd3b84fa37d7db1878e4842df8}} 
+T\+B\+N\+\_\+\+UP&Button was released. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+B\+N\+\_\+\+D\+O\+WN@{T\+B\+N\+\_\+\+D\+O\+WN}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+B\+N\+\_\+\+D\+O\+WN@{T\+B\+N\+\_\+\+D\+O\+WN}}}\mbox{\Hypertarget{namespace_wintab_d_n_a0829e0e054dd601b4f043415c0090c31a429caf34e990ae37d3686c1b183900d6}\label{namespace_wintab_d_n_a0829e0e054dd601b4f043415c0090c31a429caf34e990ae37d3686c1b183900d6}} 
+T\+B\+N\+\_\+\+D\+O\+WN&Button was pressed. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203cac}\label{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203cac}} 
+\index{Wintab\+DN@{Wintab\+DN}!E\+Wintab\+Packet\+Status\+Value@{E\+Wintab\+Packet\+Status\+Value}}
+\index{E\+Wintab\+Packet\+Status\+Value@{E\+Wintab\+Packet\+Status\+Value}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{E\+Wintab\+Packet\+Status\+Value}{EWintabPacketStatusValue}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203cac}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Status\+Value}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Wintab packet status values. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+P\+S\+\_\+\+P\+R\+O\+X\+I\+M\+I\+TY@{T\+P\+S\+\_\+\+P\+R\+O\+X\+I\+M\+I\+TY}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+P\+S\+\_\+\+P\+R\+O\+X\+I\+M\+I\+TY@{T\+P\+S\+\_\+\+P\+R\+O\+X\+I\+M\+I\+TY}}}\mbox{\Hypertarget{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca94d2fbc94052d403edeb48e33deaab5d}\label{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca94d2fbc94052d403edeb48e33deaab5d}} 
+T\+P\+S\+\_\+\+P\+R\+O\+X\+I\+M\+I\+TY&Specifies that the cursor is out of the context. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+P\+S\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+E\+RR@{T\+P\+S\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+E\+RR}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+P\+S\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+E\+RR@{T\+P\+S\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+E\+RR}}}\mbox{\Hypertarget{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca453a492937569cfa4e919f1de9a1eaa8}\label{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca453a492937569cfa4e919f1de9a1eaa8}} 
+T\+P\+S\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+E\+RR&Specifies that the event queue for the context has overflowed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+P\+S\+\_\+\+M\+A\+R\+G\+IN@{T\+P\+S\+\_\+\+M\+A\+R\+G\+IN}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+P\+S\+\_\+\+M\+A\+R\+G\+IN@{T\+P\+S\+\_\+\+M\+A\+R\+G\+IN}}}\mbox{\Hypertarget{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca316fc213c5429266093cca277197bc89}\label{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca316fc213c5429266093cca277197bc89}} 
+T\+P\+S\+\_\+\+M\+A\+R\+G\+IN&Specifies that the cursor is in the margin of the context. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+P\+S\+\_\+\+G\+R\+AB@{T\+P\+S\+\_\+\+G\+R\+AB}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+P\+S\+\_\+\+G\+R\+AB@{T\+P\+S\+\_\+\+G\+R\+AB}}}\mbox{\Hypertarget{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca611f4dc1a636ab77e3bbe6f078fea276}\label{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca611f4dc1a636ab77e3bbe6f078fea276}} 
+T\+P\+S\+\_\+\+G\+R\+AB&Specifies that the cursor is out of the context, but that the context has grabbed input while waiting for a button release event. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+P\+S\+\_\+\+I\+N\+V\+E\+RT@{T\+P\+S\+\_\+\+I\+N\+V\+E\+RT}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+P\+S\+\_\+\+I\+N\+V\+E\+RT@{T\+P\+S\+\_\+\+I\+N\+V\+E\+RT}}}\mbox{\Hypertarget{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca7b360a1118406f2729a1bcc4074ddfdf}\label{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca7b360a1118406f2729a1bcc4074ddfdf}} 
+T\+P\+S\+\_\+\+I\+N\+V\+E\+RT&Specifies that the cursor is in its inverted state. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_wintab_d_n_a4fb4432ff158db77a634fed851e23f6f}\label{namespace_wintab_d_n_a4fb4432ff158db77a634fed851e23f6f}} 
+\index{Wintab\+DN@{Wintab\+DN}!E\+W\+T\+Extension\+Icon\+Property@{E\+W\+T\+Extension\+Icon\+Property}}
+\index{E\+W\+T\+Extension\+Icon\+Property@{E\+W\+T\+Extension\+Icon\+Property}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{E\+W\+T\+Extension\+Icon\+Property}{EWTExtensionIconProperty}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_wintab_d_n_a4fb4432ff158db77a634fed851e23f6f}{Wintab\+D\+N.\+E\+W\+T\+Extension\+Icon\+Property}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Tablet Icon values used with W\+T\+Ext\+Get and W\+T\+Ext\+Set 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+A\+B\+L\+E\+T\+\_\+\+I\+C\+O\+N\+\_\+\+F\+M\+T\+\_\+\+N\+O\+NE@{T\+A\+B\+L\+E\+T\+\_\+\+I\+C\+O\+N\+\_\+\+F\+M\+T\+\_\+\+N\+O\+NE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+A\+B\+L\+E\+T\+\_\+\+I\+C\+O\+N\+\_\+\+F\+M\+T\+\_\+\+N\+O\+NE@{T\+A\+B\+L\+E\+T\+\_\+\+I\+C\+O\+N\+\_\+\+F\+M\+T\+\_\+\+N\+O\+NE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a4fb4432ff158db77a634fed851e23f6fa0446c21253fe697ee3b277098ba4bb31}\label{namespace_wintab_d_n_a4fb4432ff158db77a634fed851e23f6fa0446c21253fe697ee3b277098ba4bb31}} 
+T\+A\+B\+L\+E\+T\+\_\+\+I\+C\+O\+N\+\_\+\+F\+M\+T\+\_\+\+N\+O\+NE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+A\+B\+L\+E\+T\+\_\+\+I\+C\+O\+N\+\_\+\+F\+M\+T\+\_\+4\+B\+P\+P\+\_\+\+G\+R\+AY@{T\+A\+B\+L\+E\+T\+\_\+\+I\+C\+O\+N\+\_\+\+F\+M\+T\+\_\+4\+B\+P\+P\+\_\+\+G\+R\+AY}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+A\+B\+L\+E\+T\+\_\+\+I\+C\+O\+N\+\_\+\+F\+M\+T\+\_\+4\+B\+P\+P\+\_\+\+G\+R\+AY@{T\+A\+B\+L\+E\+T\+\_\+\+I\+C\+O\+N\+\_\+\+F\+M\+T\+\_\+4\+B\+P\+P\+\_\+\+G\+R\+AY}}}\mbox{\Hypertarget{namespace_wintab_d_n_a4fb4432ff158db77a634fed851e23f6fab9a6d62298bf4bc839441b64575f1ddf}\label{namespace_wintab_d_n_a4fb4432ff158db77a634fed851e23f6fab9a6d62298bf4bc839441b64575f1ddf}} 
+T\+A\+B\+L\+E\+T\+\_\+\+I\+C\+O\+N\+\_\+\+F\+M\+T\+\_\+4\+B\+P\+P\+\_\+\+G\+R\+AY&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743f}\label{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743f}} 
+\index{Wintab\+DN@{Wintab\+DN}!E\+W\+T\+Extension\+Tablet\+Property@{E\+W\+T\+Extension\+Tablet\+Property}}
+\index{E\+W\+T\+Extension\+Tablet\+Property@{E\+W\+T\+Extension\+Tablet\+Property}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{E\+W\+T\+Extension\+Tablet\+Property}{EWTExtensionTabletProperty}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743f}{Wintab\+D\+N.\+E\+W\+T\+Extension\+Tablet\+Property}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Tablet property values used with W\+T\+Ext\+Get and W\+T\+Ext\+Set 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+C\+O\+U\+NT@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+C\+O\+U\+NT}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+C\+O\+U\+NT@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+C\+O\+U\+NT}}}\mbox{\Hypertarget{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa5af622ac7a13def5db5b08435d00b439}\label{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa5af622ac7a13def5db5b08435d00b439}} 
+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+C\+O\+U\+NT&number of physical controls on tablet \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+F\+U\+N\+C\+C\+O\+U\+NT@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+F\+U\+N\+C\+C\+O\+U\+NT}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+F\+U\+N\+C\+C\+O\+U\+NT@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+F\+U\+N\+C\+C\+O\+U\+NT}}}\mbox{\Hypertarget{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa39f6b55f874c94dfb2b2d51ae4a0826f}\label{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa39f6b55f874c94dfb2b2d51ae4a0826f}} 
+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+F\+U\+N\+C\+C\+O\+U\+NT&number of functions of control \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fafe78032df724f828c6f140635eed7887}\label{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fafe78032df724f828c6f140635eed7887}} 
+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE&control/mode is available for override \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+M\+IN@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+M\+IN}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+M\+IN@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+M\+IN}}}\mbox{\Hypertarget{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa4bedc9e7f075df45e176b3c198dfbfd0}\label{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa4bedc9e7f075df45e176b3c198dfbfd0}} 
+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+M\+IN&minimum value of control function \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+M\+AX@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+M\+AX}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+M\+AX@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+M\+AX}}}\mbox{\Hypertarget{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa318fb1e74a32cc80261480e0b0919cef}\label{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa318fb1e74a32cc80261480e0b0919cef}} 
+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+M\+AX&maximum value of control function \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+V\+E\+R\+R\+I\+DE@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+V\+E\+R\+R\+I\+DE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+V\+E\+R\+R\+I\+DE@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743faf8244c64472fa9109d30391c321370f4}\label{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743faf8244c64472fa9109d30391c321370f4}} 
+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+V\+E\+R\+R\+I\+DE&Indicates control should be overriden \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E\+\_\+\+N\+A\+ME@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E\+\_\+\+N\+A\+ME}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E\+\_\+\+N\+A\+ME@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E\+\_\+\+N\+A\+ME}}}\mbox{\Hypertarget{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743faff7de937427af883ac3f81f13dbe6e7d}\label{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743faff7de937427af883ac3f81f13dbe6e7d}} 
+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E\+\_\+\+N\+A\+ME&U\+T\+F8 encoded displayable name when control is overridden \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E\+\_\+\+I\+C\+ON@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E\+\_\+\+I\+C\+ON}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E\+\_\+\+I\+C\+ON@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E\+\_\+\+I\+C\+ON}}}\mbox{\Hypertarget{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa58adb2483ea25b0f0b7f9faa96ec60bc}\label{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa58adb2483ea25b0f0b7f9faa96ec60bc}} 
+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E\+\_\+\+I\+C\+ON&P\+NG icon image to shown when control is overriden (supported only tablets with display O\+L\+E\+Ds; eg\+: Intuos4) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+I\+C\+O\+N\+\_\+\+W\+I\+D\+TH@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+I\+C\+O\+N\+\_\+\+W\+I\+D\+TH}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+I\+C\+O\+N\+\_\+\+W\+I\+D\+TH@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+I\+C\+O\+N\+\_\+\+W\+I\+D\+TH}}}\mbox{\Hypertarget{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa99216856caa5692f1f62c5120691087b}\label{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa99216856caa5692f1f62c5120691087b}} 
+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+I\+C\+O\+N\+\_\+\+W\+I\+D\+TH&Pixel width of icon display \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+I\+C\+O\+N\+\_\+\+H\+E\+I\+G\+HT@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+I\+C\+O\+N\+\_\+\+H\+E\+I\+G\+HT}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+I\+C\+O\+N\+\_\+\+H\+E\+I\+G\+HT@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+I\+C\+O\+N\+\_\+\+H\+E\+I\+G\+HT}}}\mbox{\Hypertarget{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fab8b62de116d36392009ae950ae6e3b98}\label{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fab8b62de116d36392009ae950ae6e3b98}} 
+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+I\+C\+O\+N\+\_\+\+H\+E\+I\+G\+HT&Pixel height of icon display \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+I\+C\+O\+N\+\_\+\+F\+O\+R\+M\+AT@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+I\+C\+O\+N\+\_\+\+F\+O\+R\+M\+AT}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+I\+C\+O\+N\+\_\+\+F\+O\+R\+M\+AT@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+I\+C\+O\+N\+\_\+\+F\+O\+R\+M\+AT}}}\mbox{\Hypertarget{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743faba80300949561c39af936e605a9f68b9}\label{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743faba80300949561c39af936e605a9f68b9}} 
+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+I\+C\+O\+N\+\_\+\+F\+O\+R\+M\+AT&Pixel format of icon display (see T\+A\+B\+L\+E\+T\+\_\+\+I\+C\+O\+N\+\_\+\+F\+M\+T\+\_\+$\ast$) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+L\+O\+C\+A\+T\+I\+ON@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+L\+O\+C\+A\+T\+I\+ON}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+L\+O\+C\+A\+T\+I\+ON@{T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+L\+O\+C\+A\+T\+I\+ON}}}\mbox{\Hypertarget{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa24f7e0ec25355bf64201e8dfb537ea07}\label{namespace_wintab_d_n_a21cb408997e6cbe0866e75b0fe0a743fa24f7e0ec25355bf64201e8dfb537ea07}} 
+T\+A\+B\+L\+E\+T\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+L\+O\+C\+A\+T\+I\+ON&Physical location of control (see T\+A\+B\+L\+E\+T\+\_\+\+L\+O\+C\+\_\+$\ast$) \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875}\label{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875}} 
+\index{Wintab\+DN@{Wintab\+DN}!E\+W\+T\+I\+Category\+Index@{E\+W\+T\+I\+Category\+Index}}
+\index{E\+W\+T\+I\+Category\+Index@{E\+W\+T\+I\+Category\+Index}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{E\+W\+T\+I\+Category\+Index}{EWTICategoryIndex}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875}{Wintab\+D\+N.\+E\+W\+T\+I\+Category\+Index}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Index values for W\+T\+Info w\+Category parameter. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+I\+\_\+\+I\+N\+T\+E\+R\+F\+A\+CE@{W\+T\+I\+\_\+\+I\+N\+T\+E\+R\+F\+A\+CE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+I\+\_\+\+I\+N\+T\+E\+R\+F\+A\+CE@{W\+T\+I\+\_\+\+I\+N\+T\+E\+R\+F\+A\+CE}}}\mbox{\Hypertarget{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875ac65fabfb07e834f30a3afca244a04042}\label{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875ac65fabfb07e834f30a3afca244a04042}} 
+W\+T\+I\+\_\+\+I\+N\+T\+E\+R\+F\+A\+CE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+I\+\_\+\+S\+T\+A\+T\+US@{W\+T\+I\+\_\+\+S\+T\+A\+T\+US}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+I\+\_\+\+S\+T\+A\+T\+US@{W\+T\+I\+\_\+\+S\+T\+A\+T\+US}}}\mbox{\Hypertarget{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875aa20fa5b0815fd2a7092a5d7889b1022f}\label{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875aa20fa5b0815fd2a7092a5d7889b1022f}} 
+W\+T\+I\+\_\+\+S\+T\+A\+T\+US&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+I\+\_\+\+D\+E\+F\+C\+O\+N\+T\+E\+XT@{W\+T\+I\+\_\+\+D\+E\+F\+C\+O\+N\+T\+E\+XT}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+I\+\_\+\+D\+E\+F\+C\+O\+N\+T\+E\+XT@{W\+T\+I\+\_\+\+D\+E\+F\+C\+O\+N\+T\+E\+XT}}}\mbox{\Hypertarget{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a16d13b61cd342e276a42402d6923855a}\label{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a16d13b61cd342e276a42402d6923855a}} 
+W\+T\+I\+\_\+\+D\+E\+F\+C\+O\+N\+T\+E\+XT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+I\+\_\+\+D\+E\+F\+S\+Y\+S\+C\+TX@{W\+T\+I\+\_\+\+D\+E\+F\+S\+Y\+S\+C\+TX}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+I\+\_\+\+D\+E\+F\+S\+Y\+S\+C\+TX@{W\+T\+I\+\_\+\+D\+E\+F\+S\+Y\+S\+C\+TX}}}\mbox{\Hypertarget{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a6c5be5d5af8ebdf5c21b30c93485c850}\label{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a6c5be5d5af8ebdf5c21b30c93485c850}} 
+W\+T\+I\+\_\+\+D\+E\+F\+S\+Y\+S\+C\+TX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+I\+\_\+\+D\+E\+V\+I\+C\+ES@{W\+T\+I\+\_\+\+D\+E\+V\+I\+C\+ES}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+I\+\_\+\+D\+E\+V\+I\+C\+ES@{W\+T\+I\+\_\+\+D\+E\+V\+I\+C\+ES}}}\mbox{\Hypertarget{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a5a63ac9350330d363b4f38184ed39ed8}\label{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a5a63ac9350330d363b4f38184ed39ed8}} 
+W\+T\+I\+\_\+\+D\+E\+V\+I\+C\+ES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+I\+\_\+\+C\+U\+R\+S\+O\+RS@{W\+T\+I\+\_\+\+C\+U\+R\+S\+O\+RS}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+I\+\_\+\+C\+U\+R\+S\+O\+RS@{W\+T\+I\+\_\+\+C\+U\+R\+S\+O\+RS}}}\mbox{\Hypertarget{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a222bda6407f41864cdde9329e2174f12}\label{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a222bda6407f41864cdde9329e2174f12}} 
+W\+T\+I\+\_\+\+C\+U\+R\+S\+O\+RS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+I\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+NS@{W\+T\+I\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+NS}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+I\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+NS@{W\+T\+I\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+NS}}}\mbox{\Hypertarget{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a4a581c91c398d49adb7d4e2271195648}\label{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a4a581c91c398d49adb7d4e2271195648}} 
+W\+T\+I\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+NS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+I\+\_\+\+D\+D\+C\+T\+XS@{W\+T\+I\+\_\+\+D\+D\+C\+T\+XS}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+I\+\_\+\+D\+D\+C\+T\+XS@{W\+T\+I\+\_\+\+D\+D\+C\+T\+XS}}}\mbox{\Hypertarget{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875ad5b18b294793c4f58c270459876cdf4e}\label{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875ad5b18b294793c4f58c270459876cdf4e}} 
+W\+T\+I\+\_\+\+D\+D\+C\+T\+XS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+I\+\_\+\+D\+S\+C\+T\+XS@{W\+T\+I\+\_\+\+D\+S\+C\+T\+XS}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+I\+\_\+\+D\+S\+C\+T\+XS@{W\+T\+I\+\_\+\+D\+S\+C\+T\+XS}}}\mbox{\Hypertarget{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875accd1360fe596c46f84d0cce24206a6f0}\label{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875accd1360fe596c46f84d0cce24206a6f0}} 
+W\+T\+I\+\_\+\+D\+S\+C\+T\+XS&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26}} 
+\index{Wintab\+DN@{Wintab\+DN}!E\+W\+T\+I\+Context\+Index@{E\+W\+T\+I\+Context\+Index}}
+\index{E\+W\+T\+I\+Context\+Index@{E\+W\+T\+I\+Context\+Index}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{E\+W\+T\+I\+Context\+Index}{EWTIContextIndex}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Index values for W\+TI contexts. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+N\+A\+ME@{C\+T\+X\+\_\+\+N\+A\+ME}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+N\+A\+ME@{C\+T\+X\+\_\+\+N\+A\+ME}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a0abc03013052c76f444e85b56d6b63cc}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a0abc03013052c76f444e85b56d6b63cc}} 
+C\+T\+X\+\_\+\+N\+A\+ME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+O\+P\+T\+I\+O\+NS@{C\+T\+X\+\_\+\+O\+P\+T\+I\+O\+NS}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+O\+P\+T\+I\+O\+NS@{C\+T\+X\+\_\+\+O\+P\+T\+I\+O\+NS}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a60edb117c33614b8c81ffab5d4ed508e}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a60edb117c33614b8c81ffab5d4ed508e}} 
+C\+T\+X\+\_\+\+O\+P\+T\+I\+O\+NS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+S\+T\+A\+T\+US@{C\+T\+X\+\_\+\+S\+T\+A\+T\+US}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+S\+T\+A\+T\+US@{C\+T\+X\+\_\+\+S\+T\+A\+T\+US}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a8cca36bceb7386c28221fc6ba8c76bac}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a8cca36bceb7386c28221fc6ba8c76bac}} 
+C\+T\+X\+\_\+\+S\+T\+A\+T\+US&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+L\+O\+C\+KS@{C\+T\+X\+\_\+\+L\+O\+C\+KS}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+L\+O\+C\+KS@{C\+T\+X\+\_\+\+L\+O\+C\+KS}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a0f58f02be788990e331393ef8c6c5842}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a0f58f02be788990e331393ef8c6c5842}} 
+C\+T\+X\+\_\+\+L\+O\+C\+KS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+M\+S\+G\+B\+A\+SE@{C\+T\+X\+\_\+\+M\+S\+G\+B\+A\+SE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+M\+S\+G\+B\+A\+SE@{C\+T\+X\+\_\+\+M\+S\+G\+B\+A\+SE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ab00fa5157288a65d78f9d25e28ff53a6}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ab00fa5157288a65d78f9d25e28ff53a6}} 
+C\+T\+X\+\_\+\+M\+S\+G\+B\+A\+SE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+D\+E\+V\+I\+CE@{C\+T\+X\+\_\+\+D\+E\+V\+I\+CE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+D\+E\+V\+I\+CE@{C\+T\+X\+\_\+\+D\+E\+V\+I\+CE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26acfc405aa2117b2ee1dd071504c7a81c2}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26acfc405aa2117b2ee1dd071504c7a81c2}} 
+C\+T\+X\+\_\+\+D\+E\+V\+I\+CE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+P\+K\+T\+R\+A\+TE@{C\+T\+X\+\_\+\+P\+K\+T\+R\+A\+TE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+P\+K\+T\+R\+A\+TE@{C\+T\+X\+\_\+\+P\+K\+T\+R\+A\+TE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a6ec22f168bbe5c4828397bf97e9ea802}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a6ec22f168bbe5c4828397bf97e9ea802}} 
+C\+T\+X\+\_\+\+P\+K\+T\+R\+A\+TE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+P\+K\+T\+D\+A\+TA@{C\+T\+X\+\_\+\+P\+K\+T\+D\+A\+TA}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+P\+K\+T\+D\+A\+TA@{C\+T\+X\+\_\+\+P\+K\+T\+D\+A\+TA}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26abb35cbd7a6fc909d3e5dac6ca4e9c8c8}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26abb35cbd7a6fc909d3e5dac6ca4e9c8c8}} 
+C\+T\+X\+\_\+\+P\+K\+T\+D\+A\+TA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+P\+K\+T\+M\+O\+DE@{C\+T\+X\+\_\+\+P\+K\+T\+M\+O\+DE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+P\+K\+T\+M\+O\+DE@{C\+T\+X\+\_\+\+P\+K\+T\+M\+O\+DE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a1886bf9fe23701d37f7df5015a1ad42c}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a1886bf9fe23701d37f7df5015a1ad42c}} 
+C\+T\+X\+\_\+\+P\+K\+T\+M\+O\+DE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+M\+O\+V\+E\+M\+A\+SK@{C\+T\+X\+\_\+\+M\+O\+V\+E\+M\+A\+SK}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+M\+O\+V\+E\+M\+A\+SK@{C\+T\+X\+\_\+\+M\+O\+V\+E\+M\+A\+SK}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a8bb4177fb3846d0e0b8f076fd791c4f7}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a8bb4177fb3846d0e0b8f076fd791c4f7}} 
+C\+T\+X\+\_\+\+M\+O\+V\+E\+M\+A\+SK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+B\+T\+N\+D\+N\+M\+A\+SK@{C\+T\+X\+\_\+\+B\+T\+N\+D\+N\+M\+A\+SK}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+B\+T\+N\+D\+N\+M\+A\+SK@{C\+T\+X\+\_\+\+B\+T\+N\+D\+N\+M\+A\+SK}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a312dfa94c785c07f923e56816d96739f}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a312dfa94c785c07f923e56816d96739f}} 
+C\+T\+X\+\_\+\+B\+T\+N\+D\+N\+M\+A\+SK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+B\+T\+N\+U\+P\+M\+A\+SK@{C\+T\+X\+\_\+\+B\+T\+N\+U\+P\+M\+A\+SK}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+B\+T\+N\+U\+P\+M\+A\+SK@{C\+T\+X\+\_\+\+B\+T\+N\+U\+P\+M\+A\+SK}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ae0791fc78a50af8172a5c0c9ea53819c}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ae0791fc78a50af8172a5c0c9ea53819c}} 
+C\+T\+X\+\_\+\+B\+T\+N\+U\+P\+M\+A\+SK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+I\+N\+O\+R\+GX@{C\+T\+X\+\_\+\+I\+N\+O\+R\+GX}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+I\+N\+O\+R\+GX@{C\+T\+X\+\_\+\+I\+N\+O\+R\+GX}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ad2779300216eafe15a49ae5b08a3c9a2}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ad2779300216eafe15a49ae5b08a3c9a2}} 
+C\+T\+X\+\_\+\+I\+N\+O\+R\+GX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+I\+N\+O\+R\+GY@{C\+T\+X\+\_\+\+I\+N\+O\+R\+GY}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+I\+N\+O\+R\+GY@{C\+T\+X\+\_\+\+I\+N\+O\+R\+GY}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26af1d4a4ea149ddd23bd53d56d70d55313}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26af1d4a4ea149ddd23bd53d56d70d55313}} 
+C\+T\+X\+\_\+\+I\+N\+O\+R\+GY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+I\+N\+O\+R\+GZ@{C\+T\+X\+\_\+\+I\+N\+O\+R\+GZ}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+I\+N\+O\+R\+GZ@{C\+T\+X\+\_\+\+I\+N\+O\+R\+GZ}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ac14df9508947a8363a3c1f0dea9358dc}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ac14df9508947a8363a3c1f0dea9358dc}} 
+C\+T\+X\+\_\+\+I\+N\+O\+R\+GZ&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+I\+N\+E\+X\+TX@{C\+T\+X\+\_\+\+I\+N\+E\+X\+TX}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+I\+N\+E\+X\+TX@{C\+T\+X\+\_\+\+I\+N\+E\+X\+TX}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a492f91adf7715a0a7fefeafd6c05dc6a}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a492f91adf7715a0a7fefeafd6c05dc6a}} 
+C\+T\+X\+\_\+\+I\+N\+E\+X\+TX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+I\+N\+E\+X\+TY@{C\+T\+X\+\_\+\+I\+N\+E\+X\+TY}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+I\+N\+E\+X\+TY@{C\+T\+X\+\_\+\+I\+N\+E\+X\+TY}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26abb0b8bdbc91ffacf1345b62cbe81042f}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26abb0b8bdbc91ffacf1345b62cbe81042f}} 
+C\+T\+X\+\_\+\+I\+N\+E\+X\+TY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+I\+N\+E\+X\+TZ@{C\+T\+X\+\_\+\+I\+N\+E\+X\+TZ}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+I\+N\+E\+X\+TZ@{C\+T\+X\+\_\+\+I\+N\+E\+X\+TZ}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a986ad852f55ab25af415709281ea5c44}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a986ad852f55ab25af415709281ea5c44}} 
+C\+T\+X\+\_\+\+I\+N\+E\+X\+TZ&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GX@{C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GX}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GX@{C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GX}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a63c4324c7f16f189e7f8188f02d05f46}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a63c4324c7f16f189e7f8188f02d05f46}} 
+C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GY@{C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GY}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GY@{C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GY}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26aa5569727f52885df550291c92cf6ac2a}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26aa5569727f52885df550291c92cf6ac2a}} 
+C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GZ@{C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GZ}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GZ@{C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GZ}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a157a27ca7f376bcf9b157484664dc172}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a157a27ca7f376bcf9b157484664dc172}} 
+C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GZ&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TX@{C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TX}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TX@{C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TX}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a568d77e19db0329301190c36eb342210}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a568d77e19db0329301190c36eb342210}} 
+C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TY@{C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TY}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TY@{C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TY}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a3412adb4639e3d7c04828e95ca4bd152}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a3412adb4639e3d7c04828e95ca4bd152}} 
+C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TZ@{C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TZ}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TZ@{C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TZ}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a4cca94819b259c2d3ade49be544219c1}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a4cca94819b259c2d3ade49be544219c1}} 
+C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TZ&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+S\+E\+N\+SX@{C\+T\+X\+\_\+\+S\+E\+N\+SX}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+S\+E\+N\+SX@{C\+T\+X\+\_\+\+S\+E\+N\+SX}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a2b35bcc09bd27eef0917d66b0b4b652b}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a2b35bcc09bd27eef0917d66b0b4b652b}} 
+C\+T\+X\+\_\+\+S\+E\+N\+SX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+S\+E\+N\+SY@{C\+T\+X\+\_\+\+S\+E\+N\+SY}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+S\+E\+N\+SY@{C\+T\+X\+\_\+\+S\+E\+N\+SY}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a56e51c95eefe7db5c7a4d09e6776633e}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a56e51c95eefe7db5c7a4d09e6776633e}} 
+C\+T\+X\+\_\+\+S\+E\+N\+SY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+S\+E\+N\+SZ@{C\+T\+X\+\_\+\+S\+E\+N\+SZ}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+S\+E\+N\+SZ@{C\+T\+X\+\_\+\+S\+E\+N\+SZ}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ad47910ed4fac3508a302bddf03bf2e8c}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ad47910ed4fac3508a302bddf03bf2e8c}} 
+C\+T\+X\+\_\+\+S\+E\+N\+SZ&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+S\+Y\+S\+M\+O\+DE@{C\+T\+X\+\_\+\+S\+Y\+S\+M\+O\+DE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+S\+Y\+S\+M\+O\+DE@{C\+T\+X\+\_\+\+S\+Y\+S\+M\+O\+DE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a7639c44b7cf3ea7e5de254bb88523e3b}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a7639c44b7cf3ea7e5de254bb88523e3b}} 
+C\+T\+X\+\_\+\+S\+Y\+S\+M\+O\+DE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+S\+Y\+S\+O\+R\+GX@{C\+T\+X\+\_\+\+S\+Y\+S\+O\+R\+GX}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+S\+Y\+S\+O\+R\+GX@{C\+T\+X\+\_\+\+S\+Y\+S\+O\+R\+GX}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a3a233bc7a75828a996e0c2b5ff4908cd}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a3a233bc7a75828a996e0c2b5ff4908cd}} 
+C\+T\+X\+\_\+\+S\+Y\+S\+O\+R\+GX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+S\+Y\+S\+O\+R\+GY@{C\+T\+X\+\_\+\+S\+Y\+S\+O\+R\+GY}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+S\+Y\+S\+O\+R\+GY@{C\+T\+X\+\_\+\+S\+Y\+S\+O\+R\+GY}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a512734848f9eb5419125ddca5b466a8c}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a512734848f9eb5419125ddca5b466a8c}} 
+C\+T\+X\+\_\+\+S\+Y\+S\+O\+R\+GY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+S\+Y\+S\+E\+X\+TX@{C\+T\+X\+\_\+\+S\+Y\+S\+E\+X\+TX}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+S\+Y\+S\+E\+X\+TX@{C\+T\+X\+\_\+\+S\+Y\+S\+E\+X\+TX}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26aa5e6acba76c02128cc6c48c6a4f73172}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26aa5e6acba76c02128cc6c48c6a4f73172}} 
+C\+T\+X\+\_\+\+S\+Y\+S\+E\+X\+TX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+S\+Y\+S\+E\+X\+TY@{C\+T\+X\+\_\+\+S\+Y\+S\+E\+X\+TY}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+S\+Y\+S\+E\+X\+TY@{C\+T\+X\+\_\+\+S\+Y\+S\+E\+X\+TY}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a9866fb8f9d6e115217bd7d40906f83cd}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a9866fb8f9d6e115217bd7d40906f83cd}} 
+C\+T\+X\+\_\+\+S\+Y\+S\+E\+X\+TY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+S\+Y\+S\+S\+E\+N\+SX@{C\+T\+X\+\_\+\+S\+Y\+S\+S\+E\+N\+SX}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+S\+Y\+S\+S\+E\+N\+SX@{C\+T\+X\+\_\+\+S\+Y\+S\+S\+E\+N\+SX}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a87c965d49bfaa92097f18a0f07b89e0f}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a87c965d49bfaa92097f18a0f07b89e0f}} 
+C\+T\+X\+\_\+\+S\+Y\+S\+S\+E\+N\+SX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+T\+X\+\_\+\+S\+Y\+S\+S\+E\+N\+SY@{C\+T\+X\+\_\+\+S\+Y\+S\+S\+E\+N\+SY}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+T\+X\+\_\+\+S\+Y\+S\+S\+E\+N\+SY@{C\+T\+X\+\_\+\+S\+Y\+S\+S\+E\+N\+SY}}}\mbox{\Hypertarget{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26afea64dc18968a391794238e812f46fdb}\label{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26afea64dc18968a391794238e812f46fdb}} 
+C\+T\+X\+\_\+\+S\+Y\+S\+S\+E\+N\+SY&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_wintab_d_n_a54fdc0e52106effb073b35f8f6b3920a}\label{namespace_wintab_d_n_a54fdc0e52106effb073b35f8f6b3920a}} 
+\index{Wintab\+DN@{Wintab\+DN}!E\+W\+T\+I\+Cursor\+Name\+Index@{E\+W\+T\+I\+Cursor\+Name\+Index}}
+\index{E\+W\+T\+I\+Cursor\+Name\+Index@{E\+W\+T\+I\+Cursor\+Name\+Index}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{E\+W\+T\+I\+Cursor\+Name\+Index}{EWTICursorNameIndex}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_wintab_d_n_a54fdc0e52106effb073b35f8f6b3920a}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursor\+Name\+Index}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Index used with C\+S\+R\+\_\+\+N\+A\+ME to get stylus types. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+P\+U\+CK@{C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+P\+U\+CK}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+P\+U\+CK@{C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+P\+U\+CK}}}\mbox{\Hypertarget{namespace_wintab_d_n_a54fdc0e52106effb073b35f8f6b3920aac73b96dbefc213fba2efcb5cc9afd68b}\label{namespace_wintab_d_n_a54fdc0e52106effb073b35f8f6b3920aac73b96dbefc213fba2efcb5cc9afd68b}} 
+C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+P\+U\+CK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+P\+R\+E\+S\+S\+U\+R\+E\+\_\+\+S\+T\+Y\+L\+US@{C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+P\+R\+E\+S\+S\+U\+R\+E\+\_\+\+S\+T\+Y\+L\+US}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+P\+R\+E\+S\+S\+U\+R\+E\+\_\+\+S\+T\+Y\+L\+US@{C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+P\+R\+E\+S\+S\+U\+R\+E\+\_\+\+S\+T\+Y\+L\+US}}}\mbox{\Hypertarget{namespace_wintab_d_n_a54fdc0e52106effb073b35f8f6b3920aafdca87133e7f591ba6a72c4f92c960f2}\label{namespace_wintab_d_n_a54fdc0e52106effb073b35f8f6b3920aafdca87133e7f591ba6a72c4f92c960f2}} 
+C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+P\+R\+E\+S\+S\+U\+R\+E\+\_\+\+S\+T\+Y\+L\+US&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+E\+R\+A\+S\+ER@{C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+E\+R\+A\+S\+ER}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+E\+R\+A\+S\+ER@{C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+E\+R\+A\+S\+ER}}}\mbox{\Hypertarget{namespace_wintab_d_n_a54fdc0e52106effb073b35f8f6b3920aa34cde7b9ed3b19e48fc745bf6ef9c932}\label{namespace_wintab_d_n_a54fdc0e52106effb073b35f8f6b3920aa34cde7b9ed3b19e48fc745bf6ef9c932}} 
+C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+E\+R\+A\+S\+ER&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61}} 
+\index{Wintab\+DN@{Wintab\+DN}!E\+W\+T\+I\+Cursors\+Index@{E\+W\+T\+I\+Cursors\+Index}}
+\index{E\+W\+T\+I\+Cursors\+Index@{E\+W\+T\+I\+Cursors\+Index}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{E\+W\+T\+I\+Cursors\+Index}{EWTICursorsIndex}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Index values for W\+T\+I\+\_\+\+C\+U\+R\+S\+O\+RS. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+N\+A\+ME@{C\+S\+R\+\_\+\+N\+A\+ME}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+N\+A\+ME@{C\+S\+R\+\_\+\+N\+A\+ME}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a3bd7c2b56898962a7309dda568b328b8}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a3bd7c2b56898962a7309dda568b328b8}} 
+C\+S\+R\+\_\+\+N\+A\+ME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+A\+C\+T\+I\+VE@{C\+S\+R\+\_\+\+A\+C\+T\+I\+VE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+A\+C\+T\+I\+VE@{C\+S\+R\+\_\+\+A\+C\+T\+I\+VE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a2a360558d93a67ef0b2f03792c1f037c}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a2a360558d93a67ef0b2f03792c1f037c}} 
+C\+S\+R\+\_\+\+A\+C\+T\+I\+VE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+P\+K\+T\+D\+A\+TA@{C\+S\+R\+\_\+\+P\+K\+T\+D\+A\+TA}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+P\+K\+T\+D\+A\+TA@{C\+S\+R\+\_\+\+P\+K\+T\+D\+A\+TA}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61acd1b188aeaa6c3ab7f4c175172bc758e}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61acd1b188aeaa6c3ab7f4c175172bc758e}} 
+C\+S\+R\+\_\+\+P\+K\+T\+D\+A\+TA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+NS@{C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+NS}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+NS@{C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+NS}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61ab055c216de8d3fe9476fa85c814274a6}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61ab055c216de8d3fe9476fa85c814274a6}} 
+C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+NS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+N\+B\+I\+TS@{C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+N\+B\+I\+TS}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+N\+B\+I\+TS@{C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+N\+B\+I\+TS}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a3325fb802d4fb101015330ea2020e29f}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a3325fb802d4fb101015330ea2020e29f}} 
+C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+N\+B\+I\+TS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+B\+T\+N\+N\+A\+M\+ES@{C\+S\+R\+\_\+\+B\+T\+N\+N\+A\+M\+ES}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+B\+T\+N\+N\+A\+M\+ES@{C\+S\+R\+\_\+\+B\+T\+N\+N\+A\+M\+ES}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61af7d1e37842c2ae5703a69196b3422c59}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61af7d1e37842c2ae5703a69196b3422c59}} 
+C\+S\+R\+\_\+\+B\+T\+N\+N\+A\+M\+ES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+N\+M\+AP@{C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+N\+M\+AP}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+N\+M\+AP@{C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+N\+M\+AP}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a70cf055630552ecc639750af9b3e4139}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a70cf055630552ecc639750af9b3e4139}} 
+C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+N\+M\+AP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+S\+Y\+S\+B\+T\+N\+M\+AP@{C\+S\+R\+\_\+\+S\+Y\+S\+B\+T\+N\+M\+AP}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+S\+Y\+S\+B\+T\+N\+M\+AP@{C\+S\+R\+\_\+\+S\+Y\+S\+B\+T\+N\+M\+AP}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61acf2bee9b60a6d6512c21ae188c439414}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61acf2bee9b60a6d6512c21ae188c439414}} 
+C\+S\+R\+\_\+\+S\+Y\+S\+B\+T\+N\+M\+AP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+N\+P\+B\+U\+T\+T\+ON@{C\+S\+R\+\_\+\+N\+P\+B\+U\+T\+T\+ON}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+N\+P\+B\+U\+T\+T\+ON@{C\+S\+R\+\_\+\+N\+P\+B\+U\+T\+T\+ON}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a3eb010d8976dfa4e4e66b6ad32993ba4}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a3eb010d8976dfa4e4e66b6ad32993ba4}} 
+C\+S\+R\+\_\+\+N\+P\+B\+U\+T\+T\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+N\+P\+B\+T\+N\+M\+A\+R\+KS@{C\+S\+R\+\_\+\+N\+P\+B\+T\+N\+M\+A\+R\+KS}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+N\+P\+B\+T\+N\+M\+A\+R\+KS@{C\+S\+R\+\_\+\+N\+P\+B\+T\+N\+M\+A\+R\+KS}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a2747b22e4802942bb92f61bac1ddf3c2}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a2747b22e4802942bb92f61bac1ddf3c2}} 
+C\+S\+R\+\_\+\+N\+P\+B\+T\+N\+M\+A\+R\+KS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+N\+P\+R\+E\+S\+P\+O\+N\+SE@{C\+S\+R\+\_\+\+N\+P\+R\+E\+S\+P\+O\+N\+SE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+N\+P\+R\+E\+S\+P\+O\+N\+SE@{C\+S\+R\+\_\+\+N\+P\+R\+E\+S\+P\+O\+N\+SE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a80c5507e01ac69fd9465a19688c9e0f4}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a80c5507e01ac69fd9465a19688c9e0f4}} 
+C\+S\+R\+\_\+\+N\+P\+R\+E\+S\+P\+O\+N\+SE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+T\+P\+B\+U\+T\+T\+ON@{C\+S\+R\+\_\+\+T\+P\+B\+U\+T\+T\+ON}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+T\+P\+B\+U\+T\+T\+ON@{C\+S\+R\+\_\+\+T\+P\+B\+U\+T\+T\+ON}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61aee5aec6617eb8884b186f024167ba071}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61aee5aec6617eb8884b186f024167ba071}} 
+C\+S\+R\+\_\+\+T\+P\+B\+U\+T\+T\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+T\+P\+B\+T\+N\+M\+A\+R\+KS@{C\+S\+R\+\_\+\+T\+P\+B\+T\+N\+M\+A\+R\+KS}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+T\+P\+B\+T\+N\+M\+A\+R\+KS@{C\+S\+R\+\_\+\+T\+P\+B\+T\+N\+M\+A\+R\+KS}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61ac4f653870e85099916ca25d4b5518de3}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61ac4f653870e85099916ca25d4b5518de3}} 
+C\+S\+R\+\_\+\+T\+P\+B\+T\+N\+M\+A\+R\+KS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+T\+P\+R\+E\+S\+P\+O\+N\+SE@{C\+S\+R\+\_\+\+T\+P\+R\+E\+S\+P\+O\+N\+SE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+T\+P\+R\+E\+S\+P\+O\+N\+SE@{C\+S\+R\+\_\+\+T\+P\+R\+E\+S\+P\+O\+N\+SE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61acd91016b78104fd5101c6444f3408e92}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61acd91016b78104fd5101c6444f3408e92}} 
+C\+S\+R\+\_\+\+T\+P\+R\+E\+S\+P\+O\+N\+SE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+P\+H\+Y\+S\+ID@{C\+S\+R\+\_\+\+P\+H\+Y\+S\+ID}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+P\+H\+Y\+S\+ID@{C\+S\+R\+\_\+\+P\+H\+Y\+S\+ID}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61ad5cde33c3cdf509f22c56890181a31cd}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61ad5cde33c3cdf509f22c56890181a31cd}} 
+C\+S\+R\+\_\+\+P\+H\+Y\+S\+ID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+M\+O\+DE@{C\+S\+R\+\_\+\+M\+O\+DE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+M\+O\+DE@{C\+S\+R\+\_\+\+M\+O\+DE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a924c987d81b3feccad9350fb3f4cd7d8}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a924c987d81b3feccad9350fb3f4cd7d8}} 
+C\+S\+R\+\_\+\+M\+O\+DE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+M\+I\+N\+P\+K\+T\+D\+A\+TA@{C\+S\+R\+\_\+\+M\+I\+N\+P\+K\+T\+D\+A\+TA}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+M\+I\+N\+P\+K\+T\+D\+A\+TA@{C\+S\+R\+\_\+\+M\+I\+N\+P\+K\+T\+D\+A\+TA}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a14a1819f7adf8dd64d75fd0edcb7b3dc}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a14a1819f7adf8dd64d75fd0edcb7b3dc}} 
+C\+S\+R\+\_\+\+M\+I\+N\+P\+K\+T\+D\+A\+TA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+M\+I\+N\+B\+U\+T\+T\+O\+NS@{C\+S\+R\+\_\+\+M\+I\+N\+B\+U\+T\+T\+O\+NS}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+M\+I\+N\+B\+U\+T\+T\+O\+NS@{C\+S\+R\+\_\+\+M\+I\+N\+B\+U\+T\+T\+O\+NS}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61ad08e54efaae57acbad904f7e5abf96ab}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61ad08e54efaae57acbad904f7e5abf96ab}} 
+C\+S\+R\+\_\+\+M\+I\+N\+B\+U\+T\+T\+O\+NS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+C\+A\+P\+A\+B\+I\+L\+I\+T\+I\+ES@{C\+S\+R\+\_\+\+C\+A\+P\+A\+B\+I\+L\+I\+T\+I\+ES}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+C\+A\+P\+A\+B\+I\+L\+I\+T\+I\+ES@{C\+S\+R\+\_\+\+C\+A\+P\+A\+B\+I\+L\+I\+T\+I\+ES}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a99af52f3e638ae50b5f16c6f67a16120}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a99af52f3e638ae50b5f16c6f67a16120}} 
+C\+S\+R\+\_\+\+C\+A\+P\+A\+B\+I\+L\+I\+T\+I\+ES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+S\+R\+\_\+\+T\+Y\+PE@{C\+S\+R\+\_\+\+T\+Y\+PE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!C\+S\+R\+\_\+\+T\+Y\+PE@{C\+S\+R\+\_\+\+T\+Y\+PE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a1c0737f8288fe2dd1ac3e7e8b1eff7e1}\label{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a1c0737f8288fe2dd1ac3e7e8b1eff7e1}} 
+C\+S\+R\+\_\+\+T\+Y\+PE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565c}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565c}} 
+\index{Wintab\+DN@{Wintab\+DN}!E\+W\+T\+I\+Devices\+Index@{E\+W\+T\+I\+Devices\+Index}}
+\index{E\+W\+T\+I\+Devices\+Index@{E\+W\+T\+I\+Devices\+Index}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{E\+W\+T\+I\+Devices\+Index}{EWTIDevicesIndex}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565c}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Index values for W\+T\+I\+\_\+\+D\+E\+V\+I\+C\+ES 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+\+N\+A\+ME@{D\+V\+C\+\_\+\+N\+A\+ME}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+\+N\+A\+ME@{D\+V\+C\+\_\+\+N\+A\+ME}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca36228a7af166158266b4945b4cf320e8}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca36228a7af166158266b4945b4cf320e8}} 
+D\+V\+C\+\_\+\+N\+A\+ME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+\+H\+A\+R\+D\+W\+A\+RE@{D\+V\+C\+\_\+\+H\+A\+R\+D\+W\+A\+RE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+\+H\+A\+R\+D\+W\+A\+RE@{D\+V\+C\+\_\+\+H\+A\+R\+D\+W\+A\+RE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca7ef189500dca51cb5081b1495c36611d}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca7ef189500dca51cb5081b1495c36611d}} 
+D\+V\+C\+\_\+\+H\+A\+R\+D\+W\+A\+RE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+\+N\+C\+S\+R\+T\+Y\+P\+ES@{D\+V\+C\+\_\+\+N\+C\+S\+R\+T\+Y\+P\+ES}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+\+N\+C\+S\+R\+T\+Y\+P\+ES@{D\+V\+C\+\_\+\+N\+C\+S\+R\+T\+Y\+P\+ES}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca9a9a43ba18c0983ea960b2128a6210df}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca9a9a43ba18c0983ea960b2128a6210df}} 
+D\+V\+C\+\_\+\+N\+C\+S\+R\+T\+Y\+P\+ES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+\+F\+I\+R\+S\+T\+C\+SR@{D\+V\+C\+\_\+\+F\+I\+R\+S\+T\+C\+SR}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+\+F\+I\+R\+S\+T\+C\+SR@{D\+V\+C\+\_\+\+F\+I\+R\+S\+T\+C\+SR}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565caff267ac1f5895792643f43c45498277f}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565caff267ac1f5895792643f43c45498277f}} 
+D\+V\+C\+\_\+\+F\+I\+R\+S\+T\+C\+SR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+\+P\+K\+T\+R\+A\+TE@{D\+V\+C\+\_\+\+P\+K\+T\+R\+A\+TE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+\+P\+K\+T\+R\+A\+TE@{D\+V\+C\+\_\+\+P\+K\+T\+R\+A\+TE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca8356e002037f9cd3acc6699d5c6decb3}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca8356e002037f9cd3acc6699d5c6decb3}} 
+D\+V\+C\+\_\+\+P\+K\+T\+R\+A\+TE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+\+P\+K\+T\+D\+A\+TA@{D\+V\+C\+\_\+\+P\+K\+T\+D\+A\+TA}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+\+P\+K\+T\+D\+A\+TA@{D\+V\+C\+\_\+\+P\+K\+T\+D\+A\+TA}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca9b24628dcced21dd4f679e90cad593a9}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca9b24628dcced21dd4f679e90cad593a9}} 
+D\+V\+C\+\_\+\+P\+K\+T\+D\+A\+TA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+\+P\+K\+T\+M\+O\+DE@{D\+V\+C\+\_\+\+P\+K\+T\+M\+O\+DE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+\+P\+K\+T\+M\+O\+DE@{D\+V\+C\+\_\+\+P\+K\+T\+M\+O\+DE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565cae4e7ac8def1a6179016ecec08650f9e0}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565cae4e7ac8def1a6179016ecec08650f9e0}} 
+D\+V\+C\+\_\+\+P\+K\+T\+M\+O\+DE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+\+C\+S\+R\+D\+A\+TA@{D\+V\+C\+\_\+\+C\+S\+R\+D\+A\+TA}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+\+C\+S\+R\+D\+A\+TA@{D\+V\+C\+\_\+\+C\+S\+R\+D\+A\+TA}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca9d3f0457670a6d7a18f305d93883af1f}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca9d3f0457670a6d7a18f305d93883af1f}} 
+D\+V\+C\+\_\+\+C\+S\+R\+D\+A\+TA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+\+X\+M\+A\+R\+G\+IN@{D\+V\+C\+\_\+\+X\+M\+A\+R\+G\+IN}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+\+X\+M\+A\+R\+G\+IN@{D\+V\+C\+\_\+\+X\+M\+A\+R\+G\+IN}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca9b1dcd54737d3e341d86338b9834451d}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca9b1dcd54737d3e341d86338b9834451d}} 
+D\+V\+C\+\_\+\+X\+M\+A\+R\+G\+IN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+\+Y\+M\+A\+R\+G\+IN@{D\+V\+C\+\_\+\+Y\+M\+A\+R\+G\+IN}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+\+Y\+M\+A\+R\+G\+IN@{D\+V\+C\+\_\+\+Y\+M\+A\+R\+G\+IN}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca82d911bfa2423df6e0458a1a61e68369}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca82d911bfa2423df6e0458a1a61e68369}} 
+D\+V\+C\+\_\+\+Y\+M\+A\+R\+G\+IN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+\+Z\+M\+A\+R\+G\+IN@{D\+V\+C\+\_\+\+Z\+M\+A\+R\+G\+IN}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+\+Z\+M\+A\+R\+G\+IN@{D\+V\+C\+\_\+\+Z\+M\+A\+R\+G\+IN}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565cae13690a5ec66f2d2af12eaeaf7dd913d}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565cae13690a5ec66f2d2af12eaeaf7dd913d}} 
+D\+V\+C\+\_\+\+Z\+M\+A\+R\+G\+IN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+X@{D\+V\+C\+\_\+X}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+X@{D\+V\+C\+\_\+X}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca1caaaea5b0b04abfeb80d0aa163e40d0}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca1caaaea5b0b04abfeb80d0aa163e40d0}} 
+D\+V\+C\+\_\+X&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+Y@{D\+V\+C\+\_\+Y}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+Y@{D\+V\+C\+\_\+Y}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca07cd6a2a411f159d26c92dee033634cf}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca07cd6a2a411f159d26c92dee033634cf}} 
+D\+V\+C\+\_\+Y&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+Z@{D\+V\+C\+\_\+Z}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+Z@{D\+V\+C\+\_\+Z}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca72feabe514e5dfa4edd58fe2a8863933}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca72feabe514e5dfa4edd58fe2a8863933}} 
+D\+V\+C\+\_\+Z&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+\+N\+P\+R\+E\+S\+S\+U\+RE@{D\+V\+C\+\_\+\+N\+P\+R\+E\+S\+S\+U\+RE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+\+N\+P\+R\+E\+S\+S\+U\+RE@{D\+V\+C\+\_\+\+N\+P\+R\+E\+S\+S\+U\+RE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565cad5006bddd567193470908da64091a74c}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565cad5006bddd567193470908da64091a74c}} 
+D\+V\+C\+\_\+\+N\+P\+R\+E\+S\+S\+U\+RE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+\+T\+P\+R\+E\+S\+S\+U\+RE@{D\+V\+C\+\_\+\+T\+P\+R\+E\+S\+S\+U\+RE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+\+T\+P\+R\+E\+S\+S\+U\+RE@{D\+V\+C\+\_\+\+T\+P\+R\+E\+S\+S\+U\+RE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca84b3d724b9969e4e11e3d2a7e24e1da2}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca84b3d724b9969e4e11e3d2a7e24e1da2}} 
+D\+V\+C\+\_\+\+T\+P\+R\+E\+S\+S\+U\+RE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON@{D\+V\+C\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON@{D\+V\+C\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565caf7a01674933b87c80bfd6abb427ccad4}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565caf7a01674933b87c80bfd6abb427ccad4}} 
+D\+V\+C\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+\+R\+O\+T\+A\+T\+I\+ON@{D\+V\+C\+\_\+\+R\+O\+T\+A\+T\+I\+ON}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+\+R\+O\+T\+A\+T\+I\+ON@{D\+V\+C\+\_\+\+R\+O\+T\+A\+T\+I\+ON}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565caf41cd5dd7f23faa0c29759287bd48d31}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565caf41cd5dd7f23faa0c29759287bd48d31}} 
+D\+V\+C\+\_\+\+R\+O\+T\+A\+T\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+V\+C\+\_\+\+P\+N\+P\+ID@{D\+V\+C\+\_\+\+P\+N\+P\+ID}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!D\+V\+C\+\_\+\+P\+N\+P\+ID@{D\+V\+C\+\_\+\+P\+N\+P\+ID}}}\mbox{\Hypertarget{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca64d03ad2498f400198da58816caa9995}\label{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca64d03ad2498f400198da58816caa9995}} 
+D\+V\+C\+\_\+\+P\+N\+P\+ID&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438d}\label{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438d}} 
+\index{Wintab\+DN@{Wintab\+DN}!E\+W\+T\+I\+Extension\+Index@{E\+W\+T\+I\+Extension\+Index}}
+\index{E\+W\+T\+I\+Extension\+Index@{E\+W\+T\+I\+Extension\+Index}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{E\+W\+T\+I\+Extension\+Index}{EWTIExtensionIndex}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438d}{Wintab\+D\+N.\+E\+W\+T\+I\+Extension\+Index}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Index values used for W\+TI extensions. For more information, see Wintab 1.\+4. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+X\+T\+\_\+\+N\+A\+ME@{E\+X\+T\+\_\+\+N\+A\+ME}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!E\+X\+T\+\_\+\+N\+A\+ME@{E\+X\+T\+\_\+\+N\+A\+ME}}}\mbox{\Hypertarget{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da1ec0e4f68094eb2e5859e96251b4a0ec}\label{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da1ec0e4f68094eb2e5859e96251b4a0ec}} 
+E\+X\+T\+\_\+\+N\+A\+ME&Get a unique, null-\/terminated string describing the extension. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+X\+T\+\_\+\+T\+AG@{E\+X\+T\+\_\+\+T\+AG}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!E\+X\+T\+\_\+\+T\+AG@{E\+X\+T\+\_\+\+T\+AG}}}\mbox{\Hypertarget{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da1cc6a78e746837d3411ac9f4a2e6c7d1}\label{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da1cc6a78e746837d3411ac9f4a2e6c7d1}} 
+E\+X\+T\+\_\+\+T\+AG&Get a unique identifier for the extension. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+X\+T\+\_\+\+M\+A\+SK@{E\+X\+T\+\_\+\+M\+A\+SK}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!E\+X\+T\+\_\+\+M\+A\+SK@{E\+X\+T\+\_\+\+M\+A\+SK}}}\mbox{\Hypertarget{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438daaac931541c2f53185b193d3d1a49ff6b}\label{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438daaac931541c2f53185b193d3d1a49ff6b}} 
+E\+X\+T\+\_\+\+M\+A\+SK&Get a mask that can be bitwise OR\textquotesingle{}ed with W\+T\+P\+K\+T-\/type variables to select the extension. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+X\+T\+\_\+\+S\+I\+ZE@{E\+X\+T\+\_\+\+S\+I\+ZE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!E\+X\+T\+\_\+\+S\+I\+ZE@{E\+X\+T\+\_\+\+S\+I\+ZE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da6d1cd8a011d4a738d2dca76d2cf33135}\label{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da6d1cd8a011d4a738d2dca76d2cf33135}} 
+E\+X\+T\+\_\+\+S\+I\+ZE&Get an array of two U\+I\+N\+Ts specifying the extension\textquotesingle{}s size within a packet (in bytes). The first is for absolute mode; the second is for relative mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+X\+T\+\_\+\+A\+X\+ES@{E\+X\+T\+\_\+\+A\+X\+ES}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!E\+X\+T\+\_\+\+A\+X\+ES@{E\+X\+T\+\_\+\+A\+X\+ES}}}\mbox{\Hypertarget{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da381f486f06a6e75d307ac22bbe713769}\label{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da381f486f06a6e75d307ac22bbe713769}} 
+E\+X\+T\+\_\+\+A\+X\+ES&Get an array of axis descriptions, as needed for the extension. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+X\+T\+\_\+\+D\+E\+F\+A\+U\+LT@{E\+X\+T\+\_\+\+D\+E\+F\+A\+U\+LT}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!E\+X\+T\+\_\+\+D\+E\+F\+A\+U\+LT@{E\+X\+T\+\_\+\+D\+E\+F\+A\+U\+LT}}}\mbox{\Hypertarget{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da9071a43376322d78e7d7f130518c7b0b}\label{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da9071a43376322d78e7d7f130518c7b0b}} 
+E\+X\+T\+\_\+\+D\+E\+F\+A\+U\+LT&get the current global default data, as needed for the extension. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+X\+T\+\_\+\+D\+E\+F\+C\+O\+N\+T\+E\+XT@{E\+X\+T\+\_\+\+D\+E\+F\+C\+O\+N\+T\+E\+XT}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!E\+X\+T\+\_\+\+D\+E\+F\+C\+O\+N\+T\+E\+XT@{E\+X\+T\+\_\+\+D\+E\+F\+C\+O\+N\+T\+E\+XT}}}\mbox{\Hypertarget{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438dabf003112a9bc3a0e98c7e66980db14a5}\label{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438dabf003112a9bc3a0e98c7e66980db14a5}} 
+E\+X\+T\+\_\+\+D\+E\+F\+C\+O\+N\+T\+E\+XT&Get the current default digitizing context-\/specific data, as needed for the extension. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+X\+T\+\_\+\+D\+E\+F\+S\+Y\+S\+C\+TX@{E\+X\+T\+\_\+\+D\+E\+F\+S\+Y\+S\+C\+TX}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!E\+X\+T\+\_\+\+D\+E\+F\+S\+Y\+S\+C\+TX@{E\+X\+T\+\_\+\+D\+E\+F\+S\+Y\+S\+C\+TX}}}\mbox{\Hypertarget{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da1ae7e21f7b68ac6f8f9ef7955350268e}\label{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da1ae7e21f7b68ac6f8f9ef7955350268e}} 
+E\+X\+T\+\_\+\+D\+E\+F\+S\+Y\+S\+C\+TX&Get the current default system context-\/specific data, as needed for the extension. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+X\+T\+\_\+\+C\+U\+R\+S\+O\+RS@{E\+X\+T\+\_\+\+C\+U\+R\+S\+O\+RS}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!E\+X\+T\+\_\+\+C\+U\+R\+S\+O\+RS@{E\+X\+T\+\_\+\+C\+U\+R\+S\+O\+RS}}}\mbox{\Hypertarget{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da0b3aaf32240828ddea4bb17e181e7e72}\label{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438da0b3aaf32240828ddea4bb17e181e7e72}} 
+E\+X\+T\+\_\+\+C\+U\+R\+S\+O\+RS&Get a byte array of the current default cursor-\/specific data, as need for the extension. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+X\+T\+\_\+\+D\+E\+V\+I\+C\+ES@{E\+X\+T\+\_\+\+D\+E\+V\+I\+C\+ES}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!E\+X\+T\+\_\+\+D\+E\+V\+I\+C\+ES@{E\+X\+T\+\_\+\+D\+E\+V\+I\+C\+ES}}}\mbox{\Hypertarget{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438dacadc6afca8e1cb7eda7a02e8290cb20e}\label{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438dacadc6afca8e1cb7eda7a02e8290cb20e}} 
+E\+X\+T\+\_\+\+D\+E\+V\+I\+C\+ES&Allow 100 cursors \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+X\+T\+\_\+\+M\+AX@{E\+X\+T\+\_\+\+M\+AX}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!E\+X\+T\+\_\+\+M\+AX@{E\+X\+T\+\_\+\+M\+AX}}}\mbox{\Hypertarget{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438daf0e151047e92ec2a7458b4b99858f4d8}\label{namespace_wintab_d_n_a52875c234488913934e0d49ac13c438daf0e151047e92ec2a7458b4b99858f4d8}} 
+E\+X\+T\+\_\+\+M\+AX&Allow 100 devices \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4}\label{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4}} 
+\index{Wintab\+DN@{Wintab\+DN}!E\+W\+T\+I\+Interface\+Index@{E\+W\+T\+I\+Interface\+Index}}
+\index{E\+W\+T\+I\+Interface\+Index@{E\+W\+T\+I\+Interface\+Index}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{E\+W\+T\+I\+Interface\+Index}{EWTIInterfaceIndex}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4}{Wintab\+D\+N.\+E\+W\+T\+I\+Interface\+Index}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Index values for W\+T\+I\+\_\+\+I\+N\+T\+E\+R\+F\+A\+CE. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+F\+C\+\_\+\+W\+I\+N\+T\+A\+B\+ID@{I\+F\+C\+\_\+\+W\+I\+N\+T\+A\+B\+ID}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!I\+F\+C\+\_\+\+W\+I\+N\+T\+A\+B\+ID@{I\+F\+C\+\_\+\+W\+I\+N\+T\+A\+B\+ID}}}\mbox{\Hypertarget{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4aa4c992eca8fadaa75fa4d0910bdcbccc}\label{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4aa4c992eca8fadaa75fa4d0910bdcbccc}} 
+I\+F\+C\+\_\+\+W\+I\+N\+T\+A\+B\+ID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+F\+C\+\_\+\+S\+P\+E\+C\+V\+E\+R\+S\+I\+ON@{I\+F\+C\+\_\+\+S\+P\+E\+C\+V\+E\+R\+S\+I\+ON}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!I\+F\+C\+\_\+\+S\+P\+E\+C\+V\+E\+R\+S\+I\+ON@{I\+F\+C\+\_\+\+S\+P\+E\+C\+V\+E\+R\+S\+I\+ON}}}\mbox{\Hypertarget{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4ab9bed5dd215fbeec0007239b1850b9f7}\label{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4ab9bed5dd215fbeec0007239b1850b9f7}} 
+I\+F\+C\+\_\+\+S\+P\+E\+C\+V\+E\+R\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+F\+C\+\_\+\+I\+M\+P\+L\+V\+E\+R\+S\+I\+ON@{I\+F\+C\+\_\+\+I\+M\+P\+L\+V\+E\+R\+S\+I\+ON}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!I\+F\+C\+\_\+\+I\+M\+P\+L\+V\+E\+R\+S\+I\+ON@{I\+F\+C\+\_\+\+I\+M\+P\+L\+V\+E\+R\+S\+I\+ON}}}\mbox{\Hypertarget{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a5f808e9fc4d2ffbd19377e7c06f927f2}\label{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a5f808e9fc4d2ffbd19377e7c06f927f2}} 
+I\+F\+C\+\_\+\+I\+M\+P\+L\+V\+E\+R\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+F\+C\+\_\+\+N\+D\+E\+V\+I\+C\+ES@{I\+F\+C\+\_\+\+N\+D\+E\+V\+I\+C\+ES}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!I\+F\+C\+\_\+\+N\+D\+E\+V\+I\+C\+ES@{I\+F\+C\+\_\+\+N\+D\+E\+V\+I\+C\+ES}}}\mbox{\Hypertarget{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4af71e168a75784ef330769eec1dd60621}\label{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4af71e168a75784ef330769eec1dd60621}} 
+I\+F\+C\+\_\+\+N\+D\+E\+V\+I\+C\+ES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+F\+C\+\_\+\+N\+C\+U\+R\+S\+O\+RS@{I\+F\+C\+\_\+\+N\+C\+U\+R\+S\+O\+RS}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!I\+F\+C\+\_\+\+N\+C\+U\+R\+S\+O\+RS@{I\+F\+C\+\_\+\+N\+C\+U\+R\+S\+O\+RS}}}\mbox{\Hypertarget{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a9e32e34f37e8e5ed8220c15a104cdc18}\label{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a9e32e34f37e8e5ed8220c15a104cdc18}} 
+I\+F\+C\+\_\+\+N\+C\+U\+R\+S\+O\+RS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+F\+C\+\_\+\+N\+C\+O\+N\+T\+E\+X\+TS@{I\+F\+C\+\_\+\+N\+C\+O\+N\+T\+E\+X\+TS}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!I\+F\+C\+\_\+\+N\+C\+O\+N\+T\+E\+X\+TS@{I\+F\+C\+\_\+\+N\+C\+O\+N\+T\+E\+X\+TS}}}\mbox{\Hypertarget{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a4d401777c6d7a245345dcd0b55b75129}\label{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a4d401777c6d7a245345dcd0b55b75129}} 
+I\+F\+C\+\_\+\+N\+C\+O\+N\+T\+E\+X\+TS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+F\+C\+\_\+\+C\+T\+X\+O\+P\+T\+I\+O\+NS@{I\+F\+C\+\_\+\+C\+T\+X\+O\+P\+T\+I\+O\+NS}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!I\+F\+C\+\_\+\+C\+T\+X\+O\+P\+T\+I\+O\+NS@{I\+F\+C\+\_\+\+C\+T\+X\+O\+P\+T\+I\+O\+NS}}}\mbox{\Hypertarget{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4ae1ffd32a8c5c3359303ad696444351d3}\label{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4ae1ffd32a8c5c3359303ad696444351d3}} 
+I\+F\+C\+\_\+\+C\+T\+X\+O\+P\+T\+I\+O\+NS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+F\+C\+\_\+\+C\+T\+X\+S\+A\+V\+E\+S\+I\+ZE@{I\+F\+C\+\_\+\+C\+T\+X\+S\+A\+V\+E\+S\+I\+ZE}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!I\+F\+C\+\_\+\+C\+T\+X\+S\+A\+V\+E\+S\+I\+ZE@{I\+F\+C\+\_\+\+C\+T\+X\+S\+A\+V\+E\+S\+I\+ZE}}}\mbox{\Hypertarget{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a85b331c529261ec1bb740876a588040b}\label{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a85b331c529261ec1bb740876a588040b}} 
+I\+F\+C\+\_\+\+C\+T\+X\+S\+A\+V\+E\+S\+I\+ZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+F\+C\+\_\+\+N\+E\+X\+T\+E\+N\+S\+I\+O\+NS@{I\+F\+C\+\_\+\+N\+E\+X\+T\+E\+N\+S\+I\+O\+NS}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!I\+F\+C\+\_\+\+N\+E\+X\+T\+E\+N\+S\+I\+O\+NS@{I\+F\+C\+\_\+\+N\+E\+X\+T\+E\+N\+S\+I\+O\+NS}}}\mbox{\Hypertarget{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a914b22675942e67f35a771ed1a6056b0}\label{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a914b22675942e67f35a771ed1a6056b0}} 
+I\+F\+C\+\_\+\+N\+E\+X\+T\+E\+N\+S\+I\+O\+NS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+F\+C\+\_\+\+N\+M\+A\+N\+A\+G\+E\+RS@{I\+F\+C\+\_\+\+N\+M\+A\+N\+A\+G\+E\+RS}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!I\+F\+C\+\_\+\+N\+M\+A\+N\+A\+G\+E\+RS@{I\+F\+C\+\_\+\+N\+M\+A\+N\+A\+G\+E\+RS}}}\mbox{\Hypertarget{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4ab00f7004cf3bde5a5eca61ca0c655402}\label{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4ab00f7004cf3bde5a5eca61ca0c655402}} 
+I\+F\+C\+\_\+\+N\+M\+A\+N\+A\+G\+E\+RS&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059b}\label{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059b}} 
+\index{Wintab\+DN@{Wintab\+DN}!E\+W\+T\+X\+Extension\+Tag@{E\+W\+T\+X\+Extension\+Tag}}
+\index{E\+W\+T\+X\+Extension\+Tag@{E\+W\+T\+X\+Extension\+Tag}!Wintab\+DN@{Wintab\+DN}}
+\subsubsection{\texorpdfstring{E\+W\+T\+X\+Extension\+Tag}{EWTXExtensionTag}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059b}{Wintab\+D\+N.\+E\+W\+T\+X\+Extension\+Tag}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Tag values used to get extension masks in Get\+W\+T\+Extension\+Mask 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+X\+\_\+\+T\+O\+U\+C\+H\+S\+T\+R\+IP@{W\+T\+X\+\_\+\+T\+O\+U\+C\+H\+S\+T\+R\+IP}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+X\+\_\+\+T\+O\+U\+C\+H\+S\+T\+R\+IP@{W\+T\+X\+\_\+\+T\+O\+U\+C\+H\+S\+T\+R\+IP}}}\mbox{\Hypertarget{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059baa60d07914907f3b8ea00887b6bb64288}\label{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059baa60d07914907f3b8ea00887b6bb64288}} 
+W\+T\+X\+\_\+\+T\+O\+U\+C\+H\+S\+T\+R\+IP&Touch Strip extension mask tag \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+X\+\_\+\+T\+O\+U\+C\+H\+R\+I\+NG@{W\+T\+X\+\_\+\+T\+O\+U\+C\+H\+R\+I\+NG}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+X\+\_\+\+T\+O\+U\+C\+H\+R\+I\+NG@{W\+T\+X\+\_\+\+T\+O\+U\+C\+H\+R\+I\+NG}}}\mbox{\Hypertarget{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059ba54459ba04880b0badafe291a1c10206d}\label{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059ba54459ba04880b0badafe291a1c10206d}} 
+W\+T\+X\+\_\+\+T\+O\+U\+C\+H\+R\+I\+NG&Touch Ring extension mask tag \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+T\+X\+\_\+\+E\+X\+P\+K\+E\+Y\+S2@{W\+T\+X\+\_\+\+E\+X\+P\+K\+E\+Y\+S2}!Wintab\+DN@{Wintab\+DN}}\index{Wintab\+DN@{Wintab\+DN}!W\+T\+X\+\_\+\+E\+X\+P\+K\+E\+Y\+S2@{W\+T\+X\+\_\+\+E\+X\+P\+K\+E\+Y\+S2}}}\mbox{\Hypertarget{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059bad58841126978f27c2e58df6c507db6cf}\label{namespace_wintab_d_n_a303ef868b8887dc43872ddac8a7d059bad58841126978f27c2e58df6c507db6cf}} 
+W\+T\+X\+\_\+\+E\+X\+P\+K\+E\+Y\+S2&Express Key extension mask tag \\
+\hline
+
+\end{DoxyEnumFields}

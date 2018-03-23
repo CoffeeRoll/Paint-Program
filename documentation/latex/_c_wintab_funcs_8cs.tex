@@ -1,0 +1,166 @@
+\hypertarget{_c_wintab_funcs_8cs}{}\section{Wintab\+D\+N/\+C\+Wintab\+Funcs.cs File Reference}
+\label{_c_wintab_funcs_8cs}\index{Wintab\+D\+N/\+C\+Wintab\+Funcs.\+cs@{Wintab\+D\+N/\+C\+Wintab\+Funcs.\+cs}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_h_w_n_d}{Wintab\+D\+N.\+H\+W\+ND}}
+\begin{DoxyCompactList}\small\item\em Managed implementation of Wintab \mbox{\hyperlink{struct_wintab_d_n_1_1_h_w_n_d}{H\+W\+ND}} typedef. Holds native Window handle. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_w_t_p_k_t}{Wintab\+D\+N.\+W\+T\+P\+KT}}
+\begin{DoxyCompactList}\small\item\em Managed implementation of Wintab \mbox{\hyperlink{class_wintab_d_n_1_1_w_t_p_k_t}{W\+T\+P\+KT}} typedef. Holds Wintab packet identifier. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_f_i_x32}{Wintab\+D\+N.\+F\+I\+X32}}
+\begin{DoxyCompactList}\small\item\em Managed implementation of Wintab \mbox{\hyperlink{class_wintab_d_n_1_1_f_i_x32}{F\+I\+X32}} typedef. Used for a fixed-\/point arithmetic value. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{Wintab\+D\+N.\+H\+C\+TX}}
+\begin{DoxyCompactList}\small\item\em Managed implementation of Wintab \mbox{\hyperlink{class_wintab_d_n_1_1_h_c_t_x}{H\+C\+TX}} typedef. Holds a Wintab context identifier. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_funcs}{Wintab\+D\+N.\+C\+Wintab\+Funcs}}
+\begin{DoxyCompactList}\small\item\em P/\+Invoke wrappers for Wintab functions. See Wintab\+\_\+v140.\+doc (Wintab 1.\+4 spec) and related Wintab documentation for details. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_wintab_d_n}{Wintab\+DN}}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespace_wintab_d_n_a465f8a123fa56040cd62f6a4df2707aa}{Wintab\+D\+N.\+P\+\_\+\+W\+T\+P\+KT}} = U\+Int32
+\item 
+using \mbox{\hyperlink{namespace_wintab_d_n_ae94d0383e02caff0b36afc0b8aa1cd32}{Wintab\+D\+N.\+P\+\_\+\+F\+I\+X32}} = U\+Int32
+\item 
+using \mbox{\hyperlink{namespace_wintab_d_n_a9ae61204cd14d7ef23008991d1fb6dff}{Wintab\+D\+N.\+P\+\_\+\+H\+C\+TX}} = U\+Int32
+\item 
+using \mbox{\hyperlink{namespace_wintab_d_n_a33ba63b3dc16db27638a5f294140f53a}{Wintab\+D\+N.\+P\+\_\+\+H\+W\+ND}} = System.\+Int\+Ptr
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875}{Wintab\+D\+N.\+E\+W\+T\+I\+Category\+Index}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875ac65fabfb07e834f30a3afca244a04042}{Wintab\+D\+N.\+E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+I\+N\+T\+E\+R\+F\+A\+CE}} = 1, 
+\mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875aa20fa5b0815fd2a7092a5d7889b1022f}{Wintab\+D\+N.\+E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+S\+T\+A\+T\+US}} = 2, 
+\mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a16d13b61cd342e276a42402d6923855a}{Wintab\+D\+N.\+E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+D\+E\+F\+C\+O\+N\+T\+E\+XT}} = 3, 
+\mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a6c5be5d5af8ebdf5c21b30c93485c850}{Wintab\+D\+N.\+E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+D\+E\+F\+S\+Y\+S\+C\+TX}} = 4, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a5a63ac9350330d363b4f38184ed39ed8}{Wintab\+D\+N.\+E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+D\+E\+V\+I\+C\+ES}} = 100, 
+\mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a222bda6407f41864cdde9329e2174f12}{Wintab\+D\+N.\+E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+C\+U\+R\+S\+O\+RS}} = 200, 
+\mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875a4a581c91c398d49adb7d4e2271195648}{Wintab\+D\+N.\+E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+NS}} = 300, 
+\mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875ad5b18b294793c4f58c270459876cdf4e}{Wintab\+D\+N.\+E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+D\+D\+C\+T\+XS}} = 400, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_aeb27579e91c95fb5a7bf4a4a9dc7f875accd1360fe596c46f84d0cce24206a6f0}{Wintab\+D\+N.\+E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+D\+S\+C\+T\+XS}} = 500
+ \}
+\begin{DoxyCompactList}\small\item\em Index values for W\+T\+Info w\+Category parameter. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4}{Wintab\+D\+N.\+E\+W\+T\+I\+Interface\+Index}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4aa4c992eca8fadaa75fa4d0910bdcbccc}{Wintab\+D\+N.\+E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+W\+I\+N\+T\+A\+B\+ID}} = 1, 
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4ab9bed5dd215fbeec0007239b1850b9f7}{Wintab\+D\+N.\+E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+S\+P\+E\+C\+V\+E\+R\+S\+I\+ON}} = 2, 
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a5f808e9fc4d2ffbd19377e7c06f927f2}{Wintab\+D\+N.\+E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+I\+M\+P\+L\+V\+E\+R\+S\+I\+ON}} = 3, 
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4af71e168a75784ef330769eec1dd60621}{Wintab\+D\+N.\+E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+N\+D\+E\+V\+I\+C\+ES}} = 4, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a9e32e34f37e8e5ed8220c15a104cdc18}{Wintab\+D\+N.\+E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+N\+C\+U\+R\+S\+O\+RS}} = 5, 
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a4d401777c6d7a245345dcd0b55b75129}{Wintab\+D\+N.\+E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+N\+C\+O\+N\+T\+E\+X\+TS}} = 6, 
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4ae1ffd32a8c5c3359303ad696444351d3}{Wintab\+D\+N.\+E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+C\+T\+X\+O\+P\+T\+I\+O\+NS}} = 7, 
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a85b331c529261ec1bb740876a588040b}{Wintab\+D\+N.\+E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+C\+T\+X\+S\+A\+V\+E\+S\+I\+ZE}} = 8, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4a914b22675942e67f35a771ed1a6056b0}{Wintab\+D\+N.\+E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+N\+E\+X\+T\+E\+N\+S\+I\+O\+NS}} = 9, 
+\mbox{\hyperlink{namespace_wintab_d_n_a9db915754a02c42282c3766bfbafabe4ab00f7004cf3bde5a5eca61ca0c655402}{Wintab\+D\+N.\+E\+W\+T\+I\+Interface\+Index.\+I\+F\+C\+\_\+\+N\+M\+A\+N\+A\+G\+E\+RS}} = 10
+ \}
+\begin{DoxyCompactList}\small\item\em Index values for W\+T\+I\+\_\+\+I\+N\+T\+E\+R\+F\+A\+CE. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565c}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca36228a7af166158266b4945b4cf320e8}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+N\+A\+ME}} = 1, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca7ef189500dca51cb5081b1495c36611d}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+H\+A\+R\+D\+W\+A\+RE}} = 2, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca9a9a43ba18c0983ea960b2128a6210df}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+N\+C\+S\+R\+T\+Y\+P\+ES}} = 3, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565caff267ac1f5895792643f43c45498277f}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+F\+I\+R\+S\+T\+C\+SR}} = 4, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca8356e002037f9cd3acc6699d5c6decb3}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+P\+K\+T\+R\+A\+TE}} = 5, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca9b24628dcced21dd4f679e90cad593a9}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+P\+K\+T\+D\+A\+TA}} = 6, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565cae4e7ac8def1a6179016ecec08650f9e0}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+P\+K\+T\+M\+O\+DE}} = 7, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca9d3f0457670a6d7a18f305d93883af1f}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+C\+S\+R\+D\+A\+TA}} = 8, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca9b1dcd54737d3e341d86338b9834451d}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+X\+M\+A\+R\+G\+IN}} = 9, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca82d911bfa2423df6e0458a1a61e68369}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+Y\+M\+A\+R\+G\+IN}} = 10, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565cae13690a5ec66f2d2af12eaeaf7dd913d}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+Z\+M\+A\+R\+G\+IN}} = 11, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca1caaaea5b0b04abfeb80d0aa163e40d0}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+X}} = 12, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca07cd6a2a411f159d26c92dee033634cf}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+Y}} = 13, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca72feabe514e5dfa4edd58fe2a8863933}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+Z}} = 14, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565cad5006bddd567193470908da64091a74c}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+N\+P\+R\+E\+S\+S\+U\+RE}} = 15, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca84b3d724b9969e4e11e3d2a7e24e1da2}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+T\+P\+R\+E\+S\+S\+U\+RE}} = 16, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565caf7a01674933b87c80bfd6abb427ccad4}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON}} = 17, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565caf41cd5dd7f23faa0c29759287bd48d31}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+R\+O\+T\+A\+T\+I\+ON}} = 18, 
+\mbox{\hyperlink{namespace_wintab_d_n_a87e63128e31d86cb418e895f3d58565ca64d03ad2498f400198da58816caa9995}{Wintab\+D\+N.\+E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+\+P\+N\+P\+ID}} = 19
+ \}
+\begin{DoxyCompactList}\small\item\em Index values for W\+T\+I\+\_\+\+D\+E\+V\+I\+C\+ES \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a3bd7c2b56898962a7309dda568b328b8}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+N\+A\+ME}} = 1, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a2a360558d93a67ef0b2f03792c1f037c}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+A\+C\+T\+I\+VE}} = 2, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61acd1b188aeaa6c3ab7f4c175172bc758e}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+P\+K\+T\+D\+A\+TA}} = 3, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61ab055c216de8d3fe9476fa85c814274a6}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+NS}} = 4, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a3325fb802d4fb101015330ea2020e29f}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+N\+B\+I\+TS}} = 5, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61af7d1e37842c2ae5703a69196b3422c59}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+B\+T\+N\+N\+A\+M\+ES}} = 6, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a70cf055630552ecc639750af9b3e4139}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+B\+U\+T\+T\+O\+N\+M\+AP}} = 7, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61acf2bee9b60a6d6512c21ae188c439414}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+S\+Y\+S\+B\+T\+N\+M\+AP}} = 8, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a3eb010d8976dfa4e4e66b6ad32993ba4}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+N\+P\+B\+U\+T\+T\+ON}} = 9, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a2747b22e4802942bb92f61bac1ddf3c2}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+N\+P\+B\+T\+N\+M\+A\+R\+KS}} = 10, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a80c5507e01ac69fd9465a19688c9e0f4}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+N\+P\+R\+E\+S\+P\+O\+N\+SE}} = 11, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61aee5aec6617eb8884b186f024167ba071}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+T\+P\+B\+U\+T\+T\+ON}} = 12, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61ac4f653870e85099916ca25d4b5518de3}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+T\+P\+B\+T\+N\+M\+A\+R\+KS}} = 13, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61acd91016b78104fd5101c6444f3408e92}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+T\+P\+R\+E\+S\+P\+O\+N\+SE}} = 14, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61ad5cde33c3cdf509f22c56890181a31cd}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+P\+H\+Y\+S\+ID}} = 15, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a924c987d81b3feccad9350fb3f4cd7d8}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+M\+O\+DE}} = 16, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a14a1819f7adf8dd64d75fd0edcb7b3dc}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+M\+I\+N\+P\+K\+T\+D\+A\+TA}} = 17, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61ad08e54efaae57acbad904f7e5abf96ab}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+M\+I\+N\+B\+U\+T\+T\+O\+NS}} = 18, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a99af52f3e638ae50b5f16c6f67a16120}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+C\+A\+P\+A\+B\+I\+L\+I\+T\+I\+ES}} = 19, 
+\mbox{\hyperlink{namespace_wintab_d_n_a215ef64798be3e0207e5bbf438659d61a1c0737f8288fe2dd1ac3e7e8b1eff7e1}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursors\+Index.\+C\+S\+R\+\_\+\+T\+Y\+PE}} = 20
+ \}
+\begin{DoxyCompactList}\small\item\em Index values for W\+T\+I\+\_\+\+C\+U\+R\+S\+O\+RS. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a54fdc0e52106effb073b35f8f6b3920a}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursor\+Name\+Index}} \{ \mbox{\hyperlink{namespace_wintab_d_n_a54fdc0e52106effb073b35f8f6b3920aac73b96dbefc213fba2efcb5cc9afd68b}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursor\+Name\+Index.\+C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+P\+U\+CK}} = E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+C\+U\+R\+S\+O\+RS + 0, 
+\mbox{\hyperlink{namespace_wintab_d_n_a54fdc0e52106effb073b35f8f6b3920aafdca87133e7f591ba6a72c4f92c960f2}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursor\+Name\+Index.\+C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+P\+R\+E\+S\+S\+U\+R\+E\+\_\+\+S\+T\+Y\+L\+US}} = E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+C\+U\+R\+S\+O\+RS + 1, 
+\mbox{\hyperlink{namespace_wintab_d_n_a54fdc0e52106effb073b35f8f6b3920aa34cde7b9ed3b19e48fc745bf6ef9c932}{Wintab\+D\+N.\+E\+W\+T\+I\+Cursor\+Name\+Index.\+C\+S\+R\+\_\+\+N\+A\+M\+E\+\_\+\+E\+R\+A\+S\+ER}} = E\+W\+T\+I\+Category\+Index.\+W\+T\+I\+\_\+\+C\+U\+R\+S\+O\+RS + 2
+ \}
+\begin{DoxyCompactList}\small\item\em Index used with C\+S\+R\+\_\+\+N\+A\+ME to get stylus types. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a0abc03013052c76f444e85b56d6b63cc}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+N\+A\+ME}} = 1, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a60edb117c33614b8c81ffab5d4ed508e}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+O\+P\+T\+I\+O\+NS}} = 2, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a8cca36bceb7386c28221fc6ba8c76bac}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+T\+A\+T\+US}} = 3, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a0f58f02be788990e331393ef8c6c5842}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+L\+O\+C\+KS}} = 4, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ab00fa5157288a65d78f9d25e28ff53a6}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+M\+S\+G\+B\+A\+SE}} = 5, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26acfc405aa2117b2ee1dd071504c7a81c2}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+D\+E\+V\+I\+CE}} = 6, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a6ec22f168bbe5c4828397bf97e9ea802}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+P\+K\+T\+R\+A\+TE}} = 7, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26abb35cbd7a6fc909d3e5dac6ca4e9c8c8}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+P\+K\+T\+D\+A\+TA}} = 8, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a1886bf9fe23701d37f7df5015a1ad42c}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+P\+K\+T\+M\+O\+DE}} = 9, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a8bb4177fb3846d0e0b8f076fd791c4f7}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+M\+O\+V\+E\+M\+A\+SK}} = 10, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a312dfa94c785c07f923e56816d96739f}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+B\+T\+N\+D\+N\+M\+A\+SK}} = 11, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ae0791fc78a50af8172a5c0c9ea53819c}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+B\+T\+N\+U\+P\+M\+A\+SK}} = 12, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ad2779300216eafe15a49ae5b08a3c9a2}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+I\+N\+O\+R\+GX}} = 13, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26af1d4a4ea149ddd23bd53d56d70d55313}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+I\+N\+O\+R\+GY}} = 14, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ac14df9508947a8363a3c1f0dea9358dc}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+I\+N\+O\+R\+GZ}} = 15, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a492f91adf7715a0a7fefeafd6c05dc6a}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+I\+N\+E\+X\+TX}} = 16, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26abb0b8bdbc91ffacf1345b62cbe81042f}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+I\+N\+E\+X\+TY}} = 17, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a986ad852f55ab25af415709281ea5c44}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+I\+N\+E\+X\+TZ}} = 18, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a63c4324c7f16f189e7f8188f02d05f46}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GX}} = 19, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26aa5569727f52885df550291c92cf6ac2a}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GY}} = 20, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a157a27ca7f376bcf9b157484664dc172}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+O\+U\+T\+O\+R\+GZ}} = 21, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a568d77e19db0329301190c36eb342210}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TX}} = 22, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a3412adb4639e3d7c04828e95ca4bd152}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TY}} = 23, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a4cca94819b259c2d3ade49be544219c1}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+O\+U\+T\+E\+X\+TZ}} = 24, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a2b35bcc09bd27eef0917d66b0b4b652b}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+E\+N\+SX}} = 25, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a56e51c95eefe7db5c7a4d09e6776633e}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+E\+N\+SY}} = 26, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26ad47910ed4fac3508a302bddf03bf2e8c}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+E\+N\+SZ}} = 27, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a7639c44b7cf3ea7e5de254bb88523e3b}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+Y\+S\+M\+O\+DE}} = 28, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a3a233bc7a75828a996e0c2b5ff4908cd}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+Y\+S\+O\+R\+GX}} = 29, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a512734848f9eb5419125ddca5b466a8c}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+Y\+S\+O\+R\+GY}} = 30, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26aa5e6acba76c02128cc6c48c6a4f73172}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+Y\+S\+E\+X\+TX}} = 31, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a9866fb8f9d6e115217bd7d40906f83cd}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+Y\+S\+E\+X\+TY}} = 32, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26a87c965d49bfaa92097f18a0f07b89e0f}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+Y\+S\+S\+E\+N\+SX}} = 33, 
+\mbox{\hyperlink{namespace_wintab_d_n_a75b4777047ea6ca407c8cd928ca9ef26afea64dc18968a391794238e812f46fdb}{Wintab\+D\+N.\+E\+W\+T\+I\+Context\+Index.\+C\+T\+X\+\_\+\+S\+Y\+S\+S\+E\+N\+SY}} = 34
+ \}
+\begin{DoxyCompactList}\small\item\em Index values for W\+TI contexts. \end{DoxyCompactList}\end{DoxyCompactItemize}

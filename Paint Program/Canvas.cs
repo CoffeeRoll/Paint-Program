@@ -8,6 +8,9 @@ using System.Drawing.Imaging;
 
 namespace Paint_Program
 {
+	/// <summary>
+	/// Class handling the main rendering of the layers, and interfacing with tools
+	/// </summary>
     public partial class Canvas : UserControl, ITextUpdate
     {
         private Display p;
@@ -20,7 +23,6 @@ namespace Paint_Program
         private Bitmap Grid;
 
         private const int GCperFrames = 100;
-        private int GCCurrentFrame = 0;
 
         private int canvasWidth, canvasHeight;
 
@@ -83,7 +85,10 @@ namespace Paint_Program
             this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
         }
 
-        public void initCanvas()
+		/// <summary>
+		/// Initializes all main components that the canvas interfaces with
+		/// </summary>
+        public void InitCanvas()
         {
 			SharedSettings.Init();
 
@@ -105,8 +110,8 @@ namespace Paint_Program
             tsWidth = 50;
             menuHeight = 25;
 
-            scrollWidth = System.Windows.Forms.SystemInformation.VerticalScrollBarWidth;
-            scrollHeight = System.Windows.Forms.SystemInformation.HorizontalScrollBarHeight;
+            scrollWidth = SystemInformation.VerticalScrollBarWidth;
+            scrollHeight = SystemInformation.HorizontalScrollBarHeight;
 
             lv = new LayerView(canvasWidth, canvasHeight);
             lv.Location = new Point(maxWidth - (lv.Width + scrollWidth), maxHeight - (lv.Height + scrollHeight));
@@ -114,19 +119,21 @@ namespace Paint_Program
             this.Location = new Point((maxWidth / 2) - (this.Width / 2), (maxHeight / 2) - (this.Height / 2));
             this.Parent.Controls.Add(lv);
 
-            ts = new ToolStrip();
-            ts.Dock = DockStyle.None;
-            ts.Location = new Point(0, menuHeight * 2);
-            ts.AutoSize = false;
-            ts.Height = maxHeight - menuHeight;
-            ts.Width = tsWidth;
-            ts.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
-            ts.BackColor = Color.FromArgb(128, 128, 128);
-            ts.GripStyle = ToolStripGripStyle.Hidden;
-            ts.ShowItemToolTips = true;
+			ts = new ToolStrip
+			{
+				Dock = DockStyle.None,
+				Location = new Point(0, menuHeight * 2),
+				AutoSize = false,
+				Height = maxHeight - menuHeight,
+				Width = tsWidth,
+				LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow,
+				BackColor = Color.FromArgb(128, 128, 128),
+				GripStyle = ToolStripGripStyle.Hidden,
+				ShowItemToolTips = true
+			};
 
-            this.Parent.Controls.Add(ts);
-            this.Parent.Resize += handleParentResize;
+			this.Parent.Controls.Add(ts);
+            this.Parent.Resize += HandleParentResize;
 
             bs = new BrushSettings();
             bs.Location = new Point(maxWidth - bs.Width, menuHeight * 2);
@@ -136,32 +143,36 @@ namespace Paint_Program
             zc.Location = new Point(tsWidth, maxHeight - SystemInformation.CaptionHeight - menuHeight- zc.Height);
             this.Parent.Controls.Add(zc);
 
-            p = new Display();
-            p.Size = new Size(canvasWidth, canvasHeight);
+			p = new Display
+			{
+				Size = new Size(canvasWidth, canvasHeight)
+			};
 
-            //Center the canvas on the screen, but don't allow it to be draw off the screen
-            int minXPos = 0;
-            int maxXPos = (bs.Location.X / 2) - (((int)(p.Width)) / 2);
+			//Center the canvas on the screen, but don't allow it to be draw off the screen
+			int minXPos = 0;
+            int maxXPos = (bs.Location.X / 2) - (p.Width / 2);
             int minYPos = menuHeight;
-            int maxYPos = (zc.Location.Y / 2) - (((int)(p.Height)) / 2);
+            int maxYPos = (zc.Location.Y / 2) - (p.Height / 2);
 
             int ploc_x = (maxXPos < minXPos) ? minXPos : maxXPos;
             int ploc_y = maxYPos < minYPos ? minYPos : maxYPos;
             p.Location = new Point(ploc_x, ploc_y);
 
-            p.MouseDown += handleMouseDown;
-            p.MouseUp += handleMouseUp;
-            p.MouseMove += handleMouseMove;
+            p.MouseDown += HandleMouseDown;
+            p.MouseUp += HandleMouseUp;
+            p.MouseMove += HandleMouseMove;
             p.Paint += EDisplayPaint;
 
-            pScaled = new Panel();
-            pScaled.Size = new Size( (lv.Location.X - this.Location.X) - ts.Width - 30 ,(zc.Location.Y - this.Location.Y) - 165 );
-            pScaled.MinimumSize = new Size(canvasWidth, canvasHeight);
-            pScaled.Location = new Point(0, 0);
-            pScaled.BackColor = Color.FromArgb(64,64,64);
-            pScaled.AutoScroll = true;
-            
-            this.Location = new Point(ts.Width + 15, SystemInformation.CaptionHeight + 15);
+			pScaled = new Panel
+			{
+				Size = new Size((lv.Location.X - Location.X) - ts.Width - 30, (zc.Location.Y - Location.Y) - 165),
+				MinimumSize = new Size(canvasWidth, canvasHeight),
+				Location = new Point(0, 0),
+				BackColor = Color.FromArgb(64, 64, 64),
+				AutoScroll = true
+			};
+
+			this.Location = new Point(ts.Width + 15, SystemInformation.CaptionHeight + 15);
             pScaled.Controls.Add(p);
             p.MouseEnter += delegate { pScaled.Focus(); pScaled.Select(); };
 
@@ -183,6 +194,7 @@ namespace Paint_Program
             {
                 Graphics.FromImage(bg).Clear(Color.White);
                 p.BackColor = Color.White;
+				Console.WriteLine("Tiling Error: " + e.InnerException);
             }
 
             g = p.CreateGraphics();
@@ -191,13 +203,16 @@ namespace Paint_Program
             this.Controls.Add(pScaled);
             this.SendToBack();
 
-            initTools();
+            InitTools();
 
             pScaled.Size = new Size((lv.Location.X - this.Location.X) - 15, (zc.Location.Y - this.Location.Y) - 15);
             this.Refresh();
         }
 
-        private void initTools()
+		/// <summary>
+		/// Adds all tools to the tool bar
+		/// </summary>
+        private void InitTools()
         {
             Tools.Add(new PencilTool());
             Tools.Add(new BrushTool());
@@ -212,14 +227,15 @@ namespace Paint_Program
 
             foreach (ITool tool in Tools)
             {
-                ToolStripButton temp = new ToolStripButton(Image.FromFile(tool.getToolIconPath()));
-                
-                temp.ToolTipText = tool.getToolTip();
-                temp.AutoToolTip = false;
-                temp.AutoSize = false;
-                temp.Width = tsWidth;
-                temp.Height = temp.Width;
-                temp.Click += handleToolStripItemClick;
+				ToolStripButton temp = new ToolStripButton(Image.FromFile(tool.GetToolIconPath()))
+				{
+					ToolTipText = tool.GetToolTip(),
+					AutoToolTip = false,
+					AutoSize = false,
+					Width = tsWidth
+				};
+				temp.Height = temp.Width;
+                temp.Click += HandleToolStripItemClick;
                 ToolButtons.Add(temp);
                 ts.Items.Add(temp);
 
@@ -230,8 +246,8 @@ namespace Paint_Program
                     temp.Tag = tt;
 
                     //Draw the ToolTip Twice because it doesn't work with one draw -- also not great
-                    ((ToolTip)temp.Tag).Show(tool.getToolTip(), this, temp.Bounds.X + temp.Width, temp.Bounds.Y + temp.Height);
-                    ((ToolTip)temp.Tag).Show(tool.getToolTip(), this, temp.Bounds.X + temp.Width, temp.Bounds.Y + temp.Height);
+                    ((ToolTip)temp.Tag).Show(tool.GetToolTip(), this, temp.Bounds.X + temp.Width, temp.Bounds.Y + temp.Height);
+                    ((ToolTip)temp.Tag).Show(tool.GetToolTip(), this, temp.Bounds.X + temp.Width, temp.Bounds.Y + temp.Height);
                 };
 
                 temp.MouseLeave += delegate {
@@ -240,21 +256,29 @@ namespace Paint_Program
                     ((ToolTip)temp.Tag).Dispose();
                 };
             }
-
-
-            /**/
         }
 
-        public void zoomIn()
+		/// <summary>
+		/// Zooms canvas in by 10%
+		/// </summary>
+        public void ZoomIn()
         {
             zc.setZoom(zc.getZoomPercentage() + 10);
         }
 
-        public void zoomOut()
+		/// <summary>
+		/// Zooms canvas out by 10%
+		/// </summary>
+        public void ZoomOut()
         {
             zc.setZoom(zc.getZoomPercentage() - 10);
         }
 
+		/// <summary>
+		/// WintabDN event handler to interface with USB drawing tablets
+		/// </summary>
+		/// <param name="sender">N/A</param>
+		/// <param name="e">Tablet event data</param>
         private void HandleTabletData(object sender, MessageReceivedEventArgs e)
         {
 			if (SharedSettings.getTabletconnected())
@@ -290,10 +314,15 @@ namespace Paint_Program
 
         }
 
-        private void handleToolStripItemClick(object sender, EventArgs e)
+		/// <summary>
+		/// Handles tool changes
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+        private void HandleToolStripItemClick(object sender, EventArgs e)
         {
             iActiveTool = ToolButtons.IndexOf((ToolStripButton)sender);
-            Tools[iActiveTool].init();
+            Tools[iActiveTool].Init();
 
             foreach(ToolStripButton b in ToolButtons)
             {
@@ -302,19 +331,26 @@ namespace Paint_Program
             ToolButtons[iActiveTool].BackColor = Color.LightGreen;
         }
 
-        public void updatePositions(object sender)
+		/// <summary>
+		/// Updates the positions of the different components in the application
+		/// </summary>
+		/// <param name="sender">N/A</param>
+        public void UpdatePositions(object sender)
         {
             Parent.Refresh();
-            handleParentResize(sender, null);
+            HandleParentResize(sender, null);
 
         }
 
-        private void handleParentResize(object sender, EventArgs e)
+		/// <summary>
+		/// Handles window resize by adjusting the position of all components
+		/// </summary>
+		/// <param name="sender">The parent control of this Canvas class</param>
+		/// <param name="e">N/A</param>
+        private void HandleParentResize(object sender, EventArgs e)
         {
-
-            //Temporary Hack Fix - Please Find Better Solution
             //Fixes Second New Project Null Parent Reference Bug
-            this.Parent = (System.Windows.Forms.Control) sender;
+            this.Parent = (Control) sender;
 
             //Updates Parent Width and Height Values
             maxWidth = this.Parent.Width;
@@ -339,20 +375,25 @@ namespace Paint_Program
             int ploc_y = maxYPos < minYPos ? minYPos : maxYPos;
             p.Location = new Point(ploc_x, ploc_y);
 
-            pScaled.Size = new Size((lv.Location.X - this.Location.X), (zc.Location.Y - this.Location.Y));
+			//Correct for canvas' scroll position to prevent drift
+            pScaled.Size = new Size((lv.Location.X - this.HorizontalScroll.Value), (zc.Location.Y - this.VerticalScroll.Value));
 
             //Prevent controls from not redrawing
             this.Parent.Refresh();
         }
 
-        private MouseEventArgs scaleMouseEvent(MouseEventArgs e)
+		/// <summary>
+		/// Scales the mouse event so that when the canvas is zoomed in the mouse is still in the correct location 
+		/// </summary>
+		/// <param name="e">MouseEventArgs containing the mouse event data</param>
+		/// <returns></returns>
+        private MouseEventArgs ScaleMouseEvent(MouseEventArgs e)
         {
-            int offset = 0;// (int)(SharedSettings.fScale);
             if (!SharedSettings.getActiveSelection())
             {
                 if (lv.getActiveLayer().isLayerVisible())
                 {
-                    return new MouseEventArgs(e.Button, e.Clicks, (int)((e.X - offset) / SharedSettings.getDrawScale()), (int)((e.Y - offset) / SharedSettings.getDrawScale()), e.Delta);
+                    return new MouseEventArgs(e.Button, e.Clicks, (int)(e.X / SharedSettings.getDrawScale()), (int)(e.Y / SharedSettings.getDrawScale()), e.Delta);
                 }
                 else
                 {
@@ -361,68 +402,92 @@ namespace Paint_Program
             }
             else if (Tools[iActiveTool] is MoveTool)
             {
-                return new MouseEventArgs(e.Button, e.Clicks, (int)(((e.X - SharedSettings.getSelectionPoint().X) - offset) / SharedSettings.getDrawScale()), (int)(((e.Y - SharedSettings.getSelectionPoint().Y) - offset) / SharedSettings.getDrawScale()), e.Delta);
+                return new MouseEventArgs(e.Button, e.Clicks, (int)(((e.X - SharedSettings.getSelectionPoint().X)) / SharedSettings.getDrawScale()), (int)(((e.Y - SharedSettings.getSelectionPoint().Y)) / SharedSettings.getDrawScale()), e.Delta);
             }
             else
             {
                 Rectangle rect = new Rectangle(SharedSettings.getSelectionPoint(), SharedSettings.getSelectionSize());
                 if ((SharedSettings.getActiveSelection() && rect.Contains(e.X, e.Y)) || Tools[iActiveTool] is SelectionTool)
                 {
-                    return new MouseEventArgs(e.Button, e.Clicks, (int)(((e.X - SharedSettings.getSelectionPoint().X) - offset) / SharedSettings.getDrawScale()), (int)(((e.Y - SharedSettings.getSelectionPoint().Y) - offset) / SharedSettings.getDrawScale()), e.Delta);
+                    return new MouseEventArgs(e.Button, e.Clicks, (int)(((e.X - SharedSettings.getSelectionPoint().X)) / SharedSettings.getDrawScale()), (int)(((e.Y - SharedSettings.getSelectionPoint().Y)) / SharedSettings.getDrawScale()), e.Delta);
                 }
                 else
                 {
                     return null;
                 }
             }
-            return null;
         }
 
-        public void handleMouseDown(object sender, MouseEventArgs e)
+		/// <summary>
+		/// Handles mouse down events and sends event data to tools
+		/// </summary>
+		/// <param name="sender">N/A</param>
+		/// <param name="e">MouseEventArgs containing data of the mouse event</param>
+        public void HandleMouseDown(object sender, MouseEventArgs e)
         {
             
-            MouseEventArgs evt = scaleMouseEvent(e);
+            MouseEventArgs evt = ScaleMouseEvent(e);
             //If there is a selected Tool
             if (iActiveTool >= 0)
             {
-                Tools[iActiveTool].init();
+                Tools[iActiveTool].Init();
             }
             if (iActiveTool >= 0 && evt != null)
             {
-                Tools[iActiveTool].onMouseDown(sender, evt);
+                Tools[iActiveTool].OnMouseDown(sender, evt);
             }
         }
 
-        public void handleMouseUp(object sender, MouseEventArgs e)
+		/// <summary>
+		/// Handles mouse up events and sends event data to tools
+		/// </summary>
+		/// <param name="sender">N/A</param>
+		/// <param name="e">MouseEventArgs containing data of the mouse event</param>
+		public void HandleMouseUp(object sender, MouseEventArgs e)
         {
-            MouseEventArgs evt = scaleMouseEvent(e);
+            MouseEventArgs evt = ScaleMouseEvent(e);
             if (iActiveTool >= 0 && evt != null)
-                Tools[iActiveTool].onMouseUp(sender, evt);
+                Tools[iActiveTool].OnMouseUp(sender, evt);
             lv.UpdateLayerInfoListener();
             bs.CheckChange();
         }
 
-        public void handleMouseMove(object sender, MouseEventArgs e)
+		/// <summary>
+		/// Handles mouse move events and sends event data to tools
+		/// </summary>
+		/// <param name="sender">N/A</param>
+		/// <param name="e">MouseEventArgs containing data of the mouse event</param>
+		public void HandleMouseMove(object sender, MouseEventArgs e)
         {
-            MouseEventArgs evt = scaleMouseEvent(e);
+            MouseEventArgs evt = ScaleMouseEvent(e);
 
-            if (iActiveTool >= 0 && evt != null)
-                
-                Tools[iActiveTool].onMouseMove(sender, evt);
-            updateCanvas(g);
+			if (iActiveTool >= 0 && evt != null)
+			{
+				Tools[iActiveTool].OnMouseMove(sender, evt);
+			}
+            UpdateCanvas(g);
             Parent.Refresh();
         }
 
+		/// <summary>
+		/// Calls UpdateGraphics()
+		/// </summary>
+		/// <param name="sender">Not Used</param>
+		/// <param name="e">PaintEventArgs object where the Graphics property is passed to UpdateGraphics()</param>
         private void EDisplayPaint(object sender, PaintEventArgs e)
         {
             if (!isPasued)
             {
-                updateCanvas(e.Graphics);
+                UpdateCanvas(e.Graphics);
                 lv.updateActiveLayer();
             }
         }
 
-        public void updateCanvas(Graphics k)
+		/// <summary>
+		/// Called periodically to render the image to the screen
+		/// </summary>
+		/// <param name="graphics">Graphics object of the Bitmap being rendered to</param>
+        public void UpdateCanvas(Graphics graphics)
         {
 
             if(SharedSettings.getBitmapLayerUpdate() != null)
@@ -445,13 +510,6 @@ namespace Paint_Program
 
             p.Invalidate();
 
-            //if (GCCurrentFrame == GCperFrames)
-            //{
-            //    System.GC.Collect(); //Prevent OutOfMemory Execptions
-            //}
-            //GCCurrentFrame += 1;
-            //GCCurrentFrame %= 100;
-
             System.GC.Collect();
 
             p.Width = (int) (SharedSettings.getDrawScale() * SharedSettings.getCanvasWidth());
@@ -459,12 +517,12 @@ namespace Paint_Program
             Rectangle source = new Rectangle(0, 0, bit2.Width, bit2.Height);
             Rectangle dest = new Rectangle(0, 0, p.Width, p.Height);
 
-            k.InterpolationMode = InterpolationMode.NearestNeighbor;
-            k.PixelOffsetMode = PixelOffsetMode.Half;
+            graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
+            graphics.PixelOffsetMode = PixelOffsetMode.Half;
 
             if (SharedSettings.getRenderBitmapInterface() && SharedSettings.getInterfaceBitmap() != null)
             {
-                Tools[6].updateInterfaceLayer();
+                Tools[6].UpdateInterfaceLayer();
                 temp.DrawImage(SharedSettings.getInterfaceBitmap(), 0, 0);
             }
             
@@ -487,12 +545,12 @@ namespace Paint_Program
                 }
             }
 
-            handleWatermark(temp);
+            HandleWatermark(temp);
 
-            k.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
+            graphics.DrawImage(bit2, dest, source, GraphicsUnit.Pixel);
             if (SharedSettings.getGridToggle())
             {
-                lv.GridDraw(k);
+                lv.GridDraw(graphics);
             }
 
             bit2.Dispose();
@@ -500,7 +558,11 @@ namespace Paint_Program
                 iitmp.Dispose();
         }
 
-        public static void handleWatermark(Graphics temp)
+		/// <summary>
+		/// Handles rendering the watermark to a Bitmap using the provided Graphics object
+		/// </summary>
+		/// <param name="graphics">Graphics object used to render the watermark</param>
+        public static void HandleWatermark(Graphics graphics)
         {
             if (SharedSettings.bRenderWatermark && SharedSettings.bitmapWatermark != null)
             {
@@ -508,10 +570,10 @@ namespace Paint_Program
                 {
                     try
                     {
-                        Bitmap bgTile = (Bitmap)Bitmap.FromFile(SharedSettings.watermarkPath);
+                        Bitmap bgTile = (Bitmap)Image.FromFile(SharedSettings.watermarkPath);
                         using (TextureBrush brush = new TextureBrush(bgTile, WrapMode.Tile))
                         {
-                            using (Graphics g = temp)
+                            using (Graphics g = graphics)
                             {
                                 g.FillRectangle(brush, 0, 0, SharedSettings.bitmapCanvas.Width, SharedSettings.bitmapCanvas.Height);
                             }
@@ -519,14 +581,15 @@ namespace Paint_Program
                     }
                     catch (Exception e)
                     {
+						Console.WriteLine("Tiling Watermark Error: " + e.InnerException);
                     }
                 }
                 if (SharedSettings.watermarkStyle == "Single Center")
                 {
-                    temp.InterpolationMode = InterpolationMode.NearestNeighbor;
+                    graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
                     Rectangle src = new Rectangle(0, 0, SharedSettings.bitmapWatermark.Width, SharedSettings.bitmapWatermark.Height);
                     Rectangle dst = new Rectangle(0, 0, SharedSettings.bitmapCanvas.Width, SharedSettings.bitmapCanvas.Height);
-                    temp.DrawImage(SharedSettings.bitmapWatermark, dst, src, GraphicsUnit.Pixel);
+                    graphics.DrawImage(SharedSettings.bitmapWatermark, dst, src, GraphicsUnit.Pixel);
                 }
                 if (SharedSettings.watermarkStyle == "Single Bottom")
                 {
@@ -535,29 +598,35 @@ namespace Paint_Program
                         SharedSettings.bitmapCanvas.Height - SharedSettings.bitmapWatermark.Height,
                         SharedSettings.bitmapWatermark.Width,
                         SharedSettings.bitmapWatermark.Height);
-                    temp.DrawImage(SharedSettings.bitmapWatermark, dst, src, GraphicsUnit.Pixel);
+                    graphics.DrawImage(SharedSettings.bitmapWatermark, dst, src, GraphicsUnit.Pixel);
                 }
-
             }
         }
 
-        public void setPause(bool b)
+		/// <summary>
+		/// Sets the pause flag to start or stop rendering of the main canvas
+		/// </summary>
+		/// <param name="b">
+		/// Boolean value, true stops canvas rendering, false continues rendering
+		/// </param>
+        public void SetPause(bool b)
         {
             isPasued = b;
         }
-
-        public void setBitmap(Bitmap bit)
-        {
-            //Sets the Background Image
-            p.BackgroundImage = bit; 
-        }
-
-        public Bitmap getBitmap()
+		
+		/// <summary>
+		/// Renders all layers to a new Bitmap
+		/// </summary>
+		/// <returns>Bitmap containing a render of all the layer data</returns>
+        public Bitmap GetBitmap()
         {
             //Return the image the user has been working on
             return lv.getRender();
         }
 
+		/// <summary>
+		/// Displays the tool strip
+		/// </summary>
         public void ShowTools()
         {
             if (!ToolsShown)
@@ -569,6 +638,9 @@ namespace Paint_Program
             Parent.Refresh();
         }
 
+		/// <summary>
+		/// Hides the tool strip
+		/// </summary>
         public void HideTools()
         {
             if (ToolsShown)
@@ -579,17 +651,23 @@ namespace Paint_Program
             ToolsShown = false;
         }
 
-        public void updateText()
+		/// <summary>
+		/// Calls the Update Text method for all classes that implement ITextUpdate 
+		/// </summary>
+        public void UpdateText()
         {
             foreach (Control c in Controls)
             {
                 if(c is ITextUpdate)
                 {
-                    ((ITextUpdate) c).updateText();
+                    ((ITextUpdate) c).UpdateText();
                 }
             }
         }
 
+		/// <summary>
+		/// Disposes all resources
+		/// </summary>
         public void Trash()
         {
             lv.Trash();

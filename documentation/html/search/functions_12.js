@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['watchmessage',['WatchMessage',['../class_wintab_d_n_1_1_message_events.html#a6e2e3e429a0a6b9d5e75d0d7a50c079d',1,'WintabDN::MessageEvents']]],
+  ['wndproc',['WndProc',['../class_wintab_d_n_1_1_message_events_1_1_message_window.html#a3bd18cf029efc75766b99965e11ee62c',1,'WintabDN::MessageEvents::MessageWindow']]],
+  ['writebyte',['WriteByte',['../class_paint___program_1_1_gif_encoder.html#a84c115c0609f30a5e20d4848400c8695',1,'Paint_Program::GifEncoder']]],
+  ['writecolortable',['WriteColorTable',['../class_paint___program_1_1_gif_encoder.html#aab69513dafb7327f9decb3530313733e',1,'Paint_Program::GifEncoder']]],
+  ['writegraphiccontrolblock',['WriteGraphicControlBlock',['../class_paint___program_1_1_gif_encoder.html#aa549684b738eea97d7a00dd5df7bfe2e',1,'Paint_Program::GifEncoder']]],
+  ['writeimageblock',['WriteImageBlock',['../class_paint___program_1_1_gif_encoder.html#a9668d36c48e46fd19a1679d442c2e228',1,'Paint_Program::GifEncoder']]],
+  ['writeshort',['WriteShort',['../class_paint___program_1_1_gif_encoder.html#a64eb9e9108dbea9bf73e3ec0ca4e78fb',1,'Paint_Program::GifEncoder']]],
+  ['writestring',['WriteString',['../class_paint___program_1_1_gif_encoder.html#a06fd85f8278561716c8dc37041d24497',1,'Paint_Program::GifEncoder']]],
+  ['wtclose',['WTClose',['../class_wintab_d_n_1_1_c_wintab_funcs.html#a8d62228bbf3a89d2e215814ab8577c81',1,'WintabDN::CWintabFuncs']]],
+  ['wtdataget',['WTDataGet',['../class_wintab_d_n_1_1_c_wintab_funcs.html#a95fc57793075f5982e0e8112d196c778',1,'WintabDN::CWintabFuncs']]],
+  ['wtdatapeek',['WTDataPeek',['../class_wintab_d_n_1_1_c_wintab_funcs.html#abc2c1e9420ca43c25de27b53ed95bcbb',1,'WintabDN::CWintabFuncs']]],
+  ['wtenable',['WTEnable',['../class_wintab_d_n_1_1_c_wintab_funcs.html#ae1540a3e439fdac7395f0672bf24ad18',1,'WintabDN::CWintabFuncs']]],
+  ['wtextget',['WTExtGet',['../class_wintab_d_n_1_1_c_wintab_funcs.html#a49bdbe4e70471c2a45a985b71f1c9f64',1,'WintabDN::CWintabFuncs']]],
+  ['wtextset',['WTExtSet',['../class_wintab_d_n_1_1_c_wintab_funcs.html#aaf26a40c0581e56d526526f2d3b79cae',1,'WintabDN::CWintabFuncs']]],
+  ['wtinfoa',['WTInfoA',['../class_wintab_d_n_1_1_c_wintab_funcs.html#a459af5f8960578fe1194d59b74e99e6a',1,'WintabDN::CWintabFuncs']]],
+  ['wtopena',['WTOpenA',['../class_wintab_d_n_1_1_c_wintab_funcs.html#a9b247bd729145bbbf929a52aca43e039',1,'WintabDN::CWintabFuncs']]],
+  ['wtoverlap',['WTOverlap',['../class_wintab_d_n_1_1_c_wintab_funcs.html#ad9f39d79eb6b0933a0fc092e8f198e8a',1,'WintabDN::CWintabFuncs']]],
+  ['wtpacket',['WTPacket',['../class_wintab_d_n_1_1_c_wintab_funcs.html#ae6705650a7f185b2fa67912761c1e5b3',1,'WintabDN::CWintabFuncs']]],
+  ['wtpacketsget',['WTPacketsGet',['../class_wintab_d_n_1_1_c_wintab_funcs.html#a3a2d7576ad89c1b63dbe8280e4b054b6',1,'WintabDN::CWintabFuncs']]],
+  ['wtqueuepacketsex',['WTQueuePacketsEx',['../class_wintab_d_n_1_1_c_wintab_funcs.html#af888c1a8e975d8e8badc08489b5db0e9',1,'WintabDN::CWintabFuncs']]],
+  ['wtqueuesizeget',['WTQueueSizeGet',['../class_wintab_d_n_1_1_c_wintab_funcs.html#ac299f5c183ddd3fc2e49eaa51dce6ed7',1,'WintabDN::CWintabFuncs']]],
+  ['wtqueuesizeset',['WTQueueSizeSet',['../class_wintab_d_n_1_1_c_wintab_funcs.html#a66e6a811ecd2830ae6f2784b4beedd10',1,'WintabDN::CWintabFuncs']]]
+];

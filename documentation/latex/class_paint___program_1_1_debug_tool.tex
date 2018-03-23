@@ -1,0 +1,211 @@
+\hypertarget{class_paint___program_1_1_debug_tool}{}\section{Paint\+\_\+\+Program.\+Debug\+Tool Class Reference}
+\label{class_paint___program_1_1_debug_tool}\index{Paint\+\_\+\+Program.\+Debug\+Tool@{Paint\+\_\+\+Program.\+Debug\+Tool}}
+
+
+Debug class, please ignore  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_paint___program_1_1_debug_tool_a69b23aa29a8e6a7eda899f8b0c06a30a}{Debug\+Tool}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_debug_tool_abb9b13e0ee7ebd2ae519954d1b7b25bc}{init}} (Graphics g, int w, int h)
+\item 
+string \mbox{\hyperlink{class_paint___program_1_1_debug_tool_a2fc17119627d456392edbacde3cfd777}{get\+Tool\+Icon\+Path}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_debug_tool_a4487357b5b4f13df8e2d5b1dea58b4b1}{on\+Mouse\+Down}} (object sender, Mouse\+Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_debug_tool_ad42116d6b06599d09e512a69508374e5}{on\+Mouse\+Move}} (object sender, Mouse\+Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_debug_tool_ae7992dec38b867467945acaf5a534788}{on\+Mouse\+Up}} (object sender, Mouse\+Event\+Args e)
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_debug_tool_a151b487b28d6473d9e19fc5f3b0ef794}{is\+Initalized}} ()
+\item 
+Bitmap \mbox{\hyperlink{class_paint___program_1_1_debug_tool_ae253e13e230722216dd52b6495d2095c}{get\+Tool\+Layer}} ()
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_debug_tool_a3a65762371dc6be5036dd2bb1cb15c68}{requires\+Layer\+Data}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_debug_tool_af32071c87b23b3be49903dd92fe374b5}{set\+Layer\+Data}} (Bitmap bit)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_debug_tool_a269e245b70de5839910bc69c77dfebf3}{update\+Brush}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Graphics \mbox{\hyperlink{class_paint___program_1_1_debug_tool_a6db0d9d72add267032949d331a12a017}{graphics}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_debug_tool_ac285e9144df5c4c82e634f39124b1e16}{width}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_debug_tool_a2180c8645eb505b2170305afd253fddd}{height}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_debug_tool_a9cbdfa82dccbfcecc88ec3d3d9bd8049}{num\+Points}}
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_debug_tool_a7384ecc5d8dd4490f06cf6bd622986af}{b\+Mouse\+Down}}
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_debug_tool_a58921b1790994eeb8c922bf63b55d429}{b\+Init}}
+\item 
+Point \mbox{\hyperlink{class_paint___program_1_1_debug_tool_a90d4f179237f1c374fe3302ae78a3c4c}{p\+Old}}
+\item 
+Point \mbox{\hyperlink{class_paint___program_1_1_debug_tool_ae2ed9bdde0db892b63d9db1da369de34}{p\+New}}
+\item 
+Pen \mbox{\hyperlink{class_paint___program_1_1_debug_tool_a1126df782657a290b3bc13b4168abe4e}{p\+Prime}}
+\item 
+Pen \mbox{\hyperlink{class_paint___program_1_1_debug_tool_a83f4b616dfa26be50768d1fa276f8906}{p\+Sec}}
+\item 
+List$<$ Point $>$ \mbox{\hyperlink{class_paint___program_1_1_debug_tool_aed4b47af45077ad5a83f88da6cad0620}{points}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Debug class, please ignore 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_a69b23aa29a8e6a7eda899f8b0c06a30a}\label{class_paint___program_1_1_debug_tool_a69b23aa29a8e6a7eda899f8b0c06a30a}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!Debug\+Tool@{Debug\+Tool}}
+\index{Debug\+Tool@{Debug\+Tool}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{Debug\+Tool()}{DebugTool()}}
+{\footnotesize\ttfamily Paint\+\_\+\+Program.\+Debug\+Tool.\+Debug\+Tool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_a2fc17119627d456392edbacde3cfd777}\label{class_paint___program_1_1_debug_tool_a2fc17119627d456392edbacde3cfd777}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!get\+Tool\+Icon\+Path@{get\+Tool\+Icon\+Path}}
+\index{get\+Tool\+Icon\+Path@{get\+Tool\+Icon\+Path}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{get\+Tool\+Icon\+Path()}{getToolIconPath()}}
+{\footnotesize\ttfamily string Paint\+\_\+\+Program.\+Debug\+Tool.\+get\+Tool\+Icon\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_ae253e13e230722216dd52b6495d2095c}\label{class_paint___program_1_1_debug_tool_ae253e13e230722216dd52b6495d2095c}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!get\+Tool\+Layer@{get\+Tool\+Layer}}
+\index{get\+Tool\+Layer@{get\+Tool\+Layer}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{get\+Tool\+Layer()}{getToolLayer()}}
+{\footnotesize\ttfamily Bitmap Paint\+\_\+\+Program.\+Debug\+Tool.\+get\+Tool\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_abb9b13e0ee7ebd2ae519954d1b7b25bc}\label{class_paint___program_1_1_debug_tool_abb9b13e0ee7ebd2ae519954d1b7b25bc}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!init@{init}}
+\index{init@{init}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Debug\+Tool.\+init (\begin{DoxyParamCaption}\item[{Graphics}]{g,  }\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_a151b487b28d6473d9e19fc5f3b0ef794}\label{class_paint___program_1_1_debug_tool_a151b487b28d6473d9e19fc5f3b0ef794}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!is\+Initalized@{is\+Initalized}}
+\index{is\+Initalized@{is\+Initalized}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{is\+Initalized()}{isInitalized()}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Debug\+Tool.\+is\+Initalized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_a4487357b5b4f13df8e2d5b1dea58b4b1}\label{class_paint___program_1_1_debug_tool_a4487357b5b4f13df8e2d5b1dea58b4b1}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!on\+Mouse\+Down@{on\+Mouse\+Down}}
+\index{on\+Mouse\+Down@{on\+Mouse\+Down}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{on\+Mouse\+Down()}{onMouseDown()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Debug\+Tool.\+on\+Mouse\+Down (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_ad42116d6b06599d09e512a69508374e5}\label{class_paint___program_1_1_debug_tool_ad42116d6b06599d09e512a69508374e5}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!on\+Mouse\+Move@{on\+Mouse\+Move}}
+\index{on\+Mouse\+Move@{on\+Mouse\+Move}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{on\+Mouse\+Move()}{onMouseMove()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Debug\+Tool.\+on\+Mouse\+Move (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_ae7992dec38b867467945acaf5a534788}\label{class_paint___program_1_1_debug_tool_ae7992dec38b867467945acaf5a534788}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!on\+Mouse\+Up@{on\+Mouse\+Up}}
+\index{on\+Mouse\+Up@{on\+Mouse\+Up}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{on\+Mouse\+Up()}{onMouseUp()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Debug\+Tool.\+on\+Mouse\+Up (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_a3a65762371dc6be5036dd2bb1cb15c68}\label{class_paint___program_1_1_debug_tool_a3a65762371dc6be5036dd2bb1cb15c68}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!requires\+Layer\+Data@{requires\+Layer\+Data}}
+\index{requires\+Layer\+Data@{requires\+Layer\+Data}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{requires\+Layer\+Data()}{requiresLayerData()}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Debug\+Tool.\+requires\+Layer\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_af32071c87b23b3be49903dd92fe374b5}\label{class_paint___program_1_1_debug_tool_af32071c87b23b3be49903dd92fe374b5}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!set\+Layer\+Data@{set\+Layer\+Data}}
+\index{set\+Layer\+Data@{set\+Layer\+Data}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{set\+Layer\+Data()}{setLayerData()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Debug\+Tool.\+set\+Layer\+Data (\begin{DoxyParamCaption}\item[{Bitmap}]{bit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_a269e245b70de5839910bc69c77dfebf3}\label{class_paint___program_1_1_debug_tool_a269e245b70de5839910bc69c77dfebf3}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!update\+Brush@{update\+Brush}}
+\index{update\+Brush@{update\+Brush}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{update\+Brush()}{updateBrush()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Debug\+Tool.\+update\+Brush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_a58921b1790994eeb8c922bf63b55d429}\label{class_paint___program_1_1_debug_tool_a58921b1790994eeb8c922bf63b55d429}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!b\+Init@{b\+Init}}
+\index{b\+Init@{b\+Init}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{b\+Init}{bInit}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Debug\+Tool.\+b\+Init\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_a7384ecc5d8dd4490f06cf6bd622986af}\label{class_paint___program_1_1_debug_tool_a7384ecc5d8dd4490f06cf6bd622986af}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!b\+Mouse\+Down@{b\+Mouse\+Down}}
+\index{b\+Mouse\+Down@{b\+Mouse\+Down}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{b\+Mouse\+Down}{bMouseDown}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Debug\+Tool.\+b\+Mouse\+Down\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_a6db0d9d72add267032949d331a12a017}\label{class_paint___program_1_1_debug_tool_a6db0d9d72add267032949d331a12a017}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!graphics@{graphics}}
+\index{graphics@{graphics}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{graphics}{graphics}}
+{\footnotesize\ttfamily Graphics Paint\+\_\+\+Program.\+Debug\+Tool.\+graphics\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_a2180c8645eb505b2170305afd253fddd}\label{class_paint___program_1_1_debug_tool_a2180c8645eb505b2170305afd253fddd}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!height@{height}}
+\index{height@{height}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Debug\+Tool.\+height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_a9cbdfa82dccbfcecc88ec3d3d9bd8049}\label{class_paint___program_1_1_debug_tool_a9cbdfa82dccbfcecc88ec3d3d9bd8049}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!num\+Points@{num\+Points}}
+\index{num\+Points@{num\+Points}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{num\+Points}{numPoints}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Debug\+Tool.\+num\+Points\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_ae2ed9bdde0db892b63d9db1da369de34}\label{class_paint___program_1_1_debug_tool_ae2ed9bdde0db892b63d9db1da369de34}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!p\+New@{p\+New}}
+\index{p\+New@{p\+New}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{p\+New}{pNew}}
+{\footnotesize\ttfamily Point Paint\+\_\+\+Program.\+Debug\+Tool.\+p\+New\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_aed4b47af45077ad5a83f88da6cad0620}\label{class_paint___program_1_1_debug_tool_aed4b47af45077ad5a83f88da6cad0620}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!points@{points}}
+\index{points@{points}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{points}{points}}
+{\footnotesize\ttfamily List$<$Point$>$ Paint\+\_\+\+Program.\+Debug\+Tool.\+points\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_a90d4f179237f1c374fe3302ae78a3c4c}\label{class_paint___program_1_1_debug_tool_a90d4f179237f1c374fe3302ae78a3c4c}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!p\+Old@{p\+Old}}
+\index{p\+Old@{p\+Old}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{p\+Old}{pOld}}
+{\footnotesize\ttfamily Point Paint\+\_\+\+Program.\+Debug\+Tool.\+p\+Old\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_a1126df782657a290b3bc13b4168abe4e}\label{class_paint___program_1_1_debug_tool_a1126df782657a290b3bc13b4168abe4e}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!p\+Prime@{p\+Prime}}
+\index{p\+Prime@{p\+Prime}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{p\+Prime}{pPrime}}
+{\footnotesize\ttfamily Pen Paint\+\_\+\+Program.\+Debug\+Tool.\+p\+Prime\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_a83f4b616dfa26be50768d1fa276f8906}\label{class_paint___program_1_1_debug_tool_a83f4b616dfa26be50768d1fa276f8906}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!p\+Sec@{p\+Sec}}
+\index{p\+Sec@{p\+Sec}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{p\+Sec}{pSec}}
+{\footnotesize\ttfamily Pen Paint\+\_\+\+Program.\+Debug\+Tool.\+p\+Sec\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_debug_tool_ac285e9144df5c4c82e634f39124b1e16}\label{class_paint___program_1_1_debug_tool_ac285e9144df5c4c82e634f39124b1e16}} 
+\index{Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}!width@{width}}
+\index{width@{width}!Paint\+\_\+\+Program\+::\+Debug\+Tool@{Paint\+\_\+\+Program\+::\+Debug\+Tool}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Debug\+Tool.\+width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Paint Program/\mbox{\hyperlink{_debug_tool_8cs}{Debug\+Tool.\+cs}}\end{DoxyCompactItemize}

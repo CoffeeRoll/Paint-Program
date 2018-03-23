@@ -109,7 +109,7 @@ namespace Paint_Program
             this.Refresh();
         }
 
-        public void updateText()
+        public void UpdateText()
         {
             lPrime.Text = SharedSettings.getGlobalString("brushsettings_color_primary");
             lSec.Text = SharedSettings.getGlobalString("brushsettings_color_secondary");

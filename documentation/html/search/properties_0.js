@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['bactiveselection',['bActiveSelection',['../class_paint___program_1_1_shared_settings.html#a0d33cf35e05b190ed4420e02e2e08e5d',1,'Paint_Program::SharedSettings']]],
+  ['bflattenselection',['bFlattenSelection',['../class_paint___program_1_1_shared_settings.html#a5d792e9cbf93f1658d397425375268f9',1,'Paint_Program::SharedSettings']]],
+  ['bgridtoggle',['bGridToggle',['../class_paint___program_1_1_shared_settings.html#a7b09b33896199d8feb1bfef532c5d0f6',1,'Paint_Program::SharedSettings']]],
+  ['bitmapcanvas',['bitmapCanvas',['../class_paint___program_1_1_shared_settings.html#a552b3a1060eac5050023cd3c37192276',1,'Paint_Program::SharedSettings']]],
+  ['bitmapcurrentlayer',['bitmapCurrentLayer',['../class_paint___program_1_1_shared_settings.html#aedfb581c42925556d42463533c2c82aa',1,'Paint_Program::SharedSettings']]],
+  ['bitmapimportimage',['bitmapImportImage',['../class_paint___program_1_1_shared_settings.html#a58e17686fc591ede7167ce71e25710f7',1,'Paint_Program::SharedSettings']]],
+  ['bitmapinterface',['bitmapInterface',['../class_paint___program_1_1_shared_settings.html#a6baea820ce7c05be09500997f0ab9176',1,'Paint_Program::SharedSettings']]],
+  ['bitmaplayerupdate',['bitmapLayerUpdate',['../class_paint___program_1_1_shared_settings.html#a8559066346da3f32d3fea4a243cdc752',1,'Paint_Program::SharedSettings']]],
+  ['bitmapselectionarea',['bitmapSelectionArea',['../class_paint___program_1_1_shared_settings.html#a27bbcaa8ec082334c2d588d787d01b35',1,'Paint_Program::SharedSettings']]],
+  ['bitmapwatermark',['bitmapWatermark',['../class_paint___program_1_1_shared_settings.html#a4a39cd815c080f8655aa58963232d012',1,'Paint_Program::SharedSettings']]],
+  ['bloadfromsettings',['bLoadFromSettings',['../class_paint___program_1_1_shared_settings.html#ac54c025b8baa0e5c92e0018251e7550d',1,'Paint_Program::SharedSettings']]],
+  ['brenderbitmapinterface',['bRenderBitmapInterface',['../class_paint___program_1_1_shared_settings.html#ae524a4160e6b7548036b7427fca9e35e',1,'Paint_Program::SharedSettings']]],
+  ['brenderwatermark',['bRenderWatermark',['../class_paint___program_1_1_shared_settings.html#a1e82c6d8f4df66648241899d32120b9e',1,'Paint_Program::SharedSettings']]],
+  ['btabletconnected',['bTabletConnected',['../class_paint___program_1_1_shared_settings.html#a350d6745a4a8898e7183993544b3423a',1,'Paint_Program::SharedSettings']]],
+  ['btndnmask',['BtnDnMask',['../class_wintab_d_n_1_1_c_wintab_context.html#a972a0b1d0634fc580aa65b8943af3905',1,'WintabDN::CWintabContext']]],
+  ['btnupmask',['BtnUpMask',['../class_wintab_d_n_1_1_c_wintab_context.html#af90630abd6dc8926709bbf875744de8c',1,'WintabDN::CWintabContext']]]
+];

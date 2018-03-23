@@ -1,0 +1,333 @@
+\hypertarget{class_paint___program_1_1_gif_encoder}{}\section{Paint\+\_\+\+Program.\+Gif\+Encoder Class Reference}
+\label{class_paint___program_1_1_gif_encoder}\index{Paint\+\_\+\+Program.\+Gif\+Encoder@{Paint\+\_\+\+Program.\+Gif\+Encoder}}
+
+
+Encodes multiple images as an animated gif to a stream. ~\newline
+ A\+L\+W\+A\+YS A\+L\+W\+A\+YS A\+L\+W\+A\+YS wire this up in a using block ~\newline
+ Disposing the encoder will complete the file. ~\newline
+ Uses default .net G\+IF encoding and adds animation headers.  
+
+
+Inheritance diagram for Paint\+\_\+\+Program.\+Gif\+Encoder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_paint___program_1_1_gif_encoder}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_paint___program_1_1_gif_encoder_aa5dfacef849ac58b11453ced6cb559e2}{Gif\+Encoder}} (Stream stream, int? width=null, int? height=null, int? repeat\+Count=null)
+\begin{DoxyCompactList}\small\item\em Encodes multiple images as an animated gif to a stream. ~\newline
+ A\+L\+W\+A\+YS A\+L\+W\+A\+YS A\+L\+W\+A\+YS wire this in a using block ~\newline
+ Disposing the encoder will complete the file. ~\newline
+ Uses default .net G\+IF encoding and adds animation headers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_aac02f22617e5123c3101795ee3161d7f}{Add\+Frame}} (Image img, int x=0, int y=0, Time\+Span? frame\+Delay=null)
+\begin{DoxyCompactList}\small\item\em Adds a frame to this animation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a169050e40e9e0736b60337c2f3a4019b}{Dispose}} ()
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Time\+Span \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_af0a0f68f22ddcf8d84f2456adbc46165}{Frame\+Delay}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_abd4a3c3ab853d69be3551d16336cfe30}{Init\+Header}} (Stream source\+Gif, int w, int h)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_aab69513dafb7327f9decb3530313733e}{Write\+Color\+Table}} (Stream source\+Gif)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_aa549684b738eea97d7a00dd5df7bfe2e}{Write\+Graphic\+Control\+Block}} (Stream source\+Gif, Time\+Span frame\+Delay)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a9668d36c48e46fd19a1679d442c2e228}{Write\+Image\+Block}} (Stream source\+Gif, bool include\+Color\+Table, int x, int y, int h, int w)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a84c115c0609f30a5e20d4848400c8695}{Write\+Byte}} (int value)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a64eb9e9108dbea9bf73e3ec0ca4e78fb}{Write\+Short}} (int value)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a06fd85f8278561716c8dc37041d24497}{Write\+String}} (string value)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const string \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a5b1c39cb88c56d947065736bc9132dd6}{File\+Type}} = \char`\"{}G\+IF\char`\"{}
+\item 
+const string \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_ae87017427503b0b1abbad45b707e878e}{File\+Version}} = \char`\"{}89a\char`\"{}
+\item 
+const byte \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a057b20de45791f8e36a24c112507e187}{File\+Trailer}} = 0x3b
+\item 
+const int \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a7fd1aac1cf7f3fea28f0355fa2355dc6}{Application\+Extension\+Block\+Identifier}} = 0xff21
+\item 
+const byte \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_ad7526c2ec09538fac4d99d51a4d80321}{Application\+Block\+Size}} = 0x0b
+\item 
+const string \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_aa24cf121f9f2b444414c7da457edbb7d}{Application\+Identification}} = \char`\"{}N\+E\+T\+S\+C\+A\+P\+E2.\+0\char`\"{}
+\item 
+const int \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a8e5eaf58786b0ec4238a9c88fd87da85}{Graphic\+Control\+Extension\+Block\+Identifier}} = 0xf921
+\item 
+const byte \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a3076a85af102e60d670fd086f315e4a7}{Graphic\+Control\+Extension\+Block\+Size}} = 0x04
+\item 
+const long \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a147dfd6cf02f9cd9bb72e7b4638e4a28}{Source\+Global\+Color\+Info\+Position}} = 10
+\item 
+const long \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_ac5a3d0830dde1a2094d797d97ad6498e}{Source\+Graphic\+Control\+Extension\+Position}} = 781
+\item 
+const long \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a01df6550b9828f02245ed2cd1072ca09}{Source\+Graphic\+Control\+Extension\+Length}} = 8
+\item 
+const long \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_aadcfd603bed926d325615bebdbfd2cb3}{Source\+Image\+Block\+Position}} = 789
+\item 
+const long \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a1456c9cebb7e488514962743ac66d4cb}{Source\+Image\+Block\+Header\+Length}} = 11
+\item 
+const long \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a984a37788cb7c1ce3bd627a5a08e6e50}{Source\+Color\+Block\+Position}} = 13
+\item 
+const long \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a71eec2f591f9af7cb0b4d11d332df5a3}{Source\+Color\+Block\+Length}} = 768
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a5de80ade0a9551f597da31f92b9d95eb}{\+\_\+is\+First\+Image}} = true
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a88e3a78c4e50284dcd716d73a8af55ae}{\+\_\+width}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a4f7b81f0b47ceffb51b3cfd7a1e32164}{\+\_\+height}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a238128613b44b86390393269f2768495}{\+\_\+repeat\+Count}}
+\item 
+readonly Stream \mbox{\hyperlink{class_paint___program_1_1_gif_encoder_a1b44df333c1ce4ebfebf59616352adf9}{\+\_\+stream}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Encodes multiple images as an animated gif to a stream. ~\newline
+ A\+L\+W\+A\+YS A\+L\+W\+A\+YS A\+L\+W\+A\+YS wire this up in a using block ~\newline
+ Disposing the encoder will complete the file. ~\newline
+ Uses default .net G\+IF encoding and adds animation headers. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_aa5dfacef849ac58b11453ced6cb559e2}\label{class_paint___program_1_1_gif_encoder_aa5dfacef849ac58b11453ced6cb559e2}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Gif\+Encoder@{Gif\+Encoder}}
+\index{Gif\+Encoder@{Gif\+Encoder}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Gif\+Encoder()}{GifEncoder()}}
+{\footnotesize\ttfamily Paint\+\_\+\+Program.\+Gif\+Encoder.\+Gif\+Encoder (\begin{DoxyParamCaption}\item[{Stream}]{stream,  }\item[{int?}]{width = {\ttfamily null},  }\item[{int?}]{height = {\ttfamily null},  }\item[{int?}]{repeat\+Count = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Encodes multiple images as an animated gif to a stream. ~\newline
+ A\+L\+W\+A\+YS A\+L\+W\+A\+YS A\+L\+W\+A\+YS wire this in a using block ~\newline
+ Disposing the encoder will complete the file. ~\newline
+ Uses default .net G\+IF encoding and adds animation headers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & The stream that will be written to.\\
+\hline
+{\em width} & Sets the width for this gif or null to use the first frame\textquotesingle{}s width.\\
+\hline
+{\em height} & Sets the height for this gif or null to use the first frame\textquotesingle{}s height.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_aac02f22617e5123c3101795ee3161d7f}\label{class_paint___program_1_1_gif_encoder_aac02f22617e5123c3101795ee3161d7f}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Add\+Frame@{Add\+Frame}}
+\index{Add\+Frame@{Add\+Frame}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Add\+Frame()}{AddFrame()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Gif\+Encoder.\+Add\+Frame (\begin{DoxyParamCaption}\item[{Image}]{img,  }\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0},  }\item[{Time\+Span?}]{frame\+Delay = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a frame to this animation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & The image to add\\
+\hline
+{\em x} & The positioning x offset this image should be displayed at.\\
+\hline
+{\em y} & The positioning y offset this image should be displayed at.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a169050e40e9e0736b60337c2f3a4019b}\label{class_paint___program_1_1_gif_encoder_a169050e40e9e0736b60337c2f3a4019b}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Gif\+Encoder.\+Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_abd4a3c3ab853d69be3551d16336cfe30}\label{class_paint___program_1_1_gif_encoder_abd4a3c3ab853d69be3551d16336cfe30}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Init\+Header@{Init\+Header}}
+\index{Init\+Header@{Init\+Header}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Init\+Header()}{InitHeader()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Gif\+Encoder.\+Init\+Header (\begin{DoxyParamCaption}\item[{Stream}]{source\+Gif,  }\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a84c115c0609f30a5e20d4848400c8695}\label{class_paint___program_1_1_gif_encoder_a84c115c0609f30a5e20d4848400c8695}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Write\+Byte@{Write\+Byte}}
+\index{Write\+Byte@{Write\+Byte}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Write\+Byte()}{WriteByte()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Gif\+Encoder.\+Write\+Byte (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_aab69513dafb7327f9decb3530313733e}\label{class_paint___program_1_1_gif_encoder_aab69513dafb7327f9decb3530313733e}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Write\+Color\+Table@{Write\+Color\+Table}}
+\index{Write\+Color\+Table@{Write\+Color\+Table}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Write\+Color\+Table()}{WriteColorTable()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Gif\+Encoder.\+Write\+Color\+Table (\begin{DoxyParamCaption}\item[{Stream}]{source\+Gif }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_aa549684b738eea97d7a00dd5df7bfe2e}\label{class_paint___program_1_1_gif_encoder_aa549684b738eea97d7a00dd5df7bfe2e}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Write\+Graphic\+Control\+Block@{Write\+Graphic\+Control\+Block}}
+\index{Write\+Graphic\+Control\+Block@{Write\+Graphic\+Control\+Block}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Write\+Graphic\+Control\+Block()}{WriteGraphicControlBlock()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Gif\+Encoder.\+Write\+Graphic\+Control\+Block (\begin{DoxyParamCaption}\item[{Stream}]{source\+Gif,  }\item[{Time\+Span}]{frame\+Delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a9668d36c48e46fd19a1679d442c2e228}\label{class_paint___program_1_1_gif_encoder_a9668d36c48e46fd19a1679d442c2e228}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Write\+Image\+Block@{Write\+Image\+Block}}
+\index{Write\+Image\+Block@{Write\+Image\+Block}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Write\+Image\+Block()}{WriteImageBlock()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Gif\+Encoder.\+Write\+Image\+Block (\begin{DoxyParamCaption}\item[{Stream}]{source\+Gif,  }\item[{bool}]{include\+Color\+Table,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{h,  }\item[{int}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a64eb9e9108dbea9bf73e3ec0ca4e78fb}\label{class_paint___program_1_1_gif_encoder_a64eb9e9108dbea9bf73e3ec0ca4e78fb}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Write\+Short@{Write\+Short}}
+\index{Write\+Short@{Write\+Short}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Write\+Short()}{WriteShort()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Gif\+Encoder.\+Write\+Short (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a06fd85f8278561716c8dc37041d24497}\label{class_paint___program_1_1_gif_encoder_a06fd85f8278561716c8dc37041d24497}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Write\+String@{Write\+String}}
+\index{Write\+String@{Write\+String}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Write\+String()}{WriteString()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Gif\+Encoder.\+Write\+String (\begin{DoxyParamCaption}\item[{string}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a4f7b81f0b47ceffb51b3cfd7a1e32164}\label{class_paint___program_1_1_gif_encoder_a4f7b81f0b47ceffb51b3cfd7a1e32164}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!\+\_\+height@{\+\_\+height}}
+\index{\+\_\+height@{\+\_\+height}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{\+\_\+height}{\_height}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Gif\+Encoder.\+\_\+height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a5de80ade0a9551f597da31f92b9d95eb}\label{class_paint___program_1_1_gif_encoder_a5de80ade0a9551f597da31f92b9d95eb}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!\+\_\+is\+First\+Image@{\+\_\+is\+First\+Image}}
+\index{\+\_\+is\+First\+Image@{\+\_\+is\+First\+Image}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{\+\_\+is\+First\+Image}{\_isFirstImage}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Gif\+Encoder.\+\_\+is\+First\+Image = true\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a238128613b44b86390393269f2768495}\label{class_paint___program_1_1_gif_encoder_a238128613b44b86390393269f2768495}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!\+\_\+repeat\+Count@{\+\_\+repeat\+Count}}
+\index{\+\_\+repeat\+Count@{\+\_\+repeat\+Count}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{\+\_\+repeat\+Count}{\_repeatCount}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Gif\+Encoder.\+\_\+repeat\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a1b44df333c1ce4ebfebf59616352adf9}\label{class_paint___program_1_1_gif_encoder_a1b44df333c1ce4ebfebf59616352adf9}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!\+\_\+stream@{\+\_\+stream}}
+\index{\+\_\+stream@{\+\_\+stream}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{\+\_\+stream}{\_stream}}
+{\footnotesize\ttfamily readonly Stream Paint\+\_\+\+Program.\+Gif\+Encoder.\+\_\+stream\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a88e3a78c4e50284dcd716d73a8af55ae}\label{class_paint___program_1_1_gif_encoder_a88e3a78c4e50284dcd716d73a8af55ae}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!\+\_\+width@{\+\_\+width}}
+\index{\+\_\+width@{\+\_\+width}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{\+\_\+width}{\_width}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Gif\+Encoder.\+\_\+width\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_ad7526c2ec09538fac4d99d51a4d80321}\label{class_paint___program_1_1_gif_encoder_ad7526c2ec09538fac4d99d51a4d80321}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Application\+Block\+Size@{Application\+Block\+Size}}
+\index{Application\+Block\+Size@{Application\+Block\+Size}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Application\+Block\+Size}{ApplicationBlockSize}}
+{\footnotesize\ttfamily const byte Paint\+\_\+\+Program.\+Gif\+Encoder.\+Application\+Block\+Size = 0x0b\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a7fd1aac1cf7f3fea28f0355fa2355dc6}\label{class_paint___program_1_1_gif_encoder_a7fd1aac1cf7f3fea28f0355fa2355dc6}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Application\+Extension\+Block\+Identifier@{Application\+Extension\+Block\+Identifier}}
+\index{Application\+Extension\+Block\+Identifier@{Application\+Extension\+Block\+Identifier}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Application\+Extension\+Block\+Identifier}{ApplicationExtensionBlockIdentifier}}
+{\footnotesize\ttfamily const int Paint\+\_\+\+Program.\+Gif\+Encoder.\+Application\+Extension\+Block\+Identifier = 0xff21\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_aa24cf121f9f2b444414c7da457edbb7d}\label{class_paint___program_1_1_gif_encoder_aa24cf121f9f2b444414c7da457edbb7d}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Application\+Identification@{Application\+Identification}}
+\index{Application\+Identification@{Application\+Identification}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Application\+Identification}{ApplicationIdentification}}
+{\footnotesize\ttfamily const string Paint\+\_\+\+Program.\+Gif\+Encoder.\+Application\+Identification = \char`\"{}N\+E\+T\+S\+C\+A\+P\+E2.\+0\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a057b20de45791f8e36a24c112507e187}\label{class_paint___program_1_1_gif_encoder_a057b20de45791f8e36a24c112507e187}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!File\+Trailer@{File\+Trailer}}
+\index{File\+Trailer@{File\+Trailer}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{File\+Trailer}{FileTrailer}}
+{\footnotesize\ttfamily const byte Paint\+\_\+\+Program.\+Gif\+Encoder.\+File\+Trailer = 0x3b\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a5b1c39cb88c56d947065736bc9132dd6}\label{class_paint___program_1_1_gif_encoder_a5b1c39cb88c56d947065736bc9132dd6}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!File\+Type@{File\+Type}}
+\index{File\+Type@{File\+Type}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{File\+Type}{FileType}}
+{\footnotesize\ttfamily const string Paint\+\_\+\+Program.\+Gif\+Encoder.\+File\+Type = \char`\"{}G\+IF\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_ae87017427503b0b1abbad45b707e878e}\label{class_paint___program_1_1_gif_encoder_ae87017427503b0b1abbad45b707e878e}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!File\+Version@{File\+Version}}
+\index{File\+Version@{File\+Version}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{File\+Version}{FileVersion}}
+{\footnotesize\ttfamily const string Paint\+\_\+\+Program.\+Gif\+Encoder.\+File\+Version = \char`\"{}89a\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a8e5eaf58786b0ec4238a9c88fd87da85}\label{class_paint___program_1_1_gif_encoder_a8e5eaf58786b0ec4238a9c88fd87da85}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Graphic\+Control\+Extension\+Block\+Identifier@{Graphic\+Control\+Extension\+Block\+Identifier}}
+\index{Graphic\+Control\+Extension\+Block\+Identifier@{Graphic\+Control\+Extension\+Block\+Identifier}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Graphic\+Control\+Extension\+Block\+Identifier}{GraphicControlExtensionBlockIdentifier}}
+{\footnotesize\ttfamily const int Paint\+\_\+\+Program.\+Gif\+Encoder.\+Graphic\+Control\+Extension\+Block\+Identifier = 0xf921\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a3076a85af102e60d670fd086f315e4a7}\label{class_paint___program_1_1_gif_encoder_a3076a85af102e60d670fd086f315e4a7}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Graphic\+Control\+Extension\+Block\+Size@{Graphic\+Control\+Extension\+Block\+Size}}
+\index{Graphic\+Control\+Extension\+Block\+Size@{Graphic\+Control\+Extension\+Block\+Size}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Graphic\+Control\+Extension\+Block\+Size}{GraphicControlExtensionBlockSize}}
+{\footnotesize\ttfamily const byte Paint\+\_\+\+Program.\+Gif\+Encoder.\+Graphic\+Control\+Extension\+Block\+Size = 0x04\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a71eec2f591f9af7cb0b4d11d332df5a3}\label{class_paint___program_1_1_gif_encoder_a71eec2f591f9af7cb0b4d11d332df5a3}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Source\+Color\+Block\+Length@{Source\+Color\+Block\+Length}}
+\index{Source\+Color\+Block\+Length@{Source\+Color\+Block\+Length}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Source\+Color\+Block\+Length}{SourceColorBlockLength}}
+{\footnotesize\ttfamily const long Paint\+\_\+\+Program.\+Gif\+Encoder.\+Source\+Color\+Block\+Length = 768\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a984a37788cb7c1ce3bd627a5a08e6e50}\label{class_paint___program_1_1_gif_encoder_a984a37788cb7c1ce3bd627a5a08e6e50}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Source\+Color\+Block\+Position@{Source\+Color\+Block\+Position}}
+\index{Source\+Color\+Block\+Position@{Source\+Color\+Block\+Position}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Source\+Color\+Block\+Position}{SourceColorBlockPosition}}
+{\footnotesize\ttfamily const long Paint\+\_\+\+Program.\+Gif\+Encoder.\+Source\+Color\+Block\+Position = 13\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a147dfd6cf02f9cd9bb72e7b4638e4a28}\label{class_paint___program_1_1_gif_encoder_a147dfd6cf02f9cd9bb72e7b4638e4a28}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Source\+Global\+Color\+Info\+Position@{Source\+Global\+Color\+Info\+Position}}
+\index{Source\+Global\+Color\+Info\+Position@{Source\+Global\+Color\+Info\+Position}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Source\+Global\+Color\+Info\+Position}{SourceGlobalColorInfoPosition}}
+{\footnotesize\ttfamily const long Paint\+\_\+\+Program.\+Gif\+Encoder.\+Source\+Global\+Color\+Info\+Position = 10\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a01df6550b9828f02245ed2cd1072ca09}\label{class_paint___program_1_1_gif_encoder_a01df6550b9828f02245ed2cd1072ca09}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Source\+Graphic\+Control\+Extension\+Length@{Source\+Graphic\+Control\+Extension\+Length}}
+\index{Source\+Graphic\+Control\+Extension\+Length@{Source\+Graphic\+Control\+Extension\+Length}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Source\+Graphic\+Control\+Extension\+Length}{SourceGraphicControlExtensionLength}}
+{\footnotesize\ttfamily const long Paint\+\_\+\+Program.\+Gif\+Encoder.\+Source\+Graphic\+Control\+Extension\+Length = 8\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_ac5a3d0830dde1a2094d797d97ad6498e}\label{class_paint___program_1_1_gif_encoder_ac5a3d0830dde1a2094d797d97ad6498e}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Source\+Graphic\+Control\+Extension\+Position@{Source\+Graphic\+Control\+Extension\+Position}}
+\index{Source\+Graphic\+Control\+Extension\+Position@{Source\+Graphic\+Control\+Extension\+Position}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Source\+Graphic\+Control\+Extension\+Position}{SourceGraphicControlExtensionPosition}}
+{\footnotesize\ttfamily const long Paint\+\_\+\+Program.\+Gif\+Encoder.\+Source\+Graphic\+Control\+Extension\+Position = 781\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_a1456c9cebb7e488514962743ac66d4cb}\label{class_paint___program_1_1_gif_encoder_a1456c9cebb7e488514962743ac66d4cb}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Source\+Image\+Block\+Header\+Length@{Source\+Image\+Block\+Header\+Length}}
+\index{Source\+Image\+Block\+Header\+Length@{Source\+Image\+Block\+Header\+Length}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Source\+Image\+Block\+Header\+Length}{SourceImageBlockHeaderLength}}
+{\footnotesize\ttfamily const long Paint\+\_\+\+Program.\+Gif\+Encoder.\+Source\+Image\+Block\+Header\+Length = 11\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_aadcfd603bed926d325615bebdbfd2cb3}\label{class_paint___program_1_1_gif_encoder_aadcfd603bed926d325615bebdbfd2cb3}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Source\+Image\+Block\+Position@{Source\+Image\+Block\+Position}}
+\index{Source\+Image\+Block\+Position@{Source\+Image\+Block\+Position}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Source\+Image\+Block\+Position}{SourceImageBlockPosition}}
+{\footnotesize\ttfamily const long Paint\+\_\+\+Program.\+Gif\+Encoder.\+Source\+Image\+Block\+Position = 789\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_gif_encoder_af0a0f68f22ddcf8d84f2456adbc46165}\label{class_paint___program_1_1_gif_encoder_af0a0f68f22ddcf8d84f2456adbc46165}} 
+\index{Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}!Frame\+Delay@{Frame\+Delay}}
+\index{Frame\+Delay@{Frame\+Delay}!Paint\+\_\+\+Program\+::\+Gif\+Encoder@{Paint\+\_\+\+Program\+::\+Gif\+Encoder}}
+\subsubsection{\texorpdfstring{Frame\+Delay}{FrameDelay}}
+{\footnotesize\ttfamily Time\+Span Paint\+\_\+\+Program.\+Gif\+Encoder.\+Frame\+Delay\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Paint Program/\mbox{\hyperlink{_gif_encoder_8cs}{Gif\+Encoder.\+cs}}\end{DoxyCompactItemize}

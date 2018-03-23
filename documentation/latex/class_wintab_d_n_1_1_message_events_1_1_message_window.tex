@@ -1,0 +1,60 @@
+\hypertarget{class_wintab_d_n_1_1_message_events_1_1_message_window}{}\section{Wintab\+D\+N.\+Message\+Events.\+Message\+Window Class Reference}
+\label{class_wintab_d_n_1_1_message_events_1_1_message_window}\index{Wintab\+D\+N.\+Message\+Events.\+Message\+Window@{Wintab\+D\+N.\+Message\+Events.\+Message\+Window}}
+Inheritance diagram for Wintab\+D\+N.\+Message\+Events.\+Message\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_wintab_d_n_1_1_message_events_1_1_message_window}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_wintab_d_n_1_1_message_events_1_1_message_window_af9200b16c60b75173285fa3294a02fc1}{Register\+Event\+For\+Message}} (int message\+ID)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_wintab_d_n_1_1_message_events_1_1_message_window_a3bd18cf029efc75766b99965e11ee62c}{Wnd\+Proc}} (ref Message m)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Reader\+Writer\+Lock \mbox{\hyperlink{class_wintab_d_n_1_1_message_events_1_1_message_window_a7c319d57cbec3e47c834608ccda4faf6}{\+\_\+lock}} = new Reader\+Writer\+Lock()
+\item 
+Dictionary$<$ int, bool $>$ \mbox{\hyperlink{class_wintab_d_n_1_1_message_events_1_1_message_window_a8d2becae9e1048174dcefa03fc007019}{\+\_\+message\+Set}} = new Dictionary$<$int, bool$>$()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_message_events_1_1_message_window_af9200b16c60b75173285fa3294a02fc1}\label{class_wintab_d_n_1_1_message_events_1_1_message_window_af9200b16c60b75173285fa3294a02fc1}} 
+\index{Wintab\+D\+N\+::\+Message\+Events\+::\+Message\+Window@{Wintab\+D\+N\+::\+Message\+Events\+::\+Message\+Window}!Register\+Event\+For\+Message@{Register\+Event\+For\+Message}}
+\index{Register\+Event\+For\+Message@{Register\+Event\+For\+Message}!Wintab\+D\+N\+::\+Message\+Events\+::\+Message\+Window@{Wintab\+D\+N\+::\+Message\+Events\+::\+Message\+Window}}
+\subsubsection{\texorpdfstring{Register\+Event\+For\+Message()}{RegisterEventForMessage()}}
+{\footnotesize\ttfamily void Wintab\+D\+N.\+Message\+Events.\+Message\+Window.\+Register\+Event\+For\+Message (\begin{DoxyParamCaption}\item[{int}]{message\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_message_events_1_1_message_window_a3bd18cf029efc75766b99965e11ee62c}\label{class_wintab_d_n_1_1_message_events_1_1_message_window_a3bd18cf029efc75766b99965e11ee62c}} 
+\index{Wintab\+D\+N\+::\+Message\+Events\+::\+Message\+Window@{Wintab\+D\+N\+::\+Message\+Events\+::\+Message\+Window}!Wnd\+Proc@{Wnd\+Proc}}
+\index{Wnd\+Proc@{Wnd\+Proc}!Wintab\+D\+N\+::\+Message\+Events\+::\+Message\+Window@{Wintab\+D\+N\+::\+Message\+Events\+::\+Message\+Window}}
+\subsubsection{\texorpdfstring{Wnd\+Proc()}{WndProc()}}
+{\footnotesize\ttfamily override void Wintab\+D\+N.\+Message\+Events.\+Message\+Window.\+Wnd\+Proc (\begin{DoxyParamCaption}\item[{ref Message}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_message_events_1_1_message_window_a7c319d57cbec3e47c834608ccda4faf6}\label{class_wintab_d_n_1_1_message_events_1_1_message_window_a7c319d57cbec3e47c834608ccda4faf6}} 
+\index{Wintab\+D\+N\+::\+Message\+Events\+::\+Message\+Window@{Wintab\+D\+N\+::\+Message\+Events\+::\+Message\+Window}!\+\_\+lock@{\+\_\+lock}}
+\index{\+\_\+lock@{\+\_\+lock}!Wintab\+D\+N\+::\+Message\+Events\+::\+Message\+Window@{Wintab\+D\+N\+::\+Message\+Events\+::\+Message\+Window}}
+\subsubsection{\texorpdfstring{\+\_\+lock}{\_lock}}
+{\footnotesize\ttfamily Reader\+Writer\+Lock Wintab\+D\+N.\+Message\+Events.\+Message\+Window.\+\_\+lock = new Reader\+Writer\+Lock()\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_message_events_1_1_message_window_a8d2becae9e1048174dcefa03fc007019}\label{class_wintab_d_n_1_1_message_events_1_1_message_window_a8d2becae9e1048174dcefa03fc007019}} 
+\index{Wintab\+D\+N\+::\+Message\+Events\+::\+Message\+Window@{Wintab\+D\+N\+::\+Message\+Events\+::\+Message\+Window}!\+\_\+message\+Set@{\+\_\+message\+Set}}
+\index{\+\_\+message\+Set@{\+\_\+message\+Set}!Wintab\+D\+N\+::\+Message\+Events\+::\+Message\+Window@{Wintab\+D\+N\+::\+Message\+Events\+::\+Message\+Window}}
+\subsubsection{\texorpdfstring{\+\_\+message\+Set}{\_messageSet}}
+{\footnotesize\ttfamily Dictionary$<$int, bool$>$ Wintab\+D\+N.\+Message\+Events.\+Message\+Window.\+\_\+message\+Set = new Dictionary$<$int, bool$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Wintab\+D\+N/\mbox{\hyperlink{_message_events_8cs}{Message\+Events.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['dvc_5fcsrdata',['DVC_CSRDATA',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565ca9d3f0457670a6d7a18f305d93883af1f',1,'WintabDN']]],
+  ['dvc_5ffirstcsr',['DVC_FIRSTCSR',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565caff267ac1f5895792643f43c45498277f',1,'WintabDN']]],
+  ['dvc_5fhardware',['DVC_HARDWARE',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565ca7ef189500dca51cb5081b1495c36611d',1,'WintabDN']]],
+  ['dvc_5fname',['DVC_NAME',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565ca36228a7af166158266b4945b4cf320e8',1,'WintabDN']]],
+  ['dvc_5fncsrtypes',['DVC_NCSRTYPES',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565ca9a9a43ba18c0983ea960b2128a6210df',1,'WintabDN']]],
+  ['dvc_5fnpressure',['DVC_NPRESSURE',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565cad5006bddd567193470908da64091a74c',1,'WintabDN']]],
+  ['dvc_5forientation',['DVC_ORIENTATION',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565caf7a01674933b87c80bfd6abb427ccad4',1,'WintabDN']]],
+  ['dvc_5fpktdata',['DVC_PKTDATA',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565ca9b24628dcced21dd4f679e90cad593a9',1,'WintabDN']]],
+  ['dvc_5fpktmode',['DVC_PKTMODE',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565cae4e7ac8def1a6179016ecec08650f9e0',1,'WintabDN']]],
+  ['dvc_5fpktrate',['DVC_PKTRATE',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565ca8356e002037f9cd3acc6699d5c6decb3',1,'WintabDN']]],
+  ['dvc_5fpnpid',['DVC_PNPID',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565ca64d03ad2498f400198da58816caa9995',1,'WintabDN']]],
+  ['dvc_5frotation',['DVC_ROTATION',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565caf41cd5dd7f23faa0c29759287bd48d31',1,'WintabDN']]],
+  ['dvc_5ftpressure',['DVC_TPRESSURE',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565ca84b3d724b9969e4e11e3d2a7e24e1da2',1,'WintabDN']]],
+  ['dvc_5fx',['DVC_X',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565ca1caaaea5b0b04abfeb80d0aa163e40d0',1,'WintabDN']]],
+  ['dvc_5fxmargin',['DVC_XMARGIN',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565ca9b1dcd54737d3e341d86338b9834451d',1,'WintabDN']]],
+  ['dvc_5fy',['DVC_Y',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565ca07cd6a2a411f159d26c92dee033634cf',1,'WintabDN']]],
+  ['dvc_5fymargin',['DVC_YMARGIN',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565ca82d911bfa2423df6e0458a1a61e68369',1,'WintabDN']]],
+  ['dvc_5fz',['DVC_Z',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565ca72feabe514e5dfa4edd58fe2a8863933',1,'WintabDN']]],
+  ['dvc_5fzmargin',['DVC_ZMARGIN',['../namespace_wintab_d_n.html#a87e63128e31d86cb418e895f3d58565cae13690a5ec66f2d2af12eaeaf7dd913d',1,'WintabDN']]]
+];

@@ -20,8 +20,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 using System;
 using System.Windows.Forms;
-using System.Collections.Generic;
-using System.Text;
 using System.Runtime.InteropServices;
 
 namespace WintabDN
@@ -162,8 +160,10 @@ namespace WintabDN
     /// </summary>
     public class CWintabContext
     {
-        // Context data.
-        private WintabLogContext   m_logContext = new WintabLogContext();
+		private const bool DISPLAY_MESSAGE_BOXES = false;
+
+		// Context data.
+		private WintabLogContext   m_logContext = new WintabLogContext();
         private HCTX                m_hCTX = 0;
 
         /// <summary>
@@ -204,7 +204,10 @@ namespace WintabDN
             }
             catch (Exception ex)
             {
-                MessageBox.Show("FAILED OpenContext: " + ex.ToString());
+				if (DISPLAY_MESSAGE_BOXES)
+				{
+					MessageBox.Show("FAILED OpenContext: " + ex.ToString());
+				}
             }
 
             return m_hCTX;
@@ -226,7 +229,10 @@ namespace WintabDN
             }
             catch (Exception ex)
             {
-                MessageBox.Show("FAILED OpenContext: " + ex.ToString());
+				if (DISPLAY_MESSAGE_BOXES)
+				{
+					MessageBox.Show("FAILED OpenContext: " + ex.ToString());
+				}
             }
 
             return (m_hCTX > 0);
@@ -279,7 +285,10 @@ namespace WintabDN
             }
             catch (Exception ex)
             {
-                MessageBox.Show("FAILED EnableContext: " + ex.ToString());
+				if (DISPLAY_MESSAGE_BOXES)
+				{
+					MessageBox.Show("FAILED EnableContext: " + ex.ToString());
+				}
             }
 
             return status;
@@ -305,7 +314,10 @@ namespace WintabDN
             }
             catch (Exception ex)
             {
-                MessageBox.Show("FAILED SetContextOverlapOrder: " + ex.ToString());
+				if (DISPLAY_MESSAGE_BOXES)
+				{
+					MessageBox.Show("FAILED SetContextOverlapOrder: " + ex.ToString());
+				}
             }
 
             return status;

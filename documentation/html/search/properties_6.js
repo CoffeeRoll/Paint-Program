@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['ibrushhardness',['iBrushHardness',['../class_paint___program_1_1_shared_settings.html#a9d5a7c50141f47a892ba9177ff7e1757',1,'Paint_Program::SharedSettings']]],
+  ['icanvasheight',['iCanvasHeight',['../class_paint___program_1_1_shared_settings.html#a80239793d64317f6e650b70aaa7099ab',1,'Paint_Program::SharedSettings']]],
+  ['icanvaswidth',['iCanvasWidth',['../class_paint___program_1_1_shared_settings.html#a6f70874726e893360d4620a3ca5a8b58',1,'Paint_Program::SharedSettings']]],
+  ['icurentlayerindex',['icurentLayerIndex',['../class_paint___program_1_1_shared_settings.html#a1c355ee9b88027e4cc5f5c1e1c0aac12',1,'Paint_Program::SharedSettings']]],
+  ['igreenscreentolerance',['iGreenScreenTolerance',['../class_paint___program_1_1_shared_settings.html#a1bb44117bcf79c23ccee1cd6d49ad603',1,'Paint_Program::SharedSettings']]],
+  ['igridwidth',['iGridWidth',['../class_paint___program_1_1_shared_settings.html#aaf96ef83f504bf1966be2d62c5ace6f1',1,'Paint_Program::SharedSettings']]],
+  ['imaxtabletpressure',['iMaxTabletPressure',['../class_paint___program_1_1_shared_settings.html#a5e0a43f5518864f4b15fc0ec92b002a8',1,'Paint_Program::SharedSettings']]],
+  ['imaxtabletwidth',['iMaxTabletWidth',['../class_paint___program_1_1_shared_settings.html#ab2b2d020abcafdec7f317dc1383ac307',1,'Paint_Program::SharedSettings']]],
+  ['imintabletwidth',['iMinTabletWidth',['../class_paint___program_1_1_shared_settings.html#a1cee7193c8d1075bc5280687e366300f',1,'Paint_Program::SharedSettings']]],
+  ['inextx',['InExtX',['../class_wintab_d_n_1_1_c_wintab_context.html#a8f33e05910bcde9fe611f32a986a1ea5',1,'WintabDN::CWintabContext']]],
+  ['inexty',['InExtY',['../class_wintab_d_n_1_1_c_wintab_context.html#abb73e61691a4b2480b7997b73202b63b',1,'WintabDN::CWintabContext']]],
+  ['inextz',['InExtZ',['../class_wintab_d_n_1_1_c_wintab_context.html#a8d699ca76769679eca827b033e4f5fde',1,'WintabDN::CWintabContext']]],
+  ['inorgx',['InOrgX',['../class_wintab_d_n_1_1_c_wintab_context.html#a326fb62231cb2f9b783cb29a6716b6b7',1,'WintabDN::CWintabContext']]],
+  ['inorgy',['InOrgY',['../class_wintab_d_n_1_1_c_wintab_context.html#a0f480b34eb30bf42edd2adf565572ae3',1,'WintabDN::CWintabContext']]],
+  ['inorgz',['InOrgZ',['../class_wintab_d_n_1_1_c_wintab_context.html#afe123e2d48ea3c171c2b040dd512cda6',1,'WintabDN::CWintabContext']]],
+  ['itabletpressure',['iTabletPressure',['../class_paint___program_1_1_shared_settings.html#a0023b7cac5df9daf42d660b250c430ea',1,'Paint_Program::SharedSettings']]]
+];

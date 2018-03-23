@@ -1,0 +1,259 @@
+\hypertarget{class_paint___program_1_1_brush_tool}{}\section{Paint\+\_\+\+Program.\+Brush\+Tool Class Reference}
+\label{class_paint___program_1_1_brush_tool}\index{Paint\+\_\+\+Program.\+Brush\+Tool@{Paint\+\_\+\+Program.\+Brush\+Tool}}
+Inheritance diagram for Paint\+\_\+\+Program.\+Brush\+Tool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_paint___program_1_1_brush_tool}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_paint___program_1_1_brush_tool_aab33da2c4f8f8040ec6947ce6f2d4c74}{Brush\+Tool}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_brush_tool_a8cfef3d531b3e9dcb37d81a5ac0a9ad5}{Init}} ()
+\item 
+string \mbox{\hyperlink{class_paint___program_1_1_brush_tool_a7cc103269b01a6367edce7c994443739}{Get\+Tool\+Icon\+Path}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_brush_tool_a66b7dbcbb7af665e48b14d9e70a8d22d}{On\+Mouse\+Down}} (object sender, Mouse\+Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_brush_tool_a4246e31217a616bf6bd251ac2b7ac4e3}{On\+Mouse\+Move}} (object sender, Mouse\+Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_brush_tool_a20c7beba691866bed3cea6a63400d005}{On\+Mouse\+Up}} (object sender, Mouse\+Event\+Args e)
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_brush_tool_a854fff02dd8dfc6016dcb91b4f7d08f9}{is\+Initalized}} ()
+\item 
+Bitmap \mbox{\hyperlink{class_paint___program_1_1_brush_tool_ae96d4b9560f8d271694abd1e727dd14c}{Get\+Tool\+Layer}} ()
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_brush_tool_ae96d027fe5ef110b5b00802a2d842a15}{Requires\+Layer\+Data}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_brush_tool_a7419f5d4bfddc97bcd3562171d6625cd}{Set\+Layer\+Data}} (Bitmap bit)
+\item 
+string \mbox{\hyperlink{class_paint___program_1_1_brush_tool_a29d903eb044890b73e06dd9aac2f5b5e}{Get\+Tool\+Tip}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_brush_tool_ab66c41c9ec1f7175fd0a073cf1dacae9}{Update\+Interface\+Layer}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_brush_tool_ac008b1a1276758fc91ccb3504ddbe2a2}{update\+Brush}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Graphics \mbox{\hyperlink{class_paint___program_1_1_brush_tool_ada03533308b687fb5aad5a97e39a2418}{graphics}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_brush_tool_a2d11ac1381688670b77779849c220256}{width}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_brush_tool_a74fa3f15b3521feddeab58e5da3e794c}{height}}
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_brush_tool_a38e63e44faf4b844b17525f6b64e166b}{b\+Mouse\+Down}}
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_brush_tool_a3bf38746d897988af50ce9d863eaf70b}{b\+Init}}
+\item 
+Point \mbox{\hyperlink{class_paint___program_1_1_brush_tool_a2686971a90a27e64e904106fa8893841}{p\+Old}}
+\item 
+Point \mbox{\hyperlink{class_paint___program_1_1_brush_tool_a6d266f7303b546970257227c86dbacf7}{p\+New}}
+\item 
+Pen \mbox{\hyperlink{class_paint___program_1_1_brush_tool_a5346ef502ccfafa6f49ed704383a7fe5}{pen}}
+\item 
+Color \mbox{\hyperlink{class_paint___program_1_1_brush_tool_ab15d64ae81405a6edc9c0731975d2b8d}{primary\+Color}}
+\item 
+Color \mbox{\hyperlink{class_paint___program_1_1_brush_tool_ae5d888beaa07df91858d531a4a0bd5a5}{secondary\+Color}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_aab33da2c4f8f8040ec6947ce6f2d4c74}\label{class_paint___program_1_1_brush_tool_aab33da2c4f8f8040ec6947ce6f2d4c74}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!Brush\+Tool@{Brush\+Tool}}
+\index{Brush\+Tool@{Brush\+Tool}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{Brush\+Tool()}{BrushTool()}}
+{\footnotesize\ttfamily Paint\+\_\+\+Program.\+Brush\+Tool.\+Brush\+Tool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_a7cc103269b01a6367edce7c994443739}\label{class_paint___program_1_1_brush_tool_a7cc103269b01a6367edce7c994443739}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!Get\+Tool\+Icon\+Path@{Get\+Tool\+Icon\+Path}}
+\index{Get\+Tool\+Icon\+Path@{Get\+Tool\+Icon\+Path}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{Get\+Tool\+Icon\+Path()}{GetToolIconPath()}}
+{\footnotesize\ttfamily string Paint\+\_\+\+Program.\+Brush\+Tool.\+Get\+Tool\+Icon\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_aa057d2f99c59d7bec0215dcad2da1b72}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_ae96d4b9560f8d271694abd1e727dd14c}\label{class_paint___program_1_1_brush_tool_ae96d4b9560f8d271694abd1e727dd14c}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!Get\+Tool\+Layer@{Get\+Tool\+Layer}}
+\index{Get\+Tool\+Layer@{Get\+Tool\+Layer}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{Get\+Tool\+Layer()}{GetToolLayer()}}
+{\footnotesize\ttfamily Bitmap Paint\+\_\+\+Program.\+Brush\+Tool.\+Get\+Tool\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a9b057905515f42a988c166a6a40318e0}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_a29d903eb044890b73e06dd9aac2f5b5e}\label{class_paint___program_1_1_brush_tool_a29d903eb044890b73e06dd9aac2f5b5e}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!Get\+Tool\+Tip@{Get\+Tool\+Tip}}
+\index{Get\+Tool\+Tip@{Get\+Tool\+Tip}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{Get\+Tool\+Tip()}{GetToolTip()}}
+{\footnotesize\ttfamily string Paint\+\_\+\+Program.\+Brush\+Tool.\+Get\+Tool\+Tip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_ac11f1591587144b6e74f5767bbf1df56}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_a8cfef3d531b3e9dcb37d81a5ac0a9ad5}\label{class_paint___program_1_1_brush_tool_a8cfef3d531b3e9dcb37d81a5ac0a9ad5}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!Init@{Init}}
+\index{Init@{Init}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Brush\+Tool.\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_af823123a30fbda34e24e907243241046}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_a854fff02dd8dfc6016dcb91b4f7d08f9}\label{class_paint___program_1_1_brush_tool_a854fff02dd8dfc6016dcb91b4f7d08f9}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!is\+Initalized@{is\+Initalized}}
+\index{is\+Initalized@{is\+Initalized}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{is\+Initalized()}{isInitalized()}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Brush\+Tool.\+is\+Initalized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a951b844bcbf47a6c306104fa86be7a5d}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_a66b7dbcbb7af665e48b14d9e70a8d22d}\label{class_paint___program_1_1_brush_tool_a66b7dbcbb7af665e48b14d9e70a8d22d}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!On\+Mouse\+Down@{On\+Mouse\+Down}}
+\index{On\+Mouse\+Down@{On\+Mouse\+Down}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{On\+Mouse\+Down()}{OnMouseDown()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Brush\+Tool.\+On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a73d8797f4f2b1e0d8efe8aadcd44e840}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_a4246e31217a616bf6bd251ac2b7ac4e3}\label{class_paint___program_1_1_brush_tool_a4246e31217a616bf6bd251ac2b7ac4e3}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!On\+Mouse\+Move@{On\+Mouse\+Move}}
+\index{On\+Mouse\+Move@{On\+Mouse\+Move}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{On\+Mouse\+Move()}{OnMouseMove()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Brush\+Tool.\+On\+Mouse\+Move (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a6a1cbe840b5cfc8a9b9463cc21590845}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_a20c7beba691866bed3cea6a63400d005}\label{class_paint___program_1_1_brush_tool_a20c7beba691866bed3cea6a63400d005}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!On\+Mouse\+Up@{On\+Mouse\+Up}}
+\index{On\+Mouse\+Up@{On\+Mouse\+Up}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{On\+Mouse\+Up()}{OnMouseUp()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Brush\+Tool.\+On\+Mouse\+Up (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a47984c2879213022f1684c07f7bba73e}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_ae96d027fe5ef110b5b00802a2d842a15}\label{class_paint___program_1_1_brush_tool_ae96d027fe5ef110b5b00802a2d842a15}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!Requires\+Layer\+Data@{Requires\+Layer\+Data}}
+\index{Requires\+Layer\+Data@{Requires\+Layer\+Data}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{Requires\+Layer\+Data()}{RequiresLayerData()}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Brush\+Tool.\+Requires\+Layer\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a6d45b6c48da8130ae41db3a66cdaef9a}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_a7419f5d4bfddc97bcd3562171d6625cd}\label{class_paint___program_1_1_brush_tool_a7419f5d4bfddc97bcd3562171d6625cd}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!Set\+Layer\+Data@{Set\+Layer\+Data}}
+\index{Set\+Layer\+Data@{Set\+Layer\+Data}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{Set\+Layer\+Data()}{SetLayerData()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Brush\+Tool.\+Set\+Layer\+Data (\begin{DoxyParamCaption}\item[{Bitmap}]{bit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a2d3e63715dfe04075d27dacf367d1633}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_ac008b1a1276758fc91ccb3504ddbe2a2}\label{class_paint___program_1_1_brush_tool_ac008b1a1276758fc91ccb3504ddbe2a2}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!update\+Brush@{update\+Brush}}
+\index{update\+Brush@{update\+Brush}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{update\+Brush()}{updateBrush()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Brush\+Tool.\+update\+Brush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_ab66c41c9ec1f7175fd0a073cf1dacae9}\label{class_paint___program_1_1_brush_tool_ab66c41c9ec1f7175fd0a073cf1dacae9}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!Update\+Interface\+Layer@{Update\+Interface\+Layer}}
+\index{Update\+Interface\+Layer@{Update\+Interface\+Layer}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{Update\+Interface\+Layer()}{UpdateInterfaceLayer()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Brush\+Tool.\+Update\+Interface\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a36db75d29e88dfd739f658633c40e955}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_a3bf38746d897988af50ce9d863eaf70b}\label{class_paint___program_1_1_brush_tool_a3bf38746d897988af50ce9d863eaf70b}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!b\+Init@{b\+Init}}
+\index{b\+Init@{b\+Init}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{b\+Init}{bInit}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Brush\+Tool.\+b\+Init\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_a38e63e44faf4b844b17525f6b64e166b}\label{class_paint___program_1_1_brush_tool_a38e63e44faf4b844b17525f6b64e166b}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!b\+Mouse\+Down@{b\+Mouse\+Down}}
+\index{b\+Mouse\+Down@{b\+Mouse\+Down}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{b\+Mouse\+Down}{bMouseDown}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Brush\+Tool.\+b\+Mouse\+Down\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_ada03533308b687fb5aad5a97e39a2418}\label{class_paint___program_1_1_brush_tool_ada03533308b687fb5aad5a97e39a2418}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!graphics@{graphics}}
+\index{graphics@{graphics}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{graphics}{graphics}}
+{\footnotesize\ttfamily Graphics Paint\+\_\+\+Program.\+Brush\+Tool.\+graphics\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_a74fa3f15b3521feddeab58e5da3e794c}\label{class_paint___program_1_1_brush_tool_a74fa3f15b3521feddeab58e5da3e794c}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!height@{height}}
+\index{height@{height}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Brush\+Tool.\+height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_a5346ef502ccfafa6f49ed704383a7fe5}\label{class_paint___program_1_1_brush_tool_a5346ef502ccfafa6f49ed704383a7fe5}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!pen@{pen}}
+\index{pen@{pen}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{pen}{pen}}
+{\footnotesize\ttfamily Pen Paint\+\_\+\+Program.\+Brush\+Tool.\+pen\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_a6d266f7303b546970257227c86dbacf7}\label{class_paint___program_1_1_brush_tool_a6d266f7303b546970257227c86dbacf7}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!p\+New@{p\+New}}
+\index{p\+New@{p\+New}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{p\+New}{pNew}}
+{\footnotesize\ttfamily Point Paint\+\_\+\+Program.\+Brush\+Tool.\+p\+New\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_a2686971a90a27e64e904106fa8893841}\label{class_paint___program_1_1_brush_tool_a2686971a90a27e64e904106fa8893841}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!p\+Old@{p\+Old}}
+\index{p\+Old@{p\+Old}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{p\+Old}{pOld}}
+{\footnotesize\ttfamily Point Paint\+\_\+\+Program.\+Brush\+Tool.\+p\+Old\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_ab15d64ae81405a6edc9c0731975d2b8d}\label{class_paint___program_1_1_brush_tool_ab15d64ae81405a6edc9c0731975d2b8d}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!primary\+Color@{primary\+Color}}
+\index{primary\+Color@{primary\+Color}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{primary\+Color}{primaryColor}}
+{\footnotesize\ttfamily Color Paint\+\_\+\+Program.\+Brush\+Tool.\+primary\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_ae5d888beaa07df91858d531a4a0bd5a5}\label{class_paint___program_1_1_brush_tool_ae5d888beaa07df91858d531a4a0bd5a5}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!secondary\+Color@{secondary\+Color}}
+\index{secondary\+Color@{secondary\+Color}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{secondary\+Color}{secondaryColor}}
+{\footnotesize\ttfamily Color Paint\+\_\+\+Program.\+Brush\+Tool.\+secondary\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_brush_tool_a2d11ac1381688670b77779849c220256}\label{class_paint___program_1_1_brush_tool_a2d11ac1381688670b77779849c220256}} 
+\index{Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}!width@{width}}
+\index{width@{width}!Paint\+\_\+\+Program\+::\+Brush\+Tool@{Paint\+\_\+\+Program\+::\+Brush\+Tool}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Brush\+Tool.\+width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Paint Program/\mbox{\hyperlink{_brush_tool_8cs}{Brush\+Tool.\+cs}}\end{DoxyCompactItemize}

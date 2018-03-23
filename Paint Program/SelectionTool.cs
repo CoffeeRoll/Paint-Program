@@ -14,17 +14,17 @@ namespace Paint_Program
 
         Bitmap bEdit;
 
-        public void init()
+        public void Init()
         {
             isInit = true;
         }
 
-        public string getToolIconPath()
+        public string GetToolIconPath()
         {
             return @"..\..\Images\selector.png";
         }
 
-        public Bitmap getToolLayer()
+        public Bitmap GetToolLayer()
         {
             throw new NotImplementedException();
         }
@@ -34,13 +34,13 @@ namespace Paint_Program
             return isInit;
         }
 
-        public void onMouseDown(object sender, MouseEventArgs e)
+        public void OnMouseDown(object sender, MouseEventArgs e)
         {
             p1 = new Point(e.X, e.Y);
             pOld = e.Location;
         }
 
-        public void onMouseMove(object sender, MouseEventArgs e)
+        public void OnMouseMove(object sender, MouseEventArgs e)
         {
             if(e.Button == MouseButtons.Left)
             {
@@ -48,7 +48,7 @@ namespace Paint_Program
             }
         }
 
-        public void onMouseUp(object sender, MouseEventArgs e)
+        public void OnMouseUp(object sender, MouseEventArgs e)
         {
             pOld.X = 0;
             pOld.Y = 0;
@@ -88,7 +88,7 @@ namespace Paint_Program
 					SharedSettings.setSelectionPoint(loc);
 					SharedSettings.setSelectionSize(sze);
                     
-                    updateInterfaceLayer();
+                    UpdateInterfaceLayer();
 
                     //Get selected area data
                     bEdit = SharedSettings.getBitmapCurrentLayer(true).Clone(new Rectangle(loc, sze), SharedSettings.getBitmapCurrentLayer(true).PixelFormat);
@@ -103,17 +103,17 @@ namespace Paint_Program
             }
         }
 
-        public bool requiresLayerData()
+        public bool RequiresLayerData()
         {
             return false;
         }
 
-        public void setLayerData(Bitmap bit)
+        public void SetLayerData(Bitmap bit)
         {
 
         }
 
-        public string getToolTip()
+        public string GetToolTip()
         {
             return SharedSettings.getGlobalString("tooltip_selection");
         }
@@ -126,7 +126,7 @@ namespace Paint_Program
             }
         }
 
-        public void updateInterfaceLayer()
+        public void UpdateInterfaceLayer()
         {
             Bitmap temp = new Bitmap(SharedSettings.getCanvasWidth(), SharedSettings.getCanvasHeight());
 

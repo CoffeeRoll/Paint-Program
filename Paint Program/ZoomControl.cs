@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Paint_Program
@@ -76,7 +69,6 @@ namespace Paint_Program
                     Console.WriteLine("Zoom" + ": " + dZoomFactor);
 					SharedSettings.setDrawScale((float)dZoomFactor / 100.0f);
                     tbZoom.Text = dZoomFactor.ToString();
-                    ((Form1)this.Parent).updateViews();
                 }
             }
             catch(Exception err)
@@ -126,7 +118,7 @@ namespace Paint_Program
 
         }
 
-        public void updateText()
+        public void UpdateText()
         {
             lZoom.Text = SharedSettings.getGlobalString("zoom");
         }

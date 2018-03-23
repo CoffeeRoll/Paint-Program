@@ -45,7 +45,7 @@ namespace Paint_Program
 
                     if (SharedSettings.bRenderWatermark && SharedSettings.bitmapWatermark != null)
                     {
-                        Canvas.handleWatermark(Graphics.FromImage(bm));
+                        Canvas.HandleWatermark(Graphics.FromImage(bm));
                     }
 
                     if (sfd.CheckFileExists)

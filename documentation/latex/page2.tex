@@ -1,0 +1,187 @@
+The \mbox{\hyperlink{namespace_wintab_d_n}{Wintab\+DN}} distribution comes with a sample application, Form\+Test\+App, which exercises most of the \mbox{\hyperlink{namespace_wintab_d_n}{Wintab\+DN}} functionality, as well as demonstrates how to use the A\+PI to build a simple scribble application.\hypertarget{page2_scribbleDemo_sec}{}\section{Scribble Demo}\label{page2_scribbleDemo_sec}
+The Scribble demo shows how to set up a context, register for Wintab data packets, provide a handler for Wintab events, and display graphics corresponding to pen X/Y position and pen pressure data.
+
+The following code segment shows the \char`\"{}\+Scribble\char`\"{} button handler, which opens sets up for pen data capture using the {\ttfamily {\bfseries Init\+Data\+Capture()}} function. 
+\begin{DoxyCode}
+\textcolor{keyword}{private} \textcolor{keywordtype}{void} scribbleButton\_Click(\textcolor{keywordtype}{object} sender, EventArgs e)
+\{
+    ClearDisplay();
+    CloseCurrentContext();
+    Enable\_Scribble(\textcolor{keyword}{true});
+
+    \textcolor{comment}{// Open a context and try to capture pen data;}
+    \textcolor{comment}{// Do not control system cursor.}
+
+    InitDataCapture(m\_TABEXTX, m\_TABEXTY, \textcolor{keyword}{false});
+\}
+\end{DoxyCode}
+
+
+{\ttfamily {\bfseries Init\+Data\+Capture()}} makes sure it closes the current Wintab context, opens up a new context with {\ttfamily {\bfseries Open\+Test\+Digitizer\+Context()}}, creates a Wintab data object with {\ttfamily {\bfseries new C\+Wintab\+Data(m\+\_\+log\+Context)}}, which uses the context just created, and finally sets up a packet event handler for being notified when pen data comes in. Note that the call to {\ttfamily {\bfseries Init\+Data\+Capture()}} is made with ctrl\+Sys\+Cursor\+\_\+I = false, because we cannot be controlling the system cursor while scribbling.
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{private} \textcolor{keywordtype}{void} InitDataCapture(
+\textcolor{keywordtype}{int} ctxHeight\_I = m\_TABEXTX, \textcolor{keywordtype}{int} ctxWidth\_I = m\_TABEXTY, \textcolor{keywordtype}{bool} ctrlSysCursor\_I = \textcolor{keyword}{true})
+\{
+    \textcolor{keywordflow}{try}
+    \{
+        \textcolor{comment}{// Close context from any previous test.}
+        CloseCurrentContext();
+
+        m\_logContext = OpenTestDigitizerContext(ctxWidth\_I, ctxHeight\_I,  ctrlSysCursor\_I);
+
+        \textcolor{keywordflow}{if} (m\_logContext == null)
+        \{
+            \textcolor{keywordflow}{return};
+        \}
+
+        \textcolor{comment}{// Create a data object and set its WT\_PACKET handler.}
+        m\_wtData = \textcolor{keyword}{new} CWintabData(m\_logContext);
+        m\_wtData.SetWTPacketEventHandler(MyWTPacketEventHandler);
+    \}
+    \textcolor{keywordflow}{catch} (Exception ex)
+    \{
+        MessageBox.Show(ex.ToString());
+    \}
+\}
+\end{DoxyCode}
+
+
+When creating the digitizer context, we start with getting the default context using {\ttfamily {\bfseries C\+Wintab\+Info.\+Get\+Default\+Digitizing\+Context(E\+C\+T\+X\+Option\+Values.\+C\+X\+O\+\_\+\+M\+E\+S\+S\+A\+G\+ES)}}, which specifies that we want to receive Wintab messages to be notified of pen data. Since we are not specifying that we want to control the system cursor, the only other thing we have to override is the description of the logical extent of the tablet coordinates. For this example, we specify a logical tablet size of 10000 x 10000. That\textquotesingle{}s pretty much it. We just tell \mbox{\hyperlink{namespace_wintab_d_n}{Wintab\+DN}} to open this context using {\ttfamily {\bfseries log\+Context.\+Open()}}.
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{private} CWintabContext OpenTestDigitizerContext(
+    \textcolor{keywordtype}{int} width\_I = m\_TABEXTX, \textcolor{keywordtype}{int} height\_I = m\_TABEXTY, \textcolor{keywordtype}{bool} ctrlSysCursor = \textcolor{keyword}{true})
+\{
+    \textcolor{keywordtype}{bool} status = \textcolor{keyword}{false};
+    CWintabContext logContext = null;
+
+    \textcolor{keywordflow}{try}
+    \{
+        \textcolor{comment}{// Get the default digitizing context.}
+        \textcolor{comment}{// Default is to receive data events.}
+        logContext = CWintabInfo.GetDefaultDigitizingContext(\mbox{\hyperlink{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2}{ECTXOptionValues}}.CXO\_MESSAGES)
+      ;
+
+        \textcolor{comment}{// Set system cursor if caller wants it.}
+        \textcolor{keywordflow}{if} (ctrlSysCursor)
+        \{
+            logContext.Options |= (uint)\mbox{\hyperlink{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2}{ECTXOptionValues}}.CXO\_SYSTEM;
+        \}
+
+        \textcolor{keywordflow}{if} (logContext == null)
+        \{
+            \textcolor{keywordflow}{return} null;
+        \}
+
+        \textcolor{comment}{// Modify the digitizing region.}
+        logContext.Name = \textcolor{stringliteral}{"WintabDN Event Data Context"};
+
+        \textcolor{comment}{// output in a 10000 x 10000 grid}
+        logContext.OutOrgX = logContext.OutOrgY = 0;
+        logContext.OutExtX = width\_I;
+        logContext.OutExtY = height\_I;
+
+
+        \textcolor{comment}{// Open the context, which will also tell Wintab to send data packets.}
+        status = logContext.Open();
+    \}
+    \textcolor{keywordflow}{catch} (Exception ex)
+    \{
+        TraceMsg(\textcolor{stringliteral}{"OpenTestDigitizerContext ERROR: "} + ex.ToString());
+    \}
+
+    \textcolor{keywordflow}{return} logContext;
+\}
+\end{DoxyCode}
+
+
+Finally, we show that the event handler can easily access the pen data using {\ttfamily {\bfseries m\+\_\+wt\+Data.\+Get\+Data\+Packet(pkt\+I\+D)}}. The packet contains values for the X/Y position and pen normal pressure. The example also makes use of the packet timestamp, which helps determine whether to draw a line between points or just draw a rectangle at the point. This allows the drawn lines to be less choppy when the user moves the pen quickly.
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{public} \textcolor{keywordtype}{void} MyWTPacketEventHandler(Object sender\_I, MessageReceivedEventArgs eventArgs\_I)
+\{
+    \textcolor{keywordflow}{try}
+    \{
+        \textcolor{keywordflow}{if} (m\_maxPkts == 1)
+        \{
+            uint pktID = (uint)eventArgs\_I.Message.WParam;
+            WintabPacket pkt = m\_wtData.GetDataPacket(pktID);
+
+            \textcolor{keywordflow}{if} (pkt.pkContext != 0)
+            \{
+                m\_pkX = pkt.pkX;
+                m\_pkY = pkt.pkY;
+                m\_pressure = pkt.pkNormalPressure.pkAbsoluteNormalPressure;
+
+                m\_pkTime = pkt.pkTime;
+
+                \textcolor{keywordflow}{if} (m\_graphics != null)
+                \{
+                    \textcolor{comment}{// scribble mode}
+                    \textcolor{keywordtype}{int} clientWidth = scribblePanel.Width;
+                    \textcolor{keywordtype}{int} clientHeight = scribblePanel.Height;
+
+                    \textcolor{keywordtype}{int} X = (int)((\textcolor{keywordtype}{double})(m\_pkX * clientWidth) / (\textcolor{keywordtype}{double})m\_TABEXTX);
+                    \textcolor{keywordtype}{int} Y = (int)((\textcolor{keywordtype}{double})clientHeight - 
+                        ((double)(m\_pkY * clientHeight) / (double)m\_TABEXTY));
+
+                    Point tabPoint = \textcolor{keyword}{new} Point(X, Y);
+
+                    \textcolor{keywordflow}{if} (m\_lastPoint.Equals(Point.Empty))
+                    \{
+                        m\_lastPoint = tabPoint;
+                        m\_pkTimeLast = m\_pkTime;
+                    \}
+
+                    m\_pen.Width = (float)(m\_pressure / 200);
+                    \textcolor{keywordflow}{if} (m\_pressure > 0)
+                    \{
+                        \textcolor{keywordflow}{if} (m\_pkTime - m\_pkTimeLast < 5)
+                        \{
+                            m\_graphics.DrawRectangle(m\_pen, X, Y, 1, 1);
+                        \}
+                        \textcolor{keywordflow}{else}
+                        \{
+                            m\_graphics.DrawLine(m\_pen, tabPoint, m\_lastPoint);
+                        \}
+                    \}
+
+                    m\_lastPoint = tabPoint;
+                    m\_pkTimeLast = m\_pkTime;
+                \}
+            \}
+        \}
+    \}
+    \textcolor{keywordflow}{catch} (Exception ex)
+    \{
+        \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"FAILED to get packet data: "} + ex.ToString());
+    \}
+\}
+\end{DoxyCode}
+\hypertarget{page2_testWTInfo_sec}{}\section{Testing C\+Wintab\+Info}\label{page2_testWTInfo_sec}
+The testing in this section is just a demonstration of the various C\+Wintab\+D\+N.\+C\+Wintab\+Info properties. ~\newline
+ Here is one of the first calls an application might make to determine if Wintab is properly connected on the system\+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{bool} isWintabAvailable = CWintabInfo.IsWintabAvailable();
+\end{DoxyCode}
+
+
+This is an example of how to find the number of tablet devices connected\+: 
+\begin{DoxyCode}
+UInt32 numDevices = CWintabInfo.GetNumberOfDevices();
+\end{DoxyCode}
+
+
+Here is an example of how easy it is to get a default digitizing context (which is used in the \mbox{\hyperlink{page2_scribbleDemo_sec}{Scribble Demo}} example)\+: 
+\begin{DoxyCode}
+CWintabContext context = CWintabInfo.GetDefaultDigitizingContext();
+\end{DoxyCode}
+
+
+You can look through the other tests to see how some of the other global Wintab properties can be accessed.
+
+One of the tests, {\ttfamily {\bfseries Test\+\_\+\+Get\+Data\+Packets()}} gives a demonstration of capturing data packets and writing them out to the list. This demo is very similar to the \mbox{\hyperlink{page2_scribbleDemo_sec}{Scribble Demo}}, so we won\textquotesingle{}t go into much detail here except to note that the call to {\ttfamily {\bfseries Init\+Data\+Capture()}} is made with {\ttfamily {\bfseries ctrl\+Sys\+Cursor\+\_\+I}} being true, so that the system cursor can be controlled with the pen. 

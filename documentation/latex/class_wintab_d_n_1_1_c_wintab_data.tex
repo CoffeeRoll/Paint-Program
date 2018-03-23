@@ -1,0 +1,241 @@
+\hypertarget{class_wintab_d_n_1_1_c_wintab_data}{}\section{Wintab\+D\+N.\+C\+Wintab\+Data Class Reference}
+\label{class_wintab_d_n_1_1_c_wintab_data}\index{Wintab\+D\+N.\+C\+Wintab\+Data@{Wintab\+D\+N.\+C\+Wintab\+Data}}
+
+
+Class to support capture and management of Wintab daa.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_data_a03c46068590647292be30a033ba68bcc}{C\+Wintab\+Data}} (\mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context}{C\+Wintab\+Context}} context\+\_\+I)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_data}{C\+Wintab\+Data}} constructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_data_a986ef88b57d732ff3703a2c802fa62e7}{Set\+W\+T\+Packet\+Event\+Handler}} (Event\+Handler$<$ \mbox{\hyperlink{class_wintab_d_n_1_1_message_received_event_args}{Message\+Received\+Event\+Args}} $>$ handler\+\_\+I)
+\begin{DoxyCompactList}\small\item\em Set the handler to be called when W\+T\+\_\+\+P\+A\+C\+K\+ET events are received. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_data_a3fc4761704097caa1e7378a0859db387}{Set\+Packet\+Queue\+Size}} (U\+Int32 num\+Pkts\+\_\+I)
+\begin{DoxyCompactList}\small\item\em Set packet queue size for this data object\textquotesingle{}s context. \end{DoxyCompactList}\item 
+U\+Int32 \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_data_a2acbe7f86d6aafbf9b0b6e1f160b7ae3}{Get\+Packet\+Queue\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get packet queue size for this data object\textquotesingle{}s context. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_ext}{Wintab\+Packet\+Ext}} \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_data_a0849e716235d77de44c182fd6b8e46c4}{Get\+Data\+Packet\+Ext}} (U\+Int32 h\+Ctx\+\_\+I, U\+Int32 pkt\+I\+D\+\_\+I)
+\begin{DoxyCompactList}\small\item\em Returns one packet of \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_ext}{Wintab\+Packet\+Ext}} data from the packet queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet}{Wintab\+Packet}} \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_data_a2c117ceaa2a2db38f99e47549897b6d5}{Get\+Data\+Packet}} (U\+Int32 pkt\+I\+D\+\_\+I)
+\begin{DoxyCompactList}\small\item\em Returns one packet of \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet}{Wintab\+Packet}} data from the packet queue. (Deprecated) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet}{Wintab\+Packet}} \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_data_a13dd62c752065f17025bf804a22d8cbf}{Get\+Data\+Packet}} (U\+Int32 h\+Ctx\+\_\+I, U\+Int32 pkt\+I\+D\+\_\+I)
+\begin{DoxyCompactList}\small\item\em Returns one packet of Wintab data from the packet queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_data_ae571e727ce74aa3a5f22a832f242085b}{Flush\+Data\+Packets}} (uint num\+Packets\+To\+Flush\+\_\+I)
+\begin{DoxyCompactList}\small\item\em Removes all pending data packets from the context\textquotesingle{}s queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet}{Wintab\+Packet}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_data_af444201f4a176ebe322b4fa473621a19}{Get\+Data\+Packets}} (U\+Int32 max\+Pkts\+\_\+I, bool remove\+\_\+I, ref U\+Int32 num\+Pkts\+\_\+O)
+\begin{DoxyCompactList}\small\item\em Returns an array of Wintab data packets from the packet queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_data_ad835e6feccf5f4e7b1915893fe0bda59}{Init}} (\mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context}{C\+Wintab\+Context}} context\+\_\+I)
+\begin{DoxyCompactList}\small\item\em Initialize this data object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_data_a7f1321790e92a09e50871a565ee318f6}{Check\+For\+Valid\+H\+C\+TX}} (string msg)
+\begin{DoxyCompactList}\small\item\em Throws exception if logical context for this data object is zero. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context}{C\+Wintab\+Context}} \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_data_ac99bcbccfa440e49f068fa194f78a3cb}{m\+\_\+context}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to support capture and management of Wintab daa. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_data_a03c46068590647292be30a033ba68bcc}\label{class_wintab_d_n_1_1_c_wintab_data_a03c46068590647292be30a033ba68bcc}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}!C\+Wintab\+Data@{C\+Wintab\+Data}}
+\index{C\+Wintab\+Data@{C\+Wintab\+Data}!Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}}
+\subsubsection{\texorpdfstring{C\+Wintab\+Data()}{CWintabData()}}
+{\footnotesize\ttfamily Wintab\+D\+N.\+C\+Wintab\+Data.\+C\+Wintab\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context}{C\+Wintab\+Context}}}]{context\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_data}{C\+Wintab\+Data}} constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context\+\_\+I} & logical context for this data object\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_data_a7f1321790e92a09e50871a565ee318f6}\label{class_wintab_d_n_1_1_c_wintab_data_a7f1321790e92a09e50871a565ee318f6}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}!Check\+For\+Valid\+H\+C\+TX@{Check\+For\+Valid\+H\+C\+TX}}
+\index{Check\+For\+Valid\+H\+C\+TX@{Check\+For\+Valid\+H\+C\+TX}!Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}}
+\subsubsection{\texorpdfstring{Check\+For\+Valid\+H\+C\+T\+X()}{CheckForValidHCTX()}}
+{\footnotesize\ttfamily void Wintab\+D\+N.\+C\+Wintab\+Data.\+Check\+For\+Valid\+H\+C\+TX (\begin{DoxyParamCaption}\item[{string}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Throws exception if logical context for this data object is zero. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_data_ae571e727ce74aa3a5f22a832f242085b}\label{class_wintab_d_n_1_1_c_wintab_data_ae571e727ce74aa3a5f22a832f242085b}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}!Flush\+Data\+Packets@{Flush\+Data\+Packets}}
+\index{Flush\+Data\+Packets@{Flush\+Data\+Packets}!Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}}
+\subsubsection{\texorpdfstring{Flush\+Data\+Packets()}{FlushDataPackets()}}
+{\footnotesize\ttfamily void Wintab\+D\+N.\+C\+Wintab\+Data.\+Flush\+Data\+Packets (\begin{DoxyParamCaption}\item[{uint}]{num\+Packets\+To\+Flush\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes all pending data packets from the context\textquotesingle{}s queue. 
+
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_data_a2c117ceaa2a2db38f99e47549897b6d5}\label{class_wintab_d_n_1_1_c_wintab_data_a2c117ceaa2a2db38f99e47549897b6d5}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}!Get\+Data\+Packet@{Get\+Data\+Packet}}
+\index{Get\+Data\+Packet@{Get\+Data\+Packet}!Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}}
+\subsubsection{\texorpdfstring{Get\+Data\+Packet()}{GetDataPacket()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet}{Wintab\+Packet}} Wintab\+D\+N.\+C\+Wintab\+Data.\+Get\+Data\+Packet (\begin{DoxyParamCaption}\item[{U\+Int32}]{pkt\+I\+D\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns one packet of \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet}{Wintab\+Packet}} data from the packet queue. (Deprecated) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pkt\+I\+D\+\_\+I} & Identifier for the tablet event packet to return.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a data packet with non-\/null context if successful.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_data_a13dd62c752065f17025bf804a22d8cbf}\label{class_wintab_d_n_1_1_c_wintab_data_a13dd62c752065f17025bf804a22d8cbf}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}!Get\+Data\+Packet@{Get\+Data\+Packet}}
+\index{Get\+Data\+Packet@{Get\+Data\+Packet}!Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}}
+\subsubsection{\texorpdfstring{Get\+Data\+Packet()}{GetDataPacket()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet}{Wintab\+Packet}} Wintab\+D\+N.\+C\+Wintab\+Data.\+Get\+Data\+Packet (\begin{DoxyParamCaption}\item[{U\+Int32}]{h\+Ctx\+\_\+I,  }\item[{U\+Int32}]{pkt\+I\+D\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns one packet of Wintab data from the packet queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h\+Ctx\+\_\+I} & Wintab context to be used when asking for the data\\
+\hline
+{\em pkt\+I\+D\+\_\+I} & Identifier for the tablet event packet to return.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a data packet with non-\/null context if successful.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_data_a0849e716235d77de44c182fd6b8e46c4}\label{class_wintab_d_n_1_1_c_wintab_data_a0849e716235d77de44c182fd6b8e46c4}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}!Get\+Data\+Packet\+Ext@{Get\+Data\+Packet\+Ext}}
+\index{Get\+Data\+Packet\+Ext@{Get\+Data\+Packet\+Ext}!Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}}
+\subsubsection{\texorpdfstring{Get\+Data\+Packet\+Ext()}{GetDataPacketExt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_ext}{Wintab\+Packet\+Ext}} Wintab\+D\+N.\+C\+Wintab\+Data.\+Get\+Data\+Packet\+Ext (\begin{DoxyParamCaption}\item[{U\+Int32}]{h\+Ctx\+\_\+I,  }\item[{U\+Int32}]{pkt\+I\+D\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns one packet of \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_ext}{Wintab\+Packet\+Ext}} data from the packet queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h\+Ctx\+\_\+I} & Wintab context to be used when asking for the data\\
+\hline
+{\em pkt\+I\+D\+\_\+I} & Identifier for the tablet event packet to return.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a data packet with non-\/null context if successful.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_data_af444201f4a176ebe322b4fa473621a19}\label{class_wintab_d_n_1_1_c_wintab_data_af444201f4a176ebe322b4fa473621a19}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}!Get\+Data\+Packets@{Get\+Data\+Packets}}
+\index{Get\+Data\+Packets@{Get\+Data\+Packets}!Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}}
+\subsubsection{\texorpdfstring{Get\+Data\+Packets()}{GetDataPackets()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet}{Wintab\+Packet}} \mbox{[}$\,$\mbox{]} Wintab\+D\+N.\+C\+Wintab\+Data.\+Get\+Data\+Packets (\begin{DoxyParamCaption}\item[{U\+Int32}]{max\+Pkts\+\_\+I,  }\item[{bool}]{remove\+\_\+I,  }\item[{ref U\+Int32}]{num\+Pkts\+\_\+O }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns an array of Wintab data packets from the packet queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Pkts\+\_\+I} & Specifies the maximum number of packets to return.\\
+\hline
+{\em remove\+\_\+I} & If true, returns data packets and removes them from the queue.\\
+\hline
+{\em num\+Pkts\+\_\+O} & Number of packets actually returned.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the next max\+Pkts\+\_\+I from the list. Note that if remove\+\_\+I is false, then repeated calls will return the same packets. If remove\+\_\+I is true, then packets will be removed and subsequent calls will get different packets (if any).
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_data_a2acbe7f86d6aafbf9b0b6e1f160b7ae3}\label{class_wintab_d_n_1_1_c_wintab_data_a2acbe7f86d6aafbf9b0b6e1f160b7ae3}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}!Get\+Packet\+Queue\+Size@{Get\+Packet\+Queue\+Size}}
+\index{Get\+Packet\+Queue\+Size@{Get\+Packet\+Queue\+Size}!Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}}
+\subsubsection{\texorpdfstring{Get\+Packet\+Queue\+Size()}{GetPacketQueueSize()}}
+{\footnotesize\ttfamily U\+Int32 Wintab\+D\+N.\+C\+Wintab\+Data.\+Get\+Packet\+Queue\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get packet queue size for this data object\textquotesingle{}s context. 
+
+\begin{DoxyReturn}{Returns}
+Returns a packet queue size in \#packets or 0 if fails
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_data_ad835e6feccf5f4e7b1915893fe0bda59}\label{class_wintab_d_n_1_1_c_wintab_data_ad835e6feccf5f4e7b1915893fe0bda59}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}!Init@{Init}}
+\index{Init@{Init}!Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Wintab\+D\+N.\+C\+Wintab\+Data.\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context}{C\+Wintab\+Context}}}]{context\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Initialize this data object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context\+\_\+I} & logical context for this data object\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_data_a3fc4761704097caa1e7378a0859db387}\label{class_wintab_d_n_1_1_c_wintab_data_a3fc4761704097caa1e7378a0859db387}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}!Set\+Packet\+Queue\+Size@{Set\+Packet\+Queue\+Size}}
+\index{Set\+Packet\+Queue\+Size@{Set\+Packet\+Queue\+Size}!Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}}
+\subsubsection{\texorpdfstring{Set\+Packet\+Queue\+Size()}{SetPacketQueueSize()}}
+{\footnotesize\ttfamily bool Wintab\+D\+N.\+C\+Wintab\+Data.\+Set\+Packet\+Queue\+Size (\begin{DoxyParamCaption}\item[{U\+Int32}]{num\+Pkts\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set packet queue size for this data object\textquotesingle{}s context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Pkts\+\_\+I} & desired \#packets in queue\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if operation successful
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_data_a986ef88b57d732ff3703a2c802fa62e7}\label{class_wintab_d_n_1_1_c_wintab_data_a986ef88b57d732ff3703a2c802fa62e7}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}!Set\+W\+T\+Packet\+Event\+Handler@{Set\+W\+T\+Packet\+Event\+Handler}}
+\index{Set\+W\+T\+Packet\+Event\+Handler@{Set\+W\+T\+Packet\+Event\+Handler}!Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}}
+\subsubsection{\texorpdfstring{Set\+W\+T\+Packet\+Event\+Handler()}{SetWTPacketEventHandler()}}
+{\footnotesize\ttfamily void Wintab\+D\+N.\+C\+Wintab\+Data.\+Set\+W\+T\+Packet\+Event\+Handler (\begin{DoxyParamCaption}\item[{Event\+Handler$<$ \mbox{\hyperlink{class_wintab_d_n_1_1_message_received_event_args}{Message\+Received\+Event\+Args}} $>$}]{handler\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the handler to be called when W\+T\+\_\+\+P\+A\+C\+K\+ET events are received. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handler\+\_\+I} & W\+T\+\_\+\+P\+A\+C\+K\+ET event handler supplied by the client.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_wintab_d_n_1_1_c_wintab_data_ac99bcbccfa440e49f068fa194f78a3cb}\label{class_wintab_d_n_1_1_c_wintab_data_ac99bcbccfa440e49f068fa194f78a3cb}} 
+\index{Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}!m\+\_\+context@{m\+\_\+context}}
+\index{m\+\_\+context@{m\+\_\+context}!Wintab\+D\+N\+::\+C\+Wintab\+Data@{Wintab\+D\+N\+::\+C\+Wintab\+Data}}
+\subsubsection{\texorpdfstring{m\+\_\+context}{m\_context}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context}{C\+Wintab\+Context}} Wintab\+D\+N.\+C\+Wintab\+Data.\+m\+\_\+context\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Wintab\+D\+N/\mbox{\hyperlink{_c_wintab_data_8cs}{C\+Wintab\+Data.\+cs}}\end{DoxyCompactItemize}

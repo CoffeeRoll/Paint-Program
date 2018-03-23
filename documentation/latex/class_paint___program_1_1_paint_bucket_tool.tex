@@ -1,0 +1,288 @@
+\hypertarget{class_paint___program_1_1_paint_bucket_tool}{}\section{Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool Class Reference}
+\label{class_paint___program_1_1_paint_bucket_tool}\index{Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool}}
+Inheritance diagram for Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_paint___program_1_1_paint_bucket_tool}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_a897f50631adb267c4b0a5e242c9bfaa5}{Color\+Match}} (Color a, Color b)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_a9702953f92a727585a7d12507070963e}{Add\+Next\+Pixel}} (Point p)
+\item 
+\mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_acff0d603cffb8e2b068e5ab74a63c9bd}{Paint\+Bucket\+Tool}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_a2de33717bdf3555d97e5e6e962602f85}{Init}} ()
+\item 
+string \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_aef69a21dec547869dde171a604bf1492}{Get\+Tool\+Icon\+Path}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_a468286c5eb5f2a49fe92387b9c859398}{On\+Mouse\+Down}} (object sender, Mouse\+Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_a0a4dfeb323d746b531ece7d4a9e218a7}{On\+Mouse\+Move}} (object sender, Mouse\+Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_a3841a712dff7c2887a4518d7602b627e}{On\+Mouse\+Up}} (object sender, Mouse\+Event\+Args e)
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_ad41b8e00b3715186451c6caadc595db8}{is\+Initalized}} ()
+\item 
+Bitmap \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_a3167ad9df7812f1f857e0a869a455ff6}{Get\+Tool\+Layer}} ()
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_a634df2c5ddde570dc6c73abe5c680266}{Requires\+Layer\+Data}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_ab2716c454849a952526e94c40bba90b6}{Set\+Layer\+Data}} (Bitmap bit)
+\item 
+string \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_af890852ac2b519cc0d2a7a767e09fe2d}{Get\+Tool\+Tip}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_ac1955b19a9fd31aaaca0bc07cef54957}{Update\+Interface\+Layer}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Graphics \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_ad4796532e0545dc68c4b3778178fad2e}{graphics}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_a6ce97164dafbd6d9a1d4635fc82a38cc}{width}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_a89e7d4f153c36b7bf279b705640fb78f}{height}}
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_ad8cc7cec1295221aee3a52dc3b312f34}{b\+Active}}
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_a00761193f37c2e0382165672e493af00}{b\+Mouse\+Down}}
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_a6ff1fa675a5f72c14ade90dd2801c5d9}{b\+Init}}
+\item 
+Color \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_a16cb2c9c001579a26ac268d554d02e75}{replacement\+Color}}
+\item 
+Color \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_a6da72588a1c155a76996068c39845461}{target\+Color}}
+\item 
+bool \mbox{[},\mbox{]} \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_ab5a8f482b6852b3be693351091c1eacf}{state}}
+\item 
+Queue$<$ Point $>$ \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_a148eb4478aee2136004a96ee6e12d13d}{next\+Pixels}}
+\item 
+Bitmap \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_ae9bff45d3adf430284c98b7c257389dd}{bmp}}
+\item 
+Point \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_a746b9e892e792bac61e5ec69e4278ccb}{p\+Old}}
+\item 
+Point \mbox{\hyperlink{class_paint___program_1_1_paint_bucket_tool_a3d7d0b56d4adea1702b912f0d8258527}{p\+New}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_acff0d603cffb8e2b068e5ab74a63c9bd}\label{class_paint___program_1_1_paint_bucket_tool_acff0d603cffb8e2b068e5ab74a63c9bd}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!Paint\+Bucket\+Tool@{Paint\+Bucket\+Tool}}
+\index{Paint\+Bucket\+Tool@{Paint\+Bucket\+Tool}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{Paint\+Bucket\+Tool()}{PaintBucketTool()}}
+{\footnotesize\ttfamily Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+Paint\+Bucket\+Tool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_a9702953f92a727585a7d12507070963e}\label{class_paint___program_1_1_paint_bucket_tool_a9702953f92a727585a7d12507070963e}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!Add\+Next\+Pixel@{Add\+Next\+Pixel}}
+\index{Add\+Next\+Pixel@{Add\+Next\+Pixel}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{Add\+Next\+Pixel()}{AddNextPixel()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+Add\+Next\+Pixel (\begin{DoxyParamCaption}\item[{Point}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_a897f50631adb267c4b0a5e242c9bfaa5}\label{class_paint___program_1_1_paint_bucket_tool_a897f50631adb267c4b0a5e242c9bfaa5}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!Color\+Match@{Color\+Match}}
+\index{Color\+Match@{Color\+Match}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{Color\+Match()}{ColorMatch()}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+Color\+Match (\begin{DoxyParamCaption}\item[{Color}]{a,  }\item[{Color}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_aef69a21dec547869dde171a604bf1492}\label{class_paint___program_1_1_paint_bucket_tool_aef69a21dec547869dde171a604bf1492}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!Get\+Tool\+Icon\+Path@{Get\+Tool\+Icon\+Path}}
+\index{Get\+Tool\+Icon\+Path@{Get\+Tool\+Icon\+Path}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{Get\+Tool\+Icon\+Path()}{GetToolIconPath()}}
+{\footnotesize\ttfamily string Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+Get\+Tool\+Icon\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_aa057d2f99c59d7bec0215dcad2da1b72}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_a3167ad9df7812f1f857e0a869a455ff6}\label{class_paint___program_1_1_paint_bucket_tool_a3167ad9df7812f1f857e0a869a455ff6}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!Get\+Tool\+Layer@{Get\+Tool\+Layer}}
+\index{Get\+Tool\+Layer@{Get\+Tool\+Layer}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{Get\+Tool\+Layer()}{GetToolLayer()}}
+{\footnotesize\ttfamily Bitmap Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+Get\+Tool\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a9b057905515f42a988c166a6a40318e0}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_af890852ac2b519cc0d2a7a767e09fe2d}\label{class_paint___program_1_1_paint_bucket_tool_af890852ac2b519cc0d2a7a767e09fe2d}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!Get\+Tool\+Tip@{Get\+Tool\+Tip}}
+\index{Get\+Tool\+Tip@{Get\+Tool\+Tip}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{Get\+Tool\+Tip()}{GetToolTip()}}
+{\footnotesize\ttfamily string Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+Get\+Tool\+Tip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_ac11f1591587144b6e74f5767bbf1df56}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_a2de33717bdf3555d97e5e6e962602f85}\label{class_paint___program_1_1_paint_bucket_tool_a2de33717bdf3555d97e5e6e962602f85}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!Init@{Init}}
+\index{Init@{Init}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_af823123a30fbda34e24e907243241046}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_ad41b8e00b3715186451c6caadc595db8}\label{class_paint___program_1_1_paint_bucket_tool_ad41b8e00b3715186451c6caadc595db8}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!is\+Initalized@{is\+Initalized}}
+\index{is\+Initalized@{is\+Initalized}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{is\+Initalized()}{isInitalized()}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+is\+Initalized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a951b844bcbf47a6c306104fa86be7a5d}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_a468286c5eb5f2a49fe92387b9c859398}\label{class_paint___program_1_1_paint_bucket_tool_a468286c5eb5f2a49fe92387b9c859398}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!On\+Mouse\+Down@{On\+Mouse\+Down}}
+\index{On\+Mouse\+Down@{On\+Mouse\+Down}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{On\+Mouse\+Down()}{OnMouseDown()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a73d8797f4f2b1e0d8efe8aadcd44e840}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_a0a4dfeb323d746b531ece7d4a9e218a7}\label{class_paint___program_1_1_paint_bucket_tool_a0a4dfeb323d746b531ece7d4a9e218a7}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!On\+Mouse\+Move@{On\+Mouse\+Move}}
+\index{On\+Mouse\+Move@{On\+Mouse\+Move}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{On\+Mouse\+Move()}{OnMouseMove()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+On\+Mouse\+Move (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a6a1cbe840b5cfc8a9b9463cc21590845}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_a3841a712dff7c2887a4518d7602b627e}\label{class_paint___program_1_1_paint_bucket_tool_a3841a712dff7c2887a4518d7602b627e}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!On\+Mouse\+Up@{On\+Mouse\+Up}}
+\index{On\+Mouse\+Up@{On\+Mouse\+Up}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{On\+Mouse\+Up()}{OnMouseUp()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+On\+Mouse\+Up (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a47984c2879213022f1684c07f7bba73e}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_a634df2c5ddde570dc6c73abe5c680266}\label{class_paint___program_1_1_paint_bucket_tool_a634df2c5ddde570dc6c73abe5c680266}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!Requires\+Layer\+Data@{Requires\+Layer\+Data}}
+\index{Requires\+Layer\+Data@{Requires\+Layer\+Data}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{Requires\+Layer\+Data()}{RequiresLayerData()}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+Requires\+Layer\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a6d45b6c48da8130ae41db3a66cdaef9a}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_ab2716c454849a952526e94c40bba90b6}\label{class_paint___program_1_1_paint_bucket_tool_ab2716c454849a952526e94c40bba90b6}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!Set\+Layer\+Data@{Set\+Layer\+Data}}
+\index{Set\+Layer\+Data@{Set\+Layer\+Data}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{Set\+Layer\+Data()}{SetLayerData()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+Set\+Layer\+Data (\begin{DoxyParamCaption}\item[{Bitmap}]{bit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a2d3e63715dfe04075d27dacf367d1633}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_ac1955b19a9fd31aaaca0bc07cef54957}\label{class_paint___program_1_1_paint_bucket_tool_ac1955b19a9fd31aaaca0bc07cef54957}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!Update\+Interface\+Layer@{Update\+Interface\+Layer}}
+\index{Update\+Interface\+Layer@{Update\+Interface\+Layer}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{Update\+Interface\+Layer()}{UpdateInterfaceLayer()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+Update\+Interface\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a36db75d29e88dfd739f658633c40e955}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_ad8cc7cec1295221aee3a52dc3b312f34}\label{class_paint___program_1_1_paint_bucket_tool_ad8cc7cec1295221aee3a52dc3b312f34}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!b\+Active@{b\+Active}}
+\index{b\+Active@{b\+Active}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{b\+Active}{bActive}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+b\+Active\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_a6ff1fa675a5f72c14ade90dd2801c5d9}\label{class_paint___program_1_1_paint_bucket_tool_a6ff1fa675a5f72c14ade90dd2801c5d9}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!b\+Init@{b\+Init}}
+\index{b\+Init@{b\+Init}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{b\+Init}{bInit}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+b\+Init\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_a00761193f37c2e0382165672e493af00}\label{class_paint___program_1_1_paint_bucket_tool_a00761193f37c2e0382165672e493af00}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!b\+Mouse\+Down@{b\+Mouse\+Down}}
+\index{b\+Mouse\+Down@{b\+Mouse\+Down}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{b\+Mouse\+Down}{bMouseDown}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+b\+Mouse\+Down\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_ae9bff45d3adf430284c98b7c257389dd}\label{class_paint___program_1_1_paint_bucket_tool_ae9bff45d3adf430284c98b7c257389dd}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!bmp@{bmp}}
+\index{bmp@{bmp}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{bmp}{bmp}}
+{\footnotesize\ttfamily Bitmap Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+bmp\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_ad4796532e0545dc68c4b3778178fad2e}\label{class_paint___program_1_1_paint_bucket_tool_ad4796532e0545dc68c4b3778178fad2e}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!graphics@{graphics}}
+\index{graphics@{graphics}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{graphics}{graphics}}
+{\footnotesize\ttfamily Graphics Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+graphics\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_a89e7d4f153c36b7bf279b705640fb78f}\label{class_paint___program_1_1_paint_bucket_tool_a89e7d4f153c36b7bf279b705640fb78f}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!height@{height}}
+\index{height@{height}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_a148eb4478aee2136004a96ee6e12d13d}\label{class_paint___program_1_1_paint_bucket_tool_a148eb4478aee2136004a96ee6e12d13d}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!next\+Pixels@{next\+Pixels}}
+\index{next\+Pixels@{next\+Pixels}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{next\+Pixels}{nextPixels}}
+{\footnotesize\ttfamily Queue$<$Point$>$ Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+next\+Pixels\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_a3d7d0b56d4adea1702b912f0d8258527}\label{class_paint___program_1_1_paint_bucket_tool_a3d7d0b56d4adea1702b912f0d8258527}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!p\+New@{p\+New}}
+\index{p\+New@{p\+New}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{p\+New}{pNew}}
+{\footnotesize\ttfamily Point Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+p\+New\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_a746b9e892e792bac61e5ec69e4278ccb}\label{class_paint___program_1_1_paint_bucket_tool_a746b9e892e792bac61e5ec69e4278ccb}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!p\+Old@{p\+Old}}
+\index{p\+Old@{p\+Old}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{p\+Old}{pOld}}
+{\footnotesize\ttfamily Point Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+p\+Old\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_a16cb2c9c001579a26ac268d554d02e75}\label{class_paint___program_1_1_paint_bucket_tool_a16cb2c9c001579a26ac268d554d02e75}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!replacement\+Color@{replacement\+Color}}
+\index{replacement\+Color@{replacement\+Color}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{replacement\+Color}{replacementColor}}
+{\footnotesize\ttfamily Color Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+replacement\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_ab5a8f482b6852b3be693351091c1eacf}\label{class_paint___program_1_1_paint_bucket_tool_ab5a8f482b6852b3be693351091c1eacf}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!state@{state}}
+\index{state@{state}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily bool \mbox{[},\mbox{]} Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+state\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_a6da72588a1c155a76996068c39845461}\label{class_paint___program_1_1_paint_bucket_tool_a6da72588a1c155a76996068c39845461}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!target\+Color@{target\+Color}}
+\index{target\+Color@{target\+Color}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{target\+Color}{targetColor}}
+{\footnotesize\ttfamily Color Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+target\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_paint_bucket_tool_a6ce97164dafbd6d9a1d4635fc82a38cc}\label{class_paint___program_1_1_paint_bucket_tool_a6ce97164dafbd6d9a1d4635fc82a38cc}} 
+\index{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}!width@{width}}
+\index{width@{width}!Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool@{Paint\+\_\+\+Program\+::\+Paint\+Bucket\+Tool}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Paint\+Bucket\+Tool.\+width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Paint Program/\mbox{\hyperlink{_paint_bucket_tool_8cs}{Paint\+Bucket\+Tool.\+cs}}\end{DoxyCompactItemize}

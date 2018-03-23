@@ -129,7 +129,7 @@ namespace Paint_Program
 			{
 				if (c is ITextUpdate)
 				{
-					((ITextUpdate)c).updateText();
+					((ITextUpdate)c).UpdateText();
 				}
 			}
 
@@ -174,7 +174,7 @@ namespace Paint_Program
 			c = new Canvas(w, h, this.Width, this.Height);
 			c.Location = new Point(200, 5);
 			this.Controls.Add(c);
-			c.initCanvas();
+			c.InitCanvas();
 		}
 
 		private void makeNewProject()
@@ -182,7 +182,7 @@ namespace Paint_Program
 			c = new Canvas(this.Width, this.Height);
 			c.Location = new Point(200, 5);
 			this.Controls.Add(c);
-			c.initCanvas();
+			c.InitCanvas();
 			this.Update();
 		}
 
@@ -192,7 +192,7 @@ namespace Paint_Program
 
 			try
 			{
-				c.setPause(true);
+				c.SetPause(true);
 				ProjectSave ps = new ProjectSave();
 			}
 			catch (Exception err)
@@ -200,7 +200,7 @@ namespace Paint_Program
 				String s = SharedSettings.getGlobalString("error_save_project") + err.ToString();
 				MessageBox.Show(new Form() { WindowState = FormWindowState.Maximized, TopMost = true }, s);
 			}
-			c.setPause(false);
+			c.SetPause(false);
 		}
 
 		private void tsmiFile_Import_Click(object sender, EventArgs e)
@@ -475,7 +475,7 @@ namespace Paint_Program
 
 		private void tsmiFile_SaveGoogleDrive_Click(object sender, EventArgs e)
 		{
-			c.setPause(true);
+			c.SetPause(true);
 			using (GDriveSaveDialog gDrive = new GDriveSaveDialog())
 			{
 				if (gDrive.ShowDialog(this) == DialogResult.OK)
@@ -486,14 +486,14 @@ namespace Paint_Program
 					SaveToDrive sd = new SaveToDrive(fileName, fileType);
 				}
 			}
-			c.setPause(false);
+			c.SetPause(false);
 		}
 
 		public void updateViews()
 		{
 			if (c != null)
 			{
-				c.updatePositions(this);
+				c.UpdatePositions(this);
 			}
 		}
 
@@ -570,7 +570,7 @@ namespace Paint_Program
 			{
 				if (c != null)
 				{
-					c.zoomIn();
+					c.ZoomIn();
 				}
 			}
 			//CTRL + - for zoom out
@@ -578,7 +578,7 @@ namespace Paint_Program
 			{
 				if (c != null)
 				{
-					c.zoomOut();
+					c.ZoomOut();
 				}
 			}
 		}

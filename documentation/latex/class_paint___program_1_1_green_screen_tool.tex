@@ -1,0 +1,232 @@
+\hypertarget{class_paint___program_1_1_green_screen_tool}{}\section{Paint\+\_\+\+Program.\+Green\+Screen\+Tool Class Reference}
+\label{class_paint___program_1_1_green_screen_tool}\index{Paint\+\_\+\+Program.\+Green\+Screen\+Tool@{Paint\+\_\+\+Program.\+Green\+Screen\+Tool}}
+Inheritance diagram for Paint\+\_\+\+Program.\+Green\+Screen\+Tool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_paint___program_1_1_green_screen_tool}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_a957c8149c7cc59b1c9734ca5bb5309c7}{Init}} ()
+\item 
+Bitmap \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_a883b61f098ace3dc87b8ad92b59fcb6c}{get\+Canvas}} ()
+\item 
+string \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_a5d25a6867cc4882d9ec31182829fb24b}{Get\+Tool\+Icon\+Path}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_ae3a5e35c0921093957b7cccde92e1b91}{On\+Mouse\+Down}} (object sender, Mouse\+Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_a95699606ba5027c0671f4bc6ef86be93}{On\+Mouse\+Move}} (object sender, Mouse\+Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_ad6be969ae981c34f5677e8a5bd537ef6}{On\+Mouse\+Up}} (object sender, Mouse\+Event\+Args e)
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_a94a122c3229b5f530531228837234eb0}{is\+Initalized}} ()
+\item 
+Bitmap \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_a02fd2ecf253f8eeb746d1e78eedb08a2}{Get\+Tool\+Layer}} ()
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_a554c35de10b5876aa936961177344a59}{Requires\+Layer\+Data}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_ad17100eea4bbfc96072cf4525ea053c4}{Set\+Layer\+Data}} (Bitmap bit)
+\item 
+string \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_af580394652e180ac8f0acfb79704ffa4}{Get\+Tool\+Tip}} ()
+\item 
+void \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_a3d474370bf269af763ff6edceebd2000}{Update\+Interface\+Layer}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_a5da8c478fc4640e8250f1186b2ae8f74}{Distance}} (int x1, int y1, int z1, int x2, int y2, int z2)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Graphics \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_aca8f9a5ec0d983848de921e801e8ed7f}{graphics}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_ac6e91de82caa4c468999d4cbc5eca45e}{width}}
+\item 
+int \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_a679ac45d198acb71fb2f92e663bbbd2b}{height}}
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_a0a46a665af35d9e10a0edb47ff845b19}{b\+Active}}
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_a62a6e0d3f19e085a50a08bb1d9b1849d}{b\+Mouse\+Down}}
+\item 
+bool \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_a988a8407916d4ad8f1d82e3118886834}{b\+Init}}
+\item 
+Bitmap \mbox{\hyperlink{class_paint___program_1_1_green_screen_tool_a1bf0fa58eacb1bd8adf711c0f56223d4}{b\+Layer}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_a5da8c478fc4640e8250f1186b2ae8f74}\label{class_paint___program_1_1_green_screen_tool_a5da8c478fc4640e8250f1186b2ae8f74}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!Distance@{Distance}}
+\index{Distance@{Distance}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{Distance()}{Distance()}}
+{\footnotesize\ttfamily double Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+Distance (\begin{DoxyParamCaption}\item[{int}]{x1,  }\item[{int}]{y1,  }\item[{int}]{z1,  }\item[{int}]{x2,  }\item[{int}]{y2,  }\item[{int}]{z2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_a883b61f098ace3dc87b8ad92b59fcb6c}\label{class_paint___program_1_1_green_screen_tool_a883b61f098ace3dc87b8ad92b59fcb6c}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!get\+Canvas@{get\+Canvas}}
+\index{get\+Canvas@{get\+Canvas}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{get\+Canvas()}{getCanvas()}}
+{\footnotesize\ttfamily Bitmap Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+get\+Canvas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_a5d25a6867cc4882d9ec31182829fb24b}\label{class_paint___program_1_1_green_screen_tool_a5d25a6867cc4882d9ec31182829fb24b}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!Get\+Tool\+Icon\+Path@{Get\+Tool\+Icon\+Path}}
+\index{Get\+Tool\+Icon\+Path@{Get\+Tool\+Icon\+Path}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{Get\+Tool\+Icon\+Path()}{GetToolIconPath()}}
+{\footnotesize\ttfamily string Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+Get\+Tool\+Icon\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_aa057d2f99c59d7bec0215dcad2da1b72}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_a02fd2ecf253f8eeb746d1e78eedb08a2}\label{class_paint___program_1_1_green_screen_tool_a02fd2ecf253f8eeb746d1e78eedb08a2}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!Get\+Tool\+Layer@{Get\+Tool\+Layer}}
+\index{Get\+Tool\+Layer@{Get\+Tool\+Layer}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{Get\+Tool\+Layer()}{GetToolLayer()}}
+{\footnotesize\ttfamily Bitmap Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+Get\+Tool\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a9b057905515f42a988c166a6a40318e0}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_af580394652e180ac8f0acfb79704ffa4}\label{class_paint___program_1_1_green_screen_tool_af580394652e180ac8f0acfb79704ffa4}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!Get\+Tool\+Tip@{Get\+Tool\+Tip}}
+\index{Get\+Tool\+Tip@{Get\+Tool\+Tip}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{Get\+Tool\+Tip()}{GetToolTip()}}
+{\footnotesize\ttfamily string Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+Get\+Tool\+Tip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_ac11f1591587144b6e74f5767bbf1df56}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_a957c8149c7cc59b1c9734ca5bb5309c7}\label{class_paint___program_1_1_green_screen_tool_a957c8149c7cc59b1c9734ca5bb5309c7}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!Init@{Init}}
+\index{Init@{Init}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_af823123a30fbda34e24e907243241046}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_a94a122c3229b5f530531228837234eb0}\label{class_paint___program_1_1_green_screen_tool_a94a122c3229b5f530531228837234eb0}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!is\+Initalized@{is\+Initalized}}
+\index{is\+Initalized@{is\+Initalized}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{is\+Initalized()}{isInitalized()}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+is\+Initalized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a951b844bcbf47a6c306104fa86be7a5d}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_ae3a5e35c0921093957b7cccde92e1b91}\label{class_paint___program_1_1_green_screen_tool_ae3a5e35c0921093957b7cccde92e1b91}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!On\+Mouse\+Down@{On\+Mouse\+Down}}
+\index{On\+Mouse\+Down@{On\+Mouse\+Down}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{On\+Mouse\+Down()}{OnMouseDown()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a73d8797f4f2b1e0d8efe8aadcd44e840}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_a95699606ba5027c0671f4bc6ef86be93}\label{class_paint___program_1_1_green_screen_tool_a95699606ba5027c0671f4bc6ef86be93}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!On\+Mouse\+Move@{On\+Mouse\+Move}}
+\index{On\+Mouse\+Move@{On\+Mouse\+Move}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{On\+Mouse\+Move()}{OnMouseMove()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+On\+Mouse\+Move (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a6a1cbe840b5cfc8a9b9463cc21590845}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_ad6be969ae981c34f5677e8a5bd537ef6}\label{class_paint___program_1_1_green_screen_tool_ad6be969ae981c34f5677e8a5bd537ef6}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!On\+Mouse\+Up@{On\+Mouse\+Up}}
+\index{On\+Mouse\+Up@{On\+Mouse\+Up}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{On\+Mouse\+Up()}{OnMouseUp()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+On\+Mouse\+Up (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a47984c2879213022f1684c07f7bba73e}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_a554c35de10b5876aa936961177344a59}\label{class_paint___program_1_1_green_screen_tool_a554c35de10b5876aa936961177344a59}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!Requires\+Layer\+Data@{Requires\+Layer\+Data}}
+\index{Requires\+Layer\+Data@{Requires\+Layer\+Data}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{Requires\+Layer\+Data()}{RequiresLayerData()}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+Requires\+Layer\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a6d45b6c48da8130ae41db3a66cdaef9a}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_ad17100eea4bbfc96072cf4525ea053c4}\label{class_paint___program_1_1_green_screen_tool_ad17100eea4bbfc96072cf4525ea053c4}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!Set\+Layer\+Data@{Set\+Layer\+Data}}
+\index{Set\+Layer\+Data@{Set\+Layer\+Data}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{Set\+Layer\+Data()}{SetLayerData()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+Set\+Layer\+Data (\begin{DoxyParamCaption}\item[{Bitmap}]{bit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a2d3e63715dfe04075d27dacf367d1633}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_a3d474370bf269af763ff6edceebd2000}\label{class_paint___program_1_1_green_screen_tool_a3d474370bf269af763ff6edceebd2000}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!Update\+Interface\+Layer@{Update\+Interface\+Layer}}
+\index{Update\+Interface\+Layer@{Update\+Interface\+Layer}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{Update\+Interface\+Layer()}{UpdateInterfaceLayer()}}
+{\footnotesize\ttfamily void Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+Update\+Interface\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_paint___program_1_1_i_tool_a36db75d29e88dfd739f658633c40e955}{Paint\+\_\+\+Program.\+I\+Tool}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_a0a46a665af35d9e10a0edb47ff845b19}\label{class_paint___program_1_1_green_screen_tool_a0a46a665af35d9e10a0edb47ff845b19}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!b\+Active@{b\+Active}}
+\index{b\+Active@{b\+Active}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{b\+Active}{bActive}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+b\+Active\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_a988a8407916d4ad8f1d82e3118886834}\label{class_paint___program_1_1_green_screen_tool_a988a8407916d4ad8f1d82e3118886834}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!b\+Init@{b\+Init}}
+\index{b\+Init@{b\+Init}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{b\+Init}{bInit}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+b\+Init\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_a1bf0fa58eacb1bd8adf711c0f56223d4}\label{class_paint___program_1_1_green_screen_tool_a1bf0fa58eacb1bd8adf711c0f56223d4}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!b\+Layer@{b\+Layer}}
+\index{b\+Layer@{b\+Layer}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{b\+Layer}{bLayer}}
+{\footnotesize\ttfamily Bitmap Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+b\+Layer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_a62a6e0d3f19e085a50a08bb1d9b1849d}\label{class_paint___program_1_1_green_screen_tool_a62a6e0d3f19e085a50a08bb1d9b1849d}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!b\+Mouse\+Down@{b\+Mouse\+Down}}
+\index{b\+Mouse\+Down@{b\+Mouse\+Down}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{b\+Mouse\+Down}{bMouseDown}}
+{\footnotesize\ttfamily bool Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+b\+Mouse\+Down\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_aca8f9a5ec0d983848de921e801e8ed7f}\label{class_paint___program_1_1_green_screen_tool_aca8f9a5ec0d983848de921e801e8ed7f}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!graphics@{graphics}}
+\index{graphics@{graphics}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{graphics}{graphics}}
+{\footnotesize\ttfamily Graphics Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+graphics\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_a679ac45d198acb71fb2f92e663bbbd2b}\label{class_paint___program_1_1_green_screen_tool_a679ac45d198acb71fb2f92e663bbbd2b}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!height@{height}}
+\index{height@{height}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_paint___program_1_1_green_screen_tool_ac6e91de82caa4c468999d4cbc5eca45e}\label{class_paint___program_1_1_green_screen_tool_ac6e91de82caa4c468999d4cbc5eca45e}} 
+\index{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}!width@{width}}
+\index{width@{width}!Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool@{Paint\+\_\+\+Program\+::\+Green\+Screen\+Tool}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int Paint\+\_\+\+Program.\+Green\+Screen\+Tool.\+width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Paint Program/\mbox{\hyperlink{_green_screen_tool_8cs}{Green\+Screen\+Tool.\+cs}}\end{DoxyCompactItemize}

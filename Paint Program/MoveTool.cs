@@ -17,7 +17,7 @@ namespace Paint_Program
 
         }
 
-        public void init()
+        public void Init()
         {
             graphics = SharedSettings.getActiveGraphics();
             width = SharedSettings.getCanvasWidth();
@@ -25,17 +25,17 @@ namespace Paint_Program
             bInit = true;
         }
 
-        public string getToolIconPath()
+        public string GetToolIconPath()
         {
             return @"..\..\Images\move.png";
         }
 
-        public void onMouseDown(object sender, MouseEventArgs e)
+        public void OnMouseDown(object sender, MouseEventArgs e)
         {
             pOld = e.Location;
         }
 
-        public void onMouseMove(object sender, MouseEventArgs e)
+        public void OnMouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -45,7 +45,7 @@ namespace Paint_Program
             }
         }
 
-        public void onMouseUp(object sender, MouseEventArgs e)
+        public void OnMouseUp(object sender, MouseEventArgs e)
         {
             pOld.X = 0;
             pOld.Y = 0;
@@ -58,26 +58,26 @@ namespace Paint_Program
             return bInit;
         }
 
-        public Bitmap getToolLayer()
+        public Bitmap GetToolLayer()
         {
             return null;
         }
 
-        public bool requiresLayerData()
+        public bool RequiresLayerData()
         {
             return false;
         }
 
-        public void setLayerData(Bitmap bit)
+        public void SetLayerData(Bitmap bit)
         {
         }
 
-        public string getToolTip()
+        public string GetToolTip()
         {
             return SharedSettings.getGlobalString("tooltip_move");
         }
 
-        public void updateInterfaceLayer()
+        public void UpdateInterfaceLayer()
         {
         }
     }

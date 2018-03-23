@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['m_5fcontext',['m_context',['../class_wintab_d_n_1_1_c_wintab_data.html#ac99bcbccfa440e49f068fa194f78a3cb',1,'WintabDN::CWintabData']]],
+  ['m_5fhctx',['m_hCTX',['../class_wintab_d_n_1_1_c_wintab_context.html#ab31f2970a3e0658878f4716dbe2387cd',1,'WintabDN::CWintabContext']]],
+  ['m_5flogcontext',['m_logContext',['../class_paint___program_1_1_tablet_info.html#a1e7da115e188bc9294ab639f5f75e61b',1,'Paint_Program.TabletInfo.m_logContext()'],['../class_wintab_d_n_1_1_c_wintab_context.html#a076aee1ffdce4966d7f4b46acd39d501',1,'WintabDN.CWintabContext.m_logContext()']]],
+  ['m_5fmaxpkts',['m_maxPkts',['../class_paint___program_1_1_tablet_info.html#a70180b4d0d8ac8fe1cc200c20856a171',1,'Paint_Program::TabletInfo']]],
+  ['m_5fpktime',['m_pkTime',['../class_paint___program_1_1_tablet_info.html#af7b50d0820544e080adf02c24b309959',1,'Paint_Program::TabletInfo']]],
+  ['m_5fpktimelast',['m_pkTimeLast',['../class_paint___program_1_1_tablet_info.html#a8f8efea7a323142ae19efd50b02b859e',1,'Paint_Program::TabletInfo']]],
+  ['m_5fpkx',['m_pkX',['../class_paint___program_1_1_tablet_info.html#a8a6421486fbf0fc498b735e0de3290ee',1,'Paint_Program::TabletInfo']]],
+  ['m_5fpky',['m_pkY',['../class_paint___program_1_1_tablet_info.html#a8c23e48316f05b16fb46c8eb4ebc6308',1,'Paint_Program::TabletInfo']]],
+  ['m_5fpressure',['m_pressure',['../class_paint___program_1_1_tablet_info.html#a582fe5c923f467fbf898aeac0d7780dd',1,'Paint_Program::TabletInfo']]],
+  ['m_5ftabextx',['m_TABEXTX',['../class_paint___program_1_1_tablet_info.html#aec96087301274b16e37ad97d9d86f2a8',1,'Paint_Program::TabletInfo']]],
+  ['m_5ftabexty',['m_TABEXTY',['../class_paint___program_1_1_tablet_info.html#a694255f1b42334dcd3c05f6ff9b0ff6d',1,'Paint_Program::TabletInfo']]],
+  ['m_5fwtdata',['m_wtData',['../class_paint___program_1_1_tablet_info.html#a7c514892b904d4d34d22791cd9047b82',1,'Paint_Program::TabletInfo']]],
+  ['max_5fstring_5fsize',['MAX_STRING_SIZE',['../class_wintab_d_n_1_1_c_wintab_info.html#a92d6a4a3e03345f0c62c25b6fcae1fe2',1,'WintabDN::CWintabInfo']]],
+  ['maxheight',['maxHeight',['../class_paint___program_1_1_canvas.html#a1a8c4189ce38200f313962cad08a7fe3',1,'Paint_Program::Canvas']]],
+  ['maxwidth',['maxWidth',['../class_paint___program_1_1_canvas.html#a0f7c080162d099242cfa35dc480c3ba9',1,'Paint_Program::Canvas']]],
+  ['menuheight',['menuHeight',['../class_paint___program_1_1_canvas.html#af7619a49de47ab8a829b7d54cd13fa34',1,'Paint_Program::Canvas']]],
+  ['msmenu',['msMenu',['../class_paint___program_1_1_form1.html#a2ec5d48907647eb6f3385b7e567d2a20',1,'Paint_Program::Form1']]]
+];

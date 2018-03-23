@@ -50,7 +50,7 @@ namespace Paint_Program
         {
             try
             {
-                Canvas.handleWatermark(Graphics.FromImage(bm));
+                Canvas.HandleWatermark(Graphics.FromImage(bm));
 
                 string ext = ".png";
                 ImageFormat fmt = ImageFormat.Png;

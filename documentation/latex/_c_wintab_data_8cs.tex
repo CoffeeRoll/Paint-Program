@@ -1,0 +1,77 @@
+\hypertarget{_c_wintab_data_8cs}{}\section{Wintab\+D\+N/\+C\+Wintab\+Data.cs File Reference}
+\label{_c_wintab_data_8cs}\index{Wintab\+D\+N/\+C\+Wintab\+Data.\+cs@{Wintab\+D\+N/\+C\+Wintab\+Data.\+cs}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_w_t_orientation}{Wintab\+D\+N.\+W\+T\+Orientation}}
+\begin{DoxyCompactList}\small\item\em Pen Orientation \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_w_t_rotation}{Wintab\+D\+N.\+W\+T\+Rotation}}
+\begin{DoxyCompactList}\small\item\em Pen Rotation \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet}{Wintab\+D\+N.\+Wintab\+Packet}}
+\begin{DoxyCompactList}\small\item\em Wintab data packet. Contains the \char`\"{}\+Full Monty\char`\"{} for all possible data values. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_w_t_extension_base}{Wintab\+D\+N.\+W\+T\+Extension\+Base}}
+\begin{DoxyCompactList}\small\item\em Common properties for control extension data transactions. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_w_t_exp_key_data}{Wintab\+D\+N.\+W\+T\+Exp\+Key\+Data}}
+\begin{DoxyCompactList}\small\item\em Extension data for one Express Key. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_w_t_slider_data}{Wintab\+D\+N.\+W\+T\+Slider\+Data}}
+\begin{DoxyCompactList}\small\item\em Extension data for one touch ring or one touch strip. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_packet_ext}{Wintab\+D\+N.\+Wintab\+Packet\+Ext}}
+\begin{DoxyCompactList}\small\item\em Wintab extension data packet for one tablet control. The tablet controls for which extension data is available are\+: Express Key, Touch Ring and Touch Strip controls. Note that tablets will have either Touch Rings or Touch Strips -\/ not both. All tablets have Express Keys. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_data}{Wintab\+D\+N.\+C\+Wintab\+Data}}
+\begin{DoxyCompactList}\small\item\em Class to support capture and management of Wintab daa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_wintab_d_n}{Wintab\+DN}}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Bit}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184ab73fe0c8937280862762449f9dc791ff}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+C\+O\+N\+T\+E\+XT}} = 0x0001, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a96f57de10a298069d7898a4fba27a008}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+S\+T\+A\+T\+US}} = 0x0002, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184abf68b8b97a2e596004ec367b4ce63d26}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+T\+I\+ME}} = 0x0004, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a5fa232826b657d9dfc747022b1ca86d3}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+C\+H\+A\+N\+G\+ED}} = 0x0008, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184ae27e538a81e4bf7f9769569b5cdd41db}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+N\+U\+M\+B\+ER}} = 0x0010, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a03e28509372ceace08e89b3cbff310af}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+C\+U\+R\+S\+OR}} = 0x0020, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a07c256014a5d3ca6ff2f34faa45577f4}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+B\+U\+T\+T\+O\+NS}} = 0x0040, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184ae7367a72ea936eb5525ff4e6b83ba02c}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+X}} = 0x0080, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a252362a32d7e17018570eda4d184e8fd}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+Y}} = 0x0100, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a78b0b04b0e8a16d78fd756ab58c2c0a2}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+Z}} = 0x0200, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a92f289a82836fc13f7a0a245a88e4cad}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+P\+R\+E\+S\+S\+U\+RE}} = 0x0400, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184adac46407b8f4b2a4b488a0a05b24efdf}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+T\+A\+N\+G\+E\+N\+T\+\_\+\+P\+R\+E\+S\+S\+U\+RE}} = 0x0800, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a0efa990069921977338d297e402e961b}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON}} = 0x1000, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0244b62cdae8bfd39a52f0656ae7d184a7b6c299e6217c043dbcaca3e0121bb9e}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Bit.\+P\+K\+\_\+\+P\+K\+T\+B\+I\+T\+S\+\_\+\+A\+LL}} = 0x1\+F\+FF
+ \}
+\begin{DoxyCompactList}\small\item\em Wintab Packet bits. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0d}{Wintab\+D\+N.\+E\+Wintab\+Event\+Message}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da5e95613ce2527a446d9ee3e10fe5be2c}{Wintab\+D\+N.\+E\+Wintab\+Event\+Message.\+W\+T\+\_\+\+P\+A\+C\+K\+ET}} = 0x7\+F\+F0, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da66563739a7673e139b15ecbe3f3cb070}{Wintab\+D\+N.\+E\+Wintab\+Event\+Message.\+W\+T\+\_\+\+C\+T\+X\+O\+P\+EN}} = 0x7\+F\+F1, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0daf846b2579d39425c3fe0fe99295e2468}{Wintab\+D\+N.\+E\+Wintab\+Event\+Message.\+W\+T\+\_\+\+C\+T\+X\+C\+L\+O\+SE}} = 0x7\+F\+F2, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da648ab71e6134daaf33ea9e0cb4bf964f}{Wintab\+D\+N.\+E\+Wintab\+Event\+Message.\+W\+T\+\_\+\+C\+T\+X\+U\+P\+D\+A\+TE}} = 0x7\+F\+F3, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0daa886d4222e1c460af87c692cee3f37de}{Wintab\+D\+N.\+E\+Wintab\+Event\+Message.\+W\+T\+\_\+\+C\+T\+X\+O\+V\+E\+R\+L\+AP}} = 0x7\+F\+F4, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da6eddf7611875138581fbe38874b39591}{Wintab\+D\+N.\+E\+Wintab\+Event\+Message.\+W\+T\+\_\+\+P\+R\+O\+X\+I\+M\+I\+TY}} = 0x7\+F\+F5, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0dac079adb185c52e56ecd97b614e9645c2}{Wintab\+D\+N.\+E\+Wintab\+Event\+Message.\+W\+T\+\_\+\+I\+N\+F\+O\+C\+H\+A\+N\+GE}} = 0x7\+F\+F6, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da63fa7928d9cbd4eb040bfe38b3b18edb}{Wintab\+D\+N.\+E\+Wintab\+Event\+Message.\+W\+T\+\_\+\+C\+S\+R\+C\+H\+A\+N\+GE}} = 0x7\+F\+F7, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a4b98724153acf19dc7b44dc911e7fd0da713ddca3660017276e227f39450f3c76}{Wintab\+D\+N.\+E\+Wintab\+Event\+Message.\+W\+T\+\_\+\+P\+A\+C\+K\+E\+T\+E\+XT}} = 0x7\+F\+F8
+ \}
+\begin{DoxyCompactList}\small\item\em Wintab event messsages sent to an application. See Wintab Spec 1.\+4 for a description of these messages. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203cac}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Status\+Value}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca94d2fbc94052d403edeb48e33deaab5d}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Status\+Value.\+T\+P\+S\+\_\+\+P\+R\+O\+X\+I\+M\+I\+TY}} = 0x0001, 
+\mbox{\hyperlink{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca453a492937569cfa4e919f1de9a1eaa8}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Status\+Value.\+T\+P\+S\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+E\+RR}} = 0x0002, 
+\mbox{\hyperlink{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca316fc213c5429266093cca277197bc89}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Status\+Value.\+T\+P\+S\+\_\+\+M\+A\+R\+G\+IN}} = 0x0004, 
+\mbox{\hyperlink{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca611f4dc1a636ab77e3bbe6f078fea276}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Status\+Value.\+T\+P\+S\+\_\+\+G\+R\+AB}} = 0x0008, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_afe14d17b83fb34685a298d857c203caca7b360a1118406f2729a1bcc4074ddfdf}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Status\+Value.\+T\+P\+S\+\_\+\+I\+N\+V\+E\+RT}} = 0x0010
+ \}
+\begin{DoxyCompactList}\small\item\em Wintab packet status values. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a0829e0e054dd601b4f043415c0090c31}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Button\+Code}} \{ \mbox{\hyperlink{namespace_wintab_d_n_a0829e0e054dd601b4f043415c0090c31a925e5d7da57c5c2d7a009cff85eb9d3f}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Button\+Code.\+T\+B\+N\+\_\+\+N\+O\+NE}} = 0, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0829e0e054dd601b4f043415c0090c31a1ff7e6dd3b84fa37d7db1878e4842df8}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Button\+Code.\+T\+B\+N\+\_\+\+UP}} = 1, 
+\mbox{\hyperlink{namespace_wintab_d_n_a0829e0e054dd601b4f043415c0090c31a429caf34e990ae37d3686c1b183900d6}{Wintab\+D\+N.\+E\+Wintab\+Packet\+Button\+Code.\+T\+B\+N\+\_\+\+D\+O\+WN}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Wintab\+Packet.\+pk\+Button codes. \end{DoxyCompactList}\end{DoxyCompactItemize}

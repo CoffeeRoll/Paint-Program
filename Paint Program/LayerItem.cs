@@ -174,7 +174,7 @@ namespace Paint_Program
             sLayerName = tbLayerName.Text;
         }
 
-        public void updateText()
+        public void UpdateText()
         {
             cbVisible.Text = SharedSettings.getGlobalString("layeritem_checkbox_visible");
         }

@@ -1,0 +1,50 @@
+\hypertarget{_c_wintab_context_8cs}{}\section{Wintab\+D\+N/\+C\+Wintab\+Context.cs File Reference}
+\label{_c_wintab_context_8cs}\index{Wintab\+D\+N/\+C\+Wintab\+Context.\+cs@{Wintab\+D\+N/\+C\+Wintab\+Context.\+cs}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_axis}{Wintab\+D\+N.\+Wintab\+Axis}}
+\begin{DoxyCompactList}\small\item\em Managed version of A\+X\+IS struct. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_axis_array}{Wintab\+D\+N.\+Wintab\+Axis\+Array}}
+\begin{DoxyCompactList}\small\item\em Array of \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_axis}{Wintab\+Axis}} objects. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_wintab_d_n_1_1_wintab_log_context}{Wintab\+D\+N.\+Wintab\+Log\+Context}}
+\begin{DoxyCompactList}\small\item\em Managed version of Wintab L\+O\+G\+C\+O\+N\+T\+E\+XT struct. This structure determines what events an application will get, how they will be processed, and how they will be delivered to the application or to Windows itself. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_wintab_d_n_1_1_c_wintab_context}{Wintab\+D\+N.\+C\+Wintab\+Context}}
+\begin{DoxyCompactList}\small\item\em Class to support access to Wintab context management. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_wintab_d_n}{Wintab\+DN}}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a38705aa38c49c04846399172fa9fd1cd}{Wintab\+D\+N.\+E\+Axis\+Dimension}} \{ \mbox{\hyperlink{namespace_wintab_d_n_a38705aa38c49c04846399172fa9fd1cdafb7ec808a21c7770ccd7060e715983ba}{Wintab\+D\+N.\+E\+Axis\+Dimension.\+A\+X\+I\+S\+\_\+X}} = E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+X, 
+\mbox{\hyperlink{namespace_wintab_d_n_a38705aa38c49c04846399172fa9fd1cda3e69e41ce011d74658d6ccce110e5f1a}{Wintab\+D\+N.\+E\+Axis\+Dimension.\+A\+X\+I\+S\+\_\+Y}} = E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+Y, 
+\mbox{\hyperlink{namespace_wintab_d_n_a38705aa38c49c04846399172fa9fd1cda19aa520601d5d2f29571f14a3278216f}{Wintab\+D\+N.\+E\+Axis\+Dimension.\+A\+X\+I\+S\+\_\+Z}} = E\+W\+T\+I\+Devices\+Index.\+D\+V\+C\+\_\+Z
+ \}
+\begin{DoxyCompactList}\small\item\em Values to use when asking for X, Y or Z Wintab\+Axis object. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2}{Wintab\+D\+N.\+E\+C\+T\+X\+Option\+Values}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a6a2dbfc83a1b63b06d00fa7fbdf841e6}{Wintab\+D\+N.\+E\+C\+T\+X\+Option\+Values.\+C\+X\+O\+\_\+\+S\+Y\+S\+T\+EM}} = 0x0001, 
+\mbox{\hyperlink{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a1188b3bdf64b7ce3ac8b0dfbbbcd79ab}{Wintab\+D\+N.\+E\+C\+T\+X\+Option\+Values.\+C\+X\+O\+\_\+\+P\+EN}} = 0x0002, 
+\mbox{\hyperlink{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a27fdcdd9ab4b471db2109a328c40cc8d}{Wintab\+D\+N.\+E\+C\+T\+X\+Option\+Values.\+C\+X\+O\+\_\+\+M\+E\+S\+S\+A\+G\+ES}} = 0x0004, 
+\mbox{\hyperlink{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a2bbf4dbbadddd85531bf5c0224cdfa8c}{Wintab\+D\+N.\+E\+C\+T\+X\+Option\+Values.\+C\+X\+O\+\_\+\+C\+S\+R\+M\+E\+S\+S\+A\+G\+ES}} = 0x0008, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a70d0e87bbdf4cb7110640ac0f47747f0}{Wintab\+D\+N.\+E\+C\+T\+X\+Option\+Values.\+C\+X\+O\+\_\+\+M\+G\+N\+I\+N\+S\+I\+DE}} = 0x4000, 
+\mbox{\hyperlink{namespace_wintab_d_n_a701e8021b6889039ed562596a2d1bdd2a3c2c4234d4c16baa098b7c979a231f1b}{Wintab\+D\+N.\+E\+C\+T\+X\+Option\+Values.\+C\+X\+O\+\_\+\+M\+A\+R\+G\+IN}} = 0x8000
+ \}
+\begin{DoxyCompactList}\small\item\em Context option values. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a6d3f719c7eebc1f9b081c2d31678536e}{Wintab\+D\+N.\+E\+C\+T\+X\+Status\+Values}} \{ \mbox{\hyperlink{namespace_wintab_d_n_a6d3f719c7eebc1f9b081c2d31678536ea773aec303a05b1f2bbbb72fec5c371f3}{Wintab\+D\+N.\+E\+C\+T\+X\+Status\+Values.\+C\+X\+S\+\_\+\+D\+I\+S\+A\+B\+L\+ED}} = 0x0001, 
+\mbox{\hyperlink{namespace_wintab_d_n_a6d3f719c7eebc1f9b081c2d31678536ea289cbc7da5860d2d8b658573790809de}{Wintab\+D\+N.\+E\+C\+T\+X\+Status\+Values.\+C\+X\+S\+\_\+\+O\+B\+S\+C\+U\+R\+ED}} = 0x0002, 
+\mbox{\hyperlink{namespace_wintab_d_n_a6d3f719c7eebc1f9b081c2d31678536eac9a22eca76f43903f077a73792176eb8}{Wintab\+D\+N.\+E\+C\+T\+X\+Status\+Values.\+C\+X\+S\+\_\+\+O\+N\+T\+OP}} = 0x0004
+ \}
+\begin{DoxyCompactList}\small\item\em Context status values. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31}{Wintab\+D\+N.\+E\+C\+T\+X\+Lock\+Values}} \{ \newline
+\mbox{\hyperlink{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31ad9335c4e973a33e84061e0a1c9932419}{Wintab\+D\+N.\+E\+C\+T\+X\+Lock\+Values.\+C\+X\+L\+\_\+\+I\+N\+S\+I\+ZE}} = 0x0001, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31aac7209cec3b1fde6187d8d452bfa4fe8}{Wintab\+D\+N.\+E\+C\+T\+X\+Lock\+Values.\+C\+X\+L\+\_\+\+I\+N\+A\+S\+P\+E\+CT}} = 0x0002, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31a409f9e66401e8acb484ab8a8d4a7cc52}{Wintab\+D\+N.\+E\+C\+T\+X\+Lock\+Values.\+C\+X\+L\+\_\+\+S\+E\+N\+S\+I\+T\+I\+V\+I\+TY}} = 0x0004, 
+\mbox{\hyperlink{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31ab83c05435e8d81d1da9fd0a6960a6071}{Wintab\+D\+N.\+E\+C\+T\+X\+Lock\+Values.\+C\+X\+L\+\_\+\+M\+A\+R\+G\+IN}} = 0x0008, 
+\newline
+\mbox{\hyperlink{namespace_wintab_d_n_a4ae5c9d600336cd1fe11dd04cd207c31afa00c568415836f7a8fda6c5850bab4c}{Wintab\+D\+N.\+E\+C\+T\+X\+Lock\+Values.\+C\+X\+L\+\_\+\+S\+Y\+S\+O\+UT}} = 0x0010
+ \}
+\begin{DoxyCompactList}\small\item\em Context lock values. \end{DoxyCompactList}\end{DoxyCompactItemize}
