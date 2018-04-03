@@ -25,7 +25,7 @@ var searchData=
   ['setgridtoggle',['setGridToggle',['../class_paint___program_1_1_shared_settings.html#ad45305e433b2452fe5986ecad3adca5a',1,'Paint_Program::SharedSettings']]],
   ['setgridwidth',['setGridWidth',['../class_paint___program_1_1_shared_settings.html#a512fdde95958e8da348a31f742ccfc60',1,'Paint_Program::SharedSettings']]],
   ['seticon',['SetIcon',['../class_wintab_d_n_1_1_c_wintab_extensions.html#a328174cc03d3baaed1772b68059a142b',1,'WintabDN::CWintabExtensions']]],
-  ['setimagetoolstripmenuitem_5fclick',['setImageToolStripMenuItem_Click',['../class_paint___program_1_1_form1.html#ae65589572c49c53a057ab082655fdc9f',1,'Paint_Program::Form1']]],
+  ['setimagetoolstripmenuitem_5fclick',['SetImageToolStripMenuItem_Click',['../class_paint___program_1_1_form1.html#a5a68e92cce596c404c124632a816f1a8',1,'Paint_Program::Form1']]],
   ['setimportimage',['setImportImage',['../class_paint___program_1_1_shared_settings.html#abe13ebf4880e018c6643f25950fdf6f3',1,'Paint_Program::SharedSettings']]],
   ['setinterfacebitmap',['setInterfaceBitmap',['../class_paint___program_1_1_shared_settings.html#a7a64f4bb28c9f1077a7aa4d1393ff0f6',1,'Paint_Program::SharedSettings']]],
   ['setlanguage',['setLanguage',['../class_paint___program_1_1_shared_settings.html#acae1226228e72368d250553176fd9bb9',1,'Paint_Program::SharedSettings']]],
@@ -54,6 +54,6 @@ var searchData=
   ['setwtpacketeventhandler',['SetWTPacketEventHandler',['../class_wintab_d_n_1_1_c_wintab_data.html#a986ef88b57d732ff3703a2c802fa62e7',1,'WintabDN::CWintabData']]],
   ['setzoom',['setZoom',['../class_paint___program_1_1_zoom_control.html#a2a13fda8b393affa5dfca15d16ce93b8',1,'Paint_Program::ZoomControl']]],
   ['showtools',['ShowTools',['../class_paint___program_1_1_canvas.html#a8548f36df2fefafcbcc23d857592ddc6',1,'Paint_Program::Canvas']]],
-  ['showwatermarktoolstripmenuitem_5fclick',['showWatermarkToolStripMenuItem_Click',['../class_paint___program_1_1_form1.html#a7ade3db8b670a8074a6c722a4fb9429a',1,'Paint_Program::Form1']]],
+  ['showwatermarktoolstripmenuitem_5fclick',['ShowWatermarkToolStripMenuItem_Click',['../class_paint___program_1_1_form1.html#aef82c4e95b5665684979ac3a80ab9d1b',1,'Paint_Program::Form1']]],
   ['straightlinetool',['StraightLineTool',['../class_paint___program_1_1_straight_line_tool.html#a4e09ab9bf0ef819ed906bfe82d9b76cf',1,'Paint_Program::StraightLineTool']]]
 ];

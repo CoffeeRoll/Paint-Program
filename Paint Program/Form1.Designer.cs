@@ -109,7 +109,7 @@
             this.tsmiFile_New.Name = "tsmiFile_New";
             this.tsmiFile_New.Size = new System.Drawing.Size(186, 22);
             this.tsmiFile_New.Text = "New";
-            this.tsmiFile_New.Click += new System.EventHandler(this.tsmiFile_New_Click);
+            this.tsmiFile_New.Click += new System.EventHandler(this.TsmiFile_New_Click);
             // 
             // tsmiFile_Save
             // 
@@ -118,7 +118,7 @@
             this.tsmiFile_Save.Name = "tsmiFile_Save";
             this.tsmiFile_Save.Size = new System.Drawing.Size(186, 22);
             this.tsmiFile_Save.Text = "Save";
-            this.tsmiFile_Save.Click += new System.EventHandler(this.tsmiFile_Save_Click);
+            this.tsmiFile_Save.Click += new System.EventHandler(this.TsmiFile_Save_Click);
             // 
             // tsmiFile_Load
             // 
@@ -127,7 +127,7 @@
             this.tsmiFile_Load.Name = "tsmiFile_Load";
             this.tsmiFile_Load.Size = new System.Drawing.Size(186, 22);
             this.tsmiFile_Load.Text = "Load";
-            this.tsmiFile_Load.Click += new System.EventHandler(this.tsmiFile_Load_Click);
+            this.tsmiFile_Load.Click += new System.EventHandler(this.TsmiFile_Load_Click);
             // 
             // tsmiFile_Import
             // 
@@ -136,7 +136,7 @@
             this.tsmiFile_Import.Name = "tsmiFile_Import";
             this.tsmiFile_Import.Size = new System.Drawing.Size(186, 22);
             this.tsmiFile_Import.Text = "Import Image";
-            this.tsmiFile_Import.Click += new System.EventHandler(this.tsmiFile_Import_Click);
+            this.tsmiFile_Import.Click += new System.EventHandler(this.TsmiFile_Import_Click);
             // 
             // tsmiFile_Export
             // 
@@ -145,7 +145,7 @@
             this.tsmiFile_Export.Name = "tsmiFile_Export";
             this.tsmiFile_Export.Size = new System.Drawing.Size(186, 22);
             this.tsmiFile_Export.Text = "Export Image";
-            this.tsmiFile_Export.Click += new System.EventHandler(this.tsmiFile_Export_Click);
+            this.tsmiFile_Export.Click += new System.EventHandler(this.TsmiFile_Export_Click);
             // 
             // tsmiFile_SaveGoogleDrive
             // 
@@ -154,7 +154,7 @@
             this.tsmiFile_SaveGoogleDrive.Name = "tsmiFile_SaveGoogleDrive";
             this.tsmiFile_SaveGoogleDrive.Size = new System.Drawing.Size(186, 22);
             this.tsmiFile_SaveGoogleDrive.Text = "Save To Google Drive";
-            this.tsmiFile_SaveGoogleDrive.Click += new System.EventHandler(this.tsmiFile_SaveGoogleDrive_Click);
+            this.tsmiFile_SaveGoogleDrive.Click += new System.EventHandler(this.TsmiFile_SaveGoogleDrive_Click);
             // 
             // tsmiEdit
             // 
@@ -174,7 +174,7 @@
             this.tsmiEdit_Undo.Name = "tsmiEdit_Undo";
             this.tsmiEdit_Undo.Size = new System.Drawing.Size(130, 22);
             this.tsmiEdit_Undo.Text = "Undo";
-            this.tsmiEdit_Undo.Click += new System.EventHandler(this.tsmiEdit_Undo_Click);
+            this.tsmiEdit_Undo.Click += new System.EventHandler(this.TsmiEdit_Undo_Click);
             // 
             // tsmiEdit_Redo
             // 
@@ -183,7 +183,7 @@
             this.tsmiEdit_Redo.Name = "tsmiEdit_Redo";
             this.tsmiEdit_Redo.Size = new System.Drawing.Size(130, 22);
             this.tsmiEdit_Redo.Text = "Redo";
-            this.tsmiEdit_Redo.Click += new System.EventHandler(this.tsmiEdit_Redo_Click);
+            this.tsmiEdit_Redo.Click += new System.EventHandler(this.TsmiEdit_Redo_Click);
             // 
             // tsmiEdit_Resize
             // 
@@ -192,7 +192,7 @@
             this.tsmiEdit_Resize.Name = "tsmiEdit_Resize";
             this.tsmiEdit_Resize.Size = new System.Drawing.Size(130, 22);
             this.tsmiEdit_Resize.Text = "Image Size";
-            this.tsmiEdit_Resize.Click += new System.EventHandler(this.tsmiEdit_ImageSize_Click);
+            this.tsmiEdit_Resize.Click += new System.EventHandler(this.TsmiEdit_ImageSize_Click);
             // 
             // tsmiView
             // 
@@ -228,7 +228,7 @@
             this.tsmiView_GridLines_5.Name = "tsmiView_GridLines_5";
             this.tsmiView_GridLines_5.Size = new System.Drawing.Size(100, 22);
             this.tsmiView_GridLines_5.Text = "5";
-            this.tsmiView_GridLines_5.Click += new System.EventHandler(this.tsmiView_GridLines_5_Click);
+            this.tsmiView_GridLines_5.Click += new System.EventHandler(this.TsmiView_GridLines_5_Click);
             // 
             // tsmiView_GridLines_10
             // 
@@ -238,7 +238,7 @@
             this.tsmiView_GridLines_10.Name = "tsmiView_GridLines_10";
             this.tsmiView_GridLines_10.Size = new System.Drawing.Size(100, 22);
             this.tsmiView_GridLines_10.Text = "10";
-            this.tsmiView_GridLines_10.Click += new System.EventHandler(this.tsmiView_GridLines_10_Click);
+            this.tsmiView_GridLines_10.Click += new System.EventHandler(this.TsmiView_GridLines_10_Click);
             // 
             // tsmiView_GridLines_25
             // 
@@ -248,7 +248,7 @@
             this.tsmiView_GridLines_25.Name = "tsmiView_GridLines_25";
             this.tsmiView_GridLines_25.Size = new System.Drawing.Size(100, 22);
             this.tsmiView_GridLines_25.Text = "25";
-            this.tsmiView_GridLines_25.Click += new System.EventHandler(this.tsmiView_GridLines_25_Click);
+            this.tsmiView_GridLines_25.Click += new System.EventHandler(this.TsmiView_GridLines_25_Click);
             // 
             // tsmiView_GridLines_50
             // 
@@ -258,7 +258,7 @@
             this.tsmiView_GridLines_50.Name = "tsmiView_GridLines_50";
             this.tsmiView_GridLines_50.Size = new System.Drawing.Size(100, 22);
             this.tsmiView_GridLines_50.Text = "50";
-            this.tsmiView_GridLines_50.Click += new System.EventHandler(this.tsmiView_GridLines_50_Click);
+            this.tsmiView_GridLines_50.Click += new System.EventHandler(this.TsmiView_GridLines_50_Click);
             // 
             // tsmiView_GridLines_100
             // 
@@ -268,7 +268,7 @@
             this.tsmiView_GridLines_100.Name = "tsmiView_GridLines_100";
             this.tsmiView_GridLines_100.Size = new System.Drawing.Size(100, 22);
             this.tsmiView_GridLines_100.Text = "100";
-            this.tsmiView_GridLines_100.Click += new System.EventHandler(this.tsmiView_GridLines_100_Click);
+            this.tsmiView_GridLines_100.Click += new System.EventHandler(this.TsmiView_GridLines_100_Click);
             // 
             // tsmiView_GridLines_Auto
             // 
@@ -277,7 +277,7 @@
             this.tsmiView_GridLines_Auto.Name = "tsmiView_GridLines_Auto";
             this.tsmiView_GridLines_Auto.Size = new System.Drawing.Size(100, 22);
             this.tsmiView_GridLines_Auto.Text = "Auto";
-            this.tsmiView_GridLines_Auto.Click += new System.EventHandler(this.tsmiView_GridLines_Auto_Click);
+            this.tsmiView_GridLines_Auto.Click += new System.EventHandler(this.TsmiView_GridLines_Auto_Click);
             // 
             // tsmiView_Tablet
             // 
@@ -286,7 +286,7 @@
             this.tsmiView_Tablet.Name = "tsmiView_Tablet";
             this.tsmiView_Tablet.Size = new System.Drawing.Size(166, 22);
             this.tsmiView_Tablet.Text = "Tablet Mode";
-            this.tsmiView_Tablet.Click += new System.EventHandler(this.tsmiView_Tablet_Click);
+            this.tsmiView_Tablet.Click += new System.EventHandler(this.TsmiView_Tablet_Click);
             // 
             // tsmiView_ShowTools
             // 
@@ -298,7 +298,7 @@
             this.tsmiView_ShowTools.Name = "tsmiView_ShowTools";
             this.tsmiView_ShowTools.Size = new System.Drawing.Size(166, 22);
             this.tsmiView_ShowTools.Text = "Show Tools";
-            this.tsmiView_ShowTools.Click += new System.EventHandler(this.tsmiView_ShowTools_Click);
+            this.tsmiView_ShowTools.Click += new System.EventHandler(this.TsmiView_ShowTools_Click);
             // 
             // tsmiPreferences
             // 
@@ -332,7 +332,7 @@
             this.tsmiPreferences_Watermark_SetImage.Name = "tsmiPreferences_Watermark_SetImage";
             this.tsmiPreferences_Watermark_SetImage.Size = new System.Drawing.Size(164, 22);
             this.tsmiPreferences_Watermark_SetImage.Text = "Set Image...";
-            this.tsmiPreferences_Watermark_SetImage.Click += new System.EventHandler(this.setImageToolStripMenuItem_Click);
+            this.tsmiPreferences_Watermark_SetImage.Click += new System.EventHandler(this.SetImageToolStripMenuItem_Click);
             // 
             // tsmiPreferences_Watermark_ShowWatermark
             // 
@@ -343,7 +343,7 @@
             this.tsmiPreferences_Watermark_ShowWatermark.Size = new System.Drawing.Size(164, 22);
             this.tsmiPreferences_Watermark_ShowWatermark.Text = "Show Watermark";
             this.tsmiPreferences_Watermark_ShowWatermark.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.tsmiPreferences_Watermark_ShowWatermark.Click += new System.EventHandler(this.showWatermarkToolStripMenuItem_Click);
+            this.tsmiPreferences_Watermark_ShowWatermark.Click += new System.EventHandler(this.ShowWatermarkToolStripMenuItem_Click);
             // 
             // tsmiPreferences_Watermark_Style
             // 
@@ -367,7 +367,7 @@
             this.tsmiPreferences_Watermark_Style_SingleCentered.Name = "tsmiPreferences_Watermark_Style_SingleCentered";
             this.tsmiPreferences_Watermark_Style_SingleCentered.Size = new System.Drawing.Size(157, 22);
             this.tsmiPreferences_Watermark_Style_SingleCentered.Text = "Single Centered";
-            this.tsmiPreferences_Watermark_Style_SingleCentered.Click += new System.EventHandler(this.tsmiPreferences_Watermark_SingleCenter_Click);
+            this.tsmiPreferences_Watermark_Style_SingleCentered.Click += new System.EventHandler(this.TsmiPreferences_Watermark_SingleCenter_Click);
             // 
             // tsmiPreferences_Watermark_Style_SingleBottom
             // 
@@ -376,7 +376,7 @@
             this.tsmiPreferences_Watermark_Style_SingleBottom.Name = "tsmiPreferences_Watermark_Style_SingleBottom";
             this.tsmiPreferences_Watermark_Style_SingleBottom.Size = new System.Drawing.Size(157, 22);
             this.tsmiPreferences_Watermark_Style_SingleBottom.Text = "Single Bottom";
-            this.tsmiPreferences_Watermark_Style_SingleBottom.Click += new System.EventHandler(this.tsmiPreferences_Watermark_SingleBottom_Click);
+            this.tsmiPreferences_Watermark_Style_SingleBottom.Click += new System.EventHandler(this.TsmiPreferences_Watermark_SingleBottom_Click);
             // 
             // tsmiPreferences_Watermark_Style_Tiled
             // 
@@ -385,7 +385,7 @@
             this.tsmiPreferences_Watermark_Style_Tiled.Name = "tsmiPreferences_Watermark_Style_Tiled";
             this.tsmiPreferences_Watermark_Style_Tiled.Size = new System.Drawing.Size(157, 22);
             this.tsmiPreferences_Watermark_Style_Tiled.Text = "Tiled";
-            this.tsmiPreferences_Watermark_Style_Tiled.Click += new System.EventHandler(this.tsmiPreferences_Watermark_Tiled_Click);
+            this.tsmiPreferences_Watermark_Style_Tiled.Click += new System.EventHandler(this.TsmiPreferences_Watermark_Tiled_Click);
             // 
             // tsmiInternational
             // 
@@ -426,7 +426,7 @@
             this.tsNew.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.tsNew.Size = new System.Drawing.Size(35, 28);
             this.tsNew.Text = "New Project";
-            this.tsNew.Click += new System.EventHandler(this.tsNew_Click);
+            this.tsNew.Click += new System.EventHandler(this.TsNew_Click);
             // 
             // tsOpen
             // 
@@ -436,7 +436,7 @@
             this.tsOpen.Name = "tsOpen";
             this.tsOpen.Size = new System.Drawing.Size(28, 28);
             this.tsOpen.Text = "Open File";
-            this.tsOpen.Click += new System.EventHandler(this.tsOpen_Click);
+            this.tsOpen.Click += new System.EventHandler(this.TsOpen_Click);
             // 
             // tsSave
             // 
@@ -446,7 +446,7 @@
             this.tsSave.Name = "tsSave";
             this.tsSave.Size = new System.Drawing.Size(28, 28);
             this.tsSave.Text = "Save";
-            this.tsSave.Click += new System.EventHandler(this.tsSave_Click);
+            this.tsSave.Click += new System.EventHandler(this.TsSave_Click);
             // 
             // tsImport
             // 
@@ -456,7 +456,7 @@
             this.tsImport.Name = "tsImport";
             this.tsImport.Size = new System.Drawing.Size(28, 28);
             this.tsImport.Text = "toolStripButton1";
-            this.tsImport.Click += new System.EventHandler(this.tsImport_Click);
+            this.tsImport.Click += new System.EventHandler(this.TsImport_Click);
             // 
             // tsExport
             // 
@@ -466,7 +466,7 @@
             this.tsExport.Name = "tsExport";
             this.tsExport.Size = new System.Drawing.Size(28, 28);
             this.tsExport.Text = "toolStripButton1";
-            this.tsExport.Click += new System.EventHandler(this.tsExport_Click);
+            this.tsExport.Click += new System.EventHandler(this.TsExport_Click);
             // 
             // Form1
             // 

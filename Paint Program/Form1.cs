@@ -34,15 +34,15 @@ namespace Paint_Program
 			SharedSettings.languageFolderPath = @"..\..\Languages\";
 			SharedSettings.language = ci.Name.ToString();
 
-			populateLanguages();
+			PopulateLanguages();
 
-			updateText();
+			UpdateText();
 
 			//Default Project
-			makeNewProject(500, 500);
+			MakeNewProject(500, 500);
 		}
 
-		private void populateLanguages()
+		private void PopulateLanguages()
 		{
 			string[] langs = Directory.GetFiles(SharedSettings.languageFolderPath);
 
@@ -60,15 +60,17 @@ namespace Paint_Program
 								if ((string)entry.Key == "resource_languagename")
 								{
 									Console.WriteLine("Adding: " + s + " to the list of available languages.");
-									ToolStripMenuItem temp = new ToolStripMenuItem();
-									temp.Text = (string)entry.Value;
-									temp.Tag = Path.GetFileNameWithoutExtension(s);
+									ToolStripMenuItem temp = new ToolStripMenuItem
+									{
+										Text = (string)entry.Value,
+										Tag = Path.GetFileNameWithoutExtension(s)
+									};
 									temp.Click += delegate (object sender, EventArgs e)
 									{
 										//Sets language to the file name with no extension
 										string filename = (string)((ToolStripMenuItem)sender).Tag;
 										SharedSettings.language = filename;
-										updateText();
+										UpdateText();
 									};
 									tsmiInternational.DropDownItems.Add(temp);
 								}
@@ -83,7 +85,7 @@ namespace Paint_Program
 			}
 		}
 
-		private void updateText()
+		private void UpdateText()
 		{
 			//Form Title
 			this.Text = SharedSettings.getGlobalString("title");
@@ -136,7 +138,7 @@ namespace Paint_Program
 			this.Refresh();
 		}
 
-		private void tsmiFile_New_Click(object sender, EventArgs e)
+		private void TsmiFile_New_Click(object sender, EventArgs e)
 		{
 
 			using (NewProjectForm NewProjForm = new NewProjectForm())
@@ -144,17 +146,17 @@ namespace Paint_Program
 				if (NewProjForm.ShowDialog(this) == DialogResult.OK)
 				{
 
-					clearControls();
+					ClearControls();
 
 					int w = NewProjForm.CanvasWidth;
 					int h = NewProjForm.CanvasHeight;
 
-					makeNewProject(w, h);
+					MakeNewProject(w, h);
 				}
 			}
 		}
 
-		private void clearControls()
+		private void ClearControls()
 		{
 			for (int i = this.Controls.Count - 1; i >= 0; i--)
 			{
@@ -165,28 +167,32 @@ namespace Paint_Program
 			}
 		}
 
-		private void makeNewProject(int w, int h)
+		private void MakeNewProject(int w, int h)
 		{
 			if (c != null)
 			{
 				c.Trash(); //To help with memory leak issues
 			}
-			c = new Canvas(w, h, this.Width, this.Height);
-			c.Location = new Point(200, 5);
+			c = new Canvas(w, h, this.Width, this.Height)
+			{
+				Location = new Point(200, 5)
+			};
 			this.Controls.Add(c);
 			c.InitCanvas();
 		}
 
-		private void makeNewProject()
+		private void MakeNewProject()
 		{
-			c = new Canvas(this.Width, this.Height);
-			c.Location = new Point(200, 5);
+			c = new Canvas(this.Width, this.Height)
+			{
+				Location = new Point(200, 5)
+			};
 			this.Controls.Add(c);
 			c.InitCanvas();
 			this.Update();
 		}
 
-		private void tsmiFile_Save_Click(object sender, EventArgs e)
+		private void TsmiFile_Save_Click(object sender, EventArgs e)
 		{
 			//Save Project Function
 
@@ -203,7 +209,7 @@ namespace Paint_Program
 			c.SetPause(false);
 		}
 
-		private void tsmiFile_Import_Click(object sender, EventArgs e)
+		private void TsmiFile_Import_Click(object sender, EventArgs e)
 		{
 			//Import Image
 			try
@@ -216,34 +222,34 @@ namespace Paint_Program
 			}
 		}
 
-		private void tsmiFile_Export_Click(object sender, EventArgs e)
+		private void TsmiFile_Export_Click(object sender, EventArgs e)
 		{
 			//Export Image
 			FileSave fs = new FileSave();
 
 		}
 
-		private void tsmiEdit_Undo_Click(object sender, EventArgs e)
+		private void TsmiEdit_Undo_Click(object sender, EventArgs e)
 		{
 			//Undo Function
 		}
 
-		private void tsmiEdit_Redo_Click(object sender, EventArgs e)
+		private void TsmiEdit_Redo_Click(object sender, EventArgs e)
 		{
 			//Redo Function
 		}
 
-		private void tsmiEdit_ImageSize_Click(object sender, EventArgs e)
+		private void TsmiEdit_ImageSize_Click(object sender, EventArgs e)
 		{
 			//Resize Image Function
 		}
 
-		private void tsmiView_Tablet_Click(object sender, EventArgs e)
+		private void TsmiView_Tablet_Click(object sender, EventArgs e)
 		{
 			//Tablet Mode
 		}
 
-		private void tsmiView_ShowTools_Click(object sender, EventArgs e)
+		private void TsmiView_ShowTools_Click(object sender, EventArgs e)
 		{
 			if (tsmiView_ShowTools.Checked)
 			{
@@ -255,7 +261,7 @@ namespace Paint_Program
 			}
 		}
 
-		private void tsmiFile_Load_Click(object sender, EventArgs e)
+		private void TsmiFile_Load_Click(object sender, EventArgs e)
 		{
 			ProjectLoad pl = new ProjectLoad();
 
@@ -264,12 +270,12 @@ namespace Paint_Program
 				return;
 			}
 			//SharedSettings.Trash();
-			clearControls();
-			makeNewProject();
+			ClearControls();
+			MakeNewProject();
 		}
 
 		#region GridLines
-		private void tsmiView_GridLines_5_Click(object sender, EventArgs e)
+		private void TsmiView_GridLines_5_Click(object sender, EventArgs e)
 		{
 
 			if (tsmiView_GridLines_5.CheckState == CheckState.Unchecked)
@@ -285,7 +291,7 @@ namespace Paint_Program
 			}
 		}
 
-		private void tsmiView_GridLines_10_Click(object sender, EventArgs e)
+		private void TsmiView_GridLines_10_Click(object sender, EventArgs e)
 		{
 
 			if (tsmiView_GridLines_10.CheckState == CheckState.Unchecked)
@@ -301,7 +307,7 @@ namespace Paint_Program
 			}
 		}
 
-		private void tsmiView_GridLines_25_Click(object sender, EventArgs e)
+		private void TsmiView_GridLines_25_Click(object sender, EventArgs e)
 		{
 
 			if (tsmiView_GridLines_25.CheckState == CheckState.Unchecked)
@@ -317,7 +323,7 @@ namespace Paint_Program
 			}
 		}
 
-		private void tsmiView_GridLines_50_Click(object sender, EventArgs e)
+		private void TsmiView_GridLines_50_Click(object sender, EventArgs e)
 		{
 
 			if (tsmiView_GridLines_50.CheckState == CheckState.Unchecked)
@@ -333,7 +339,7 @@ namespace Paint_Program
 			}
 		}
 
-		private void tsmiView_GridLines_100_Click(object sender, EventArgs e)
+		private void TsmiView_GridLines_100_Click(object sender, EventArgs e)
 		{
 
 			if (tsmiView_GridLines_100.CheckState == CheckState.Unchecked)
@@ -349,7 +355,7 @@ namespace Paint_Program
 			}
 		}
 
-		private void tsmiView_GridLines_Auto_Click(object sender, EventArgs e)
+		private void TsmiView_GridLines_Auto_Click(object sender, EventArgs e)
 		{
 
 			if (tsmiView_GridLines_Auto.CheckState == CheckState.Unchecked)
@@ -381,46 +387,48 @@ namespace Paint_Program
 
 		#endregion
 
-		private void tsNew_Click(object sender, EventArgs e)
+		private void TsNew_Click(object sender, EventArgs e)
 		{
-			tsmiFile_New_Click(sender, e);
+			TsmiFile_New_Click(sender, e);
 		}
 
-		private void tsOpen_Click(object sender, EventArgs e)
+		private void TsOpen_Click(object sender, EventArgs e)
 		{
-			tsmiFile_Load_Click(sender, e);
+			TsmiFile_Load_Click(sender, e);
 		}
 
-		private void tsSave_Click(object sender, EventArgs e)
+		private void TsSave_Click(object sender, EventArgs e)
 		{
-			tsmiFile_Save_Click(sender, e);
+			TsmiFile_Save_Click(sender, e);
 		}
 
-		private void tsImport_Click(object sender, EventArgs e)
+		private void TsImport_Click(object sender, EventArgs e)
 		{
-			tsmiFile_Import_Click(sender, e);
+			TsmiFile_Import_Click(sender, e);
 		}
 
-		private void tsExport_Click(object sender, EventArgs e)
+		private void TsExport_Click(object sender, EventArgs e)
 		{
-			tsmiFile_Export_Click(sender, e);
+			TsmiFile_Export_Click(sender, e);
 		}
 
-		private void setImageToolStripMenuItem_Click(object sender, EventArgs e)
+		private void SetImageToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			try
 			{
-				OpenFileDialog sfd = new OpenFileDialog();
-				sfd.Filter = SharedSettings.getGlobalString("watermarkdialog_filter");
-				sfd.Title = SharedSettings.getGlobalString("watermarkdialog_title");
+				OpenFileDialog sfd = new OpenFileDialog
+				{
+					Filter = SharedSettings.getGlobalString("watermarkdialog_filter"),
+					Title = SharedSettings.getGlobalString("watermarkdialog_title")
+				};
 				sfd.ShowDialog();
 
 				SharedSettings.watermarkPath = sfd.FileName;
 				SharedSettings.bitmapWatermark = new Bitmap(sfd.FileName);
 			}
-			catch
+			catch (Exception err)
 			{
-
+				Console.WriteLine(err.InnerException);
 			}
 
 			if (SharedSettings.watermarkPath != null)
@@ -430,7 +438,7 @@ namespace Paint_Program
 			}
 		}
 
-		private void showWatermarkToolStripMenuItem_Click(object sender, EventArgs e)
+		private void ShowWatermarkToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 
 			if (tsmiPreferences_Watermark_ShowWatermark.Checked == false)
@@ -449,7 +457,7 @@ namespace Paint_Program
 			}
 		}
 
-		private void tsmiPreferences_Watermark_SingleCenter_Click(object sender, EventArgs e)
+		private void TsmiPreferences_Watermark_SingleCenter_Click(object sender, EventArgs e)
 		{
 			SharedSettings.watermarkStyle = "Single Center";
 			tsmiPreferences_Watermark_Style_SingleCentered.Checked = true;
@@ -457,7 +465,7 @@ namespace Paint_Program
 			tsmiPreferences_Watermark_Style_Tiled.Checked = false;
 		}
 
-		private void tsmiPreferences_Watermark_SingleBottom_Click(object sender, EventArgs e)
+		private void TsmiPreferences_Watermark_SingleBottom_Click(object sender, EventArgs e)
 		{
 			SharedSettings.watermarkStyle = "Single Bottom";
 			tsmiPreferences_Watermark_Style_SingleCentered.Checked = false;
@@ -465,7 +473,7 @@ namespace Paint_Program
 			tsmiPreferences_Watermark_Style_Tiled.Checked = false;
 		}
 
-		private void tsmiPreferences_Watermark_Tiled_Click(object sender, EventArgs e)
+		private void TsmiPreferences_Watermark_Tiled_Click(object sender, EventArgs e)
 		{
 			SharedSettings.watermarkStyle = "Tiled";
 			tsmiPreferences_Watermark_Style_SingleCentered.Checked = false;
@@ -473,7 +481,7 @@ namespace Paint_Program
 			tsmiPreferences_Watermark_Style_Tiled.Checked = true;
 		}
 
-		private void tsmiFile_SaveGoogleDrive_Click(object sender, EventArgs e)
+		private void TsmiFile_SaveGoogleDrive_Click(object sender, EventArgs e)
 		{
 			c.SetPause(true);
 			using (GDriveSaveDialog gDrive = new GDriveSaveDialog())
@@ -489,7 +497,7 @@ namespace Paint_Program
 			c.SetPause(false);
 		}
 
-		public void updateViews()
+		public void UpdateViews()
 		{
 			if (c != null)
 			{
@@ -497,45 +505,65 @@ namespace Paint_Program
 			}
 		}
 
+
 		#region Shortcuts
+		/// <summary>
+		/// Handles key down events and processes keyboard shortcut combinations <br>
+		/// <table>
+		/// <tr><td>Command</td><td>Behavior</td></tr>
+		/// <tr><td>CTRL + N</td><td>New Project</td></tr>
+		/// <tr><td>CTRL + S</td><td>Save Project</td></tr>
+		/// <tr><td>CTRL + O</td><td>Open Project</td></tr>
+		/// <tr><td>CTRL + I</td><td>Import Image</td></tr>
+		/// <tr><td>CTRL + E</td><td>Export Image</td></tr>
+		/// <tr><td>CTRL + G</td><td>Export to Google Drive</td></tr>
+		/// <tr><td>CTRL + C</td><td>Copy Selection</td></tr>
+		/// <tr><td>CTRL + X</td><td>Cut Selection</td></tr>
+		/// <tr><td>CTRL + V</td><td>Paste Image</td></tr>
+		/// <tr><td>CTRL + =</td><td>Zoom In 10%</td></tr>
+		/// <tr><td>CTRL + -</td><td>Zoom Out 10%</td></tr>
+		/// </table>
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void Form1_KeyDown(object sender, KeyEventArgs e)
 		{
 			//CTRL + N for New Project
 			if (e.Control && e.KeyCode == Keys.N)
 			{
-				tsmiFile_New_Click(this, null);
+				TsmiFile_New_Click(this, null);
 			}
 			//CTRL + S for Save Project
 			if (e.Control && e.KeyCode == Keys.S)
 			{
-				tsmiFile_Save_Click(this, null);
+				TsmiFile_Save_Click(this, null);
 			}
 			//CTRL + O for open Project
 			if (e.Control && e.KeyCode == Keys.O)
 			{
-				tsmiFile_Load_Click(this, null);
+				TsmiFile_Load_Click(this, null);
 			}
 			//CTRL + I for Import Image
 			if (e.Control && e.KeyCode == Keys.I)
 			{
-				tsmiFile_Import_Click(this, null);
+				TsmiFile_Import_Click(this, null);
 			}
 			//CTRL + E for Export Image
 			if (e.Control && e.KeyCode == Keys.E)
 			{
-				tsmiFile_Export_Click(this, null);
+				TsmiFile_Export_Click(this, null);
 			}
 			//CTRL + G for Export to Google Drive
 			if (e.Control && e.KeyCode == Keys.G)
 			{
-				tsmiFile_SaveGoogleDrive_Click(this, null);
+				TsmiFile_SaveGoogleDrive_Click(this, null);
 			}
 			//CTRL + C for Copy Selection
 			if (e.Control && e.KeyCode == Keys.C)
 			{
 				if (SharedSettings.bitmapSelectionArea != null)
 				{
-					copySelectionToClipboard();
+					CopySelectionToClipboard();
 				}
 			}
 			//CTRL + X for Cut Selection
@@ -543,7 +571,7 @@ namespace Paint_Program
 			{
 				if (SharedSettings.bitmapSelectionArea != null)
 				{
-					copySelectionToClipboard();
+					CopySelectionToClipboard();
 					SharedSettings.bitmapSelectionArea = null;
 					SharedSettings.bRenderBitmapInterface = false;
 					SharedSettings.bActiveSelection = false;
@@ -565,7 +593,7 @@ namespace Paint_Program
 					temp.Dispose();
 				}
 			}
-			//CTRL + + for zoom in
+			//CTRL + = for zoom in
 			if (e.Control && e.KeyCode == Keys.Oemplus)
 			{
 				if (c != null)
@@ -583,7 +611,7 @@ namespace Paint_Program
 			}
 		}
 
-		private void copySelectionToClipboard()
+		private void CopySelectionToClipboard()
 		{
 			IDataObject data = new DataObject();
 			MemoryStream ms = new MemoryStream();

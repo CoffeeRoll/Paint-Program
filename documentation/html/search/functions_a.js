@@ -1,7 +1,7 @@
 var searchData=
 [
   ['main',['Main',['../class_paint___program_1_1_program.html#a0586d6d89a54c2fecfbb3fd893329c1f',1,'Paint_Program::Program']]],
-  ['makenewproject',['makeNewProject',['../class_paint___program_1_1_form1.html#a310f0830882ebdd322bf0d7759f96ff5',1,'Paint_Program.Form1.makeNewProject(int w, int h)'],['../class_paint___program_1_1_form1.html#a2f74b219f8f7f47c8be05b2667ab69a2',1,'Paint_Program.Form1.makeNewProject()']]],
+  ['makenewproject',['MakeNewProject',['../class_paint___program_1_1_form1.html#ae2b2f92fe493ccef4b1c943ecc98f693',1,'Paint_Program.Form1.MakeNewProject(int w, int h)'],['../class_paint___program_1_1_form1.html#a2aa0c38b6361f4992c9837e7819e01ee',1,'Paint_Program.Form1.MakeNewProject()']]],
   ['mapdouble',['MapDouble',['../class_paint___program_1_1_shared_settings.html#a02cecb7db8a0a2fed2286b8f91b009ce',1,'Paint_Program::SharedSettings']]],
   ['mapvalue',['MapValue',['../class_paint___program_1_1_shared_settings.html#a8888d4d35894d5e48c2f977c707e3a2b',1,'Paint_Program::SharedSettings']]],
   ['marshaldataextpackets',['MarshalDataExtPackets',['../class_wintab_d_n_1_1_c_mem_utils.html#a62d347b8878e39416a10a9858ebef9d4',1,'WintabDN::CMemUtils']]],

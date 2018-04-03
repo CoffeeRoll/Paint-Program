@@ -95,7 +95,7 @@ namespace Paint_Program
 			
 			SharedSettings.setDrawScale((float)dZoomFactor / 100.0f);
             tbZoom.Text = dZoomFactor.ToString();
-            ((Form1)this.Parent).updateViews();
+            ((Form1)this.Parent).UpdateViews();
         }
 
         public double getZoomPercentage()
